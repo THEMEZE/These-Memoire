@@ -1,0 +1,39 @@
+# Fichiers compilés
+build/
+*.aux
+*.bbl
+*.blg
+*.brf
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.out
+*.toc
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Fichiers temporaires de l'éditeur
+*.swp
+*.swo
+*~
+*.bak
+*.tmp
+*.DS_Store
+
+# PDF généré si hors dossier build/
+main.pdf
+
+# Fichier de configuration locale
+.latexmkrc
+

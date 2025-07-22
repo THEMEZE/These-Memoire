@@ -1,0 +1,819 @@
+\chapter{Dynamique hors-équilibre et hydrodynamique généralisée}
+\minitoc
+
+%\chapter{Hydrodynamique généralisée (GHD)}
+
+\section*{Introduction}
+
+{\color{blue}
+\begin{itemize}
+    \item Motivation : limitations des descriptions hydrodynamiques classiques pour les systèmes intégrables.
+    \item Idée centrale de la GHD : hydrodynamique adaptée aux modèles intégrables, fondée sur le GGE local.
+    \item Lien avec le chapitre précédent : du GGE global au GGE local.
+\end{itemize}
+}
+
+\paragraph{Contexte général : des descriptions hydrodynamiques classiques insuffisantes.}
+Les systèmes quantiques à un grand nombre de degrés de liberté présentent souvent, à grande échelle, des comportements collectifs pouvant être décrits par des équations hydrodynamiques. Dans les systèmes non intégrables, la relaxation vers l’équilibre thermique permet d’envisager des descriptions effectives fondées sur quelques paramètres macroscopiques — comme la température, la pression ou la densité — évoluant selon des lois de conservation classiques (de type Euler ou Navier-Stokes). Néanmoins, cette approche classique échoue dans le cas des systèmes intégrables, où l’existence d’un nombre extensif de constantes du mouvement empêche l’oubli des détails microscopiques. Dans ces systèmes, la dynamique est fortement contrainte, et l’approche thermodynamique classique est inadaptée.
+
+\paragraph{Vers une hydrodynamique adaptée aux systèmes intégrables.}
+Face à ce constat, la notion d’**hydrodynamique généralisée** (Generalized Hydrodynamics, GHD) a émergé comme une théorie effective décrivant la dynamique macroscopique des systèmes intégrables unidimensionnels. La GHD s’appuie sur une hypothèse cruciale : à chaque point de l’espace-temps, le système peut être considéré localement en **équilibre généralisé**, décrit par un **GGE local** (Generalized Gibbs Ensemble). Cette idée constitue une extension hydrodynamique naturelle du cadre du GGE introduit dans le chapitre précédent.
+
+\subparagraph{Dynamique des quasi-particules.}
+Dans le langage du Bethe Ansatz, les états d’équilibre généralisé sont caractérisés par une densité de pseudo-particules (ou rapidités) $\rho(\theta)$. L’approche GHD postule que ces objets peuvent être promus au rang de champs dynamiques $\rho(x,t,\theta)$, dont l’évolution dans l’espace et le temps est gouvernée par une équation de type transport. L’innovation essentielle réside dans la prise en compte des **vitesses effectives** de ces excitations, qui résultent des interactions intégrables entre les quasi-particules.
+
+\paragraph{Du GGE global à la GHD locale : continuité du formalisme.}
+Le chapitre précédent a établi le rôle central du GGE pour décrire les états stationnaires atteints par les systèmes intégrables isolés. La GHD prolonge cette structure en permettant de modéliser des régimes non stationnaires, à travers l’évolution lente de GGEs locaux. Mathématiquement, cela se traduit par une équation de conservation pour la densité de quasi-particules, couplée à une équation intégrale déterminant leurs vitesses effectives en fonction de la distribution locale. Ce couplage rend la théorie **non linéaire** et **auto-consistante**, tout en préservant une structure fortement contrainte par l’intégrabilité.
+
+\paragraph{Objectif du chapitre.}
+Ce chapitre a pour objectif de présenter les fondements de l’hydrodynamique généralisée, ses équations fondamentales, ainsi que ses principales conséquences physiques et mathématiques. Nous détaillerons les hypothèses de construction, l’équation hydrodynamique de base, la définition des vitesses effectives, et les structures de conservation associées. Nous illustrerons ensuite cette théorie par plusieurs applications concrètes, telles que le problème de jonction bipartite ou l’expansion d’un gaz 1D. Enfin, nous discuterons des aspects mathématiques profonds liés à la structure Hamiltonienne de la GHD et des perspectives de formalisation rigoureuse dans le cadre de la théorie des équations de conservation.
+
+
+
+\section{Fondements physiques de la GHD}
+
+\subsection*{Introduction.}
+L’hydrodynamique généralisée repose sur une compréhension fine des propriétés des systèmes intégrables, et en particulier sur la manière dont les excitations (quasi-particules) émergent de la solution exacte du modèle via le Bethe Ansatz. Cette section a pour objectif de poser les bases physiques nécessaires à la construction de la GHD, en présentant successivement le rôle des quasi-particules, la notion de GGE local, et l’approximation semi-classique sous-jacente à la dynamique hydrodynamique.
+
+\paragraph{Organisation de la section.}
+Nous commencerons par rappeler la structure des solutions dans les systèmes intégrables, caractérisées par un spectre de rapidités associé à des états de type Bethe. Ces objets permettent une description thermodynamique efficace en termes de densités de quasi-particules. Nous introduirons ensuite le concept de GGE local, qui étend la description d’équilibre généralisé à un cadre dépendant de l’espace et du temps, pierre angulaire de la GHD. Enfin, nous discuterons l’interprétation semi-classique des quasi-particules en mouvement selon des vitesses effectives, liant ainsi la microphysique intégrable à une description hydrodynamique.
+
+
+\subsection{Systèmes intégrables et quasi-particules}
+
+{\color{blue}
+\begin{itemize}
+    \item Notion de rapidité dans le Bethe Ansatz.
+    \item Charges conservées infinies et conséquences dynamiques.
+\end{itemize}
+}
+
+\paragraph{Modèles intégrables en une dimension.}
+Les systèmes intégrables en dimension un présentent une structure remarquable : ils admettent un nombre infini de constantes du mouvement en involution, ce qui les rend exactement solubles, même à grand nombre de degrés de liberté. Cette propriété empêche la thermalisation au sens usuel et conduit à une dynamique très contrainte. Les modèles intégrables quantiques les plus emblématiques incluent la chaîne de Heisenberg, le modèle de Lieb-Liniger de bosons en interaction delta, et le gaz de Calogero-Sutherland.
+
+\paragraph{Le formalisme du Bethe Ansatz.}
+Dans ces modèles, la diagonalisation du Hamiltonien s’effectue via le Bethe Ansatz, une méthode introduite à l’origine pour la chaîne de Heisenberg et généralisée à d'autres systèmes. L’idée centrale du Bethe Ansatz est de représenter les états propres du système comme des superpositions d’ondes planes, dont les phases sont déterminées par des conditions de type périodique modifiées par les interactions. Ces conditions donnent lieu à un ensemble d’équations dites **équations de Bethe**, qui fixent un ensemble discret de **rapideurs** (ou rapidités), notées $\{\theta_j\}$, associées aux excitations du système.
+
+\paragraph{La notion de rapidité.}
+La rapidité $\theta$ joue ici un rôle analogue à celui de la quantité de mouvement dans les systèmes non intégrables. Elle paramètre l’énergie $e(\theta)$ et l’impulsion $p(\theta)$ des quasi-particules. Dans les modèles intégrables, ces fonctions $e(\theta)$ et $p(\theta)$ sont liées de manière spécifique, et les interactions entre particules se traduisent par des décalages de phase dans l’espace des rapideurs, sans diffusion classique. Cela permet une description complète des états en termes de distributions continues de rapidité à l’état thermodynamique.
+
+\paragraph{Charges conservées et structure intégrable.}
+Un aspect fondamental de l’intégrabilité est l’existence d’une infinité de charges conservées $\{Q_n\}$, qui s’expriment dans le cadre du Bethe Ansatz comme des fonctions additives sur les quasi-particules : chaque excitation de rapidité $\theta$ porte une charge $q_n(\theta)$ telle que
+\[
+Q_n = \int d\theta\, \rho(\theta)\, q_n(\theta),
+\]
+où $\rho(\theta)$ est la densité de quasi-particules. Ces charges incluent non seulement l’énergie et la quantité de mouvement (correspondant à $n=2$ et $n=1$), mais aussi une hiérarchie infinie de quantités non triviales, spécifiques au modèle.
+
+\paragraph{Conséquences dynamiques.}
+La présence de ces charges interdit la thermalisation conventionnelle et donne lieu à des comportements non ergodiques. Après un déséquilibre initial, comme un quench quantique, le système évolue vers un état stationnaire non thermique, décrit non pas par une distribution de Gibbs, mais par un **Generalized Gibbs Ensemble** (GGE), tenant compte de toutes les charges conservées. Ces charges contraignent également le transport : au lieu d’une relaxation diffusante, on observe souvent un **transport balistique** des observables, sous-tendu par la dynamique cohérente des quasi-particules.
+
+\paragraph{Vers la description hydrodynamique.}
+L’ensemble des concepts introduits ici — rapidité, quasi-particules, charges conservées — fournit le socle physique pour la construction d’une théorie hydrodynamique adaptée aux modèles intégrables. En promouvant la densité $\rho(\theta)$ au statut de champ dynamique $\rho(x,t,\theta)$, on accède à une description à grande échelle des dynamiques hors équilibre, qui sera formalisée dans les sections suivantes.
+
+
+\subsection{GGE local}
+{\color{blue}
+\begin{itemize}
+    \item Hypothèse d’équilibre local généralisé.
+    \item Distribution locale des pseudo-particules $\rho(x,t,\theta)$.
+\end{itemize}
+}
+
+\paragraph{Hypothèse d’équilibre local généralisé.}
+Dans les systèmes quantiques non intégrables, l’hypothèse d’équilibre local — ou \emph{local thermal equilibrium} — constitue la pierre angulaire des descriptions hydrodynamiques classiques. Elle postule que, à une échelle spatiale et temporelle suffisamment large, le système peut être considéré comme étant en équilibre thermique local, caractérisé par des paramètres macroscopiques (température, densité, vitesse moyenne, etc.) qui varient lentement en espace et en temps. 
+
+Pour les systèmes intégrables, cette hypothèse doit être généralisée en raison de la multitude de charges conservées. Le système ne relaxe pas vers un état thermique classique, mais vers un état décrit par un \emph{Generalized Gibbs Ensemble} (GGE) qui prend en compte l’ensemble infini des charges conservées. L’idée centrale de la \emph{GGE locale} est donc d’étendre cette notion d’équilibre local à une forme généralisée, où, en chaque point $(x,t)$, le système est approximé par un GGE paramétré par des potentiels chimiques locaux associés aux charges conservées.
+
+\paragraph{Distribution locale des pseudo-particules.}
+Dans la description thermodynamique des systèmes intégrables via le Bethe Ansatz, l’état du système est caractérisé par une distribution continue des quasi-particules en rapidité, notée $\rho(\theta)$. Cette densité de quasi-particules encode la population des modes d’excitation, et détermine l’ensemble des observables macroscopiques par intégration sur $\theta$.
+
+L’hypothèse d’équilibre local généralisé conduit naturellement à introduire une densité \emph{locale} des quasi-particules, fonction de la position et du temps, $\rho(x,t,\theta)$. Cette fonction est supposée varier lentement sur les échelles macroscopiques, reflétant une distribution locale de GGE à chaque point. 
+
+Cette représentation locale permet de traduire la complexité microscopique du système intégrable en une fonction continue, dépendant de l’espace, du temps et de la rapidité, qui joue le rôle de variable d’état pour la description hydrodynamique. C’est à partir de cette densité locale que seront construites les équations de la GHD, décrivant l’évolution macroscopique hors équilibre.
+
+\paragraph{Signification physique et implications.}
+L’introduction de $\rho(x,t,\theta)$ est essentielle pour capturer la richesse des phénomènes hors équilibre dans les systèmes intégrables. Par exemple, lors d’une jonction bipartite entre deux semi-infinis initialement à des GGEs différents, la distribution locale des quasi-particules varie spatialement, donnant naissance à des profils non triviaux et à un transport balistique des charges. 
+
+L’hypothèse de GGE local justifie également le recours à une dynamique hydrodynamique fondée sur la conservation locale des charges, ce qui différencie la GHD des approches hydrodynamiques classiques basées sur un nombre restreint de variables macroscopiques. Elle constitue ainsi la base physique rigoureuse permettant d’écrire des équations de transport généralisées, comme nous le verrons dans la section suivante.
+
+
+\subsection{Dynamique semi-classique}
+{\color{blue}
+\begin{itemize}
+    \item Interprétation des quasi-particules en mouvement avec une vitesse effective.
+    \item Liens entre dynamique microscopique et hydrodynamique.
+\end{itemize}
+}
+
+
+\paragraph{Interprétation des quasi-particules en mouvement.}
+L’une des avancées majeures de l’hydrodynamique généralisée est la reconnaissance que les quasi-particules décrites par la distribution locale $\rho(x,t,\theta)$ peuvent être considérées comme des entités semi-classiques se déplaçant avec une \emph{vitesse effective} $v^{\mathrm{eff}}(x,t,\theta)$ qui dépend non seulement de leur rapidité intrinsèque, mais aussi de la distribution locale des autres quasi-particules. Cette vitesse effective intègre les interactions intégrables entre quasi-particules, reflétant le fait que, malgré l’absence de diffusion classique, les quasi-particules sont « habillées » par leur environnement et subissent un déplacement collectif non trivial.
+
+Cette idée s’appuie sur le fait que, à l’échelle macroscopique, le système peut être vu comme un gaz de quasi-particules faiblement corrélées, où chaque excitation porte une charge, une énergie et une impulsion, et se propage selon une cinématique modifiée par les interactions intégrables. L’approche semi-classique assimile ainsi la dynamique complexe du système quantique à une équation de transport dans l’espace des positions et des rapidités.
+
+\paragraph{Définition de la vitesse effective.}
+La vitesse effective $v^{\mathrm{eff}}(\theta)$ se définit comme la vitesse de propagation d’une excitation dans un milieu où la distribution des quasi-particules est donnée localement par $\rho(x,t,\theta)$. Cette quantité s’obtient à partir des dérivées des fonctions d’énergie et d’impulsion renormalisées, via une équation intégrale de type thermodynamique de Bethe Ansatz (TBA). Formellement, elle s’exprime comme
+\[
+v^{\mathrm{eff}}(\theta) = \frac{(e')^{\mathrm{dr}}(\theta)}{(p')^{\mathrm{dr}}(\theta)},
+\]
+où les dérivées \emph{dressed} $(\cdot)^{\mathrm{dr}}$ tiennent compte des interactions avec la distribution locale des quasi-particules.
+
+\paragraph{Lien entre dynamique microscopique et description hydrodynamique.}
+Cette interprétation semi-classique permet de relier directement la microphysique intégrable — définie par des interactions quantiques exactes et des états propres construits via le Bethe Ansatz — à une description hydrodynamique macroscopique. En effet, en considérant que la densité locale $\rho(x,t,\theta)$ évolue par transport le long de trajectoires définies par $v^{\mathrm{eff}}$, on obtient une équation de conservation locale pour les quasi-particules, qui constitue le cœur des équations de la GHD.
+
+Ainsi, la complexité microscopique est encapsulée dans la définition non triviale de la vitesse effective, tandis que l’évolution globale s’écrit sous la forme d’une équation aux dérivées partielles conservant la densité locale. Ce passage de l’échelle microscopique à macroscopique s’appuie donc sur une approximation semi-classique rigoureuse, justifiée dans la limite thermodynamique et à grandes échelles spatiales et temporelles.
+
+\paragraph{Conséquences dynamiques.}
+Cette approche fournit une explication claire au transport balistique observé dans les systèmes intégrables : chaque quasi-particule transporte ses charges à sa vitesse effective, et l’ensemble du système se comporte comme un fluide de quasi-particules interagissant de façon cohérente. De plus, la formulation semi-classique ouvre la voie à l’introduction de corrections diffusive ou fluctuantes, en étendant la description au-delà de la limite purement balistique.
+
+Cette compréhension physique est fondamentale pour la formulation mathématique de la GHD et la modélisation précise des phénomènes hors équilibre dans les gaz quantiques intégrables, sujets des développements qui suivent dans ce chapitre.
+
+
+\subsection*{Conclusion.}
+Cette section a introduit les éléments structurants de la GHD du point de vue physique. Les systèmes intégrables se distinguent par une richesse de charges conservées qui modifie en profondeur leur dynamique collective. À travers le formalisme du Bethe Ansatz, les états sont représentés par des distributions continues de quasi-particules, dont les propriétés thermodynamiques et dynamiques sont entièrement déterminées par leur densité en rapidité. La généralisation locale du GGE permet de modéliser des situations hors équilibre en supposant que le système relaxe localement vers une forme de GGE, dont les paramètres varient lentement dans l’espace-temps. Enfin, la dynamique semi-classique des quasi-particules constitue le socle sur lequel repose la formulation hydrodynamique de la GHD, en autorisant une description en termes de courants de quasi-particules à vitesse effective. Ces concepts seront exploités dans la section suivante pour formuler les équations fondamentales de la GHD.
+
+\section{Équation hydrodynamique de la GHD}
+
+\subsection*{Introduction.}
+Les fondements physiques exposés dans la section précédente permettent maintenant de formaliser les équations dynamiques qui régissent l’évolution macroscopique des systèmes intégrables dans le cadre de l’hydrodynamique généralisée. L’objectif de cette section est de présenter l’équation de conservation centrale de la GHD, d’expliciter la définition de la vitesse effective $v^{\mathrm{eff}}(x,t,\theta)$, et de montrer que la théorie résulte en un système fermé et auto-cohérent d’équations aux dérivées partielles.
+
+\paragraph{Structure générale.}
+La dynamique de la densité locale de quasi-particules $\rho(x,t,\theta)$ est régie par une équation de type transport, analogue à une équation de continuité classique. Toutefois, la nouveauté profonde de la GHD réside dans le fait que la vitesse d’advection $v^{\mathrm{eff}}$ dépend elle-même de la distribution $\rho$, ce qui engendre une non-linéarité essentielle. Cette structure rend la GHD conceptuellement proche des systèmes de lois de conservation non linéaires, tout en incorporant les spécificités des modèles intégrables à travers les relations de Bethe thermodynamique.
+
+\paragraph{Organisation de la section.}
+Nous commencerons par écrire l’équation hydrodynamique de base, de forme conservative, puis nous introduirons les équations intégrales permettant de calculer la vitesse effective. Enfin, nous discuterons la fermeture du système, et les analogies formelles avec d'autres équations classiques de la physique mathématique.
+
+
+\subsection{Équation de continuité}
+
+{\color{blue}
+\[
+\partial_t \rho(x,t,\theta) + \partial_x \left[ v^{\mathrm{eff}}(x,t,\theta)\, \rho(x,t,\theta) \right] = 0
+\]
+}
+
+
+\paragraph{Conservation locale de la densité de quasi-particules.}
+L’élément fondamental de l’hydrodynamique généralisée est l’équation de transport pour la densité locale de quasi-particules, notée $\rho(x,t,\theta)$, où $\theta$ est la rapidité des excitations. Cette équation prend la forme d’une équation de conservation locale :
+\[
+\partial_t \rho(x,t,\theta) + \partial_x \left[ v^{\mathrm{eff}}(x,t,\theta)\, \rho(x,t,\theta) \right] = 0.
+\]
+Elle exprime que, à chaque valeur de la rapidité $\theta$, le nombre de quasi-particules est conservé le long de la dynamique, en l'absence de création ou d’annihilation. La quantité $v^{\mathrm{eff}}(x,t,\theta)$ désigne la vitesse effective des quasi-particules, qui dépend elle-même de la distribution complète $\rho(x,t,\theta')$ à travers une équation intégrale auto-cohérente.
+
+\paragraph{Structure en lois de conservation.}
+L’équation ci-dessus est à comparer avec les lois de conservation classiques utilisées en hydrodynamique chaotique. Pour un fluide classique dans un potentiel extérieur $V(x)$, on écrit typiquement trois équations de conservation :
+\[
+\begin{aligned}
+\partial_t q_M(x,t) + \partial_x j_M(x,t) &= 0, \\
+\partial_t q_P(x,t) + \partial_x j_P(x,t) &= -\frac{1}{m} \frac{\partial V(x)}{\partial x} q_M(x,t), \\
+\partial_t q_E(x,t) + \partial_x j_E(x,t) &= 0,
+\end{aligned}
+\]
+où $q_M$, $q_P$, $q_E$ désignent respectivement les densités de masse, de quantité de mouvement et d’énergie, et $j_M$, $j_P$, $j_E$ les courants associés. La deuxième équation contient un terme source dû au potentiel, ce qui rend la conservation du moment non triviale.
+
+Dans le cas d’un fluide galiléen, et en absence de potentiel ($V = 0$), ces équations se réécrivent sous la forme standard des équations d’Euler :
+\[
+\begin{aligned}
+\partial_t n + \partial_x(nu) &= 0, \\
+\partial_t u + u \partial_x u + \frac{1}{mn} \partial_x P &= 0, \\
+\partial_t e + u \partial_x e + \frac{P}{n} \partial_x u &= 0,
+\end{aligned}
+\]
+où $n = q_M/m$ est la densité de particules, $u = q_P/q_M$ la vitesse moyenne, $e$ l’énergie interne, et $P = P(n,e)$ la pression d’équilibre. Ces équations décrivent un fluide compressible, sous l’hypothèse d’équilibre local classique.
+
+\paragraph{Analogies et différences fondamentales.}
+L’équation de continuité de la GHD se place dans une structure conceptuellement proche de ces équations classiques, mais avec des différences fondamentales :
+\begin{itemize}
+    \item Dans la GHD, la variable d’état fondamentale est la fonction $\rho(x,t,\theta)$, définie sur l’espace-temps \emph{et} l’espace des rapidités. Il s’agit donc d’une description infinidimensionnelle, en contraste avec les quelques champs scalaires (densité, vitesse, température) utilisés dans l’hydrodynamique classique.
+    \item La vitesse de transport $v^{\mathrm{eff}}$ n’est pas une donnée externe, ni une fonction simple de $\theta$, mais dépend implicitement de l’ensemble du profil $\rho(x,t,\theta')$ via une équation intégrale. Cela rend l’équation non linéaire et auto-cohérente.
+    \item Le couplage entre différentes valeurs de $\theta$ remplace, dans une certaine mesure, les effets de pression et de viscosité présents dans les fluides classiques, mais sous une forme non locale dans l’espace des vitesses.
+\end{itemize}
+
+\paragraph{Structure géométrique et signification physique.}
+La forme conservée de l’équation reflète la nature balistique du transport dans les systèmes intégrables. Chaque quasi-particule transporte sa charge (énergie, moment, etc.) à une vitesse propre, déterminée collectivement. Cela permet une propagation de l’information sans diffusion ni perte, à la différence des systèmes chaotiques.
+
+Cette équation constitue le point de départ de l’analyse des phénomènes hors équilibre dans la GHD. En intégrant cette équation sur l’espace des rapidités $\theta$, on peut retrouver les équations de conservation pour les charges physiques (énergie, moment, particules), mais enrichies d’une structure qui encode l’intégrabilité du système.
+
+\paragraph{Perspectives.}
+Dans les sections suivantes, nous expliciterons la définition de $v^{\mathrm{eff}}$, montrant qu’elle résulte de l’habillage des quasi-particules par leurs interactions, et que son calcul repose sur le formalisme du Bethe Ansatz thermodynamique. Nous verrons alors que l’équation de GHD est en réalité un système fermé d’équations couplées, ce qui justifie pleinement son appellation d’« hydrodynamique ».
+
+
+\subsection{Définition de la vitesse effective $v^{\mathrm{eff}}$}
+{\color{blue}
+\begin{itemize}
+    \item Résolution auto-cohérente via les équations de type TBA.
+    \item Rôle du kernel de diffusion $T(\theta,\theta')$.
+\end{itemize}
+}
+
+\paragraph{Origine de la vitesse effective.}
+Dans le cadre de l’hydrodynamique généralisée, chaque quasi-particule de rapidité $\theta$ est associée à une vitesse effective $v^{\mathrm{eff}}(x,t,\theta)$, qui détermine le transport de la densité $\rho(x,t,\theta)$ à grande échelle. Contrairement à la vitesse de groupe $v^{\mathrm{gr}}(\theta) = \frac{d e(\theta)}{d p(\theta)}$ utilisée dans des descriptions non interactives, la vitesse effective incorpore les effets d’interactions intégrables entre les quasi-particules. Ces interactions n’induisent pas de diffusion au sens classique, mais elles modifient les trajectoires des excitations à travers des déphasages collectifs, dont l'effet net est capturé par une renormalisation des quantités dynamiques via un « habillage ».
+
+\paragraph{Habillage des dérivées d’énergie et d’impulsion.}
+La construction de $v^{\mathrm{eff}}$ repose sur le formalisme thermodynamique du Bethe Ansatz (TBA), qui permet d’exprimer les dérivées de l’énergie $e(\theta)$ et de l’impulsion $p(\theta)$ comme des fonctions « habillées », c’est-à-dire modifiées par les interactions. Formellement, la vitesse effective est donnée par :
+\[
+v^{\mathrm{eff}}(x,t,\theta) = \frac{(e')^{\mathrm{dr}}(x,t,\theta)}{(p')^{\mathrm{dr}}(x,t,\theta)},
+\]
+où les dérivées habillées $(\cdot)^{\mathrm{dr}}$ sont définies via une équation intégrale linéaire dépendant de la densité locale de pseudo-particules $\rho(x,t,\theta)$.
+
+\paragraph{Équation d’habillage.}
+Soit $h(\theta)$ une fonction quelconque (par exemple $e'(\theta)$ ou $p'(\theta)$). Sa version habillée $h^{\mathrm{dr}}(\theta)$ est définie par :
+\[
+h^{\mathrm{dr}}(\theta) = h(\theta) + \int d\theta' \, T(\theta,\theta')\, \frac{\rho(x,t,\theta')}{\rho^{\mathrm{tot}}(x,t,\theta')} \, h^{\mathrm{dr}}(\theta'),
+\]
+où :
+\begin{itemize}
+    \item $T(\theta,\theta')$ est le \textbf{noyau de diffusion}, qui encode les interactions entre les quasi-particules. Il dépend du modèle considéré et dérive du déphasage entre états propres.
+    \item $\rho^{\mathrm{tot}}(x,t,\theta)$ est la densité totale d’états accessibles à la rapidité $\theta$, et satisfait elle-même une équation intégrale couplée à $\rho(x,t,\theta)$.
+\end{itemize}
+
+Cette équation d’habillage doit être résolue de manière auto-cohérente, ce qui confère à $v^{\mathrm{eff}}$ une dépendance implicite complexe vis-à-vis du profil hydrodynamique.
+
+\paragraph{Rôle du noyau de diffusion $T(\theta,\theta')$.}
+Le noyau $T(\theta,\theta')$ joue un rôle central dans la construction de la GHD. Il est issu de la dérivée du déphasage entre deux quasi-particules de rapidité $\theta$ et $\theta'$, résultant du Bethe Ansatz. Physiquement, il mesure l’intensité de l’interaction entre les deux excitations et détermine comment la propagation d’une quasi-particule est affectée par la présence des autres.
+
+Dans les modèles intégrables à deux corps, $T(\theta,\theta')$ est donné par :
+\[
+T(\theta,\theta') = \frac{1}{2\pi} \frac{d}{d\theta} \varphi(\theta - \theta'),
+\]
+où $\varphi$ est la phase de diffusion entre deux excitations.
+
+Dans le cas du modèle de Lieb-Liniger par exemple, on a :
+\[
+T(\theta,\theta') = \frac{c}{\pi} \frac{1}{(\theta - \theta')^2 + c^2},
+\]
+où $c$ est la force d’interaction entre les bosons.
+
+\paragraph{Structure auto-cohérente.}
+L’ensemble formé par l’équation de continuité et l’équation d’habillage constitue un \emph{système fermé} d’équations pour $\rho(x,t,\theta)$. Ce système est :
+\[
+\left\{
+\begin{aligned}
+&\partial_t \rho(x,t,\theta) + \partial_x \left[ v^{\mathrm{eff}}(x,t,\theta)\, \rho(x,t,\theta) \right] = 0, \\
+&v^{\mathrm{eff}}(x,t,\theta) = \frac{(e')^{\mathrm{dr}}(x,t,\theta)}{(p')^{\mathrm{dr}}(x,t,\theta)}, \quad \text{avec } h^{\mathrm{dr}} = \text{solution de l’équation d’habillage.}
+\end{aligned}
+\right.
+\]
+Cette fermeture non triviale distingue la GHD d’une simple équation de transport linéaire : la vitesse dépend elle-même de la fonction transportée, ce qui donne au système un caractère \emph{non linéaire} et \emph{intégral}.
+
+\paragraph{Conclusion.}
+La vitesse effective est l’objet central qui permet de relier la description microscopique intégrable à la dynamique hydrodynamique. Elle capture l’effet des interactions entre excitations par l’intermédiaire du noyau $T$, et sa définition repose sur une structure mathématique riche issue du TBA. L’équation de GHD peut ainsi être vue comme une équation de conservation non linéaire à champ vectoriel auto-induit, structure que nous explorerons plus en détail dans la prochaine sous-section.
+
+
+\subsection{Système fermé et interprétation}
+{\color{blue}
+\begin{itemize}
+    \item Équation hydrodynamique auto-consistante.
+    \item Analogies avec les systèmes de conservation classiques.
+\end{itemize}
+}
+
+
+\paragraph{Fermeture auto-cohérente des équations.}
+Les éléments précédents ont permis d’identifier les deux équations fondamentales de l’hydrodynamique généralisée : l’équation de conservation pour la densité locale de quasi-particules,
+\[
+\partial_t \rho(x,t,\theta) + \partial_x \left[ v^{\mathrm{eff}}(x,t,\theta)\, \rho(x,t,\theta) \right] = 0,
+\]
+et la définition implicite de la vitesse effective comme rapport de quantités habillées :
+\[
+v^{\mathrm{eff}}(x,t,\theta) = \frac{(e')^{\mathrm{dr}}(x,t,\theta)}{(p')^{\mathrm{dr}}(x,t,\theta)}.
+\]
+Ce couple forme un système fermé et non linéaire pour l’inconnue $\rho(x,t,\theta)$, la vitesse effective étant déterminée par la résolution d’une équation intégrale dépendant elle-même de $\rho$. Cette auto-consistance rend la GHD profondément différente des équations de transport classiques où le champ de vitesse est imposé ou découple des degrés de liberté transportés.
+
+\paragraph{Nature du système : transport non linéaire couplé.}
+Du point de vue mathématique, la GHD s’apparente à un système d’équations de type conservation avec non-linéarités intégrales. Plus précisément, il s’agit d’un champ de densité $\rho(x,t,\theta)$ évoluant sous l’action d’un flot $v^{\mathrm{eff}}(x,t,\theta)$ qui dépend fonctionnellement de l’ensemble du profil $\rho(x,t,\theta')$. On peut interpréter cette structure comme une équation de transport dans un espace de phase étendu $(x,\theta)$, avec une dynamique non locale en $\theta$.
+
+Cette structure se rapproche de celle des systèmes cinétiques (par exemple, l’équation de Vlasov dans la physique des plasmas), où le champ d’advection est auto-induit par la distribution des particules. Ici cependant, l’auto-induction se fait via une équation intégrale définie par le noyau $T(\theta,\theta')$ issu de la structure intégrable du modèle.
+
+\paragraph{Comparaison avec l’hydrodynamique classique.}
+On peut mettre en parallèle ce système avec les équations d’Euler pour un fluide compressible. Dans le cas classique, les équations sont fermées en termes de quelques variables macroscopiques : densité $n(x,t)$, vitesse $u(x,t)$, énergie interne $e(x,t)$, avec des relations de type état pour fermer le système via la pression $P(n,e)$.
+
+Dans la GHD, les rôles de ces champs sont remplacés par la densité continue $\rho(x,t,\theta)$. La fermeture ne repose plus sur une équation d’état mais sur la résolution d’une équation d’habillage, c’est-à-dire sur la connaissance détaillée du spectre d’excitations du système, qui est une propriété intrinsèque de son intégrabilité.
+
+\paragraph{Caractère galiléen et invariances.}
+Dans plusieurs modèles intégrables (comme le modèle de Lieb-Liniger), la GHD respecte une forme d’invariance galiléenne. En effet, le flot global peut être modifié par une translation dans l’espace des vitesses (rapideurs), ce qui reflète la covariance des équations sous changement de référentiel inertiel. Cela renforce l’analogie avec les équations d’Euler, tout en mettant en évidence des différences essentielles : dans la GHD, les flux sont résolus en chaque point $(x,t)$ pour toutes les valeurs de $\theta$ simultanément, ce qui donne au système une richesse dynamique supérieure.
+
+\paragraph{Conséquences physiques.}
+Le caractère auto-consistant de la GHD permet de décrire avec précision des phénomènes hors équilibre dans les systèmes intégrables : expansion balistique de nuages quantiques, jonctions bipartites entre deux domaines thermalisés, propagation d’ondes de chocs, etc. Ces effets trouvent un équivalent formel dans les solutions faibles d’équations de conservation classiques, mais leur description complète nécessite de suivre la dynamique des quasi-particules pour toute la gamme de rapidités.
+
+La capacité à résoudre de manière déterministe l’évolution de $\rho(x,t,\theta)$ à partir de données initiales, en exploitant uniquement la structure intégrable du modèle, constitue l’un des atouts fondamentaux de la GHD.
+
+\paragraph{Conclusion.}
+La GHD s’impose comme une théorie hydrodynamique complète et rigoureuse pour les systèmes intégrables, grâce à une structure fermée alliant conservation locale et auto-consistance non linéaire. Elle offre une généralisation naturelle des lois de conservation classiques dans un cadre quantique, et fournit un outil puissant pour explorer les dynamiques hors équilibre à l’échelle macroscopique. Ce système constitue la base à partir de laquelle peuvent être développées des généralisations, incluant les effets diffusifs, les corrections quantiques, ou les couplages avec des champs externes.
+
+
+\subsection*{Conclusion.}
+Cette section a établi le cœur mathématique de la théorie hydrodynamique généralisée. La densité de quasi-particules $\rho(x,t,\theta)$ évolue selon une équation de conservation locale, où le flux est donné par le produit de la densité et de la vitesse effective. Ce qui distingue fondamentalement la GHD des équations hydrodynamiques classiques est que cette vitesse effective $v^{\mathrm{eff}}$ est déterminée de façon auto-cohérente via une équation intégrale dépendant de la distribution locale des quasi-particules, reflétant ainsi les interactions intégrables entre excitations.
+
+Le système d’équations ainsi obtenu est fermé, non linéaire, et admet une interprétation géométrique et physique riche, en particulier dans le cadre des systèmes à lois de conservation. Il constitue une base robuste pour l’analyse des phénomènes de transport balistique, des profils hors équilibre, et des régimes asymptotiques dans les systèmes intégrables. Cette équation fondamentale sera appliquée et illustrée dans les sections suivantes.
+
+\section{Conséquences physiques}
+
+\subsection*{Introduction.}
+L’équation d’hydrodynamique généralisée (GHD) fournit une description déterministe et auto-cohérente de la dynamique hors équilibre dans les systèmes intégrables à une dimension. Sa forme conservée, conjuguée à la structure non linéaire issue des interactions entre quasi-particules, permet de dériver un ensemble riche de prédictions physiques à l’échelle macroscopique.
+
+Cette section est consacrée à l’exploration des principales conséquences dynamiques de la GHD. En premier lieu, nous examinerons le comportement à grand temps, où l’évolution est dominée par un transport \emph{balistique} : chaque quasi-particule se propage avec sa propre vitesse effective, conduisant à des structures de fronts nets dans les profils de charge. Cette dynamique évoque des analogies avec les ondes dans les systèmes conservatifs, mais avec des propriétés propres à l’intégrabilité.
+
+Nous aborderons ensuite la formation de structures non linéaires — \emph{chocs} et \emph{rarefactions} — dans des situations de type problème de Riemann, comme une jonction bipartite. Bien que la GHD soit initialement une théorie sans viscosité ni dissipation, la richesse de ses solutions rappelle celle des équations d’Euler hyperboliques.
+
+Enfin, nous introduirons brièvement les limites de validité de la GHD purement balistique, et motiverons l’émergence de la \emph{GHD diffusive}, qui inclut des corrections à l’ordre suivant, permettant notamment de décrire le lissage des chocs et l’apparition de fluctuations thermiques.
+
+\subsection{Transport balistique}
+{\color{blue}
+\begin{itemize}
+    \item Comportement à grand temps.
+    \item Propagation de fronts de charges.
+\end{itemize}
+}
+
+\paragraph{Comportement à grand temps.}
+L’une des signatures les plus marquantes des systèmes intégrables décrits par l’hydrodynamique généralisée (GHD) est la dominance du transport \emph{balistique} à grande échelle spatio-temporelle. Ce régime est caractérisé par le fait que les quasi-particules se propagent librement, avec une vitesse effective $v^{\mathrm{eff}}(\theta)$, sans diffusion ni dissipation classique. À temps long, l’évolution du système est ainsi dominée par des profils déterministes, construits à partir du transport de ces modes.
+
+Mathématiquement, cette structure se manifeste par la formation de profils stationnaires dépendant de la variable auto-similaire $\xi = x/t$. Dans cette limite dite de type hydrodynamique d’Euler, la densité de quasi-particules $\rho(x,t,\theta)$ admet une forme fonctionnelle asymptotique :
+\[
+\rho(x,t,\theta) \longrightarrow \rho_\infty(\xi,\theta) \quad \text{avec} \quad \xi = \frac{x}{t},
+\]
+ce qui reflète le fait que chaque excitation de rapidité $\theta$ se propage selon $v^{\mathrm{eff}}(\theta)$, donnant lieu à une organisation spatiale macroscopique selon la valeur de $\xi$.
+
+\paragraph{Propagation de fronts de charges.}
+Le transport balistique dans la GHD se traduit par la propagation de \emph{fronts de charge} bien définis. Ces fronts délimitent des régions spatiales où la densité (d'énergie, de particules, de moment...) est approximativement constante, et sont le résultat de la superposition des trajets des quasi-particules.
+
+Considérons par exemple une jonction bipartite : à l’instant initial $t=0$, le système est préparé avec deux demi-espaces en équilibre local différent, chacun décrit par un GGE distinct (différente température, densité, etc.). Au cours de l’évolution, les quasi-particules de part et d’autre de la coupure se propagent selon leur vitesse effective respective, donnant lieu à un profil non trivial de charges dans la région intermédiaire. Ce profil est à support fini dans $\xi$, puisque seules les quasi-particules dont $v^{\mathrm{eff}}(\theta)$ est compatible avec la position $\xi = x/t$ peuvent contribuer.
+
+Dans cette configuration, on observe typiquement l’apparition d’un front d’expansion caractérisé par deux valeurs extrêmes $\xi_-$ et $\xi_+$ telles que :
+\[
+\rho_\infty(\xi,\theta) = 
+\begin{cases}
+\rho_{\mathrm{L}}(\theta) & \text{si } \xi < \xi_-, \\
+\text{fonction interpolante} & \text{si } \xi_- < \xi < \xi_+, \\
+\rho_{\mathrm{R}}(\theta) & \text{si } \xi > \xi_+,
+\end{cases}
+\]
+où $\rho_{\mathrm{L}}$ et $\rho_{\mathrm{R}}$ désignent les distributions initiales à gauche et à droite, respectivement.
+
+\paragraph{Origine du profil en $\xi$.}
+Le profil stationnaire $\rho_\infty(\xi,\theta)$ est obtenu en imposant la condition de \emph{matching} le long des caractéristiques, c’est-à-dire en utilisant l’information que la densité est transportée sans déformation :
+\[
+v^{\mathrm{eff}}(\xi,\theta) = \xi.
+\]
+Cette condition détermine, pour chaque valeur de $\xi$, quelle distribution $\rho_\infty(\xi,\theta)$ est compatible avec la propagation des modes de rapidité $\theta$. Le problème devient alors une équation non linéaire implicite à résoudre pour chaque $\xi$.
+
+Ce mécanisme donne lieu à une séparation spatiale des excitations en fonction de leur rapidité : les plus rapides (valeurs extrêmes de $v^{\mathrm{eff}}$) déterminent les bornes du front, tandis que les autres s’organisent entre ces bornes, définissant ainsi une structure riche et universelle à temps long.
+
+\paragraph{Comparaison avec les systèmes non intégrables.}
+Dans un système non intégrable, le transport est typiquement dominé par la diffusion : l’élargissement des profils se fait selon une loi de type $\sqrt{t}$, et les fronts sont arrondis par la dissipation. En contraste, dans les systèmes intégrables, l’absence de mécanismes dissipatifs donne lieu à un transport balistique dominé par des modes cohérents, avec des fronts nets et persistants.
+
+Cette différence est directement observable expérimentalement, par exemple dans l’expansion d’un gaz de bosons 1D (modèle de Lieb-Liniger), où les fronts d’énergie et de densité s’éloignent linéairement en temps, en accord avec les prédictions de la GHD.
+
+\paragraph{Conclusion.}
+Le transport balistique constitue la manifestation principale de l'intégrabilité dans la dynamique hors équilibre. Il résulte du mouvement libre et cohérent des quasi-particules habillées, et conduit à une structure hydrodynamique déterministe où les profils se réorganisent selon la variable auto-similaire $\xi = x/t$. Cette description rend compte de nombreux résultats numériques et expérimentaux, et prépare le terrain pour l’étude de structures plus complexes comme les chocs, rarefactions ou effets diffusifs, abordés dans les sections suivantes.
+
+
+\subsection{Chocs et rarefactions}
+{\color{blue}
+\begin{itemize}
+    \item Solution de type problème de Riemann.
+    \item Apparition de structures non linéaires.
+\end{itemize}
+}
+
+\paragraph{Problèmes de Riemann en GHD.}
+Un cadre particulièrement fertile pour étudier la formation de structures non linéaires dans la GHD est celui du \emph{problème de Riemann}, où l’on considère une condition initiale par morceaux :
+\[
+\rho(x, t = 0, \theta) =
+\begin{cases}
+\rho_{\mathrm{L}}(\theta), & x < 0, \\
+\rho_{\mathrm{R}}(\theta), & x > 0,
+\end{cases}
+\]
+où $\rho_{\mathrm{L}}$ et $\rho_{\mathrm{R}}$ sont deux distributions de quasi-particules stationnaires correspondant à des GGEs différents (densité, température, moment, etc.).
+
+À l’image du problème de Riemann en hydrodynamique classique, cette discontinuité initiale génère une évolution non triviale dans la région centrale $x \in [v^{\mathrm{eff}}_{\min} t, v^{\mathrm{eff}}_{\max} t]$, où les deux flux se rencontrent. Le système tend alors vers une solution stationnaire dépendant uniquement de la variable auto-similaire $\xi = x/t$, solution qui résout l’équation de continuité :
+\[
+\partial_t \rho(x,t,\theta) + \partial_x \left[ v^{\mathrm{eff}}(\rho)\, \rho(x,t,\theta) \right] = 0.
+\]
+
+\paragraph{Structure des solutions : rarefactions.}
+Lorsque la courbe $\theta \mapsto v^{\mathrm{eff}}(\theta)$ est strictement croissante, on observe une solution dite de \emph{rarefaction}. Dans ce cas, les quasi-particules de rapidités différentes se séparent dans l’espace en raison de leurs vitesses distinctes. Il en résulte un étalement continu du profil : la densité $\rho(x,t,\theta)$ devient une fonction lisse de $x$ dans la région intermédiaire, avec un dégradé de contributions des deux GGEs initialement présents.
+
+Cette structure est semblable à la solution classique d’une onde de rarefaction dans les équations d’Euler : les champs hydrodynamiques varient de manière continue entre deux états asymptotiques, sans formation de discontinuité.
+
+\paragraph{Formation de chocs.}
+À l’inverse, si la relation entre $v^{\mathrm{eff}}$ et $\theta$ n’est pas monotone, ou si le système présente une non-convexité dans l’espace des états, des \emph{chocs} peuvent apparaître. Dans ce cas, la solution stationnaire développée à temps long peut contenir des discontinuités nettes dans la densité de quasi-particules. Ces discontinuités sont analogues aux discontinuités de chocs classiques, où plusieurs caractéristiques se croisent, menant à une perte de régularité dans la solution.
+
+Il est important de noter que, contrairement à l’hydrodynamique classique où la viscosité ou les effets dissipatifs régularisent naturellement les chocs, la GHD dans sa forme balistique ne les adoucit pas : les solutions restent en général discontinues. Toutefois, l’introduction de \emph{corrections diffusive} permet de rétablir une structure de solution continue, comme nous le verrons dans la sous-section suivante.
+
+\paragraph{Solutions entropiques et unicité.}
+Le problème de Riemann dans un cadre non linéaire admet souvent plusieurs solutions faibles. Pour sélectionner la solution physiquement pertinente, il est nécessaire d’introduire un critère d’entropie, comme dans les systèmes classiques. En GHD, une telle sélection est implicite dans le choix de la dynamique microscopique sous-jacente : les solutions obtenues via l’évolution réelle du système quantique, ou via des simulations numériques (par exemple en chaîne XXZ ou gaz de Lieb-Liniger), convergent vers une solution unique du problème de Riemann.
+
+Des travaux récents ont commencé à formaliser cette sélection dans le langage de l’hydrodynamique intégrable, notamment via la convexité de certaines quantités thermodynamiques associées à la GGE locale.
+
+\paragraph{Interprétation physique.}
+Les chocs et rarefactions sont des signatures directes du caractère non linéaire de la GHD. Leur apparition marque une frontière entre régimes simples (transport balistique régulier) et dynamiques plus complexes où des structures collectives émergent.
+
+Dans les expériences sur gaz quantiques unidimensionnels, ces phénomènes peuvent être observés sous forme de fronts nets ou adoucis selon la préparation initiale, et sont en bon accord avec les prédictions théoriques. La nature dispersive ou non de ces structures constitue aussi une piste de recherche active pour différencier GHD balistique et GHD diffusive.
+
+\paragraph{Conclusion.}
+Le problème de Riemann fournit un cadre idéal pour explorer la richesse dynamique de la GHD. Selon la géométrie de l’espace des quasi-particules et la non-linéarité de $v^{\mathrm{eff}}$, le système peut générer des solutions continues (rarefactions) ou discontinues (chocs), de manière similaire aux équations d’Euler. Ces structures sont la manifestation macroscopique des interactions cohérentes entre excitations intégrables, et ouvrent la voie à une compréhension fine de la formation de structures hors équilibre dans les systèmes quantiques.
+
+
+\subsection{Corrections diffusive (préliminaire)}
+{\color{blue}
+\begin{itemize}
+    \item Limites de validité de la GHD.
+    \item Introduction à la GHD diffusive.
+\end{itemize}
+}
+
+\paragraph{Limites de validité de la GHD balistique.}
+La formulation de base de la GHD repose sur une hypothèse centrale : à grande échelle spatio-temporelle, les systèmes intégrables évoluent selon une dynamique purement balistique. Cela suppose que les quasi-particules se propagent de manière cohérente, sans diffusion ni fluctuations aléatoires.
+
+Cependant, cette approximation trouve rapidement ses limites dans plusieurs contextes :
+\begin{itemize}
+    \item lorsque les gradients de densité deviennent importants (par exemple au voisinage d’un choc) ;
+    \item lorsque l'on considère des corrélations à temps long ou à grande distance ;
+    \item lorsqu’on étudie la dynamique au-delà de l’ordre dominant en $1/t$.
+\end{itemize}
+
+Dans ces cas, les effets de diffusion et de fluctuations thermiques ne sont plus négligeables. La GHD balistique, de par sa structure hyperbolique déterministe, échoue à capturer ces phénomènes. Il devient donc nécessaire d’introduire des corrections à l’ordre suivant dans l’expansion en grande échelle : on parle alors de \textbf{GHD diffusive}.
+
+\paragraph{Origine microscopique de la diffusion.}
+Même dans un système intégrable, les quasi-particules ne sont pas parfaitement indépendantes : elles interagissent via des déphasages cohérents. Bien que ces interactions n’induisent pas de thermalisation classique, elles peuvent produire des effets de type \emph{random walk} à l’échelle méso- ou macroscopique, liés à l’accumulation de fluctuations au cours du temps.
+
+Du point de vue du Bethe Ansatz, cette diffusion résulte de la propagation de petites perturbations autour d’un GGE local, et du couplage entre les différents modes via le noyau de diffusion $T(\theta,\theta')$. Ces effets peuvent être formalisés par une théorie cinétique linéarisée autour de l’état stationnaire.
+
+\paragraph{Introduction à la GHD diffusive.}
+La version diffusive de la GHD consiste à ajouter un terme de type Fick ou Navier-Stokes à l’équation de conservation, menant à une équation de type :
+\[
+\partial_t \rho(x,t,\theta) + \partial_x \left[ v^{\mathrm{eff}}(\theta)\, \rho(x,t,\theta) \right]
+= \partial_x \left[ D(\theta)\, \partial_x \rho(x,t,\theta) \right],
+\]
+où $D(\theta)$ est un \emph{coefficient de diffusion généralisé}, qui dépend du spectre des excitations et de la structure du GGE local.
+
+Ce terme n’est pas imposé \emph{a priori}, mais dérivé à partir d’une linéarisation de la dynamique microscopique, souvent en utilisant la matrice de diffusion obtenue via le formalisme de la matrice de susceptibilité et de corrélations dynamiques. Il encode les effets des fluctuations thermiques et de la dispersion quantique, même dans un système strictement intégrable.
+
+\paragraph{Forme tensorielle et interprétation.}
+La diffusion en GHD n’est pas scalaire, mais prend en réalité la forme d’un opérateur intégral non local agissant sur l’espace des rapidités. Il existe un tenseur de diffusion $\mathcal{D}(\theta,\theta')$ tel que :
+\[
+\text{Termes diffusifs} = \partial_x \left( \int d\theta'\, \mathcal{D}(\theta,\theta')\, \partial_x \rho(x,t,\theta') \right).
+\]
+Cette structure reflète l’interdépendance des modes de rapidité due aux interactions intégrables. Le calcul explicite de $\mathcal{D}(\theta,\theta')$ repose sur des corrélations dynamiques à deux points en GGE, qui peuvent être obtenues via la théorie des grandes déviations ou des expansions diagrammatiques.
+
+\paragraph{Conséquences physiques.}
+L’introduction de la diffusion permet de :
+\begin{itemize}
+    \item lisser les discontinuités apparentes dans les solutions balistiques (chocs, fronts) ;
+    \item décrire correctement les fonctions de corrélation dynamiques à temps long (lois de fluctuation-dissipation généralisées) ;
+    \item relier la GHD à des descriptions hydrodynamiques stochastiques (KPZ, Lévy, etc.) dans certaines limites.
+\end{itemize}
+
+Des effets tels que le \emph{broadening diffusif} des fronts balistiques (largeur croissante en $\sqrt{t}$) ont été observés numériquement et expérimentalement, en accord avec les prédictions de la GHD diffusive.
+
+\paragraph{Conclusion.}
+La GHD diffusive constitue une extension naturelle de la GHD balistique, nécessaire pour capturer les effets subdominants à l’ordre $1/t$. Elle repose sur une compréhension fine des fluctuations dans les systèmes intégrables et ouvre la voie à une hydrodynamique complète, capable de traiter à la fois les effets cohérents et dissipatifs. Bien que les expressions explicites des termes diffusifs soient encore en cours d'élaboration pour de nombreux modèles, leur introduction marque une étape importante dans la compréhension de la dynamique quantique hors équilibre.
+
+
+\subsection*{Conclusion.}
+Les conséquences physiques de la GHD sont multiples et marquent une rupture profonde avec les comportements attendus dans les systèmes non intégrables. La présence d’un transport balistique structuré, l’apparition de fronts nets et de solutions de type chocs ou rarefactions, illustrent le rôle central des quasi-particules dans la dynamique collective.
+
+La structure des solutions de GHD révèle également les limites de la description purement conservatrice : à mesure que des gradients forts apparaissent, ou que des fluctuations deviennent significatives, des corrections diffusive ou stochastiques doivent être considérées. Ces développements récents ouvrent un nouveau champ de recherche, reliant la GHD à des approches plus générales de la non-équilibre quantique.
+
+Les exemples étudiés dans cette section montrent que la GHD n’est pas seulement une construction théorique élégante, mais un outil prédictif puissant, déjà en accord avec des expériences récentes en physique des gaz quantiques unidimensionnels.
+
+\section{Applications concrètes}
+
+\subsection*{Introduction.}
+Après avoir établi les fondements théoriques de l’hydrodynamique généralisée (GHD) et exploré ses conséquences physiques, nous illustrons ici son efficacité par l’étude de situations expérimentales et numériques concrètes.
+
+La GHD s’est révélée être un cadre remarquablement prédictif pour décrire la dynamique hors équilibre de systèmes quantiques intégrables. Sa capacité à relier les propriétés microscopiques (via le Bethe Ansatz ou des équations intégrales de type TBA) aux évolutions macroscopiques de profils de densité ou d’énergie en fait un outil de choix pour traiter des problèmes réels.
+
+Cette section est organisée autour de trois classes d’applications. Nous commençons par le problème de jonction bipartite, paradigme fondamental des protocoles hors équilibre, où deux régions préparées dans des états distincts sont mises en contact à l’instant $t=0$. Nous étudierons ensuite l’expansion libre d’un gaz unidimensionnel initialement confiné, une situation directement accessible en expérience. Enfin, nous évoquerons d'autres systèmes intégrables, tant quantiques (comme la chaîne XXZ) que classiques (tels que les gaz de Toda), où la GHD a permis d’obtenir des prédictions quantitatives robustes.
+
+
+\subsection{Problème bipartite}
+{\color{blue}
+\begin{itemize}
+    \item Deux GGE initiaux couplés à $t=0$.
+    \item Évolution des observables.
+\end{itemize}
+}
+
+
+\paragraph{Deux GGE initiaux couplés à $t=0$.}
+Le problème bipartite constitue l’un des protocoles fondamentaux pour étudier la dynamique hors équilibre dans les systèmes intégrables. Il consiste à préparer le système dans un état initial composé de deux demi-espaces thermalisés séparément, chacun décrit par un état d’équilibre local — en l'occurrence un GGE (Generalized Gibbs Ensemble) —, puis à les mettre en contact brutalement à l’instant $t=0$.
+
+Plus précisément, l’état initial est de la forme :
+\[
+\rho(x,t=0,\theta) =
+\begin{cases}
+\rho_{\mathrm{L}}(\theta), & x < 0, \\
+\rho_{\mathrm{R}}(\theta), & x > 0,
+\end{cases}
+\]
+où $\rho_{\mathrm{L}}$ et $\rho_{\mathrm{R}}$ sont deux distributions stationnaires de quasi-particules, correspondant à des GGEs caractérisés par des ensembles de multiplicateurs de Lagrange différents (température, potentiel chimique, vitesse moyenne, etc.).
+
+Ce type de configuration est expérimentalement réalisable dans les gaz quantiques unidimensionnels, où deux nuages de particules confinés peuvent être préparés indépendamment, puis mis en contact via une manipulation du potentiel de piégeage. Elle est également simulée numériquement avec grande précision dans des chaînes quantiques (ex : XXZ) ou des modèles classiques intégrables.
+
+\paragraph{Évolution hydrodynamique à temps long.}
+L’évolution du système, dans le cadre de la GHD, est entièrement déterminée par la propagation des quasi-particules avec leur vitesse effective $v^{\mathrm{eff}}(\theta)$. À temps long, le système développe un profil stationnaire qui ne dépend que de la variable auto-similaire $\xi = x/t$. Ce profil résout l’équation :
+\[
+v^{\mathrm{eff}}(\rho_\infty(\xi,\theta)) = \xi,
+\]
+c’est-à-dire que seules les quasi-particules dont la vitesse effective est compatible avec le rapport $\xi$ peuvent contribuer à la densité locale.
+
+Ce mécanisme conduit à une solution $\rho_\infty(\xi,\theta)$ qui interpole entre les deux distributions initiales : pour $\xi \ll 0$ (région gauche), on retrouve $\rho_{\mathrm{L}}$, pour $\xi \gg 0$ (région droite), on retrouve $\rho_{\mathrm{R}}$, tandis qu'entre les deux, un profil interpolant non trivial se forme.
+
+\paragraph{Observables physiques.}
+À partir de la solution hydrodynamique $\rho(x,t,\theta)$, on peut calculer les observables locales macroscopiques, telles que :
+\begin{itemize}
+    \item la densité de particules $n(x,t)$,
+    \item la densité d’énergie $e(x,t)$,
+    \item les courants associés : $j_n(x,t)$, $j_e(x,t)$, etc.
+\end{itemize}
+Ces quantités sont obtenues par intégration sur l’espace des rapidités :
+\[
+n(x,t) = \int d\theta\, \rho(x,t,\theta), \quad
+e(x,t) = \int d\theta\, \rho(x,t,\theta) \varepsilon(\theta), \quad
+j_n(x,t) = \int d\theta\, v^{\mathrm{eff}}(x,t,\theta) \rho(x,t,\theta),
+\]
+où $\varepsilon(\theta)$ est l’énergie d’une quasi-particule de rapidité $\theta$.
+
+En particulier, au centre de la jonction ($x=0$), on observe la formation d’un \textit{état stationnaire non équilibrium} (NESS, non-equilibrium steady state), où les observables prennent des valeurs intermédiaires entre celles de gauche et de droite, mais restent constantes dans le temps. Ce NESS porte un courant de particules ou d’énergie non nul, qui peut être prédit analytiquement à partir des données initiales.
+
+\paragraph{Expressions analytiques et cas particuliers.}
+Dans certains cas, comme pour des modèles à une seule espèce de quasi-particules (ex. modèle de gaz libre ou modèle de fermions durs), les expressions pour $\rho_\infty(\xi,\theta)$ peuvent être obtenues explicitement. Par exemple, dans le régime de faibles interactions (limite de gaz de Tonks-Girardeau), on retrouve des résultats similaires à ceux de la théorie des fermions libres, avec une structure en “fenêtre de Fermi mobile”.
+
+Dans les modèles plus complexes (ex. Lieb-Liniger), la solution doit être obtenue numériquement, par itération des équations intégrales impliquant le kernel de diffusion $T(\theta,\theta')$.
+
+\paragraph{Comparaison avec expériences et simulations.}
+La GHD appliquée au problème bipartite a montré une excellente concordance avec les simulations numériques (DMRG, tDMRG) et avec certaines expériences. Notamment :
+\begin{itemize}
+    \item La propagation des fronts de charges observée dans des gaz de bosons unidimensionnels est bien décrite par la solution en $\xi$.
+    \item Les valeurs stationnaires des courants mesurés expérimentalement sont reproduites par la GHD à partir des GGEs initiaux.
+\end{itemize}
+Ces succès renforcent l’idée que la GHD, bien que dérivée dans une limite d’échelle, capture fidèlement la dynamique réelle des systèmes intégrables.
+
+\paragraph{Conclusion.}
+Le problème bipartite constitue un test décisif de la validité de la GHD : il combine la présence d’un gradient brutal, de structures non linéaires et d’un régime asymptotique riche. La capacité de la GHD à prédire analytiquement le comportement du système à long temps, y compris les courants et profils de charges, en fait un cadre hydrodynamique puissant pour la physique hors équilibre des systèmes intégrables. Cette méthode s’étend également à d’autres situations expérimentales, comme l’expansion de gaz ou le transport quantique en géométrie ouverte.
+
+
+\subsection{Expansion d’un gaz 1D}
+{\color{blue}
+\begin{itemize}
+    \item Libération d’un gaz : forme des profils de densité.
+    \item Comparaison avec les données expérimentales ou numériques.
+\end{itemize}
+}
+
+\paragraph{Libération d’un gaz : forme des profils de densité.}
+L’expansion libre d’un gaz unidimensionnel constitue une application paradigmatique de la GHD, illustrant comment une configuration initiale confinée évolue hors équilibre lorsqu’elle est brusquement libérée. Typiquement, on considère un nuage de particules piégé dans un potentiel confiné, par exemple harmonique, qui est soudainement supprimé à l’instant $t=0$. Le gaz se dilate alors dans l’espace, et la dynamique macroscopique est gouvernée par la redistribution des quasi-particules.
+
+La GHD permet de prédire précisément la forme des profils de densité $n(x,t)$ à tout instant, en résolvant l’équation de continuité balistique :
+\[
+\partial_t \rho(x,t,\theta) + \partial_x \bigl( v^{\mathrm{eff}}(x,t,\theta) \rho(x,t,\theta) \bigr) = 0,
+\]
+avec une condition initiale localement thermalisée dans le piège, typiquement un GGE spatialement dépendant. La dynamique entraîne une propagation auto-similaire à grande échelle, où les profils de densité et d’énergie s’étalent en fonction de la variable $\xi = x/t$.
+
+Cette évolution est marquée par la formation de fronts nets, délimités par les vitesses effectives minimales et maximales des quasi-particules. La forme des profils révèle également la redistribution des vitesses, l’échange d’énergie et la transformation locale de l’état GGE.
+
+\paragraph{Caractéristiques particulières et phénomènes observés.}
+L’expansion conduit souvent à une diminution de la densité locale, accompagnée d’une modification du spectre de rapidités $\rho(x,t,\theta)$ : certaines régions de l’espace voient un enrichissement en quasi-particules rapides, tandis que d’autres restent dominées par des quasi-particules lentes.
+
+Cette redistribution est au cœur de la relaxation vers des états hors équilibre généralisés, où chaque point spatial se trouve caractérisé par un GGE local différent de l’état initial.
+
+Un autre phénomène remarquable est la possible formation de structures non linéaires, comme des fronts de rarefaction, et la persistance de profils asymptotiques stables à long temps.
+
+\paragraph{Comparaison avec les données expérimentales et numériques.}
+L’efficacité de la GHD dans ce contexte est largement validée par des comparaisons quantitatives avec des données expérimentales issues des gaz ultra-froids 1D, notamment dans des configurations réalisées avec des atomes froids de Rubidium ou Lithium.
+
+Les profils de densité mesurés par imagerie optique coïncident avec les prédictions de la GHD à des échelles spatiales et temporelles macroscopiques, confirmant ainsi la pertinence de la description balistique.
+
+De plus, des simulations numériques exactes ou quasi-exactes, basées sur des méthodes telles que la matrice densité renormalisée temporelle (tDMRG) ou les techniques Monte Carlo quantiques, confirment la précision des solutions GHD, même en présence d’interactions fortes.
+
+Ces validations expérimentales et numériques confèrent à la GHD un rôle central dans l’interprétation et la prédiction des dynamiques hors équilibre dans les gaz quantiques confinés.
+
+\paragraph{Perspectives et extensions.}
+L’étude de l’expansion libre ouvre la voie à l’analyse d’autres phénomènes hors équilibre, tels que la propagation de perturbations locales, la réponse à des quenches rapides, ou l’impact de potentiels externes variés.
+
+La prise en compte des corrections diffusive et des effets de fluctuations thermiques constitue un axe de recherche actif, visant à étendre la validité de la GHD dans les régimes plus complexes observés expérimentalement.
+
+\paragraph{Conclusion.}
+L’expansion d’un gaz 1D illustre avec clarté la puissance prédictive de la GHD. En reliant la microscopie intégrable aux profils macroscopiques observables, elle permet de décrire quantitativement la dynamique hors équilibre de systèmes quantiques réels. La concordance entre théorie, simulations et expériences renforce la place centrale de la GHD comme cadre unificateur de la dynamique des gaz quantiques unidimensionnels.
+
+
+\subsection{Autres systèmes}
+{\color{blue}
+\begin{itemize}
+    \item Chaîne XXZ.
+    \item Modèles classiques intégrables (Toda, etc.).
+\end{itemize}
+}
+
+
+\paragraph{La chaîne XXZ.}
+La chaîne de spins XXZ constitue un modèle quantique intégrable fondamental, largement étudié en physique statistique et en physique de la matière condensée. Son intégrabilité repose sur la solution exacte via le Bethe Ansatz, qui permet d’identifier un spectre infini de charges conservées et de quasi-particules associées.
+
+L’application de la GHD à la chaîne XXZ a permis d’explorer la dynamique hors équilibre dans ce système discret, notamment dans des configurations de jonction bipartite, quenches globaux, ou transport de spin et d’énergie. La description hydrodynamique généralisée fournit un cadre puissant pour calculer les profils locaux de densité de spin, les courants de transport, ainsi que les phénomènes de relaxation.
+
+De nombreux résultats ont confirmé que la GHD capture fidèlement les dynamiques, notamment en comparant avec des simulations numériques par DMRG temporel. Des extensions récentes ont également intégré des corrections diffusive pour décrire la dissipation subtile présente dans ce système, permettant de mieux comprendre la transition entre transport ballistique et diffusion.
+
+Ainsi, la chaîne XXZ constitue un laboratoire théorique privilégié où la GHD relie les propriétés microscopiques exactes à des prédictions macroscopiques quantitatives, enrichissant la compréhension des systèmes quantiques intégrables à plusieurs degrés de liberté.
+
+\paragraph{Modèles classiques intégrables (Toda, etc.).}
+Au-delà des modèles quantiques, la GHD trouve également des applications dans des modèles classiques intégrables, comme la chaîne de Toda. Ce système de particules couplées avec interaction exponentielle est un exemple archetypal de système intégrable classique, possédant un nombre infini de charges conservées et des solutions exactes en termes d’ondes solitaires.
+
+L’hydrodynamique généralisée appliquée à ces modèles classiques permet de décrire la dynamique collective des ondes et des excitations, en traduisant la propagation des solitons en termes de distributions de quasi-particules classiques. L’équation de continuité généralisée et les vitesses effectives ont alors une interprétation directe en termes de propriétés des ondes solitaires.
+
+Des études récentes ont montré que la GHD classique capture également la formation de structures non linéaires, la propagation balistique des ondes, ainsi que l’apparition de corrections diffusives dues aux interactions entre solitons. Cette approche a ouvert un pont entre la théorie de l’intégrabilité classique et les descriptions hydrodynamiques modernes.
+
+Par ailleurs, la comparaison entre modèles classiques et quantiques via la GHD permet d’identifier des mécanismes universels dans la dynamique hors équilibre, et de mieux comprendre le rôle de la quantification sur la nature des excitations et leur transport.
+
+\paragraph{Conclusion.}
+La généralité de la GHD dépasse largement le cadre des gaz quantiques unidimensionnels. Son application à la chaîne XXZ et aux modèles classiques intégrables confirme sa portée universelle comme cadre hydrodynamique unifié des systèmes intégrables. Ces applications diverses enrichissent notre compréhension des phénomènes hors équilibre, mettant en lumière les mécanismes fondamentaux du transport, de la relaxation et des fluctuations dans une grande variété de contextes physiques.
+
+
+\subsection*{Conclusion.}
+Les applications présentées dans cette section confirment la pertinence et la puissance de la GHD pour modéliser la dynamique hors équilibre de systèmes intégrables.
+
+Dans le problème bipartite, la GHD permet de déterminer analytiquement les profils stationnaires et les courants de charges, souvent en accord avec des simulations numériques exactes ou des résultats issus de l’holographie thermodynamique. Lors de l’expansion d’un gaz, la théorie rend compte avec précision de la forme des profils de densité et de leur structure auto-similaire, en lien direct avec les expériences menées dans les gaz ultra-froids. Enfin, l’applicabilité de la GHD à des modèles intégrables variés (quantum ou classiques) témoigne de sa portée universelle.
+
+Ces résultats suggèrent que la GHD ne constitue pas seulement une avancée théorique, mais également un cadre opérationnel, permettant d’analyser, de prédire et d’interpréter les données expérimentales dans un large éventail de contextes physiques. Elle offre ainsi une interface naturelle entre intégrabilité théorique, simulations numériques et expériences de physique quantique hors équilibre.
+
+\section{Aspects mathématiques}
+
+\subsection*{Introduction.}
+L’hydrodynamique généralisée (GHD), bien que née d’un formalisme physique, s’inscrit profondément dans un cadre mathématique riche et structurant. Cette section vise à éclairer les fondements mathématiques sous-jacents à la GHD, en s’intéressant à sa structure Hamiltonienne, à ses liens et différences avec l’hydrodynamique classique, ainsi qu’aux avancées récentes dans la rigueur des démonstrations.
+
+La formulation de la GHD repose sur des équations de conservation généralisées dotées d’une structure de Poisson non triviale, reflétant la nature intégrable des modèles sous-jacents. Cette approche ouvre la voie à une interprétation géométrique potentielle, reliant la GHD à des espaces de phases infinis et à des structures symplectiques généralisées.
+
+Par ailleurs, la comparaison avec les systèmes classiques comme les équations d’Euler ou de Navier-Stokes permet de mettre en lumière l’unicité et la richesse des équations intégrables qui gouvernent la GHD, tout en soulignant les spécificités liées aux nombreuses charges conservées.
+
+Enfin, les progrès récents dans la démonstration rigoureuse des résultats de la GHD, portés notamment par des travaux de Doyon, Bertini et leurs collaborateurs, témoignent de la maturation rapide de ce domaine à l’interface entre physique mathématique et analyse.
+
+
+\subsection{Structure Hamiltonienne}
+{\color{blue}
+\begin{itemize}
+    \item Forme de Poisson.
+    \item Interprétation géométrique éventuelle.
+\end{itemize}
+}
+
+
+\paragraph{Forme de Poisson.}
+L’une des caractéristiques remarquables de l’hydrodynamique généralisée (GHD) est qu’elle s’inscrit naturellement dans un cadre Hamiltonien infini-dimensionnel, où les équations de mouvement peuvent être formulées à partir d’une structure de Poisson adaptée.
+
+Concrètement, la distribution des quasi-particules $\rho(x,\theta)$, qui dépend de la position spatiale $x$ et de la rapidité $\theta$, peut être vue comme une variable de champ évoluant selon des équations de conservation généralisées. La dynamique est alors gouvernée par une forme de Poisson $\{ \cdot, \cdot \}$ définie sur l’espace fonctionnel des distributions $\rho(x,\theta)$.
+
+Cette structure de Poisson générale est non triviale : elle reflète la présence d’un nombre infini de charges conservées et implique que les équations de GHD sont intégrables au sens Hamiltonien. En particulier, on peut écrire l’évolution temporelle d’un observable fonctionnelle $\mathcal{F}[\rho]$ sous la forme :
+\[
+\partial_t \rho(x,\theta) = \{ \rho(x,\theta), \mathcal{H}[\rho] \},
+\]
+où $\mathcal{H}[\rho]$ est un Hamiltonien fonctionnel lié à l’énergie du système.
+
+La forme exacte de cette structure de Poisson a été explicitée dans divers travaux récents. Elle généralise la structure classique de Poisson utilisée en hydrodynamique classique, mais intègre la dépendance en rapidité, ainsi que le couplage entre modes via le kernel d’interaction. Cette forme de Poisson non locale est compatible avec les équations de continuité généralisées de la GHD, et assure la conservation des charges infinies.
+
+\paragraph{Interprétation géométrique éventuelle.}
+D’un point de vue géométrique, cette structure Hamiltonienne invite à considérer l’espace des distributions $\rho(x,\theta)$ comme une variété infinie-dimensionnelle munie d’une structure symplectique généralisée.
+
+Dans ce cadre, la dynamique GHD apparaît comme un flot Hamiltonien sur cet espace, où les variables de phase sont les densités de quasi-particules et leurs conjugées. Cette interprétation ouvre la porte à l’utilisation d’outils géométriques puissants issus de la géométrie symplectique et de la géométrie Poisson, tels que les algèbres de Lie infinis-dimensionnelles, les variétés de Poisson et les groupes de transformations canoniques.
+
+Une piste prometteuse est de relier cette géométrie à celle des espaces de modules d’états GGE, ou aux espaces de phases associés aux équations intégrables classiques. On peut imaginer que la GHD constitue une version hydrodynamique de telles structures, étendant la géométrie intégrable à un cadre continu et à une échelle macroscopique.
+
+Ce point de vue géométrique reste encore en grande partie conjectural et fait l’objet d’investigations actuelles. Il pourrait fournir un cadre conceptuel unifiant reliant intégrabilité, géométrie et dynamique hors équilibre.
+
+\paragraph{Conclusion.}
+La reconnaissance d’une structure Hamiltonienne sous-jacente à la GHD confère à cette théorie une rigueur et une élégance mathématique significatives. La forme de Poisson adaptée aux distributions de quasi-particules permet de comprendre la nature intégrable de la dynamique hydrodynamique généralisée.
+
+L’interprétation géométrique éventuelle, bien que encore en développement, offre des perspectives stimulantes pour relier la GHD à des concepts plus larges en géométrie mathématique et physique mathématique, et pourrait permettre d’étendre la portée de la GHD à d’autres domaines et modèles.
+
+
+\subsection{Comparaison avec hydrodynamique classique}
+{\color{blue}
+\begin{itemize}
+    \item Lois de conservation classiques (Euler, Navier-Stokes).
+    \item Nature intégrable des équations de GHD.
+\end{itemize}
+}
+
+
+\paragraph{Lois de conservation classiques (Euler, Navier-Stokes).}
+L’hydrodynamique classique, notamment dans ses formulations d’Euler ou de Navier-Stokes, repose sur un ensemble de lois de conservation fondamentales portant sur des grandeurs macroscopiques telles que la masse, la quantité de mouvement et l’énergie. Ces équations prennent la forme de systèmes hyperboliques ou parabolique de PDEs (équations aux dérivées partielles) qui gouvernent l’évolution des champs de densité, vitesse et pression dans un fluide classique.
+
+Les équations d’Euler, par exemple, expriment la conservation locale de la masse et de la quantité de mouvement dans un fluide idéal sans viscosité, alors que les équations de Navier-Stokes intègrent des termes dissipatifs représentant la viscosité et la diffusion de la quantité de mouvement. Ces descriptions classiques reposent sur un nombre fini de variables d’état, généralement limitées à trois grandeurs macroscopiques par point spatial.
+
+\paragraph{Nature intégrable des équations de GHD.}
+En revanche, la GHD traite des systèmes intégrables caractérisés par l’existence d’un nombre infini de charges conservées. Cette richesse en conservations transforme profondément la nature des équations hydrodynamiques : au lieu d’un système fini de PDEs classiques, on obtient un système infini-dimensionnel, où la densité des quasi-particules $\rho(x,t,\theta)$ joue le rôle de variable d’état fonctionnelle.
+
+Les équations de GHD sont donc des équations de continuité généralisées pour une famille continue de charges, paramétrées par la rapidité $\theta$. Cette structure complexe permet à la GHD de capturer la dynamique microscopique intégrable, notamment la coexistence simultanée de nombreuses modes propagatives avec des vitesses effectives dépendantes des densités locales.
+
+Cette nature intégrable confère aux équations de GHD une structure mathématique riche, notamment la possibilité d’être formulées dans un cadre Hamiltonien infini-dimensionnel (cf. section précédente), ainsi qu’une hiérarchie de solutions exactes et stables à long temps.
+
+De plus, contrairement aux équations classiques souvent caractérisées par la présence de dissipation (viscosité), les équations balistiques de la GHD décrivent une dynamique essentiellement conservative et cohérente, sans mécanismes de dissipation intrinsèques à l’ordre dominant. Les corrections diffusive apparaissent en tant que termes subdominants, résultant des fluctuations microscopiques.
+
+\paragraph{Conséquences physiques et mathématiques.}
+Cette comparaison souligne que la GHD constitue une extension non triviale de l’hydrodynamique classique, adaptée aux systèmes où l’intégrabilité gouverne la dynamique. Elle permet de modéliser des phénomènes hors équilibre avec une précision inaccessible aux cadres classiques, en intégrant l’impact des charges conservées multiples sur le transport et la relaxation.
+
+D’un point de vue mathématique, cela signifie que les outils d’analyse et de résolution doivent être adaptés à un cadre infini-dimensionnel et souvent non linéaire, avec des solutions présentant des propriétés de stabilité et d’intégrabilité non rencontrées en hydrodynamique classique.
+
+\paragraph{Conclusion.}
+La comparaison entre GHD et hydrodynamique classique met en lumière la singularité des systèmes intégrables hors équilibre. La GHD généralise les principes fondamentaux de conservation tout en incorporant la complexité liée aux charges infinies, donnant naissance à des équations hydrodynamiques à la fois riches et robustes.
+
+Cette perspective éclaire les différences fondamentales entre la dynamique des fluides classiques et celle des gaz quantiques intégrables, et pose les bases d’une compréhension approfondie des phénomènes hors équilibre dans des contextes où la notion d’intégrabilité joue un rôle central.
+
+
+\subsection{Perspectives rigoureuses}
+{\color{blue}
+\begin{itemize}
+    \item État de l’art des preuves mathématiques.
+    \item Résultats récents (Doyon, Bertini, etc.).
+\end{itemize}
+}
+
+\paragraph{État de l’art des preuves mathématiques.}
+L’hydrodynamique généralisée, bien que solidement établie sur des bases physiques et numériques, pose encore de nombreux défis en termes de rigueur mathématique. L’objet principal d’étude est un système infini-dimensionnel d’équations aux dérivées partielles non linéaires, gouvernant l’évolution des distributions de quasi-particules dans des systèmes intégrables.
+
+Jusqu’à récemment, la plupart des résultats concernant la GHD reposaient sur des arguments formels, des calculs issus du Bethe Ansatz thermodynamique (TBA), ou des comparaisons numériques. La preuve rigoureuse que la GHD décrit bien la limite hydrodynamique d’un grand nombre de particules dans un système quantique intégrable reste un défi majeur.
+
+Les principales difficultés proviennent de la complexité combinatoire des quasi-particules, de la nature non locale et non linéaire des équations, ainsi que de la gestion des fluctuations microscopiques et de l’extension des résultats aux régimes hors équilibre.
+
+\paragraph{Résultats récents (Doyon, Bertini, etc.).}
+Des progrès significatifs ont toutefois été réalisés ces dernières années grâce aux travaux de plusieurs chercheurs, parmi lesquels Benjamin Doyon, Lorenzo Bertini, et leurs collaborateurs, qui ont entrepris de poser la GHD sur des bases mathématiques plus solides.
+
+Ces avancées comprennent :
+\begin{itemize}
+    \item La démonstration de la convergence vers les équations de GHD dans certaines limites semi-classiques ou thermodynamiques, notamment pour des modèles simplifiés ou dans des régimes de faible couplage.
+    \item La caractérisation précise des états locaux généralisés (local GGEs) et la preuve de leur stabilité dynamique dans certains cas.
+    \item L’étude rigoureuse des corrections diffusive et des fluctuations, en reliant la GHD à des théories de grande déviation et à la théorie des processus stochastiques.
+    \item La mise en place de cadres mathématiques adaptés (espaces fonctionnels, structures de Poisson, etc.) permettant de formuler et d’étudier la dynamique GHD avec rigueur.
+\end{itemize}
+
+Ces résultats renforcent la confiance dans la validité de la GHD au-delà des arguments heuristiques, tout en ouvrant la voie à une théorie hydrodynamique intégrable pleinement rigoureuse.
+
+\paragraph{Perspectives futures.}
+Le programme rigoureux autour de la GHD reste cependant largement ouvert. Les défis majeurs incluent :
+\begin{itemize}
+    \item L’extension des preuves à des modèles quantiques généraux avec interactions fortes.
+    \item La compréhension fine des effets de dissipation, fluctuations, et corrections hors échelle de temps hydrodynamique.
+    \item L’étude des couplages avec des environnements ouverts, et des phénomènes de décohérence dans ce cadre.
+    \item L’élaboration d’une théorie unifiée reliant GHD, théorie des champs conformes hors équilibre et systèmes intégrables classiques.
+\end{itemize}
+
+Ces questions constituent un champ de recherche dynamique à la croisée de la physique mathématique, de l’analyse fonctionnelle et de la théorie des systèmes dynamiques intégrables.
+
+\paragraph{Conclusion.}
+Les avancées récentes en mathématiques rigoureuses confirment que la GHD, au-delà de son succès heuristique et expérimental, est susceptible d’être solidement ancrée dans un cadre formel rigoureux. Ces développements enrichissent non seulement la compréhension fondamentale de la dynamique hors équilibre dans les systèmes intégrables, mais ils ouvrent aussi la voie à de nouvelles méthodes analytiques, à l’étude des fluctuations et des phénomènes critiques, et à la généralisation de la théorie à des contextes plus larges.
+
+
+\subsection*{Conclusion.}
+La GHD constitue un pont fascinant entre physique et mathématiques, enrichissant les deux domaines. Sa structure Hamiltonienne dévoile une géométrie sous-jacente complexe qui étend les notions classiques de symplectique à des espaces fonctionnels infinis. Comparée à l’hydrodynamique classique, elle révèle des équations intégrables avec une richesse inédite liée à l’existence de charges conservées infinies.
+
+Les avancées récentes en mathématiques rigoureuses, bien que souvent limitées à des cas particuliers ou à des approximations, renforcent la solidité de la GHD et ouvrent des perspectives passionnantes, tant pour la preuve de résultats fondamentaux que pour l’étude des fluctuations et des corrections diffusive.
+
+Ainsi, cette section met en lumière la profonde structure mathématique qui sous-tend la GHD et invite à poursuivre son étude dans un cadre rigoureux et formel, pour consolider son rôle central dans la compréhension des systèmes quantiques hors équilibre.
+
+\section*{Conclusion}
+{\color{blue}
+\begin{itemize}
+    \item Résumé du rôle de la GHD dans les systèmes intégrables.
+    \item Connexions avec les expériences de gaz quantiques.
+    \item Perspectives : diffusion, chaos, hydrodynamique quantique stochastique.
+\end{itemize}
+}
+
+\paragraph{Résumé du rôle de la GHD dans les systèmes intégrables.}
+L’hydrodynamique généralisée (GHD) s’est imposée comme un cadre théorique puissant et unificateur pour décrire la dynamique hors équilibre des systèmes intégrables unidimensionnels. En étendant les principes classiques de l’hydrodynamique aux cas où un nombre infini de charges conservées intervient, la GHD capture la complexité des interactions microscopiques à travers des équations macroscopiques cohérentes. Elle relie ainsi la microscopie quantique intégrable à des phénomènes macroscopiques observables, offrant une compréhension approfondie des processus de transport, de relaxation et de formation d’états stationnaires non équilibres.
+
+\paragraph{Connexions avec les expériences de gaz quantiques.}
+Les prédictions de la GHD ont trouvé un écho remarquable dans les expériences récentes sur les gaz quantiques unidimensionnels d’atomes ultra-froids, où les conditions de quasi-intégrabilité sont réunies. La capacité de la GHD à prédire avec précision l’évolution des profils de densité, les courants d’énergie et les distributions locales dans ces systèmes a confirmé son rôle de théorie effective hors équilibre. Cette concordance expérimentale, couplée à des simulations numériques avancées, souligne la pertinence pratique de la GHD et son potentiel pour guider les futures explorations expérimentales dans la physique des gaz quantiques.
+
+\paragraph{Perspectives : diffusion, chaos, hydrodynamique quantique stochastique.}
+Malgré ses succès, la GHD classique telle qu’elle a été formulée ne rend pas encore pleinement compte des phénomènes diffusive et chaotiques présents dans les systèmes réels. Les corrections diffusive à la dynamique balistique, ainsi que les effets de fluctuations et de désordre, constituent des domaines d’étude en plein essor, conduisant à la notion de GHD diffusive et à des formulations stochastiques de l’hydrodynamique quantique. Ces extensions promettent de mieux comprendre la transition entre régimes intégrables et non intégrables, le rôle du chaos quantique et l’émergence d’une hydrodynamique plus complète. Elles ouvrent ainsi des perspectives passionnantes pour la compréhension des systèmes quantiques hors équilibre dans toute leur complexité.
+
+\paragraph{Conclusion finale.}
+En résumé, la GHD représente un progrès majeur dans la théorie des systèmes intégrables hors équilibre, mêlant rigueur mathématique, pertinence physique et validité expérimentale. Son développement continu, notamment à travers l’intégration des corrections diffusive et des phénomènes stochastiques, promet d’élargir encore son champ d’application, consolidant sa place au cœur de la physique mathématique moderne.
+
+
+%\appendix
+\section*{Annexes}
+{\color{blue}
+\begin{itemize}
+    \item Calculs détaillés de $v^{\mathrm{eff}}$.
+    \item Rappels sur le Bethe Ansatz thermodynamique.
+    \item Formulation intégrale des équations GHD.
+\end{itemize}
+}
+
+
+\paragraph{Calculs détaillés de la vitesse effective $v^{\mathrm{eff}}$.}
+Cette annexe présente le calcul complet de la vitesse effective des quasi-particules, $v^{\mathrm{eff}}(\theta)$, à partir des équations intégrales auto-cohérentes issues du Bethe Ansatz thermodynamique (TBA). Nous détaillons la résolution de l’équation de type Fredholm qui définit $v^{\mathrm{eff}}$ en fonction de la distribution des pseudo-particules $\rho(\theta)$ et du kernel d’interaction $T(\theta,\theta')$. Les différentes étapes, notamment la linearisation des équations, les propriétés symétriques du kernel, ainsi que les méthodes numériques utilisées pour leur résolution, sont exposées ici pour assurer une compréhension complète et rigoureuse.
+
+\paragraph{Rappels sur le Bethe Ansatz thermodynamique.}
+Cette section rappelle les fondements du Bethe Ansatz thermodynamique, qui constitue la pierre angulaire de la description microscopique des systèmes intégrables étudiés. On y présente la notion de rapidités, les équations quantiques de Bethe en régime thermodynamique, ainsi que les définitions des densités de pseudo-particules $\rho(\theta)$ et des trous $\rho^h(\theta)$. Les relations fondamentales liant ces quantités, ainsi que les fonctions d’énergie et de momentum, sont rappelées avec les notations utilisées dans le corps du texte, afin d’assurer une référence claire pour le lecteur.
+
+\paragraph{Formulation intégrale des équations GHD.}
+Enfin, cette annexe explicite la forme intégrale des équations de l’hydrodynamique généralisée. Nous montrons comment les équations de continuité pour la distribution $\rho(x,t,\theta)$ peuvent être formulées sous forme d’équations intégrales en espace des rapidités, faisant intervenir le kernel $T(\theta,\theta')$ et la vitesse effective. Cette formulation est particulièrement utile pour l’analyse analytique et numérique, et permet de relier directement la GHD aux équations TBA. Des exemples concrets et des cas particuliers sont également présentés pour illustrer l’efficacité de cette approche.
+
+\paragraph{Conclusion des annexes.}
+Ces annexes fournissent les bases techniques nécessaires à la compréhension approfondie de la GHD et de ses fondements microscopiques. Elles constituent un support essentiel pour le lecteur souhaitant approfondir les calculs sous-jacents et maîtriser les outils mathématiques qui accompagnent cette théorie innovante.
+

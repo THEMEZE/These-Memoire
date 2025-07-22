@@ -1,0 +1,255 @@
+%\newcommand{\ket}[1]{\left|#1\right\rangle}
+%\newcommand{\bra}[1]{\left\langle#1\right|}
+%\newcommand{\mean}[1]{\left\langle#1\right\rangle}
+%\newcommand{\dd}{\mathrm{d}}
+
+% Activer \frontmatter, \mainmatter et \appendix pour la classe report
+%\newcommand{\frontmatter}{%
+%  \pagenumbering{roman}%
+%  \setcounter{page}{1}%
+%  \renewcommand{\chaptermark}[1]{\markboth{##1}{}}
+%  \renewcommand{\sectionmark}[1]{\markright{##1}}
+%}
+%
+%\newcommand{\mainmatter}{%
+%  \pagenumbering{arabic}%
+%  \setcounter{page}{1}
+%}
+
+
+% \appendix est déjà défini dans report, inutile de le redéfinir
+
+
+% Figures flottantes:
+% fraction maximale d'une page pouvant etre occupe par une figure:
+\renewcommand{\topfraction}{0.8}
+% fraction minimale d'une page reservee pour le texte:
+\renewcommand{\textfraction}{0.2}
+% fraction minimale d'occupation de la page par une figure pleine page:
+\renewcommand{\floatpagefraction}{0.7}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%         D\'ecoupage des mots           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hyphenation{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%  Th\'eor\`emes, d\'efinitions, etc.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Il y a diffÃérents types d'ÃénoncÃés qui mÃéritent un environnement spÃécifique, voici une liste assez exhaustive.
+\theoremstyle{plain}
+    \newtheorem{Theo}{Th\'eor\`eme}[section] %compteur commenÃÂ§ant par le numÃéro de la section (on pourrait aussi faire commencer par le numÃéro de la sous-section - remplacer "section" par "subsection")
+    \newtheorem{Prop}[Theo]{Proposition}        %mÃême compteur que pour les thÃéorÃèmes
+    \newtheorem{Prob}[Theo]{Probl\`eme}        %idem
+    \newtheorem{Lemm}[Theo]{Lemme}            %etc...
+    \newtheorem{Coro}[Theo]{Corollaire}
+    \newtheorem{Propr}[Theo]{Propri\'et\'e}
+    \newtheorem{Conj}[Theo]{ Conjecture}
+    \newtheorem{Aff}[Theo]{Affirmation}
+
+    \newtheorem{TheoPrinc}{Th\'eor\`eme}     %compteur spÃécifique pour les thÃéorÃèmes les plus importants du papier
+        
+\theoremstyle{definition}
+    \newtheorem{Defi}[Theo]{D\'efinition}
+    \newtheorem{Exem}[Theo]{Exemple}
+    \newtheorem{Nota}[Theo]{\Large Notation}
+
+\theoremstyle{remark}
+    \newtheorem{Rema}[Theo]{Remarque}
+    \newtheorem{NB}[Theo]{N.B.}
+    \newtheorem{Comm}[Theo]{Commentaire}
+    \newtheorem{question}[Theo]{$\ast$ Question}
+    \newtheorem{exer}[Theo]{Exercice}
+    \newtheorem{Consequence}[Theo]{Conséquence}
+    \newtheorem{Rap}[Theo]{Rappel}
+    \newtheorem*{Merci}{Remerciements}
+
+\mdfdefinestyle{propstyle}{%
+linecolor=black,linewidth=2pt,%
+hidealllines=true,
+frametitlerule=true,%
+frametitlebackgroundcolor=gray!20,
+backgroundcolor=gray!10!white,
+roundcorner=5pt,
+innertopmargin=\topskip,
+}
+
+%\mdtheorem[style=propstyle]{prop}{Property}[chapter]
+\mdtheorem[style=propstyle]{lemma}[prop]{Lemma}
+\mdtheorem[style=propstyle]{TheoPrinc}{Th\'eor\`eme}[chapter]
+
+% Définition d'un style personnalisé pour les Affirmations
+\mdfdefinestyle{affirmestyle}{%
+    linecolor=gray, % Couleur de la bordure
+    linewidth=1pt, % Épaisseur de la bordure
+    backgroundcolor=gray!10, % Couleur de fond (gris clair)
+    roundcorner=5pt, % Coins arrondis
+    innertopmargin=0pt, % Marge intérieure au-dessus du cadre
+    innerbottommargin=10pt, % Marge intérieure en-dessous du cadre
+    innerleftmargin=10pt, % Marge intérieure à gauche
+    innerrightmargin=10pt, % Marge intérieure à droite
+    skipabove=10pt, % Espace au-dessus du cadre
+    skipbelow=10pt % Espace en-dessous du cadre
+}
+
+% Définition de l'environnement Affirmation
+\theoremstyle{definition} % Style de théorème pour les affirmations
+\newmdtheoremenv[style=affirmestyle]{aff}{Point clé n$^{\circ}$} % Environnement Affirmation avec le style personnalisé
+    
+\newcommand\dangersign[1]{%
+    \renewcommand\stacktype{L}%
+    \scaleto{\stackon[1.3pt]{\color{red}$\triangle$}{\tiny !}}{#1}%
+}
+
+\tikzset{every picture/.style={execute at begin picture={\shorthandoff{:;!?};}}}
+\tikzstyle{every picture}+=[remember picture]
+\tikzstyle{na} = [shape=rectangle,inner sep=0pt]
+
+% Commandes pour les flèches textuelles
+\newcommand{\ptFleche}[2]{        % Déclaration d'une extrémité de flèche
+    \tikz[baseline=(#1.base)]\node[na](#1){#2};
+  }
+%\newcommand{\Fleche}[5][thick]{    % Dessin de la flèche
+%    \begin{tikzpicture}[overlay]
+%        \path[->,#1](#2) edge [out=#4, in=#5] (#3);
+%    \end{tikzpicture}
+%  }
+  
+% \newcommand{\Flecheprim}[5][thick]{    % Dessin de la flèche
+%    \begin{tikzpicture}[overlay]
+%        \path[->,#1](#2) edge [out=#4, in=#5] (#3);
+%    \end{tikzpicture}
+%  }
+%
+
+\definecolor{linkcolor}{RGB}{0,0,180}
+\PassOptionsToPackage{
+    colorlinks=true,
+    linkcolor=linkcolor,
+    citecolor=linkcolor,
+    urlcolor=linkcolor
+}{hyperref}
+
+% Appliquer la couleur à tous les niveaux de titre
+\titleformat{\section}{\normalfont\color{linkcolor!90!black}\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\color{linkcolor!70!black}\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont\color{linkcolor!50!black}\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}[runin]{\normalfont\color{linkcolor!30!black}\bfseries}{\theparagraph}{1em}{}
+\titleformat{\subparagraph}[runin]{\normalfont\color{linkcolor!10!black}\itshape}{\thesubparagraph}{1em}{}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%%Couleurs dans la table des matières
+
+% Modifier la couleur des entrées de la TOC
+\renewcommand{\cftsecfont}{\color{linkcolor!90!black}}
+\renewcommand{\cftsubsecfont}{\color{linkcolor!70!black}}
+\renewcommand{\cftsubsubsecfont}{\color{linkcolor!50!black}}
+\renewcommand{\cftparafont}{\color{linkcolor!30!black}}
+\renewcommand{\cftsubparafont}{\color{linkcolor!10!black}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Reglages:
+%
+%\pagestyle{fancyplain}
+%\addtolength{\headwidth}{\marginparsep}
+%\addtolength{\headwidth}{\marginparwidth}
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+%\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+%\lhead[\fancyplain{}{\bfseries\thepage}]{}
+%\rhead[]{\fancyplain{}{\bfseries\thepage}}
+%\chead[\fancyplain{}{\bfseries\leftmark}]{\fancyplain{}{\bfseries\rightmark}}
+%\cfoot{}
+%
+
+%usepackage{titlesec}
+% Changer la couleur des paragraphes en rouge par exemple :
+%\titleformat{\paragraph}[runin] % ou [block] selon ce que tu veux
+%  {\normalfont\color{red}\bfseries}
+%  {\theparagraph}{1em}{}
+
+%%% ===== Index principal + index secondaire (noms propres) =====
+\makeindex[intoc=true]
+\makeindex[name=pers, title=Index des noms propres, intoc=true]
+
+%%% ===== Couleur des liens =====
+\definecolor{linkcolor}{RGB}{0,0,180}
+\PassOptionsToPackage{
+    colorlinks=true,
+    linkcolor=linkcolor,
+    citecolor=linkcolor,
+    urlcolor=linkcolor
+}{hyperref}
+\usepackage{hyperref}
+
+%%% ===== Réglages hyperref =====
+\hypersetup{
+  pdftitle={Étude de la dynamique hors équilibre de bosons unidimensionnels},
+  pdfsubject={Quantum Physics},
+  pdfauthor={Guillaume THEMEZE <guillaume.themeze@gmail.fr>},
+  pdfkeywords={LaTeX, quantum, bosons, dynamique},
+  colorlinks=true
+}
+
+%%% ===== Style des titres (colorés) =====
+\titleformat{\chapter}[display]{\normalfont\sffamily\huge\bfseries\color{black}}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titleformat{\section}{\normalfont\color{linkcolor!90!black}\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\color{linkcolor!70!black}\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont\color{linkcolor!50!black}\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}[runin]{\normalfont\color{linkcolor!30!black}\bfseries}{\theparagraph}{1em}{}
+\titleformat{\subparagraph}[runin]{\normalfont\color{linkcolor!10!black}\itshape}{\thesubparagraph}{1em}{}
+
+%%% ===== Couleurs de la table des matières =====
+\renewcommand{\cftsecfont}{\color{linkcolor!90!black}}
+\renewcommand{\cftsubsecfont}{\color{linkcolor!70!black}}
+\renewcommand{\cftsubsubsecfont}{\color{linkcolor!50!black}}
+\renewcommand{\cftparafont}{\color{linkcolor!30!black}}
+\renewcommand{\cftsubparafont}{\color{linkcolor!10!black}}
+
+%%% ===== En-têtes et pieds de page =====
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{14pt}
+
+\fancyhead[RO,LE]{\thepage}
+\fancyhead[LO]{\scshape \nouppercase{\rightmark}}  % Section
+\fancyhead[RE]{\scshape \nouppercase{\leftmark}}  % Chapitre
+\renewcommand{\headrulewidth}{.4pt}
+
+
+\newdateformat{mydate}{\THEDAY~\monthname[\THEMONTH]~\THEYEAR}
+\newdateformat{mydatetime}{\THEDAY~\monthname[\THEMONTH]~\THEYEAR~à~\currenttime}
+
+%\DTMsetstyle{french} % ou autre style
+%\DTMsetup{showtimezone=false}
+
+\fancyfoot[L]{Thèse}
+%\fancyfoot[R]{Paris, \mydatetime\today{} -- Période 2022--2025}
+\fancyfoot[R]{Paris, \DTMnow -- Période 2022--2025}
+%\fancyfoot[R]{Paris, le \DTMdate\today{} à \DTMcurrenttime -- Période 2022--2025}
+\renewcommand{\footrulewidth}{.4pt}
+
+% Supprimer les numéros sur la première page de chaque chapitre
+\makeatletter
+\let\ps@plain=\ps@empty
+\makeatother
+
+%%% ===== Réglages des titres de sections dans les en-têtes =====
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+%%% ===== Notes de bas de page à la française =====
+\usepackage[french]{babel}
+%\usepackage[frenchfootnotes]{french}
+%\FrenchFootnotes
+%\AddThinSpaceBeforeFootnotes
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\operatorvec}[1]{\vec{{\bm{#1}}}} % pour les operateur
+\newcommand{\operator}[1]{\hat{\bm{#1}}} % pour les operaeur vecteur
+\newcommand{\operatormat}[1]{\operatorname{#1}} % pour les operaeur vecteur
+\newcommand{\operatortilde}[1]{\tilde{\bm{#1}}} % pour les opetateur avec un tilde
+\newcommand{\operatortildevec}[1]{\tilde{\bm{#1}}}% pour les opetateur avec un tilde et vecteur
+\newcommand{\dfonc}[1]{\mathscr{D}_{[#1]}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

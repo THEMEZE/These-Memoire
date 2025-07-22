@@ -1,0 +1,1225 @@
+\chapter{Modèle de Lieb-Liniger et approche Bethe Ansatz}
+\minitoc
+
+\section*{Introduction}
+
+Dans ce chapitre, nous introduisons progressivement le modèle de Lieb-Liniger et l'Ansatz de Bethe, outils fondamentaux pour décrire un gaz de bosons unidimensionnel avec interactions delta. L'objectif est d'accompagner pas à pas le lecteur depuis la formulation du problème quantique en champ de bosons jusqu'aux solutions exactes obtenues par l'Ansatz de Bethe.
+
+Nous commençons par écrire l'équation du champ de bosons, exprimée à l’aide des opérateurs de création et d’annihilation en représentation de position. Pour des raisons pédagogiques, nous abordons d’abord le cas d’une seule particule, sans interaction. Cela permet d’introduire naturellement les états de position et leur évolution sous l’action du Hamiltonien libre.
+
+Ensuite, nous étudions le cas de deux particules, cette fois en tenant compte de l’interaction locale. Cela nous amène à considérer les états de position dans le cas général, y compris lorsque les deux particules peuvent occuper la même position. Cette situation, bien plus subtile qu’il n’y paraît, met en évidence la complexité introduite par l’interaction, et justifie que l’on commence par analyser les configurations où les particules sont à des positions distinctes.
+
+Dans le référentiel du centre de masse, le problème à deux corps avec interaction devient équivalent à un problème à une seule particule en interaction avec une barrière delta au centre. Cette reformulation permet d’interpréter l’effet de l’interaction comme une condition de raccord sur la fonction d’onde, tout en respectant la symétrie bosonique.
+
+Nous revenons ensuite aux coordonnées du laboratoire afin d’introduire naturellement la forme des solutions imposée par l’Ansatz de Bethe. Cela nous conduit aux équations dites de Bethe, qui relient les quasimoments des particules à travers des conditions de périodicité modifiées par l’interaction.
+
+Une fois les notations bien établies, nous généralisons le raisonnement au cas de \(N\) particules, pour obtenir l’Hamiltonien de Lieb-Liniger complet ainsi que la forme générale de l’Ansatz de Bethe. Les solutions ainsi construites permettent non seulement de déterminer le spectre de l’Hamiltonien, mais aussi de calculer des observables physiques importantes, telles que l’impulsion totale ou le nombre de particules.
+
+Enfin, nous introduisons la notion de distribution de rapidité, outil essentiel dans l’étude des états d’énergie minimale (états fondamentaux) et dans la description thermodynamique du système. Ce cadre servira de base aux développements ultérieurs sur les gaz intégrables à température finie et les états stationnaires après quench quantique.
+
+\section{Description du modèle de Lieb-Liniger}
+
+\subsection{Introduction au modèle de gaz de Bose unidimensionnel et Hamiltonien du modèle}
+
+\subsubsection{De la première à la seconde quantification}
+
+\paragraph{Introduction.}
+
+La mécanique quantique se développe historiquement en deux grandes étapes : la \emph{première quantification}, aussi appelée quantification canonique, et la \emph{seconde quantification}. Comprendre ces deux cadres est essentiel pour aborder les systèmes quantiques complexes, en particulier ceux où le nombre de particules peut varier.
+
+%La mécanique quantique s’est historiquement développée en deux étapes : la \emph{première quantification}, aussi appelée quantification canonique, puis la \emph{seconde quantification}. Comprendre ces deux cadres est essentiel pour aborder les systèmes à nombre de particules variable.
+
+
+%\vspace{0.5cm}
+
+\paragraph{Première quantification (quantification canonique , particule unique).}
+
+La première quantification est la mécanique quantique standard, celle que vous avez rencontrée dès vos premiers cours. Elle consiste à quantifier un système classique décrit par des variables dynamiques telles que la position $x$ et la quantité de mouvement $p$. On procède en remplaçant ces variables par des {\bf opérateurs hermitiens} $\operator{x}$ et $\operator{p} \doteq -i\hbar \partial_x $, où $\hbar$ est la constante de Planck réduite, satisfaisant la {\bf relation de commutation canonique} fondamentale $[\operator{x}, \operator{p}] = i\hbar$. L’état du système est alors décrit par une {\bf fonction d’onde} $\psi(x,t)$, solution de {\bf l’équation de  Schrödinger} indépendante du nombre de particules :
+
+%La première quantification est celle de la mécanique quantique standard, où l'on associe aux variables classiques (position $x$ et impulsion $p$) des opérateurs hermitiens $\operator{x}$ et $\operator{p} \doteq -i\hbar \partial_x$, satisfaisant la relation de commutation canonique :
+
+%La première quantification est la mécanique quantique standard, celle introduite dès les premiers cours. Elle consiste à associer à un système classique des opérateurs hermitiens $\hat{x}$ et $\hat{p} \doteq -i\hbar \partial_x$, satisfaisant la relation de commutation canonique $[\hat{x}, \hat{p}] = i\hbar$. L’état du système est décrit par une fonction d’onde $\varphi(x,t)$, solution de l’équation de Schrödinger :
+
+
+
+
+\begin{eqnarray}
+\quad i \hbar \frac{\partial \psi }{\partial t}  &= \operator{\mathcal{H}} \psi,\label{chap.1.rapel.1}
+\end{eqnarray}
+
+avec $\operator{\mathcal{H}}$ l’opérateur hamiltonien. 
+
+%\subparagraph{Exemple : particule libre en une dimension.} Pour une particule libre de masse $m$ en une dimension, l’hamiltonien inclut typiquement une énergie cinétique (ie $\operator{\mathcal{H}}_1=\operator{p}^2/2m$ ). En régime stationnaire,  $i \hbar \partial_t \varphi = \varepsilon \varphi $ avec $\varepsilon$ l'énergie du système .Les solutions admissibles  sont alors des ondes planes, combinaition linairais de $e^{i k x}$ et $e^{-i k x}$, où $k$ est le nombre d'onde et l'energie associer est $\varepsilon = (\hbar k)^2/(2m)$. Si la particule est confinée dans une boîte unidimensionnelle de longueur $L$, avec des conditions aux limites périodiques (ie  alors $\varphi(x+L) = \varphi(z)$). Ce qui implique que  $k$ est quantifié ($k \in \frac{2\pi}L \mathbb{Z}$). Ce problème est donc équivalent à celui d’une particule libre sur un cercle de périmètre $L$. Pour la suite on rappelle l'hamiltonient $\operator{\mathcal{H}}_1$ , l'équation de shrôdingeur stationnaire , les solution de la donction d'onde et l'implication de periodicité sur le nombre d'onde 
+%\begin{eqnarray}
+%	\operator{\mathcal{H}}_1=-\frac{\hbar^2}{2m} \partial_x^2 ;~ - \frac{\hbar^2}{2 m} \partial_x^2 \varphi_{\{k\}}  =  \varepsilon(k) \varphi_{\{k\}}; ~\varphi_{\{k\}}(x) = ae^{i k x} + be^{-i k x},~ (a,b) \in \mathbb{C}^2, ~	k \in \frac{2\pi}{L} \mathbb{Z}
+%\end{eqnarray}
+%$k$ etant un mode de la solution on indice les fonction d'onde avec $k$.
+
+%Ces solutions correspondent à des {\bf états non liés} (ou états de diffusion) : la particule est délocalisée sur tout l’espace (le cercle), sans structure particulière.
+
+\begin{mdframed}[
+	linewidth=0.5pt, 
+	backgroundcolor=gray!5, 
+	roundcorner=50pt,	
+	innerleftmargin=5pt,
+    innerrightmargin=5pt,
+    innertopmargin=-10pt,
+    innerbottommargin=2pt,
+    leftmargin=2pt,
+    rightmargin=2pt
+	]
+\subparagraph{Exemple : particule libre en une boite à une dimension.} Pour une particule libre de masse $m$ en une dimension, l’hamiltonien est purement cinétique : $\operator{\mathcal{H}}_1 = \hat{p}^2 / 2m$. Les états propres stationnaires dépendant du temps sont de la forme $\psi_k(x,t) = \varphi_k(x)\,e^{-i\varepsilon(k)t/\hbar}$ où $\varphi_k(x)$ est une fonction propre de l’hamiltonien, solution de \eqref{chap.1.rapel.1} soit de  l’équation stationnaire  $\operator{\mathcal{H}}_1\varphi_k = \varepsilon(k)\varphi_k$ avec $\varepsilon(k) = \hbar^2 k^2 / (2m)$ l’énergie associée à une onde plane de nombre d’onde $k$ . Les fonctions propres spatiales $\varphi_k(x)$ de l’hamiltonien libre s’écrivent comme des combinaisons linéaires d’ondes planes  $\varphi_k(x) = a e^{i k x} + b e^{-i k x}$ avec $(a,b) \in \mathbb{C}^2$.
+Si la particule est confinée dans une boîte de longueur $L$ avec des conditions aux limites périodiques (ie $\varphi_k(x+L) = \varphi_k(x)$), alors le spectre de $k$ est quantifié : $k \in \frac{2\pi}{L} \mathbb{Z}$. Les solutions générales de l’équation de Schrödinger s’écrivent alors comme une superposition d’états propres  $\psi = \sum_k c_k \psi_k $.  Le problème est équivalent à celui d’une particule libre sur un cercle de périmètre $L$.
+
+On résume :
+\begin{eqnarray}
+	\operator{\mathcal{H}}_1 = -\frac{\hbar^2}{2m} \partial_x^2,~~-\frac{\hbar^2}{2m} \partial_x^2 \varphi_k = \varepsilon(k) \varphi_k,~~ \varepsilon(k) = \frac{\hbar^2 k^2 }{2 m}, ~~\varphi_k(x) = a e^{-i k x} + b e^{i k x},~~ kL \in 2\pi\mathbb{Z}.\label{chap.1.recap}
+\end{eqnarray}
+\end{mdframed}
+
+Ces solutions correspondent à des {\bf états non liés} (ou états de diffusion) : la particule est délocalisée sur tout l’espace (le cercle), sans structure particulière.
+
+La fonction $\varphi_k(x)$ est supposée normalisée dans l’espace des états quantifiés (boîte finie) :
+\(
+\int_0^L dx \, \varphi_{k'}^\ast(x)\, \varphi_k(x) = \delta_{k,\pm k'}.
+\)
+avec  $ \vert a \vert^2 + \vert b \vert^2 = L^{-1}$.
+Et dans le sous espace engendré pas $x \mapsto e^{-ikx}$ et $x \mapsto e^{ikx}$ (de deux dimension si $k \neq 0$ et une dimension si $k$ =0), $x \mapsto \pm ( b^\ast e^{-ikx} - a^\ast e^{ikx} )$ est orthogonale à  $\varphi_k$ pour $k \neq 0$.
+\begin{mdframed}[
+	linewidth=0.5pt, 
+	backgroundcolor=gray!5, 
+	roundcorner=50pt,	
+	innerleftmargin=5pt,
+    innerrightmargin=5pt,
+    innertopmargin=-10pt,
+    innerbottommargin=2pt,
+    leftmargin=2pt,
+    rightmargin=2pt
+	]
+\subparagraph{Remarque.} On choisie  \( a = \frac{1}{\sqrt{L}} \) et \( b = 0 \)), alors
+\(
+\varphi_k(x) = \frac{1}{\sqrt{L}}\, e^{i k x}
+\)
+est une onde plane. 
+
+\end{mdframed}
+
+Avec le formalisme de Dirac, la fonction d’onde $\varphi_k$ est représentée par le ket $\ket{k}$ normé (i.e. $\langle k' \vert k \rangle = \delta_{k, k'}$, où $\delta_{p,q}$ est le symbole de Kronecker)
+, et l’équation de Schrödinger s’écrit :
+\(
+\operator{\mathcal{H}}_1 \ket{k} = \varepsilon(k) \ket{k}.
+\)
+En appliquant le bra $\bra{x}$ de part et d’autre, on obtient :
+\(
+\bra{x} \operator{\mathcal{H}}_1 \ket{k} = \varepsilon(k) \langle x \vert k \rangle,
+\)
+où $\varphi_k(x) = \langle x \vert k \rangle$ est la représentation positionnelle de l’état $\ket{k}$.
+
+
+
+%\begin{mdframed}[
+%	linewidth=0.5pt, 
+%	backgroundcolor=gray!5, 
+%	roundcorner=50pt,	
+%	innerleftmargin=5pt,
+%    innerrightmargin=5pt,
+%    innertopmargin=-10pt,
+%    innerbottommargin=2pt,
+%    leftmargin=2pt,
+%    rightmargin=2pt
+%	]
+%\subparagraph{Remarque.} Si l’on choisit une base orthonormée d’états propres (par exemple en fixant \( a = \frac{1}{\sqrt{L}}, b = 0 \)), alors
+%\(
+%\varphi_k(x) = \frac{1}{\sqrt{L}}\, e^{i k x}, \quad \text{et donc} \quad \langle k \vert x \rangle = \varphi_k^\ast(x) = \frac{1}{\sqrt{L}}\, e^{-i k x},
+%\)
+%ce qui est bien une onde plane. 
+%En revanche, dans l’écriture générale \( \varphi_k(x) = a\, e^{i k x} + b\, e^{-i k x} \), la fonction \( \langle k \vert x \rangle = \varphi_k^\ast(x) \) n’est \emph{pas nécessairement} une onde plane, car \( \varphi_k(x) \) n’est pas normalisée.
+%\end{mdframed}
+
+\begin{mdframed}[
+	linewidth=0.5pt, 
+	backgroundcolor=gray!5, 
+	roundcorner=50pt,	
+	innerleftmargin=5pt,
+    innerrightmargin=5pt,
+    innertopmargin=1pt,
+    innerbottommargin=2pt,
+    leftmargin=2pt,
+    rightmargin=2pt
+	]
+La base $\{\ket{x}\}$ étant continue, et les états $\{\ket{k}\}$ quantifiés (par exemple dans une boîte de taille finie avec conditions aux limites périodiques), les relations de changement de base s’écrivent :
+\begin{eqnarray}
+	\ket{k} = \int dx \, \varphi_k(x) \ket{x}, \qquad   
+	\ket{x} = \sum_k \varphi_k^\ast(x) \ket{k},
+\end{eqnarray}
+avec $\varphi_k^\ast(x) = \langle k \vert x \rangle$. L’état $\ket{x}$ est relié aux états $\ket{k}$ par une transformation de Fourier discrète. Ces formules montrent que les états $\ket{k}$ sont les composantes de Fourier de l’état $\ket{x}$.
+\end{mdframed}
+
+
+
+
+
+
+\subparagraph{De la particule unique aux systèmes à $N$ particules.}
+
+Pour un système composé de $N$ particules identiques, une approche naturelle consiste à introduire une fonction d’onde $\varphi(x_1, \dots, x_N)$ dépendant de $N$ variables , symétrique pour des bosons ou antisymétrique pour des fermions sous l’échange de deux coordonnées $x_i \leftrightarrow x_j$, solution de l’équation de Schrödinger à $N$ corps. %Dans le cas bosonique, des interactions à courte portée peuvent être modélisées par un potentiel de type Dirac :
+
+%\begin{equation}
+%V_{\text{int}}(x_1, \dots, x_N) = g \sum_{i<j} \delta(x_i - x_j),
+%\end{equation}
+
+%où $g$ est un paramètre d’interaction contrôlant l’intensité des collisions. 
+Toutefois, cette description devient rapidement inextricable lorsque le nombre de particules augmente, ou lorsque le système permet la création et l’annihilation de particules, comme dans un milieu ouvert ou en contact avec un bain thermique.
+
+
+
+
+
+%{\color{blue} \paragraph{Seconde quantification.}
+%
+%%Dans ce formalisme, l’espace des états est une **somme directe d’espaces à $N$ particules**, et chaque état est décrit par son occupation des modes quantiques. Les opérateurs $\hat{a}_k^\dagger$ et $\hat{a}_k$ créent et détruisent une particule dans l’état d’onde plane de moment $k$, satisfaisant les relations de commutation (bosons) ou d’anticommutation (fermions) :
+%%\begin{equation}
+%%[\hat{a}_k, \hat{a}_{k'}^\dagger] = \delta_{k,k'} \quad \text{(bosons)}.
+%%\end{equation}
+%
+%%L’hamiltonien d’un gaz de particules libres s’écrit alors simplement :
+%%\begin{equation}
+%%\hat{\mathcal{H}} = \sum_k \varepsilon(k) \, \hat{a}_k^\dagger \hat{a}_k,
+%%\end{equation}
+%%avec $\varepsilon(k) = \frac{\hbar^2 k^2}{2m}$ comme dans la quantification canonique.
+%
+%\paragraph{Vers le Bethe ansatz.}
+%
+%Ce formalisme devient particulièrement utile lorsque des interactions entre particules sont introduites. Dans le cas d’un **gaz de bosons en une dimension avec interactions de contact**, le système reste exactement soluble : la solution repose sur une **superposition cohérente d’ondes planes symétrisées**, ajustées par les conditions d’interaction.
+%
+%C’est l’idée fondamentale du **Bethe ansatz**, qui généralise la solution d’une particule libre sur un cercle à $N$ particules **avec collisions élastiques**. On y retrouve des relations de quantification du type :
+%\begin{equation}
+%k_j L + \sum_{\substack{\ell=1 \\ \ell \neq j}}^N \theta(k_j - k_\ell) = 2\pi n_j,
+%\end{equation}
+%où $\theta$ est une phase de diffusion et les $n_j \in \mathbb{Z}$.
+%
+%On passe ainsi des conditions de périodicité simples à des **conditions de type Bethe**, qui encodent les effets des interactions sous forme de **conditions de compatibilité entre les moments**.
+%
+%}
+
+\subsubsection{Seconde quantification}
+
+Pour dépasser ces limitations, on adopte le \textbf{formalisme de la seconde quantification}, dans lequel l’état du système est décrit non plus par une fonction d’onde mais par un vecteur dans un espace de Fock. Les opérateurs de création et d’annihilation remplacent alors les variables dynamiques classiques et permettent une description unifiée et élégante des systèmes à nombre variable de particules.
+
+%\paragraph{Structure de l’espace des états de Fock.}
+%Dans ce formalisme, l’espace des états est une {\bf somme directe d’espaces à $N$ particules}, et chaque état est décrit par l’occupation des différents modes quantiques. Les opérateurs $\operator{a}_k^\dagger$ et $\operator{a}_k^{}$ créent et annihilent une particule dans l’état d’onde plane de moment $k$ :
+%\begin{eqnarray*}
+%	\ket{k} & = & \operator{a}_k^\dagger \ket{\emptyset} ~=~ \text{état avec une particule dans le mode } k,	
+%\end{eqnarray*}
+%où \(\ket{\emptyset}\) est le vide quantique de Fock, défini par :
+%\begin{eqnarray}
+%	\forall k \in \mathbb{R}\colon \qquad \operator{a}_k \ket{\emptyset} = 0 ,\quad  \langle \emptyset\vert \emptyset \rangle = 1, \label{chap:eq.vide.fock.k}
+%\end{eqnarray}
+%où \( \operator{a}_\lambda \) peut ici estre une notation générique désignant \( \operator{b}_\lambda \) pour les bosons, ou \( \operator{c}_\lambda \) pour les fermions,
+%et satisfaisant les relations de commutation (pour les bosons) ou d’anticommutation (pour les fermions). Dans ce qui suit, nous nous restreignons au cas bosonique. \subparagraph{Relations de commutation bosoniques.} Les relations de commutation bosoniques fondamentales sont alors :
+%\begin{eqnarray}
+%[\operator{a}_k^{}, \operator{a}_{k'}^{}]= [\operator{a}_k^\dagger, \operator{a}_{k'}^\dagger]= 0 ,\qquad [\operator{a}_k^{}, \operator{a}_{k'}^\dagger] = \operator{\delta}_{k,k'},\label{chap:1:com.1.k}
+%\end{eqnarray}
+%où $\operator{\delta}_{k,k'}$ est le symbole de Kronecker, qui vaut $1$ si $k = k'$ et $0$ sinon.\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Structure de l’espace des états de Fock.}
+Dans ce formalisme, l’espace des états est une {\bf somme directe d’espaces à $N$ particules}, et chaque état est décrit par l’occupation des différents modes quantiques. Les opérateurs $\operator{a}_k^\dagger$ et $\operator{a}_k$ créent et annihilent une particule dans l’état d’onde plane de moment $k$ :
+\begin{eqnarray*}
+	\ket{k} & = & \operator{a}_k^\dagger \ket{\emptyset} ~=~ \text{état avec une particule dans le mode } k,	
+\end{eqnarray*}
+où \(\ket{\emptyset}\) désigne le vide quantique de Fock, défini par :
+\begin{eqnarray}
+	\forall k \in \mathbb{R}\colon \qquad \operator{a}_k \ket{\emptyset} = 0 ,\quad  \langle \emptyset \vert \emptyset \rangle = 1. \label{chap:eq.vide.fock.k}
+\end{eqnarray}
+Le symbole \( \operator{a}_\lambda \) représente ici de manière générique soit l’opérateur \( \operator{b}_\lambda \) pour les bosons, soit \( \operator{c}_\lambda \) pour les fermions, et satisfait respectivement les relations de commutation (pour les bosons) ou d’anticommutation (pour les fermions). Dans ce qui suit, nous nous restreignons au cas bosonique.
+
+\subparagraph{Relations de commutation bosoniques.} Les relations de commutation fondamentales pour les bosons sont :
+\begin{eqnarray}
+	[\operator{b}_k, \operator{b}_{k'}] = [\operator{b}_k^\dagger, \operator{b}_{k'}^\dagger] = 0 ,\qquad [\operator{b}_k, \operator{b}_{k'}^\dagger] = \operator{\delta}_{k,k'}, \label{chap:1:com.1.k}
+\end{eqnarray}
+où $\operator{\delta}_{k,k'}$ est le symbole de Kronecker, valant $1$ si $k = k'$ et $0$ sinon.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\vspace{1em}
+\paragraph{Nature du champ quantique.}
+La seconde quantification généralise ce cadre en permettant de traiter des systèmes où le nombre de particules n’est pas fixé, ce qui est fréquent en physique des particules, des champs quantiques, ou des gaz quantiques.
+
+L’idée principale est de ne plus quantifier directement les particules, mais le \emph{champ quantique} associé. Les états d’une particule unique deviennent alors des états d’occupation dans un espace de Fock, qui décrit l’ensemble des configurations possibles avec zéro, une, ou plusieurs particules.
+
+
+
+\subparagraph{Champs de Bose.}
+Le gaz de Bose unidimensionnel est décrit dans le cadre de la théorie quantique des champs par un champ bosonique canonique \( \operator{\Psi}(x) \), qui agit sur l’espace de Fock des états du système. Ce champ quantique encode l’annihilation d’une particule en \( x \), et son adjoint \( \operator{\Psi}^\dag(x) \) correspond à la création d’une particule en ce point. 
+\begin{eqnarray}
+	\vert x \rangle  & = & \operator{\Psi}^\dag (x)\ket{\emptyset} ~=~ \text{état avec une particule en } x,
+\end{eqnarray}
+et \(\ket{\emptyset}\) est le vide quantique de Fock défini par :
+\begin{eqnarray}
+	\forall x \in \mathbb{R}, \qquad \operator{\Psi}(x) \ket{\emptyset} = 0. \label{chap:eq.vide.fock}
+\end{eqnarray}
+
+\subparagraph{Relations de commutation bosoniques.}
+Ces champs satisfont les relations de commutation canoniques à temps égal :
+%\begin{eqnarray}
+%	\left . \begin{array}{rcl}
+%		[ \operator{\Psi}(x),  \operator{\Psi}^\dagger(y) ]  &=&  \operator{\delta}(x - y) \\
+%		\left [ \operator{\Psi}(x),  \operator{\Psi}(y) \right ]   =  [ \operator{\Psi}^\dag(x),  \operator{\Psi}^\dag(y) ]  &=&  0 
+%	\end{array} \right . \label{chap:1:com.1}
+%\end{eqnarray}
+\begin{eqnarray}
+	 [ \operator{\Psi}(x),  \operator{\Psi}(y)  ]   =  [ \operator{\Psi}^\dag(x),  \operator{\Psi}^\dag(y) ]  =  0,   & & [ \operator{\Psi}(x),  \operator{\Psi}^\dagger(y) ]  =  \operator{\delta}(x - y) ,\label{chap:1:com.1}
+\end{eqnarray}
+où $\operator{\delta}(x - y)$ est la fonction delta de Dirac.  
+Ces relations expriment le caractère bosonique des excitations du champ.
+
+\paragraph{État à $N$ particules.} Soient $N$ bosons dans les états $\{ k_1 , \cdots , k_N \}$ (un boson dans l’état $k_1$, un autre dans $k_2$, etc.) et aux positions $\{ x_1 , \cdots , x_N \}$ (un boson en $x_1$, un autre en $x_2$, etc.). Leurs états s’écrivent alors :
+\begin{eqnarray}
+	\ket{ \{ k_1 , \cdots , k_N \}} = \frac{1}{\sqrt{N!}} \operator{b}_{k_1}^\dag\, \cdots \, \operator{b}_{k_N}^\dag \ket{\emptyset}, \quad \ket{\{x_1 , \cdots , x_N\}} = \frac{1}{\sqrt{N!}} \operator{\Psi}^\dag(x_1)\, \cdots \, \operator{\Psi}^\dag(x_N) \ket{\emptyset}	, \label{eq.chap.1.ket.N}
+\end{eqnarray}
+où le facteur \( 1/\sqrt{N!} \) traduit le caractère d’indiscernabilité des bosons et garantit la symétrisation correcte de l’état.
+
+\subparagraph{Changement de base.}
+On peut relier les opérateurs de création/annihilation dans la base des ondes planes aux opérateurs de champ via :
+\begin{eqnarray}
+	\operator{b}_k^\dagger = \int dx \, \varphi_k(x) \operator{\Psi}^\dagger(x), \qquad 
+	\operator{\Psi}^\dagger(x) = \sum_k \varphi_k^\ast(x)\operator{b}_k^\dagger.\label{eq.chap.1.TF.1}
+\end{eqnarray}
+Le champ quantique $\operator{\Psi}(x)$ est relié aux opérateurs de moment $\operator{b}_k$ par une transformation de Fourier. Ces formules montrent que les opérateurs $\operator{b}_{k}$ sont les composantes de Fourier du champ $\operator{\Psi}(x)$.
+
+%où $\varphi_k(x)$ est la fonction d’onde d’un état d’énergie bien définie \( \ket{k} \) dans la représentation positionnelle.
+Ainsi, un état à \(N\) bosons dans la base \( \ket{k}^{\otimes N} \) peut s’écrire :
+\begin{eqnarray}
+	\ket{\{k_1 , \cdots , k_N\}} = \frac{1}{\sqrt{N!}} \int dx_1 \cdots dx_N \, \varphi_{\{k_a\}} ( x_1 , \cdots , x_N ) \, \hat{\Psi}^\dag(x_1) \cdots \hat{\Psi}^\dag(x_N) \ket{\emptyset},
+\end{eqnarray}
+où \( \{k_a\} \equiv \{k_1, \dots, k_N\} \), et la fonction d’onde symétrisée s’écrit :
+\(
+	\varphi_{\{k_a\}} ( x_1 , \cdots , x_N ) = \frac{1}{\sqrt{N!}} \sum_{\sigma \in \operator{S}_N } \prod_{i=1}^N \varphi_{k_{\sigma(i)}}(x_i),
+\) 
+avec $\operator{S}_N $  le groupe symétrique d'ordre $N$ mais aussi :
+\begin{eqnarray}
+	\varphi_{\{k_a\}} ( x_1 , \cdots , x_N ) = \frac{1}{\sqrt{N!}} \bra{\emptyset} \hat{\Psi}(x_1) \cdots \hat{\Psi}(x_N) \ket{\{k_1, \cdots , k_N\}}.
+\end{eqnarray}
+
+
+
+\subsubsection{Operateur. }
+
+
+\paragraph{Opérateur à un corps.}
+
+Soit \( \operator{f} \) un opérateur à une particule, dont les éléments de matrice dans une base orthonormée \( \{ \ket{k} \} \) sont donnés par \( f_{\lambda\nu} = \langle \lambda \vert \operator{f} \vert \nu \rangle \). Un opérateur symétrique à \( N \) particules correspondant à la somme des actions de \( \operator{f} \) sur chacune des particules s’écrit en première configuration  :
+\(
+	\operator{F} = \sum_{i=1}^N \operator{f}^{(i)},
+\)
+où \( \operator{f}^{(i)} \) désigne l’action de \( \operator{f} \) sur la $i^\text{e}$ particule uniquement. En base de Dirac, cela donne :
+\(
+	\operator{f}^{(i)} = \sum_{\lambda, \nu} f_{\lambda\nu} \, \ket{i\!:\!\lambda} \bra{i\!:\!\nu},
+\)
+où \( \ket{i\!:\!\lambda} \) représente un état où seule la $i^\text{e}$ particule est dans l’état \( \lambda \). (Par construction, l’opérateur \( \operator{F} \) commute avec les projecteurs de symétrisation \( \operator{S}_N \) (bosons) et d’antisymétrisation \( \operator{A}_N \) (fermions).)
+On peut montrer que la somme des projecteurs agissant sur chaque particule s’identifie à une combinaison d’opérateurs de création et d’annihilation :
+\(
+	\sum_{i=1}^N \ket{i\!:\!\lambda} \bra{i\!:\!\nu} = \operator{a}^\dagger_\lambda \operator{a}_\nu^{},
+\)
+(où \( \operator{a}_\lambda \) peut ici estre une notation générique désignant \( \operator{b}_\lambda \) pour les bosons, ou \( \operator{c}_\lambda \) pour les fermions).
+
+On en déduit que l’opérateur à un corps \( \operator{F} \) peut se réécrire dans le formalisme de la seconde quantification comme :
+\begin{eqnarray}
+	\operator{F} = \sum_{\lambda, \nu} f_{\lambda\nu} \, \operator{a}^\dagger_\lambda \operator{a}_\nu^{}.
+\end{eqnarray}
+
+
+\subparagraph{Exemples d’opérateurs à un corps.}
+
+Si l’on sait diagonaliser l’opérateur \( \operator{f} \), c’est-à-dire si l’on peut écrire :
+\(
+	\operator{f} = \sum_k f_k \ket{k} \bra{k},
+\)
+alors l’opérateur à $N$ corps associé s’écrit :
+\(
+	\operator{F} = \sum_k f_k \, \operator{a}^\dagger_k \operator{a}_k^{} = \sum_k f_k \, \operator{n}_k,
+\)
+où \( \operator{n}_k = \operator{a}^\dagger_k \operator{a}_k \) est l’opérateur nombre de particules dans le mode \( k \). On obtient ainsi une forme diagonale de \( \operator{F} \) en seconde quantification.
+\begin{mdframed}[linewidth=0.5pt, backgroundcolor=gray!5, roundcorner=5pt]
+Un exemple immédiat est celui des particules libres. Si l’on diagonalise le problème à une particule selon :
+\(
+	\operator{\mathcal{H}}_1 \ket{k} = \varepsilon(k) \ket{k},
+\)
+alors l’énergie totale du système correspond ici uniquement à son énergie cinétique, et s’écrit :
+\begin{equation}
+	\operator{K} = \sum_{k} \varepsilon(k) \, \operator{a}^\dagger_k \operator{a}_k^{}.\label{eq.chap.1.cinietique.1}
+\end{equation}
+
+Et pour $N$ particules, en écrivant l’état sous la forme~\eqref{eq.chap.1.ket.N}, en utilisant les relations de commutation~\eqref{chap:1:com.1.k} et la définition de l’état de Fock~\eqref{chap:eq.vide.fock.k}, on trouve que $\ket{\{k_1, \cdots, k_N\}}$ est un état propre de $\operator{K}$ associé à l'énergie $\left( \sum_{i = 1}^N \varepsilon(k_i) \right)$, c’est-à-dire :
+\begin{eqnarray}
+	\operator{K} \ket{\{k_1, \cdots, k_N\}} = \left( \sum_{i = 1}^N \varepsilon(k_i) \right) \ket{\{k_1, \cdots, k_N\}}.\label{eq.chap.1.cinietique.2}
+\end{eqnarray}
+\end{mdframed}
+
+\paragraph{Forme champ des opérateurs à un corps.}
+
+Les opérateurs à plusieurs corps peuvent être exprimés de manière remarquable à l’aide des opérateurs de champ, d’une façon physiquement transparente qui rappelle les formules bien connues du cas à une particule.
+
+La forme générale d’un opérateur à un corps s’écrit :
+\begin{eqnarray}
+\operator{F} = \int dx \, dx' \, \operator{\Psi}^\dagger(x) \, \bra{ x} \operator{f} \ket{x'} \, \operator{\Psi}(x').
+\end{eqnarray}%où \( \hat{f} \) est l’opérateur à un corps exprimé dans la base position, et \( \hat{\psi}^\dagger(\vec{r}) \), \( \hat{\psi}(\vec{r}) \) sont les opérateurs de création et d’annihilation d’une particule au point \( \vec{r} \).
+\begin{mdframed}[
+	linewidth=0.5pt, 
+	backgroundcolor=gray!5, 
+	roundcorner=50pt,	
+	innerleftmargin=5pt,
+    innerrightmargin=5pt,
+    innertopmargin=-10pt,
+    innerbottommargin=2pt,
+    leftmargin=2pt,
+    rightmargin=2pt
+]
+\subparagraph{Énergie cinétique totale.}
+
+Pour des particules non relativistes, l’énergie cinétique élémentaire s’écrit $\operator{f} = \frac{\hbar^2 \operator{p}^2}{2m}$. À l’échelle du champ quantique, l’énergie cinétique totale prend la forme opératorielle :
+\begin{eqnarray}
+\operator{K} =  -\frac{\hbar^2}{2m} \int dx \, \operator{\Psi}^\dagger(x) \, \operator{\partial}_x^2 \operator{\Psi}(x)
+= \frac{\hbar^2}{2m} \int dx \, \operator{\partial}_x \operator{\Psi}^\dagger(x) \cdot \operator{\partial}_x \operator{\Psi}(x). \label{eq.chap.1.cinietique.3}
+\end{eqnarray}
+
+Le champ quantique $\operator{\Psi}(x)$ est relié aux opérateurs de moment $\operator{b}_k$ par une transformation de Fourier. En injectant l'expression \eqref{eq.chap.1.TF.1} dans \eqref{eq.chap.1.cinietique.3}, on retrouve la forme discrète \eqref{eq.chap.1.cinietique.1}, cette fois exprimée en termes des opérateurs $\operator{b}_k$.
+
+Lorsque cet Hamiltonien agit sur l’état de Fock à $N$ particules $\ket{\{k_1 , \cdots , k_N\}}$, les règles de commutation (\ref{chap:1:com.1}) ainsi que la définition des états de Fock (\ref{chap:eq.vide.fock}) impliquent (cf. Annexe \ref{annex:N.part}) :
+\begin{eqnarray}
+\operator{K}\ket{k_1 , \cdots , k_N } =  \int d^N z \, \operator{\mathcal{K}}_N \, \varphi_{\{k_a\}}(z_1 , \cdots , z_N ) \operator{\Psi}(z_1) \cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}
+\end{eqnarray}
+avec :
+\[
+	\operator{\mathcal{K}}_N = \sum_{i=1}^N \frac{\operator{p}_i^2}{2m},
+\]
+où \( \operator{p}_i \) désigne l’opérateur impulsion de la \( i^\text{ème} \) particule.
+\end{mdframed}
+
+
+
+
+\paragraph{Opérateurs à deux corps}
+
+Nous considérons à présent les termes d’interaction impliquant deux particules , $\operator{v}$ , dont les éléments de matrices sont donnés par $v_{\alpha \beta \gamma \delta} = \bra{ 1 : \alpha; 2 : \beta } \operator{v}\ket{ 1 : \gamma; 2 : \delta }$ , où $\ket{ i : \gamma; j : \delta }$ représente l'état où la $i^\text{e}$  particules est dans l'état $\gamma$ et la $j^\text{e}$ dans l'état $\delta$  . Ceux-ci correspondent à des opérateurs de la forme :
+\(
+    \operator{V} = \sum_{j < i} \operator{v}^{(i, j)} = \frac{1}{2} \sum_{i, j \ne i} \operator{v}^{(i, j)}
+    \label{eq:V2corps}.
+\)
+avec $\operator{v}^{(i, j)}$ désigne l’interaction à deux corps entre les $i^\text{e}$ et $j^\text{e}$ particules , exprimés dans la base à deux états :
+\(
+	\operator{v}^{(i, j)} = \sum_{\alpha,\beta,\delta,\gamma} \ket{i : \alpha; j : \beta }v_{\alpha \beta \gamma \delta} \bra{ i : \gamma; j : \delta }.
+    %v_{\alpha \beta \gamma \delta} = \bra{ i : \alpha; j : \beta } \operator{v}^{(i,j)} \ket{ i : \gamma; j : \delta }.
+    \label{eq:matriceV}
+\)
+On peut réécrire l’opérateur \( \operator{V} \) en termes d’opérateurs de création et d’annihilation comme suit :
+\begin{equation}
+    \operator{V} = \frac{1}{2} \sum_{\alpha, \beta, \gamma, \delta} v_{\alpha \beta \gamma \delta} \, \operator{a}^\dagger_\alpha \operator{a}^\dagger_\beta \operator{a}_\delta^{} \operator{a}_\gamma^{}.
+    \label{eq:Vcreation}
+\end{equation}
+
+Cette forme est particulièrement utile pour le traitement des interactions dans l’espace de Fock, notamment en théorie des champs et en physique des gaz quantiques.
+
+\subparagraph{Expression générale d’un terme à deux corps. }
+
+Un terme d’interaction à deux corps général peut s’écrire :
+\begin{equation}
+    \operator{V} = \frac{1}{2} \int dx_1^{} \, dx_2^{} \, dx_1' \, dx_2' \; 
+    \bra{ 1 : x_1^{}, 2 : x_2^{} } \operator{v} \ket{ 1 : x_1', 2 : x_2' } \,
+    \operator{\Psi}^\dagger(x_1^{}) \, \operator{\Psi}^\dagger(x_2^{}) \, 
+    \operator{\Psi}(x_2') \, \operator{\Psi}(x_1')
+    \label{eq:V_general}
+\end{equation}
+
+\begin{mdframed}[
+	linewidth=0.5pt, 
+	backgroundcolor=gray!5, 
+	roundcorner=50pt,	
+	innerleftmargin=5pt,
+    innerrightmargin=5pt,
+    innertopmargin=-10pt,
+    innerbottommargin=2pt,
+    leftmargin=2pt,
+    rightmargin=2pt
+	]
+\subparagraph{Interactions ponctuelles.} 
+Dans le cas d’une interaction ne dépendant que de la distance relative entre deux particules, cette expression se simplifie :
+\(
+     \operator{V} = \frac{1}{2} \sum_{i, j \ne i}  \operator{v}(x_i^{} - x_j^{}) = 
+    \frac{1}{2} \int dx_1^{} \, dx_2^{} \; v(x_1^{} - x_2^{}) \,
+    \operator{\Psi}^\dagger(x_1^{}) \, \operator{\Psi}^\dagger(x_2^{}) \, 
+    \operator{\Psi}(x_2^{}) \, \operator{\Psi}(x_1^{})
+    \label{eq:V_local}
+\) soit pour des interactions ponctuelles :	
+\begin{eqnarray}
+	\quad \operator{V}  = \frac{g}{2} \int dx \,
+    \operator{\Psi}^\dagger(x) \, \operator{\Psi}^\dagger(x) \, 
+    \operator{\Psi}(x) \, \operator{\Psi}(x)  		
+\end{eqnarray}
+et quand on l'applique à l'état $\ket{\{k_1 , \cdots , k_N\}} $ , les règles de commutations (\ref{chap:1:com.1}) et la définition d'état de Fock (\ref{chap:eq.vide.fock}) impliquent que (cf Annex \ref{annex:N.part})
+\begin{eqnarray}
+\operator{V}\ket{\{k_1 , \cdots , k_N\}} =  \int d^Nz \, \operator{\mathcal{V}}_N \varphi_{\{k_a\}}(z_1 , \cdots , z_N )\operator{\Psi}(z_1)\cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset} 
+\end{eqnarray}
+avec 
+\(
+	\operator{\mathcal{V}}_N 	
+ = g\sum_{1\leq i < j \leq N } \operator{\delta}(x_i - x_j)	
+\)
+où \( g \) est la constante de couplage.
+\end{mdframed}
+
+
+%Le hamiltonien général décrivant des particules identiques en interaction s’écrit alors :
+%\begin{equation}
+%    \hat{H} = \int d\vec{r} \; \hat{\psi}^\dagger(\vec{r}) 
+%    \left( -\frac{\hbar^2}{2m} \Delta + u(\vec{r}) - \mu \right) 
+%    \hat{\psi}(\vec{r})
+%    + \frac{1}{2} \int d\vec{r} \, d\vec{r}' \; v(\vec{r} - \vec{r}') \,
+%    \hat{\psi}^\dagger(\vec{r}') \, \hat{\psi}^\dagger(\vec{r}) \,
+%    \hat{\psi}(\vec{r}) \, \hat{\psi}(\vec{r}')
+%    \label{eq:H_general}
+%\end{equation}
+
+%\noindent
+%Bien que cette expression ait une interprétation physique très claire, il est important de garder à l'esprit que \( \hat{H} \) et \( \hat{\psi} \) sont des objets du formalisme à plusieurs corps.
+
+
+
+%%%%%%%%%%%%%%%%
+%........................
+
+%\subsubsection{Seconde quantification}
+
+
+
+%\paragraph{Hamiltoniens en seconde quantification.}
+%\subparagraph{Terme à un corps.}
+%Un hamiltonien à un corps, correspondant à une énergie cinétique ou un potentiel externe, s’écrit :
+%\[
+%\hat{\mathcal{H}}_1 = \int dx\, \operator{\Psi}^\dagger(x) \hat{h}(x) \operator{\Psi}(x),
+%\]
+%où \( \hat{h}(x) \) est l’opérateur d’un corps (ex. : \( -\frac{\hbar^2}{2m} \partial_x^2 + V(x) \)).
+
+%\subparagraph{Terme à deux corps.}
+%Les interactions entre particules, modélisées par une interaction à deux corps \( V(x - y) \), s’expriment comme :
+%\[
+%\hat{\mathcal{H}}_2 = \frac{1}{2} \int dx\,dy\, \operator{\Psi}^\dagger(x) \operator{\Psi}^\dagger(y) V(x - y) \operator{\Psi}(y) \operator{\Psi}(x).
+%\]
+
+
+%.......................
+
+
+\paragraph{Expression de l’Hamiltonien. }
+L’hamiltonien dans ce formalisme s’écrit en termes des opérateurs de champ, par exemple pour l’énergie cinétique et les interactions ponctuelles avec $\hbar = m = 1 $  :
+
+%Le Hamiltonien du modèle est donné par
+
+%\begin{eqnarray}
+%	\operator{H} & = & \int dx \, \left [ \operator{\partial}_x \operator{\Psi}^\dag (x)\operator{\partial}_x \operator{\Psi}(x) + c \operator{\Psi}^\dag (x) \operator{\Psi}^\dag (x) \operator{\Psi} (x) \operator{\Psi} (x) \right ] \label{chap:1:ham.mod}
+%\end{eqnarray}
+
+\begin{eqnarray}
+	\operator{H} & = & \int dx \, \operator{\Psi}^\dag (x)\left [-\frac{1}{2}\operator{\partial}_x^2 + \frac{g}{2}  \operator{\Psi}^\dag (x) \operator{\Psi} (x) \right ] \operator{\Psi} (x) \label{chap:1:ham.mod}.
+\end{eqnarray}
+
+Quand on l'applique à l'état $\ket{\{\theta_1 , \cdots , \theta_N \}} $, avec $\theta_i$ homogène à des nombres d'onde ou à des vitesse , il vient que %, les règles de commutations (\ref{chap:1:com.1}) et la définition d'état de Fock (\ref{chap:eq.vide.fock}) impliquent que (cf Annex \ref{annex:N.part})
+\begin{eqnarray}
+\operator{H}\ket{\{\theta_1 , \cdots , \theta_N\}} =  \int d^Nz \, \operator{\mathcal{H}}_N \varphi_{\{\theta_a\}}(z_1 , \cdots , z_N )\operator{\Psi}(z_1)\cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset} 
+\end{eqnarray}
+avec 
+\(
+	\operator{\mathcal{H}}_N 	
+ =  \operator{\mathcal{K}}_N  +  \operator{\mathcal{V}}_N .	
+\)
+
+
+%où \( g \) est la constante de couplage. %Dans ce chapitre, nous considérons uniquement les propriétés du système à un instant donné, de sorte que la dépendance temporelle des champs est omise pour alléger l’écriture.
+
+Ce formalisme est ainsi adapté pour décrire des condensats de Bose, des gaz quantiques, ou la création/annihilation de particules dans les champs quantiques.
+
+\paragraph{Équation du mouvement associée.}
+
+L’équation du mouvement du champ \( \Psi(x) \) est obtenue à partir de l’équation de Heisenberg :
+
+\begin{eqnarray}
+	i\operator{\partial}_t	\operator{\Psi} & = & [ \operator{\Psi} , \operator{H} ]
+\end{eqnarray}
+
+ce qui, après évaluation explicite du commutateur (\ref{chap:1:com.1}), conduit à :
+
+
+%\begin{eqnarray}
+%	i \operator{\partial}_t \operator{\Psi}	 & = & - \operator{\partial}_x^2 \operator{\Psi} + 2c \operator{\Psi}^\dag\operator{\Psi} \operator{\Psi}
+%\end{eqnarray}
+
+\begin{eqnarray}
+	i \operator{\partial}_t \operator{\Psi}	 & = & - \frac{1}{2}\operator{\partial}_x^2 \operator{\Psi} + g \operator{\Psi}^\dag\operator{\Psi} \operator{\Psi}
+\end{eqnarray}
+
+est appelée l'équation de \textbf{Schrödinger non linéaire (NS)}.
+
+Pour $g > 0$, l'état fondamental à température nulle est une sphère de Fermi. Seul ce cas sera considéré par la suite.
+
+%\vspace{0.5cm}
+
+\subsubsection*{Conclusion}
+
+La première quantification est la base indispensable qui permet de comprendre le comportement quantique d’un nombre fixé de particules. La seconde quantification en est une extension naturelle, nécessaire pour décrire des systèmes plus complexes où le nombre de particules peut varier. Elle repose sur la quantification des champs, et l’introduction d’opérateurs créant ou détruisant ces particules, ouvrant ainsi la voie à la physique quantique des champs et à de nombreuses applications modernes.
+
+
+\subsection{Opérateurs nombre de particules et moment dans la formulation quantique du gaz de Lieb-Liniger}
+
+Dans cette section, nous nous intéressons aux opérateurs fondamentaux que sont le {\em nombre total de particules} $\operator{Q}$ et le {\em moment total} $\operator{P}$, dans le cadre du gaz de bosons unidimensionnel décrit par l’Hamiltonien de Lieb-Liniger. Après avoir introduit ces opérateurs dans le langage de la seconde quantification, nous montrons qu’ils sont {\em conservés} par la dynamique, et qu’ils admettent les {\em mêmes états propres} que l’Hamiltonien. Nous donnons ensuite leur expression dans la représentation à  $N$ particules, ainsi que la forme explicite de leurs valeurs propres en fonction des {\em rapidités} $\theta_a$ , illustrant la structure polynomiale typique des intégrales du mouvement dans les systèmes intégrables.
+
+\subsubsection{Définition en seconde quantification}
+
+Les opérateurs du nombre total de particules $\operator{Q}$ et du moment total $\operator{P}$ s’écrivent en seconde quantification comme suit :
+\begin{eqnarray}
+	\operator{Q}  =  \int \operator{\Psi}^\dag (x) \operator{\Psi} (x) \, d x, \quad 
+	\operator{P}  =  - \frac{i}2 \int \left \{  \operator{\Psi}^\dag(x) \operator{\partial}_x \operator{\Psi}(x) - \left [ \operator{\partial}_x \operator{\Psi}^\dag(x)\right ] \operator{\Psi}(x)\right \} dx \label{eq.1.7}
+\end{eqnarray}
+Ces deux opérateurs sont {\em hermitiens}, et représentent des observables physiques fondamentales : le nombre de particules et la quantité de mouvement du système.
+
+\subsubsection{Conservation et commutation}
+Ces opérateurs commutent avec l’Hamiltonien $\operator{H}$ du modèle de Lieb-Liniger :
+\begin{eqnarray}
+[ \operator{H} , \operator{Q} ] = 0, \quad [ \operator{H} , \operator{P} ] = 0.
+\end{eqnarray}
+Ils constituent ainsi des intégrales du mouvement. Cette propriété est une manifestation de la symétrie translationnelle du système (pour $\operator{P}$) et de la conservation du nombre total de particules (pour $\operator{Q}$).
+
+\begin{mdframed}[
+	linewidth=0.5pt, 
+	backgroundcolor=gray!5, 
+	roundcorner=50pt,	
+	innerleftmargin=5pt,
+    innerrightmargin=5pt,
+    innertopmargin=5pt,
+    innerbottommargin=2pt,
+    leftmargin=2pt,
+    rightmargin=2pt
+	]
+	Nous verrons au chapitre 2 que cette situation s’étend à une {\bf \em infinité d’intégrales du mouvement} dans les systèmes intégrables, ce qui permettra de construire l’ensemble de Gibbs généralisé (GGE).
+\end{mdframed}
+
+\subsubsection{États propres et valeurs propres}
+Les états propres $\ket{\{\theta_a\}}$, construits dans le cadre de la seconde quantification à partir de la solution du modèle de Lieb-Liniger, sont simultanément fonctions propres des opérateurs $\operator{Q}$, $\operator{P}$ et $\operator{H}$ :
+\begin{eqnarray}
+\operator{Q} \ket{\{\theta_a\}} = N \ket{\{\theta_a\}}, \quad
+\operator{P} \ket{\{\theta_a\}} = \left( \sum_{a=1}^N \theta_a \right) \ket{\{\theta_a\}}, \
+\operator{H} \ket{\{\theta_a\}} = \left( \frac{1}{2} \sum_{a=1}^N \theta_a^2 \right) \ket{\{\theta_a\}}.
+\end{eqnarray}
+Autrement dit, les valeurs propres associées à ces trois opérateurs sont données par :
+\begin{eqnarray}
+N = \sum_{a = 1}^N \theta_a^0, \quad p = \sum_{a = 1}^N \theta_a, \quad e = \frac{1}{2} \sum_{a = 1}^N \theta_a^2.
+\end{eqnarray}
+Cela illustre que les trois premières intégrales du mouvement du système — nombre, moment, énergie — peuvent être exprimées comme des {\bf \em moments successifs} des rapidités.	
+
+\subsubsection{Forme en première quantification}
+En utilisant la représentation en espace de configuration $\{z_a\} \equiv \{z_1 , \cdots , z_N \}$, les opérateurs $\operator{Q}$ et $\operator{P}$ agissent comme suit sur les fonctions d’onde $\varphi_{\{\theta_a\}}(\{z_a\})$ :
+\begin{eqnarray}
+	\operator{Q}\ket{\{\theta_a\}} =  \sqrt{N!}\int d^Nz \, \operator{\mathcal{N}} \varphi_{\{\theta_a\}}(\{z_a\} )\ket{\{z_a\}}, \, \operator{P}\ket{\{\theta_a\}} =  \sqrt{N!}\int d^Nz \, \operator{\mathcal{P}}_N \varphi_{\{\theta_a\}}(\{z_a\} )\ket{\{z_a\}} 
+\end{eqnarray}
+où les opérateurs associés agissant sur les fonctions d’onde à $N$ particules sont :
+\begin{eqnarray}
+	\operator{ \mathcal{N}}  =  \sum_{k = 1}^N 1 = N ,~\operator{ \mathcal{P}}_N  = -i \sum_{k = 1}^N k =- i\sum_{k = 1}^N \operator{\partial}_{z_k}	
+\end{eqnarray}
+
+Ces formes découlent directement des règles de commutation canonique (\ref{chap:1:com.1}) et de la définition des opérateurs en seconde quantification (\ref{chap:eq.vide.fock}) (cf. annexes \ref{annex:N.part}).
+
+\subsubsection{Conclusion}
+Ainsi, les opérateurs $\operator{Q}$ , $\operator{P}$ et $\operator{H}$ possèdent une structure diagonale commune dans la base des états propres $\ket{\{\theta_a\}}$, révélant la nature intégrable du modèle de Lieb-Liniger. Leurs valeurs propres sont respectivement les 0e, 1er et 2e moments des rapidités. Cette structure permet de généraliser la construction à une hiérarchie complète d’observables conservées, qui seront présentées au chapitre suivant.
+
+
+\subsection{Fonction d’onde et Hamiltonien et moment à 2 corps}
+
+%Nous considérons à présent le cas de deux bosons quantiques dans la même boîte unidimensionnelle de longueur \(L\), avec des conditions aux limites périodiques. Contrairement au cas à une particule, le terme d’interaction à contact intervient dans la dynamique. L'hamiltonien à 2 particule s'écrit :
+%En première quantification, en utilisant les coordonnées du centre de masse et relatives $Z = (z_1 + z_2)/2$ et $Y = z_1 - z_2$, il vient que
+%l'hamiltonien (\ref{chap:1:hal.mod.2.part.3}) se divise en une somme de deux problèmes indépendants à une seule particule.
+%Les états propres de l'hamiltonien du centre de masse de masse $\overline{m}= 2$, $-\frac{1}{4} \partial_Z^2$, sont des ondes planes, et l'hamiltonien pour la coordonnée relative $Y$ correspond à celui d'une particule de masse réduite $\tilde{m} = 1/2$ en présence d'un potentiel delta en $Y = 0$. 
+%\paragraph{Introduction au système à deux bosons avec interaction de contact.}
+%Nous considérons à présent le cas de deux bosons quantiques dans une même boîte unidimensionnelle de longueur \(L\), avec des conditions aux limites périodiques. Contrairement au cas à une particule, un terme d’interaction de contact intervient ici dans la dynamique. L’Hamiltonien à deux particules s’écrit :
+%\begin{eqnarray}
+%	\operator{\mathcal{H}}_2  =  \operator{\mathcal{K}}_2 +\operator{\mathcal{V}}_2  & avec & \operator{\mathcal{K}}_2 =   - \frac{1}{2} \partial_{z_1}^2 - \frac{1}{2} \partial_{z_2}^2,  \quad \mbox{et} \quad  \operator{\mathcal{V}}_2  =  	g  \delta(z_1 - z_2). \label{chap:1:hal.mod.2.part.3} 		
+%\end{eqnarray}
+%On rappelle que l'énergies propres de  $\operator{\mathcal{K}}_2$ associées aux fonction d'ondes $\varphi_{\{ \theta_1 , \theta_2 \}}$ , la masse des particule étant égale à 1 (ie $\hbar= m=1$) s'écrit 
+%\begin{eqnarray}
+%	\varepsilon(\theta_1) + 	\varepsilon(\theta_2) & = & \frac{\theta_1^2}{2} + \frac{\theta_2^2}{2} 
+%\end{eqnarray}
+%On vas travailler dans le centre de masse.
+
+%\paragraph{Changement de variables : coordonnées du centre de masse et relatives.}
+ 
+%En première quantification, en introduisant les coordonnées du centre de masse \(Z = \frac{z_1 + z_2}{2}\) et relative \(Y = z_1 - z_2\), on obtient :
+%\(
+%	\partial_{z_1}^2 + \partial_{z_2}^2 = \frac{1}{2} \partial_Z^2 + 	2\partial_Y^2.  
+%\)
+%L’Hamiltonien~\eqref{chap:1:hal.mod.2.part.3} se décompose alors en une somme de deux problèmes indépendants à une seule variable :
+
+%\begin{eqnarray}\label{chap:1:hal.mod.2.part.4}
+%	\operator{\mathcal{H}}_2  =  	-\frac{1}{4} \partial_Z^2 + \operator{\mathcal{H}}_{rel} , \quad \mbox{avec}\quad  \operator{\mathcal{H}}_{rel} =  - 	\partial_Y^2 + g \delta ( Y ). 
+%\end{eqnarray}
+
+%\paragraph{Résolution du problème de centre de masse et de coordonnée relative.}
+
+%Les états propres de l’Hamiltonien associé au centre de masse, \(-\frac{1}{4} \partial_Z^2\), correspondant à une particule de masse totale \(\bar{m} = 2\), sont des ondes planes associés à l'énergie $\overline{\theta}^2$ avec $\overline{\theta} = \frac{ \theta_1 + \theta_2}{2}$. L’Hamiltonien, $\operator{\mathcal{H}}_{rel}$, associé à la coordonnée relative \(Y\) correspond quant à lui à celui d’une particule de masse réduite \(\tilde{m} = \frac{1}{2}\), soumise à un potentiel delta en \(Y = 0\) :
+%\begin{eqnarray}\label{chap:1:hal.mod.2.part.5}
+%	- 	\partial_Y^2 \tilde{\varphi}(Y) + g \delta ( Y )\tilde{\varphi}(Y) & = & \tilde{\varepsilon}\,\tilde{\varphi}(Y),
+%\end{eqnarray}
+%où $\tilde{\varepsilon}$ est l’énergie propre du problème relatif.
+
+%%%%%%
+\paragraph{Introduction au système de deux bosons avec interaction de contact.}
+
+Considérons maintenant un système de deux bosons quantiques confinés dans une boîte unidimensionnelle de longueur \(L\), avec des conditions aux limites périodiques. Contrairement au cas à une seule particule, une interaction de contact intervient ici dans la dynamique. L’Hamiltonien à deux particules s’écrit :
+\begin{eqnarray}
+	\operator{\mathcal{H}}_2 = \operator{\mathcal{K}}_2 + \operator{\mathcal{V}}_2, \quad \text{avec} \quad \operator{\mathcal{K}}_2 = - \frac{1}{2} \partial_{z_1}^2 - \frac{1}{2} \partial_{z_2}^2, \quad \text{et} \quad \operator{\mathcal{V}}_2 = g \, \delta(z_1 - z_2). \label{chap:1:hal.mod.2.part.3}
+\end{eqnarray}
+
+On rappelle que, pour des particules de masse unitaire (i.e., \(\hbar = m = 1\)), les énergies propres de l’opérateur cinétique \(\operator{\mathcal{K}}_2\), associées aux fonctions d’onde symétrisées \(\varphi_{\{ \theta_1 , \theta_2 \}}\), sont données par :
+\begin{eqnarray}
+	\varepsilon(\theta_1) + \varepsilon(\theta_2) = \frac{\theta_1^2}{2} + \frac{\theta_2^2}{2}.
+\end{eqnarray}
+
+Afin de simplifier le problème, nous nous plaçons dans le référentiel du centre de masse.
+
+\paragraph{Changement de variables : coordonnées du centre de masse et relative.}
+
+En première quantification, on introduit les nouvelles variables :
+\(
+Z = \frac{z_1 + z_2}{2} \, \text{(centre de masse)}, \qquad Y = z_1 - z_2 \, \text{(coordonnée relative)}.
+\)
+Dans ce changement de variables, l’opérateur laplacien total devient :
+\(
+\partial_{z_1}^2 + \partial_{z_2}^2 = \frac{1}{2} \partial_Z^2 + 2 \, \partial_Y^2.
+\)
+L’Hamiltonien~\eqref{chap:1:hal.mod.2.part.3} se décompose alors en la somme de deux Hamiltoniens agissant respectivement sur \(Z\) et \(Y\) :
+\begin{eqnarray}\label{chap:1:hal.mod.2.part.4}
+	\operator{\mathcal{H}}_2 = -\frac{1}{4} \partial_Z^2 + \operator{\mathcal{H}}_{\text{rel}}, \qquad \text{avec} \quad \operator{\mathcal{H}}_{\text{rel}} = - \partial_Y^2 + g \, \delta(Y).
+\end{eqnarray}
+
+\paragraph{Résolution du problème du centre de masse et de la coordonnée relative.}
+
+L’Hamiltonien du centre de masse, \(-\frac{1}{4} \partial_Z^2\), décrit une particule de masse totale \(\bar{m} = 2\). Ses états propres sont des ondes planes associées à une énergie \(\overline{\theta}^2\), avec :
+\(
+\overline{\theta} = \frac{\theta_1 + \theta_2}{2},
+\)
+jouant ici un rôle analogue à celui d’un pseudo-moment associé dans le référentielle de laboratoire.
+Le Hamiltonien relatif, \(\operator{\mathcal{H}}_{\text{rel}}\), correspond quant à lui à une particule de masse réduite \(\tilde{m} = \frac{1}{2}\) soumise à un potentiel delta centré en \(Y = 0\). Son équation propre s’écrit :
+\begin{eqnarray}\label{chap:1:hal.mod.2.part.5}
+	- \partial_Y^2 \, \tilde{\varphi}(Y) + g \, \delta(Y) \, \tilde{\varphi}(Y) = \tilde{\varepsilon} \, \tilde{\varphi}(Y),
+\end{eqnarray}
+où \(\tilde{\varepsilon}\) désigne l’énergie associée au mouvement relatif.
+%%%%%%%%%%%%%%
+
+\paragraph{Forme symétrique de la fonction d'onde pour bosons.}
+Dans le référentiel du centre de masse. Le système est le même que que celuis d'un particules de masse $\tilde{m}= \frac{1}{2}$.
+Le système étant composé de particules bosoniques, on cherche une solution symétrique que l’on écrit sous la forme  :
+\begin{eqnarray}
+	\tilde{\varphi}(Y) ~=~a~e^{i\frac{1}{2} \tilde{\theta} \vert Y \vert } + b~e^{-i\frac{1}{2} \tilde{\theta}\vert Y \vert } ~\propto~  \sin\left( \frac{1}{2} (\tilde{\theta} |Y| + \Phi ) \right). \label{eq:ansatz.boson}
+\end{eqnarray}
+Le paramètre \( \tilde{\theta} = \theta_1 - \theta_2 \) joue ici un rôle analogue à celui d’un pseudo-moment associé à la coordonnée relative,
+est  la phase s'écrit
+\begin{eqnarray}
+	\Phi(\tilde{\theta}) &=& 2 \arctan\left (\frac{1}{i} \frac{a+b}{a-b}\right),	\label{chap:1:dif.mod.2.part.1} 
+\end{eqnarray}
+car \( a\exp(ix)+b\exp(-ix) = 2\sqrt{ab}\sin\left(x+\arctan\left(-i\, \frac{a+b}{a-b}\right)\right) \). Pour $\tilde{\theta}<0$, les termes exponentiels \( \exp(i\tilde{\theta} \vert Y \vert/2 ) \) et \( \exp(-i\tilde{\theta} \vert Y \vert/2 ) \) correspondent aux paires de particules entrantes et sortantes d’un processus de diffusion à deux corps.
+
+
+%En réinjectant l'équation \eqref{eq:ansatz.boson} dans l’équation \eqref{chap:1:hal.mod.2.part.5}, on obtient l’énergie propre du problème réduit $\tilde{\varepsilon}$ associé à l’état lié. Celle-ci prend la forme classique de l’énergie cinétique d’une particule, \( \frac{1}{2} \times \text{masse} \times \text{vitesse}^2 \), la masse réduite du problème étant ici \( \tilde{m} = \frac{1}{2} \), et où \( \tilde{\theta} \) joue un rôle analogue à celui d’une vitesse. On en déduit :
+%\begin{eqnarray}\tilde{\varepsilon}(\tilde{\theta})  & = &  \frac{1}{2} \cdot \tilde{m} \cdot \tilde{\theta}^2 = \frac{1}{2} \cdot \frac{1}{2} \cdot \tilde{\theta}^2 = \frac{\tilde{\theta}^2}{4}.\end{eqnarray}
+%\begin{eqnarray}
+%	\tilde{\varepsilon}(\tilde{\theta})  & = &  \frac{\tilde{\theta}^2}{4}.
+%\end{eqnarray}
+% Il encode la décroissance exponentielle de la fonction d’onde liée dans l’espace relatif, et sa valeur est directement reliée à la profondeur de l’état lié. Une valeur plus grande de \( \tilde{\theta} \) correspond à un état plus fortement lié, c’est-à-dire plus localisé autour de \( Y = 0 \), ce qui reflète une interaction plus attractive entre les deux particules. $\overline{\theta}^2 +  \tilde{\varepsilon}(\tilde{\theta}) = \varepsilon{\theta_1} + \varepsilon{\theta_2}$.
+En réinjectant l’ansatz~\eqref{eq:ansatz.boson} dans l’équation relative
+\eqref{chap:1:hal.mod.2.part.5}, on obtient l’énergie propre
+\(\tilde{\varepsilon}\) du problème réduit.  
+Elle prend la forme cinétique usuelle
+\(\tfrac{1}{2}\times\text{masse}\times\text{vitesse}^{2}\).  
+La masse réduite vaut ici \(\tilde{m}= \frac{1}{2}\) et le paramètre
+\(\tilde{\theta}\) joue le rôle d’une impulsion ; ainsi
+\begin{equation}
+   \tilde{\varepsilon}(\tilde{\theta})
+   \;=\;
+   \frac{1}{2}\,\tilde{m}\,\tilde{\theta}^{2}
+   \;=\;
+   \frac{1}{2}\times\frac{1}{2}\,\tilde{\theta}^{2}
+   \;=\;
+   \frac{\tilde{\theta}^{2}}{4}.
+   \label{eq:energie_relative}
+\end{equation}
+
+Cette énergie gouverne la décroissance exponentielle de la fonction
+d’onde dans la coordonnée relative : plus \(\tilde{\theta}\) est grand,
+plus l’état est localisé autour de \(Y=0\), signe d’une interaction
+attractive plus forte entre les deux bosons.
+
+L’énergie totale se décompose enfin en la somme du mouvement du centre
+de masse et du mouvement relatif :
+\(
+   \overline{\theta}^{2}
+   \;+\;
+   \tilde{\varepsilon}(\tilde{\theta})
+   \;=\;
+   \varepsilon(\theta_{1})
+   \;+\;
+   \varepsilon(\theta_{2}),
+\)
+où \(\overline{\theta}= \tfrac{\theta_{1}+\theta_{2}}{2}\) et
+\(\varepsilon(\theta)=\theta^{2}/2\).
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Condition de discontinuité à cause du potentiel delta.}
+En raison de la présence du potentiel delta centré en $Y = 0$, la dérivée première de la fonction d’onde $\tilde{\varphi}(Y)$ présente une discontinuité en ce point. En effet, le potentiel étant infini en $Y = 0$, la phase $\Phi$ du régime symétrique est déterminée en intégrant l’équation du mouvement autour de la singularité. En intégrant entre $- \epsilon$ et $+ \epsilon$ et en faisant tendre $\epsilon \to 0$, on obtient la condition de saut de la dérivée :
+
+%avec $\Phi$ une phase à déterminer. %\begin{equation}
+%	E = \frac{\tilde{m} \theta^2}{2}.
+%\end{equation}
+
+%La dérivée de la fonction d’onde n’est pas continue en $Y = 0$. Le potentiel étant infini en $Y = 0$, la phase $\Phi$ est obtenue en intégrant l’équation du mouvement entre $- \epsilon$ et $+ \epsilon$ et en faisant tendre $\epsilon$ vers zéro :
+
+
+%En raison de ce potentiel delta, la dérivée première de la fonction d'onde $\varphi(Y)$ doit avoir une discontinuité en $Y = 0$ : 
+
+%{\color{lightgray} 
+%\begin{eqnarray*}
+%	\underset{ \epsilon \to 0 }{\lim} \int_{-\epsilon}^{+\epsilon}  	-\underbrace{\cancel{\frac{1}{4} \partial_Z^2\varphi(Y)}}_{0} - 	\partial_Y^2\varphi(Y) + c \delta ( Y )\varphi(Y) \, dY  & = & \underset{ \epsilon \to 0 }{\lim}  \int_{-\epsilon}^{+\epsilon}  E d Y , \\
+%	\underset{ \epsilon \to 0 }{\lim}  \left [ \varphi'(\epsilon) - \varphi'(-\epsilon) \right ] - c \varphi (  0 ) & =  &  -\underset{ \epsilon \to 0 }{\lim}  \int_{-\epsilon}^{+\epsilon}  E d Y,\\
+%	 \varphi'(0^+) - \varphi'(0^-) - c \varphi (  0 ) & = & 0 .
+%\end{eqnarray*}
+
+
+%}
+
+\begin{eqnarray*}
+	\underset{ \epsilon \to 0 }{\lim} \int_{-\epsilon}^{+\epsilon}  - 	\partial_Y^2\tilde{\varphi}(Y) + g \delta ( Y )\tilde{\varphi}(Y) \, dY  & = & \underset{ \epsilon \to 0 }{\lim}  \int_{-\epsilon}^{+\epsilon}  \tilde{\varepsilon}(\tilde{\theta})d Y ,\\
+	\\
+	\tilde{\varphi}'(0^+) - \tilde{\varphi}'(0^-) - g \tilde{\varphi} (  0 ) & = & 0 .
+\end{eqnarray*}
+
+
+%soit $\tilde{\varphi}'(0^+) - \tilde{\varphi}'(0^-) - c \tilde{\varphi} (  0 )  =  0 $ .
+
+%%%%%%%%%%%%%%%
+\paragraph{Détermination de la phase $\Phi$.}
+Et en évaluant la discontinuité de sa dérivée au point $Y = 0$, on trouve que la phase $\Phi$ satisfait la condition :
+
+%\begin{equation}
+%	\tan\left( \frac{\Phi}{2} \right) = \frac{\tilde{\theta}}{c}.
+%\end{equation}
+
+\begin{eqnarray}\label{chap:1:dif.mod.2.part.2}
+	\Phi(\tilde{\theta}) & = & 2 \arctan (\tilde{\theta}/g) \in [ - \pi , +\pi ].
+\end{eqnarray}
+
+%{\color{red}( à revoir)} Cette relation exprime l’impact de l’interaction delta sur le déphasage de la solution liée. On en déduit que plus le couplage $g$ est fort ($g \to \infty$), plus la phase $\Phi$ se rapproche de $0$, ce qui correspond à une fonction d’onde présentant s'annulant en $Y = 0$. En revanche, dans la limite d’interaction faible ($g \to 0$), la phase $\Phi$ tend vers $\pm \pi$ et la discontinué de la dérivé de la fonction d'onde devient négligeable.
+%Cette relation exprime l’impact de l’interaction de type delta sur le déphasage de la fonction d’onde liée.On en déduit que plus le couplage $g$ est fort ($g \to \infty$), la phase $\Phi$ se rapproche de $0$, ce qui correspond à une fonction d’onde présentant s'annulant en $Y = 0$, à l’image du régime d’imperméabilité totale.
+%À l’inverse, dans la limite d’interaction faible (\( g \to 0 \)), si bien que \( \Phi \) tend vers $\pi$ (ou \( -\pi \), selon le signe de \( \tilde{\theta} \)). Dans ce cas, la discontinuité de la dérivée de la fonction d’onde au point \( Y = 0 \) devient négligeable, ce qui traduit un couplage quasi inexistant entre les deux particules.
+%Cette relation exprime l’impact de l’interaction de type delta sur le déphasage de la fonction d’onde liée. Lorsque le couplage \( g \) devient très fort (\( g \to \infty \)), la fraction \( \tilde{\theta}/g \to 0 \), et la phase \( \Phi(\tilde{\theta}) \to 0 \). Cela correspond à une situation dans laquelle la fonction d’onde est fortement contrainte à s’annuler en \( Y = 0 \), à l’image du régime d’imperméabilité totale.
+%À l’inverse, dans la limite d’interaction faible (\( g \to 0 \)), la fraction \( \tilde{\theta}/g \to \infty \), si bien que \( \Phi(\tilde{\theta}) \to \pi \) (ou \( -\pi \), selon le signe de \( \tilde{\theta} \)). Dans ce cas, la discontinuité de la dérivée de la fonction d’onde au point \( Y = 0 \) devient négligeable, ce qui traduit un couplage quasi inexistant entre les deux particules.
+
+Cette relation exprime l’impact de l’interaction de type delta sur le déphasage de la fonction d’onde liée. On en déduit que plus le couplage \( g \) est fort (\( g \to \infty \)), plus la phase \( \Phi \) se rapproche de zéro. Cela correspond à une fonction d’onde qui s’annule en \( Y = 0 \), caractéristique d’un régime d’imperméabilité totale.
+
+À l’inverse, dans la limite d’une interaction faible (\( g \to 0 \)), la phase \( \Phi \) tend vers \( \pi \) (ou \( -\pi \), selon le signe de \( \tilde{\theta} \)). Dans ce cas, la discontinuité de la dérivée de la fonction d’onde au point \( Y = 0 \) devient négligeable, ce qui traduit une interaction presque absente entre les deux particules.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\paragraph{Phase de diffusion à un corp.}
+%Les équations \eqref{chap:1:dif.mod.2.part.1} et \eqref{chap:1:dif.mod.2.part.2}  et en remarquant que pour $z \in \mathbb{C} \backslash \{ \pm i \} 2\artan(z) = i \ln \left( \frac{ 1 - i z }{1+iz} \right ) $ soit $\exp(2i\arctan(x)) = (1 + ix)/(1 - ix)$ et $\Phi(\tilde{\theta}) = i \ln ( - b/a ) $  donne rapport entre les amplitudes $a$ et $b$ de la fonction d'onde \eqref{eq:ansatz.boson} définit la phase de diffusion / {\em matrice diffusion} $S( \tilde{\theta}) \doteq e^{i\Phi ( \tilde{\theta}  ) }$  :
+
+%\begin{eqnarray}
+%	e^{i\Phi ( \tilde{\theta}  ) } &=& -\frac{a}{b} ~=~\frac{1 +i\tilde{\theta}/g} { 1 - i\tilde{\theta}/g} .\label{chap:1:dif.mod.2.part.3}
+%\end{eqnarray}
+
+\paragraph{Phase de diffusion à deux corps.}
+
+En combinant les équations~\eqref{chap:1:dif.mod.2.part.1} et~\eqref{chap:1:dif.mod.2.part.2} avec l’identité analytique valable pour tout
+\(z \in \mathbb{C}\setminus\{\pm i\}\),
+\(
+2\arctan(z)=i\ln\!\left(\frac{1-iz}{1+iz}\right)
+\Leftrightarrow
+e^{2i\arctan(z)}=\frac{1+iz}{1-iz},
+\)
+on obtient que le rapport des amplitudes \(a\) et \(b\) de la fonction
+d’onde relative~\eqref{eq:ansatz.boson} définit la {\em phase de diffusion }
+\(
+\Phi(\tilde{\theta}) = i\ln\!\left(-\frac{b}{a}\right).
+\)
+On introduit alors la {\em matrice de diffusion} (ou facteur de diffusion)
+\begin{eqnarray}
+	S(\tilde{\theta}) \;\doteq\; e^{i\Phi(\tilde{\theta})}= -\frac{a}{b}= \frac{1 + i\,\tilde{\theta}/g}{1 - i\,\tilde{\theta}/g}.%\tag{\ref{chap:1:dif.mod.2.part.3}}
+\end{eqnarray}
+%où \(g\) est le paramètre d’interaction et
+%\(\tilde{\theta} = \theta_1 - \theta_2\) le pseudo‑moment relatif.  
+Cette expression, unitaire et analytique, caractérise entièrement la diffusion élastique à deux corps dans le modèle considéré.
+
+
+
+\paragraph{Lien entre phase de diffusion et décalage temporel : interprétation semi-classique. {\color{red}(à revoir)}}
+
+Il a été souligné par {\color{black}Eisenbud (1948)} et {\color{black}Wigner (1955)} que la phase de diffusion peut être interprétée, de manière semi-classique, comme un {\em décalage temporel}. Esquissons brièvement l'argument de {\color{black}Wigner (1955)}.Tout d'abord, notons que, pour une particule unique, une approximation simple d’un paquet d’ondes peut être obtenue en superposant deux ondes planes avec des moments $\tilde{\theta}/2$ et $\tilde{\theta}/2 + \delta \tilde{\theta}$, respectivement :
+\begin{eqnarray}
+	\tilde{\varphi}_{\text{inc}}(Y) & \propto & e^{i\frac{1}{2}\tilde{\theta} \vert Y\vert} + e^{i\frac{1}{2}\left(\tilde{\theta} + 2\delta \tilde{\theta} \right) \vert Y\vert}.
+\end{eqnarray}
+Cette superposition évolue dans le temps comme :
+\begin{eqnarray}
+\tilde{\varphi}_{\text{inc}}(Y, t) &\propto &  e^{i\left( \frac{1}{2} \tilde{\theta}\vert Y\vert - t\,\tilde{\varepsilon}(\tilde{\theta}) \right)} + e^{i\left( \frac{1}{2}\left(  \tilde{\theta} + 2\delta \tilde{\theta} \right) \vert Y\vert - t\,\tilde{\varepsilon}(\tilde{\theta} + 2\delta \tilde{\theta}) \right)}.
+\end{eqnarray}
+%où l'on a utilisé l'expression de l'énergie réduite : $\tilde{\varepsilon}(\tilde{\theta}) = \tilde{\theta}^2 / 4$.
+Le centre de ce 'paquet d'ondes' se situe à la position où les phases des deux termes coïncident, c'est-à-dire au point où $\vert Y\vert\delta \tilde{\theta}  - t[\tilde{\varepsilon}(\tilde{\theta} + 2\delta \tilde{\theta} ) - \tilde{\varepsilon}(\tilde{\theta})] = 0$, ce qui donne $\vert Y\vert \simeq \tilde{\theta} t$ avec la vitesse réduite $\tilde{\theta} = 1/2 \varepsilon'(\tilde{\theta}) $. %Ainsi, il s'agit effectivement d'un 'paquet d'ondes' se déplaçant à la vitesse $\theta$. Ensuite, considérons deux particules entrantes dans un état tel que le centre de masse $Z = (z_1 + z_2)/2$ ait une impulsion $\theta_1 - \theta_2$, tandis que la coordonnée relative $Y = z_1 - z_2$ se trouve dans un 'paquet d'ondes' se déplaçant à la vitesse $ (\theta_1 - \theta_2)/2$,
+Selon les équations (\ref{eq:ansatz.boson}) et (\ref{chap:1:dif.mod.2.part.3}), l'état sortant de la diffusion correspondant serait :
+\begin{eqnarray}
+	\tilde{\varphi}_{outc} ( Y, t ) & \propto & -e^{i\Phi(\tilde{\theta})}e^{-i\frac{1}{2}\tilde{\theta} \vert Y\vert} - e^{i\Phi(\tilde{\theta} + 2 \delta \tilde{\theta} )}e^{-i\frac{1}{2}\left(\tilde{\theta} + 2\delta \tilde{\theta} \right) \vert Y\vert}. %\tag{2}
+\end{eqnarray}
+En répétant l'argument précédent de la stationnarité de phase, on trouve que la coordonnée relative est à la position $\vert Y \vert  \simeq \tilde{\theta} t - 2\Phi'( \tilde{\theta})$ au moment $t$. %Étant donné que le centre de masse n'est pas affecté par la collision et se déplace à la vitesse de groupe $\tilde{\theta} =(\theta_1 + \theta_2)/2$, nous constatons que la position des deux particules semiclassiques après la collision sera
+\begin{eqnarray}
+	\vert Y \vert & \simeq & 	\tilde{\theta} t  - 2 \Delta (\tilde{\theta} )
+\end{eqnarray}
+où le déplacement de diffusion $\Delta (\theta)$ est donné par la dérivée de la phase de diffusion,
+\begin{eqnarray}\label{eq:I-1-16}
+	\Delta ( \theta ) & \doteq & \frac{ d \Phi }{ d \theta } ( \theta )= \frac{ 2 g }{ g^2 + \theta^2} . 	
+\end{eqnarray}
+
+
+%\paragraph{Retour aux coordonnées du laboratoire.}
+%En revenant aux coordonnées d'origine (celles du laboratoire), on constate que la fonction d'onde à deux corps 
+%\(
+%	\varphi_{\{\theta_1 , \theta_2\}} (z_1, z_2) = \langle \emptyset \vert \operator{\Psi} (z_1)\operator{\Psi} (z_2) \vert \{\theta_1, \theta_2\} \rangle,
+%\)
+%avec \(z_1 < z_2\) , (ie $Y>0$) . Et le centre de masse sur le mouvement
+%\(
+%	Z  =  \overline{\theta} t.	
+%\)
+%avec,  on rappelle , $\overline{\theta}$ la vitesse de groupe dans le référentielle de laboratoire.\\
+%Nous constatons que la position des deux particules semiclassiques après la collision sera
+%\begin{eqnarray}
+%	z_1 ~=~ Z + \frac{Y}2 ~\simeq ~ \theta_1 t - \Delta(\theta_1 - \theta_2), & & 	z_2 ~=~ Z - \frac{Y}2 ~\simeq ~ \theta_2t + \Delta(\theta_1 - \theta_2),
+%\end{eqnarray}
+
+%avec  $\theta_1$ et $\theta_2$ on rappelle définie tel que 
+%\(
+%	\tilde{\theta} ~=~\theta_1 - \theta_2 , \,	\overline{\theta}~=~\frac{\theta_1 + \theta_2}{2}.	
+%\)
+%On remarquant que 
+%\begin{eqnarray*}
+%	z_1 \theta_1  + z_2  \theta_2 ~=~ 2Z\overline{\theta} + \frac{1}{2}Y\tilde{\theta}, & & z_1 \theta_2  + z_2  \theta_1 ~=~ 2Z\overline{\theta} - \frac{1}{2}Y\tilde{\theta}. 
+%\end{eqnarray*}
+%Ce qui est en accod avec la masse total $\overline{m} = 2$ et la masse résuite $\tilde{m} = \frac{1}{2}$ \\
+%Ce qui nous motive à multiplier la fonction d'onde dans le référentiel du centre de masse \eqref{eq:ansatz.boson} par $\exp(2iZ\overline{\theta})$ pour obtenir 
+
+%\begin{eqnarray}\label{eq:I-1-10}
+%	\varphi_{\{\theta_1 , \theta_2\}}(z_1 , z_2) & \propto &  \left \{ \begin{array} { c cl} ( \theta_2 - \theta_1 - ic) e^{ i z_1 \theta_1 + iz_2 \theta_2 } - ( \theta_1 - \theta_2 - ic) e^{ i z_1 \theta_2 + iz_2 \theta_1} & \mbox{si} & z_1 < z_2 \\ (z_1 \leftrightarrow z_2) & \mbox{si} & z_1 > z_2 \end{array} \right.
+%\end{eqnarray}
+
+%correspondant aux valeurs propres
+
+%\begin{eqnarray}
+%	\varepsilon(\theta_1 , \theta_2) ~=~ \overbrace{ \overline{\theta}^2}^{\overline{\varepsilon}(\overline{\theta})}	 + \overbrace{\frac{1}{4} \tilde{\theta}^2}^{\tilde{\varepsilon}(\tilde{\theta})} ~=~ \frac{\theta_1}{2} + \frac{\theta_2}{2}.	
+%\end{eqnarray}
+
+%Pour $\theta_1 > \theta_2$, les deux termes $e^{iz_1 \theta_1 + iz_2 \theta_2 }$ et $e^{iz_1 \theta_2 + iz_2 \theta_1 }$ correspondent aux paires de particules entrantes et sortantes dans un processus de diffusion à deux corps. Le rapport de leurs amplitudes est la phase de diffusion à deux corps \eqref{chap:1:dif.mod.2.part.3} reste inchangé
+
+%\begin{eqnarray}\label{chap:1:dif.mod.2.part.4}
+%	e^{i\Phi ( \theta_1 - \theta_2  ) }~=~ -\frac{a}{b} ~=~\frac{\theta_1 - \theta_2  -ic} { \theta_2 - \theta_1  - ic}. 
+%\end{eqnarray}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Retour aux coordonnées du laboratoire.}
+
+En revenant aux coordonnées du laboratoire, la fonction d’onde à deux corps s’écrit
+\(
+	\varphi_{\{\theta_1 , \theta_2\}} (z_1, z_2) 
+	= \langle \emptyset \vert \operator{\Psi} (z_1)\operator{\Psi} (z_2) \vert \{\theta_1, \theta_2\} \rangle/\sqrt{2},
+\)
+dans le cas \(z_1 < z_2\), c’est-à-dire pour une séparation relative \(Y = z_1 - z_2 < 0\) (on pourra symétriser ultérieurement).  
+Dans le référentiel du laboratoire, le centre de masse évolue selon
+\(
+	Z = \frac{z_1 + z_2}{2} = \overline{\theta}\,t.
+\)
+%où l’on rappelle que \(\overline{\theta} = \frac{\theta_1 + \theta_2}{2}\) est la vitesse de groupe du système dans le référentiel laboratoire.
+Ainsi, la position semi-classique des deux particules après la collision s’écrit
+\begin{eqnarray}
+	z_1 = Z + \frac{Y}{2} \;\simeq\; \theta_1 t - \Delta(\theta_1 - \theta_2),\quad
+	z_2 = Z - \frac{Y}{2} \;\simeq\; \theta_2 t + \Delta(\theta_1 - \theta_2),
+\end{eqnarray}
+%où \(\Delta(\theta_1 - \theta_2)\) représente le décalage dû à l’interaction entre les deux particules.
+%On rappelle les définitions :
+%\[
+%	\tilde{\theta} = \theta_1 - \theta_2, 
+%	\quad
+%	\overline{\theta} = \frac{\theta_1 + \theta_2}{2}.
+%\]
+On peut vérifier les identités utiles suivantes :
+\begin{eqnarray*}
+	z_1 \theta_1 + z_2 \theta_2 = 2Z \overline{\theta} + \frac{1}{2} Y \tilde{\theta}, \quad
+	z_1 \theta_2 + z_2 \theta_1 &=& 2Z \overline{\theta} - \frac{1}{2} Y \tilde{\theta},
+\end{eqnarray*}
+ce qui est en accord avec les masses associées : masse totale \(\overline{m} = 2\), masse réduite \(\tilde{m} = \frac{1}{2}\).
+
+Cela nous motive à multiplier l’ansatz dans le référentiel du centre de masse (équation~\eqref{eq:ansatz.boson}) par un facteur de phase globale \(\exp(2iZ\overline{\theta})\) pour revenir à la représentation dans le laboratoire. On obtient alors l’expression de la fonction d’onde :
+\begin{eqnarray}\label{eq:I-1-10}
+	\varphi_{\{\theta_1 , \theta_2\}}(z_1 , z_2) & \propto &  \left \{ \begin{array} { c cl} ( \theta_2 - \theta_1 - ig) e^{ i z_1 \theta_1 + iz_2 \theta_2 } - ( \theta_1 - \theta_2 - ig) e^{ i z_1 \theta_2 + iz_2 \theta_1} & \mbox{si} & z_1 < z_2 \\ (z_1 \leftrightarrow z_2) & \mbox{si} & z_1 > z_2 \end{array} \right.
+\end{eqnarray}
+
+%Cette fonction d’onde correspond à une valeur propre d’énergie donnée par la somme des énergies associées aux deux degrés de liberté :
+
+%\begin{equation}
+%	\varepsilon(\theta_1 , \theta_2) 
+%	= \underbrace{\overline{\theta}^2}_{\overline{\varepsilon}(\overline{\theta})}
+%	+ \underbrace{\frac{1}{4} \tilde{\theta}^2}_{\tilde{\varepsilon}(\tilde{\theta})}
+%	= \frac{\theta_1^2}{2} + \frac{\theta_2^2}{2}.
+%\end{equation}
+
+Pour \(\theta_1 > \theta_2\), les deux termes exponentiels 
+\(e^{i z_1 \theta_1 + i z_2 \theta_2}\) et \(e^{i z_1 \theta_2 + i z_2 \theta_1}\)
+correspondent respectivement aux ondes entrantes et sortantes dans le canal de diffusion à deux corps.  
+Le rapport de leurs amplitudes définit la phase de diffusion / matrice diffusion $e^{i\Phi ( \tilde{\theta}  ) }$  à deux corps \eqref{chap:1:dif.mod.2.part.3} , reste inchangé :
+
+\begin{equation}\label{chap:1:dif.mod.2.part.4}
+	S(\theta_1- \theta_2) \doteq e^{i\Phi(\theta_1 - \theta_2)} 
+	= \frac{\theta_1 - \theta_2 - ig}{\theta_2 - \theta_1 - ig}.
+\end{equation}
+
+Cette phase caractérise entièrement le processus de diffusion dans le modèle de Lieb-Liniger à deux particules.
+
+\paragraph{Conditions périodiques et équations de Bethe pour deux bosons {\color{red}(à révoir)}.}
+
+%La fonction d’onde obtenue par Bethe ansatz (voir
+%\eqref{eq:I-1-10}) est, pour $z_{1}<z_{2}$,
+%\[
+%	\varphi_{\{\theta_{1},\theta_{2}\}}(z_{1},z_{2})
+%		= a\,e^{i\theta_{1}z_{1}+i\theta_{2}z_{2}}
+%		+b\,e^{i\theta_{2}z_{1}+i\theta_{1}z_{2}},
+%	\quad
+%	a=\theta_{2}-\theta_{1}-ic,\;
+%	b=-(\theta_{1}-\theta_{2}-ic).
+%\]
+
+%\medskip
+%\subparagraph{Périodicité sur $z_{2}$.}  
+%On impose à la fonction d’onde obtenue par Bethe ansatz (voir
+%\eqref{eq:I-1-10})
+%\(
+%	\varphi_{\{\theta_{1},\theta_{2}\}}(z_{1},z_{2}\!=\!L)
+%	=
+%	\varphi_{\{\theta_{1},\theta_{2}\}}(z_{1},z_{2}\!=\!0)
+%\)
+%avec $0<z_{1}<z_{2}=L$.  
+%Au point $z_{2}=L$ on reste dans le secteur $z_{1}<z_{2}$, tandis qu’au point $z_{2}=0$ le domaine pertinent devient $z_{2}<z_{1}$;  la fonction d’onde y est obtenue en échangeant $z_{1}\leftrightarrow z_{2}$ , soit 
+%\(
+%	\varphi_{\{\theta_{1},\theta_{2}\}}(z_{1},\!L)
+%	=
+%	\varphi_{\{\theta_{1},\theta_{2}\}}(0 , z_{1})
+%\)
+%.  
+%On obtient ainsi
+%\begin{eqnarray*}
+%	a\,e^{i\theta_{1}z_{1}+i\theta_{2}L}+b\,e^{i\theta_{2}z_{1}+i\theta_{1}L} & = &
+%	a\,e^{i\theta_{2}z_{1}}\,e^{i\theta_{1}\! \cdot 0} + b \,e^{i\theta_{1}z_{1}}\,e^{i\theta_{2}\! \cdot 0},	
+%\end{eqnarray*}
+%avec la condition $z_1< z_2$, avec le rapport $a$ et $b$ vérifiant \eqref{chap:1:dif.mod.2.part.4} de la sorte $-b/a = e^{i\Phi(\theta_1 - \theta_2)}$ .
+
+%%%%%%%%%%%%%%%%
+
+\subparagraph{Périodicité en \( z_2 \).}  
+On impose une condition de périodicité sur la fonction d’onde obtenue par ansatz de Bethe (voir équation~\eqref{eq:I-1-10}) :
+\(
+	\varphi_{\{\theta_1,\theta_2\}}(z_1, z_2 = L) = \varphi_{\{\theta_1,\theta_2\}}(z_1, z_2 = 0),
+\)
+avec \( 0 < z_1 < z_2 = L \).  
+Au point \( z_2 = L \), la configuration reste dans le secteur \( z_1 < z_2 \), tandis qu’à \( z_2 = 0 \), on entre dans le secteur \( z_2 < z_1 \). La continuité de la fonction d’onde impose alors d’échanger les coordonnées \( z_1 \leftrightarrow z_2 \) :
+\(
+	\varphi_{\{\theta_1,\theta_2\}}(z_1, L) = \varphi_{\{\theta_1,\theta_2\}}(0, z_1).
+\)
+En utilisant l’expression explicite de l’ansatz dans les deux secteurs, on obtient l’égalité suivante :
+\begin{eqnarray*}
+	a\,e^{i\theta_1 z_1 + i\theta_2 L} + b\,e^{i\theta_2 z_1 + i\theta_1 L}
+	&=& a\,e^{i\theta_2 z_1} + b\,e^{i\theta_1 z_1}.
+\end{eqnarray*}
+%où le second membre correspond à la fonction d’onde dans le secteur \( z_2 < z_1 \), évaluée en \( z_2 = 0 \) et \( z_1 = z_1 \).  
+%La condition de périodicité impose donc :
+%\[
+%	a\,e^{i\theta_1 z_1 + i\theta_2 L} + b\,e^{i\theta_2 z_1 + i\theta_1 L}
+%	= a\,e^{i\theta_2 z_1} + b\,e^{i\theta_1 z_1}.
+%\]
+Cette relation, valable pour tout \( z_1 \in (0,L) \), fixe une contrainte sur le rapport \( b/a \). En utilisant l’expression de la phase de diffusion introduite en \eqref{chap:1:dif.mod.2.part.4} pour $z_1<z_2$ :
+\begin{eqnarray*}
+	-\frac{b}{a} = e^{i\Phi(\theta_1 - \theta_2)},
+\end{eqnarray*}
+on obtient une condition quantique sur les phases \( \theta_1 \) et \( \theta_2 \), cœur de la quantification imposée par le formalisme de Bethe.
+
+%\[
+%	( \theta_2 - \theta_1 - ig)\,e^{i\theta_{1}z_{1}+i\theta_{2}L}
+%	- ( \theta_1 - \theta_2 - ig)\,e^{i\theta_{2}z_{1}+i\theta_{1}L}
+%	=
+%	( \theta_2 - \theta_1 - ig)\,e^{i\theta_{2}z_{1}}\,e^{i\theta_{1}\! \cdot 0}
+%	- ( \theta_1 - \theta_2 - ig)\,e^{i\theta_{1}z_{1}}\,e^{i\theta_{2}\! \cdot 0}.
+%\]
+En identifiant les coefficients de $e^{i\theta_{1}z_{1}}$ et
+$e^{i\theta_{2}z_{1}}$ indépendamment, on obtient
+\(
+	e^{i\theta_{2}L}\;a = b, 
+	\,
+	e^{i\theta_{1}L}\;b = a,
+\)
+c’est‑à‑dire l'équations de Bethe
+%\begin{equation}\label{eq:PC2}
+%	e^{i\theta_{2}L} = \frac{b}{a}
+%	= \frac{\theta_{1}-\theta_{2}+ic}{\theta_{2}-\theta_{1}+ic},
+%\quad
+%	e^{i\theta_{1}L} = \frac{a}{b}
+%	= \frac{\theta_{2}-\theta_{1}+ic}{\theta_{1}-\theta_{2}+ic}.
+%\end{equation}
+\begin{eqnarray*}\label{eq:PC2}
+	e^{i\theta_{1}L}\,e^{i\Phi(\theta_{1}-\theta_{2})} = -1,
+	\qquad
+	e^{i\theta_{2}L}\,e^{i\Phi(\theta_{2}-\theta_{1})} = -1.	
+\end{eqnarray*}
+En prenant le logarithme on obtient les \emph{équations de Bethe à deux
+particules} :
+\begin{equation}\label{eq:Bethe2}
+	\theta_{1}L + \Phi(\theta_{1}-\theta_{2}) = 2\pi I_{1}, 
+	\qquad
+	\theta_{2}L + \Phi(\theta_{2}-\theta_{1}) = 2\pi I_{2},
+\end{equation}
+où $I_{1},I_{2}\in\mathbb{Z}$ sont les nombres quantiques entiers
+(caractère bosonique). 
+
+\subparagraph{Périodicité sur $z_{1}$.}  Le raisonnement symétrique conduit exactement aux mêmes égalités \eqref{eq:PC2}.  
+\bigskip
+Les équations \eqref{eq:Bethe2} constituent la quantification complète
+du gaz de Lieb–Liniger à deux bosons sur un cercle de longueur $L$ et
+seront le point de départ pour l’étude de l’état fondamental et des
+excitations.
+
+
+
+\begin{figure}[H]
+	\centering
+  %\includegraphics[width=0.5\textwidth]{}
+  %\caption{Gauche : La fonction d'onde (\ref{eq:I-1-10}) sur la ligne infinie correspond à un processus de diffusion à deux corps. Semiclassiquement, la phase de diffusion dans ce processus à deux corps se reflète dans le décalage de diffusion (\ref{eq:I-1-16}) : après la collision, la position de la particule a été déplacée d'une distance $\Delta ( \theta_1 - \theta_2 )$ . Droite : La fonction d'onde de Bethe (\ref{eq:I-2-17}) sur la ligne infinie correspond à un processus de diffusion à $N$-corps qui se factorise en des processus à deux corps (le décalage de diffusion $\Delta$ est également présent ici, mais il n'est pas représenté dans la caricature). Dans ce processus à $N$-corps, les rapidités $\theta_j$ sont les moments asymptotiques des bosons.}
+  \label{}	
+\end{figure}
+
+
+
+\section{Équation de Bethe et distribution de rapidité}
+
+\subsection{Fonction d’onde dans le secteur ordonné et représentation de Gaudin}
+
+Dans le domaine $z_1 < z_2 < \cdots < z_N$, la fonction d’onde pour un état de Bethe à $N$ particules s’écrit ({\color{blue}Gaudin 2014}, {\color{blue}Korepin et al. 1997}, {\color{black}Lieb et Liniger 1963}) :
+\begin{eqnarray}
+	\varphi_{\{\theta_a\}} ( z_1 , \cdots , z_N ) & = &  \frac{1}{\sqrt{N!}}\langle \emptyset \vert \operator{\Psi} ( z_1 ) \cdots \operator{\Psi} (z_N ) \vert \{ \theta_a \} \rangle \notag\\
+	& \propto & \sum_\sigma (-1)^{|\sigma|} \left( \prod_{1 \leq a < b \leq N} (\theta_{\sigma(b)} - \theta_{\sigma(a)} - i g) \right) e^{i \sum_{j=1}^{N} z_j \theta_{\sigma(j)}},\label{eq:I-2-17}
+\end{eqnarray}
+où la somme s'étend sur toutes les permutations $\sigma$ de $\{1,\dots,N\}$. Le facteur $(-1)^{|\sigma|}$ est la signature de la permutation, et les amplitudes dépendent des différences de quasi-moments $\theta_j$ ainsi que du couplage $c$.
+Cette fonction d’onde est ensuite étendue par symétrie aux autres domaines du type $z_{\pi(1)} < z_{\pi(2)} < \cdots < z_{\pi(N)}$ via des propriétés d’échange symétriques.
+
+\vspace{1em}
+
+\subsection{Conditions aux bords périodiques}
+
+Les équations précédentes ont été établies pour un système défini sur la droite réelle. Cependant, dans une perspective thermodynamique, il est essentiel de considérer une densité finie $ N/L$. Cela peut être obtenu en compactifiant l’espace sur un cercle de longueur $L$, i.e. en imposant les {\em conditions aux bords périodiques}.
+
+Concrètement, cela consiste à identifier $x = 0$ et $x = L$ et à exiger que la fonction d’onde soit périodique lorsqu’une particule fait le tour du système :
+\begin{equation}\label{eq:periodic}
+\varphi_{\{\theta_a\}}(x_1, \dots, x_{N-1}, L) = \varphi_{\{\theta_a\}}(0, x_1, \dots, x_{N-1}).
+\end{equation}
+Cette condition doit être satisfaite pour chaque particule. Or, déplacer la $j$-ième particule de $x_j$ à $x_j + L$ revient à la faire passer devant toutes les autres : cela introduit un facteur de diffusion à chaque croisement.
+
+%\vspace{1em}
+
+\subsection{Équations de Bethe exponentielles}
+
+En imposant les conditions de périodicité sur la fonction d’onde de type Bethe~\eqref{eq:I-2-17}, on obtient que chaque moment $\theta_a$ doit satisfaire l’équation :
+\begin{equation}
+	e^{i \theta_a L} \prod_{b \ne a} S(\theta_a - \theta_b) = (-1)^{N-1}, \quad a = 1, \dots, N,
+	\label{eq:bethe_exp}
+\end{equation}
+où la matrice diffusion $S(\theta) = \frac{\theta - i g}{-\theta - i g} = e^{i \Phi(\theta)}$ est l’amplitude de diffusion à deux corps, et $\Phi(\theta) = 2 \arctan\left( \frac{\theta}{c} \right)$ est la phase associée~\eqref{chap:1:eq:Phi}. Le signe $(-1)^{N-1}$ vient du fait que chaque permutation change la signature du déterminant dans la représentation de Gaudin.
+%\vspace{1em}
+
+\subsection{Équations de Bethe logarithmiques}
+
+En prenant le logarithme du membre gauche et du membre droit de l’équation~\eqref{eq:bethe_exp}, on obtient :
+\begin{equation}\label{chap:1:eq:EBA}
+	L \theta_a + \sum_{b=1}^N \Phi(\theta_a - \theta_b) = 2\pi I_a, \qquad a = 1, \dots, N,
+\end{equation}
+où les $I_a \in \mathbb{Z}$ (ou $\mathbb{Z} + \tfrac{1}{2}$) sont des nombres quantiques entiers (ou demis entiers) . Dans la configuration d’état fondamental (ou de type “mer de Fermi”), ces nombres sont pris de manière symétrique autour de zéro :
+\[
+I_a = a - \frac{N+1}{2}, \quad \text{pour } a \in \llbracket 1 , N \rrbracket.
+\]
+Ce choix garantit une distribution uniforme des $\theta_a$ à l’état fondamental.
+%\vspace{1em}
+
+\subsection{Interprétation physique}
+
+Les équations de Bethe~\eqref{chap:1:eq:EBA} représentent une {\em quantification des pseudo‑impulsions $\theta_a$} des particules en interaction, résultant d’un {\em interféromètre multi‑corps sur le cercle} : chaque particule accumule une phase $e^{i \theta_a L}$ due au mouvement libre, ainsi que des phases de diffusion lorsqu’elle croise les autres.
+
+Ce système d'équations détermine les états propres du système de Lieb–Liniger en volume fini, et joue un rôle fondamental dans la description exacte de ses propriétés thermodynamiques et dynamiques.
+
+
+\subsection{Thermodynamique du gaz de Lieb–Liniger à température nulle}
+
+Dans la limite thermodynamique, le nombre de particules \( N \) et la longueur \( L \) du système tendent vers l'infini de telle sorte que leur rapport reste fini :
+\begin{eqnarray*}
+	\lim_{N,\, L \to \infty} \frac{N}{L} = D < \infty,
+\end{eqnarray*}
+où \( D \) désigne la densité linéique de particules.
+
+Considérons désormais le système à température nulle. L’état fondamental dans le secteur à nombre de particules fixé correspond à la configuration d’énergie minimale parmi les solutions des équations de Bethe \eqref{chap:1:eq:EBA}.
+
+Dans la limite thermodynamique, les valeurs de \( \theta_a \) deviennent quasi-continues, avec un espacement \( \theta_{a+1} - \theta_a = \mathcal{O}(1/L) \), et se condensent dans un intervalle symétrique autour de zéro :
+\[
+\theta_a \in [-K, K],
+\]
+où \( K \) est le paramètre de Fermi (ou rapidité maximale), défini par \( K = \theta_N \). En supposant l'ordre \( I_a \geq I_b \Rightarrow \theta_a \geq \theta_b \), cet intervalle constitue ce qu'on appelle la {\em mer de Dirac} (ou sphère de Fermi en dimension un).
+
+Nous introduisons la densité d’états \( \rho_s(\theta) \), définie par
+\begin{eqnarray*}
+	2\pi \rho_s(\theta_a) &=& \frac{2\pi}{L} \lim_{\text{therm}} \frac{|I_{a+1} - I_a|}{|\theta_{a+1} - \theta_a|} = \frac{2\pi}{L} \frac{\partial I}{\partial \theta}(\theta_a),
+\end{eqnarray*}
+où \( I(\theta_a) = I_a \). L’application des équations de Bethe sous forme logarithmique conduit alors à
+\begin{eqnarray*}
+	2\pi \rho_s(\theta_a) = 1 + \frac{1}{L} \sum_{b = 1}^N \Delta(\theta_a - \theta_b),
+\end{eqnarray*}
+ce qui relie \( \rho_s \) à la fonction d’interaction \( \Delta \) entre les rapidités.
+
+Intéressons-nous maintenant à la {\em densité de particules dans l’espace des moments}, notée \( \rho(\theta) \), définie par
+\begin{eqnarray*}
+	\rho(\theta_a) = \lim_{L \to \infty} \frac{1}{L} \cdot \frac{1}{\theta_{a+1} - \theta_a} > 0.
+\end{eqnarray*}
+Dans l’état fondamental, toutes les positions disponibles dans l’intervalle \( [-K, K] \) sont occupées. On a donc :
+\begin{eqnarray}\label{chap.1.rho.2}
+	\rho(\theta) = \rho_s(\theta).
+\end{eqnarray}
+
+La quantité \( L \rho(\theta) d\theta \) représente le nombre de rapidités dans la cellule infinitésimale \( [\theta, \theta + d\theta] \), tandis que
+\(
+	N = L \int_{-K}^{K} \rho(\theta)\, d\theta
+\)
+donne le nombre total de particules dans le système. Le passage de la somme discrète à l'intégrale dans le second membre de l'équation de Bethe permet d’écrire :
+\begin{eqnarray*}
+	\frac{1}{L} \sum_{b = 1}^N \Delta(\theta_a - \theta_b) \longrightarrow \int_{-K}^{K} \Delta(\theta_a - \theta)\, \rho(\theta)\, d\theta.
+\end{eqnarray*}
+Ainsi, l'équation pour la densité d'états devient :
+\begin{eqnarray}\label{chap.1.rho.s.2}
+	2\pi \rho_s(\theta) = 1 + \int_{-K}^{K} \Delta(\theta - \theta')\, \rho(\theta')\, d\theta',
+\end{eqnarray}
+et, comme \( \rho = \rho_s \), on obtient l’équation linéaire intégrale satisfaite par la densité de rapidités :
+\begin{eqnarray}\label{chap.1.rho.3}
+	\rho(\theta) - \int_{-K}^{K} \frac{\Delta(\theta - \theta')}{2\pi} \rho(\theta')\, d\theta' = \frac{1}{2\pi}.
+\end{eqnarray}
+
+
+\subsection{Excitations élémentaires à température nulle}
+
+
+
