@@ -108,6 +108,8 @@ git commit -m "Mise à jour"
 git push
 ```
 
+# Si problème avec .pynb (car trop lourd) : 
+
 ## 🧰 Utiliser Git LFS (si tu dois quand même versionner ces fichiers)
 
 ```bash
@@ -154,6 +156,45 @@ Puis :
 ```bash
 git push origin --force
 ```
+
+
+##✅ Solution : Réécrire l’historique pour supprimer complètement ces gros fichiers
+
+1. Installe le paquet BFG Repo-Cleaner (plus rapide que filter-branch) :
+```bash
+brew install bfg
+```
+
+2. Sauvegarde ton dépôt :
+```bash
+cp -r These_Memoire These_Memoire_backup
+```
+
+3. Supprime les fichiers problématiques de l’historique :
+Depuis le dossier de ton dépôt :
+```
+bfg --delete-files bord_expansion_julia_2024-11-24.ipynb
+bfg --delete-files bord_expansion_julia_2024-11-18.ipynb
+bfg --delete-files box_expansion_julia_final_2_2024-03-13.ipynb
+```
+
+4. Nettoie le dépôt :
+```
+git reflog expire --expire=now --all
+git gc --prune=now --aggressive
+```
+
+5. Force le push (⚠️ dangereux si d'autres personnes travaillent dessus) :
+```bash
+git push origin --force
+```
+
+🧹 Bonus : Ajouter à .gitignore pour éviter de recommencer
+Ajoute ceci dans .gitignore :
+```bash
+figures/06_Bipart/*.ipynb
+```
+
 
 
 
