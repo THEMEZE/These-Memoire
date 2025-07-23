@@ -4,57 +4,28 @@ Ce dépôt contient l'ensemble des fichiers LaTeX nécessaires à la compilation
 
 ## 🗂 Structure du projet
 
-thesis/
-├── main.tex. 					## Le fichier principal, qui appelle les chapitres, gère la structure globale, et compile tout.
-├── preamble.tex					## Contient toutes les options de classe, packages, et réglages généraux. Il appelle souvent packages.tex et macros.tex.
-├── thesis.bib					## Bibliographie au format BibTeX.
-├── README.md					## Instructions pour compiler et structure générale du projet.
-├── Makefile (ou compile.sh)		## Script pour compiler facilement (avec latexmk ou pdflatex).
-├── figures/						## Contient les figures (par chapitre si nécessaire).
-│   ├── chapitre1/				## Tous les chapitres et annexes.
-│   ├── chapitre2/
-│   └── ...
-├── chapters/
-│   ├── intro.tex
-│   ├── chapitre1.tex
-│   ├── chapitre2.tex
-│   ├── conclusion.tex
-│   └── annexes.tex
-├── tex/						## Sous-dossier pour les fichiers LaTeX auxiliaires (macros, commandes perso, etc).
-│   ├── macros.tex
-│   ├── commands.tex
-│   └── packages.tex
-└── build/ (généré automatiquement)	## Répertoire temporaire pour les fichiers .aux, .log, .pdf, etc. Peut être ignoré par Git.
-
-## 🗂 Structure du projet
-* Une puce
-* Une autre puce
-    * Une sous-puce
-    * Une autre sous-puce
-* Et encore une autre puce !
-
-* thesis/
-*├── main.tex                     ## Le fichier principal, qui appelle les chapitres, gère la structure globale, et compile tout.
-├── preamble.tex                 ## Contient toutes les options de classe, packages, et réglages généraux.
-├── thesis.bib                   ## Bibliographie au format BibTeX.
-├── README.md                    ## Instructions pour compiler et structure générale du projet.
-├── Makefile / compile.sh        ## Script pour compiler facilement.
-├── figures/                     ## Contient les figures (par chapitre si nécessaire).
-│   ├── chapitre1/
-│   ├── chapitre2/
-│   └── ...
-├── chapters/                    ## Fichiers principaux de contenu (chapitres, intro, conclusion, annexes).
-│   ├── intro.tex
-│   ├── chapitre1.tex
-│   ├── chapitre2.tex
-│   ├── conclusion.tex
-│   └── annexes.tex
-├── tex/                         ## Fichiers auxiliaires LaTeX (macros, commandes, packages).
-│   ├── macros.tex
-│   ├── commands.tex
-│   └── packages.tex
-└── build/                       ## Répertoire généré automatiquement (.aux, .log, .pdf...). À ignorer via .gitignore.
-
+* `thesis/` — Répertoire racine du projet
+    * `main.tex` — Fichier principal qui compile toute la thèse
+    * `preamble.tex` — Définit la classe, les packages et les réglages globaux
+    * `thesis.bib` — Bibliographie au format BibTeX
+    * `README.md` — Instructions pour compiler et comprendre la structure
+    * `Makefile` ou `compile.sh` — Script pour compiler automatiquement
+    * `figures/` — Dossier des figures
+        * `chapitre1/` — Figures du chapitre 1
+        * `chapitre2/` — Figures du chapitre 2
+        * `...` — Etc. pour les autres chapitres
+    * `chapters/` — Contenu principal de la thèse
+        * `intro.tex` — Introduction
+        * `chapitre1.tex` — Premier chapitre
+        * `chapitre2.tex` — Deuxième chapitre
+        * `conclusion.tex` — Conclusion
+        * `annexes.tex` — Annexes
+    * `tex/` — Fichiers auxiliaires LaTeX
+        * `macros.tex` — Définitions de macros
+        * `commands.tex` — Commandes personnalisées
+        * `packages.tex` — Chargement des packages
+    * `build/` — Fichiers générés automatiquement à la compilation
+        * À **ignorer** via `.gitignore`
 
 ## ⚙️ Compilation Manuscrit
 
@@ -246,9 +217,29 @@ git push origin --force
 -- Tu ne pourras plus récupérer les gros .ipynb via GitHub, donc garde-les bien localement ou ailleurs.
 
 
+## 🗂 Structure du projet
 
-
-
+thesis/
+├── main.tex. 					## Le fichier principal, qui appelle les chapitres, gère la structure globale, et compile tout.
+├── preamble.tex					## Contient toutes les options de classe, packages, et réglages généraux. Il appelle souvent packages.tex et macros.tex.
+├── thesis.bib					## Bibliographie au format BibTeX.
+├── README.md					## Instructions pour compiler et structure générale du projet.
+├── Makefile (ou compile.sh)		## Script pour compiler facilement (avec latexmk ou pdflatex).
+├── figures/						## Contient les figures (par chapitre si nécessaire).
+│   ├── chapitre1/				## Tous les chapitres et annexes.
+│   ├── chapitre2/
+│   └── ...
+├── chapters/
+│   ├── intro.tex
+│   ├── chapitre1.tex
+│   ├── chapitre2.tex
+│   ├── conclusion.tex
+│   └── annexes.tex
+├── tex/						## Sous-dossier pour les fichiers LaTeX auxiliaires (macros, commandes perso, etc).
+│   ├── macros.tex
+│   ├── commands.tex
+│   └── packages.tex
+└── build/ (généré automatiquement)	## Répertoire temporaire pour les fichiers .aux, .log, .pdf, etc. Peut être ignoré par Git.
 
 
 📌 Conseils
