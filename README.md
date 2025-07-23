@@ -51,7 +51,7 @@ thesis/
 └── build/                       ## Répertoire généré automatiquement (.aux, .log, .pdf...). À ignorer via .gitignore.
 
 
-## ⚙️ Compilation
+## ⚙️ Compilation Manuscrit
 
 ### Méthode recommandée (avec `latexmk`)
 Assurez-vous d'avoir `latexmk` installé :
@@ -71,6 +71,27 @@ pdflatex main.tex
 
 Ou via le script
 ./compile.sh
+
+## ⚙️ Utilisation avec Binder
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/THEMEZE/These-Memoire/main)
+
+Cliquez sur le badge Binder pour lancer un environnement Jupyter avec ce dépôt.
+
+## ⚙️ Utilisation avec Repl.it
+
+- **Python**: [![Run on Repl.it](https://repl.it/badge/github/votre-utilisateur/quantum-mechanics-thesis)](https://repl.it/github/THEMEZE/These-Memoire?language=python3)
+- **Julia**: [![Run on Repl.it](https://repl.it/badge/github/THEMEZE/quantum-mechanics-thesis)](https://repl.it/github/votre-utilisateur/These-Memoire?language=julia)
+- **Fortran**: [![Run on Repl.it](https://repl.it/badge/github/THEMEZE/quantum-mechanics-thesis)](https://repl.it/github/votre-utilisateur/These-Memoire?language=fortran)
+
+## ⚙️ Instructions de Compilation
+
+### ⚙️ Python
+
+Pour exécuter un script Python, utilisez la commande suivante :
+
+```sh
+python3 idée1/codes/python/idée1.py
 
 📌 Conseils
 Modifier uniquement les fichiers dans chapters/ pour le contenu du manuscrit.
