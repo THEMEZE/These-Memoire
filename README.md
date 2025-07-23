@@ -28,8 +28,8 @@ thesis/
 
 ## 🗂 Structure du projet
 
-thesis/
-├── main.tex                     ## Le fichier principal, qui appelle les chapitres, gère la structure globale, et compile tout.
+* thesis/
+*├── main.tex                     ## Le fichier principal, qui appelle les chapitres, gère la structure globale, et compile tout.
 ├── preamble.tex                 ## Contient toutes les options de classe, packages, et réglages généraux.
 ├── thesis.bib                   ## Bibliographie au format BibTeX.
 ├── README.md                    ## Instructions pour compiler et structure générale du projet.
