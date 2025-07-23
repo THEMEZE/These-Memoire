@@ -9,21 +9,23 @@
 Ce chapitre est consacré à l’étude de la dynamique hors équilibre d’un gaz quantique unidimensionnel intégrable, soumis à une discontinuité initiale de densité induite par un protocole de type {\bf quench bipartite}. L’objectif principal est d’évaluer dans quelle mesure la Théorie Hydrodynamique Généralisée (GHD) permet de décrire cette dynamique, tant sur le plan théorique qu’expérimental. Nous nous appuyons sur une préparation initiale contrôlée, un protocole de coupure abrupte, et une analyse des profils de densité et des facteurs d’occupation pour tester les prédictions de la GHD.
 
 \paragraph{Modèles intégrables et thermalisation généralisée :}
-Les modèles intégrables jouent un rôle central dans l’étude des systèmes quantiques à plusieurs corps, notamment en régime hors équilibre. Leur caractéristique essentielle est la présence d’une infinité de constantes du mouvement, qui empêche l’évolution vers l’équilibre thermodynamique canonique. Cette contrainte mène à l’émergence d’un état d’équilibre généralisé, décrit non par l’ensemble canonique, mais par l’{\bf Ensemble de Gibbs Général (GGE)}, qui maximise l’entropie sous contraintes intégrales multiples \index{Ensemble Thermodynamique Général (GGE)}\index[pers]{Ensemble Thermodynamique Général (GGE), Ensemble de Gibbs Général (GGE)}.
+Les modèles intégrables jouent un rôle central dans l’étude des systèmes quantiques à plusieurs corps, notamment en régime hors équilibre. Leur caractéristique essentielle est la présence d’une infinité de constantes du mouvement, qui empêche l’évolution vers l’équilibre thermodynamique canonique. Cette contrainte mène à l’émergence d’un état d’équilibre généralisé, décrit non par l’ensemble canonique, mais par l’{\bf Ensemble de Gibbs Général (GGE)}\index{Ensemble Thermodynamique Général (GGE)}\index[pers]{Ensemble Thermodynamique Général (GGE), Ensemble de Gibbs Général (GGE)}, qui maximise l’entropie sous contraintes intégrales multiples (cf Chap (\ref{chap:relaxation})).
 
 \paragraph{Une analogie classique : le pendule de Newton :}
 Une illustration classique du comportement non diffusif des systèmes intégrables est fournie par le pendule de Newton : les chocs élastiques entre sphères de masses égales conduisent à une propagation balistique de l’énergie, sans diffusion. Cette analogie, bien que classique, capture l’essence du transport cohérent que l’on retrouve dans les systèmes intégrables quantiques.
 
 \paragraph{Le problème de Riemann en hydrodynamique :}
-Un test fondamental de la dynamique hors équilibre est fourni par le problème de Riemann, qui consiste à étudier l’évolution d’un système initialement préparé dans deux états homogènes juxtaposés. En hydrodynamique classique, cela se traduit par l’équation de conservation :
-\begin{eqnarray*}
-	\partial_t u + \partial_x f(u) = 0,
-\end{eqnarray*}
-avec une condition initiale par morceaux :
-\begin{eqnarray*}
-	u(t=0 , x) = \left \{\begin{array}{rcl} u_g & \text{si} & x<x_0 \\ u_d & \text{si} & x > x_0 \end{array} \right. \,.
-\end{eqnarray*}
-La résolution de ce problème dans un cadre intégrable est longtemps restée partiellement ouverte.
+Un test fondamental de la dynamique hors équilibre est fourni par le problème dit de Riemann, qui consiste à étudier l’évolution d’un système à partir d'une discontinuité initiale dans l'espace. Dans sa formulation générale, on considère une équation de conservation de la forme
+\begin{eqnarray}\label{chap6:eq.Rieman.1}
+\partial_t u + \partial_x f(u) = 0,
+\end{eqnarray}
+accompagnée d'une condition initiale arbitraire $u(x, t = 0) = u_0(x)$.
+Dans le cas particulier que nous considérons ici, l’état initial est composé de deux régions homogènes, juxtaposées de part et d’autre de l’origine :
+\begin{eqnarray}\label{chap6:eq.Rieman.cond.1}
+	u( x, t=0 ) = \left \{\begin{array}{rcl} u_g & \text{si} & x<0 \\ u_d & \text{si} & x > 0 \end{array} \right. \,.
+\end{eqnarray}
+Ce type de configuration, appelé problème de Riemann à données discontinues, permet de sonder la réponse non linéaire du système.
+%Sa résolution dans des systèmes intégrables, notamment en présence de degrés de liberté internes ou d’interactions fortes, est longtemps restée une question ouverte.
 
 \paragraph{Le problème de Riemann quantique : un cadre paradigmatique.}
 
@@ -36,7 +38,7 @@ L’avènement de la GHD a marqué une avancée majeure dans la compréhension d
 Nous considérons un gaz quantique unidimensionnel de bosons faiblement interactifs, confiné dans une géométrie strictement 1D, et bien décrit par le modèle intégrable de Lieb-Liniger avec interactions répulsives. Ce système présente un comportement quantique collectif tout en restant dans un régime faiblement corrélé, ce qui en fait un candidat idéal pour tester les prédictions de la GHD.
 
 \paragraph{Préparation expérimentale et protocole de coupure :}
-La configuration initiale consiste à préparer un gaz homogène à densité constante $n_0$, et à température contrôlée (voir Fig.~\ref{fig:BiPart.insitut}). Un protocole de coupe abrupte est ensuite appliqué : la moitié gauche du système ($x<0$) est vidée de ses atomes, tandis que la moitié droite ($x>0$) reste occupée. Ce *quench bipartite* génère une discontinuité initiale de densité, analogue au problème de Riemann, mais dans un système quantique doté d’un nombre infini de lois de conservation. Ce protocole a déjà fait l’objet d’une première étude expérimentale dans la thèse de Léa Dubois \cite{DuboisThese}, qui en a révélé le potentiel pour sonder la dynamique hors équilibre.
+La configuration initiale consiste à préparer un gaz homogène à densité constante $n_0$, et à température contrôlée (voir Fig.~\ref{fig:BiPart.insitut}). Un protocole de coupe abrupte est ensuite appliqué : la partie gauche du système ($x<0$) est vidée de ses atomes, tandis que la partie droite ($x>0$) reste occupée. Ce \emph{quench bipartite} génère une discontinuité initiale de densité, analogue au problème de Riemann, mais dans un système quantique doté d’un nombre infini de lois de conservation. Ce protocole a déjà fait l’objet d’une première étude expérimentale dans la thèse de Léa Dubois \cite{DuboisThese}, qui en a révélé le potentiel pour sonder la dynamique hors équilibre.
 
 \paragraph{Observation d’une propagation balistique :}
 Nous prolongeons cette étude en analysant la dynamique unitaire du gaz à l’aide des outils de la GHD. Nous montrons que la discontinuité initiale donne lieu à une propagation balistique, en bon accord avec la solution du problème de Riemann généralisé. Le profil de densité mesuré à différents temps révèle une frontière en déplacement linéaire, reproduite avec précision par les prédictions théoriques (voir Fig.~\ref{fig:BiPart.coupure1} (e)-(g)). Des écarts résiduels, attribuables à des effets thermiques et à des imperfections expérimentales, sont toutefois observés.
@@ -77,6 +79,7 @@ Nous structurons cette section en quatre sous-parties :
 
 
 \subsection{Préparation expérimentale et protocole de coupure}
+\label{chap6:sec.propcol}
 
 {\color{blue} 
 Points clés :
@@ -86,6 +89,10 @@ Points clés :
 	\item Passage à un régime d’expansion libre unidimensionnelle après suppression du confinement longitudinal.
 \end{itemize}
 }
+
+
+\paragraph{Contexte expérimental et références}
+Les détails concernant l’imagerie, le piégeage et la sélection spatiale sont présentés de manière approfondie dans le {chapitre~(\ref{chap:disp.exp})}, ainsi que dans la thèse de Léa Dubois \cite{L.Dubois2024}. Dans cette sous-section, nous nous limitons aux éléments essentiels à la compréhension du protocole de coupure et de la dynamique qui en résulte.
 
 \begin{figure}[!htb]
 \centering
@@ -101,24 +108,27 @@ Nous utilisons un gaz ultra-froid de $^{87}$Rb, piégé sur une puce atomique da
 Le confinement longitudinal est généré par quatre fils latéraux, dont les courants sont ajustés pour annuler les composantes linéaire, quadratique et cubique du potentiel. Il en résulte un confinement quartique $V(x) = a_4 x^4$, produisant un profil de densité quasi-plat sur environ $250~\mu$m. Cette homogénéité est cruciale pour l’étude des dynamiques balistiques et pour l’application de la GHD.
 
 \paragraph{Coupure bipartite par sélection spatiale}
-La bipartition initiale est réalisée en illuminant l’extrémité gauche du gaz par un faisceau quasi-résonant façonné par un DMD. Les atomes exposés sont expulsés du piège via pression de radiation. Cette méthode, développée dans \cite{PhysRevLett.133.113402}, permet de créer une discontinuité nette du profil de densité, entre une région vide ($x<0$) et une région remplie homogène ($x>0$). La résolution spatiale est limitée par celle du système d’imagerie (quelques $\mu$m).
+La bipartition initiale est réalisée en illuminant l’extrémité gauche du gaz par un faisceau quasi-résonant façonné par un DMD. Les atomes exposés sont expulsés du piège via pression de radiation. Cette méthode, développée dans \cite{PhysRevLett.133.113402}, permet de créer une discontinuité nette du profil de densité, entre une région vide ($x<0$) et une région remplie homogène ($x>0$). %La résolution spatiale est limitée par celle du système d’imagerie (quelques $\mu$m).
 
 \paragraph{Évolution après coupure}
-Une fois la coupure effectuée, le confinement longitudinal est supprimé tandis que le confinement transverse est maintenu. Le gaz évolue alors librement dans une direction, depuis une condition initiale non homogène analogue au problème de Riemann. L’évolution du profil de densité $n(x,t)$ est suivie par imagerie après différentes durées $t$ d’évolution.
+Une fois la coupure effectuée, le confinement longitudinal est supprimé tandis que le confinement transverse est maintenu. Le gaz évolue alors librement dans une direction, ce qui est analogue au problème de Riemann \eqref{chap6:eq.Rieman.1} mais depuis une condition initiale de deux regions homogène \eqref{chap6:eq.Rieman.cond.1} . L’évolution du profil de densité $n(x,t)$ est suivie par imagerie après différentes durées $t$ d’évolution.
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[width=0.9\linewidth]{figures/06_Bipart/Atom_chip.png}
-\caption{(a) Géométrie de la puce atomique. (b) Profils de densité longitudinale : en gris, gaz initial confiné dans un potentiel quartique ; en jaune, après illumination sélective et $1$~ms d’expansion libre.}
-\label{fig:setup}
-\end{figure}
+\begin{center}
+	[figure de shemat de coupure en tikz zt au coter deux nuage , un coupé et l'autre non coupé]	
+\end{center}
 
-\paragraph{Remarques}
-Les aspects détaillés de l’imagerie, du piégeage et de la sélection spatiale sont décrits dans le \textbf{chapitre~\ref{chap:Protocoles}}. Ici, nous introduisons uniquement les éléments nécessaires à la compréhension du protocole de coupure et de la dynamique observée.
+%\begin{figure}[!htb]
+%\centering
+%\includegraphics[width=0.9\linewidth]{figures/06_Bipart/Atom_chip.png}
+%\caption{(a) Géométrie de la puce atomique. (b) Profils de densité longitudinale : en gris, gaz initial confiné dans un potentiel quartique ; en jaune, après illumination sélective et $1$~ms d’expansion libre.}
+%\label{fig:setup}
+%\end{figure}
 
 
-\subsection{Dynamique balistique et cadre de la GHD}
-\label{sec.GHDpredictions}\label{sec:ghd}
+
+
+\subsection{Cadre de la GHD et dynamique balistique et }
+\label{sec.GHDpredictions}\label{sec:ghd}\label{chap6:sec:ghd}
 
 {\color{blue}
 Points clés :
@@ -131,8 +141,9 @@ Points clés :
 }
 
 
-Dans cette section, nous présentons le cadre théorique de la \emph{Théorie Hydrodynamique Généralisée} (GHD) appliqué à l’expérience décrite précédemment. L’objectif est de décrire analytiquement la dynamique balistique induite par une coupure bipartite dans un gaz quantique unidimensionnel, en exploitant les équations de GHD appliquées au modèle de Lieb-Liniger.
+Dans cette section, nous présentons le cadre théorique de la \emph{Théorie Hydrodynamique Généralisée} (GHD) appliqué à l’expérience décrite précédemment. L’objectif est de décrire analytiquement la dynamique balistique induite par une coupure bipartite dans un gaz quantique unidimensionnel, en exploitant les équations de GHD appliquées au modèle de Lieb-Liniger.\\
 
+{\color{blue}
 Nous procédons en plusieurs étapes : 
 \begin{enumerate}
   \item Nous introduisons la description hydrodynamique à l’échelle d’Euler.
@@ -140,27 +151,49 @@ Nous procédons en plusieurs étapes :
   \item Nous analysons la structure auto-similaire de la solution en régime hydrodynamique.
   \item Nous présentons la solution semi-analytique du problème de Riemann bipartite, ainsi que sa résolution graphique.
 \end{enumerate}
+}
 
 \paragraph{Description hydrodynamique à l’échelle d’Euler}
 
-Dans un système intégrable, les états stationnaires sont entièrement caractérisés par leur distribution de rapidités $\rho(\theta)$ ou, de manière équivalente, par le facteur d’occupation $\nu(\theta)$. En régime hors équilibre, on suppose qu’à des échelles de temps longues et d’espace macroscopiques, le système évolue lentement vers un état localement stationnaire. Cela permet d’introduire une description hydrodynamique dans laquelle les quantités locales dépendent de la position et du temps : $\rho(x,\theta;t)$ ou $\nu(x,\theta;t)$.
+Dans un système intégrable, les états stationnaires sont entièrement caractérisés par leur distribution de rapidités $\rho(\theta)$ ou, de manière équivalente, par le facteur d’occupation $\nu(\theta)$ (Cf {Chap~(\ref{chap:GHD})}). En régime hors équilibre, on suppose qu’à des échelles de temps longues et d’espace macroscopiques, le système évolue lentement vers un état localement stationnaire. Cela permet d’introduire une description hydrodynamique dans laquelle les quantités locales dépendent de la position et du temps : $\rho(x,\theta;t)$ ou $\nu(x,\theta;t)$.
 
-La densité linéique atomique est obtenue à partir de la distribution de rapidités par :
+%La densité linéique atomique est obtenue à partir de la distribution de rapidités par :
+%\begin{equation}
+%    n(x;t) = \int d\theta \, \rho(x,\theta ; t).
+%    \label{eq:lineardensity}
+%\end{equation}
+
+\paragraph{Pourquoi travailler avec $\nu$ plutôt qu’avec $\rho$~?}
+\subparagraph{Équation de GHD en termes de $\rho$.}
+L’évolution à grande échelle du système est gouvernée par les équations de GHD~\cite{bertini_transport_2016, castro-alvaredo_emergent_2016}. 
+L'évolution pour la distribution de quasi-particules $\rho(x,\theta;t)$ (Eq~\eqref{???}), en l'absence de potentiel extérieur, prend la forme d’une équation convective :
 \begin{equation}
-    n(x;t) = \int d\theta \, \rho(x,\theta ; t).
-    \label{eq:lineardensity}
+	\label{eq:rho.cont}
+	\partial_t \rho + \partial_x \big( v^{\rm eff}_{[\rho]} \rho \big) = 0,
 \end{equation}
+où $v^{\rm eff}_{[\rho]}(\theta)$ est la vitesse effective des quasi-particules de rapidité $\theta$, fonctionnelle non linéaire de $\rho$ et où un terme de compression $\partial_x (v^{\rm eff}_{[\rho]} \rho)$ apparaît lorsqu’on développe la dérivée. Cela complique l’analyse, notamment lorsque les vitesses effectives varient fortement dans l’espace ou le temps.
 
-\paragraph{Équation de GHD en termes de $\nu(x,\theta;t)$}
+Pour chaque rapidité $\theta$, l'équation \eqref{eq:rho.cont} constitue un cas particulier du problème de Riemann généralisé~\eqref{chap6:eq.Rieman.1}.
+Nous considérons ici une condition initiale de type « coupure bipartite », représentant un état homogène à droite ($x>0$) et vide à gauche ($x<0$) :
+\begin{equation}
+    \label{eq:rho.cont.init}
+    \rho(x,\theta;t=0) = 
+    \begin{cases}
+        \rho_0(\theta) & \text{si } x > 0, \\
+        0 & \text{si } x < 0.
+    \end{cases}
+\end{equation}
+Ce type de condition correspond , pour chaque rapidité $\theta$ , au condition introduit dans l'introduction \eqref{chap6:eq.Rieman.cond.1}.\\
 
-L’évolution à grande échelle du système est gouvernée par les équations de GHD~\cite{bertini_transport_2016, castro-alvaredo_emergent_2016}, qui, dans leur forme convective, s’écrivent :
+\subparagraph{Équation de GHD en termes de $\nu$.}
+En comparaison, l’évolution de la densité de remplissage $\nu(x,\theta;t)$ (Eq~\eqref{???}) , qui, en l’absence de potentiel extérieur suit une équation de transport pur (type Liouville) :
 \begin{equation}
     \label{eq:nu.cont}
     \partial_t \nu + v^{\rm eff}_{[\nu]} \, \partial_x \nu = 0,
 \end{equation}
-où $v^{\rm eff}_{[\nu]}(\theta)$ est la vitesse effective des quasi-particules de rapidité $\theta$, fonctionnelle non linéaire de $\nu$.
+où la dérivée temporelle est directement couplée à une dérivée spatiale. Cette forme préserve l'information le long des caractéristiques associées aux vitesses effectives $v^{\rm eff}_{[\nu]}$, ce qui rend la dynamique plus lisible et plus simple à analyser.
 
-Nous considérons ici une condition initiale de type « coupure bipartite », représentant un état homogène à droite ($x>0$) et vide à gauche ($x<0$) :
+Les équation de transport pur \eqref{eq:nu.cont} ne sont pas  des cas particuliers du problème de Riemann généralisé~\eqref{chap6:eq.Rieman.1}. Et donc même si les conditions initials de type  « coupure bipartite » , pour $\nu$ :
 \begin{equation}
     \label{eq:nu.cont.init}
     \nu(x,\theta;t=0) = 
@@ -169,34 +202,64 @@ Nous considérons ici une condition initiale de type « coupure bipartite », re
         0 & \text{si } x < 0.
     \end{cases}
 \end{equation}
-Ce type de condition correspond, à l’échelle d’Euler, à une version intégrable du problème de Riemann.
+sont du type \eqref{chap6:eq.Rieman.cond.1}, contrairement à \eqref{eq:rho.cont}, l'evolution \eqref{eq:nu.cont} ne génère pas de {\bf chocs}.\\
+
+
+Dans ce travail, nous choisissons de formuler la dynamique hydrodynamique généralisée en termes de la fonction d’occupation $\nu(x,\theta;t)$, plutôt que de la densité de quasi-particules $\rho(x,\theta,t)$. Cette approche présente plusieurs avantages. D’une part, l’équation vérifiée par $\nu$ est une équation de transport pur \eqref{eq:nu.cont}, ce qui permet une résolution naturelle par la méthode des caractéristiques, plus simplement que dans \eqref{eq:rho.cont}. D’autre part, $\nu$ possède une interprétation physique claire comme taux de remplissage des états accessibles, borné entre 0 et 1, ce qui en fait une variable plus stable et mieux adaptée aux calculs analytiques ou numériques.
+De plus, la dynamique effective des observables s’exprime naturellement en fonction de $\nu$.
+Enfin, $\nu$ et $\rho$ étant liés, résoudre l’équation en $\nu$ revient, une fois $v^{\rm eff}_{[\nu]}$ déterminé, à résoudre complètement la dynamique de $\rho$.
 
 \paragraph{Structure auto-similaire de la solution}
-
-Un point central de la GHD est l’invariance d’échelle des solutions de l’équation~\eqref{eq:nu.cont}. En effet, si $\nu(x,\theta;t)$ est solution, alors $\nu(\alpha x, \theta; \alpha t)$ l’est également pour tout $\alpha > 0$. Sous hypothèse d’unicité, cette propriété implique que :
+Un point central est que les conditions initiales ~\eqref{eq:nu.cont.init} sont invariantes par dilatation. En effet quelque soit $\alpha >0$ , et pour tout $x$ réelle, on a $\nu(\alpha x , \theta ; t = 0 ) = \nu( x , \theta ; t = 0 ) $.
+Un autre point central de la GHD est l’invariance d’échelle des solutions de l’équation~\eqref{eq:nu.cont} ( \eqref{eq:rho.cont} aussi et plus généralement de \eqref{chap6:eq.Rieman.1}) . En effet, si $\nu(x,\theta;t)$ est solution de  l’équation~\eqref{eq:nu.cont}, alors $\nu(\alpha x, \theta; \alpha t)$ l’est également ,  pour tout $\alpha > 0$ , avec les conditions initiales $\nu(\alpha x , \theta ; t = 0 )$. {\color{blue} Comme les fonctions $\nu(\alpha \cdot , \theta ; t = 0 )$ et $\nu( x , \theta ; t = 0 )$ coïncident, alors si $\eqref{eq:nu.cont}$ admet au plus une solution physique ( entropique Cf Annex ~\ref{chap6:annex.Rieman}) pour chaque données initiales, on doit avoir $\nu( \alpha x , \theta ; \alpha t ) = \nu(  x , \theta ;  t )$ pour tout $\alpha > 0 $}. Sous hypothèse d’unicité (Cf Annex ~(\ref{chap6:annex.Rieman})), cette propriété implique que :
 \begin{equation}
     \nu(x,\theta;t) = \nu^*\left(\frac{x}{t},\theta\right),
     \label{eq:nuvsnuetoile}
 \end{equation}
-autrement dit, les solutions dépendent uniquement du rapport $v = x/t$, appelé \emph{variable auto-similaire}. La dynamique est alors entièrement encodée dans la fonction $\nu^*(v,\theta)$, qui décrit la structure locale du gaz le long des rayons de vitesse $v$.
+autrement dit, les solutions dépendent uniquement du rapport $\xi = x/t$, appelé \emph{variable auto-similaire}. 
 
-\paragraph{Résolution du problème de Riemann}
 
-La solution $\nu^*(v,\theta)$ s’écrit comme une fonction en escalier paramétrée par une valeur de coupure $\theta^*$ :
+\paragraph{Résolution de l'évolution de $\nu$.} La dynamique est alors entièrement encodée dans la fonction $\nu^*(\xi,\theta)$, qui décrit la structure locale du gaz le long des rayons de vitesse $\xi$. Et,  pour $\xi$ est fixé, $\theta$  libre, \eqref{eq:nu.cont},  se réécrit  , avec des dérivés selon $\xi$ : 
+\begin{equation}
+	( \xi - v^{\rm eff}_{[\nu^\ast(\xi,\cdot )  ]}(\theta) )\, \partial_\xi \nu^\ast  = 0 .	
+\end{equation}
+
+Soit simplement pour chaque $\theta$, soit la vitesse effective est égale à $\xi$, soit $\partial_\xi \nu^\ast(\xi,\theta) = 0$.
+%\begin{equation}
+%	\partial_\xi \nu^\ast(\xi,\theta) = 0 , \quad \mbox{soit}\, 	
+%\end{equation}
+
+
+Autrement dit : pour une $\theta$ donnée, {\bf la fonction $\nu^\ast(\xi,\theta)$ est constante} en $\xi$, sauf au point $\xi = v^{\rm eff}_{[\nu^\ast(\xi , \cdot ) ]}(\theta)$, où une {\bf discontinuité} apparait.
+%Cette équation admet deux types de solutions~: soit pour tout $\theta$ on a $\partial_\xi \nu^* = 0$, auquel cas $\nu^*$ est constante, ce qui correspond à un état homogène sans évolution intéressante ; soit pour tout $\theta$
+%\begin{equation}
+%	v^{\rm eff}_{[\nu^\ast(\xi, )]} = \xi	,
+%\end{equation}
+%qui définit implicitement la structure spatiale de la solution non triviale, en reliant chaque rayon $v$ à la vitesse effective locale.
+
+
+La vitesse effective, $v^{\rm eff}{[\nu^\ast(\xi , \cdot ) ]}(\theta)$, est strictement monotone en $\theta$ ; il existe donc au plus un unique point $\theta^\ast$ tel que $\xi = v^{\rm eff}{[\nu^\ast]}(\theta^\ast)$, c’est-à-dire une seule discontinuité dans la solution.
+
+La solution $\nu^*(\xi,\theta)$ s’écrit comme une fonction en escalier paramétrée par une valeur de coupure $\theta^*$ :
 \begin{equation}
     \label{eq:nuetoile}
-    \nu^*(v,\theta) = 
+    \nu^*(\xi,\theta) = 
     \begin{cases}
         \nu_0(\theta) & \text{si } \theta < \theta^*, \\
         0 & \text{si } \theta > \theta^*,
     \end{cases}
-    \quad \text{où } v^{\rm eff}_{[\nu^*(v,\cdot)]}(\theta^*) = v.
+    \quad \text{où on rappelle } v^{\rm eff}_{[\nu^*(\xi,\cdot)]}(\theta^*) = \xi.
 \end{equation}
-Cette équation implicite peut être résolue numériquement pour obtenir $\theta^*$ à chaque $v$, puis en déduire $\nu^*(v,\theta)$ et, via l’équation~\eqref{eq:lineardensity}, le profil de densité $n(x,t)$ à un instant donné.
+Cette équation implicite peut être résolue numériquement pour obtenir $\theta^*$ à chaque $v$, puis en déduire $\nu^*(v,\theta)$ et, via l’équation~\eqref{eq:????}, que je rapelle 
+\begin{equation}
+    n(x;t) = \int d\theta \, \rho(x,\theta ; t),
+    \label{chap6:eq:lineardensity}
+\end{equation}
+le profil de densité $n(x,t)$ à un instant donné.
 
 \paragraph{Résumé}
 
-Ainsi, dans le cadre de la GHD, la dynamique balistique résultant du quench bipartite est décrite par une solution auto-similaire paramétrée par une coupure en rapidité $\theta^*(v)$. Cette solution permet de prédire les profils de densité et d’occupation mesurables dans l’expérience. Elle fournit également un point de comparaison direct avec les données expérimentales obtenues à différents temps $t$, comme nous le verrons dans les sections suivantes.
+Ainsi, dans le cadre de la GHD, la dynamique balistique résultant du quench bipartite est décrite par une solution auto-similaire paramétrée par une coupure en rapidité $\theta^*(\xi)$. Cette solution permet de prédire les profils de densité et d’occupation mesurables dans l’expérience. Elle fournit également un point de comparaison direct avec les données expérimentales obtenues à différents temps $t$, comme nous le verrons dans les sections suivantes.
 
 \subsection{Validation expérimentale de la dynamique hydrodynamique}
 \label{sec.don_exp}
@@ -213,6 +276,7 @@ Points clés :
 
 Dans cette section, nous présentons les résultats expérimentaux obtenus après la coupure bipartite, et les comparons aux prédictions de la GHD à l’échelle d’Euler. L’objectif est de vérifier que la dynamique du gaz est bien décrite, à court et moyen terme, par une solution auto-similaire des équations hydrodynamiques.
 
+{\color{blue}
 Nous structurons cette analyse en quatre étapes :
 \begin{enumerate}
     \item Description du protocole expérimental de libération.
@@ -220,24 +284,24 @@ Nous structurons cette analyse en quatre étapes :
     \item Délimitation du domaine de validité temporelle de la GHD.
     \item Comparaison quantitative avec la solution théorique à température nulle.
 \end{enumerate}
+}
 
 \paragraph{Libération du gaz et expansion balistique.}
 
-À l’issue du protocole de coupure décrit en section~\ref{sub_pisih}, le confinement longitudinal est entièrement supprimé, tandis que le confinement transverse est maintenu. Cette opération permet au gaz de s’étendre librement le long de l’axe longitudinal, tout en conservant un comportement unidimensionnel (cf. section~\ref{sec:confinement}).
-
+À l’issue du protocole de coupure décrit en sous-section~\ref{chap6:sec.propcol}, le confinement longitudinal est entièrement supprimé, tandis que le confinement transverse est maintenu. Cette opération permet au gaz de s’étendre librement le long de l’axe longitudinal, tout en conservant un comportement unidimensionnel (cf. section~\ref{sec:confinement}).
 L’évolution du profil de densité $n(x,t)$ est alors enregistrée à différents temps $t$ après la libération, en utilisant une imagerie par absorption.
 
 \paragraph{Mise en évidence de l’auto-similarité (régime d’Euler).}
-
-Dans le cadre de la GHD à l’échelle d’Euler, il est attendu que les profils de densité présentent une forme auto-similaire :
+Dans la section, pour se concentrer sur les facteur d'occupation $\nu$ , on a à peine mentionner que la distribution de rapidité $\rho$ suit aussi une structure auto-similaire : $\rho(x , \theta ;t) = \rho^\ast(x/t , \theta)$. 
+En injectant dans l'equation~\eqref{chap6:eq:lineardensity}, il vient que dans le cadre de la GHD à l’échelle d’Euler, il est attendu que les profils de densité présentent une forme auto-similaire :
 \begin{equation}
-n(x;t) = n^\ast\left( \frac{x}{t} \right),
+	n(x;t) = n^\ast\left( \frac{x}{t} \right),
 \end{equation}
-où $n^\ast$ est une fonction universelle qui ne dépend que de la variable réduite $v = x/t$.
+où $n^\ast$ est une fonction universelle qui ne dépend que de la variable réduite $\xi = x/t$.\\
 
 Cette propriété est testée expérimentalement en superposant les profils mesurés à différents temps, après mise à l’échelle selon $x/t$. La Fig.~\ref{fig:euler}(a) montre les profils normalisés mesurés entre $t = 10$~ms et $t = 18$~ms. L’excellent recouvrement obtenu confirme la validité du régime balistique et la pertinence de la description auto-similaire prédite par la GHD.
 
-\paragraph{Domaine de validité temporelle de la GHD.}
+\paragraph{Contrainte experimentalles.}
 
 La description par la GHD à l’échelle d’Euler est limitée à un domaine temporel intermédiaire $t \in [t_m, t_M]$ :
 
@@ -301,7 +365,8 @@ Points clés :
 
 
 \subsection*{Introduction}
-
+\ref{chap6:sec:ghd}
+Les outils de l'hydrodynamique généralisée (GHD) introduits dans la section~\ref{chap6:sec:ghd} permettent de décrire la dynamique hors équilibre dans des configurations de type jonction bipartite.
 Dans le scénario de jonction bipartite — où deux parties du gaz, initialement préparées dans des états thermodynamiques distincts, sont soudainement mises en contact — la dynamique engendre des profils locaux fortement hors équilibre. En particulier, lorsque l’état initial consiste en un gaz homogène à droite et une région vide à gauche, la GHD prédit qu’à grand temps le système atteint un régime stationnaire autosimilaire, dans lequel les observables locales dépendent uniquement du rapport $\zeta = x/t$. Dans ce régime, la distribution locale des quasi-particules est décrite par un facteur d’occupation $\nu^*(\zeta,\theta)$, solution d’une équation de type~\eqref{eq:nuetoile}.
 
 \medskip
@@ -314,12 +379,13 @@ L’objectif de cette section est de confronter ces prédictions théoriques à 
 
 \medskip
 
+{\color{blue}
 Nous structurons cette analyse en quatre étapes principales :
 \begin{itemize}
     \item Sélection d’une tranche localisée du gaz après un temps d’évolution donné.
     \item Observation du profil de vitesse après expansion libre, révélant une éventuelle asymétrie.
 \end{itemize}
-
+}
 
 \begin{figure}[!htb]
 \centering
@@ -385,9 +451,9 @@ Après la sélection, la tranche est laissée en expansion libre unidimensionnel
 \begin{equation}
 \tau\, \tilde{n}(\tau \theta - x_0 ; \tau) \underset{\tau \to \infty}{\longrightarrow} \Pi(\theta),
 \end{equation}
-où
+où, quel que soit le temps d'expansion unidimensionnelle $\tau$, la distribution de rapidité extensive $\Pi(\theta)$ reste constante, c’est-à-dire  $\Pi(\theta) = \int \rho(x, \theta ; \tau \geq 0)\, dx $. En particulier, cette distribution s’identifie à celle de l’état initial dans la tranche sélectionnée :
 \begin{equation}
-\Pi(\theta) = \int \rho(x, \theta ; \tau \geq 0)\, dx = \int_{x_0 - \ell/2}^{x_0 + \ell/2} \rho(x, \theta ; \tau = 0)\, dx.
+\Pi(\theta)  = \int_{x_0 - \ell/2}^{x_0 + \ell/2} \rho(x, \theta ; \tau = 0)\, dx.
 \end{equation}
 Autrement dit, $\Pi(\theta)$ correspond à la distribution de rapidité intégrée sur la tranche sélectionnée, conservée lors de l’expansion.
 
@@ -483,7 +549,7 @@ où $\beta = (k_B T)^{-1}$ est l’inverse de la température (en unités d’é
 
 Dans l’expérience, la quantité accessible est la densité linéique homogène $n_0$, par exemple $n_0 = 56~\mu\mathrm{m}^{-1}$ (voir Fig.~\ref{fig:simul_deformation}(a)). Afin de reproduire cette densité dans les simulations, nous fixons la température $T$ (déterminée indépendamment dans l’expérience), puis nous ajustons la valeur du potentiel chimique $\mu$ pour satisfaire la contrainte :
 \begin{equation}
-n_0 = \int \rho(\theta)\, d\theta.
+n_0 = \int \rho_0(\theta)\, d\theta.
 \end{equation}
 
 Ce processus est effectué numériquement en résolvant les équations TBA pour différentes valeurs de $\mu$ jusqu’à obtenir l’accord avec la densité cible. Dans notre cas, pour $T = 560~\mathrm{nK}$, nous obtenons $\mu = 65~\mathrm{nK}$ comme valeur correspondant à la densité $n_0 = 56~\mu\mathrm{m}^{-1}$.
@@ -517,35 +583,44 @@ c) Facteur d’occupation $\nu_0(\theta)$ correspondant à la distribution therm
 
 Une fois le facteur d’occupation initial $\nu_0(\theta)$ déterminé, nous cherchons à décrire l’évolution temporelle de la région occupée dans l’espace des phases $(x,\theta)$. Cette région, notée $\Gamma_t$, est définie comme le support du facteur d’occupation $\nu(x,\theta,t)$ : elle contient l’ensemble des points pour lesquels $\nu$ est non nul à l’instant $t$.
 
-Dans l’hydrodynamique généralisée, l’évolution de $\nu$ est décrite par une équation de conservation du type :
+\paragraph{Interprétation lagrangienne et trajectoires caractéristiques :.}
+Dans l’hydrodynamique généralisée, l’évolution de $\nu$ est décrite par une équation de transport pur du type \eqref{eq:nu.cont}. Cette équation peut être interprétée selon une perspective \textbf{lagrangienne} :  le facteur d’occupation $\nu$ reste constant au cours du temps c'est à dire  
+\begin{eqnarray}\label{chap6:eq:traj_lagr_0}
+	 \nu ( x(t) , \theta(t) ; t ) = \nu ( x(0) , \theta(0) ; 0 ) 
+\end{eqnarray}
+lorsqu’on suit les trajectoires $(x(t), \theta(t))$ définies par :  
+\begin{eqnarray*}
+	\frac{d \nu}{dt} (x , \theta ; t ) = 0,	
+\end{eqnarray*}
 
+soit $\partial_t \nu + \dot{x} \partial_t \nu = 0$ soit en identifiant dans \eqref{eq:nu.cont}:
 \begin{equation}
-\partial_t \nu(x,\theta,t) + v^{\mathrm{eff}}_{[\nu]}(x,\theta,t)\, \partial_x \nu(x,\theta,t) = 0,
+\label{chap6:eq:traj_lagr_1}
+\partial_t \left( \begin{array}{c} x(t) \\ \theta(t) \end{array} \right)  =  \left( \begin{array}{c} v^{\mathrm{eff}}_{[\nu]}(\theta(t)) \\ 0 \end{array} \right)\, \mbox{soit} \quad \left\{ \begin{array}{rcl}
+\displaystyle \frac{d x}{dt}(t) & = & v^{\mathrm{eff}}_{[\nu]}(\theta), \\
+\theta(t) & = & \theta(0) \equiv \theta.
+\end{array} \right. 
 \end{equation}
+%où $s$ est un paramètre pour différentier les particules fluide dans la perspective lagrangienne. Cette dernière équation \eqref{chap6:eq:traj_lagr_1} implique que 
+%\begin{equation}
+%\label{chap6:eq:traj_lagr_2} 
+%\left\{ \begin{array}{rcl}
+%\displaystyle \frac{d x}{dt}(s;t) & = & v^{\mathrm{eff}}_{[\nu]}(\theta(s)), \\
+%\theta(s;t) & = & \theta(s;0) = \text{constante}.
+%\end{array} \right.
+%\end{equation}
 
-où $v^{\mathrm{eff}}_{[\nu]}(x,\theta,t)$ est la vitesse dite \textit{efficace} des quasi-particules de rapidité $\theta$, en général fonctionnelle du facteur d’occupation $\nu$.
-
-Cette équation peut être interprétée selon une perspective \textbf{lagrangienne} : le facteur d’occupation $\nu$ reste constant au cours du temps lorsqu’on suit les trajectoires $(x(t), \theta)$ définies par :
-
-\begin{equation}
-\label{eq:traj_lagr}
-\partial_t \left( \begin{array}{c} x(s;t) \\ \theta(s;t) \end{array} \right)  =  \left( \begin{array}{c} v^{\mathrm{eff}}_{[\nu]}(\theta(s;t)) \\ 0 \end{array} \right), \quad \mbox{soit} \, 
-\left\{ \begin{array}{rcl}
-\displaystyle \frac{d x}{dt}(t) & = & v^{\mathrm{eff}}_{[\nu]}(x(t), \theta, t), \\
-\theta(t) & = & \theta(0) = \text{constante}.
-\end{array} \right.
-\end{equation}
-
-Autrement dit, les quasi-particules de rapidité $\theta$ se déplacent à la vitesse efficace $v^{\mathrm{eff}}$, et leur répartition reste inchangée tout au long de leur trajectoire dans l’espace des phases. Cette conservation est analogue à une conservation lagrangienne classique, où l’on suit un élément de fluide individuellement.
+Autrement dit, les quasi-particules de rapidité $\theta$ se déplacent à la vitesse efficace $v^{\mathrm{eff}}_{[\nu]}$, et leur répartition reste inchangée tout au long de leur trajectoire dans l’espace des phases. Cette conservation est analogue à une conservation lagrangienne classique, où l’on suit un élément de fluide individuellement.
 
 \medskip
 
-Nous considérons un état initial de type « patch » : le facteur d’occupation $\nu(x,\theta,0)$ est égal à $\nu_0(\theta)$ à l’intérieur d’une certaine région initiale $\Gamma_0$, et nul en dehors. Ce choix modélise une situation typique de type « front d’onde » avec un gaz localement homogène dans une portion de l’espace.
+\paragraph{État initial en "patch" et Propagation du support .}
+Nous considérons un état initial de type « patch » : le facteur d’occupation $\nu(x ,\theta ;0)$ est égal à $\nu_0(\theta)$ à l’intérieur d’une certaine région initiale $\Gamma_0$, et nul en dehors. Ce choix modélise une situation typique de type « front d’onde » avec un gaz localement homogène dans une portion de l’espace.
 
-En suivant chaque point $(x,\theta)$ de cette région selon l’équation~\eqref{eq:traj_lagr}, on détermine la région atteinte à l’instant $t$, notée $\Gamma_t$. Par construction, le facteur d’occupation reste constant le long de ces trajectoires :
+En suivant chaque point $(x(t),\theta)$ de cette région selon l’équation~\eqref{chap6:eq:traj_lagr_1}, on détermine la région atteinte à l’instant $t$, notée $\Gamma_t$. Par construction, le facteur d’occupation reste constant le long de ces trajectoires d'après \eqref{chap6:eq:traj_lagr_0}, $\nu(x(t),\theta,t) = \nu(x(0),\theta,0)$  soit :
 
 \begin{equation}
-\nu(x(t),\theta,t) = \nu(x(0),\theta,0) = \nu_0(\theta).
+	\nu(x(t),\theta,t)  = \nu_0(\theta).
 \end{equation}
 
 Par conséquent, on peut écrire l’évolution du facteur d’occupation de manière explicite :
