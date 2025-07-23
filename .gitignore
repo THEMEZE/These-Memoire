@@ -37,8 +37,8 @@ build/
 # Fichier de configuration locale
 .latexmkrc
 
-# gitgnore
-.gitgnore
+# gitignore
+.gitignore
 
 /figures/07_Dipolaire/TA_brouillon.pynb
 
