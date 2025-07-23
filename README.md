@@ -61,17 +61,23 @@ latexmk -pdf main.tex
 ```
 
 Pour une compilation propre :
+```bash
 latexmk -C
+```
 
 Ou en ligne de commande classique
 
+```bash
 pdflatex main.tex
 bibtex main
 pdflatex main.tex
 pdflatex main.tex
+```
 
-Ou via le script
+Ou via le script qui demande si on veux trous compiler (les tikz aussi) et puis après compilation si on veux push sur ce git
+```bash
 ./compile.sh
+```
 
 ## ⚙️ Utilisation avec Binder
 
@@ -93,6 +99,7 @@ Pour exécuter un script Python, utilisez la commande suivante :
 
 ```sh
 python3 idée1/codes/python/idée1.py
+```
 
 📌 Conseils
 Modifier uniquement les fichiers dans chapters/ pour le contenu du manuscrit.
