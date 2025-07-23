@@ -57,7 +57,8 @@ thesis/
 Assurez-vous d'avoir `latexmk` installé :
 
 ```bash
-latexmk -pdf main.tex
+latexmk -pdf main.tex 
+```
 
 Pour une compilation propre :
 latexmk -C
