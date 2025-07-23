@@ -45,7 +45,10 @@ build/
 ./figures/07_Dipolaire/TA_brouillon.pynb
 
 #/figures/**/*.ipynb
+#figures/06_Bipart/*.ipynb
 
-figures/06_Bipart/*.ipynb
+/figures/04_GGE_Fluctuation/**/
+/figures/06_Bipart/**/
+
 
 
