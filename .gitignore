@@ -38,7 +38,11 @@ build/
 .latexmkrc
 
 # gitignore
-.gitignore
+#.gitignore
 
-/figures/07_Dipolaire/TA_brouillon.pynb
+# Fichiers spécifiques à ignorer
+./figures/07_Dipolaire/TA_brouillon.pynb
+
+#/figures/**/*.ipynb
+
 
