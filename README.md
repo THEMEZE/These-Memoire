@@ -218,7 +218,7 @@ git push origin --force
 
 
 ## 🗂 Structure du projet
-
+```bash
 thesis/
 ├── main.tex. 					## Le fichier principal, qui appelle les chapitres, gère la structure globale, et compile tout.
 ├── preamble.tex					## Contient toutes les options de classe, packages, et réglages généraux. Il appelle souvent packages.tex et macros.tex.
@@ -240,7 +240,7 @@ thesis/
 │   ├── commands.tex
 │   └── packages.tex
 └── build/ (généré automatiquement)	## Répertoire temporaire pour les fichiers .aux, .log, .pdf, etc. Peut être ignoré par Git.
-
+```
 
 📌 Conseils
 Modifier uniquement les fichiers dans chapters/ pour le contenu du manuscrit.
