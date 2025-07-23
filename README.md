@@ -111,5 +111,7 @@ La bibliographie est définie dans thesis.bib et appelée automatiquement à la 
 (Ce projet est privé / sous licence Creative Commons / à adapter selon les cas)
 
 Dernière mise à jour : [jj/mm/aaaa]
-# These-Memoire
-# These-Memoire
+
+- [x] #739
+- [ ] <https://github.com/octo-org/octo-repo/issues/740>
+- [ ] Add delight to the experience when all tasks are complete :tada:
