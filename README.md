@@ -158,7 +158,7 @@ git push origin --force
 ```
 
 
-##✅ Solution : Réécrire l’historique pour supprimer complètement ces gros fichiers
+## ✅ Solution : Réécrire l’historique pour supprimer complètement ces gros fichiers
 
 1. Installe le paquet BFG Repo-Cleaner (plus rapide que filter-branch) :
 ```bash
@@ -194,6 +194,52 @@ Ajoute ceci dans .gitignore :
 ```bash
 figures/06_Bipart/*.ipynb
 ```
+ou
+```bash
+echo "figures/06_Bipart/*.ipynb" >> .gitignore
+git add .gitignore
+```
+
+## ✅ Objectif : Forcer le push de la version actuelle sans les gros .ipynb
+
+🛠️ Étapes claires et testées :
+1. Supprime les gros fichiers du suivi Git
+Assure-toi qu’ils ne sont plus suivis (même s’ils sont dans ton dossier local) :
+```bash
+git rm --cached figures/06_Bipart/bord_expansion_julia_2024-11-24.ipynb
+git rm --cached figures/06_Bipart/bord_expansion_julia_2024-11-18.ipynb
+git rm --cached figures/06_Bipart/box_expansion_julia_final_2_2024-03-13.ipynb
+```
+2. Ajoute un fichier .gitignore pour éviter qu’ils reviennent
+```bash
+echo "figures/06_Bipart/*.ipynb" >> .gitignore
+git add .gitignore
+```
+3. Réécris l’historique pour effacer les fichiers trop gros
+Installe BFG si ce n’est pas fait :
+```bash
+brew install bfg
+```
+Puis dans le dossier de ton dépôt :
+```bash
+bfg --delete-files bord_expansion_julia_2024-11-24.ipynb
+bfg --delete-files bord_expansion_julia_2024-11-18.ipynb
+bfg --delete-files box_expansion_julia_final_2_2024-03-13.ipynb
+```
+4. Nettoie les résidus Git
+```bash
+git reflog expire --expire=now --all
+git gc --prune=now --aggressive
+```
+5. Force le push vers GitHub
+```bash
+git push origin --force
+```
+⚠️ Attention :
+-- Le --force va écraser l’historique distant, donc si quelqu’un d’autre bosse dessus, il faut le prévenir.
+
+-- Tu ne pourras plus récupérer les gros .ipynb via GitHub, donc garde-les bien localement ou ailleurs.
+
 
 
 
