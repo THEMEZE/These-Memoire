@@ -101,6 +101,64 @@ Pour exécuter un script Python, utilisez la commande suivante :
 python3 idée1/codes/python/idée1.py
 ```
 
+# ⚙️ Git  Mise à jour
+```bash
+git add .
+git commit -m "Mise à jour"
+git push
+```
+
+## 🧰 Utiliser Git LFS (si tu dois quand même versionner ces fichiers)
+
+```bash
+brew install git-lfs
+```
+
+Installe Git LFS
+```bash
+git lfs install
+```
+
+Suit les fichiers .ipynb avec Git LFS
+```bash
+git lfs track "*.ipynb"
+echo "*.ipynb filter=lfs diff=lfs merge=lfs -text" >> .gitattributes
+```
+
+Ajoute à nouveau les fichiers
+```bash
+git add .gitattributes
+git add figures/06_Bipart/*.ipynb
+git commit -m "Utilise Git LFS pour les fichiers volumineux"
+git push
+```
+```bash
+git lfs install
+git lfs track "*.ipynb"
+git add .gitattributes
+git add figures/06_Bipart/*.ipynb
+git commit -m "Track large notebooks with Git LFS"
+git push
+```
+
+⚠️ Attention : tous les membres du projet devront avoir Git LFS installé localement.
+
+## 🧹 Pour nettoyer un commit déjà envoyé (si tu as tenté un push auparavant avec un gros fichier)
+Tu peux utiliser :
+```bash
+git filter-branch --force --index-filter \
+"git rm --cached --ignore-unmatch figures/06_Bipart/bord_expansion_julia_2024-11-18.ipynb" \
+--prune-empty --tag-name-filter cat -- --all
+```
+Puis :
+```bash
+git push origin --force
+```
+
+
+
+
+
 📌 Conseils
 Modifier uniquement les fichiers dans chapters/ pour le contenu du manuscrit.
 Ajouter les figures dans figures/chapitreX/ et les appeler dans les chapitres correspondants.
