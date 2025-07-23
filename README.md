@@ -27,6 +27,11 @@ thesis/
 └── build/ (généré automatiquement)	## Répertoire temporaire pour les fichiers .aux, .log, .pdf, etc. Peut être ignoré par Git.
 
 ## 🗂 Structure du projet
+* Une puce
+* Une autre puce
+    * Une sous-puce
+    * Une autre sous-puce
+* Et encore une autre puce !
 
 * thesis/
 *├── main.tex                     ## Le fichier principal, qui appelle les chapitres, gère la structure globale, et compile tout.
