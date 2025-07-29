@@ -10,6 +10,9 @@ Ce dépôt contient l'ensemble des fichiers LaTeX nécessaires à la compilation
     * `thesis.bib` — Bibliographie au format BibTeX
     * `README.md` — Instructions pour compiler et comprendre la structure
     * `Makefile` ou `compile.sh` — Script pour compiler automatiquement
+    * `binder/`
+	* `Project.toml`
+	* `Manifest.toml`   # recommandé
     * `figures/` — Dossier des figures
         * `chapitre1/` — Figures du chapitre 1
         * `chapitre2/` — Figures du chapitre 2
@@ -62,12 +65,27 @@ Ou via le script qui demande si on veux trous compiler (les tikz aussi) et puis 
 )
 ```
 
+Cliquez sur le badge Binder pour lancer un environnement Jupyter avec ce dépôt.
+
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/THEMEZE/These-Memoire/main)
+
+### 📊 Lancer le notebook Julia sur Binder
+
+Cliquez ci-dessous pour exécuter le notebook Monte-Carlo en ligne via Binder :
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/THEMEZE/These-Memoire/HEAD?filepath=figures/04_GGE_Fluctuation/Monte-Carlo-Julia-Gge.ipynb)
 
+> 💡 Requiert que le dépôt contienne un environnement Julia valide dans `binder/`.
 
-Cliquez sur le badge Binder pour lancer un environnement Jupyter avec ce dépôt.
+
+### ⚙️Manifest.toml
+```sh
+cd chemin/vers/These-Memoire
+julia
+]          # <-- ne tape pas le crochet, appuie juste sur la touche ]
+activate .
+add IJulia
+```
 
 ## ⚙️ Utilisation avec Repl.it
 
