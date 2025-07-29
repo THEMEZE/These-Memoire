@@ -68,13 +68,32 @@ avec $\operator{\mathcal{H}}$ l’opérateur hamiltonien.
     leftmargin=2pt,
     rightmargin=2pt
 	]
-\subparagraph{Exemple : particule libre en une boite à une dimension.} Pour une particule libre de masse $m$ en une dimension, l’hamiltonien est purement cinétique : $\operator{\mathcal{H}}_1 = \hat{p}^2 / 2m$. Les états propres stationnaires dépendant du temps sont de la forme $\psi_k(x,t) = \varphi_k(x)\,e^{-i\varepsilon(k)t/\hbar}$ où $\varphi_k(x)$ est une fonction propre de l’hamiltonien, solution de \eqref{chap.1.rapel.1} soit de  l’équation stationnaire  $\operator{\mathcal{H}}_1\varphi_k = \varepsilon(k)\varphi_k$ avec $\varepsilon(k) = \hbar^2 k^2 / (2m)$ l’énergie associée à une onde plane de nombre d’onde $k$ . Les fonctions propres spatiales $\varphi_k(x)$ de l’hamiltonien libre s’écrivent comme des combinaisons linéaires d’ondes planes  $\varphi_k(x) = a e^{i k x} + b e^{-i k x}$ avec $(a,b) \in \mathbb{C}^2$.
-Si la particule est confinée dans une boîte de longueur $L$ avec des conditions aux limites périodiques (ie $\varphi_k(x+L) = \varphi_k(x)$), alors le spectre de $k$ est quantifié : $k \in \frac{2\pi}{L} \mathbb{Z}$. Les solutions générales de l’équation de Schrödinger s’écrivent alors comme une superposition d’états propres  $\psi = \sum_k c_k \psi_k $.  Le problème est équivalent à celui d’une particule libre sur un cercle de périmètre $L$.
+\subparagraph{Exemple : particule libre en une boite à une dimension.} Pour une particule libre de masse $m$ en une dimension, l’hamiltonien est purement cinétique : $\operator{\mathcal{H}} = \hat{p}^2 / 2m$ soit :
+	\begin{eqnarray}
+		\operator{\mathcal{H}} = -\frac{\hbar^2}{2m} \partial_x^2.
+	\end{eqnarray}
+	Les états propres stationnaires dépendant du temps sont de la forme $\psi_k(x,t) = \varphi_k(x)\,e^{-i\varepsilon(k)t/\hbar}$ soit :
+	\begin{eqnarray}
+		\frac{\hbar^2}{2m} \partial_x^2 \varphi_k = \varepsilon(k) \varphi_k,
+	\end{eqnarray}
+	où 
+	\begin{eqnarray}
+		\varepsilon(k) = \frac{\hbar^2 k^2 }{2 m},
+	\end{eqnarray}
+	est une fonction propre de l’hamiltonien, solution de \eqref{chap.1.rapel.1} soit de  l’équation stationnaire  $\operator{\mathcal{H}}_1\varphi_k = \varepsilon(k)\varphi_k$ avec $\varepsilon(k) = \hbar^2 k^2 / (2m)$ l’énergie associée à une onde plane de nombre d’onde $k$ . Les fonctions propres spatiales $\varphi_k(x)$ de l’hamiltonien libre s’écrivent comme des combinaisons linéaires d’ondes planes  $\varphi_k(x) = a e^{i k x} + b e^{-i k x}$ avec $(a,b) \in \mathbb{C}^2$.
+	\begin{eqnarray}
+		\varphi_k(x) = a e^{-i k x} + b e^{i k x},~~ \mbox{avec}\quad  (a,b) \in \mathbb{C}^2.
+	\end{eqnarray}
+	Si la particule est confinée dans une boîte de longueur $L$ avec des conditions aux limites périodiques (ie $\varphi_k(x+L) = \varphi_k(x)$), alors le spectre de $k$ est quantifié : 
+	\begin{eqnarray}
+		kL \in 2\pi\mathbb{Z}.
+	\end{eqnarray}
+	Les solutions générales de l’équation de Schrödinger s’écrivent alors comme une superposition d’états propres  $\psi = \sum_k c_k \psi_k $.  Le problème est équivalent à celui d’une particule libre sur un cercle de périmètre $L$.
 
-On résume :
-\begin{eqnarray}
-	\operator{\mathcal{H}}_1 = -\frac{\hbar^2}{2m} \partial_x^2,~~-\frac{\hbar^2}{2m} \partial_x^2 \varphi_k = \varepsilon(k) \varphi_k,~~ \varepsilon(k) = \frac{\hbar^2 k^2 }{2 m}, ~~\varphi_k(x) = a e^{-i k x} + b e^{i k x},~~ kL \in 2\pi\mathbb{Z}.\label{chap.1.recap}
-\end{eqnarray}
+%On résume :
+%\begin{eqnarray}
+%	,~~ , ~~\varphi_k(x) = a e^{-i k x} + b e^{i k x},~~ kL \in 2\pi\mathbb{Z}.\label{chap.1.recap}
+%\end{eqnarray}
 \end{mdframed}
 
 Ces solutions correspondent à des {\bf états non liés} (ou états de diffusion) : la particule est délocalisée sur tout l’espace (le cercle), sans structure particulière.
