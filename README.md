@@ -56,10 +56,16 @@ Ou via le script qui demande si on veux trous compiler (les tikz aussi) et puis 
 ```
 
 ## ⚙️ Utilisation avec Binder
+```sh
+[![Binder](https://mybinder.org/badge_logo.svg)](
+  https://mybinder.org/v2/gh/<utilisateur>/<répertoire>/<branche>?filepath=<chemin/vers/notebook.ipynb>
+)
+```
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/THEMEZE/These-Memoire/main)
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/THEMEZE/These-Memoire/figures/04_GGE_Fluctuation/Monte-Carlo-Julia-Gge.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/THEMEZE/These-Memoire/HEAD?filepath=figures/04_GGE_Fluctuation/Monte-Carlo-Julia-Gge.ipynb)
+
 
 Cliquez sur le badge Binder pour lancer un environnement Jupyter avec ce dépôt.
 
