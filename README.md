@@ -107,11 +107,11 @@ python3 idée1/codes/python/idée1.py
 ```
 ### ⚙️ Julia
 ```sh
-julia figures/04_GGE_Fluctuation/Monte-Carlo-Julia-Gge.jl
+julia figures/04_GGE_Fluctuation/Monte-Carlo-Julia-Gge_Pluto.jl
 ```
 
 #### Pluto
-
+Voici un guide pas à pas pour transformer ton script en *notebook Pluto* interactif, tout en gardant la rigueur scientifique.
 ##### 🧰 1. Installation de Pluto
 ```sh
 julia
