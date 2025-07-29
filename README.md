@@ -110,6 +110,26 @@ python3 idée1/codes/python/idée1.py
 julia figures/04_GGE_Fluctuation/Monte-Carlo-Julia-Gge.jl
 ```
 
+#### Pluto
+
+##### 🧰 1. Installation de Pluto
+```sh
+julia
+import Pkg
+Pkg.add("Pluto")
+```
+
+##### ▶️ 2. Lancer Pluto
+```sh
+using Pluto
+Pluto.run()
+```
+
+
+```sh
+julia figures/04_GGE_Fluctuation/Monte-Carlo-Julia-Gge.jl
+```
+
 # ⚙️ Git  Mise à jour
 ```bash
 git add .
