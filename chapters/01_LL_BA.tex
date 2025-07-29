@@ -32,30 +32,18 @@ La mécanique quantique se développe historiquement en deux grandes étapes : l
 
 %\vspace{0.5cm}
 
-\paragraph{Première quantification (quantification canonique , particule unique).}
+\paragraph{Première quantification (quantification canonique, particule unique).}
 
-La première quantification est la mécanique quantique standard, celle que vous avez rencontrée dès vos premiers cours. Elle consiste à quantifier un système classique décrit par des variables dynamiques telles que la position $x$ et la quantité de mouvement $p$. On procède en remplaçant ces variables par des {\bf opérateurs hermitiens} $\operator{x}$ et $\operator{p} \doteq -i\hbar \partial_x $, où $\hbar$ est la constante de Planck réduite, satisfaisant la {\bf relation de commutation canonique} fondamentale $[\operator{x}, \operator{p}] = i\hbar$. L’état du système est alors décrit par une {\bf fonction d’onde} $\psi(x,t)$, solution de {\bf l’équation de  Schrödinger} indépendante du nombre de particules :
-
-%La première quantification est celle de la mécanique quantique standard, où l'on associe aux variables classiques (position $x$ et impulsion $p$) des opérateurs hermitiens $\operator{x}$ et $\operator{p} \doteq -i\hbar \partial_x$, satisfaisant la relation de commutation canonique :
-
-%La première quantification est la mécanique quantique standard, celle introduite dès les premiers cours. Elle consiste à associer à un système classique des opérateurs hermitiens $\hat{x}$ et $\hat{p} \doteq -i\hbar \partial_x$, satisfaisant la relation de commutation canonique $[\hat{x}, \hat{p}] = i\hbar$. L’état du système est décrit par une fonction d’onde $\varphi(x,t)$, solution de l’équation de Schrödinger :
-
-
-
-
+La première quantification est la mécanique quantique standard, celle que vous avez rencontrée dès vos premiers cours. Elle consiste à quantifier un système classique décrit par des variables dynamiques telles que la position $x$ et la quantité de mouvement $p$. On procède en remplaçant ces variables par des {\bf opérateurs hermitiens} $\operator{x}$ et %$\operator{p}$
 \begin{eqnarray}
-\quad i \hbar \frac{\partial \psi }{\partial t}  &= \operator{\mathcal{H}} \psi,\label{chap.1.rapel.1}
+	\operator{p} \doteq -i\hbar \operator{\partial}_x,	\label{chap.1.rapel.1}
+\end{eqnarray}
+où $\hbar$ est la constante de Planck réduite, satisfaisant la {\bf relation de commutation canonique} fondamentale $[\operator{x}, \operator{p}] = i\hbar$. L’état du système est alors décrit par une {\bf fonction d’onde} $\psi(x,t)$, solution de {\bf l’équation de  Schrödinger} indépendante du nombre de particules :
+\begin{eqnarray}
+\quad i \hbar \frac{\partial \psi }{\partial t}  &= \operator{\mathcal{H}} \psi,\label{chap.1.rapel.2}
 \end{eqnarray}
 
 avec $\operator{\mathcal{H}}$ l’opérateur hamiltonien. 
-
-%\subparagraph{Exemple : particule libre en une dimension.} Pour une particule libre de masse $m$ en une dimension, l’hamiltonien inclut typiquement une énergie cinétique (ie $\operator{\mathcal{H}}_1=\operator{p}^2/2m$ ). En régime stationnaire,  $i \hbar \partial_t \varphi = \varepsilon \varphi $ avec $\varepsilon$ l'énergie du système .Les solutions admissibles  sont alors des ondes planes, combinaition linairais de $e^{i k x}$ et $e^{-i k x}$, où $k$ est le nombre d'onde et l'energie associer est $\varepsilon = (\hbar k)^2/(2m)$. Si la particule est confinée dans une boîte unidimensionnelle de longueur $L$, avec des conditions aux limites périodiques (ie  alors $\varphi(x+L) = \varphi(z)$). Ce qui implique que  $k$ est quantifié ($k \in \frac{2\pi}L \mathbb{Z}$). Ce problème est donc équivalent à celui d’une particule libre sur un cercle de périmètre $L$. Pour la suite on rappelle l'hamiltonient $\operator{\mathcal{H}}_1$ , l'équation de shrôdingeur stationnaire , les solution de la donction d'onde et l'implication de periodicité sur le nombre d'onde 
-%\begin{eqnarray}
-%	\operator{\mathcal{H}}_1=-\frac{\hbar^2}{2m} \partial_x^2 ;~ - \frac{\hbar^2}{2 m} \partial_x^2 \varphi_{\{k\}}  =  \varepsilon(k) \varphi_{\{k\}}; ~\varphi_{\{k\}}(x) = ae^{i k x} + be^{-i k x},~ (a,b) \in \mathbb{C}^2, ~	k \in \frac{2\pi}{L} \mathbb{Z}
-%\end{eqnarray}
-%$k$ etant un mode de la solution on indice les fonction d'onde avec $k$.
-
-%Ces solutions correspondent à des {\bf états non liés} (ou états de diffusion) : la particule est délocalisée sur tout l’espace (le cercle), sans structure particulière.
 
 \begin{mdframed}[
 	linewidth=0.5pt, 
@@ -68,19 +56,22 @@ avec $\operator{\mathcal{H}}$ l’opérateur hamiltonien.
     leftmargin=2pt,
     rightmargin=2pt
 	]
-\subparagraph{Exemple : particule libre en une boite à une dimension.} Pour une particule libre de masse $m$ en une dimension, l’hamiltonien est purement cinétique : $\operator{\mathcal{H}} = \hat{p}^2 / 2m$ soit :
+\subparagraph{Exemple : particule libre en une boite à une dimension.} 
+	{~}\\
+	
+	Dans le cas d’une particule libre de masse $m$ se déplaçant en une dimension, l’Hamiltonien est constitué uniquement du terme cinétique $\operator{\mathcal{H}} = \operator{p}^2 / 2m$. En représentation position, où l’opérateur quantité de mouvement s’écrit comme dans l’équation \eqref{chap.1.rapel.1}, l’Hamiltonien prend alors la forme différentielle :
 	\begin{eqnarray}
 		\operator{\mathcal{H}} = -\frac{\hbar^2}{2m} \partial_x^2.
 	\end{eqnarray}
-	Les états propres stationnaires dépendant du temps sont de la forme $\psi_k(x,t) = \varphi_k(x)\,e^{-i\varepsilon(k)t/\hbar}$ soit :
+	Les états propres stationnaires de \eqref{chap.1.rapel.2} dépendant du temps sont de la forme $\psi_k(x,t) = \varphi_k(x)\,e^{-i\varepsilon(k)t/\hbar}$ où $\varphi_k(x)$ est une fonction propre de l’hamiltonien,  soit de  l’équation stationnaire  $\operator{\mathcal{H}}\varphi_k = \varepsilon(k)\varphi_k$ \ie pour une particule libre:
 	\begin{eqnarray}
 		\frac{\hbar^2}{2m} \partial_x^2 \varphi_k = \varepsilon(k) \varphi_k,
 	\end{eqnarray}
-	où 
+	avec $\varepsilon(k)$ l’énergie associée à une onde plane de nombre d’onde $k$
 	\begin{eqnarray}
-		\varepsilon(k) = \frac{\hbar^2 k^2 }{2 m},
+		\varepsilon(k) = \frac{\hbar^2 k^2 }{2 m}.
 	\end{eqnarray}
-	est une fonction propre de l’hamiltonien, solution de \eqref{chap.1.rapel.1} soit de  l’équation stationnaire  $\operator{\mathcal{H}}_1\varphi_k = \varepsilon(k)\varphi_k$ avec $\varepsilon(k) = \hbar^2 k^2 / (2m)$ l’énergie associée à une onde plane de nombre d’onde $k$ . Les fonctions propres spatiales $\varphi_k(x)$ de l’hamiltonien libre s’écrivent comme des combinaisons linéaires d’ondes planes  $\varphi_k(x) = a e^{i k x} + b e^{-i k x}$ avec $(a,b) \in \mathbb{C}^2$.
+	Les fonctions propres spatiales $\varphi_k(x)$ de l’hamiltonien libre s’écrivent comme des combinaisons linéaires d’ondes planes  
 	\begin{eqnarray}
 		\varphi_k(x) = a e^{-i k x} + b e^{i k x},~~ \mbox{avec}\quad  (a,b) \in \mathbb{C}^2.
 	\end{eqnarray}
@@ -88,7 +79,11 @@ avec $\operator{\mathcal{H}}$ l’opérateur hamiltonien.
 	\begin{eqnarray}
 		kL \in 2\pi\mathbb{Z}.
 	\end{eqnarray}
-	Les solutions générales de l’équation de Schrödinger s’écrivent alors comme une superposition d’états propres  $\psi = \sum_k c_k \psi_k $.  Le problème est équivalent à celui d’une particule libre sur un cercle de périmètre $L$.
+	Le problème est équivalent à celui d’une particule libre sur un cercle de périmètre $L$.\\
+	
+	\medskip
+	
+	Les solutions générales de l’équation de Schrödinger s’écrivent alors comme une superposition d’états propres  $\psi = \sum_k c_k \psi_k $.  
 
 %On résume :
 %\begin{eqnarray}
