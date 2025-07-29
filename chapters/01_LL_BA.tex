@@ -99,8 +99,27 @@ L’espace engendré par l’ensemble des sous-espaces propres forme un {\bf esp
 \begin{eqnarray}
 	( \varphi_{k'} , \varphi_{k} ) = \int_0^L \varphi_{k'}^\ast(x) \varphi_{k}(x) \, dx .\label{chap.1.rapel.libre.5}
 \end{eqnarray}
-Les sous-espaces propres sont orthogonaux entre eux \ie en utilisant les conséquences de la condition de périodicité \eqref{chap.1.rapel.libre.5}, $( \varphi_{k'} , \varphi_{k} ) = 0$ pour $k' \neq k $ . 
-Pour chaque sous-espace propre on impose que les états propres forment une base orthonormale \ie en utilisant \eqref{chap.1.rapel.libre.5}, les fonctions propres $\varphi_{k}$ écrit sous la forme \eqref{chap.1.rapel.libre.4}, sont orthogonaux avec $\varphi_{\overline{k}} \colon x \mapsto \pm ( b^\ast e^{-ikx} - a^\ast e^{ikx} )$  soit $(\varphi_{\overline{k}} , \varphi_{k} ) = 0$, et on impose que  $ \vert a \vert^2 + \vert b \vert^2 = L^{-1}$ pour assuré la normalité  de $\varphi_{k}$  et de $\varphi_{\overline{k}}$ soit  $( \varphi_{k} , \varphi_{k} ) = (\varphi_{\overline{k}} , \varphi_{\overline{k}})   = 1$.  
+Les sous-espaces propres sont orthogonaux entre eux \ie en utilisant les conséquences de la condition de périodicité \eqref{chap.1.rapel.libre.5}, $( \varphi_{k'} , \varphi_{k} ) = 0$ pour $\vert k' \vert \neq \vert k \vert  $ . 
+Pour chaque sous-espace propre on impose que les états propres forment une base orthonormale \ie en utilisant \eqref{chap.1.rapel.libre.5}, les fonctions propres $\varphi_{k}$ écrit sous la forme \eqref{chap.1.rapel.libre.4}, sont orthogonaux avec $\varphi_{\overline{k}} \colon x \mapsto \pm ( b^\ast e^{-ikx} - a^\ast e^{ikx} )$  soit $(\varphi_{\overline{k}} , \varphi_{k} ) = 0$, et on impose que  $ \vert a \vert^2 + \vert b \vert^2 = L^{-1}$ pour assuré la normalité  de $\varphi_{k}$  et de $\varphi_{\overline{k}}$ soit  $( \varphi_{k} , \varphi_{k} ) = (\varphi_{\overline{k}} , \varphi_{\overline{k}})   = 1$. 
+
+\medskip
+Il y a deux base de vecteur propre particulier : 
+\begin{enumerate}[label=\roman*)]
+	\item Base de chiralité / impulsion :
+	\begin{eqnarray}
+		\left \{ \begin{array}{rcll} \varphi_k  & = & \displaystyle \frac{1}{\sqrt{L}} e^{+ikx} & \mbox{état avec impulsion $+\hbar k $ } \\ \varphi_{\overline{k}}  & = & \displaystyle \frac{1}{\sqrt{L}}e^{-ikx} & \mbox{état avec impulsion $-\hbar k $ }\end{array}\right.
+	\end{eqnarray}
+	Cela correspond à des états propres de l’opérateur impulsion $\operator{p} = -i \hbar \operator{\partial}_x$, avec valeurs propres opposées.
+	\item Base symétrique / antisymétrique  
+	\begin{eqnarray}
+		\left \{ \begin{array}{rcllll} \varphi_k  &= & \displaystyle\frac{1}{\sqrt{2L}}(e^{+ikx} + e^{-ikx})  & = & \displaystyle \sqrt{\frac{2}{L}} \cos (kx)  & \mbox{type Neumann  : $\varphi_k'(0) = \varphi_k'(L) = 0 $ } \\ \varphi_{\overline{k}}  & = & \displaystyle\frac{1}{\sqrt{2L}i}(e^{+ikx} - e^{-ikx}) & = & \displaystyle \sqrt{\frac{2}{L}} \sin (kx)  & \mbox{type Dirichlet : $\varphi_{\overline{k}}(0) = \varphi_{\overline{k}}(L) = 0 $}\end{array} \right.
+	\end{eqnarray}
+\end{enumerate}
+
+
+\medskip
+
+Cette condition d’orthonormalité est imposée afin de garantir l’indépendance linéaire des états quantiques, et d'assurer que toute fonction d’onde de l’espace de Hilbert puisse être développée de manière unique sur cette base. 
 
 %\begin{mdframed}[
 %	linewidth=0.5pt, 
@@ -148,15 +167,11 @@ où $\ket{x}$ est normé (\ie $\braket{x'\vert x} = \delta ( x' - x ) $ avec $\d
 	]
 La base $\{\ket{x}\}$ étant continue, et les états $\{\ket{k}\}$ quantifiés (par exemple dans une boîte de taille finie avec conditions aux limites périodiques), les relations de changement de base s’écrivent :
 \begin{eqnarray}
-	\ket{k} = \int dx \, \varphi_k(x) \ket{x}, \qquad   
+	\ket{k} = \int_0^L dx \, \varphi_k(x) \ket{x}, \qquad   
 	\ket{x} = \sum_k \varphi_k^\ast(x) \ket{k},
 \end{eqnarray}
 avec $\varphi_k^\ast(x) = \langle k \vert x \rangle$. L’état $\ket{x}$ est relié aux états $\ket{k}$ par une transformation de Fourier discrète. Ces formules montrent que les états $\ket{k}$ sont les composantes de Fourier de l’état $\ket{x}$.
 \end{mdframed}
-
-
-
-
 
 
 \subparagraph{De la particule unique aux systèmes à $N$ particules.}
@@ -169,10 +184,6 @@ Pour un système composé de $N$ particules identiques, une approche naturelle c
 
 %où $g$ est un paramètre d’interaction contrôlant l’intensité des collisions. 
 Toutefois, cette description devient rapidement inextricable lorsque le nombre de particules augmente, ou lorsque le système permet la création et l’annihilation de particules, comme dans un milieu ouvert ou en contact avec un bain thermique.
-
-
-
-
 
 %{\color{blue} \paragraph{Seconde quantification.}
 %
@@ -224,10 +235,10 @@ Pour dépasser ces limitations, on adopte le \textbf{formalisme de la seconde qu
 %%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Structure de l’espace des états de Fock.}
 Dans ce formalisme, l’espace des états est une {\bf somme directe d’espaces à $N$ particules}, et chaque état est décrit par l’occupation des différents modes quantiques. Les opérateurs $\operator{a}_k^\dagger$ et $\operator{a}_k$ créent et annihilent une particule dans l’état d’onde plane de moment $k$ :
-\begin{eqnarray*}
-	\ket{k} & = & \operator{a}_k^\dagger \ket{\emptyset} ~=~ \text{état avec une particule dans le mode } k,	
-\end{eqnarray*}
-où \(\ket{\emptyset}\) désigne le vide quantique de Fock, défini par :
+\begin{eqnarray}
+	\ket{k} & = & \operator{a}_k^\dagger \ket{\emptyset} ,%~\equiv~ \text{état avec une particule dans le mode } k,	
+\end{eqnarray}
+état avec une particule dans le mode $k$ , où \(\ket{\emptyset}\) désigne le vide quantique de Fock, défini par :
 \begin{eqnarray}
 	\forall k \in \mathbb{R}\colon \qquad \operator{a}_k \ket{\emptyset} = 0 ,\quad  \langle \emptyset \vert \emptyset \rangle = 1. \label{chap:eq.vide.fock.k}
 \end{eqnarray}
