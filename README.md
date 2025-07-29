@@ -11,10 +11,10 @@ Ce dépôt contient l'ensemble des fichiers LaTeX nécessaires à la compilation
     * `README.md` — Instructions pour compiler et comprendre la structure
     * `Makefile` ou `compile.sh` — Script pour compiler automatiquement
     * `binder/`
-	* `Project.toml`
-	* `Manifest.toml`   # recommandé
+		* `Project.toml`
+		* `Manifest.toml`   # recommandé
     * `figures/` — Dossier des figures
-        * `chapitre1/` — Figures du chapitre 1
+	* `chapitre1/` — Figures du chapitre 1
         * `chapitre2/` — Figures du chapitre 2
         * `...` — Etc. pour les autres chapitres
     * `chapters/` — Contenu principal de la thèse
