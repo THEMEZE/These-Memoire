@@ -83,7 +83,6 @@ avec $\operator{\mathcal{H}}$ l’opérateur hamiltonien.
 	
 	\medskip
 	
-	Les solutions générales de l’équation de Schrödinger s’écrivent alors comme une superposition d’états propres  $\psi = \sum_k c_k \psi_k $. 
 	La particule est délocalisée sur tout l’espace (le cercle), sans structure particulière \ie le solutions \eqref{chap.1.rapel.libre.4} correspondent à des {\bf états non liés} (ou états de diffusion).
 
 %On résume :
@@ -103,13 +102,17 @@ Les sous-espaces propres sont orthogonaux entre eux \ie en utilisant les conséq
 Pour chaque sous-espace propre on impose que les états propres forment une base orthonormale \ie en utilisant \eqref{chap.1.rapel.libre.5}, les fonctions propres $\varphi_{k}$ écrit sous la forme \eqref{chap.1.rapel.libre.4}, sont orthogonaux avec $\varphi_{\overline{k}} \colon x \mapsto \pm ( b^\ast e^{-ikx} - a^\ast e^{ikx} )$  soit $(\varphi_{\overline{k}} , \varphi_{k} ) = 0$, et on impose que  $ \vert a \vert^2 + \vert b \vert^2 = L^{-1}$ pour assuré la normalité  de $\varphi_{k}$  et de $\varphi_{\overline{k}}$ soit  $( \varphi_{k} , \varphi_{k} ) = (\varphi_{\overline{k}} , \varphi_{\overline{k}})   = 1$. 
 
 \medskip
+
+Les solutions générales de l’équation de Schrödinger s’écrivent alors comme une superposition d’états propres  $\psi = c_0 \psi_0 +  \sum_{\vert k \vert > 0 } (c_k \psi_k  + c_{\overline{k}} \psi_{\overline{k}}) $. 
+
+\medskip
 Il y a deux base de vecteur propre particulier : 
 \begin{enumerate}[label=\roman*)]
 	\item Base de chiralité / impulsion :
 	\begin{eqnarray}
-		\left \{ \begin{array}{rcll} \varphi_k  & = & \displaystyle \frac{1}{\sqrt{L}} e^{+ikx} & \mbox{état avec impulsion $+\hbar k $ } \\ \varphi_{\overline{k}}  & = & \displaystyle \frac{1}{\sqrt{L}}e^{-ikx} & \mbox{état avec impulsion $-\hbar k $ }\end{array}\right.
+		\left \{ \begin{array}{rcll} \varphi_+  & = & \displaystyle \frac{1}{\sqrt{L}} e^{+ikx} & \mbox{: état avec impulsion $+\hbar k $ } \\ \varphi_-  & = & \displaystyle \frac{1}{\sqrt{L}}e^{-ikx} & \mbox{: état avec impulsion $-\hbar k $ }\end{array}\right.
 	\end{eqnarray}
-	Cela correspond à des états propres de l’opérateur impulsion $\operator{p} = -i \hbar \operator{\partial}_x$, avec valeurs propres opposées.
+	Ces derniers sons des états propres de l’opérateur impulsion $\operator{p}$, avec valeurs propres opposées.
 	\item Base symétrique / antisymétrique  
 	\begin{eqnarray}
 		\left \{ \begin{array}{rcllll} \varphi_k  &= & \displaystyle\frac{1}{\sqrt{2L}}(e^{+ikx} + e^{-ikx})  & = & \displaystyle \sqrt{\frac{2}{L}} \cos (kx)  & \mbox{type Neumann  : $\varphi_k'(0) = \varphi_k'(L) = 0 $ } \\ \varphi_{\overline{k}}  & = & \displaystyle\frac{1}{\sqrt{2L}i}(e^{+ikx} - e^{-ikx}) & = & \displaystyle \sqrt{\frac{2}{L}} \sin (kx)  & \mbox{type Dirichlet : $\varphi_{\overline{k}}(0) = \varphi_{\overline{k}}(L) = 0 $}\end{array} \right.

@@ -93,6 +93,9 @@ add IJulia
 - **Julia**: [![Run on Repl.it](https://repl.it/badge/github/THEMEZE/quantum-mechanics-thesis)](https://repl.it/github/THEMEZE/These-Memoire?language=julia)
 - **Fortran**: [![Run on Repl.it](https://repl.it/badge/github/THEMEZE/quantum-mechanics-thesis)](https://repl.it/github/THEMEZE/These-Memoire?language=fortran)
 
+### Fluctuation 
+- **Julia**: [![Run on Repl.it](https://repl.it/badge/github/THEMEZE/quantum-mechanics-thesis)](https://repl.it/github/THEMEZE/These-Memoire/figures/04_GGE_Fluctuation/Monte-Carlo-Julia-Gge.jl?language=julia)
+
 ## ⚙️ Instructions de Compilation
 
 ### ⚙️ Python
@@ -101,6 +104,10 @@ Pour exécuter un script Python, utilisez la commande suivante :
 
 ```sh
 python3 idée1/codes/python/idée1.py
+```
+### ⚙️ Julia
+```sh
+julia figures/04_GGE_Fluctuation/Monte-Carlo-Julia-Gge.jl
 ```
 
 # ⚙️ Git  Mise à jour
