@@ -61,29 +61,30 @@ avec $\operator{\mathcal{H}}$ l’opérateur hamiltonien.
 	
 	Dans le cas d’une particule libre de masse $m$ se déplaçant en une dimension, l’Hamiltonien est constitué uniquement du terme cinétique $\operator{\mathcal{H}} = \operator{p}^2 / 2m$. En représentation position, où l’opérateur quantité de mouvement s’écrit comme dans l’équation \eqref{chap.1.rapel.1}, l’Hamiltonien prend alors la forme différentielle :
 	\begin{eqnarray}
-		\operator{\mathcal{H}} = -\frac{\hbar^2}{2m} \partial_x^2.
+		\operator{\mathcal{H}} = -\frac{\hbar^2}{2m} \partial_x^2.\label{chap.1.rapel.libre.1}
 	\end{eqnarray}
 	Les états propres stationnaires de \eqref{chap.1.rapel.2} dépendant du temps sont de la forme $\psi_k(x,t) = \varphi_k(x)\,e^{-i\varepsilon(k)t/\hbar}$ où $\varphi_k(x)$ est une fonction propre de l’hamiltonien,  soit de  l’équation stationnaire  $\operator{\mathcal{H}}\varphi_k = \varepsilon(k)\varphi_k$ \ie pour une particule libre:
 	\begin{eqnarray}
-		\frac{\hbar^2}{2m} \partial_x^2 \varphi_k = \varepsilon(k) \varphi_k,
+		\frac{\hbar^2}{2m} \partial_x^2 \varphi_k = \varepsilon(k) \varphi_k,\label{chap.1.rapel.libre.2}
 	\end{eqnarray}
 	avec $\varepsilon(k)$ l’énergie associée à une onde plane de nombre d’onde $k$
 	\begin{eqnarray}
-		\varepsilon(k) = \frac{\hbar^2 k^2 }{2 m}.
+		\varepsilon(k) = \frac{\hbar^2 k^2 }{2 m}\label{chap.1.rapel.libre.3}.
 	\end{eqnarray}
 	Les fonctions propres spatiales $\varphi_k(x)$ de l’hamiltonien libre s’écrivent comme des combinaisons linéaires d’ondes planes  
 	\begin{eqnarray}
-		\varphi_k(x) = a e^{-i k x} + b e^{i k x},~~ \mbox{avec}\quad  (a,b) \in \mathbb{C}^2.
+		\varphi_k(x) = a e^{-i k x} + b e^{i k x},~~ \mbox{avec}\quad  (a,b) \in \mathbb{C}^2\label{chap.1.rapel.libre.4}.
 	\end{eqnarray}
 	Si la particule est confinée dans une boîte de longueur $L$ avec des conditions aux limites périodiques (ie $\varphi_k(x+L) = \varphi_k(x)$), alors le spectre de $k$ est quantifié : 
 	\begin{eqnarray}
-		kL \in 2\pi\mathbb{Z}.
+		kL \in 2\pi\mathbb{Z}\label{chap.1.rapel.libre.5}.
 	\end{eqnarray}
 	Le problème est équivalent à celui d’une particule libre sur un cercle de périmètre $L$.\\
 	
 	\medskip
 	
-	Les solutions générales de l’équation de Schrödinger s’écrivent alors comme une superposition d’états propres  $\psi = \sum_k c_k \psi_k $.  
+	Les solutions générales de l’équation de Schrödinger s’écrivent alors comme une superposition d’états propres  $\psi = \sum_k c_k \psi_k $. 
+	La particule est délocalisée sur tout l’espace (le cercle), sans structure particulière \ie le solutions \eqref{chap.1.rapel.libre.4} correspondent à des {\bf états non liés} (ou états de diffusion).
 
 %On résume :
 %\begin{eqnarray}
@@ -91,45 +92,15 @@ avec $\operator{\mathcal{H}}$ l’opérateur hamiltonien.
 %\end{eqnarray}
 \end{mdframed}
 
-Ces solutions correspondent à des {\bf états non liés} (ou états de diffusion) : la particule est délocalisée sur tout l’espace (le cercle), sans structure particulière.
+\medskip
 
-La fonction $\varphi_k(x)$ est supposée normalisée dans l’espace des états quantifiés (boîte finie) :
-\(
-\int_0^L dx \, \varphi_{k'}^\ast(x)\, \varphi_k(x) = \delta_{k,\pm k'}.
-\)
-avec  $ \vert a \vert^2 + \vert b \vert^2 = L^{-1}$.
-Et dans le sous espace engendré pas $x \mapsto e^{-ikx}$ et $x \mapsto e^{ikx}$ (de deux dimension si $k \neq 0$ et une dimension si $k$ =0), $x \mapsto \pm ( b^\ast e^{-ikx} - a^\ast e^{ikx} )$ est orthogonale à  $\varphi_k$ pour $k \neq 0$.
-\begin{mdframed}[
-	linewidth=0.5pt, 
-	backgroundcolor=gray!5, 
-	roundcorner=50pt,	
-	innerleftmargin=5pt,
-    innerrightmargin=5pt,
-    innertopmargin=-10pt,
-    innerbottommargin=2pt,
-    leftmargin=2pt,
-    rightmargin=2pt
-	]
-\subparagraph{Remarque.} On choisie  \( a = \frac{1}{\sqrt{L}} \) et \( b = 0 \)), alors
-\(
-\varphi_k(x) = \frac{1}{\sqrt{L}}\, e^{i k x}
-\)
-est une onde plane. 
-
-\end{mdframed}
-
-Avec le formalisme de Dirac, la fonction d’onde $\varphi_k$ est représentée par le ket $\ket{k}$ normé (i.e. $\langle k' \vert k \rangle = \delta_{k, k'}$, où $\delta_{p,q}$ est le symbole de Kronecker)
-, et l’équation de Schrödinger s’écrit :
-\(
-\operator{\mathcal{H}}_1 \ket{k} = \varepsilon(k) \ket{k}.
-\)
-En appliquant le bra $\bra{x}$ de part et d’autre, on obtient :
-\(
-\bra{x} \operator{\mathcal{H}}_1 \ket{k} = \varepsilon(k) \langle x \vert k \rangle,
-\)
-où $\varphi_k(x) = \langle x \vert k \rangle$ est la représentation positionnelle de l’état $\ket{k}$.
-
-
+Pour $k \neq 0 $ (respectivement pour $k = 0$ ), la fonction propre $\varphi_k(x)$ de l’équation \eqref{chap.1.rapel.libre.4} appartient à un sous-espace propre associé à $k$ de dimension 2 (respectivement de dimension 1) engendré par $x \mapsto e^{-ikx}$ et $x \mapsto e^{ikx}$ (respectivement par $x \mapsto 1$).
+L’espace engendré par l’ensemble des sous-espaces propres forme un {\bf espace de Hilbert} , muni du {\bf produit scalaire} défini par :
+\begin{eqnarray}
+	( \varphi_{k'} , \varphi_{k} ) = \int_0^L \varphi_{k'}^\ast(x) \varphi_{k}(x) \, dx .\label{chap.1.rapel.libre.5}
+\end{eqnarray}
+Les sous-espaces propres sont orthogonaux entre eux \ie en utilisant les conséquences de la condition de périodicité \eqref{chap.1.rapel.libre.5}, $( \varphi_{k'} , \varphi_{k} ) = 0$ pour $k' \neq k $ . 
+Pour chaque sous-espace propre on impose que les états propres forment une base orthonormale \ie en utilisant \eqref{chap.1.rapel.libre.5}, les fonctions propres $\varphi_{k}$ écrit sous la forme \eqref{chap.1.rapel.libre.4}, sont orthogonaux avec $\varphi_{\overline{k}} \colon x \mapsto \pm ( b^\ast e^{-ikx} - a^\ast e^{ikx} )$  soit $(\varphi_{\overline{k}} , \varphi_{k} ) = 0$, et on impose que  $ \vert a \vert^2 + \vert b \vert^2 = L^{-1}$ pour assuré la normalité  de $\varphi_{k}$  et de $\varphi_{\overline{k}}$ soit  $( \varphi_{k} , \varphi_{k} ) = (\varphi_{\overline{k}} , \varphi_{\overline{k}})   = 1$.  
 
 %\begin{mdframed}[
 %	linewidth=0.5pt, 
@@ -142,13 +113,27 @@ où $\varphi_k(x) = \langle x \vert k \rangle$ est la représentation positionne
 %    leftmargin=2pt,
 %    rightmargin=2pt
 %	]
-%\subparagraph{Remarque.} Si l’on choisit une base orthonormée d’états propres (par exemple en fixant \( a = \frac{1}{\sqrt{L}}, b = 0 \)), alors
+%\subparagraph{Remarque.} On choisie  \( a = \frac{1}{\sqrt{L}} \) et \( b = 0 \)), alors
 %\(
-%\varphi_k(x) = \frac{1}{\sqrt{L}}\, e^{i k x}, \quad \text{et donc} \quad \langle k \vert x \rangle = \varphi_k^\ast(x) = \frac{1}{\sqrt{L}}\, e^{-i k x},
+%\varphi_k(x) = \frac{1}{\sqrt{L}}\, e^{i k x}
 %\)
-%ce qui est bien une onde plane. 
-%En revanche, dans l’écriture générale \( \varphi_k(x) = a\, e^{i k x} + b\, e^{-i k x} \), la fonction \( \langle k \vert x \rangle = \varphi_k^\ast(x) \) n’est \emph{pas nécessairement} une onde plane, car \( \varphi_k(x) \) n’est pas normalisée.
+%est une onde plane. 
+%
 %\end{mdframed}
+
+\medskip
+
+Avec le formalisme de Dirac, la fonction d’onde $\varphi_k$ est représentée par le ket $\ket{k}$ normé (\ie $\langle k' \vert k \rangle = \delta_{k', k}$, où $\delta_{p,q}$ est le symbole de Kronecker)
+, et l’équation de Schrödinger s’écrit :
+\(
+\operator{\mathcal{H}} \ket{k} = \varepsilon(k) \ket{k}.
+\)
+En appliquant le bra $\bra{x}$ de part et d’autre, on obtient :
+\(
+\bra{x} \operator{\mathcal{H}} \ket{k} = \varepsilon(k) \langle x \vert k \rangle,
+\)
+où $\ket{x}$ est normé (\ie $\braket{x'\vert x} = \delta ( x' - x ) $ avec $\delta ( y - x )$ une distribution de Dirac) et $\varphi_k(x) = \langle x \vert k \rangle$ est la représentation positionnelle de l’état $\ket{k}$.
+
 
 \begin{mdframed}[
 	linewidth=0.5pt, 
