@@ -59,13 +59,15 @@ Ou via le script qui demande si on veux trous compiler (les tikz aussi) et puis 
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/THEMEZE/These-Memoire/main)
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/THEMEZE/These-Memoire/figures/04_GGE_Fluctuation/Monte-Carlo-Julia-Gge.ipynb)
+
 Cliquez sur le badge Binder pour lancer un environnement Jupyter avec ce dépôt.
 
 ## ⚙️ Utilisation avec Repl.it
 
 - **Python**: [![Run on Repl.it](https://repl.it/badge/github/votre-utilisateur/quantum-mechanics-thesis)](https://repl.it/github/THEMEZE/These-Memoire?language=python3)
-- **Julia**: [![Run on Repl.it](https://repl.it/badge/github/THEMEZE/quantum-mechanics-thesis)](https://repl.it/github/votre-utilisateur/These-Memoire?language=julia)
-- **Fortran**: [![Run on Repl.it](https://repl.it/badge/github/THEMEZE/quantum-mechanics-thesis)](https://repl.it/github/votre-utilisateur/These-Memoire?language=fortran)
+- **Julia**: [![Run on Repl.it](https://repl.it/badge/github/THEMEZE/quantum-mechanics-thesis)](https://repl.it/github/THEMEZE/These-Memoire?language=julia)
+- **Fortran**: [![Run on Repl.it](https://repl.it/badge/github/THEMEZE/quantum-mechanics-thesis)](https://repl.it/github/THEMEZE/These-Memoire?language=fortran)
 
 ## ⚙️ Instructions de Compilation
 
