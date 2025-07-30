@@ -306,7 +306,7 @@ L'opérateur $\operator{a}^\dagger_\lambda \operator{a}_\nu^{}$ fais la transiti
     leftmargin=2pt,
     rightmargin=2pt
 	]
-\subparagraph{Exemples d’opérateurs à un corps.}
+\subparagraph{Exemples : Énergie cinétique totale.}
 
 Si l’on sait diagonaliser l’opérateur \( \operator{f} \), c’est-à-dire si l’on peut écrire :
 \(
@@ -335,10 +335,9 @@ Et pour $N$ particules, en écrivant l’état sous la forme~\eqref{eq.chap.1.ke
 \end{mdframed}
 
 \subparagraph{Dans la base continue des positions \( \{ \ket{x} \} \).}
-
-Les opérateurs à plusieurs corps peuvent être exprimés de manière remarquable à l’aide des opérateurs de champ, d’une façon physiquement transparente qui rappelle les formules bien connues du cas à une particule.
-
-La forme générale d’un opérateur à un corps s’écrit :
+%Les opérateurs à plusieurs corps peuvent être exprimés de manière remarquable à l’aide des opérateurs de champ, d’une façon physiquement transparente qui rappelle les formules bien connues du cas à une particule.
+En injectant les relation des changement de base d'état
+\eqref{chap.1:eq.rapel.etat.prim.1} et de champ \eqref{chap.1:eq.rapel.etat.second.1}, dans \eqref{chap.1:eq.rapel.opp.1.second.1} on obtient :
 \begin{eqnarray}\label{chap.1:eq.rapel.opp.1.second.1}
 \operator{F} = \int dx \, dx' \, \operator{\Psi}^\dagger(x) \, \bra{ x} \operator{f} \ket{x'} \, \operator{\Psi}(x').
 \end{eqnarray}%où \( \hat{f} \) est l’opérateur à un corps exprimé dans la base position, et \( \hat{\psi}^\dagger(\vec{r}) \), \( \hat{\psi}(\vec{r}) \) sont les opérateurs de création et d’annihilation d’une particule au point \( \vec{r} \).
@@ -353,9 +352,8 @@ La forme générale d’un opérateur à un corps s’écrit :
     leftmargin=2pt,
     rightmargin=2pt
 ]
-\subparagraph{Énergie cinétique totale.}
-
-Pour des particules non relativistes, l’énergie cinétique élémentaire s’écrit $\operator{f} = \frac{\hbar^2 \operator{p}^2}{2m}$. À l’échelle du champ quantique, l’énergie cinétique totale prend la forme opératorielle :
+\subparagraph{Exemples : Énergie cinétique totale.}
+Reprenons l'exemple de l'énergie cinétique totale avec  $\operator{f} = \frac{\hbar^2 \operator{p}^2}{2m}$. À l’échelle du champ quantique, l’énergie cinétique totale prend la forme opératorielle :
 \begin{eqnarray}
 \operator{K} =  -\frac{\hbar^2}{2m} \int dx \, \operator{\Psi}^\dagger(x) \, \operator{\partial}_x^2 \operator{\Psi}(x)
 = \frac{\hbar^2}{2m} \int dx \, \operator{\partial}_x \operator{\Psi}^\dagger(x) \cdot \operator{\partial}_x \operator{\Psi}(x). \label{eq.chap.1.cinietique.3}
