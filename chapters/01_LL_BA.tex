@@ -75,9 +75,10 @@ avec $\operator{\mathcal{H}}$ l’opérateur hamiltonien.
 	\begin{eqnarray}
 		\varphi_k(x) = a e^{-i k x} + b e^{i k x},~~ \mbox{avec}\quad  (a,b) \in \mathbb{C}^2\label{chap.1.rapel.libre.4}.
 	\end{eqnarray}
+\subparagraph{Périodisité.}
 	Si la particule est confinée dans une boîte de longueur $L$ avec des conditions aux limites périodiques (ie $\varphi_k(x+L) = \varphi_k(x)$), alors le spectre de $k$ est quantifié : 
 	\begin{eqnarray}
-		kL \in 2\pi\mathbb{Z}\label{chap.1.rapel.libre.5}.
+		e^{kL}= 1 \quad\mbox{ou encore} kL \in 2\pi\mathbb{Z}\label{chap.1.rapel.libre.5}.
 	\end{eqnarray}
 	Le problème est équivalent à celui d’une particule libre sur un cercle de périmètre $L$.\\
 	
@@ -93,7 +94,7 @@ avec $\operator{\mathcal{H}}$ l’opérateur hamiltonien.
 
 \medskip
 
-Pour $k \neq 0 $ (respectivement pour $k = 0$ ), la fonction propre $\varphi_k(x)$ de l’équation \eqref{chap.1.rapel.libre.4} appartient à un sous-espace propre associé à $k$ de dimension 2 (respectivement de dimension 1) engendré par $x \mapsto e^{-ikx}$ et $x \mapsto e^{ikx}$ (respectivement par $x \mapsto 1$).
+Pour $k \neq 0 $ (respectivement pour $k = 0$), la fonction propre $\varphi_k(x)$ de l’équation \eqref{chap.1.rapel.libre.4} appartient à un sous-espace propre associé à $k$ de dimension 2 (respectivement de dimension 1) engendré par $x \mapsto e^{-ikx}$ et $x \mapsto e^{ikx}$ (respectivement par $x \mapsto 1$).
 L’espace engendré par l’ensemble des sous-espaces propres forme un {\bf espace de Hilbert} , muni du {\bf produit scalaire} défini par :
 \begin{eqnarray}
 	( \varphi_{k'} , \varphi_{k} ) = \int_0^L \varphi_{k'}^\ast(x) \varphi_{k}(x) \, dx .\label{chap.1.rapel.libre.5}
@@ -108,7 +109,7 @@ Les solutions générales de l’équation de Schrödinger s’écrivent alors c
 \medskip
 Il y a deux base de vecteur propre particulier : 
 \begin{enumerate}[label=\roman*)]
-	\item Base de chiralité / impulsion :
+	\item {\bf Base de chiralité / impulsion :}
 %	\begin{eqnarray}
 %		\left \{ \begin{array}{rcll} \varphi_+  & = & \displaystyle \frac{1}{\sqrt{L}} e^{+ikx} & \mbox{: état avec impulsion $+\hbar k $ } \\ \varphi_-  & = & \displaystyle \frac{1}{\sqrt{L}}e^{-ikx} & \mbox{: état avec impulsion $-\hbar k $ }\end{array}\right.
 %	\end{eqnarray}
@@ -116,7 +117,7 @@ Il y a deux base de vecteur propre particulier :
 		\varphi_\pm  & = & \displaystyle \frac{1}{\sqrt{L}} e^{\pm ikx} 
 	\end{eqnarray}
 	Ces derniers de plus d'être états propres de l’opérateur énergie $\operator{\mathcal{H}}$, sont des états propres de l’opérateur impulsion $\operator{p}$, avec valeurs propres opposées $\pm \hbar k$.
-	\item Base symétrique / antisymétrique : En appliquant la matrice de passage unitaire  $\frac{1}{\sqrt{2}}\left (\begin{matrix}1 & 1 \\ -i & + i\end{matrix}\right)$ à la base $\{ \varphi_+ , \varphi_- \}$ , on passer dans las base    
+	\item {\bf Base symétrique / antisymétrique :} En appliquant la matrice de passage unitaire  $\frac{1}{\sqrt{2}}\left (\begin{matrix}1 & 1 \\ -i & + i\end{matrix}\right)$ à la base $\{ \varphi_+ , \varphi_- \}$ , on passer dans las base    
 %	\begin{eqnarray}
 %		\left \{ \begin{array}{rcllll} \varphi_k  &= & \displaystyle\frac{1}{\sqrt{2L}}(e^{+ikx} + e^{-ikx})  & = & \displaystyle \sqrt{\frac{2}{L}} \cos (kx)  & \mbox{type Neumann  : $\varphi_k'(0) = \varphi_k'(L) = 0 $ } \\ \varphi_{\overline{k}}  & = & \displaystyle\frac{1}{\sqrt{2L}i}(e^{+ikx} - e^{-ikx}) & = & \displaystyle \sqrt{\frac{2}{L}} \sin (kx)  & \mbox{type Dirichlet : $\varphi_{\overline{k}}(0) = \varphi_{\overline{k}}(L) = 0 $}\end{array} \right.
 %	\end{eqnarray}
@@ -130,24 +131,6 @@ Il y a deux base de vecteur propre particulier :
 
 Cette condition d’orthonormalité est imposée afin de garantir l’indépendance linéaire des états quantiques, et d'assurer que toute fonction d’onde de l’espace de Hilbert puisse être développée de manière unique sur cette base. 
 
-%\begin{mdframed}[
-%	linewidth=0.5pt, 
-%	backgroundcolor=gray!5, 
-%	roundcorner=50pt,	
-%	innerleftmargin=5pt,
-%    innerrightmargin=5pt,
-%    innertopmargin=-10pt,
-%    innerbottommargin=2pt,
-%    leftmargin=2pt,
-%    rightmargin=2pt
-%	]
-%\subparagraph{Remarque.} On choisie  \( a = \frac{1}{\sqrt{L}} \) et \( b = 0 \)), alors
-%\(
-%\varphi_k(x) = \frac{1}{\sqrt{L}}\, e^{i k x}
-%\)
-%est une onde plane. 
-%
-%\end{mdframed}
 
 \medskip
 
@@ -175,7 +158,7 @@ où $\ket{x}$ est normé (\ie $\braket{x'\vert x} = \delta ( x' - x ) $ avec $\d
     rightmargin=2pt
 	]
 La base $\{\ket{x}\}$ étant continue, et les états $\{\ket{k}\}$ quantifiés (par exemple dans une boîte de taille finie avec conditions aux limites périodiques), les relations de changement de base s’écrivent :
-\begin{eqnarray}
+\begin{eqnarray}\label{chap.1:eq.rapel.etat.prim.1}
 	\ket{k} = \int_0^L dx \, \varphi_k(x) \ket{x}, \qquad   
 	\ket{x} = \sum_k \varphi_k^\ast(x) \ket{k},
 \end{eqnarray}
@@ -185,63 +168,14 @@ avec $\varphi_k^\ast(x) = \langle k \vert x \rangle$. L’état $\ket{x}$ est re
 
 \subparagraph{De la particule unique aux systèmes à $N$ particules.}
 
-Pour un système composé de $N$ particules identiques, une approche naturelle consiste à introduire une fonction d’onde $\varphi(x_1, \dots, x_N)$ dépendant de $N$ variables , symétrique pour des bosons ou antisymétrique pour des fermions sous l’échange de deux coordonnées $x_i \leftrightarrow x_j$, solution de l’équation de Schrödinger à $N$ corps. %Dans le cas bosonique, des interactions à courte portée peuvent être modélisées par un potentiel de type Dirac :
-
-%\begin{equation}
-%V_{\text{int}}(x_1, \dots, x_N) = g \sum_{i<j} \delta(x_i - x_j),
-%\end{equation}
-
-%où $g$ est un paramètre d’interaction contrôlant l’intensité des collisions. 
+Pour un système composé de $N$ particules identiques, une approche naturelle consiste à introduire une fonction d’onde $\varphi(x_1, \dots, x_N)$ dépendant de $N$ variables , symétrique pour des bosons ou antisymétrique pour des fermions sous l’échange de deux coordonnées $x_i \leftrightarrow x_j$, solution de l’équation de Schrödinger à $N$ corps. 
 Toutefois, cette description devient rapidement inextricable lorsque le nombre de particules augmente, ou lorsque le système permet la création et l’annihilation de particules, comme dans un milieu ouvert ou en contact avec un bain thermique.
 
-%{\color{blue} \paragraph{Seconde quantification.}
-%
-%%Dans ce formalisme, l’espace des états est une **somme directe d’espaces à $N$ particules**, et chaque état est décrit par son occupation des modes quantiques. Les opérateurs $\hat{a}_k^\dagger$ et $\hat{a}_k$ créent et détruisent une particule dans l’état d’onde plane de moment $k$, satisfaisant les relations de commutation (bosons) ou d’anticommutation (fermions) :
-%%\begin{equation}
-%%[\hat{a}_k, \hat{a}_{k'}^\dagger] = \delta_{k,k'} \quad \text{(bosons)}.
-%%\end{equation}
-%
-%%L’hamiltonien d’un gaz de particules libres s’écrit alors simplement :
-%%\begin{equation}
-%%\hat{\mathcal{H}} = \sum_k \varepsilon(k) \, \hat{a}_k^\dagger \hat{a}_k,
-%%\end{equation}
-%%avec $\varepsilon(k) = \frac{\hbar^2 k^2}{2m}$ comme dans la quantification canonique.
-%
-%\paragraph{Vers le Bethe ansatz.}
-%
-%Ce formalisme devient particulièrement utile lorsque des interactions entre particules sont introduites. Dans le cas d’un **gaz de bosons en une dimension avec interactions de contact**, le système reste exactement soluble : la solution repose sur une **superposition cohérente d’ondes planes symétrisées**, ajustées par les conditions d’interaction.
-%
-%C’est l’idée fondamentale du **Bethe ansatz**, qui généralise la solution d’une particule libre sur un cercle à $N$ particules **avec collisions élastiques**. On y retrouve des relations de quantification du type :
-%\begin{equation}
-%k_j L + \sum_{\substack{\ell=1 \\ \ell \neq j}}^N \theta(k_j - k_\ell) = 2\pi n_j,
-%\end{equation}
-%où $\theta$ est une phase de diffusion et les $n_j \in \mathbb{Z}$.
-%
-%On passe ainsi des conditions de périodicité simples à des **conditions de type Bethe**, qui encodent les effets des interactions sous forme de **conditions de compatibilité entre les moments**.
-%
-%}
 
 \subsubsection{Seconde quantification}
 
 Pour dépasser ces limitations, on adopte le \textbf{formalisme de la seconde quantification}, dans lequel l’état du système est décrit non plus par une fonction d’onde mais par un vecteur dans un espace de Fock. Les opérateurs de création et d’annihilation remplacent alors les variables dynamiques classiques et permettent une description unifiée et élégante des systèmes à nombre variable de particules.
 
-%\paragraph{Structure de l’espace des états de Fock.}
-%Dans ce formalisme, l’espace des états est une {\bf somme directe d’espaces à $N$ particules}, et chaque état est décrit par l’occupation des différents modes quantiques. Les opérateurs $\operator{a}_k^\dagger$ et $\operator{a}_k^{}$ créent et annihilent une particule dans l’état d’onde plane de moment $k$ :
-%\begin{eqnarray*}
-%	\ket{k} & = & \operator{a}_k^\dagger \ket{\emptyset} ~=~ \text{état avec une particule dans le mode } k,	
-%\end{eqnarray*}
-%où \(\ket{\emptyset}\) est le vide quantique de Fock, défini par :
-%\begin{eqnarray}
-%	\forall k \in \mathbb{R}\colon \qquad \operator{a}_k \ket{\emptyset} = 0 ,\quad  \langle \emptyset\vert \emptyset \rangle = 1, \label{chap:eq.vide.fock.k}
-%\end{eqnarray}
-%où \( \operator{a}_\lambda \) peut ici estre une notation générique désignant \( \operator{b}_\lambda \) pour les bosons, ou \( \operator{c}_\lambda \) pour les fermions,
-%et satisfaisant les relations de commutation (pour les bosons) ou d’anticommutation (pour les fermions). Dans ce qui suit, nous nous restreignons au cas bosonique. \subparagraph{Relations de commutation bosoniques.} Les relations de commutation bosoniques fondamentales sont alors :
-%\begin{eqnarray}
-%[\operator{a}_k^{}, \operator{a}_{k'}^{}]= [\operator{a}_k^\dagger, \operator{a}_{k'}^\dagger]= 0 ,\qquad [\operator{a}_k^{}, \operator{a}_{k'}^\dagger] = \operator{\delta}_{k,k'},\label{chap:1:com.1.k}
-%\end{eqnarray}
-%où $\operator{\delta}_{k,k'}$ est le symbole de Kronecker, qui vaut $1$ si $k = k'$ et $0$ sinon.\\
-
-%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Structure de l’espace des états de Fock.}
 Dans ce formalisme, l’espace des états est une {\bf somme directe d’espaces à $N$ particules}, et chaque état est décrit par l’occupation des différents modes quantiques. Les opérateurs $\operator{a}_k^\dagger$ et $\operator{a}_k$ créent et annihilent une particule dans l’état d’onde plane de moment $k$ :
 \begin{eqnarray}
@@ -258,7 +192,7 @@ Le symbole \( \operator{a}_\lambda \) représente ici de manière générique so
 	[\operator{b}_k, \operator{b}_{k'}] = [\operator{b}_k^\dagger, \operator{b}_{k'}^\dagger] = 0 ,\qquad [\operator{b}_k, \operator{b}_{k'}^\dagger] = \operator{\delta}_{k,k'}, \label{chap:1:com.1.k}
 \end{eqnarray}
 où $\operator{\delta}_{k,k'}$ est le symbole de Kronecker, valant $1$ si $k = k'$ et $0$ sinon.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 %\vspace{1em}
 \paragraph{Nature du champ quantique.}
@@ -271,9 +205,9 @@ L’idée principale est de ne plus quantifier directement les particules, mais 
 \subparagraph{Champs de Bose.}
 Le gaz de Bose unidimensionnel est décrit dans le cadre de la théorie quantique des champs par un champ bosonique canonique \( \operator{\Psi}(x) \), qui agit sur l’espace de Fock des états du système. Ce champ quantique encode l’annihilation d’une particule en \( x \), et son adjoint \( \operator{\Psi}^\dag(x) \) correspond à la création d’une particule en ce point. 
 \begin{eqnarray}
-	\vert x \rangle  & = & \operator{\Psi}^\dag (x)\ket{\emptyset} ~=~ \text{état avec une particule en } x,
+	\vert x \rangle  & = & \operator{\Psi}^\dag (x)\ket{\emptyset} ,
 \end{eqnarray}
-et \(\ket{\emptyset}\) est le vide quantique de Fock défini par :
+état avec une particule en  $x$ et \(\ket{\emptyset}\) est le vide quantique de Fock défini par :
 \begin{eqnarray}
 	\forall x \in \mathbb{R}, \qquad \operator{\Psi}(x) \ket{\emptyset} = 0. \label{chap:eq.vide.fock}
 \end{eqnarray}
@@ -298,14 +232,25 @@ Ces relations expriment le caractère bosonique des excitations du champ.
 \end{eqnarray}
 où le facteur \( 1/\sqrt{N!} \) traduit le caractère d’indiscernabilité des bosons et garantit la symétrisation correcte de l’état.
 
+\begin{mdframed}[
+	linewidth=0.5pt, 
+	backgroundcolor=gray!5, 
+	roundcorner=50pt,	
+	innerleftmargin=5pt,
+    innerrightmargin=5pt,
+    innertopmargin=-10pt,
+    innerbottommargin=2pt,
+    leftmargin=2pt,
+    rightmargin=2pt
+	]
 \subparagraph{Changement de base.}
 On peut relier les opérateurs de création/annihilation dans la base des ondes planes aux opérateurs de champ via :
-\begin{eqnarray}
+\begin{eqnarray}\label{chap.1:eq.rapel.etat.second.1}
 	\operator{b}_k^\dagger = \int dx \, \varphi_k(x) \operator{\Psi}^\dagger(x), \qquad 
 	\operator{\Psi}^\dagger(x) = \sum_k \varphi_k^\ast(x)\operator{b}_k^\dagger.\label{eq.chap.1.TF.1}
 \end{eqnarray}
 Le champ quantique $\operator{\Psi}(x)$ est relié aux opérateurs de moment $\operator{b}_k$ par une transformation de Fourier. Ces formules montrent que les opérateurs $\operator{b}_{k}$ sont les composantes de Fourier du champ $\operator{\Psi}(x)$.
-
+\end{mdframed}
 %où $\varphi_k(x)$ est la fonction d’onde d’un état d’énergie bien définie \( \ket{k} \) dans la représentation positionnelle.
 Ainsi, un état à \(N\) bosons dans la base \( \ket{k}^{\otimes N} \) peut s’écrire :
 \begin{eqnarray}
@@ -327,27 +272,40 @@ avec $\operator{S}_N $  le groupe symétrique d'ordre $N$ mais aussi :
 
 \paragraph{Opérateur à un corps.}
 
+\subparagraph{Dans la base discrètes des modes \( \{ \ket{k} \} \).}
 Soit \( \operator{f} \) un opérateur à une particule, dont les éléments de matrice dans une base orthonormée \( \{ \ket{k} \} \) sont donnés par \( f_{\lambda\nu} = \langle \lambda \vert \operator{f} \vert \nu \rangle \). Un opérateur symétrique à \( N \) particules correspondant à la somme des actions de \( \operator{f} \) sur chacune des particules s’écrit en première configuration  :
-\begin{eqnarray}
+\(
 	\operator{F} = \sum_{i=1}^N \operator{f}^{(i)},
-\end{eqnarray}
+\)
 où \( \operator{f}^{(i)} \) désigne l’action de \( \operator{f} \) sur la $i^\text{e}$ particule uniquement. En base de Dirac, cela donne :
-\begin{eqnarray}
+\(
 	\operator{f}^{(i)} = \sum_{\lambda, \nu} f_{\lambda\nu} \, \ket{i\!:\!\lambda} \bra{i\!:\!\nu},
-\end{eqnarray}
+\)
 où \( \ket{i\!:\!\lambda} \) représente un état où seule la $i^\text{e}$ particule est dans l’état \( \lambda \). %(Par construction, l’opérateur \( \operator{F} \) commute avec les projecteurs de symétrisation \( \operator{S}_N \) (bosons) et d’antisymétrisation \( \operator{A}_N \) (fermions).)
 On peut montrer que la somme des projecteurs agissant sur chaque particule s’identifie à une combinaison d’opérateurs de création et d’annihilation :
-\begin{eqnarray}
+\(
 	\sum_{i=1}^N \ket{i\!:\!\lambda} \bra{i\!:\!\nu} = \operator{a}^\dagger_\lambda \operator{a}_\nu^{},
-\end{eqnarray}
+\)
 (où \( \operator{a}_\lambda \) est une notation générique désignant \( \operator{b}_\lambda \) pour les bosons, ou \( \operator{c}_\lambda \) pour les fermions).
 
 On en déduit que l’opérateur à un corps \( \operator{F} \) peut se réécrire dans le formalisme de la seconde quantification comme :
-\begin{eqnarray}
-	\operator{F} = \sum_{\lambda, \nu} f_{\lambda\nu} \, \operator{a}^\dagger_\lambda \operator{a}_\nu^{}.
+\begin{eqnarray}\label{chap.1:eq.rapel.opp.1.prim.1}
+	\operator{F} = \sum_{\lambda, \nu} \bra{\lambda} \operator{f} \ket{\nu} \operator{a}^\dagger_\lambda \operator{a}_\nu^{}.
 \end{eqnarray}
 
+L'opérateur $\operator{a}^\dagger_\lambda \operator{a}_\nu^{}$ fais la transition d'une particule de l'état $\nu$ à vers l'état $\lambda$. Si $\lambda = \nu$ cette opérateur est l'opérateur nombre de particule dans le mode $\lambda$.
 
+\begin{mdframed}[
+	linewidth=0.5pt, 
+	backgroundcolor=gray!5, 
+	roundcorner=50pt,	
+	innerleftmargin=5pt,
+    innerrightmargin=5pt,
+    innertopmargin=-10pt,
+    innerbottommargin=2pt,
+    leftmargin=2pt,
+    rightmargin=2pt
+	]
 \subparagraph{Exemples d’opérateurs à un corps.}
 
 Si l’on sait diagonaliser l’opérateur \( \operator{f} \), c’est-à-dire si l’on peut écrire :
@@ -356,15 +314,16 @@ Si l’on sait diagonaliser l’opérateur \( \operator{f} \), c’est-à-dire s
 \)
 alors l’opérateur à $N$ corps associé s’écrit :
 \(
-	\operator{F} = \sum_k f_k \, \operator{a}^\dagger_k \operator{a}_k^{} = \sum_k f_k \, \operator{n}_k,
+	\operator{F} = \sum_k \bra{k} \operator{f} \ket{k} \operator{a}^\dagger_k \operator{a}_k^{}.
 \)
-où \( \operator{n}_k = \operator{a}^\dagger_k \operator{a}_k \) est l’opérateur nombre de particules dans le mode \( k \). On obtient ainsi une forme diagonale de \( \operator{F} \) en seconde quantification.
-\begin{mdframed}[linewidth=0.5pt, backgroundcolor=gray!5, roundcorner=5pt]
-Un exemple immédiat est celui des particules libres. Si l’on diagonalise le problème à une particule selon :
+On obtient ainsi une forme diagonale de \( \operator{F} \) en seconde quantification.
+%\begin{mdframed}[linewidth=0.5pt, backgroundcolor=gray!5, roundcorner=5pt]
+Un exemple immédiat est l'énergie des particules libres; on rappelle que pour une :
 \(
-	\operator{\mathcal{H}}_1 \ket{k} = \varepsilon(k) \ket{k},
+	\operator{\mathcal{H}} \ket{k} = \varepsilon(k) \ket{k},
 \)
-alors l’énergie totale du système correspond ici uniquement à son énergie cinétique, et s’écrit :
+avec $\varepsilon(k)$ l'énergie du mode $k$ \eqref{chap.1.rapel.libre.3}.
+Alors en injectant $\operator{f} = \operator{\mathcal{H}} ~( = \frac{ \hbar^2 \operator{p}^2}{2m})$ dans \eqref{chap.1:eq.rapel.opp.1.prim.1} on obtient l’énergie cinétique totale du système :
 \begin{equation}
 	\operator{K} = \sum_{k} \varepsilon(k) \, \operator{a}^\dagger_k \operator{a}_k^{}.\label{eq.chap.1.cinietique.1}
 \end{equation}
@@ -375,12 +334,12 @@ Et pour $N$ particules, en écrivant l’état sous la forme~\eqref{eq.chap.1.ke
 \end{eqnarray}
 \end{mdframed}
 
-\paragraph{Forme champ des opérateurs à un corps.}
+\subparagraph{Dans la base continue des positions \( \{ \ket{x} \} \).}
 
 Les opérateurs à plusieurs corps peuvent être exprimés de manière remarquable à l’aide des opérateurs de champ, d’une façon physiquement transparente qui rappelle les formules bien connues du cas à une particule.
 
 La forme générale d’un opérateur à un corps s’écrit :
-\begin{eqnarray}
+\begin{eqnarray}\label{chap.1:eq.rapel.opp.1.second.1}
 \operator{F} = \int dx \, dx' \, \operator{\Psi}^\dagger(x) \, \bra{ x} \operator{f} \ket{x'} \, \operator{\Psi}(x').
 \end{eqnarray}%où \( \hat{f} \) est l’opérateur à un corps exprimé dans la base position, et \( \hat{\psi}^\dagger(\vec{r}) \), \( \hat{\psi}(\vec{r}) \) sont les opérateurs de création et d’annihilation d’une particule au point \( \vec{r} \).
 \begin{mdframed}[
