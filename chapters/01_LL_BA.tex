@@ -109,13 +109,19 @@ Les solutions générales de l’équation de Schrödinger s’écrivent alors c
 Il y a deux base de vecteur propre particulier : 
 \begin{enumerate}[label=\roman*)]
 	\item Base de chiralité / impulsion :
+%	\begin{eqnarray}
+%		\left \{ \begin{array}{rcll} \varphi_+  & = & \displaystyle \frac{1}{\sqrt{L}} e^{+ikx} & \mbox{: état avec impulsion $+\hbar k $ } \\ \varphi_-  & = & \displaystyle \frac{1}{\sqrt{L}}e^{-ikx} & \mbox{: état avec impulsion $-\hbar k $ }\end{array}\right.
+%	\end{eqnarray}
 	\begin{eqnarray}
-		\left \{ \begin{array}{rcll} \varphi_+  & = & \displaystyle \frac{1}{\sqrt{L}} e^{+ikx} & \mbox{: état avec impulsion $+\hbar k $ } \\ \varphi_-  & = & \displaystyle \frac{1}{\sqrt{L}}e^{-ikx} & \mbox{: état avec impulsion $-\hbar k $ }\end{array}\right.
+		\varphi_\pm  & = & \displaystyle \frac{1}{\sqrt{L}} e^{\pm ikx} 
 	\end{eqnarray}
-	Ces derniers sons des états propres de l’opérateur impulsion $\operator{p}$, avec valeurs propres opposées.
-	\item Base symétrique / antisymétrique  
+	Ces derniers de plus d'être états propres de l’opérateur énergie $\operator{\mathcal{H}}$, sont des états propres de l’opérateur impulsion $\operator{p}$, avec valeurs propres opposées $\pm \hbar k$.
+	\item Base symétrique / antisymétrique : En appliquant la matrice de passage unitaire  $\frac{1}{\sqrt{2}}\left (\begin{matrix}1 & 1 \\ -i & + i\end{matrix}\right)$ à la base $\{ \varphi_+ , \varphi_- \}$ , on passer dans las base    
+%	\begin{eqnarray}
+%		\left \{ \begin{array}{rcllll} \varphi_k  &= & \displaystyle\frac{1}{\sqrt{2L}}(e^{+ikx} + e^{-ikx})  & = & \displaystyle \sqrt{\frac{2}{L}} \cos (kx)  & \mbox{type Neumann  : $\varphi_k'(0) = \varphi_k'(L) = 0 $ } \\ \varphi_{\overline{k}}  & = & \displaystyle\frac{1}{\sqrt{2L}i}(e^{+ikx} - e^{-ikx}) & = & \displaystyle \sqrt{\frac{2}{L}} \sin (kx)  & \mbox{type Dirichlet : $\varphi_{\overline{k}}(0) = \varphi_{\overline{k}}(L) = 0 $}\end{array} \right.
+%	\end{eqnarray}
 	\begin{eqnarray}
-		\left \{ \begin{array}{rcllll} \varphi_k  &= & \displaystyle\frac{1}{\sqrt{2L}}(e^{+ikx} + e^{-ikx})  & = & \displaystyle \sqrt{\frac{2}{L}} \cos (kx)  & \mbox{type Neumann  : $\varphi_k'(0) = \varphi_k'(L) = 0 $ } \\ \varphi_{\overline{k}}  & = & \displaystyle\frac{1}{\sqrt{2L}i}(e^{+ikx} - e^{-ikx}) & = & \displaystyle \sqrt{\frac{2}{L}} \sin (kx)  & \mbox{type Dirichlet : $\varphi_{\overline{k}}(0) = \varphi_{\overline{k}}(L) = 0 $}\end{array} \right.
+		\left \{ \begin{array}{rcllll} \varphi_S  & = & \displaystyle \sqrt{\frac{2}{L}} \cos (kx)  & \mbox{type Neumann  : $\varphi_S'(0) = \varphi_S'(L) = 0 $ } \\ \varphi_A   & = & \displaystyle \sqrt{\frac{2}{L}} \sin (kx)  & \mbox{type Dirichlet : $\varphi_A(0) = \varphi_A(L) = 0 $}\end{array} \right.
 	\end{eqnarray}
 \end{enumerate}
 
@@ -303,15 +309,15 @@ Le champ quantique $\operator{\Psi}(x)$ est relié aux opérateurs de moment $\o
 %où $\varphi_k(x)$ est la fonction d’onde d’un état d’énergie bien définie \( \ket{k} \) dans la représentation positionnelle.
 Ainsi, un état à \(N\) bosons dans la base \( \ket{k}^{\otimes N} \) peut s’écrire :
 \begin{eqnarray}
-	\ket{\{k_1 , \cdots , k_N\}} = \frac{1}{\sqrt{N!}} \int dx_1 \cdots dx_N \, \varphi_{\{k_a\}} ( x_1 , \cdots , x_N ) \, \hat{\Psi}^\dag(x_1) \cdots \hat{\Psi}^\dag(x_N) \ket{\emptyset},
+	\ket{\{k_1 , \cdots , k_N\}} = \frac{1}{\sqrt{N!}} \int dx_1 \cdots dx_N \, \varphi_{\{k_a\}} ( x_1 , \cdots , x_N ) \, \operator{\Psi}^\dag(x_1) \cdots \operator{\Psi}^\dag(x_N) \ket{\emptyset},
 \end{eqnarray}
-où \( \{k_a\} \equiv \{k_1, \dots, k_N\} \), et la fonction d’onde symétrisée s’écrit :
+où on note \( \{k_a\} \equiv \{k_1, \dots, k_N\} \), et la fonction d’onde symétrisée s’écrit :
 \(
 	\varphi_{\{k_a\}} ( x_1 , \cdots , x_N ) = \frac{1}{\sqrt{N!}} \sum_{\sigma \in \operator{S}_N } \prod_{i=1}^N \varphi_{k_{\sigma(i)}}(x_i),
 \) 
 avec $\operator{S}_N $  le groupe symétrique d'ordre $N$ mais aussi :
 \begin{eqnarray}
-	\varphi_{\{k_a\}} ( x_1 , \cdots , x_N ) = \frac{1}{\sqrt{N!}} \bra{\emptyset} \hat{\Psi}(x_1) \cdots \hat{\Psi}(x_N) \ket{\{k_1, \cdots , k_N\}}.
+	\varphi_{\{k_a\}} ( x_1 , \cdots , x_N ) = \frac{1}{\sqrt{N!}} \bra{\emptyset} \operator{\Psi}(x_1) \cdots \operator{\Psi}(x_N) \ket{\{k_1, \cdots , k_N\}}.
 \end{eqnarray}
 
 
@@ -322,19 +328,19 @@ avec $\operator{S}_N $  le groupe symétrique d'ordre $N$ mais aussi :
 \paragraph{Opérateur à un corps.}
 
 Soit \( \operator{f} \) un opérateur à une particule, dont les éléments de matrice dans une base orthonormée \( \{ \ket{k} \} \) sont donnés par \( f_{\lambda\nu} = \langle \lambda \vert \operator{f} \vert \nu \rangle \). Un opérateur symétrique à \( N \) particules correspondant à la somme des actions de \( \operator{f} \) sur chacune des particules s’écrit en première configuration  :
-\(
+\begin{eqnarray}
 	\operator{F} = \sum_{i=1}^N \operator{f}^{(i)},
-\)
+\end{eqnarray}
 où \( \operator{f}^{(i)} \) désigne l’action de \( \operator{f} \) sur la $i^\text{e}$ particule uniquement. En base de Dirac, cela donne :
-\(
+\begin{eqnarray}
 	\operator{f}^{(i)} = \sum_{\lambda, \nu} f_{\lambda\nu} \, \ket{i\!:\!\lambda} \bra{i\!:\!\nu},
-\)
-où \( \ket{i\!:\!\lambda} \) représente un état où seule la $i^\text{e}$ particule est dans l’état \( \lambda \). (Par construction, l’opérateur \( \operator{F} \) commute avec les projecteurs de symétrisation \( \operator{S}_N \) (bosons) et d’antisymétrisation \( \operator{A}_N \) (fermions).)
+\end{eqnarray}
+où \( \ket{i\!:\!\lambda} \) représente un état où seule la $i^\text{e}$ particule est dans l’état \( \lambda \). %(Par construction, l’opérateur \( \operator{F} \) commute avec les projecteurs de symétrisation \( \operator{S}_N \) (bosons) et d’antisymétrisation \( \operator{A}_N \) (fermions).)
 On peut montrer que la somme des projecteurs agissant sur chaque particule s’identifie à une combinaison d’opérateurs de création et d’annihilation :
-\(
+\begin{eqnarray}
 	\sum_{i=1}^N \ket{i\!:\!\lambda} \bra{i\!:\!\nu} = \operator{a}^\dagger_\lambda \operator{a}_\nu^{},
-\)
-(où \( \operator{a}_\lambda \) peut ici estre une notation générique désignant \( \operator{b}_\lambda \) pour les bosons, ou \( \operator{c}_\lambda \) pour les fermions).
+\end{eqnarray}
+(où \( \operator{a}_\lambda \) est une notation générique désignant \( \operator{b}_\lambda \) pour les bosons, ou \( \operator{c}_\lambda \) pour les fermions).
 
 On en déduit que l’opérateur à un corps \( \operator{F} \) peut se réécrire dans le formalisme de la seconde quantification comme :
 \begin{eqnarray}
