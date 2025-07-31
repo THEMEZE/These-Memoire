@@ -339,7 +339,7 @@ Et pour $N$ particules, en écrivant l’état sous la forme~\eqref{eq.chap.1.ke
 %Les opérateurs à plusieurs corps peuvent être exprimés de manière remarquable à l’aide des opérateurs de champ, d’une façon physiquement transparente qui rappelle les formules bien connues du cas à une particule.
 En injectant les relation des changement de base d'état
 \eqref{chap.1:eq.rapel.etat.prim.1} et de champ \eqref{chap.1:eq.rapel.etat.second.1} (qui prend la même forme pour $\operator{a}_\lambda^{}$ et pour $\operator{a}_\lambda^\dagger$), dans \eqref{chap.1:eq.rapel.opp.1.second.1} on obtient :
-\begin{eqnarray}\label{chap.1:eq.rapel.opp.1.second.1}
+\begin{eqnarray}\label{chap.1:eq.rapel.opp.1.second.2}
 \operator{F} = \iint_0^L dx \, dy \, \operator{\Psi}^\dagger(x) \, \bra{ x} \operator{f} \ket{y} \, \operator{\Psi}(y).
 \end{eqnarray}%où \( \hat{f} \) est l’opérateur à un corps exprimé dans la base position, et \( \hat{\psi}^\dagger(\vec{r}) \), \( \hat{\psi}(\vec{r}) \) sont les opérateurs de création et d’annihilation d’une particule au point \( \vec{r} \).
 \begin{mdframed}[
@@ -354,39 +354,40 @@ En injectant les relation des changement de base d'état
     rightmargin=2pt
 ]
 \subparagraph{Exemples : Énergie cinétique totale.}
-Reprenons l'exemple de l'énergie cinétique totale avec  $\operator{f} = \frac{\operator{p}^2}{2m}$. En injectant $\bra{x} \operator{f} \ket{x'} = - \frac{\hbar^2}{2m} \operator{\partial}_{y}^2 \delta ( y - x )$ dans \eqref{chap.1:eq.rapel.opp.1.second.1} on réécrit l'opérateur énergie cinétique total $\operator{K}$ de l'équation \eqref{eq.chap.1.cinietique.1} :
+Reprenons l'exemple de l'énergie cinétique totale avec  $\operator{f} = \frac{\operator{p}^2}{2m}$. En injectant $\bra{x} \operator{f} \ket{x'} = - \frac{\hbar^2}{2m} \operator{\partial}_{y}^2 \delta ( y - x )$ dans \eqref{chap.1:eq.rapel.opp.1.second.2} on réécrit l'opérateur énergie cinétique total $\operator{K}$ de l'équation \eqref{eq.chap.1.cinietique.1} :
 \begin{eqnarray}
 \operator{K} =  -\frac{\hbar^2}{2m} \int_0^L dx \, \operator{\Psi}^\dagger(x) \, \operator{\partial}_x^2 \operator{\Psi}(x)
 = \frac{\hbar^2}{2m} \int_0^L dx \, \operator{\partial}_x \operator{\Psi}^\dagger(x) \cdot \operator{\partial}_x \operator{\Psi}(x). \label{eq.chap.1.cinietique.3}
 \end{eqnarray}
-En injectant l'expression \eqref{eq.chap.1.TF.1} dans \eqref{eq.chap.1.cinietique.3}, on retrouve la forme discrète \eqref{eq.chap.1.cinietique.1}, cette fois exprimée en termes des opérateurs $\operator{b}_k$.
+%En injectant l'expression \eqref{eq.chap.1.TF.1} dans \eqref{eq.chap.1.cinietique.3}, on retrouve la forme discrète \eqref{eq.chap.1.cinietique.1}, cette fois exprimée en termes des opérateurs $\operator{b}_k$.
 
 Lorsque cet Hamiltonien agit sur l’état de Fock à $N$ particules $\ket{\{k_a\}}$, les règles de commutation (\ref{chap:1:com.1}) ainsi que la définition des états de Fock (\ref{chap:eq.vide.fock}) impliquent (cf. Annexe \ref{annex:N.part}) :
 \begin{eqnarray}
-\operator{K}\ket{ \{k_a\}} =  \int_0^L d^N z \, \operator{\mathcal{K}}_N \, \varphi_{\{k_a\}}(\{z_a\} ) \operator{\Psi}(z_1) \cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}\, , \quad \mbox{avec} \quad \operator{\mathcal{K}}_N = \sum_{i=1}^N \frac{\operator{p}_i^2}{2m}, 
+\operator{K}\ket{ \{k_a\}} =  \int_0^L d^N z \, \operator{\mathcal{K}}_N \, \varphi_{\{k_a\}}(\{z_a\} ) \operator{\Psi}(z_1) \cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}\, , \quad \mbox{avec} \quad \operator{\mathcal{K}}_N = -\sum_{i=1}^N \frac{\hbar^2\operator{\partial}_{z_i}^2}{2m}, 
 \end{eqnarray}
 %avec :
 %\[
 %	\operator{\mathcal{K}}_N = \sum_{i=1}^N \frac{\operator{p}_i^2}{2m},
 %\]
-où \( \operator{p}_i \) désigne l’opérateur impulsion de la \( i^\text{ème} \) particule.
+où \( -i \hbar \operator{\partial}_{z_i} \) désigne l’opérateur impulsion de la position \( z_i \) particule.
 \end{mdframed}
 
-\subparagraph{Quantité de mouvement totale et Nombre totale de particule. }
-Avec l'exemple de l'énergie cinétique l'opérateur $\operator{f}$ est  proportionnelle à l'opérateur impulsion au carré $\operator{p}^2$. On peut faire le même raisonnement pour la quantité de mouvement  soit avec $\operator{f} = \operator{p}^1$ et pour le nombre de particule que l'on note soit avec $\operator{f} = \operator{p}^0$. On note l'opérateur nombre total de particule $\operator{Q}$  et l'opérateur quantité mouvement totate $\operator{P}$. En seconde quantification ils s'écrivent respectivement :  
+\subparagraph{Quantité de mouvement totale et nombre total de particules.}
+Dans l'exemple de l'énergie cinétique, l'opérateur  $\operator{f}$ est proportionnel à l'opérateur impulsion au carré $\operator{p}^2$. On peut appliquer un raisonnement similaire à d'autres observables : pour la {\bf quantité de mouvement totale}, on choisit $\operator{f} = \operator{p}$ (puissance 1), et pour le {\bf nombre total de particules}, on prend  $\operator{f} = \operator{p}^0$, c’est-à-dire l’identité. On note $\operator{Q}$ l'opérateur nombre total de particule et $\operator{P}$ l'opérateur quantité mouvement totale . En seconde quantification, ces opérateurs s'écrivent dans la base \( \{ \ket{k} \} \) : 
 \begin{equation}
 	\operator{Q} = \sum_{k}  \operator{b}^\dagger_k \operator{b}_k^{} , \quad  \operator{P} = i\hbar\sum_{k} k \, \operator{b}^\dagger_k \operator{b}_k^{},\label{eq.chap.1.Q.P.k.1}
 \end{equation}
-dans la base \( \{ \ket{k} \} \). Et en les appliquant à \(\ket{\{k_a\}}\), il vient que 
+Lorsqu’on les applique à un état de Fock à $N$ particules \(\ket{\{k_a\}}\), on obtient :
 \begin{eqnarray}
 	\operator{Q} \ket{\{k_a\}} = \left( \sum_{i = 1}^N 1 \right) \ket{\{k_a\}},\quad \operator{P} \ket{\{k_a\}} = -i\hbar \left( \sum_{i = 1}^N k \right) \ket{\{k_a\}}.
 \end{eqnarray}
-Et dans la base \( \{ \ket{x} \} \) ces opérateurs s'écrivent (sous forme hermitienne pour $\operator{P}$) : 
+Dans la base position \( \{ \ket{x} \} \), les opérateurs s’écrivent : 
 \begin{eqnarray}
-	\operator{Q}  =  \int_0^L \operator{\Psi}^\dag (x) \operator{\Psi} (x) \, d x, \quad 
-	\operator{P}  =  \frac{i\hbar}2 \int_0^L \left \{  \operator{\Psi}^\dag(x) \operator{\partial}_x \operator{\Psi}(x) - \left [\operator{\partial}_x \operator{\Psi}^\dag(x)\right ] \operator{\Psi}(x)\right \} dx
+	\operator{Q}  =  \int_0^L dx \, \operator{\Psi}^\dag (x) \operator{\Psi} (x) \, , \quad 
+	\operator{P}  =  \frac{i\hbar}2 \int_0^L dx \, \left \{  \operator{\Psi}^\dag(x) \operator{\partial}_x \operator{\Psi}(x) - \left [\operator{\partial}_x \operator{\Psi}^\dag(x)\right ] \operator{\Psi}(x)\right \} 
 \end{eqnarray}
-Et en les appliquant à \(\ket{\{k_a\}}\), il vient que 
+où l'expression symétrisée de $\operator{P}$ assure son hermiticité.\\ 
+Lorsqu'on applique ces opérateurs à l’état \(\ket{\{k_a\}}\), on obtient (comme pour l’énergie cinétique) :
 \begin{eqnarray}
 	\operator{Q}\ket{ \{k_a\}} =  \int_0^L d^N z \, \operator{\mathcal{N}}_N \, \varphi_{\{k_a\}}(\{z_a\} ) \operator{\Psi}(z_1) \cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}\, , \quad &\mbox{avec}& \quad \operator{\mathcal{N}}_N = \sum_{i=1}^N 1,\\
 	\operator{P}\ket{ \{k_a\}} =  \int_0^L d^N z \, \operator{\mathcal{P}}_N \, \varphi_{\{k_a\}}(\{z_a\} ) \operator{\Psi}(z_1) \cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}\, , \quad &\mbox{avec}& \quad \operator{\mathcal{P}}_N = -i\hbar \sum_{i=1}^N \operator{\partial}_{z_i}.
@@ -398,12 +399,12 @@ Et en les appliquant à \(\ket{\{k_a\}}\), il vient que
 	roundcorner=50pt,	
 	innerleftmargin=5pt,
     innerrightmargin=5pt,
-    innertopmargin=5pt,
+    innertopmargin=-10pt,
     innerbottommargin=2pt,
     leftmargin=2pt,
     rightmargin=2pt
 	]
-On s'avance sur le chapitre (\ref{chap:relaxation}), en voulant généraliser avec $\operator{f} = \operator{p}^q$ où $q$ est un entier. Soit dans la base \(\{\ket{k}\}\) : \(\operator{F} = (-i\hbar)^q \sum_k k^q \operator{b}_k^\dagger \operator{b}_k^{} \) et en l'appliquant à \(\ket{\{k_a\}}\) :  
+\subparagraph{On s'avance sur le chapitre (\ref{chap:relaxation}).} , en voulant généraliser avec $\operator{f} = \operator{p}^q$ où $q$ est un entier. Soit dans la base \(\{\ket{k}\}\) : \(\operator{F} = (-i\hbar)^q \sum_k k^q \operator{b}_k^\dagger \operator{b}_k^{} \) et en l'appliquant à \(\ket{\{k_a\}}\) :  
 \begin{eqnarray}
 	 \operator{F} \ket{\{k_a\}} = (-i\hbar)^q \left( \sum_{i = 1}^N k^q \right) \ket{\{k_a\}},
 \end{eqnarray}
@@ -436,8 +437,8 @@ avec $\operator{v}^{(i, j)}$ désigne l’interaction à deux corps entre les $i
 \)
 On peut réécrire l’opérateur \( \operator{V} \) en termes d’opérateurs de création et d’annihilation comme suit :
 \begin{equation}
-    \operator{V} = \frac{1}{2} \sum_{\alpha, \beta, \gamma, \delta} v_{\alpha \beta \gamma \delta} \, \operator{a}^\dagger_\alpha \operator{a}^\dagger_\beta \operator{a}_\delta^{} \operator{a}_\gamma^{}.
-    \label{chap.1:eq.rapel.opp.1.second.1}
+    \operator{V} = \frac{1}{2} \sum_{\alpha, \beta, \gamma, \delta} \bra{ 1 : \alpha; 2 : \beta } \operator{v}\ket{ 1 : \gamma; 2 : \delta } \, \operator{a}^\dagger_\alpha \operator{a}^\dagger_\beta \operator{a}_\delta^{} \operator{a}_\gamma^{}.
+    \label{chap.1:eq.rapel.opp.2.prim.1}
 \end{equation}
 
 Cette forme est particulièrement utile pour le traitement des interactions dans l’espace de Fock.
@@ -445,13 +446,13 @@ Cette forme est particulièrement utile pour le traitement des interactions dans
 \subparagraph{Dans la base continue des positions \( \{ \ket{x} \} \).}
 
 En injectant les relation des changement de base d'état
-\eqref{chap.1:eq.rapel.etat.prim.1} et de champ \eqref{chap.1:eq.rapel.etat.second.1}, dans \eqref{chap.1:eq.rapel.opp.1.second.1} on obtient :
+\eqref{chap.1:eq.rapel.etat.prim.1} et de champ \eqref{chap.1:eq.rapel.etat.second.1}, dans \eqref{chap.1:eq.rapel.opp.2.prim.1} on obtient :
 \begin{equation}
-    \operator{V} = \frac{1}{2} \int dx_1^{} \, dx_2^{} \, dx_1' \, dx_2' \; 
+    \operator{V} = \frac{1}{2} \iiiint_0^L dx_1^{} \, dx_2^{} \, dx_1' \, dx_2' \; 
     \bra{ 1 : x_1^{}, 2 : x_2^{} } \operator{v} \ket{ 1 : x_1', 2 : x_2' } \,
     \operator{\Psi}^\dagger(x_1^{}) \, \operator{\Psi}^\dagger(x_2^{}) \, 
     \operator{\Psi}(x_2') \, \operator{\Psi}(x_1')
-    \label{eq:V_general}
+    \label{chap.1:eq.rapel.opp.2.second.1}
 \end{equation}
 
 \begin{mdframed}[
@@ -466,28 +467,29 @@ En injectant les relation des changement de base d'état
     rightmargin=2pt
 	]
 \subparagraph{Exemple : Interactions ponctuelles.} 
-Dans le cas d’une interaction ne dépendant que de la distance relative entre deux particules, cette expression se simplifie :
-\(
-     \operator{V} = \frac{1}{2} \sum_{i, j \ne i}  \operator{v}(x_i^{} - x_j^{}) = 
+Dans le cas d’une interaction ne dépendant que de la distance relative entre deux particules, $\bra{ 1 : x_1^{}, 2 : x_2^{} } \operator{v} \ket{ 1 : x_1', 2 : x_2' } = v(x_1 -x_2)\delta(x_1 - x_1')\delta(x_2 - x_2') $,  l'expression \eqref{chap.1:eq.rapel.opp.2.second.1} se simplifie :
+\begin{eqnarray}
+     \operator{V} =  
     \frac{1}{2} \int dx_1^{} \, dx_2^{} \; v(x_1^{} - x_2^{}) \,
     \operator{\Psi}^\dagger(x_1^{}) \, \operator{\Psi}^\dagger(x_2^{}) \, 
     \operator{\Psi}(x_2^{}) \, \operator{\Psi}(x_1^{})
     \label{eq:V_local}
-\) soit pour des interactions ponctuelles :	
-\begin{eqnarray}
+\end{eqnarray} 
+soit pour des interactions ponctuelles :	
+\begin{eqnarray}\label{chap.1:eq.rapel.opp.2.second.ponctuel.1}
 	\quad \operator{V}  = \frac{g}{2} \int dx \,
     \operator{\Psi}^\dagger(x) \, \operator{\Psi}^\dagger(x) \, 
     \operator{\Psi}(x) \, \operator{\Psi}(x)  		
 \end{eqnarray}
-et quand on l'applique à l'état $\ket{\{k_a\}} $ , les règles de commutations (\ref{chap:1:com.1}) et la définition d'état de Fock (\ref{chap:eq.vide.fock}) impliquent que (cf Annex \ref{annex:N.part})
-\begin{eqnarray}
-\operator{V}\ket{\{k_a \}} =  \int d^Nz \, \operator{\mathcal{V}}_N \varphi_{\{k_a\}}( \{z_a\} )\operator{\Psi}(z_1)\cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset} 
+et quand on l'applique à l'état $\ket{\{k_a\}}$, les règles de commutations (\ref{chap:1:com.1}) et la définition d'état de Fock (\ref{chap:eq.vide.fock}) impliquent que (cf Annex \ref{annex:N.part})
+\begin{eqnarray}\label{chap.1:eq.rapel.opp.2.second.ponctuel.2}
+\operator{V}\ket{\{k_a \}} =  \int d^Nz \, \operator{\mathcal{V}}_N \varphi_{\{k_a\}}( \{z_a\} )\operator{\Psi}(z_1)\cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset} \, \quad \mbox{avec} \quad  \operator{\mathcal{V}}_N 	= g\sum_{1\leq i < j \leq N } \operator{\delta}(x_i - x_j)	
 \end{eqnarray}
-avec 
-\(
-	\operator{\mathcal{V}}_N 	
- = g\sum_{1\leq i < j \leq N } \operator{\delta}(x_i - x_j)	
-\)
+%avec 
+%\(
+%	\operator{\mathcal{V}}_N 	
+% = g\sum_{1\leq i < j \leq N } \operator{\delta}(x_i - x_j)	
+%\)
 où \( g \) est la constante de couplage.
 \end{mdframed}
 
