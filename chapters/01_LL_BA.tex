@@ -338,7 +338,7 @@ Et pour $N$ particules, en écrivant l’état sous la forme~\eqref{eq.chap.1.ke
 \subparagraph{Dans la base continue des positions \( \{ \ket{x} \} \).}
 %Les opérateurs à plusieurs corps peuvent être exprimés de manière remarquable à l’aide des opérateurs de champ, d’une façon physiquement transparente qui rappelle les formules bien connues du cas à une particule.
 En injectant les relation des changement de base d'état
-\eqref{chap.1:eq.rapel.etat.prim.1} et de champ \eqref{chap.1:eq.rapel.etat.second.1} (qui prend la même forme pour $\operator{a}_\lambda^{}$ et pour $\operator{a}_\lambda^\dagger$), dans \eqref{chap.1:eq.rapel.opp.1.second.1} on obtient :
+\eqref{chap.1:eq.rapel.etat.prim.1} et de champ \eqref{chap.1:eq.rapel.etat.second.1} (qui prend la même forme pour $\operator{a}_\lambda^{}$ et pour $\operator{a}_\lambda^\dagger$), dans \eqref{chap.1:eq.rapel.opp.1.prim.1} on obtient :
 \begin{eqnarray}\label{chap.1:eq.rapel.opp.1.second.2}
 \operator{F} = \iint_0^L dx \, dy \, \operator{\Psi}^\dagger(x) \, \bra{ x} \operator{f} \ket{y} \, \operator{\Psi}(y).
 \end{eqnarray}%où \( \hat{f} \) est l’opérateur à un corps exprimé dans la base position, et \( \hat{\psi}^\dagger(\vec{r}) \), \( \hat{\psi}(\vec{r}) \) sont les opérateurs de création et d’annihilation d’une particule au point \( \vec{r} \).
@@ -577,11 +577,11 @@ Les états propres $\ket{\{\theta_a\}}$, construits dans le cadre de la seconde 
 
 \paragraph*{Conclusion.}
 
-La première quantification constitue la base indispensable pour comprendre le comportement quantique d’un nombre fixé de particules. La seconde quantification en est une extension naturelle, nécessaire pour décrire des systèmes plus complexes où le nombre de particules peut varier. Elle repose sur la quantification des champs et l’introduction d’opérateurs de création et d’annihilation, ouvrant ainsi la voie à la physique quantique des champs et à de nombreuses applications modernes.\\
+La première quantification constitue la base indispensable pour comprendre le comportement quantique d’un nombre fixé de particules. La seconde quantification en est une extension naturelle, nécessaire pour décrire des systèmes plus complexes où le nombre de particules peut varier. Elle repose sur la quantification des champs et l’introduction d’opérateurs de création et d’annihilation, ouvrant ainsi la voie à la physique quantique des champs et à de nombreuses applications modernes.
 
 \medskip
 
-Les opérateurs $\operator{Q}$, $\operator{P}$ (\eqref{eq.chap.1.Q.P.k.3}) et $\operator{H}$ \eqref{chap.1:eq.LL.champ.1} possèdent une structure diagonale commune dans la base des états propres $\ket{\{\theta_a\}}$, révélant la nature intégrable du modèle de Lieb-Liniger. Leurs valeurs propres sont respectivement les 0\textsuperscript{e}, 1\textsuperscript{er} et 2\textsuperscript{e} moments des $\theta_a$. Cette structure permet de généraliser la construction à une hiérarchie complète d’observables conservées, qui seront présentées au chapitre suivant.\\
+Les opérateurs $\operator{Q}$, $\operator{P}$ (\eqref{eq.chap.1.Q.P.k.3}) et $\operator{H}$ \eqref{chap.1:eq.LL.champ.1} possèdent une structure diagonale commune dans la base des états propres $\ket{\{\theta_a\}}$, révélant la nature intégrable du modèle de Lieb-Liniger. Leurs valeurs propres sont respectivement les 0\textsuperscript{e}, 1\textsuperscript{er} et 2\textsuperscript{e} moments des $\theta_a$. Cette structure permet de généraliser la construction à une hiérarchie complète d’observables conservées, qui seront présentées au chapitre suivant.
 
 \medskip
 
@@ -665,47 +665,11 @@ Nous allons étudier le cas de $N=2$ corps, afin de simplifier l’analyse tout 
 
 \subsection{Fonction d’onde et Hamiltonien et moment à 2 corps}
 
-%Nous considérons à présent le cas de deux bosons quantiques dans la même boîte unidimensionnelle de longueur \(L\), avec des conditions aux limites périodiques. Contrairement au cas à une particule, le terme d’interaction à contact intervient dans la dynamique. L'hamiltonien à 2 particule s'écrit :
-%En première quantification, en utilisant les coordonnées du centre de masse et relatives $Z = (z_1 + z_2)/2$ et $Y = z_1 - z_2$, il vient que
-%l'hamiltonien (\ref{chap:1:hal.mod.2.part.3}) se divise en une somme de deux problèmes indépendants à une seule particule.
-%Les états propres de l'hamiltonien du centre de masse de masse $\overline{m}= 2$, $-\frac{1}{4} \partial_Z^2$, sont des ondes planes, et l'hamiltonien pour la coordonnée relative $Y$ correspond à celui d'une particule de masse réduite $\tilde{m} = 1/2$ en présence d'un potentiel delta en $Y = 0$. 
-%\paragraph{Introduction au système à deux bosons avec interaction de contact.}
-%Nous considérons à présent le cas de deux bosons quantiques dans une même boîte unidimensionnelle de longueur \(L\), avec des conditions aux limites périodiques. Contrairement au cas à une particule, un terme d’interaction de contact intervient ici dans la dynamique. L’Hamiltonien à deux particules s’écrit :
-%\begin{eqnarray}
-%	\operator{\mathcal{H}}_2  =  \operator{\mathcal{K}}_2 +\operator{\mathcal{V}}_2  & avec & \operator{\mathcal{K}}_2 =   - \frac{1}{2} \partial_{z_1}^2 - \frac{1}{2} \partial_{z_2}^2,  \quad \mbox{et} \quad  \operator{\mathcal{V}}_2  =  	g  \delta(z_1 - z_2). \label{chap:1:hal.mod.2.part.3} 		
-%\end{eqnarray}
-%On rappelle que l'énergies propres de  $\operator{\mathcal{K}}_2$ associées aux fonction d'ondes $\varphi_{\{ \theta_1 , \theta_2 \}}$ , la masse des particule étant égale à 1 (ie $\hbar= m=1$) s'écrit 
-%\begin{eqnarray}
-%	\varepsilon(\theta_1) + 	\varepsilon(\theta_2) & = & \frac{\theta_1^2}{2} + \frac{\theta_2^2}{2} 
-%\end{eqnarray}
-%On vas travailler dans le centre de masse.
-
-%\paragraph{Changement de variables : coordonnées du centre de masse et relatives.}
- 
-%En première quantification, en introduisant les coordonnées du centre de masse \(Z = \frac{z_1 + z_2}{2}\) et relative \(Y = z_1 - z_2\), on obtient :
-%\(
-%	\partial_{z_1}^2 + \partial_{z_2}^2 = \frac{1}{2} \partial_Z^2 + 	2\partial_Y^2.  
-%\)
-%L’Hamiltonien~\eqref{chap:1:hal.mod.2.part.3} se décompose alors en une somme de deux problèmes indépendants à une seule variable :
-
-%\begin{eqnarray}\label{chap:1:hal.mod.2.part.4}
-%	\operator{\mathcal{H}}_2  =  	-\frac{1}{4} \partial_Z^2 + \operator{\mathcal{H}}_{rel} , \quad \mbox{avec}\quad  \operator{\mathcal{H}}_{rel} =  - 	\partial_Y^2 + g \delta ( Y ). 
-%\end{eqnarray}
-
-%\paragraph{Résolution du problème de centre de masse et de coordonnée relative.}
-
-%Les états propres de l’Hamiltonien associé au centre de masse, \(-\frac{1}{4} \partial_Z^2\), correspondant à une particule de masse totale \(\bar{m} = 2\), sont des ondes planes associés à l'énergie $\overline{\theta}^2$ avec $\overline{\theta} = \frac{ \theta_1 + \theta_2}{2}$. L’Hamiltonien, $\operator{\mathcal{H}}_{rel}$, associé à la coordonnée relative \(Y\) correspond quant à lui à celui d’une particule de masse réduite \(\tilde{m} = \frac{1}{2}\), soumise à un potentiel delta en \(Y = 0\) :
-%\begin{eqnarray}\label{chap:1:hal.mod.2.part.5}
-%	- 	\partial_Y^2 \tilde{\varphi}(Y) + g \delta ( Y )\tilde{\varphi}(Y) & = & \tilde{\varepsilon}\,\tilde{\varphi}(Y),
-%\end{eqnarray}
-%où $\tilde{\varepsilon}$ est l’énergie propre du problème relatif.
-
-%%%%%%
 \paragraph{Introduction au système de deux bosons avec interaction de contact.}
 
-Considérons maintenant un système de deux bosons quantiques confinés dans une boîte unidimensionnelle de longueur \(L\), avec des conditions aux limites périodiques. Contrairement au cas à une seule particule, une interaction de contact intervient ici dans la dynamique. L’Hamiltonien à deux particules s’écrit :
+Considérons maintenant un système de deux bosons confinés dans une boîte unidimensionnelle de longueur \(L\), avec des conditions aux limites périodiques. Contrairement au cas à une seule particule, une interaction de contact intervient ici dans la dynamique. L’Hamiltonien à deux particules s’écrit :
 \begin{eqnarray}
-	\operator{\mathcal{H}}_2 = \operator{\mathcal{K}}_2 + \operator{\mathcal{V}}_2, \quad \text{avec} \quad \operator{\mathcal{K}}_2 = - \frac{1}{2} \partial_{z_1}^2 - \frac{1}{2} \partial_{z_2}^2, \quad \text{et} \quad \operator{\mathcal{V}}_2 = g \, \delta(z_1 - z_2). \label{chap:1:hal.mod.2.part.3}
+	\operator{\mathcal{H}}_2 = \operator{\mathcal{K}}_2 + \operator{\mathcal{V}}_2, \quad \text{avec} \quad \operator{\mathcal{K}}_2 = - \frac{1}{2} \partial_{z_1}^2 - \frac{1}{2} \partial_{z_2}^2, \, \text{et} \,\, \operator{\mathcal{V}}_2 = g \, \delta(z_1 - z_2). \label{chap:1:hal.mod.2.part.3}
 \end{eqnarray}
 
 On rappelle que, pour des particules de masse unitaire (i.e., \(\hbar = m = 1\)), les énergies propres de l’opérateur cinétique \(\operator{\mathcal{K}}_2\), associées aux fonctions d’onde symétrisées \(\varphi_{\{ \theta_1 , \theta_2 \}}\), sont données par :
@@ -719,11 +683,15 @@ Afin de simplifier le problème, nous nous plaçons dans le référentiel du cen
 
 En première quantification, on introduit les nouvelles variables :
 \(
-Z = \frac{z_1 + z_2}{2} \, \text{(centre de masse)}, \qquad Y = z_1 - z_2 \, \text{(coordonnée relative)}.
+Z = \frac{z_1 + z_2}{2} \, \text{(centre de masse)}, \, Y = z_1 - z_2 \, \text{(coordonnée relative)}.
 \)
-Dans ce changement de variables, l’opérateur laplacien total devient :
+Dans ce changement de variables, l’opérateur laplacien total 
 \(
-\partial_{z_1}^2 + \partial_{z_2}^2 = \frac{1}{2} \partial_Z^2 + 2 \, \partial_Y^2.
+\partial_{z_1}^2 + \partial_{z_2}^2 
+\)
+devient
+\(
+\frac{1}{2} \partial_Z^2 + 2 \, \partial_Y^2.
 \)
 L’Hamiltonien~\eqref{chap:1:hal.mod.2.part.3} se décompose alors en la somme de deux Hamiltoniens agissant respectivement sur \(Z\) et \(Y\) :
 \begin{eqnarray}\label{chap:1:hal.mod.2.part.4}
@@ -757,13 +725,6 @@ est  la phase s'écrit
 \end{eqnarray}
 car \( a\exp(ix)+b\exp(-ix) = 2\sqrt{ab}\sin\left(x+\arctan\left(-i\, \frac{a+b}{a-b}\right)\right) \). Pour $\tilde{\theta}<0$, les termes exponentiels \( \exp(i\tilde{\theta} \vert Y \vert/2 ) \) et \( \exp(-i\tilde{\theta} \vert Y \vert/2 ) \) correspondent aux paires de particules entrantes et sortantes d’un processus de diffusion à deux corps.
 
-
-%En réinjectant l'équation \eqref{eq:ansatz.boson} dans l’équation \eqref{chap:1:hal.mod.2.part.5}, on obtient l’énergie propre du problème réduit $\tilde{\varepsilon}$ associé à l’état lié. Celle-ci prend la forme classique de l’énergie cinétique d’une particule, \( \frac{1}{2} \times \text{masse} \times \text{vitesse}^2 \), la masse réduite du problème étant ici \( \tilde{m} = \frac{1}{2} \), et où \( \tilde{\theta} \) joue un rôle analogue à celui d’une vitesse. On en déduit :
-%\begin{eqnarray}\tilde{\varepsilon}(\tilde{\theta})  & = &  \frac{1}{2} \cdot \tilde{m} \cdot \tilde{\theta}^2 = \frac{1}{2} \cdot \frac{1}{2} \cdot \tilde{\theta}^2 = \frac{\tilde{\theta}^2}{4}.\end{eqnarray}
-%\begin{eqnarray}
-%	\tilde{\varepsilon}(\tilde{\theta})  & = &  \frac{\tilde{\theta}^2}{4}.
-%\end{eqnarray}
-% Il encode la décroissance exponentielle de la fonction d’onde liée dans l’espace relatif, et sa valeur est directement reliée à la profondeur de l’état lié. Une valeur plus grande de \( \tilde{\theta} \) correspond à un état plus fortement lié, c’est-à-dire plus localisé autour de \( Y = 0 \), ce qui reflète une interaction plus attractive entre les deux particules. $\overline{\theta}^2 +  \tilde{\varepsilon}(\tilde{\theta}) = \varepsilon{\theta_1} + \varepsilon{\theta_2}$.
 En réinjectant l’ansatz~\eqref{eq:ansatz.boson} dans l’équation relative
 \eqref{chap:1:hal.mod.2.part.5}, on obtient l’énergie propre
 \(\tilde{\varepsilon}\) du problème réduit.  
@@ -773,12 +734,7 @@ La masse réduite vaut ici \(\tilde{m}= \frac{1}{2}\) et le paramètre
 \(\tilde{\theta}\) joue le rôle d’une impulsion ; ainsi
 \begin{equation}
    \tilde{\varepsilon}(\tilde{\theta})
-   \;=\;
-   \frac{1}{2}\,\tilde{m}\,\tilde{\theta}^{2}
-   \;=\;
-   \frac{1}{2}\times\frac{1}{2}\,\tilde{\theta}^{2}
-   \;=\;
-   \frac{\tilde{\theta}^{2}}{4}.
+   \;=\;\frac{\tilde{\theta}^{2}}{4}.
    \label{eq:energie_relative}
 \end{equation}
 
@@ -786,6 +742,9 @@ Cette énergie gouverne la décroissance exponentielle de la fonction
 d’onde dans la coordonnée relative : plus \(\tilde{\theta}\) est grand,
 plus l’état est localisé autour de \(Y=0\), signe d’une interaction
 attractive plus forte entre les deux bosons.
+
+La fonction d’onde relative présente des oscillations de fréquence \(\tilde{\theta}/2\), et son énergie croît avec \(\tilde{\theta}^2\). Cette solution correspond à un état de diffusion à deux corps en interaction ponctuelle. En revanche, une décroissance exponentielle autour de $Y=0$ n’apparaît que dans le cas d’un couplage attractif ($g<0$), où des états liés peuvent se former.\\
+
 
 L’énergie totale se décompose enfin en la somme du mouvement du centre
 de masse et du mouvement relatif :
@@ -798,37 +757,12 @@ de masse et du mouvement relatif :
    \;+\;
    \varepsilon(\theta_{2}),
 \)
-où \(\overline{\theta}= \tfrac{\theta_{1}+\theta_{2}}{2}\) et
-\(\varepsilon(\theta)=\theta^{2}/2\).
-
-
-
-
+où \(\overline{\theta}= \tfrac{\theta_{1}+\theta_{2}}{2}\).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Condition de discontinuité à cause du potentiel delta.}
 En raison de la présence du potentiel delta centré en $Y = 0$, la dérivée première de la fonction d’onde $\tilde{\varphi}(Y)$ présente une discontinuité en ce point. En effet, le potentiel étant infini en $Y = 0$, la phase $\Phi$ du régime symétrique est déterminée en intégrant l’équation du mouvement autour de la singularité. En intégrant entre $- \epsilon$ et $+ \epsilon$ et en faisant tendre $\epsilon \to 0$, on obtient la condition de saut de la dérivée :
-
-%avec $\Phi$ une phase à déterminer. %\begin{equation}
-%	E = \frac{\tilde{m} \theta^2}{2}.
-%\end{equation}
-
-%La dérivée de la fonction d’onde n’est pas continue en $Y = 0$. Le potentiel étant infini en $Y = 0$, la phase $\Phi$ est obtenue en intégrant l’équation du mouvement entre $- \epsilon$ et $+ \epsilon$ et en faisant tendre $\epsilon$ vers zéro :
-
-
-%En raison de ce potentiel delta, la dérivée première de la fonction d'onde $\varphi(Y)$ doit avoir une discontinuité en $Y = 0$ : 
-
-%{\color{lightgray} 
-%\begin{eqnarray*}
-%	\underset{ \epsilon \to 0 }{\lim} \int_{-\epsilon}^{+\epsilon}  	-\underbrace{\cancel{\frac{1}{4} \partial_Z^2\varphi(Y)}}_{0} - 	\partial_Y^2\varphi(Y) + c \delta ( Y )\varphi(Y) \, dY  & = & \underset{ \epsilon \to 0 }{\lim}  \int_{-\epsilon}^{+\epsilon}  E d Y , \\
-%	\underset{ \epsilon \to 0 }{\lim}  \left [ \varphi'(\epsilon) - \varphi'(-\epsilon) \right ] - c \varphi (  0 ) & =  &  -\underset{ \epsilon \to 0 }{\lim}  \int_{-\epsilon}^{+\epsilon}  E d Y,\\
-%	 \varphi'(0^+) - \varphi'(0^-) - c \varphi (  0 ) & = & 0 .
-%\end{eqnarray*}
-
-
-%}
-
 \begin{eqnarray*}
 	\underset{ \epsilon \to 0 }{\lim} \int_{-\epsilon}^{+\epsilon}  - 	\partial_Y^2\tilde{\varphi}(Y) + g \delta ( Y )\tilde{\varphi}(Y) \, dY  & = & \underset{ \epsilon \to 0 }{\lim}  \int_{-\epsilon}^{+\epsilon}  \tilde{\varepsilon}(\tilde{\theta})d Y ,\\
 	\\
@@ -836,29 +770,18 @@ En raison de la présence du potentiel delta centré en $Y = 0$, la dérivée pr
 \end{eqnarray*}
 
 
-%soit $\tilde{\varphi}'(0^+) - \tilde{\varphi}'(0^-) - c \tilde{\varphi} (  0 )  =  0 $ .
-
 %%%%%%%%%%%%%%%
 \paragraph{Détermination de la phase $\Phi$.}
 Et en évaluant la discontinuité de sa dérivée au point $Y = 0$, on trouve que la phase $\Phi$ satisfait la condition :
-
 %\begin{equation}
 %	\tan\left( \frac{\Phi}{2} \right) = \frac{\tilde{\theta}}{c}.
 %\end{equation}
-
 \begin{eqnarray}\label{chap:1:dif.mod.2.part.2}
 	\Phi(\tilde{\theta}) & = & 2 \arctan (\tilde{\theta}/g) \in [ - \pi , +\pi ].
 \end{eqnarray}
-
-%{\color{red}( à revoir)} Cette relation exprime l’impact de l’interaction delta sur le déphasage de la solution liée. On en déduit que plus le couplage $g$ est fort ($g \to \infty$), plus la phase $\Phi$ se rapproche de $0$, ce qui correspond à une fonction d’onde présentant s'annulant en $Y = 0$. En revanche, dans la limite d’interaction faible ($g \to 0$), la phase $\Phi$ tend vers $\pm \pi$ et la discontinué de la dérivé de la fonction d'onde devient négligeable.
-%Cette relation exprime l’impact de l’interaction de type delta sur le déphasage de la fonction d’onde liée.On en déduit que plus le couplage $g$ est fort ($g \to \infty$), la phase $\Phi$ se rapproche de $0$, ce qui correspond à une fonction d’onde présentant s'annulant en $Y = 0$, à l’image du régime d’imperméabilité totale.
-%À l’inverse, dans la limite d’interaction faible (\( g \to 0 \)), si bien que \( \Phi \) tend vers $\pi$ (ou \( -\pi \), selon le signe de \( \tilde{\theta} \)). Dans ce cas, la discontinuité de la dérivée de la fonction d’onde au point \( Y = 0 \) devient négligeable, ce qui traduit un couplage quasi inexistant entre les deux particules.
-%Cette relation exprime l’impact de l’interaction de type delta sur le déphasage de la fonction d’onde liée. Lorsque le couplage \( g \) devient très fort (\( g \to \infty \)), la fraction \( \tilde{\theta}/g \to 0 \), et la phase \( \Phi(\tilde{\theta}) \to 0 \). Cela correspond à une situation dans laquelle la fonction d’onde est fortement contrainte à s’annuler en \( Y = 0 \), à l’image du régime d’imperméabilité totale.
-%À l’inverse, dans la limite d’interaction faible (\( g \to 0 \)), la fraction \( \tilde{\theta}/g \to \infty \), si bien que \( \Phi(\tilde{\theta}) \to \pi \) (ou \( -\pi \), selon le signe de \( \tilde{\theta} \)). Dans ce cas, la discontinuité de la dérivée de la fonction d’onde au point \( Y = 0 \) devient négligeable, ce qui traduit un couplage quasi inexistant entre les deux particules.
-
 Cette relation exprime l’impact de l’interaction de type delta sur le déphasage de la fonction d’onde liée. On en déduit que plus le couplage \( g \) est fort (\( g \to \infty \)), plus la phase \( \Phi \) se rapproche de zéro. Cela correspond à une fonction d’onde qui s’annule en \( Y = 0 \), caractéristique d’un régime d’imperméabilité totale.
 
-À l’inverse, dans la limite d’une interaction faible (\( g \to 0 \)), la phase \( \Phi \) tend vers \( \pi \) (ou \( -\pi \), selon le signe de \( \tilde{\theta} \)). Dans ce cas, la discontinuité de la dérivée de la fonction d’onde au point \( Y = 0 \) devient négligeable, ce qui traduit une interaction presque absente entre les deux particules.
+À l’inverse, dans la limite d’une interaction faible (\( g \to 0 \)), la phase \( \Phi \) tend vers \( \pi \) (ou \( -\pi \), selon le signe de \( \tilde{\theta} \)). Dans ce cas, la discontinuité de la dérivée de la fonction d’onde au point \( Y = 0 \) devient négligeable, ce qui traduit une interaction absente entre les deux particules.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -875,7 +798,9 @@ En combinant les équations~\eqref{chap:1:dif.mod.2.part.1} et~\eqref{chap:1:dif
 \(z \in \mathbb{C}\setminus\{\pm i\}\),
 \(
 2\arctan(z)=i\ln\!\left(\frac{1-iz}{1+iz}\right)
-\Leftrightarrow
+\)
+\ie 
+\(
 e^{2i\arctan(z)}=\frac{1+iz}{1-iz},
 \)
 on obtient que le rapport des amplitudes \(a\) et \(b\) de la fonction
