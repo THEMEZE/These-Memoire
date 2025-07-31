@@ -124,6 +124,8 @@ innertopmargin=\topskip,
 %  }
 %
 
+
+
 \definecolor{linkcolor}{RGB}{0,0,180}
 \PassOptionsToPackage{
     colorlinks=true,
@@ -133,11 +135,11 @@ innertopmargin=\topskip,
 }{hyperref}
 
 % Appliquer la couleur à tous les niveaux de titre
-\titleformat{\section}{\normalfont\color{linkcolor!90!black}\Large\bfseries}{\thesection}{1em}{}
-\titleformat{\subsection}{\normalfont\color{linkcolor!70!black}\large\bfseries}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}{\normalfont\color{linkcolor!50!black}\normalsize\bfseries}{\thesubsubsection}{1em}{}
-\titleformat{\paragraph}[runin]{\normalfont\color{linkcolor!30!black}\bfseries}{\theparagraph}{1em}{}
-\titleformat{\subparagraph}[runin]{\normalfont\color{linkcolor!10!black}\itshape}{\thesubparagraph}{1em}{}
+\titleformat{\section}{\normalfont\color{colorSix!90!black}\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\color{colorSix!70!black}\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont\color{colorSix!50!black}\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}[runin]{\normalfont\color{colorOne!30!black}\bfseries}{\theparagraph}{1em}{}
+\titleformat{\subparagraph}[runin]{\normalfont\color{colorOne!10!black}\itshape}{\thesubparagraph}{1em}{}
 %%%%%%%%%%%%%%%%%%%%%%%
 
 %%Couleurs dans la table des matières
@@ -168,6 +170,22 @@ innertopmargin=\topskip,
 %  {\normalfont\color{red}\bfseries}
 %  {\theparagraph}{1em}{}
 
+% Définition des couleurs avec les codes HTML
+\definecolor{colorOne}{HTML}{443E46}
+\definecolor{colorTwo}{HTML}{F6DEB8}
+\definecolor{colorThree}{HTML}{908CA4}
+\definecolor{colorFour}{HTML}{57659E}
+\definecolor{colorFive}{HTML}{C57284}
+\definecolor{colorSix}{HTML}{FF5B69}
+
+% Raccourcis pour les couleurs
+\def\colorOne{colorOne}
+\def\colorTwo{colorTwo}
+\def\colorThree{colorThree}
+\def\colorFour{colorFour}
+\def\colorFive{colorFive}
+\def\colorSix{colorSix}
+
 %%% ===== Index principal + index secondaire (noms propres) =====
 \makeindex[intoc=true]
 \makeindex[name=pers, title=Index des noms propres, intoc=true]
@@ -192,12 +210,12 @@ innertopmargin=\topskip,
 }
 
 %%% ===== Style des titres (colorés) =====
-\titleformat{\chapter}[display]{\normalfont\sffamily\huge\bfseries\color{black}}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
-\titleformat{\section}{\normalfont\color{linkcolor!90!black}\Large\bfseries}{\thesection}{1em}{}
-\titleformat{\subsection}{\normalfont\color{linkcolor!70!black}\large\bfseries}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}{\normalfont\color{linkcolor!50!black}\normalsize\bfseries}{\thesubsubsection}{1em}{}
-\titleformat{\paragraph}[runin]{\normalfont\color{linkcolor!30!black}\bfseries}{\theparagraph}{1em}{}
-\titleformat{\subparagraph}[runin]{\normalfont\color{linkcolor!10!black}\itshape}{\thesubparagraph}{1em}{}
+\titleformat{\chapter}[display]{\normalfont\sffamily\huge\bfseries\color{colorSix}}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titleformat{\section}{\normalfont\color{colorSix!90!colorFour}\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\color{colorSix!70!colorFour}\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont\color{colorSix!50!colorFour}\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}[runin]{\normalfont\color{colorSix!30!colorFour}\bfseries}{\theparagraph}{1em}{}
+\titleformat{\subparagraph}[runin]{\normalfont\color{colorSix!10!colorFour}\itshape}{\thesubparagraph}{1em}{}
 
 %%% ===== Couleurs de la table des matières =====
 \renewcommand{\cftsecfont}{\color{linkcolor!90!black}}
