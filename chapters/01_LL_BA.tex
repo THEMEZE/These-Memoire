@@ -97,7 +97,7 @@ avec $\operator{\mathcal{H}}$ l’opérateur hamiltonien.
 Pour $k \neq 0 $ (respectivement pour $k = 0$), la fonction propre $\varphi_k(x)$ de l’équation \eqref{chap.1.rapel.libre.4} appartient à un sous-espace propre associé à $k$ de dimension 2 (respectivement de dimension 1) engendré par $x \mapsto e^{-ikx}$ et $x \mapsto e^{ikx}$ (respectivement par $x \mapsto 1$).
 L’espace engendré par l’ensemble des sous-espaces propres forme un {\bf espace de Hilbert} , muni du {\bf produit scalaire} défini par :
 \begin{eqnarray}
-	( \varphi_{k'} , \varphi_{k} ) = \int_0^L \varphi_{k'}^\ast(x) \varphi_{k}(x) \, dx .\label{chap.1.rapel.libre.5}
+	( \varphi_{k'} , \varphi_{k} ) = \int_0^L \varphi_{k'}^\ast(x) \varphi_{k}(x) \, dx .\label{chap.1.rapel.libre.6}
 \end{eqnarray}
 Les sous-espaces propres sont orthogonaux entre eux \ie en utilisant les conséquences de la condition de périodicité \eqref{chap.1.rapel.libre.5}, $( \varphi_{k'} , \varphi_{k} ) = 0$ pour $\vert k' \vert \neq \vert k \vert  $ . 
 Pour chaque sous-espace propre on impose que les états propres forment une base orthonormale \ie en utilisant \eqref{chap.1.rapel.libre.5}, les fonctions propres $\varphi_{k}$ écrit sous la forme \eqref{chap.1.rapel.libre.4}, sont orthogonaux avec $\varphi_{\overline{k}} \colon x \mapsto \pm ( b^\ast e^{-ikx} - a^\ast e^{ikx} )$  soit $(\varphi_{\overline{k}} , \varphi_{k} ) = 0$, et on impose que  $ \vert a \vert^2 + \vert b \vert^2 = L^{-1}$ pour assuré la normalité  de $\varphi_{k}$  et de $\varphi_{\overline{k}}$ soit  $( \varphi_{k} , \varphi_{k} ) = (\varphi_{\overline{k}} , \varphi_{\overline{k}})   = 1$. 
@@ -113,7 +113,7 @@ Il y a deux base de vecteur propre particulier :
 %	\begin{eqnarray}
 %		\left \{ \begin{array}{rcll} \varphi_+  & = & \displaystyle \frac{1}{\sqrt{L}} e^{+ikx} & \mbox{: état avec impulsion $+\hbar k $ } \\ \varphi_-  & = & \displaystyle \frac{1}{\sqrt{L}}e^{-ikx} & \mbox{: état avec impulsion $-\hbar k $ }\end{array}\right.
 %	\end{eqnarray}
-	\begin{eqnarray}
+	\begin{eqnarray}\label{chap.1.rapel.libre.7}
 		\varphi_\pm  & = & \displaystyle \frac{1}{\sqrt{L}} e^{\pm ikx} 
 	\end{eqnarray}
 	Ces derniers de plus d'être états propres de l’opérateur énergie $\operator{\mathcal{H}}$, sont des états propres de l’opérateur impulsion $\operator{p}$, avec valeurs propres opposées $\pm \hbar k$.
@@ -121,7 +121,7 @@ Il y a deux base de vecteur propre particulier :
 %	\begin{eqnarray}
 %		\left \{ \begin{array}{rcllll} \varphi_k  &= & \displaystyle\frac{1}{\sqrt{2L}}(e^{+ikx} + e^{-ikx})  & = & \displaystyle \sqrt{\frac{2}{L}} \cos (kx)  & \mbox{type Neumann  : $\varphi_k'(0) = \varphi_k'(L) = 0 $ } \\ \varphi_{\overline{k}}  & = & \displaystyle\frac{1}{\sqrt{2L}i}(e^{+ikx} - e^{-ikx}) & = & \displaystyle \sqrt{\frac{2}{L}} \sin (kx)  & \mbox{type Dirichlet : $\varphi_{\overline{k}}(0) = \varphi_{\overline{k}}(L) = 0 $}\end{array} \right.
 %	\end{eqnarray}
-	\begin{eqnarray}
+	\begin{eqnarray}\label{chap.1.rapel.libre.8}
 		\left \{ \begin{array}{rcllll} \varphi_S  & = & \displaystyle \sqrt{\frac{2}{L}} \cos (kx)  & \mbox{type Neumann  : $\varphi_S'(0) = \varphi_S'(L) = 0 $ } \\ \varphi_A   & = & \displaystyle \sqrt{\frac{2}{L}} \sin (kx)  & \mbox{type Dirichlet : $\varphi_A(0) = \varphi_A(L) = 0 $}\end{array} \right.
 	\end{eqnarray}
 \end{enumerate}
@@ -378,19 +378,19 @@ Dans l'exemple de l'énergie cinétique, l'opérateur  $\operator{f}$ est propor
 	\operator{Q} = \sum_{k}  \operator{b}^\dagger_k \operator{b}_k^{} , \quad  \operator{P} = i\hbar\sum_{k} k \, \operator{b}^\dagger_k \operator{b}_k^{},\label{eq.chap.1.Q.P.k.1}
 \end{equation}
 Lorsqu’on les applique à un état de Fock à $N$ particules \(\ket{\{k_a\}}\), on obtient :
-\begin{eqnarray}
+\begin{eqnarray}\label{eq.chap.1.Q.P.k.2}
 	\operator{Q} \ket{\{k_a\}} = \left( \sum_{i = 1}^N 1 \right) \ket{\{k_a\}},\quad \operator{P} \ket{\{k_a\}} = -i\hbar \left( \sum_{i = 1}^N k \right) \ket{\{k_a\}}.
 \end{eqnarray}
 Dans la base position \( \{ \ket{x} \} \), les opérateurs s’écrivent : 
-\begin{eqnarray}
+\begin{eqnarray}\label{eq.chap.1.Q.P.k.3}
 	\operator{Q}  =  \int_0^L dx \, \operator{\Psi}^\dag (x) \operator{\Psi} (x) \, , \quad 
 	\operator{P}  =  \frac{i\hbar}2 \int_0^L dx \, \left \{  \operator{\Psi}^\dag(x) \operator{\partial}_x \operator{\Psi}(x) - \left [\operator{\partial}_x \operator{\Psi}^\dag(x)\right ] \operator{\Psi}(x)\right \} 
 \end{eqnarray}
 où l'expression symétrisée de $\operator{P}$ assure son hermiticité.\\ 
 Lorsqu'on applique ces opérateurs à l’état \(\ket{\{k_a\}}\), on obtient (comme pour l’énergie cinétique) :
 \begin{eqnarray}
-	\operator{Q}\ket{ \{k_a\}} =  \int_0^L d^N z \, \operator{\mathcal{N}}_N \, \varphi_{\{k_a\}}(\{z_a\} ) \operator{\Psi}(z_1) \cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}\, , \quad &\mbox{avec}& \quad \operator{\mathcal{N}}_N = \sum_{i=1}^N 1,\\
-	\operator{P}\ket{ \{k_a\}} =  \int_0^L d^N z \, \operator{\mathcal{P}}_N \, \varphi_{\{k_a\}}(\{z_a\} ) \operator{\Psi}(z_1) \cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}\, , \quad &\mbox{avec}& \quad \operator{\mathcal{P}}_N = -i\hbar \sum_{i=1}^N \operator{\partial}_{z_i}.
+	\operator{Q}\ket{ \{k_a\}} =  \int_0^L d^N z \, \operator{\mathcal{N}}_N \, \varphi_{\{k_a\}}(\{z_a\} ) \operator{\Psi}(z_1) \cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}\, , \quad &\mbox{avec}& \quad \operator{\mathcal{N}}_N = \sum_{i=1}^N 1,\label{eq.chap.1.Q.1}\\
+	\operator{P}\ket{ \{k_a\}} =  \int_0^L d^N z \, \operator{\mathcal{P}}_N \, \varphi_{\{k_a\}}(\{z_a\} ) \operator{\Psi}(z_1) \cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}\, , \quad &\mbox{avec}& \quad \operator{\mathcal{P}}_N = -i\hbar \sum_{i=1}^N \operator{\partial}_{z_i}\label{eq.chap.1.P.1}.
 \end{eqnarray}
 
 \begin{mdframed}[
@@ -483,7 +483,7 @@ soit pour des interactions ponctuelles :
 \end{eqnarray}
 et quand on l'applique à l'état $\ket{\{k_a\}}$, les règles de commutations (\ref{chap:1:com.1}) et la définition d'état de Fock (\ref{chap:eq.vide.fock}) impliquent que (cf Annex \ref{annex:N.part})
 \begin{eqnarray}\label{chap.1:eq.rapel.opp.2.second.ponctuel.2}
-\operator{V}\ket{\{k_a \}} =  \int d^Nz \, \operator{\mathcal{V}}_N \varphi_{\{k_a\}}( \{z_a\} )\operator{\Psi}(z_1)\cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset} \, \quad \mbox{avec} \quad  \operator{\mathcal{V}}_N 	= g\sum_{1\leq i < j \leq N } \operator{\delta}(x_i - x_j)	
+\operator{V}\ket{\{k_a \}} =  \int d^Nz \, \operator{\mathcal{V}}_N \varphi_{\{k_a\}}( \{z_a\} )\operator{\Psi}(z_1)\cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset} \, \quad \mbox{avec} \quad  \operator{\mathcal{V}}_N 	= g\sum_{1\leq i < j \leq N } \operator{\delta}(z_i - z_j)	
 \end{eqnarray}
 %avec 
 %\(
@@ -504,15 +504,18 @@ Dans le formalisme des opérateurs de champs, l’Hamiltonien d’un système so
 %\begin{eqnarray}
 %	\operator{H} & = & \int dx \, \left [ \operator{\partial}_x \operator{\Psi}^\dag (x)\operator{\partial}_x \operator{\Psi}(x) + c \operator{\Psi}^\dag (x) \operator{\Psi}^\dag (x) \operator{\Psi} (x) \operator{\Psi} (x) \right ] \label{chap:1:ham.mod}
 %\end{eqnarray}
-\begin{eqnarray}
+\begin{eqnarray}\label{chap.1:eq.LL.champ.1}
 	\operator{H} & = & \int dx \, \operator{\Psi}^\dag (x)\left [-\frac{1}{2}\operator{\partial}_x^2 + \frac{g}{2}  \operator{\Psi}^\dag (x) \operator{\Psi} (x) \right ] \operator{\Psi} (x) \label{chap:1:ham.mod}.
 \end{eqnarray}
 Lorsqu’on applique cet Hamiltonien à un état de Fock à $N$ particules $\ket{\{\theta_1 , \cdots , \theta_N \}} $, où chaque paramètre $\theta_i$ est homogène à un nombre d’onde ou à une vitesse (mais pas nécessairement homogéne à un nombre d'onde $k$ d’où la notation $\theta$), on obtient — en utilisant les équations \eqref{eq.chap.1.cinietique.3} et \eqref{chap.1:eq.rapel.opp.2.second.ponctuel.2} : %, les règles de commutations (\ref{chap:1:com.1}) et la définition d'état de Fock (\ref{chap:eq.vide.fock}) impliquent que (cf Annex \ref{annex:N.part})
-\begin{eqnarray}
-\operator{H}\ket{\{\theta_a\}} =  \int d^Nz \, \operator{\mathcal{H}}_N \varphi_{\{\theta_a\}}(\{z_a\})\operator{\Psi}(z_1)\cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}\, \mbox{avec} \, \operator{\mathcal{H}}_N 	
- =  \operator{\mathcal{K}}_N  +  \operator{\mathcal{V}}_N . 
+\begin{eqnarray}\label{chap.1:eq.LL.champ.2}
+	\operator{H}\ket{\{\theta_a\}} =  \int d^Nz \, \operator{\mathcal{H}}_N \varphi_{\{\theta_a\}}(\{z_a\})\operator{\Psi}(z_1)\cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}, 
 \end{eqnarray}
-avec $\{\theta_a\} \equiv \{ \theta_1 , \cdots , \theta_N \} $.
+avec $\{\theta_a\} \equiv \{ \theta_1 , \cdots , \theta_N \} $ et .
+\begin{eqnarray}\label{chap.1:eq.LL.eta.1}
+\operator{\mathcal{H}}_N  =  \operator{\mathcal{K}}_N  +  \operator{\mathcal{V}}_N \, \quad \mbox{où on rappelle} \quad \operator{\mathcal{K}}_N = -\frac{1}2\sum_{i=1}^N \partial_{z_i} , \,  \mbox{et} \, 	\operator{\mathcal{V}}_N = g\sum_{1\leq i < j \leq N } \operator{\delta}(z_i - z_j)	. 
+\end{eqnarray}
+
 %\(
 %	\operator{\mathcal{H}}_N 	
 % =  \operator{\mathcal{K}}_N  +  \operator{\mathcal{V}}_N .	
@@ -574,9 +577,27 @@ Les états propres $\ket{\{\theta_a\}}$, construits dans le cadre de la seconde 
 
 \paragraph*{Conclusion.}
 
-La première quantification est la base indispensable qui permet de comprendre le comportement quantique d’un nombre fixé de particules. La seconde quantification en est une extension naturelle, nécessaire pour décrire des systèmes plus complexes où le nombre de particules peut varier. Elle repose sur la quantification des champs, et l’introduction d’opérateurs créant ou détruisant ces particules, ouvrant ainsi la voie à la physique quantique des champs et à de nombreuses applications modernes.\\
+La première quantification constitue la base indispensable pour comprendre le comportement quantique d’un nombre fixé de particules. La seconde quantification en est une extension naturelle, nécessaire pour décrire des systèmes plus complexes où le nombre de particules peut varier. Elle repose sur la quantification des champs et l’introduction d’opérateurs de création et d’annihilation, ouvrant ainsi la voie à la physique quantique des champs et à de nombreuses applications modernes.\\
 
-Les opérateurs $\operator{Q}$ , $\operator{P}$ et $\operator{H}$ possèdent une structure diagonale commune dans la base des états propres $\ket{\{\theta_a\}}$, révélant la nature intégrable du modèle de Lieb-Liniger. Leurs valeurs propres sont respectivement les 0e, 1er et 2e moments des rapidités. Cette structure permet de généraliser la construction à une hiérarchie complète d’observables conservées, qui seront présentées au chapitre suivant.
+\medskip
+
+Les opérateurs $\operator{Q}$, $\operator{P}$ (\eqref{eq.chap.1.Q.P.k.3}) et $\operator{H}$ \eqref{chap.1:eq.LL.champ.1} possèdent une structure diagonale commune dans la base des états propres $\ket{\{\theta_a\}}$, révélant la nature intégrable du modèle de Lieb-Liniger. Leurs valeurs propres sont respectivement les 0\textsuperscript{e}, 1\textsuperscript{er} et 2\textsuperscript{e} moments des $\theta_a$. Cette structure permet de généraliser la construction à une hiérarchie complète d’observables conservées, qui seront présentées au chapitre suivant.\\
+
+\medskip
+
+En passant par la seconde quantification, nous avons pu relier l’Hamiltonien à une particule $\operator{\mathcal{H}}_1$ \eqref{chap.1.rapel.libre.1} à un Hamiltonien à $N$ particules $\operator{\mathcal{H}}_N$ \eqref{chap.1:eq.LL.eta.1} dans le modèle de Lieb-Liniger (système avec interactions ponctuelles). Les états $\varphi_{\{ \theta_a \}}$ sont des états propres du nombre total de particules $\operator{\mathcal{N}}_N$ \eqref{eq.chap.1.Q.1}, de la quantité de mouvement totale $\operator{\mathcal{P}}_N$ \eqref{eq.chap.1.P.1} et de l’hamiltonien $\operator{\mathcal{H}}_N$.
+
+\medskip
+
+Dans le cas d’un système à une particule, les états de la forme \eqref{chap.1.rapel.libre.7} sont déjà propres de $\operator{\mathcal{N}}_1$, $\operator{\mathcal{P}}_1$ et $\operator{\mathcal{H}}_1$ (cf. \eqref{chap.1.rapel.libre.2}). Mais quelle est leur forme pour $N$ particules ? Et comment généraliser les conditions périodiques \eqref{chap.1.rapel.libre.5}, valables pour une particule, à un système à $N$ particules ?\\
+
+\medskip
+
+Nous allons étudier le cas de $N=2$ corps, afin de simplifier l’analyse tout en capturant les premiers effets non triviaux des interactions. Cela permettra de comprendre plus facilement les implications physiques des interactions ponctuelles, en particulier leur influence sur la structure des états propres, les conditions de continuité des fonctions d’onde, ainsi que les relations de dispersion modifiées. Ce cas servira de base pour introduire les concepts clés de la résolution exacte par la méthode de Bethe ansatz, avant de les généraliser au cas $N$-corps.
+
+ 
+
+
 
 
 %\subsection{Opérateurs nombre de particules et moment dans la formulation quantique du gaz de Lieb-Liniger}
