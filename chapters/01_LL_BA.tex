@@ -362,7 +362,7 @@ Reprenons l'exemple de l'énergie cinétique totale avec  $\operator{f} = \frac{
 %En injectant l'expression \eqref{eq.chap.1.TF.1} dans \eqref{eq.chap.1.cinietique.3}, on retrouve la forme discrète \eqref{eq.chap.1.cinietique.1}, cette fois exprimée en termes des opérateurs $\operator{b}_k$.
 
 Lorsque cet Hamiltonien agit sur l’état de Fock à $N$ particules $\ket{\{k_a\}}$, les règles de commutation (\ref{chap:1:com.1}) ainsi que la définition des états de Fock (\ref{chap:eq.vide.fock}) impliquent (cf. Annexe \ref{annex:N.part}) :
-\begin{eqnarray}
+\begin{eqnarray}\label{eq.chap.1.cinietique.4}
 \operator{K}\ket{ \{k_a\}} =  \int_0^L d^N z \, \operator{\mathcal{K}}_N \, \varphi_{\{k_a\}}(\{z_a\} ) \operator{\Psi}(z_1) \cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}\, , \quad \mbox{avec} \quad \operator{\mathcal{K}}_N = -\sum_{i=1}^N \frac{\hbar^2\operator{\partial}_{z_i}^2}{2m}, 
 \end{eqnarray}
 %avec :
@@ -497,28 +497,26 @@ où \( g \) est la constante de couplage.
 
 
 \subsubsection{Expression de l’Hamiltonien de Lieb-Liniger. }
-A partie d'ici $\hbar = m = 1 $; les dimmension (unité) des nombre d'ondes $k$ et les vitesses ne sont plus diférentier.
-Dans le formalisme des opérateurs de  champs l’Hamiltonien d'un système sousmis à des interactions ponctuelles  s’écrit   :
 
+À partir d’ici, on fixe $\hbar = m = 1 $. Ainsi, les dimensions (unités) des nombres d’onde $k$ et des vitesses ne sont plus différenciées.
+Dans le formalisme des opérateurs de champs, l’Hamiltonien d’un système soumis à des interactions ponctuelles est la somme de l’énergie cinétique $\operator{K}$ donnée par \eqref{eq.chap.1.cinietique.3}, et du terme d’interaction $\operator{V}$ introduit dans \eqref{chap.1:eq.rapel.opp.2.second.ponctuel.1} :
 %Le Hamiltonien du modèle est donné par
-
 %\begin{eqnarray}
 %	\operator{H} & = & \int dx \, \left [ \operator{\partial}_x \operator{\Psi}^\dag (x)\operator{\partial}_x \operator{\Psi}(x) + c \operator{\Psi}^\dag (x) \operator{\Psi}^\dag (x) \operator{\Psi} (x) \operator{\Psi} (x) \right ] \label{chap:1:ham.mod}
 %\end{eqnarray}
-
 \begin{eqnarray}
 	\operator{H} & = & \int dx \, \operator{\Psi}^\dag (x)\left [-\frac{1}{2}\operator{\partial}_x^2 + \frac{g}{2}  \operator{\Psi}^\dag (x) \operator{\Psi} (x) \right ] \operator{\Psi} (x) \label{chap:1:ham.mod}.
 \end{eqnarray}
-
-Quand on l'applique à l'état $\ket{\{\theta_1 , \cdots , \theta_N \}} $, avec $\theta_i$ homogène à des nombres d'onde ou à des vitesse , il vient que %, les règles de commutations (\ref{chap:1:com.1}) et la définition d'état de Fock (\ref{chap:eq.vide.fock}) impliquent que (cf Annex \ref{annex:N.part})
+Lorsqu’on applique cet Hamiltonien à un état de Fock à $N$ particules $\ket{\{\theta_1 , \cdots , \theta_N \}} $, où chaque paramètre $\theta_i$ est homogène à un nombre d’onde ou à une vitesse (mais pas nécessairement homogéne à un nombre d'onde $k$ d’où la notation $\theta$), on obtient — en utilisant les équations \eqref{eq.chap.1.cinietique.3} et \eqref{chap.1:eq.rapel.opp.2.second.ponctuel.2} : %, les règles de commutations (\ref{chap:1:com.1}) et la définition d'état de Fock (\ref{chap:eq.vide.fock}) impliquent que (cf Annex \ref{annex:N.part})
 \begin{eqnarray}
-\operator{H}\ket{\{\theta_1 , \cdots , \theta_N\}} =  \int d^Nz \, \operator{\mathcal{H}}_N \varphi_{\{\theta_a\}}(z_1 , \cdots , z_N )\operator{\Psi}(z_1)\cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset} 
+\operator{H}\ket{\{\theta_a\}} =  \int d^Nz \, \operator{\mathcal{H}}_N \varphi_{\{\theta_a\}}(\{z_a\})\operator{\Psi}(z_1)\cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}\, \mbox{avec} \, \operator{\mathcal{H}}_N 	
+ =  \operator{\mathcal{K}}_N  +  \operator{\mathcal{V}}_N . 
 \end{eqnarray}
-avec 
-\(
-	\operator{\mathcal{H}}_N 	
- =  \operator{\mathcal{K}}_N  +  \operator{\mathcal{V}}_N .	
-\)
+avec $\{\theta_a\} \equiv \{ \theta_1 , \cdots , \theta_N \} $.
+%\(
+%	\operator{\mathcal{H}}_N 	
+% =  \operator{\mathcal{K}}_N  +  \operator{\mathcal{V}}_N .	
+%\)
 
 
 %où \( g \) est la constante de couplage. %Dans ce chapitre, nous considérons uniquement les propriétés du système à un instant donné, de sorte que la dépendance temporelle des champs est omise pour alléger l’écriture.
@@ -528,18 +526,13 @@ avec
 \paragraph{Équation du mouvement associée.}
 
 L’équation du mouvement du champ \( \Psi(x) \) est obtenue à partir de l’équation de Heisenberg :
-
 \begin{eqnarray}
-	i\operator{\partial}_t	\operator{\Psi} & = & [ \operator{\Psi} , \operator{H} ]
+	i\operator{\partial}_t	\operator{\Psi} & = & [ \operator{\Psi} , \operator{H} ],
 \end{eqnarray}
-
 ce qui, après évaluation explicite du commutateur (\ref{chap:1:com.1}), conduit à :
-
-
 %\begin{eqnarray}
 %	i \operator{\partial}_t \operator{\Psi}	 & = & - \operator{\partial}_x^2 \operator{\Psi} + 2c \operator{\Psi}^\dag\operator{\Psi} \operator{\Psi}
 %\end{eqnarray}
-
 \begin{eqnarray}
 	i \operator{\partial}_t \operator{\Psi}	 & = & - \frac{1}{2}\operator{\partial}_x^2 \operator{\Psi} + g \operator{\Psi}^\dag\operator{\Psi} \operator{\Psi}
 \end{eqnarray}
