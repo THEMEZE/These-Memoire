@@ -1,4 +1,5 @@
-\chapter{Modèle de Lieb-Liniger et approche Bethe Ansatz}
+\chapter{Modèle de Lieb-Liniger et approche Bethe Ansatz}\label{chap:LL-BA}
+\minitoc
 \minitoc
 
 \section*{Introduction}
@@ -404,19 +405,19 @@ Lorsqu'on applique ces opérateurs à l’état \(\ket{\{k_a\}}\), on obtient (c
     leftmargin=2pt,
     rightmargin=2pt
 	]
-\subparagraph{On s'avance sur le chapitre (\ref{chap:relaxation}).} , en voulant généraliser avec $\operator{f} = \operator{p}^q$ où $q$ est un entier. Soit dans la base \(\{\ket{k}\}\) : \(\operator{F} = (-i\hbar)^q \sum_k k^q \operator{b}_k^\dagger \operator{b}_k^{} \) et en l'appliquant à \(\ket{\{k_a\}}\) :  
-\begin{eqnarray}
-	 \operator{F} \ket{\{k_a\}} = (-i\hbar)^q \left( \sum_{i = 1}^N k^q \right) \ket{\{k_a\}},
+\subparagraph{On s'avance sur le chapitre (\ref{chap:relaxation}).} , en voulant généraliser avec $\operator{f} = \operator{p}^q$ où $q$ est un entier. Soit dans la base \(\{\ket{k}\}\) : \(\operator{F} = \hbar^q \sum_k k^q \operator{b}_k^\dagger \operator{b}_k^{} \) et en l'appliquant à \(\ket{\{k_a\}}\) :  
+\begin{eqnarray}\label{chap.1:eq.rapel.opp.1.second.3}
+	 \operator{F} \ket{\{k_a\}} = \hbar^q \left( \sum_{i = 1}^N k_i^q \right) \ket{\{k_a\}},
 \end{eqnarray}
 et dans la base \(\{\ket{x}\}\) : 	
 \(
-	\operator{F}  =  \frac{(i\hbar)^q}2 \int_0^L \left \{  \operator{\Psi}^\dag(x) \operator{\partial}_x^q \operator{\Psi}(x) + (-1)^q \left [\operator{\partial}_x^q \operator{\Psi}^\dag(x)\right ]\operator{\Psi}(x)\right \} dx
+	\operator{F}  =  \frac{\hbar^q}2 \int_0^L \left \{  \operator{\Psi}^\dag(x) \operator{\partial}_x^q \operator{\Psi}(x) + (-1)^q \left [\operator{\partial}_x^q \operator{\Psi}^\dag(x)\right ]\operator{\Psi}(x)\right \} dx
 \)
 et en l'appliquant à \(\ket{\{k_a\}}\) : 
 \(
 	\operator{F}\ket{ \{k_a\}} =  \int_0^L d^N z \, \operator{\mathcal{F}}_N \, \varphi_{\{k_a\}}(\{z_a\} ) \operator{\Psi}(z_1) \cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}\, 
 \) \mbox{avec} 
-\(\operator{\mathcal{F}}_N = (-i\hbar)^q \sum_{i=1}^N (\operator{\partial}_{z_i})^q.
+\(\operator{\mathcal{F}}_N = \hbar^q \sum_{i=1}^N (\operator{\partial}_{z_i})^q.
 \)
 \end{mdframed}
 
@@ -569,7 +570,7 @@ Ils constituent ainsi des intégrales du mouvement. Cette propriété est une ma
 
 \paragraph{États propres et valeurs propres.}
 Les états propres $\ket{\{\theta_a\}}$, construits dans le cadre de la seconde quantification à partir de la solution du modèle de Lieb-Liniger, sont simultanément fonctions propres des opérateurs $\operator{Q}$, $\operator{P}$ et $\operator{K}$ :
-\begin{eqnarray}
+\begin{eqnarray}\label{chap1:eq.Q.P.K.theta.1}
 \operator{Q} \ket{\{\theta_a\}} = N \ket{\{\theta_a\}}, \quad
 \operator{P} \ket{\{\theta_a\}} = \left( \sum_{a=1}^N \theta_a \right) \ket{\{\theta_a\}}, \
 \operator{K} \ket{\{\theta_a\}} = \left( \frac{1}{2} \sum_{a=1}^N \theta_a^2 \right) \ket{\{\theta_a\}}.
@@ -1076,7 +1077,7 @@ Pour bien comprendre le sens physique des équations de Bethe~\eqref{eq:Bethe2},
 
 \medskip
 
-Pour décrire ces {\bf excitations} , ces {\bf quasi-particules}, on introduit le paramètre $\theta$ appelé {\bf rapidité}. Ce terme vient de la théorie relativiste [\cite{zamolodchikov1979factorized}\cite{babelon2003introduction}], mais reste pertinent même dans des modèles non relativistes, comme ici. La rapidité est choisie comme {\bf paramètre spectral naturel} : elle étiquette les états propres, linéarise les relations de dispersion dans certains régimes, et elle simplifie considérablement les équations de Bethe.
+Pour décrire ces {\bf excitations} , ces {\bf quasi-particules}, on introduit le paramètre $\theta$ appelé {\bf rapidité}. Ce terme vient de la théorie relativiste \cite{zamolodchikov1979factorized,babelon2003introduction}, mais reste pertinent même dans des modèles non relativistes, comme ici. La rapidité est choisie comme {\bf paramètre spectral naturel} : elle étiquette les états propres, linéarise les relations de dispersion dans certains régimes, et elle simplifie considérablement les équations de Bethe.
 
 \medskip
 
@@ -1133,7 +1134,7 @@ où les $I_a \in \mathbb{Z}$ (ou $\mathbb{Z} + \tfrac{1}{2}$) sont des nombres e
 \begin{equation}
 I_a = a - \frac{N+1}{2}, \quad \text{pour } a \in \llbracket 1 , N \rrbracket.
 \end{equation}
-ce qui correspond au choix symétrique des nombres quantiques pour l’état fondamental. Il en résulte une distribution uniforme des $\theta_a$ dans l’intervalle $[-K , K ]$
+ce qui correspond au choix symétrique des nombres quantiques pour l’état fondamental. Il en résulte une distribution uniforme des $\theta_a$ dans l’intervalle autour de zéro $[-\theta_{\mbox{\tiny max}} , \theta_{\mbox{\tiny max}} ]$ où \( \theta_{\mbox{\tiny max}} \) est le paramètre de Fermi (ou rapidité maximale).
 %Ce choix garantit une distribution uniforme des $\theta_a$ à l’état fondamental.
 %\vspace{1em}
 
@@ -1144,56 +1145,60 @@ Les équations de Bethe~\eqref{chap:1:eq:EBA} représentent une {\em quantificat
 Ce système d'équations détermine les états propres du système de Lieb–Liniger en volume fini, et joue un rôle fondamental dans la description exacte de ses propriétés thermodynamiques et dynamiques.
 
 
-\subsection{Thermodynamique du gaz de Lieb–Liniger à température nulle}
+\subsection{Thermodynamique du gaz de Lieb–Liniger à l'état fondamental}
 
 Dans la limite thermodynamique, le nombre de particules \( N \) et la longueur \( L \) du système tendent vers l'infini de telle sorte que leur rapport reste fini :
 \begin{eqnarray*}
-	\lim_{N,\, L \to \infty} \frac{N}{L} = D < \infty,
+	\lim_{\underset{ N \to \infty}{L \to \infty}} \frac{N}{L} = n < \infty,
 \end{eqnarray*}
-où \( D \) désigne la densité linéique de particules.
+où \( n \) désigne la densité linéique de particules.
+
+\medskip
 
 Considérons désormais le système à température nulle. L’état fondamental dans le secteur à nombre de particules fixé correspond à la configuration d’énergie minimale parmi les solutions des équations de Bethe \eqref{chap:1:eq:EBA}.
 
-Dans la limite thermodynamique, les valeurs de \( \theta_a \) deviennent quasi-continues, avec un espacement \( \theta_{a+1} - \theta_a = \mathcal{O}(1/L) \), et se condensent dans un intervalle symétrique autour de zéro :
-\[
-\theta_a \in [-K, K],
-\]
-où \( K \) est le paramètre de Fermi (ou rapidité maximale), défini par \( K = \theta_N \). En supposant l'ordre \( I_a \geq I_b \Rightarrow \theta_a \geq \theta_b \), cet intervalle constitue ce qu'on appelle la {\em mer de Dirac} (ou sphère de Fermi en dimension un).
+Dans la limite thermodynamique $(\underset{\text{therm}}{\lim} \equiv \underset{\underset{ N \to \infty}{L \to \infty}}{\lim} )$ , les valeurs de \( \theta_a \) deviennent quasi-continues, avec un espacement \( \theta_{a+1} - \theta_a = \mathcal{O}(1/L) \), et se condensent dans un intervalle symétrique autour de zéro $[-\theta_{\mbox{\tiny max}} , \theta_{\mbox{\tiny max}} ]$ . En supposant l'ordre \( I_a \geq I_b  \) implique \(\theta_a \geq \theta_b \), cet intervalle constitue ce qu'on appelle la {\em mer de Dirac} (ou sphère de Fermi en dimension un).
 
-Nous introduisons la densité d’états \( \rho_s(\theta) \), définie par
-\begin{eqnarray*}
-	2\pi \rho_s(\theta_a) &=& \frac{2\pi}{L} \lim_{\text{therm}} \frac{|I_{a+1} - I_a|}{|\theta_{a+1} - \theta_a|} = \frac{2\pi}{L} \frac{\partial I}{\partial \theta}(\theta_a),
-\end{eqnarray*}
-où \( I(\theta_a) = I_a \). L’application des équations de Bethe sous forme logarithmique conduit alors à
+Nous introduisons la {\bf densité d’états}  \( \rho_s(\theta) \), définie par
+\begin{eqnarray}
+	 \rho_s(\theta_a) &\doteq & \frac{1}{L} \lim_{\text{therm}} \frac{|I_{a+1} - I_a|}{|\theta_{a+1} - \theta_a|},
+\end{eqnarray}
+soit en notant la fonction \( I(\theta_a) = I_a \)
+\begin{eqnarray}
+	2\pi \rho_s(\theta_a) &=&  \frac{2\pi}{L} \frac{\partial I}{\partial \theta}(\theta_a).
+\end{eqnarray}
+L’application des équations de Bethe sous forme logarithmique \eqref{chap:1:eq:EBA} conduit alors à
 \begin{eqnarray*}
 	2\pi \rho_s(\theta_a) = 1 + \frac{1}{L} \sum_{b = 1}^N \Delta(\theta_a - \theta_b),
 \end{eqnarray*}
-ce qui relie \( \rho_s \) à la fonction d’interaction \( \Delta \) entre les rapidités.
+ce qui relie \( \rho_s \) à le déplacement de diffusion  \( \Delta \) définie dans l'équation  \eqref{eq:I-1-16}.
 
-Intéressons-nous maintenant à la {\em densité de particules dans l’espace des moments}, notée \( \rho(\theta) \), définie par
+\medskip
+
+Intéressons-nous maintenant à la {\em densité de particules dans l’espace des moments}, que l'on nome la {\bf distribution de rapidité} et notée \( \rho(\theta) \), et définie par
 \begin{eqnarray*}
-	\rho(\theta_a) = \lim_{L \to \infty} \frac{1}{L} \cdot \frac{1}{\theta_{a+1} - \theta_a} > 0.
+	\rho(\theta_a) = \underset{\text{therm}}{\lim} \frac{1}{L} \cdot \frac{1}{\theta_{a+1} - \theta_a} > 0.
 \end{eqnarray*}
-Dans l’état fondamental, toutes les positions disponibles dans l’intervalle \( [-K, K] \) sont occupées. On a donc :
+Dans l’état fondamental, toutes les positions disponibles dans l’intervalle \( [-\theta_{\mbox{\tiny max}}, +\theta_{\mbox{\tiny max}}] \) sont occupées. On a donc :
 \begin{eqnarray}\label{chap.1.rho.2}
 	\rho(\theta) = \rho_s(\theta).
 \end{eqnarray}
 
 La quantité \( L \rho(\theta) d\theta \) représente le nombre de rapidités dans la cellule infinitésimale \( [\theta, \theta + d\theta] \), tandis que
 \(
-	N = L \int_{-K}^{K} \rho(\theta)\, d\theta
+	N = L \int_{-\theta_{\mbox{\tiny max}}}^{+\theta_{\mbox{\tiny max}}} \rho(\theta)\, d\theta
 \)
 donne le nombre total de particules dans le système. Le passage de la somme discrète à l'intégrale dans le second membre de l'équation de Bethe permet d’écrire :
-\begin{eqnarray*}
-	\frac{1}{L} \sum_{b = 1}^N \Delta(\theta_a - \theta_b) \longrightarrow \int_{-K}^{K} \Delta(\theta_a - \theta)\, \rho(\theta)\, d\theta.
-\end{eqnarray*}
+\begin{eqnarray}
+	\frac{1}{L} \sum_{b = 1}^N \Delta(\theta_a - \theta_b) \underset{\text{therm}}{\longrightarrow }\int_{-\theta_{\mbox{\tiny max}}}^{+\theta_{\mbox{\tiny max}}} \Delta(\theta_a - \theta)\, \rho(\theta)\, d\theta.
+\end{eqnarray}
 Ainsi, l'équation pour la densité d'états devient :
 \begin{eqnarray}\label{chap.1.rho.s.2}
-	2\pi \rho_s(\theta) = 1 + \int_{-K}^{K} \Delta(\theta - \theta')\, \rho(\theta')\, d\theta',
+	2\pi \rho_s(\theta) = 1 + \int_{-\theta_{\mbox{\tiny max}}}^{+\theta_{\mbox{\tiny max}}} \Delta(\theta - \theta')\, \rho(\theta')\, d\theta',
 \end{eqnarray}
-et, comme \( \rho = \rho_s \), on obtient l’équation linéaire intégrale satisfaite par la densité de rapidités :
+et, comme \( \rho = \rho_s \), à l'état fondamental, on obtient l’équation linéaire intégrale satisfaite par la densité de rapidités :
 \begin{eqnarray}\label{chap.1.rho.3}
-	\rho(\theta) - \int_{-K}^{K} \frac{\Delta(\theta - \theta')}{2\pi} \rho(\theta')\, d\theta' = \frac{1}{2\pi}.
+	\rho(\theta) - \int_{-\theta_{\mbox{\tiny max}}}^{+\theta_{\mbox{\tiny max}}} \frac{\Delta(\theta - \theta')}{2\pi} \rho(\theta')\, d\theta' = \frac{1}{2\pi}.
 \end{eqnarray}
 
 

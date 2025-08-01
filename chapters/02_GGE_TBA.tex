@@ -11,7 +11,7 @@ Ils relaxent alors vers un état stationnaire décrit par une \emph{Ensemble The
 Cette section pose les fondations nécessaires à la description de ces états stationnaires dans le cadre de la \textbf{thermodynamique de Bethe} (TBA), qui généralise l’analyse au-delà de l’état fondamental.  
 Nous considérons ici un régime macroscopique à température (ou entropie) finie, correspondant à des états hautement excités du spectre, mais toujours décrits dans le formalisme intégrable exact.
 
-Notre point de départ est la relation constitutive entre la densité de \emph{quasi-particules} (ou rapidités) $\rho(\theta)$ et la densité d’états disponibles $\rho_s(\theta)$, qui encode le spectre accessible en présence d’interactions.  
+Notre point de départ est la relation constitutive entre la \emph{densité de quasi-particules} (ou \emph{rapidités}) $\rho(\theta)$ et la \emph{densité d’états} disponibles $\rho_s(\theta)$, qui encode le spectre accessible en présence d’interactions.  
 Nous introduisons ensuite une opération clé de la TBA, appelée \emph{habillage} (\emph{dressing}), qui intervient systématiquement dans le calcul des observables physiques et permet de prendre en compte de manière non perturbative les effets des interactions.  
 Cette construction sera illustrée dans le cadre du modèle intégrable de Lieb–Liniger, qui décrit un gaz unidimensionnel de bosons avec interaction delta répulsive.
 
@@ -22,51 +22,31 @@ Les outils développés ici seront fondamentaux pour formuler dans la section su
 \subsection{Notion d’état d’équilibre généralisé (GGE)}
 
 \paragraph{Introduction.}
-%Dans les systèmes quantiques intégrables, la dynamique unitaire à long temps ne conduit généralement pas à une thermalisation usuelle, au sens de l’ensemble canonique ou microcanonique. En effet, l'intégrabilité implique l'existence d'une infinité de charges conservées \( \operator{Q}_i \), en involution avec l’Hamiltonien \( \operator{H} \), i.e.
-%\begin{eqnarray*}
-%[\operator{Q}_i, \operator{H}] = 0,
-%\end{eqnarray*}
-%et entre elles : \( [\operator{Q}_i, \operator{Q}_j] = 0 \). Ces charges sont localement définies : chacune peut s’écrire sous la forme
-%\begin{eqnarray*}
-%\operator{Q}_i = \int dx\, \operator{q}_i(x),
-%\end{eqnarray*}
-%où \( \operator{q}_i(x) \) est une densité locale d’observable (ou "charge locale") à support fini. Cela signifie que pour tout \( i \), la densité \( \operator{q}_i(x) \) est une observable dont le support est contenu dans un sous-domaine borné de l’espace, noté \( \mathcal{S} \subset \mathbb{R} \).
 
-%Cette propriété de localité est essentielle pour décrire l’état du système à l’échelle mésoscopique ou dans un sous-système \( \mathcal{S} \), c’est-à-dire lorsque l’on restreint l’étude à une région finie du système total, typiquement après un processus de relaxation ou de déphasage local. Dans ce cas, le sous-système n’est pas décrit par un état thermique standard (de type Gibbs), mais par une distribution prenant en compte **l’ensemble des charges locales conservées** qui agissent effectivement dans la région \( \mathcal{S} \). Cette construction mène à la notion d’**état d’équilibre généralisé** ou **GGE** (pour *Generalized Gibbs Ensemble*).
-
-%L’état d’équilibre local généralisé est alors défini formellement par une matrice densité de la forme :
-%\begin{eqnarray*}
-%\operator{\rho}_{\mathcal{S}} = \frac{1}{Z_{\mathcal{S}}} \exp\left( -\sum_i \beta_i\, \operator{Q}_i^{(\mathcal{S})} \right),
-%\end{eqnarray*}
-%où \( \operator{Q}_i^{(\mathcal{S})} \) désigne la restriction de la charge \( \operator{Q}_i \) à la région \( \mathcal{S} \), c’est-à-dire :
-%\begin{eqnarray*}
-%\operator{Q}_i^{(\mathcal{S})} = \int_{\mathcal{S}} dx\, \operator{q}_i(x),
-%\end{eqnarray*}
-%et les coefficients \( \beta_i \in \mathbb{R} \) jouent le rôle de multiplicateurs de Lagrange associés à la conservation des \( \operator{Q}_i \) (on les interprète comme des "potentiels généralisés"). La constante \( Z_{\mathcal{S}} \) est le facteur de normalisation (ou "partition généralisée") :
-%\begin{eqnarray*}
-%Z_{\mathcal{S}} = \operatorname{Tr} \left[ \exp\left( -\sum_i \beta_i\, \operator{Q}_i^{(\mathcal{S})} \right) \right].
-%\end{eqnarray*}
-
-%Ce formalisme permet de décrire l’état macroscopique atteint par un système intégrable après relaxation unitaire, en particulier à la suite d’un *quench* quantique (changement soudain de paramètre). Contrairement à la situation standard où seule l’énergie est conservée, l’ensemble des charges \( \operator{Q}_i \) doit être pris en compte pour correctement prédire les observables locales dans l’état asymptotique.
-
-%L’approche GGE est donc un outil fondamental pour la description de l’équilibre local dans les systèmes intégrables, et permet notamment de comprendre pourquoi la thermalisation habituelle échoue dans ce contexte.
 
 \paragraph{Configuration des états.}\label{sec:config-etats}.
-On désigne par $\boldsymbol{\{ \theta_a \}}\equiv \{ \theta_1 , \cdots , \theta_{N} \}$ la \emph{configuration de rapidités} caractérisant un état propre à $N\!=\!N(\boldsymbol{\{ \theta_a \}})$ particules – le nombre de particules n’est donc pas fixé \emph{a priori} mais dépend de la configuration.  
-L’état propre correspondant est noté $\ket{\boldsymbol{\{ \theta_a \}}}\;=\;\ket{\{\theta_1,\dots,\theta_N \}}$.
+On désigne par $\boldsymbol{\{ \theta_a \}}\equiv \{ \theta_1 , \cdots , \theta_{N} \}$ la \emph{configuration de rapidités} caractérisant un état propre à $N\!\equiv\!N(\{ \theta_a \})$ particules – le nombre de particules n’est donc pas fixé \emph{a priori} mais dépend de la configuration.  
+L’état propre correspondant est noté $\ket{\{ \theta_a \}}\;=\;\ket{\{\theta_1,\dots,\theta_N \}}$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Observables diagonales dans la base des états propres.}
-Dans le chapitre précédent (??), on a vu que l'état $\ket{\boldsymbol{\{ \theta_a \}}}$ associé à cette configuration est une fonction propre des observables nombre et moment et  énergie (??). Ces observables sont diagonales dans la base des états propres :
+Dans le chapitre précédent (\ref{chap:LL-BA}), on a vu que l'état $\ket{\{ \theta_a \}}$ associé à cette configuration est une état propre des observables nombre et quantité de mouvement  et  énergie cinétique \eqref{chap1:eq.Q.P.K.theta.1}. Ces observables sont diagonales dans la base des états propres :
 \begin{eqnarray}
-	\operator{Q}  =  \sum_{ \{\theta_a\} } \left ( \sum_{a = 1}^{N_a}  1 \right )  \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \}\vert, \, 
-	\operator{P}  =  \sum_{\{ \theta_a\}}\left( \sum_{a = 1}^{N_a}  \theta_a \right )   \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \}\vert,\,\operator{H}  =  \sum_{\{ \theta_a\}}\left ( \sum_{a = 1}^{N_a} \frac{\theta_a^2}{2} \right )   \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \}\vert.\label{chap.2.gge.1}		
+	\operator{Q}  =  \sum_{ \{\theta_a\} } \left ( \sum_{a = 1}^{N}  1 \right )  \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \}\vert, \, 
+	\operator{P}  =  \sum_{\{ \theta_a\}}\left( \sum_{a = 1}^{N}  \theta_a \right )   \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \}\vert,\,\operator{K}  =  \sum_{\{ \theta_a\}}\left ( \sum_{a = 1}^{N} \frac{\theta_a^2}{2} \right )   \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \}\vert.\label{chap.2.gge.1}		
 \end{eqnarray}
 avec $ \sum_{\{ \theta_a\}}$ une somme sur tous les configurations.\\
 %\begin{eqnarray}
 %	\operator{Q} \ket{\{ \theta_a\}}  =  \sum_{ \{\theta_a\} } \left ( \sum_{a = 1}^{N}  1 \right ) \ket{\{ \theta_a\}}, \, 
 %	\operator{P} \ket{\{ \theta_a\}}  =  \sum_{\{ \theta_a\}}\left( \sum_{a = 1}^{N}  \theta_a \right ) \ket{\{ \theta_a\}},\,\operator{H} \ket{\{ \theta_a\}}  =  \sum_{\{ \theta_a\}}\left ( \sum_{a = 1}^{N} \frac{\theta_a^2}{2} \right )   \ket{\{ \theta_a\}}.		
 %\end{eqnarray}
+
+Nous avons introduit ces observables en injectant des opérateurs $\operator{f}$ proportionnels à des puissances de la quantité de mouvement d’une particule $\operator{p}$, respectivement $\propto \operator{p}^0$, $\propto \operator{p}^1$ et $\propto \operator{p}^2$, dans l’opérateur à un corps $\operator{F}$ défini dans l’équation \eqref{chap.1:eq.rapel.opp.1.second.2}. Écrit de cette manière, nous avons vu dans l’équation \eqref{chap.1:eq.rapel.opp.1.second.3} que pour $\operator{f} = \operator{p}^q$ avec $q$ entier, l’état de Bethe $\ket{\{ \theta_a \} }$ est un état propre de $\operator{F}$ :
+\begin{eqnarray}\label{chap.2:eq.rapel.opp.1.second.1}
+	 \operator{F} \ket{\{\theta_a\}} =   \sum_{ \{\theta_a\} }\left( \sum_{a = 1}^N \theta_a^q \right) \ket{\{\theta_a\}},
+\end{eqnarray}
+avec des valeurs propres données par des puissances de $\theta$. Cela motive l’étude d’états d’équilibre statistique au-delà de l’équilibre thermique, c’est-à-dire au-delà de l’ensemble de Gibbs.
+   
 
 
 
