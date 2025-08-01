@@ -67,7 +67,11 @@ Pour décrire cet état, on introduit l’{\bf ensemble de Gibbs généralisé (
 	\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}} = \frac{1}{Z^{(\mathcal{S})}}\exp \left ( - \sum_i \beta_i \operator{Q}_i^{(\mathcal{S})} \right), \quad \operator{Q}_i^{(\mathcal{S})} = \int_\mathcal{S} dx \, \operator{q}_i(x), \label{chap.TBA.op.rho.S}	
 \end{eqnarray}
 
-où $\beta_i \in \mathbb{R}$ sont les multiplicateurs de Lagrange (ou « températures généralisées ») associés aux charges locales conservées $\{\operator{Q}_i\}$. La fonction de partition $Z^{(\mathcal{S})} = \bm{\mathrm{Tr}}[\exp ( - \sum_i \beta_i \operator{Q}_i^{(\mathcal{S})} ) ]$ assure la normalisation. L’{\bf état GGE} ainsi défini est le seul permettant de prédire de manière cohérente les observables locales de $\mathcal{S}$ à long temps \cite{??}. Autrement dit, l’équilibre local après quench est un état stationnaire faisant perdurer la mémoire de chaque charge conservée, ce qui conduit à un nombre macroscopique de paramètres $\beta_i$ thermodynamiques (une « température » par charge) \cite{??}.
+où $\beta_i \in \mathbb{R}$ sont les multiplicateurs de Lagrange (ou « températures généralisées ») associés aux charges locales conservées $\{\operator{Q}_i\}$. La fonction de partition 
+\begin{eqnarray}
+	Z^{(\mathcal{S})} = \bm{\mathrm{Tr}}\left [\exp \left( - \sum_i \beta_i \operator{Q}_i^{(\mathcal{S})} \right ) \right ]  \label{chap.TBA.op.Z.S}	
+\end{eqnarray}
+ assure la normalisation. L’{\bf état GGE} ainsi défini est le seul permettant de prédire de manière cohérente les observables locales de $\mathcal{S}$ à long temps \cite{??}. Autrement dit, l’équilibre local après quench est un état stationnaire faisant perdurer la mémoire de chaque charge conservée, ce qui conduit à un nombre macroscopique de paramètres $\beta_i$ thermodynamiques (une « température » par charge) \cite{??}.
 
  \subparagraph{Interprétation des multiplicateurs de Lagrange.}
 Les multiplicateurs de Lagranges $\beta_i$ apparaissent naturellement lors de l'optimisation sous contraintes, par exemple dans le formalisme de l'{\bf ensemble de Gibbs généralisé (GGE)}, oû il imposent la conservation des valeurs moyennes des charges $\langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} = \bm{\mathrm{Tr}}[\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}} \operator{Q}_i^{(\mathcal{S})}]   $.\\
@@ -81,43 +85,59 @@ Cette « distribution de rapidités » est d’autant plus pertinente qu’elle 
 
 Dans la GGE, cette distribution macroscopique $\rho(\theta)$ est fixée par l’ensemble des charges conservées. Par exemple, on ajuste les $\beta_i$ de sorte que les valeurs moyennes $\langle \operator{Q}_i \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}$ correspondent aux valeurs initiales. Ce processus détermine donc la fonction $\rho(\theta)$ décrivant l’état d’équilibre local. Les observables locaux du gaz (densité, corrélations, etc.) en découlent alors via les équations de Bethe ansatz. 
 
+
+\paragraph{Convention pour les moyennes d'observables.}
+Dans la suite du chapitre, nous noterons la moyenne d’une observable $\operator{\mathcal{O}}$ dans un état décrit par une matrice densité (ici noté) $\operator{\rho}$ par :
+\begin{eqnarray}\label{chap.TBA.moy.dens}	
+	\braket{\operator{\mathcal{O}}}_{\operator{\rho}} \doteq \bm{\mathrm{Tr}}[\operator{\rho} \, \operator{\mathcal{O}}],
+\end{eqnarray}
+En particulier, si la matrice densité est un projecteur, comme $\ket{\{\theta_a \}}\!\bra{\{\theta_a \}}$, $\bm{\mathrm{Tr}}[\ket{\{\theta_a \}}\!\bra{\{\theta_a \}} \operator{\mathcal{O}}] =  \bra{\{\theta_a \}}\operator{\mathcal{O}}\ket{\{\theta_a \}}$. dans ce cas on notera la moyenne :
+\begin{eqnarray}\label{chap.TBA.moy.dens.pur}
+	\braket{\operator{\mathcal{O}}}_{\{\theta_a \}} = \bra{\{\theta_a \}} \operator{\mathcal{O}} \ket{\{\theta_a \}},
+\end{eqnarray}
+où l’on note simplement l’ensemble des rapidité ${\theta_a}$ pour désigner l’état pur.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Charges conservées locales diagonales dans la base des états propres.}
-Les charges conservées locales $\operator{Q}_i^{(\mathcal{S})}$ est diagonale dans la base des  états propres $\ket{ \{ \theta_a \}}$ , avec pour valeurs propres $\langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\{\theta_a \}} = \bm{\mathrm{Tr}}[\ket{\{\theta_a \}}\!\bra{\{\theta_a \}} \operator{Q}_i^{(\mathcal{S})}] =  \bra{\{\theta_a \}} \operator{Q}_i^{(\mathcal{S})} \ket{\{\theta_a \}}$ :
+Les charges conservées locales $\operator{Q}_i^{(\mathcal{S})}$ est diagonale dans la base des  états propres $\ket{ \{ \theta_a \}}$ , avec pour valeurs propres $\langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\{\theta_a \}} $ 	 :
 %\begin{eqnarray}
 %	\operator{Q}_i^{(\mathcal{S})} & = & \sum_{ \{\theta_a\} } \langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\{\theta_a \}}  \ket{\{\theta_a \}}\!\bra{\{\theta_a \}}.		
 %\end{eqnarray}
-\begin{eqnarray}
+\begin{eqnarray}\label{chap.TBA.Qi.diag}
 	\operator{Q}_i^{(\mathcal{S})}\ket{\{\theta_a \}} & = &  \langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\{\theta_a \}}  \ket{\{\theta_a \}}.		
 \end{eqnarray}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Probabilité d’un état à rapidités fixées.}
-On peut alors définir la probabilité d’occurrence d’un état $\ket{\{ \theta_a \} }$ :
+On peut alors définir la probabilité d’occurrence d’un état $\ket{\{ \theta_a \} }$ comme la moyenne de la matrice densité locale $\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}$ définie dans \eqref{chap.TBA.op.rho.S}:
 \begin{eqnarray}
-	\mathbb{P}^{(\mathcal{S})}_{\{ \theta_a \}}  =  \bm{\mathrm{Tr}} \left [\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}} \ket{\{\theta_a \}}\!\bra{\{\theta_a \}} \right ] =  \bra{\{\theta_a \}}	\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}} \ket{\{\theta_a \}}  = \frac{1}{Z^{(\mathcal{S})}} \exp \left (- \sum_i \beta_i \langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\{\theta_a \}} \right ) .
+	\mathbb{P}^{(\mathcal{S})}_{\{ \theta_a \}}  & \equiv &  \langle \operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}} \rangle_{\{\theta_a \}}, \label{chap.TBA.P.1}\\
+	& = & 
+	\frac{1}{Z^{(\mathcal{S})}} \exp \left (- \sum_i \beta_i \langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\{\theta_a \}} \right ) \label{chap.TBA.P.2}.
 \end{eqnarray}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\paragraph{Moyenne d’un charges conservées locales et dérivées de $Z^{(\mathcal{S})}$.}
-On peut écrire la moyenne d’une observable comme une somme pondérée par cette probabilité, ou encore comme une dérivée de la fonction de partition :
+\paragraph{Moyenne d’un charges conservées locales et dérivées de $Z^{(\mathcal{S})}$.} Les charges locales $\operator{Q}_i^{(\mathcal{S})}$ sont diagonale dans la bases \( \{ \ket{\{\theta_a \}} \}  \) [cf eq~ ~\eqref{chap.TBA.Qi.diag}]. 
+On peut donc  écrire la moyenne d’une observable comme une somme pondérée par cette probabilité [cf eqs ~\eqref{chap.TBA.P.1}-\eqref{chap.TBA.P.2}] , ou encore comme une dérivée de la fonction de partition définie dans l'équation \eqref{chap.TBA.op.Z.S} :
 \begin{eqnarray}
-	\langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} &= & \sum_{\{ \theta_a\}} \langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\{\theta_a \}} \mathbb{P}^{(\mathcal{S})}_{\{ \theta_a \}} ~=~- \left. \frac{1}{Z^{(\mathcal{S})}} \frac{\partial Z^{(\mathcal{S})}}{\partial \beta_i} \right )_{\beta_{j \neq i }} ~=~ - 	\left . \frac{\partial  \ln Z^{(\mathcal{S})}}{\partial \beta_i} \right )_{\beta_{j \neq i }}	
+	\langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} &= & \sum_{\{ \theta_a\}} \langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\{\theta_a \}} \mathbb{P}^{(\mathcal{S})}_{\{ \theta_a \}} \label{chap.TBA.moy.1}\\
+	 & = &  \left. \frac{1}{Z^{(\mathcal{S})}} \frac{\partial Z^{(\mathcal{S})}}{\partial \beta_i} \right )_{\beta_{j \neq i }}	 \label{chap.TBA.moy.2}
 \end{eqnarray}
 
-Par le même raisonnement la moyenne de $(\operator{Q}_i^{(\mathcal{S})})^n$ s'écrit :
-
+Par le même raisonnement le moment non centré s'écrit :
 \begin{eqnarray}
-	\langle (\operator{Q}_i^{(\mathcal{S})})^n \rangle &= & \sum_{\{ \theta_a\}} (\langle\operator{Q}_i^{(\mathcal{S})}\rangle_{\{\theta_a\}})^n \mathbb{P}^{(\mathcal{S})}_{\{ \theta_a \}} ~=~ (-1)^n \left. \frac{1}{Z^{(\mathcal{S})}} \frac{\partial^n Z^{(\mathcal{S})}}{{(\partial \beta_i)}^n} \right )_{\beta_{j \neq i }} .	
+	\braket{ \operator{Q}_{i_1}^{(\mathcal{S})} \, \operator{Q}_{i_2}^{(\mathcal{S})} \cdots \operator{Q}_{i_q}^{(\mathcal{S})} }_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} &= &  (-1)^q \frac{1}{Z^{(\mathcal{S})}} \left.\frac{\partial}{\partial \beta_{i_1}} \right )_{\beta_{j \neq i_1 }} \left.\frac{\partial}{\partial \beta_{i_2}} \right )_{\beta_{j \neq i_2 }} \cdots \left.\frac{\partial}{\partial \beta_{i_q}} \right )_{\beta_{j \neq i_q }} Z^{(\mathcal{S})} \label{chap.TBA.mom.1}.	
 \end{eqnarray}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\paragraph{Moments d’ordre supérieur et fluctuations.}
-Le premier et second moments permettent d’accéder à la variance de l’observable :
+\paragraph{Moments d’ordre supérieur et fluctuations.} On s'avance sur le chapitre (\ref{chap:Fluctu}).
+Le premier et second moments permettent d’accéder à la variance 
 \begin{eqnarray}
-	\Delta_{\operator{Q}_i^{(\mathcal{S})}}^2 &=&  	\left \langle \left (\operator{Q}_i^{(\mathcal{S})} - \langle\operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} \right )^2  \right \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  = 	\langle(\operator{Q}_i^{(\mathcal{S})})^2 \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  -  \langle\operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}^2 \nonumber  \\
-		& = & \left . \frac{1}{Z^{(\mathcal{S})}} \frac{ \partial^2 Z^{(\mathcal{S})} }{ {\partial \beta_i}^2 }  \right )_{\beta_{j\neq i}} - \left ( \left . \frac{1}{Z}\frac{ \partial Z^{(\mathcal{S})} }{ \partial \beta_i }  \right )_{\beta_{j\neq i}}\right )^2     \nonumber\\
-		&=&  \frac{\partial}{\partial \beta_i } \left ( \left . \frac{1}{Z^{(\mathcal{S})}} \frac{\partial Z^{(\mathcal{S})}}{\partial \beta_i }  \right )_{\beta_{j\neq i}}  \right )_{\beta_{j\neq i}} \nonumber \\
-		&=&	  \left . \frac{\partial^2 \ln Z^{(\mathcal{S})}  }{{\partial \beta_i}^2 }  \right )_{\beta_{j\neq i}} =  - \left . 	\frac{\partial \langle\operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} }{\partial \beta_i } \right )_{\beta_{j\neq i}}.	
+	 \left \langle \left (\operator{Q}_i^{(\mathcal{S})} - \langle\operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} \right )^2  \right \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} = \langle(\operator{Q}_i^{(\mathcal{S})})^2 \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  -  \langle\operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}^2	
+\end{eqnarray}
+de le charge locale $\operator{Q}_i^{(\mathcal{S})}$, en injectant \eqref{chap.TBA.moy.2} et \eqref{chap.TBA.mom.1} et en utilisant $\frac{1}{f} \partial_x^2 f - ( \frac{1}{f} \partial_x f ) = \partial_x^2 \ln f  $:
+\begin{eqnarray}
+	\left \langle \left (\operator{Q}_i^{(\mathcal{S})} - \langle\operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} \right )^2  \right \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  &=&	  \left . \frac{\partial^2 \ln Z^{(\mathcal{S})}  }{{\partial \beta_i}^2 }  \right )_{\beta_{j\neq i}},\\
+	& = &  - \left . 	\frac{\partial \langle\operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} }{\partial \beta_i } \right )_{\beta_{j\neq i}}.	
 \end{eqnarray}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -133,8 +153,8 @@ Dans le cas particulier de l’équilibre thermique standard (i.e. Gibbsien), le
 
 Dans ce cadre, les moyennes et les fluctuations thermodynamiques usuelles s’expriment naturellement comme dérivées du logarithme de la fonction de partition $Z^{(\mathcal{S})}$ :
 \begin{eqnarray}
-	\langle \operator{Q} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  = \left .\frac{1}{\beta} \frac{ \partial \ln Z^{(\mathcal{S})}}{\partial \mu } \right )_{T,\cdots},  & & \Delta^2_{\operator{Q}} = \left . \frac{1}{\beta^2} \frac{ \partial^2 \ln Z^{(\mathcal{S})}}{{\partial \mu}^2 } \right )_{T,\cdots} =  \left . \frac{1}{\beta} \frac{ \partial \langle \operator{Q} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}}{\partial \mu } \right )_{T,\cdots}\\
-	\langle \operator{H} - \mu\operator{Q}  \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  = -\left . \frac{ \partial \ln Z^{(\mathcal{S})}}{\partial \beta } \right )_{\mu , \cdots} ,  & & \Delta^2_{\operator{H} - \mu\operator{Q}} = \left .  \frac{ \partial^2 \ln Z^{(\mathcal{S})}}{{\partial \beta}^2 } \right )_{\mu , \cdots} =  -\left .  \frac{ \partial \langle \operator{H} - \mu\operator{Q} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}}{\partial \beta } \right )_{\mu , \cdots}.		
+	\langle \operator{Q} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  = \left .\frac{1}{\beta} \frac{ \partial \ln Z^{(\mathcal{S})}}{\partial \mu } \right )_{T,\cdots},  & &  \left . \frac{1}{\beta} \frac{ \partial \langle \operator{Q} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}}{\partial \mu } \right )_{T,\cdots} =  \left . \frac{1}{\beta^2} \frac{ \partial^2 \ln Z^{(\mathcal{S})}}{{\partial \mu}^2 } \right )_{T,\cdots} \\
+	\langle \operator{H} - \mu\operator{Q}  \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  = -\left . \frac{ \partial \ln Z^{(\mathcal{S})}}{\partial \beta } \right )_{\mu , \cdots} ,  & & -\left .  \frac{ \partial \langle \operator{H} - \mu\operator{Q} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}}{\partial \beta } \right )_{\mu , \cdots} = \left .  \frac{ \partial^2 \ln Z^{(\mathcal{S})}}{{\partial \beta}^2 } \right )_{\mu , \cdots}   .		
 \end{eqnarray}
 En combinant ces relations, on peut également exprimer l’énergie moyenne et ses fluctuations comme :
 \begin{eqnarray}
