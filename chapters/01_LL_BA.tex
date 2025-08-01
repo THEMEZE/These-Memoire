@@ -261,8 +261,8 @@ où on note \( \{k_a\} \equiv \{k_1, \dots, k_N\} \) et \( \{x_a\} \equiv \{x_1,
 	\varphi_{\{k_a\}} ( \{x_a\} ) = \frac{1}{\sqrt{N!}} \sum_{\sigma \in \operator{S}_N } \prod_{i=1}^N \varphi_{k_{\sigma(i)}}(x_i),
 \) 
 avec $\operator{S}_N $  le groupe symétrique d'ordre $N$ mais aussi :
-\begin{eqnarray}
-	\varphi_{\{k_a\}} ( \{x_a\}) = \frac{1}{\sqrt{N!}} \bra{\emptyset} \operator{\Psi}(x_1) \cdots \operator{\Psi}(x_N) \ket{\{k_a\}}.
+\begin{eqnarray}\label{chap.1:eq.rapel.fonction.propre.N}
+	\varphi_{\{k_a\}} (\{x_a\}) = \frac{1}{\sqrt{N!}} \bra{\emptyset} \operator{\Psi}(x_1) \cdots \operator{\Psi}(x_N) \ket{\{k_a\}}.
 \end{eqnarray}
 
 
@@ -779,7 +779,8 @@ Et en évaluant la discontinuité de sa dérivée au point $Y = 0$, on trouve qu
 \begin{eqnarray}\label{chap:1:dif.mod.2.part.2}
 	\Phi(\tilde{\theta}) & = & 2 \arctan (\tilde{\theta}/g) \in [ - \pi , +\pi ].
 \end{eqnarray}
-Cette relation exprime l’impact de l’interaction de type delta sur le déphasage de la fonction d’onde liée. On en déduit que plus le couplage \( g \) est fort (\( g \to \infty \)), plus la phase \( \Phi \) se rapproche de zéro. Cela correspond à une fonction d’onde qui s’annule en \( Y = 0 \), caractéristique d’un régime d’imperméabilité totale.
+%Cette relation exprime l’impact de l’interaction de type delta sur le déphasage de la fonction d’onde liée.
+Cette relation exprime l’effet de l’interaction delta sur la phase de la fonction d’onde à deux particules. On en déduit que plus le couplage \( g \) est fort (\( g \to \infty \)), plus la phase \( \Phi \) se rapproche de zéro. Cela correspond à une fonction d’onde qui s’annule en \( Y = 0 \), caractéristique d’un régime d’imperméabilité totale.
 
 À l’inverse, dans la limite d’une interaction faible (\( g \to 0 \)), la phase \( \Phi \) tend vers \( \pi \) (ou \( -\pi \), selon le signe de \( \tilde{\theta} \)). Dans ce cas, la discontinuité de la dérivée de la fonction d’onde au point \( Y = 0 \) devient négligeable, ce qui traduit une interaction absente entre les deux particules.
 
@@ -808,9 +809,13 @@ d’onde relative~\eqref{eq:ansatz.boson} définit la {\em phase de diffusion }
 \(
 \Phi(\tilde{\theta}) = i\ln\!\left(-\frac{b}{a}\right).
 \)
-On introduit alors la {\em matrice de diffusion} (ou facteur de diffusion)
-\begin{eqnarray}
-	S(\tilde{\theta}) \;\doteq\; e^{i\Phi(\tilde{\theta})}= -\frac{a}{b}= \frac{1 + i\,\tilde{\theta}/g}{1 - i\,\tilde{\theta}/g}.%\tag{\ref{chap:1:dif.mod.2.part.3}}
+On introduit alors la {\em matrice de diffusion} (ou {\em facteur de diffusion}) noté  \(S(\theta) \) , définie comme une phase complexe : 
+\begin{eqnarray}\label{chap:1:def.mat.dif.1}
+	S(\theta) \;\doteq\; e^{i\Phi(\theta)}	
+\end{eqnarray}
+Dans le cas d’une interaction de type delta, cette fonction prend la forme explicite :
+\begin{eqnarray}\label{chap:1:dif.mod.2.part.3}
+	S(\tilde{\theta}) \; = \; \frac{1 + i\,\tilde{\theta}/g}{1 - i\,\tilde{\theta}/g}.%\tag{\ref{chap:1:dif.mod.2.part.3}}
 \end{eqnarray}
 %où \(g\) est le paramètre d’interaction et
 %\(\tilde{\theta} = \theta_1 - \theta_2\) le pseudo‑moment relatif.  
@@ -818,9 +823,15 @@ Cette expression, unitaire et analytique, caractérise entièrement la diffusion
 
 
 
-\paragraph{Lien entre phase de diffusion et décalage temporel : interprétation semi-classique. {\color{red}(à revoir)}}
+\paragraph{Lien entre la phase de diffusion et le décalage temporel — interprétation semi-classique}
+%
+%Il a été souligné par {\color{black}Eisenbud (1948)} et {\color{black}Wigner (1955)} que la phase de diffusion peut être interprétée, de manière semi-classique, comme un {\em décalage temporel}. Esquissons brièvement l'argument de {\color{black}Wigner (1955)}.Tout d'abord, notons que, pour une particule unique, une approximation simple d’un paquet d’ondes peut être obtenue en superposant deux ondes planes avec des moments $\tilde{\theta}/2$ et $\tilde{\theta}/2 + \delta \tilde{\theta}$, respectivement :
+%
+%Comme l'ont montré Eisenbud (1948) et Wigner (1955), la phase de diffusion $\delta(\theta)$ peut être interprétée, dans une approche semi-classique, comme un décalage temporel. Pour en comprendre l’origine, considérons l’argument esquissé par Wigner.
+%
+%L’idée est de construire un paquet d’ondes incident à partir de deux ondes planes proches, de moments $\tilde{\theta}/2$ et $\tilde{\theta}/2 + \delta \tilde{\theta}$ :
 
-Il a été souligné par {\color{black}Eisenbud (1948)} et {\color{black}Wigner (1955)} que la phase de diffusion peut être interprétée, de manière semi-classique, comme un {\em décalage temporel}. Esquissons brièvement l'argument de {\color{black}Wigner (1955)}.Tout d'abord, notons que, pour une particule unique, une approximation simple d’un paquet d’ondes peut être obtenue en superposant deux ondes planes avec des moments $\tilde{\theta}/2$ et $\tilde{\theta}/2 + \delta \tilde{\theta}$, respectivement :
+Wigner (1955), à la suite d’Eisenbud (1948), a mis en évidence un lien entre la {\bf phase de diffusion} et un {\em décalage temporel}, interprétation qui peut être éclairée dans une perspective semi-classique. L’idée de Wigner repose sur l’analyse d’un paquet d’ondes incident, constitué de la superposition de deux ondes planes de moments voisins, $\tilde{\theta}/2$ et $\tilde{\theta}/2 + \delta \tilde{\theta}$ :
 \begin{eqnarray}
 	\tilde{\varphi}_{\text{inc}}(Y) & \propto & e^{i\frac{1}{2}\tilde{\theta} \vert Y\vert} + e^{i\frac{1}{2}\left(\tilde{\theta} + 2\delta \tilde{\theta} \right) \vert Y\vert}.
 \end{eqnarray}
@@ -829,7 +840,7 @@ Cette superposition évolue dans le temps comme :
 \tilde{\varphi}_{\text{inc}}(Y, t) &\propto &  e^{i\left( \frac{1}{2} \tilde{\theta}\vert Y\vert - t\,\tilde{\varepsilon}(\tilde{\theta}) \right)} + e^{i\left( \frac{1}{2}\left(  \tilde{\theta} + 2\delta \tilde{\theta} \right) \vert Y\vert - t\,\tilde{\varepsilon}(\tilde{\theta} + 2\delta \tilde{\theta}) \right)}.
 \end{eqnarray}
 %où l'on a utilisé l'expression de l'énergie réduite : $\tilde{\varepsilon}(\tilde{\theta}) = \tilde{\theta}^2 / 4$.
-Le centre de ce 'paquet d'ondes' se situe à la position où les phases des deux termes coïncident, c'est-à-dire au point où $\vert Y\vert\delta \tilde{\theta}  - t[\tilde{\varepsilon}(\tilde{\theta} + 2\delta \tilde{\theta} ) - \tilde{\varepsilon}(\tilde{\theta})] = 0$, ce qui donne $\vert Y\vert \simeq \tilde{\theta} t$ avec la vitesse réduite $\tilde{\theta} = 1/2 \varepsilon'(\tilde{\theta}) $. %Ainsi, il s'agit effectivement d'un 'paquet d'ondes' se déplaçant à la vitesse $\theta$. Ensuite, considérons deux particules entrantes dans un état tel que le centre de masse $Z = (z_1 + z_2)/2$ ait une impulsion $\theta_1 - \theta_2$, tandis que la coordonnée relative $Y = z_1 - z_2$ se trouve dans un 'paquet d'ondes' se déplaçant à la vitesse $ (\theta_1 - \theta_2)/2$,
+Le centre de ce 'paquet d'ondes' se situe à la position où les phases des deux termes coïncident, c'est-à-dire au point où $\vert Y\vert\delta \tilde{\theta}  - t[\tilde{\varepsilon}(\tilde{\theta} + 2\delta \tilde{\theta} ) - \tilde{\varepsilon}(\tilde{\theta})] = 0$, ce qui donne $\vert Y\vert \simeq \tilde{\theta} t$ avec la vitesse réduite $\tilde{\theta} = 2 \tilde{\varepsilon}'(\tilde{\theta}) $. %Ainsi, il s'agit effectivement d'un 'paquet d'ondes' se déplaçant à la vitesse $\theta$. Ensuite, considérons deux particules entrantes dans un état tel que le centre de masse $Z = (z_1 + z_2)/2$ ait une impulsion $\theta_1 - \theta_2$, tandis que la coordonnée relative $Y = z_1 - z_2$ se trouve dans un 'paquet d'ondes' se déplaçant à la vitesse $ (\theta_1 - \theta_2)/2$,
 Selon les équations (\ref{eq:ansatz.boson}) et (\ref{chap:1:dif.mod.2.part.3}), l'état sortant de la diffusion correspondant serait :
 \begin{eqnarray}
 	\tilde{\varphi}_{outc} ( Y, t ) & \propto & -e^{i\Phi(\tilde{\theta})}e^{-i\frac{1}{2}\tilde{\theta} \vert Y\vert} - e^{i\Phi(\tilde{\theta} + 2 \delta \tilde{\theta} )}e^{-i\frac{1}{2}\left(\tilde{\theta} + 2\delta \tilde{\theta} \right) \vert Y\vert}. %\tag{2}
@@ -838,7 +849,7 @@ En répétant l'argument précédent de la stationnarité de phase, on trouve qu
 \begin{eqnarray}
 	\vert Y \vert & \simeq & 	\tilde{\theta} t  - 2 \Delta (\tilde{\theta} )
 \end{eqnarray}
-où le déplacement de diffusion $\Delta (\theta)$ est donné par la dérivée de la phase de diffusion,
+où le {\bf déplacement de diffusion} $\Delta (\theta)$ est donné par la dérivée de la {\em phase de diffusion},
 \begin{eqnarray}\label{eq:I-1-16}
 	\Delta ( \theta ) & \doteq & \frac{ d \Phi }{ d \theta } ( \theta )= \frac{ 2 g }{ g^2 + \theta^2} . 	
 \end{eqnarray}
@@ -937,10 +948,10 @@ Cela nous motive à multiplier l’ansatz dans le référentiel du centre de mas
 Pour \(\theta_1 > \theta_2\), les deux termes exponentiels 
 \(e^{i z_1 \theta_1 + i z_2 \theta_2}\) et \(e^{i z_1 \theta_2 + i z_2 \theta_1}\)
 correspondent respectivement aux ondes entrantes et sortantes dans le canal de diffusion à deux corps.  
-Le rapport de leurs amplitudes définit la phase de diffusion / matrice diffusion $e^{i\Phi ( \tilde{\theta}  ) }$  à deux corps \eqref{chap:1:dif.mod.2.part.3} , reste inchangé :
+Le rapport de leurs amplitudes définit la {\bf phase de diffusion} $\Phi$ et  {\bf matrice diffusion} $S$  à deux corps \eqref{chap:1:dif.mod.2.part.3} , reste inchangé mais voici une autre écriture :
 
 \begin{equation}\label{chap:1:dif.mod.2.part.4}
-	S(\theta_1- \theta_2) \doteq e^{i\Phi(\theta_1 - \theta_2)} 
+	S(\theta_1- \theta_2)  
 	= \frac{\theta_1 - \theta_2 - ig}{\theta_2 - \theta_1 - ig}.
 \end{equation}
 
@@ -1006,11 +1017,11 @@ En utilisant l’expression explicite de l’ansatz dans les deux secteurs, on o
 %	a\,e^{i\theta_1 z_1 + i\theta_2 L} + b\,e^{i\theta_2 z_1 + i\theta_1 L}
 %	= a\,e^{i\theta_2 z_1} + b\,e^{i\theta_1 z_1}.
 %\]
-Cette relation, valable pour tout \( z_1 \in (0,L) \), fixe une contrainte sur le rapport \( b/a \). En utilisant l’expression de la phase de diffusion introduite en \eqref{chap:1:dif.mod.2.part.4} pour $z_1<z_2$ :
+Cette relation, valable pour tout \( z_1 \in [0,L] \), fixe une contrainte sur le rapport \( b/a \). En utilisant l’expression de la phase de diffusion introduite en \eqref{chap:1:dif.mod.2.part.4} pour $z_1<z_2$ :
 \begin{eqnarray*}
 	-\frac{b}{a} = e^{i\Phi(\theta_1 - \theta_2)},
 \end{eqnarray*}
-on obtient une condition quantique sur les phases \( \theta_1 \) et \( \theta_2 \), cœur de la quantification imposée par le formalisme de Bethe.
+on obtient une condition sur les phases \( \theta_1 \) et \( \theta_2 \), cœur de la quantification imposée par le formalisme de Bethe.
 
 %\[
 %	( \theta_2 - \theta_1 - ig)\,e^{i\theta_{1}z_{1}+i\theta_{2}L}
@@ -1034,11 +1045,11 @@ c’est‑à‑dire l'équations de Bethe
 %	e^{i\theta_{1}L} = \frac{a}{b}
 %	= \frac{\theta_{2}-\theta_{1}+ic}{\theta_{1}-\theta_{2}+ic}.
 %\end{equation}
-\begin{eqnarray*}\label{eq:PC2}
+\begin{eqnarray}\label{eq:PC2}
 	e^{i\theta_{1}L}\,e^{i\Phi(\theta_{1}-\theta_{2})} = -1,
 	\qquad
 	e^{i\theta_{2}L}\,e^{i\Phi(\theta_{2}-\theta_{1})} = -1.	
-\end{eqnarray*}
+\end{eqnarray}
 En prenant le logarithme on obtient les \emph{équations de Bethe à deux
 particules} :
 \begin{equation}\label{eq:Bethe2}
@@ -1046,15 +1057,9 @@ particules} :
 	\qquad
 	\theta_{2}L + \Phi(\theta_{2}-\theta_{1}) = 2\pi I_{2},
 \end{equation}
-où $I_{1},I_{2}\in\mathbb{Z}$ sont les nombres quantiques entiers
-(caractère bosonique). 
+où $I_{1},I_{2}\in\mathbb{Z}/2$ sont les nombres demis entiers. 
 
-\subparagraph{Périodicité sur $z_{1}$.}  Le raisonnement symétrique conduit exactement aux mêmes égalités \eqref{eq:PC2}.  
-\bigskip
-Les équations \eqref{eq:Bethe2} constituent la quantification complète
-du gaz de Lieb–Liniger à deux bosons sur un cercle de longueur $L$ et
-seront le point de départ pour l’étude de l’état fondamental et des
-excitations.
+\subparagraph{Périodicité sur $z_{1}$.}  Le raisonnement symétrique conduit exactement aux mêmes égalités \eqref{eq:PC2} et \eqref{eq:Bethe2}.  Ces équations  constituent la quantification complète du gaz de Lieb–Liniger à deux bosons sur un cercle de longueur $L$ et seront le point de départ pour l’étude de l’état fondamental et des excitations.
 
 
 
@@ -1065,18 +1070,33 @@ excitations.
   \label{}	
 \end{figure}
 
+\subsubsection{Interprétation physique pour deux particules et rôle de la rapidité}
+
+Pour bien comprendre le sens physique des équations de Bethe~\eqref{eq:Bethe2}, nous avons commencer par le cas de deux particules. Dans ce cadre, les particules interagissent lorsqu'elles se croisent, et à chaque interaction elles acquièrent une {\bf phase de diffusion} $\Phi$. L’état propre du système est obtenu en imposant que l’onde multi-corps soit périodique sur un cercle de longueur $L$ : chaque particule effectue une rotation complète, accumule une phase cinématique $e^{i\theta L}$ liée à son mouvement libre, ainsi que des contributions de phase dues aux diffusions avec l’autre particule. Cela donne lieu à une quantification des {\bf pseudo-impulsions} $\theta$ via l’équation de Bethe.
+
+\medskip
+
+Pour décrire ces {\bf excitations} , ces {\bf quasi-particules}, on introduit le paramètre $\theta$ appelé {\bf rapidité}. Ce terme vient de la théorie relativiste [\cite{zamolodchikov1979factorized}\cite{babelon2003introduction}], mais reste pertinent même dans des modèles non relativistes, comme ici. La rapidité est choisie comme {\bf paramètre spectral naturel} : elle étiquette les états propres, linéarise les relations de dispersion dans certains régimes, et elle simplifie considérablement les équations de Bethe.
+
+\medskip
+
+On peut interpréter chaque $\theta$ comme la {\bf vitesse d’une quasi-particule} : une entité collective qui se comporte comme une particule libre, mais qui tient compte des effets des interactions avec les autres. Contrairement à une particule élémentaire, une {\bf quasi-particule} est une excitation émergente du système à plusieurs corps : elle résume de façon efficace le comportement collectif d’une particule « habillée » par son environnement d’interactions. Cette notion est centrale en physique des systèmes quantiques à N corps, où les excitations ne sont plus des particules indépendantes, mais des objets collectifs.
+
+Ainsi, dans l’image de Bethe, les états propres sont des configurations stables de $N$ quasi-particules de rapidités $\theta_1,\dots,\theta_N$, dont les valeurs sont quantifiées par les conditions d’interférence imposées par les équations de Bethe.
+
 
 
 \section{Équation de Bethe et distribution de rapidité}
 
 \subsection{Fonction d’onde dans le secteur ordonné et représentation de Gaudin}
 
+Sans en donner ici la démonstration, donnons une forme généralisée de la fonction propre à $N$ particules [cf. équation \eqref{chap.1:eq.rapel.fonction.propre.N}], qui prolonge naturellement l’expression obtenue pour le cas à deux corps [cf. équation \eqref{eq:I-1-10}].
 Dans le domaine $z_1 < z_2 < \cdots < z_N$, la fonction d’onde pour un état de Bethe à $N$ particules s’écrit ({\color{blue}Gaudin 2014}, {\color{blue}Korepin et al. 1997}, {\color{black}Lieb et Liniger 1963}) :
 \begin{eqnarray}
 	\varphi_{\{\theta_a\}} ( z_1 , \cdots , z_N ) & = &  \frac{1}{\sqrt{N!}}\langle \emptyset \vert \operator{\Psi} ( z_1 ) \cdots \operator{\Psi} (z_N ) \vert \{ \theta_a \} \rangle \notag\\
 	& \propto & \sum_\sigma (-1)^{|\sigma|} \left( \prod_{1 \leq a < b \leq N} (\theta_{\sigma(b)} - \theta_{\sigma(a)} - i g) \right) e^{i \sum_{j=1}^{N} z_j \theta_{\sigma(j)}},\label{eq:I-2-17}
 \end{eqnarray}
-où la somme s'étend sur toutes les permutations $\sigma$ de $\{1,\dots,N\}$. Le facteur $(-1)^{|\sigma|}$ est la signature de la permutation, et les amplitudes dépendent des différences de quasi-moments $\theta_j$ ainsi que du couplage $c$.
+où la somme s'étend sur toutes les permutations $\sigma$ de $\{1,\dots,N\}$. Le facteur $(-1)^{|\sigma|}$ est la signature de la permutation, et les amplitudes dépendent des différences de quasi-moments $\theta_j$ ainsi que du couplage $g$.
 Cette fonction d’onde est ensuite étendue par symétrie aux autres domaines du type $z_{\pi(1)} < z_{\pi(2)} < \cdots < z_{\pi(N)}$ via des propriétés d’échange symétriques.
 
 \vspace{1em}
@@ -1093,30 +1113,31 @@ Cette condition doit être satisfaite pour chaque particule. Or, déplacer la $j
 
 %\vspace{1em}
 
-\subsection{Équations de Bethe exponentielles}
+\subsubsection{Équations de Bethe exponentielles}
 
-En imposant les conditions de périodicité sur la fonction d’onde de type Bethe~\eqref{eq:I-2-17}, on obtient que chaque moment $\theta_a$ doit satisfaire l’équation :
+En imposant les conditions de périodicité sur la fonction d’onde de type Bethe~\eqref{eq:I-2-17}, on généralise l'éqution\eqref{eq:PC2} pour $N$ particules. On obtient que chaque moment $\theta_a$ doit satisfaire l’équation :
 \begin{equation}
 	e^{i \theta_a L} \prod_{b \ne a} S(\theta_a - \theta_b) = (-1)^{N-1}, \quad a = 1, \dots, N,
 	\label{eq:bethe_exp}
 \end{equation}
-où la matrice diffusion $S(\theta) = \frac{\theta - i g}{-\theta - i g} = e^{i \Phi(\theta)}$ est l’amplitude de diffusion à deux corps, et $\Phi(\theta) = 2 \arctan\left( \frac{\theta}{c} \right)$ est la phase associée~\eqref{chap:1:eq:Phi}. Le signe $(-1)^{N-1}$ vient du fait que chaque permutation change la signature du déterminant dans la représentation de Gaudin.
+où la matrice diffusion $S(\theta)$ définie en \eqref{chap:1:def.mat.dif.1}, \eqref{chap:1:dif.mod.2.part.3} et \eqref{chap:1:dif.mod.2.part.4} est l’amplitude de diffusion à deux corps. Le signe $(-1)^{N-1}$ vient du fait que chaque permutation change la signature du déterminant dans la représentation de Gaudin.
 %\vspace{1em}
 
-\subsection{Équations de Bethe logarithmiques}
+\subsubsection{Équations de Bethe logarithmiques}
 
-En prenant le logarithme du membre gauche et du membre droit de l’équation~\eqref{eq:bethe_exp}, on obtient :
+En prenant le logarithme du membre gauche et du membre droit de l’équation~\eqref{eq:bethe_exp}, on généralise l'équation \eqref{eq:Bethe2}. On obtient :
 \begin{equation}\label{chap:1:eq:EBA}
 	L \theta_a + \sum_{b=1}^N \Phi(\theta_a - \theta_b) = 2\pi I_a, \qquad a = 1, \dots, N,
 \end{equation}
-où les $I_a \in \mathbb{Z}$ (ou $\mathbb{Z} + \tfrac{1}{2}$) sont des nombres quantiques entiers (ou demis entiers) . Dans la configuration d’état fondamental (ou de type “mer de Fermi”), ces nombres sont pris de manière symétrique autour de zéro :
-\[
+où les $I_a \in \mathbb{Z}$ (ou $\mathbb{Z} + \tfrac{1}{2}$) sont des nombres entiers (ou demis entiers) . Dans la configuration d’état fondamental (ou de type “mer de Fermi”), ces nombres sont pris de manière symétrique autour de zéro :
+\begin{equation}
 I_a = a - \frac{N+1}{2}, \quad \text{pour } a \in \llbracket 1 , N \rrbracket.
-\]
-Ce choix garantit une distribution uniforme des $\theta_a$ à l’état fondamental.
+\end{equation}
+ce qui correspond au choix symétrique des nombres quantiques pour l’état fondamental. Il en résulte une distribution uniforme des $\theta_a$ dans l’intervalle $[-K , K ]$
+%Ce choix garantit une distribution uniforme des $\theta_a$ à l’état fondamental.
 %\vspace{1em}
 
-\subsection{Interprétation physique}
+\subsubsection{Interprétation physique}
 
 Les équations de Bethe~\eqref{chap:1:eq:EBA} représentent une {\em quantification des pseudo‑impulsions $\theta_a$} des particules en interaction, résultant d’un {\em interféromètre multi‑corps sur le cercle} : chaque particule accumule une phase $e^{i \theta_a L}$ due au mouvement libre, ainsi que des phases de diffusion lorsqu’elle croise les autres.
 
