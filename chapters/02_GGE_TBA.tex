@@ -2,26 +2,49 @@
 \minitoc
 
 %------------------------------------------------------------------
-\section*{Introduction générale}
+\section*{Introduction}
 
-Dans les modèles quantiques intégrables, l’évolution vers l’équilibre, à partir d’un état initial arbitraire (et typiquement hors d’équilibre), ne conduit pas à une thermique de Gibbs classique.  
-En effet, du fait de l’existence d’une infinité de charges conservées en involution, les systèmes intégrables n’explorent qu’une sous-partie contrainte de l’espace des états accessibles.  
-Ils relaxent alors vers un état stationnaire décrit par une \emph{Ensemble Thermodynamique Généralisé} (GGE), qui encode la conservation de toutes ces quantités.
+%Dans les modèles quantiques intégrables, l’évolution vers l’équilibre, à partir d’un état initial arbitraire (et typiquement hors d’équilibre), ne conduit pas à une thermique de Gibbs classique.  
+%En effet, du fait de l’existence d’une infinité de charges conservées en involution, les systèmes intégrables n’explorent qu’une sous-partie contrainte de l’espace des états accessibles.  
+%Ils relaxent alors vers un état stationnaire décrit par une {\bf Ensemble Thermodynamique Généralisé} (GGE), qui encode la conservation de toutes ces quantités.
 
-Cette section pose les fondations nécessaires à la description de ces états stationnaires dans le cadre de la \textbf{thermodynamique de Bethe} (TBA), qui généralise l’analyse au-delà de l’état fondamental.  
-Nous considérons ici un régime macroscopique à température (ou entropie) finie, correspondant à des états hautement excités du spectre, mais toujours décrits dans le formalisme intégrable exact.
+Dans les systèmes quantiques intégrables, l'évolution vers l'équilibre à partir d'un état initial arbitraire — généralement hors d'équilibre — ne conduit pas, en général, à une thermalisation décrite par la statistique de Gibbs standard.  
+Cette singularité résulte de l'existence d'une infinité de charges conservées en involution, qui contraignent l'évolution du système à un sous-espace restreint de l'espace des états accessibles.  
+La relaxation vers un état stationnaire n'est donc pas décrite par l'ensemble canonique, mais par un \textbf{ensemble thermodynamique généralisé} (GGE), qui tient compte de toutes les constantes du mouvement.
 
-Notre point de départ est la relation constitutive entre la \emph{densité de quasi-particules} (ou \emph{rapidités}) $\rho(\theta)$ et la \emph{densité d’états} disponibles $\rho_s(\theta)$, qui encode le spectre accessible en présence d’interactions.  
-Nous introduisons ensuite une opération clé de la TBA, appelée \emph{habillage} (\emph{dressing}), qui intervient systématiquement dans le calcul des observables physiques et permet de prendre en compte de manière non perturbative les effets des interactions.  
-Cette construction sera illustrée dans le cadre du modèle intégrable de Lieb–Liniger, qui décrit un gaz unidimensionnel de bosons avec interaction delta répulsive.
+\medskip
 
-Les outils développés ici seront fondamentaux pour formuler dans la section suivante le concept d’ensemble généralisé (GGE), et pour décrire la dynamique de relaxation des systèmes intégrables.
+Ce chapitre est consacré à la mise en place rigoureuse de cette notion.  
+Dans une première section, nous revenons brièvement sur la notion d’opérateurs à un corps exprimés en puissances de l’impulsion $\operator{p}$ pour une particule, introduite au chapitre précédent (\ref{chap:LL-BA}) dans l’équation \eqref{chap.1:eq.rapel.opp.1.second.3}.  
+Ce cadre permet de construire une hiérarchie naturelle de charges conservées, au-delà du simple nombre de particules, de la quantité totale de mouvement ou de l’énergie cinétique.  
+Ces charges supplémentaires permettent alors de définir les moyennes d'observables dans un état stationnaire hors d'équilibre.
+
+\medskip
+
+Dans la section suivante, nous poserons les fondations nécessaires à la description quantitative de ces états stationnaires dans le cadre de la \textbf{thermodynamique de Bethe} (TBA), qui généralise l’analyse intégrable au-delà de l’état fondamental.  
+Nous considérons un régime thermodynamique macroscopique à température finie (ou plus précisément à entropie de Yang–Yang finie), correspondant à des états hautement excités du spectre mais encore décrits exactement par le formalisme intégrable.
+
+%Ce chapitre dans une première section nous introduit l'{\bf Ensemble Thermodynamique Généralisé}. Pour la fluidité nous commençons par revenir la notion d'opérateur à un corps en puissance de quantitté de pouvement pour une particule $\operateur{p}$ , introduite dans le chapitre precedent (\ref{chap:LL-BA}) dans l'equation \eqref{chap.1:eq.rapel.opp.1.second.3}. Ce qui permet de se dire que l'on peut écrire d'autre charge que les nombre totale de particule, la quantitié totale de mouvement ou autre que l'énerge cinétique totale d'écrit en puissence avec des puissance de $\operator{p}$. Cest chardhe introduite nous pouvent definir les moyenne des observable. 
+%Sans la section suivente nous  poserons les fondations nécessaires à la description de ces états stationnaires dans le cadre de la \textbf{thermodynamique de Bethe} (TBA), qui généralise l’analyse au-delà de l’état fondamental.  
+%Nous considérons ici un régime macroscopique à température (ou entropie de Yang-Yang) finie, correspondant à des états hautement excités du spectre, mais toujours décrits dans le formalisme intégrable exact.
+
+%Notre point de départ est la relation constitutive entre la \emph{densité de quasi-particules} (ou \emph{rapidités}) $\rho(\theta)$ et la \emph{densité d’états} disponibles $\rho_s(\theta)$, qui encode le spectre accessible en présence d’interactions.  
+%Nous introduisons ensuite une opération clé de la TBA, appelée \emph{habillage} (\emph{dressing}), qui intervient systématiquement dans le calcul des observables physiques et permet de prendre en compte de manière non perturbative les effets des interactions.  
+%Cette construction sera illustrée dans le cadre du modèle intégrable de Lieb–Liniger, qui décrit un gaz unidimensionnel de bosons avec interaction delta répulsive.
+
+%Les outils développés ici seront fondamentaux pour formuler dans la section suivante le concept d’ensemble généralisé (GGE), et pour décrire la dynamique de relaxation des systèmes intégrables.
+
+\medskip
+
+Les outils développés dans ce chapitre seront essentiels pour formuler le GGE et pour décrire la dynamique de relaxation des systèmes intégrables vers ces états stationnaires.
 
 
 
-\section{Notion d’état d’équilibre généralisé (GGE)}
 
-\paragraph{Introduction.}
+
+\section{Notion d’état d'Équilibre de Gibs Généralisé (GGE)}
+
+\subsection{Introduction à l'Équilibre de Gibs Généralisé}
 
 
 \paragraph{Configuration des états.}\label{sec:config-etats}.
@@ -29,6 +52,17 @@ On désigne par $\boldsymbol{\{ \theta_a \}}\equiv \{ \theta_1 , \cdots , \theta
 L’état propre correspondant est noté $\ket{\{ \theta_a \}}\;=\;\ket{\{\theta_1,\dots,\theta_N \}}$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{mdframed}[
+	linewidth=0.5pt, 
+	backgroundcolor=gray!5, 
+	roundcorner=50pt,	
+	innerleftmargin=5pt,
+    innerrightmargin=5pt,
+    innertopmargin=-10pt,
+    innerbottommargin=2pt,
+    leftmargin=2pt,
+    rightmargin=2pt
+	]
 \paragraph{Observables diagonales dans la base des états propres.}
 Dans le chapitre précédent (\ref{chap:LL-BA}), on a vu que l'état $\ket{\{ \theta_a \}}$ associé à cette configuration est une état propre des observables nombre et quantité de mouvement  et  énergie cinétique \eqref{chap1:eq.Q.P.K.theta.1}. Ces observables sont diagonales dans la base des états propres :
 \begin{eqnarray}
@@ -46,7 +80,7 @@ Nous avons introduit ces observables en injectant des opérateurs $\operator{f}$
 	 \operator{F} \ket{\{\theta_a\}} =   \sum_{ \{\theta_a\} }\left( \sum_{a = 1}^N \theta_a^q \right) \ket{\{\theta_a\}},
 \end{eqnarray}
 avec des valeurs propres données par des puissances de $\theta$. Cela motive l’étude d’états d’équilibre statistique au-delà de l’équilibre thermique, c’est-à-dire au-delà de l’ensemble de Gibbs.
-   
+\end{mdframed}   
 
 
 
@@ -86,6 +120,8 @@ Cette « distribution de rapidités » est d’autant plus pertinente qu’elle 
 Dans la GGE, cette distribution macroscopique $\rho(\theta)$ est fixée par l’ensemble des charges conservées. Par exemple, on ajuste les $\beta_i$ de sorte que les valeurs moyennes $\langle \operator{Q}_i \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}$ correspondent aux valeurs initiales. Ce processus détermine donc la fonction $\rho(\theta)$ décrivant l’état d’équilibre local. Les observables locaux du gaz (densité, corrélations, etc.) en découlent alors via les équations de Bethe ansatz. 
 
 
+\subsection{Moyenne dans l'Équilibre de Gibs Généralisé}
+
 \paragraph{Convention pour les moyennes d'observables.}
 Dans la suite du chapitre, nous noterons la moyenne d’une observable $\operator{\mathcal{O}}$ dans un état décrit par une matrice densité (ici noté) $\operator{\rho}$ par :
 \begin{eqnarray}\label{chap.TBA.moy.dens}	
@@ -123,7 +159,7 @@ On peut donc  écrire la moyenne d’une observable comme une somme pondérée p
 	 & = &  \left. \frac{1}{Z^{(\mathcal{S})}} \frac{\partial Z^{(\mathcal{S})}}{\partial \beta_i} \right )_{\beta_{j \neq i }}	 \label{chap.TBA.moy.2}
 \end{eqnarray}
 
-Par le même raisonnement le moment non centré s'écrit :
+Par le même raisonnement le {\bf moment non centré} s'écrit :
 \begin{eqnarray}
 	\braket{ \operator{Q}_{i_1}^{(\mathcal{S})} \, \operator{Q}_{i_2}^{(\mathcal{S})} \cdots \operator{Q}_{i_q}^{(\mathcal{S})} }_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} &= &  (-1)^q \frac{1}{Z^{(\mathcal{S})}} \left.\frac{\partial}{\partial \beta_{i_1}} \right )_{\beta_{j \neq i_1 }} \left.\frac{\partial}{\partial \beta_{i_2}} \right )_{\beta_{j \neq i_2 }} \cdots \left.\frac{\partial}{\partial \beta_{i_q}} \right )_{\beta_{j \neq i_q }} Z^{(\mathcal{S})} \label{chap.TBA.mom.1}.	
 \end{eqnarray}
@@ -163,13 +199,13 @@ En combinant ces relations, on peut également exprimer l’énergie moyenne et 
 
 %%%%%%%%%%%%%
 
-\section{Remarques sur le formalisme}
+%\section{Remarques sur le formalisme}
 
 
 
 
 %\input{TBA/HE/GGE/main}
-\section{Rôle des charges conservées extensives et quasi-locales}
+\subsection{Rôle des charges conservées extensives et quasi-locales}
 %Dans les systèmes intégrables, l’état stationnaire atteint après une évolution hors d’équilibre n’est généralement pas décrit par un état de Gibbs classique, mais par un ensemble généralisé de Gibbs (GGE). Celui-ci est construit à partir de toutes les charges conservées du système
 
 \paragraph{Écriture des observables thermodynamiques comme sommes sur les rapidités.}
@@ -340,7 +376,7 @@ C’est ce formalisme qui permettra d’analyser finement la relaxation post‑q
 \section{Thermodynamique de Bethe et relaxation}
 
 %------------------------------------------------------------------
-\subsection{Limite thermodynamique}
+\subsection{Moyenne dans la limite thermodynamique}
 
 \paragraph{Observables locales dans la limite thermodynamique.}
 %Lorsque l'observable $\operator{\mathcal{O}}$ est suffisamment local, on croit que la valeur d'attente $\langle  \{ \theta_a\}  \vert   \mathcal{O} \vert \{ \theta_a\} \rangle$ ne dépend pas de l'état microscopique spécifique du système, de sorte qu'elle devient une fonctionnelle de $\Pi$ dans la limite thermodynamique.
@@ -422,7 +458,7 @@ Leur approche repose sur l’analyse de la \textbf{structure statistique des ét
 
 \paragraph{Distribution de rapidité comme macro-état.}
 
-Chaque distribution de rapidité $\rho(\theta)$ ne correspond pas à un état propre unique, mais à un grand {\bf ensemble de micro-états} : différents choix des ensembles de quasi-moments $(\{\theta_a\}_{a \in \llbracket 1 , N \rrbracket })_{N \in \mathbb{Z}} $ peuvent conduire à la même densité de distribution à l’échelle macroscopique. Ainsi, $\rho(\theta)$ doit être interprétée comme un {\bf macro-état}, qui agrège un très grand nombre d’états propres microscopiques.
+Chaque distribution de rapidité $\rho(\theta)$ ne correspond pas à un état propre unique, mais à un grand {\bf ensemble de micro-états} : différents choix des ensembles de quasi-moments $(\{\theta_a\}_{a \in \llbracket 1 , N \rrbracket })_{N \in \mathbb{N}^\ast} $ peuvent conduire à la même densité de distribution à l’échelle macroscopique. Ainsi, $\rho(\theta)$ doit être interprétée comme un {\bf macro-état}, qui agrège un très grand nombre d’états propres microscopiques.
 
 La question thermodynamique devient alors : {\bf Combien de micro-états microscopiquement distincts sont compatibles avec un même macro-état $\rho(\theta)$ ?} 
 
@@ -873,7 +909,7 @@ soit
 
 La condition de stationnarité au point selle \(\rho=\rho_{\mathrm{eq}}\) \eqref{chap:TBA:eq:stationnarite} implique :
 \begin{eqnarray}
-	\left.\frac{\delta\mathcal{S}_{YY}}{\delta\rho(\theta)}\right|_{\rho_{\mathrm{eq}}} = \left.\frac{\delta\mathcal{W}}{\delta\rho(\theta)}\right|_{\rho_{\mathrm{eq}}}\;\doteq\;w(\theta),
+	\left.\frac{\delta\mathcal{S}_{YY}}{\delta\rho(\theta)}\right|_{\rho_{\mathrm{eq}}} = \left.\frac{\delta\mathcal{W}}{\delta\rho(\theta)}\right|_{\rho_{\mathrm{eq}}}\;\doteq\;w(\theta),\label{chap:TBA:eq:stationnarite-2}
 \end{eqnarray}
 En utilisant l’expression explicite de l’entropie de Yang–Yang \eqref{chap.2.entropi.int}, on obtient l’identité fonctionnelle
 \begin{eqnarray}
