@@ -2,21 +2,54 @@
 \minitoc
 \minitoc
 
+%\section*{Introduction}
+%
+%Dans ce chapitre, nous introduisons progressivement le modèle de Lieb-Liniger et l'Ansatz de Bethe, outils fondamentaux pour décrire un gaz de bosons unidimensionnel avec interactions delta. L'objectif est d'accompagner pas à pas le lecteur depuis la formulation du problème quantique en champ de bosons jusqu'aux solutions exactes obtenues par l'Ansatz de Bethe.
+%
+%Pour des raisons pédagogiques, nous commençons par aborder le cas d’une seule particule, sans interaction, avec des condition aux bord périodique. Cela permet d’introduire naturellement les fonction d'onde à une particule, leur évolution sous l’action du Hamiltonien libre et l'équation qui reluste de la condition de limite periodique ( equation de bethe à une. particule) : la premier quantification.
+%
+%Puis nous continions par écrire l'équation du champ de bosons, exprimée à l’aide des opérateurs de création et d’annihilation en représentation de position : la seconde quantification. Cela permet de mettre au clair les operateur à un corps et à 2 corps.
+%
+%Une fois les notations bien établies, nous généralisons le raisonnement au cas de \(N\) particules, pour obtenir l’Hamiltonien de Lieb-Liniger complet ainsi que la forme générale de l’Ansatz de Bethe. Les solutions ainsi construites permettent non seulement de déterminer le spectre de l’Hamiltonien, mais aussi de calculer des observables physiques importantes, telles que l’impulsion totale ou le nombre de particules.
+%
+%Ensuite, nous étudions le cas de deux particules, cette fois en tenant compte de l’interaction locale. Ce qui nous permet de metre en évidence les consequences de des interaction ponctiels sur entre autre la continuté de la fonction d'onde et que l'on a pour une équatuion de Bethe à deux particule.%Cela nous amène à considérer les états de position dans le cas général, y compris lorsque les deux particules peuvent occuper la même position. Cette situation, bien plus subtile qu’il n’y paraît, met en évidence la complexité introduite par l’interaction, et justifie que l’on commence par analyser les configurations où les particules sont à des positions distinctes.
+%
+%%Dans le référentiel du centre de masse, le problème à deux corps avec interaction devient équivalent à un problème à une seule particule en interaction avec une barrière delta au centre. Cette reformulation permet d’interpréter l’effet de l’interaction comme une condition de raccord sur la fonction d’onde, tout en respectant la symétrie bosonique.
+%
+%%Nous revenons ensuite aux coordonnées du laboratoire afin d’introduire naturellement la forme des solutions imposée par l’Ansatz de Bethe. Cela nous conduit aux équations dites de Bethe, qui relient les quasimoments des particules à travers des conditions de périodicité modifiées par l’interaction.
+%
+%Ensuitre nous généralisont la fonction d'on à deux particule, à la fonction d'onde à N particule. Et les les quation de bethe à N particume
+%
+%Enfin, nous introduisons la notion de distribution de rapidité, outil essentiel dans l’étude des états d’énergie minimale (états fondamentaux) et au delà de l'éta fondamentale. Ce cadre servira de base aux développements ultérieurs sur les gaz bosons intégrables.
+
 \section*{Introduction}
 
-Dans ce chapitre, nous introduisons progressivement le modèle de Lieb-Liniger et l'Ansatz de Bethe, outils fondamentaux pour décrire un gaz de bosons unidimensionnel avec interactions delta. L'objectif est d'accompagner pas à pas le lecteur depuis la formulation du problème quantique en champ de bosons jusqu'aux solutions exactes obtenues par l'Ansatz de Bethe.
+Ce chapitre est consacré à la présentation progressive du modèle de Lieb-Liniger et de l’Ansatz de Bethe, outils centraux pour la description d’un gaz de bosons unidimensionnel en interaction via un potentiel de type delta. L’objectif est d’accompagner rigoureusement le lecteur depuis la formulation quantique du système jusqu’aux solutions exactes obtenues par l’approche de Bethe.
 
-Nous commençons par écrire l'équation du champ de bosons, exprimée à l’aide des opérateurs de création et d’annihilation en représentation de position. Pour des raisons pédagogiques, nous abordons d’abord le cas d’une seule particule, sans interaction. Cela permet d’introduire naturellement les états de position et leur évolution sous l’action du Hamiltonien libre.
+\medskip
 
-Ensuite, nous étudions le cas de deux particules, cette fois en tenant compte de l’interaction locale. Cela nous amène à considérer les états de position dans le cas général, y compris lorsque les deux particules peuvent occuper la même position. Cette situation, bien plus subtile qu’il n’y paraît, met en évidence la complexité introduite par l’interaction, et justifie que l’on commence par analyser les configurations où les particules sont à des positions distinctes.
+Nous commençons, pour des raisons pédagogiques, par le cas le plus simple : une particule libre, sans interaction, dans un espace unidimensionnel avec conditions aux bords périodiques. Cette première étape permet d’introduire naturellement les fonctions d’onde à une particule, leur évolution sous l’action du Hamiltonien libre, ainsi que la quantification résultant des conditions de périodicité — autrement dit, la version élémentaire des équations de Bethe.
 
-Dans le référentiel du centre de masse, le problème à deux corps avec interaction devient équivalent à un problème à une seule particule en interaction avec une barrière delta au centre. Cette reformulation permet d’interpréter l’effet de l’interaction comme une condition de raccord sur la fonction d’onde, tout en respectant la symétrie bosonique.
+\medskip
 
-Nous revenons ensuite aux coordonnées du laboratoire afin d’introduire naturellement la forme des solutions imposée par l’Ansatz de Bethe. Cela nous conduit aux équations dites de Bethe, qui relient les quasimoments des particules à travers des conditions de périodicité modifiées par l’interaction.
+Nous passons ensuite à la formulation du problème en champ quantique, en exprimant le Hamiltonien en termes d’opérateurs de création et d’annihilation dans la représentation positionnelle : il s’agit du passage à la seconde quantification. Cette étape permet de formaliser clairement les termes à un corps et à deux corps dans l’Hamiltonien, et d’établir les notations qui seront utilisées tout au long du chapitre.
 
-Une fois les notations bien établies, nous généralisons le raisonnement au cas de \(N\) particules, pour obtenir l’Hamiltonien de Lieb-Liniger complet ainsi que la forme générale de l’Ansatz de Bethe. Les solutions ainsi construites permettent non seulement de déterminer le spectre de l’Hamiltonien, mais aussi de calculer des observables physiques importantes, telles que l’impulsion totale ou le nombre de particules.
+\medskip
 
-Enfin, nous introduisons la notion de distribution de rapidité, outil essentiel dans l’étude des états d’énergie minimale (états fondamentaux) et dans la description thermodynamique du système. Ce cadre servira de base aux développements ultérieurs sur les gaz intégrables à température finie et les états stationnaires après quench quantique.
+Une fois ce cadre posé, nous généralisons le raisonnement au cas de \(N\) particules pour introduire le modèle complet de Lieb-Liniger. Nous présentons alors l’Ansatz de Bethe dans sa forme générale, qui fournit les états propres de l’Hamiltonien. Ce formalisme permet d’accéder explicitement au spectre du système, ainsi qu’à diverses quantités physiques telles que l’impulsion totale et le nombre de particules.
+
+\medskip
+
+Nous revenons ensuite sur le cas à deux particules, cette fois en tenant compte de l’interaction locale. L’analyse de ce système met en lumière les effets de l’interaction ponctuelle sur la régularité de la fonction d’onde et les conditions de raccord, ainsi que sur les modifications des équations de Bethe. Ce cas constitue une étape clé vers la généralisation à \(N\) particules.
+
+\medskip
+
+La fonction d’onde est ensuite étendue au cas général de \(N\) particules, ce qui nous permet de dériver les équations de Bethe pour un système entièrement interactif. Ces équations encapsulent toute l’information sur les états propres du système.
+
+\medskip
+
+Enfin, nous introduisons la notion de \emph{distribution de rapidité}, concept fondamental pour la description des états dans la limite thermodynamique. Elle permet non seulement de caractériser les états d’énergie minimale (états fondamentaux), mais aussi d’analyser des configurations excitées au-delà de l’état fondamental. Ce formalisme constituera le socle des développements ultérieurs sur les propriétés thermodynamiques et dynamiques des gaz bosoniques intégrables.
+
 
 \section{Description du modèle de Lieb-Liniger}
 
@@ -1238,7 +1271,7 @@ Ces deux types d’excitations définissent ensemble le spectre complet du modè
 \paragraph{Équation de Bethe continue.}
 
 À température non nulle (hors de l’état fondamental), il n’y a plus de mer de Fermi définie, et les équations \eqref{chap.1.rho.2} et \eqref{chap.1.rho.3} ne sont plus valides (en particulier $\rho \neq \rho_s$). Les équations discrètes de Bethe \eqref{chap.1.rho.s.2} se condensent alors en une équation intégrale pour les densités de rapidité :
-\
+
 \begin{equation}
 	2\pi \rho_s \;=\; 1 \;+\;\Delta \star \rho,
 \label{eq:TBA-rhos}
@@ -1247,37 +1280,20 @@ où le symbole $\star$ désigne la \emph{convolution} :
 \(
 	[\Delta \star \rho](\theta) = \int_{-\infty}^{\infty} d\theta' \, \Delta(\theta - \theta') \, \rho(\theta').
 \)
-%Pour le modèle de \textbf{Lieb–Liniger} de couplage $g>0$.  
-%le noyau
-%\(
-%\Delta(\theta)=\dfrac{2g}{\theta^{2}+g^{2}}
-%\)
-%provient de la dérivée de la phase de diffusion
-%$S(\theta)=\dfrac{\theta-ic}{\theta+ic}$.
-
-%------------------------------------------------------------------
-%\subsection{Opération de \emph{dressing}}
-%\label{sec:dressing}
-
-%\subsubsection{Définition}
-
-%\begin{align}
-%f^{\mathrm{dr}}(\theta) &= f(\theta) \;+\;
-%       \int_{-\infty}^{\infty}\!\frac{d\theta'}{2\pi}\;
-%             \Delta(\theta-\theta')\,\nu(\theta')\,f^{\mathrm{dr}}(\theta')
-%\nonumber\\
-%&= f(\theta)\;+\;\Bigl[\tfrac{\Delta}{2\pi}\star\bigl(\nu\,f^{\mathrm{dr}}\bigr)
-%     \Bigr](\theta),
-%\label{eq:dressing}
-%\end{align}
+Et on peut définir la distribution de trou $\rho_h$ , tel que $\rho_s = \rho + \rho_h$. \\
 
 \paragraph{Opération de \emph{dressing}.}
 \subparagraph{Définition.}
-À toute fonction $f(\theta)$ on associe sa version \emph{habillée} (ou \emph{dressed}) $f^{\mathrm{dr}}(\theta)$, définie comme la solution de l’équation intégrale suivante :
-\begin{eqnarray}
+À toute fonction $f(\theta)$ on associe sa version \emph{habillée} (ou \emph{dressed}) $f^{\mathrm{dr}}_{[\nu]}(\theta)$, définie comme la solution de l’équation intégrale suivante :
+\begin{eqnarray}\label{eq:dessing}
 	f^{\mathrm{dr}}_{[\nu]} & = & f  \;+\;\tfrac{\Delta}{2\pi}\star\bigl(\nu\,f^{\mathrm{dr}}\bigr) \label{eq:dressing}	
 \end{eqnarray}
-où $\nu = \rho/\rho_s$ est le \emph{facteur d’occupation}, et $\Delta/2\pi$ est le noyau de diffusion du modèle.
+où pour notre système 
+\begin{eqnarray}
+	\nu = \frac{\rho}{\rho_s	}\label{eq:TBA-nu}
+\end{eqnarray}
+est le {\bf facteur d’occupation}, et $\Delta/2\pi$ est le {\bf noyau de diffusion} du modèle.
+Dans la suite, il est pratique de décrire la thermodynapique et la dynamique des système à l'aide de la {\em fonction d'occumation}.
 
 %où $\Delta/2\pi$ est un noyau de convolution spécifique et 
 %\(
@@ -1437,7 +1453,7 @@ Le dressing incorpore à tous ordres les effets de rétrodiffusion entre quasi-p
 
 En prenant $f(\theta) = 1$ dans l’équation~\eqref{eq:dressing}, on obtient :
 \(
-1^{\mathrm{dr}}=1+\frac{\Delta}{2\pi}\star\bigl(\nu\,1^{\mathrm{dr}}\bigr)
+1^{\mathrm{dr}}_{[\nu]}=1+\frac{\Delta}{2\pi}\star\bigl(\nu\,1^{\mathrm{dr}_{[\nu]}}\bigr)
 \) soit directement : 
 \begin{eqnarray}
 	2\pi\rho_s = 1^{\mathrm{dr}}_{[\nu]},\label{eq:TBA-rhos-2}
