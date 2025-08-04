@@ -205,7 +205,7 @@ on associe un opérateur-charge loclal :
 \end{eqnarray}
 où $\operator{\rho}(\theta)$ agit sur une état de Bethe comme 
 \begin{eqnarray}\label{chap.2.rho.1}
-	 \operator{\rho}(\theta) \ket{ \{ \theta_a \} } &=& \frac{1}{L} \sum \delta ( \theta - \theta_a ) \ket{ \{ \theta_a \} }.	
+	 \operator{\rho}(\theta) \ket{ \{ \theta_a \} } &=& \frac{1}{L} \sum_{a = 1 }^N  \delta ( \theta - \theta_a ) \ket{ \{ \theta_a \} }.	
 \end{eqnarray}
 De sorte que $\operator{\mathcal{Q}}^{(\mathcal{S})}[f]$ agit sur une état de Bethe comme
 \begin{eqnarray}\label{chap.2.charge.1}
@@ -252,9 +252,9 @@ on associe un opérateur-charge généralisé $\operator{\mathcal{Q}}^{(\mathcal
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Expression de la matrice densité généralisée.}
 La matrice densité  s’écrit sous la forme :
-L’ensemble général défini par $\operator{\rho}^{(\mathcal{S})}[w]$ 
+L’ensemble général défini par $\operator{\varrho}^{(\mathcal{S})}[w]$ 
 \begin{eqnarray}\label{chap.2.densite.1}
-	\operator{\rho}^{(\mathcal{S})}[w]  =  \frac{e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}}{Z^{(\mathcal{S})}[w]}, \, \mbox{avec} \quad e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}  = 	\sum_{\{\theta_a \}} e^{- \sum_{a = 1}^N w(\theta_a) } \vert \{ \theta_a\} \rangle \langle  \{ \theta_a\}  \vert, 
+	\operator{\varrho}^{(\mathcal{S})}[w]  =  \frac{e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}}{Z^{(\mathcal{S})}[w]}, \, \mbox{avec} \quad e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}  = 	\sum_{\{\theta_a \}} e^{- \sum_{a = 1}^N w(\theta_a) } \vert \{ \theta_a\} \rangle \langle  \{ \theta_a\}  \vert, 
 \end{eqnarray}	
 	%pour une certaine fonction $w$ relié à la charge% $\operator{\mathcal{Q}} [w]  = \sum_{\{\theta_a \}} \left ( \sum_{a = 1}^N w ( \theta_a )  \right ) \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert $.
 %où l'opérateur de charge associé à $w$ s’écrit :
@@ -292,7 +292,7 @@ pseudo‑moments, chaque particule étant pondérée par $w(\theta_a)$.
 Pour tout opérateur local $\operator{\mathcal{O}}$ diagonal dans la base de Bethe,
 la moyenne généralisée vaut
 \begin{eqnarray}\label{chap.2.moyenne.1}
-	\langle \operator{\mathcal{O}}\rangle_{\operator{\rho}^{(\mathcal{S})}[w]} & = & \displaystyle   \frac{\sum_{\{\theta_a \}} \braket{ \operator{\mathcal{O}}}_{\{ \theta_a\}} e^{- \sum_{a = 1}^N w(\theta_a) }  }{\sum_{\{\theta_a  \}} e^{- \sum_{a = 1}^N  w(\theta_a) } }
+	\langle \operator{\mathcal{O}}\rangle_{\operator{\varrho}^{(\mathcal{S})}[w]} & = & \displaystyle   \frac{\sum_{\{\theta_a \}} \braket{ \operator{\mathcal{O}}}_{\{ \theta_a\}} e^{- \sum_{a = 1}^N w(\theta_a) }  }{\sum_{\{\theta_a  \}} e^{- \sum_{a = 1}^N  w(\theta_a) } }
 \end{eqnarray}
 %Cette expression formelle montre que la connaissance de $w(\theta)$ suffit à déterminer les propriétés statistiques de toutes les observables diagonales dans cette base, incluant les charges conservées elles-mêmes.
 Ainsi, la connaissance de la fonction $w(\theta)$ suffit à déterminer
@@ -319,11 +319,11 @@ Toutes ces charges se réunissent dans l’opérateur fonctionnel
 , défini par un \emph{poids spectral}  $w(\theta)$ (cf. équations~\eqref{chap.2.charge.1}).
 Cette construction conduit naturellement à la matrice densité généralisée
 \(
-\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}[w]  \propto  e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}
+\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}  \propto  e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}
 \) 
 (cf. équations~\eqref{chap.2.densite.1}), et à la moyenne d’un opérateur local $\operator{\mathcal{O}}$ donnée par
 \(
-\langle \operator{\mathcal{O}}\rangle_{GGE}  \doteq  \displaystyle  \text{Tr} (\operator{\mathcal{O}}\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}[w])
+\langle \operator{\mathcal{O}}\rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  =  \displaystyle  \text{Tr} (\operator{\mathcal{O}}\operator{\varrho}^{(\mathcal{S})}[w])
 \)
 (cf. équations~\eqref{chap.2.moyenne.1}).
 La connaissance de $w(\theta)$ suffit donc pour prédire les valeurs moyennes de toutes les observables diagonales, y compris celles des charges elles‑mêmes ; c’est le cœur du {\bf Ensemble de Gibbs Généralisé (GGE pour Generalized Gibbs Ensemble)} .
@@ -344,19 +344,31 @@ C’est ce formalisme qui permettra d’analyser finement la relaxation post‑q
 
 \paragraph{Observables locales dans la limite thermodynamique.}
 %Lorsque l'observable $\operator{\mathcal{O}}$ est suffisamment local, on croit que la valeur d'attente $\langle  \{ \theta_a\}  \vert   \mathcal{O} \vert \{ \theta_a\} \rangle$ ne dépend pas de l'état microscopique spécifique du système, de sorte qu'elle devient une fonctionnelle de $\Pi$ dans la limite thermodynamique.
+Dans la suite de ce chapitre, nous omettrons l’exposant $(\mathcal{S})$.
+\vspace{0.2em}
+Dans la base des états de Bethe \( \{ \ket{\{ \theta_a \}} \} \), l’opérateur \( \hat{\rho}(\theta) \) défini en \eqref{chap.2.rho.1} est diagonal, et agit comme un projecteur sur les valeurs de rapidité.
+
+\vspace{0.5em}
+
+Dans la limite thermodynamique, différentes configurations microscopiques \( \{ \theta_a \} \) peuvent correspondre à la même distribution de rapidité macroscopique \( \rho(\theta) \). Autrement dit, plusieurs états \( \ket{\{ \theta_a \}} \) partagent la même valeur propre \( \rho(\theta) \) de l’opérateur \( \operator{\rho}(\theta) \). Cela reflète une {\em dégénérescence macroscopique} induite par le passage à la limite thermodynamique (\( N, L \to \infty \) avec \( N/L \to \text{const} \)).
+
+\vspace{0.5em}
+
 Si l’observable $\mathcal{O}$ est suffisamment locale, sa valeur d’attente dans un état propre ne dépend pas des détails microscopiques, mais uniquement de la distribution de rapidité. On écrit alors :
 \begin{eqnarray}
-	\underset{\mbox{\tiny therm.}}{\lim} \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle & = & \langle \operator{\mathcal{O}}\rangle_{[\rho]},
+	\underset{\mbox{\tiny therm.}}{\lim} \braket{  \operator{\mathcal{O}} }_{\{ \theta_a\}}  & = & \langle \operator{\mathcal{O}}\rangle_{[\rho]},
 \end{eqnarray}
-où $\underset{\mbox{\tiny therm.}}{\lim}$ est la limite thermodinamique ($N,L \to \infty$ avec $N/L \to $ const).\\
+où $\underset{\mbox{\tiny therm.}}{\lim}$ est la limite thermodynamique ($N,L \to \infty$ avec $N/L \to $ const) et où \( \langle \mathcal{O} \rangle_{[\rho]} \) désigne la valeur d’attente de \( \mathcal{O} \) dans un état macroscopique caractérisé par la distribution de rapidité \( \rho(\theta) \).
+
 
 \medskip
-Dans un ensemble général (GGE), la valeur moyenne de l’observable \eqref{chap.2.moyenne.1} devient alors :	
-	
+Dans un ensemble général (GGE), la valeur moyenne de l’observable \eqref{chap.2.moyenne.1} devient alors :		
 \begin{eqnarray}\label{chap.2.moyenne.2}
-	\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}} \rangle_{GGE} & =  & \frac{  \displaystyle \sum_{\rho }  \langle \operator{\mathcal{O}}\rangle_{[\rho]} \Omega[\rho] e^{- \sum_{a = 1}^N  w(\theta_a)    }}{ \displaystyle \sum_{\rho }   \Omega[\rho]\,e^{- \sum_{a = 1}^N  w(\theta_a) } } ,
+	\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}} \rangle_{\operator{\varrho}[w]} & =  & \frac{  \displaystyle \sum_{\rho }  \langle \operator{\mathcal{O}}\rangle_{[\rho]} \Omega[\rho] e^{- \sum_{a = 1}^N  w(\theta_a)    }}{ \displaystyle \sum_{\rho}   \Omega[\rho]\,e^{- \sum_{a = 1}^N  w(\theta_a) } } ,
 \end{eqnarray}
+où $\sum_{\rho }$ est une somme sus tous les distribution de rapidité $\rho$ et 
 où $\Omega[\rho]$ désigne le nombre de micro-états compatibles avec la distribution de rapidité $\rho$.
+
 %où $\# \mbox{micro-états.}$ est les nombre de micro état associée àa la distribution de rapidité $\rho$.
 %Avant de se plonger sur $\# \mbox{micro-états.}$, regardons le changement des équation de Bethes. 
 
@@ -416,7 +428,7 @@ où $\nu = \rho/\rho_s$ est le \emph{facteur d’occupation}, et $\Delta/2\pi$ e
 
 \subparagraph{Interprétation physique}
 
-Le dressing incorpore à tous ordres les effets de rétrodiffusion entre quasi-particules. Il encode ainsi les corrections d’interaction aux grandeurs physiques initiales $f(\theta)$. Dans le modèle de Lieb–Liniger, cette opération permet de déterminer : l’énergie habillée $\varepsilon^{\mathrm{dr}}(\theta)$ , l’impulsion habillée $p^{\mathrm{dr}}(\theta)$ , les susceptibilités thermodynamiques (cf. section~\ref{chap:GGE}).
+Le dressing incorpore à tous ordres les effets de rétrodiffusion entre quasi-particules. Il encode ainsi les corrections d’interaction aux grandeurs physiques initiales $f(\theta)$. %Dans le modèle de Lieb–Liniger, cette opération permet de déterminer : l’énergie habillée $\varepsilon^{\mathrm{dr}}(\theta)$ , l’impulsion habillée $p^{\mathrm{dr}}(\theta)$ , les susceptibilités thermodynamiques (cf. section~\ref{chap:GGE}).
 %
 %{\color{blue}
 %\paragraph{Susceptibilités thermodynamiques.}
@@ -603,15 +615,10 @@ Cette reformulation est puissante car elle fait disparaître les détails d’un
 
 \medskip
 Cependant, pour décrire un \emph{vrai} équilibre à température finie, il faut la distribution à l'équilibre :
-\begin{eqnarray*}
-	\rho_{\mathrm{eq}}\;\doteq\;\langle \rho \rangle	 \quad \qquad\text{et son lien fonctionnel avec }w.
-\end{eqnarray*}
-%\[
-%\boxed{\;
-%  \rho_{\mathrm{eq}}\;=\;\langle \rho(\theta) \rangle
-%\;}
-%\qquad\text{et son lien fonctionnel avec }w(\theta).
-%\]
+\begin{eqnarray}\label{chap.2:eq.rho.eq.1}
+	\rho_{\mathrm{eq}}(\theta)\;\doteq\;\braket{\operator{\rho}(\theta)}_{\operator{\varrho}[w]}	,  
+\end{eqnarray}
+donc le lien entre $\rho_{\mathrm{eq}}$ et $w$.
 La réponse fut donnée dans les travaux pionniers de \textsc{Yang \& Yang} (1969).  
 Leur approche repose sur l’analyse de la \textbf{structure statistique des états propres} partageant la même distribution $\rho(\theta)$.
 
@@ -641,11 +648,11 @@ Pour répondre à cette question, on subdivise l’axe des rapidités en petites
 \begin{eqnarray*}
 	N_a = L\rho(\theta_a) \delta \theta,
 \end{eqnarray*}
-et le nombre total d'états disponibles (i.e., le nombre d’états possibles si toutes les positions en moment étaient disponibles) est donné par la densité totale de niveaux 
+et le nombre total d'états disponibles (\ie, le nombre d’états possibles si toutes les positions en moment étaient disponibles) est donné par la densité totale de niveaux 
 \begin{eqnarray*}
 	M_a = L\rho_s(\theta_a) \delta \theta.
 \end{eqnarray*}
-La densité de niveaux $\rho_s(\theta)$ tient compte du fait que les moments sont quantifiés de manière discrète, en raison des équations de Bethe (voir équation (??)).
+%La densité de niveaux $\rho_s(\theta)$ tient compte du fait que les moments sont quantifiés de manière discrète, en raison des équations de Bethe (voir équation (??)).
 
 Les particules occupent ces niveaux de manière analogue à des fermions libres (principe d’exclusion de Pauli), le nombre de manières différentes de choisir $N_a$ niveaux parmi $M_a$ est donné par :
 	
@@ -653,9 +660,9 @@ Les particules occupent ces niveaux de manière analogue à des fermions libres 
 	\begin{figure}[H]
 		\centering 
 		\begin{tikzpicture}
-			%\input{The_Lieb-Liniger_model_and_the_rapidities/Fluctu_distribution/figures/Occupation_code}	
+			%\input{figures/04_GGE_Fluctuation/Occupation_code}	
 			\begin{scope}[transform canvas={scale=0.6}]
-			%\input{The_Lieb-Liniger_model_and_the_rapidities/Fluctu_distribution/Figures/Occupation_theta_code}	
+			\input{figures/04_GGE_Fluctuation/Occupation_theta_code}	
 			\end{scope}
 			
 			\draw[color = red , scale = 0.5 , draw = none ] (-13.5 , -1) rectangle (13 , 10) ; 
@@ -728,8 +735,7 @@ Dans la limite thermodynamique, en supposant que $w(\theta)$ varie lentement sur
 \begin{eqnarray}
 	L \mathcal{W}(\{\theta_a\}) \doteq  \sum_{a = 1}^N w(\theta_a) 
 	 \underset{\mbox{\tiny therm .}}{\sim}  L \mathcal{W}[\rho]  \doteq  L \sum_a^{\theta\text{-cellules}} w(\theta_a) \rho(\theta_a)\, \delta\theta. 
-\end{eqnarray}
-
+\end{eqnarray} 
 %La fonctionnelle
 %\(
 %\mathcal{W}[\rho] = \int d\theta\, w(\theta)\, \rho(\theta)
@@ -742,7 +748,7 @@ Dans la limite thermodynamique, en supposant que $w(\theta)$ varie lentement sur
 Dans un ensemble général (GGE), la valeur moyenne de l’observable \eqref{chap.2.moyenne.2} devient :	
 	
 \begin{eqnarray}\label{chap.2.moyenne.3}
-	\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}} \rangle_{GGE} &  \approx &  ~ \frac{  \displaystyle \sum_{\rho }  \langle \operator{\mathcal{O}}\rangle_{[\rho]}  e^{L(\mathcal{S}_{YY}[\rho] -  \mathcal{W}[\rho]) }}{ \displaystyle \sum_{\rho } e^{L(\mathcal{S}_{YY}[\rho] -  \mathcal{W}[\rho]) } },
+	\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}} \rangle_{\operator{\varrho}[w]} &  \approx &  ~ \frac{  \displaystyle \sum_{\rho }  \langle \operator{\mathcal{O}}\rangle_{[\rho]}  e^{L(\mathcal{S}_{YY}[\rho] -  \mathcal{W}[\rho]) }}{ \displaystyle \sum_{\rho } e^{L(\mathcal{S}_{YY}[\rho] -  \mathcal{W}[\rho]) } },
 \end{eqnarray}
 où la somme $\sum\rho$ porte sur toutes les distributions possibles de rapidité $\rho$
 
@@ -776,7 +782,7 @@ e^{\,L(\mathcal{S}_{YY}[\rho]-\mathcal{W}[\rho])}.
 \)
 Finalement, la moyenne d'une observable dans le GGE \eqref{chap.2.moyenne.3} s’écrit comme une intégrale fonctionnelle/de chemin :
 \begin{eqnarray}
-	\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}} \rangle_{GGE} & = & \frac{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])} \, \langle\operator{\mathcal{O}}\rangle_{[\rho]}}{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])}}. \label{chap:TBA:eq:ensemble_average}
+	\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}} \rangle_{\operator{\varrho}[w]} & = & \frac{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])} \, \langle\operator{\mathcal{O}}\rangle_{[\rho]}}{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])}}. \label{chap:TBA:eq:ensemble_average}
 \end{eqnarray}
 
 
@@ -870,10 +876,10 @@ l’équilibre statistique.
 
 Dans la limite thermodynamique \( L \to \infty \), cette intégrale est dominée par la configuration \( \rho_{eq} \) qui maximise le poids exponentiel $e^{L(\mathcal{S}_{YY}-\mathcal{W})[\rho]}$  dans l'expression \eqref{chap:TBA:eq:ensemble_average}. Il s’agit de la densité de rapidité la plus probable, solution d’un problème de maximisation. On obtient à l’ordre principal
 \begin{eqnarray}
-	\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}} \rangle_{GGE} & \approx &  \langle\operator{\mathcal{O}}\rangle_{[\rho_{eq} ]}.	
+	\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}} \rangle_{\operator{\varrho}[w]} & \approx &  \langle\operator{\mathcal{O}}\rangle_{[\rho_{eq} ]},	
 	\label{chap:TBA:eq:ensemble_average:approx}
 \end{eqnarray}
-
+où $\rho_{eq}$ est la distribution de rapidité à l'équilibre \eqref{chap.2:eq.rho.eq.1}.
 Cette approximation correspond à une méthode de \textit{selle statique}, où l’on développe la \emph{fonction thermodynamique effective}, $\mathcal{S}_{YY}-\mathcal{W}$  au voisinage de la distribution dominante.
 
 
@@ -1086,12 +1092,12 @@ est le \textbf{facteur d’occupation} à l’équilibre.
 \paragraph{Forme pseudo-énergie.}
 La \textbf{pseudo-énergie} $\epsilon$ se donne alors par la statistique de type Fermi-Dirac
 \begin{eqnarray}
-	\beta \epsilon =\ln(\nu^{-1}_{\!eq}-1),\qquad\nu_{\!eq}=\frac{1}{1+e^{\beta \epsilon}}.\label{chap:TBA:eq:nu}%\tag{\text{TBA--$\nu$}} 
+	\epsilon =\ln(\nu^{-1}_{\!eq}-1),\qquad\nu_{\!eq}=\frac{1}{1+e^{\epsilon}}.\label{chap:TBA:eq:nu}%\tag{\text{TBA--$\nu$}} 
 \end{eqnarray}
 En réinjectant \eqref{chap:TBA:eq:nu} dans \eqref{chap:TBA:eq:w} on obtient
 l’équation intégrale canonique de la thermodynamique de Bethe :
 \begin{eqnarray}
-	\beta \epsilon & = & w - \frac{\Delta}{2\pi} \star \ln ( 1  + e^{-\beta \epsilon}).\label{chap:TBA:eq:e}%\tag{\text{TBA–-$\varepsilon$}}	
+	\epsilon & = & w - \frac{\Delta}{2\pi} \star \ln ( 1  + e^{-\epsilon}).\label{chap:TBA:eq:e}%\tag{\text{TBA–-$\varepsilon$}}	
 \end{eqnarray}
 %\[
 %\boxed{\;
@@ -1117,7 +1123,7 @@ On se place à l’équilibre canonique, caractérisé par la température \( T 
 \end{equation}
 En injectant \eqref{eq:TBA:w:canonical} dans l’équation intégrale pour lapseudo-énergie \eqref{chap:TBA:eq:e}, on obtient l’équation non linéaire :
 \begin{eqnarray*}
-	\beta \epsilon & = & \beta (\varepsilon - \mu)  -  \frac{\Delta}{2\pi} \star \ln \left( 1 + e^{-\beta \epsilon} \right) ,\label{eq:num:TBA}
+	\epsilon & = & \beta(\varepsilon - \mu)  -  \frac{\Delta}{2\pi} \star \ln \left( 1 + e^{-\epsilon} \right) ,\label{eq:num:TBA}
 \end{eqnarray*}
 Cette équation définit un opérateur contractant sur l’espace des fonctions
 \( \varepsilon(\theta) \) ; son Jacobien a une norme strictement
@@ -1128,11 +1134,11 @@ inférieure à 1, garantissant la convergence de l’itération de Picard.
 La structure contractante de l’équation garantit l’absence de cycles ou de points fixes multiples, assurant la convergence de l’itération vers l’unique solution admissible.
 L’équation \eqref{eq:num:TBA} est non linéaire ; pour la résoudre numériquement, on utilise une méthode itérative de type Picard. On initialise
 \(
-  \epsilon_0 = \varepsilon - \mu,
+  \epsilon_0 = \beta (\varepsilon - \mu),
 \)
 puis on construit une suite de fonctions \(\varepsilon_n\) définie par
 \begin{eqnarray*}
-	\beta \epsilon_{n+1} & = & \beta \epsilon_0 -   \frac{\Delta}{2\pi} \star \ln \left( 1 + e^{-\beta \epsilon_n} \right) ,\quad n\ge0
+	\epsilon_{n+1} & = & \epsilon_0 -   \frac{\Delta}{2\pi} \star \ln \left( 1 + e^{-\epsilon_n} \right) ,\quad n\ge0
 \end{eqnarray*}
 L’itération est poursuivie jusqu’à convergence, que l’on peut tester via le critère numérique
 \(
