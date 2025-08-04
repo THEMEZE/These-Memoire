@@ -19,7 +19,7 @@ Les outils développés ici seront fondamentaux pour formuler dans la section su
 
 
 
-\subsection{Notion d’état d’équilibre généralisé (GGE)}
+\section{Notion d’état d’équilibre généralisé (GGE)}
 
 \paragraph{Introduction.}
 
@@ -143,40 +143,41 @@ de le charge locale $\operator{Q}_i^{(\mathcal{S})}$, en injectant \eqref{chap.T
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Cas particulier de l’équilibre thermique.}
 
-Dans le cas particulier de l’équilibre thermique standard (i.e. Gibbsien), le système est décrit par une seule contrainte d’énergie (ou d’énergie et de particule, dans le cas d’un grand canonique). Les multiplicateurs de Lagrange associés aux charges conservées peuvent alors être identifiés à des grandeurs thermodynamiques classiques.
+Dans le cas particulier de l’équilibre thermique standard (\ie Gibbsien), le système est décrit par une seule contrainte d’énergie (ou d’énergie et de particule, dans le cas d’un grand canonique). Les multiplicateurs de Lagrange associés aux charges conservées peuvent alors être identifiés à des grandeurs thermodynamiques classiques.
 
 \begin{itemize}[label=$\bullet$]
 	\item Si la seule charge conservée est le nombre de particules $\operator{Q}_0^{(\mathcal{S})} = \operator{Q}$, le multiplicateur associé est $\beta_0 = -\beta \mu$, où $\mu$ est le potentiel chimique et $\beta = T^{-1}$ l’inverse de la température (avec $k_B = 1$).
 	
-	\item Si la charge conservée est $\operator{Q}_2^{(\mathcal{S})}-\mu\operator{Q}_0^{(\mathcal{S})}  = \operator{H} - \mu \operator{Q} $ (ensemble grand canonique), alors le multiplicateur est simplement $ \beta$.
+	\item Si la charge conservée est $\operator{Q}_2^{(\mathcal{S})}-\mu\operator{Q}_0^{(\mathcal{S})}  = \operator{K} - \mu \operator{Q} $ (ensemble grand canonique), alors le multiplicateur est simplement $ \beta$.
 \end{itemize}
 
-Dans ce cadre, les moyennes et les fluctuations thermodynamiques usuelles s’expriment naturellement comme dérivées du logarithme de la fonction de partition $Z^{(\mathcal{S})}$ :
+Dans le cadre de l’équilibre thermique , les moyennes et les fluctuations thermodynamiques usuelles s’expriment naturellement comme dérivées du logarithme de la fonction de partition $Z^{(\mathcal{S})}$ :
 \begin{eqnarray}
-	\langle \operator{Q} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  = \left .\frac{1}{\beta} \frac{ \partial \ln Z^{(\mathcal{S})}}{\partial \mu } \right )_{T,\cdots},  & &  \left . \frac{1}{\beta} \frac{ \partial \langle \operator{Q} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}}{\partial \mu } \right )_{T,\cdots} =  \left . \frac{1}{\beta^2} \frac{ \partial^2 \ln Z^{(\mathcal{S})}}{{\partial \mu}^2 } \right )_{T,\cdots} \\
-	\langle \operator{H} - \mu\operator{Q}  \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  = -\left . \frac{ \partial \ln Z^{(\mathcal{S})}}{\partial \beta } \right )_{\mu , \cdots} ,  & & -\left .  \frac{ \partial \langle \operator{H} - \mu\operator{Q} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}}{\partial \beta } \right )_{\mu , \cdots} = \left .  \frac{ \partial^2 \ln Z^{(\mathcal{S})}}{{\partial \beta}^2 } \right )_{\mu , \cdots}   .		
+	\langle \operator{Q} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  = \left .\frac{1}{\beta} \frac{ \partial \ln Z^{(\mathcal{S})}}{\partial \mu } \right )_{T},  & &  \left . \frac{1}{\beta} \frac{ \partial \langle \operator{Q} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}}{\partial \mu } \right )_{T} =  \left . \frac{1}{\beta^2} \frac{ \partial^2 \ln Z^{(\mathcal{S})}}{{\partial \mu}^2 } \right )_{T} \\
+	\langle \operator{H} - \mu\operator{Q}  \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  = -\left . \frac{ \partial \ln Z^{(\mathcal{S})}}{\partial \beta } \right )_{\mu} ,  & & -\left .  \frac{ \partial \langle \operator{H} - \mu\operator{Q} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}}{\partial \beta } \right )_{\mu } = \left .  \frac{ \partial^2 \ln Z^{(\mathcal{S})}}{{\partial \beta}^2 } \right )_{\mu}   .		
 \end{eqnarray}
 En combinant ces relations, on peut également exprimer l’énergie moyenne et ses fluctuations comme :
 \begin{eqnarray}
-	\langle \operator{H} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  = \left [ \left .\frac{\mu}{\beta} \frac{ \partial}{\partial \mu } \right )_{T,\cdots} -\left . \frac{ \partial }{\partial \beta } \right )_{\mu, \cdots}   \right ]\ln Z^{(\mathcal{S})},  \quad  \Delta^2_{\operator{H} } = \left [ \left .\frac{\mu}{\beta} \frac{ \partial}{\partial \mu } \right )_{T,\cdots} -\left . \frac{ \partial }{\partial \beta } \right )_{\mu,\cdots}  \right ]^2\ln Z^{(\mathcal{S})}.		
+	\langle \operator{H} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  = \left [ \left .\frac{\mu}{\beta} \frac{ \partial}{\partial \mu } \right )_{T} -\left . \frac{ \partial }{\partial \beta } \right )_{\mu}   \right ]\ln Z^{(\mathcal{S})},  \quad  -\left .  \frac{ \partial \langle \operator{H} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}}{\partial \beta } \right )_{-\mu \beta } = \left [ \left .\frac{\mu}{\beta} \frac{ \partial}{\partial \mu } \right )_{T} -\left . \frac{ \partial }{\partial \beta } \right )_{\mu}  \right ]^2\ln Z^{(\mathcal{S})}.		
 \end{eqnarray}
 
 %%%%%%%%%%%%%
 
+\section{Remarques sur le formalisme}
 
 
 
 
 %\input{TBA/HE/GGE/main}
-\subsection{Rôle des charges conservées extensives et quasi-locales}
+\section{Rôle des charges conservées extensives et quasi-locales}
 %Dans les systèmes intégrables, l’état stationnaire atteint après une évolution hors d’équilibre n’est généralement pas décrit par un état de Gibbs classique, mais par un ensemble généralisé de Gibbs (GGE). Celui-ci est construit à partir de toutes les charges conservées du système
 
 \paragraph{Écriture des observables thermodynamiques comme sommes sur les rapidités.}
 
 %Dans le cas thermique, les valeurs moyennes des observables classiques telles que le nombre de particules et l'énergie peuvent s'exprimer comme des sommes de puissances des rapidités :
-Dans un système à $N$ particules caractérisé par des rapidités ${ \theta_a }_{a = 1}^N$, les charges conservées classiques — telles que le nombre de particules, l’impulsion ou l’énergie — s’écrivent comme des sommes de puissances des rapidités :
+Dans un système à $N$ particules caractérisé par des rapidités $\{ \theta_a \}_{a = 1}^N$, les charges conservées classiques — telles que le nombre de particules, l’impulsion ou l’énergie — s’écrivent comme des sommes de puissances des rapidités :
 \(
-	\langle \operator{Q} \rangle_{\{ \theta_a\} } \propto \sum_{a = 1}^N \theta_a^0 , \,  \langle \operator{P} \rangle_{\{ \theta_a\} } \propto \sum_{a = 1}^N \theta_a^1  ,\,  \mbox{et} \langle \operator{H} \rangle_{\{ \theta_a\} } \propto \sum_{a = 1}^N \theta_a^2 .	
+	\langle \operator{Q} \rangle_{\{ \theta_a\} } \propto \sum_{a = 1}^N \theta_a^0 , \,  \langle \operator{P} \rangle_{\{ \theta_a\} } \propto \sum_{a = 1}^N \theta_a^1  ,\,  \mbox{et} \langle \operator{K} \rangle_{\{ \theta_a\} } \propto \sum_{a = 1}^N \theta_a^2 .	
 \)
 (cf. équations \eqref{chap.2.gge.1})
 Dans ce paragraphe précédent, nous avons sous-entendu — sans l’expliciter — qu’il est montré que l’ensemble des charges locales conservées forme une famille donnée par :
@@ -185,7 +186,7 @@ Dans ce paragraphe précédent, nous avons sous-entendu — sans l’expliciter 
 \end{eqnarray}
 Ces charges agissent donc de manière diagonale sur les états de Bethe, avec des valeurs propres correspondant aux moments des rapidités.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\paragraph{Charges conservées généralisées.\label{sec:charges-gen}}
+\paragraph{Charges locales conservées .\label{sec:charges-gen}}
 
 %Les états propres du Hamiltonien de Lieb–Liniger~\eqref{eq:LL} sont les états de Bethe
 %\(
@@ -193,102 +194,87 @@ Ces charges agissent donc de manière diagonale sur les états de Bethe, avec de
 %  =\ket{\theta_1,\dots,\theta_N}\!,
 %\)
 %déterminés par leurs rapidités \(\boldsymbol{\theta}\).
+
 À toute fonction régulière
 \(
-  w:\mathbb R\!\to\!\mathbb R
+  f:\mathbb R\!\to\!\mathbb R
 \)
-–– dorénavant appelée \emph{poids spectral}, ou \emph{énergie généralisée} ––
-on associe un opérateur-charge généralisé :
+on associe un opérateur-charge loclal :
+\begin{eqnarray}\label{chap.2.charge.f.1}
+	\operator{\mathcal{Q}}^{(\mathcal{S})}[f] & = &  L \int_0^L d\theta \, f(\theta) \operator{\rho}^{(\mathcal{S})}(\theta).	
+\end{eqnarray}
+où $\operator{\rho}(\theta)$ agit sur une état de Bethe comme 
+\begin{eqnarray}\label{chap.2.rho.1}
+	 \operator{\rho}(\theta) \ket{ \{ \theta_a \} } &=& \frac{1}{L} \sum \delta ( \theta - \theta_a ) \ket{ \{ \theta_a \} }.	
+\end{eqnarray}
+De sorte que $\operator{\mathcal{Q}}^{(\mathcal{S})}[f]$ agit sur une état de Bethe comme
 \begin{eqnarray}\label{chap.2.charge.1}
-	\operator{\mathcal{Q}}^{(\mathcal{S})}[w]\,\ket{\{\theta_a\} }&  = & \sum_{a=1}^{N}w(\theta_a)\,\ket{\{\theta_a\} } .	
+	\operator{\mathcal{Q}}^{(\mathcal{S})}[f]\,\ket{\{\theta_a\} } =  \sum_{a=1}^{N}f(\theta_a)\,\ket{\{\theta_a\} } \quad \mbox{de sorte que} \quad \braket{\operator{\mathcal{Q}}^{(\mathcal{S})}[f]}_{\{\theta_a\}} = \sum_{a=1}^N f(\theta_a)
 \end{eqnarray}
 Les choix particuliers
 \(
-  w(\theta)=1
+  f_0(\theta)=1
 \)
 ,
 \(
-  w(\theta)=\theta
+  f_1(\theta)=\theta
 \)
 et
 \(
-  w(\theta)=\theta^{2}/2
+  f_2(\theta)=\theta^{2}/2
 \)
-redonnent respectivement le nombre \(\operator{Q}=\operator{Q}_0^{(\mathcal{S})} = \operator{\mathcal{Q}}^{(\mathcal{S})}[1]\) , l’impulsion \(\operator{P}=\operator{Q}_1^{(\mathcal{S})} = \operator{\mathcal{Q}}^{(\mathcal{S})}[\theta]\) et l’Hamiltonien
-\(\operator{H}=\operator{Q}_0^{(\mathcal{S})} = \operator{\mathcal{Q}}^{(\mathcal{S})}[\theta^2/2]\).
+redonnent respectivement l'opérateur nombre \(\operator{Q}=\operator{Q}_0^{(\mathcal{S})} = \operator{\mathcal{Q}}^{(\mathcal{S})}[1]\) , impulsion \(\operator{P}=\operator{Q}_1^{(\mathcal{S})} = \operator{\mathcal{Q}}^{(\mathcal{S})}[\theta]\) et énergie cinétique
+\(\operator{K}=\operator{Q}_2^{(\mathcal{S})} = \operator{\mathcal{Q}}^{(\mathcal{S})}[\theta^2/2]\). Et dans le cadre des (GGE), pour tous les ordres $i$ on note :
+\begin{eqnarray}\label{chap.2.charge.ordre.i.1}
+	\operator{Q}^{(\mathcal{S})}_i = \operator{\mathcal{Q}}^{(\mathcal{S})}[f_i]	, \quad \mbox{de sorte que} \quad \braket{\operator{Q}^{(\mathcal{S})}_i}_{\{\theta_a\}} = \sum_{a=1}^N f_i(\theta_a)  
+\end{eqnarray}
+avec les densités spectrales $f_i(\theta) \propto \theta^i$ . 
 
-%Par construction toutes ces charges commutent,
-%\(
-%  [\hat Q[\omega_1],\hat Q[\omega_2]]=0,
-%\)
-%même si leur forme seconde‑quantifiée explicite n’est connue que pour quelques
-%\(\omega\) simples.
-Ces charges sont extensives : leur densité locale $\operator{q}^{(\mathcal{S})}[w]$ permet d’écrire
+Ces charges sont extensives : leur densité locale $\operator{q}^{(\mathcal{S})}_{[f]}$ permet d’écrire
 \(
-  \operator{\mathcal{Q}}^{(\mathcal{S})}[w]=\int_0^{L}\!dx\;\operator{q}^{(\mathcal{S})}[w](x).
+  \operator{\mathcal{Q}}^{(\mathcal{S})}[f]=\int_0^{L}\!dx\;\operator{q}^{(\mathcal{S})}_{[f]}(x).
 \)
-%et la densité locale \(q[\omega](x)\) satisfait l’équation de continuité
-%\[
-%  \partial_t q[\omega](x)+\partial_x j[\omega](x)=0. \tag{31}
-%\]
 
-%Dans un état de Bethe \(\ket{\boldsymbol{\theta}}\) normalisé,
-%la valeur moyenne exacte du courant vient de la formule récente de
-%Borsi \textit{et al.}:
-%\[
-%  \frac{\langle\boldsymbol{\theta}|\,j[\omega](x)\,|\boldsymbol{\theta}\rangle}{L}
-%  =\sum_{a,b=1}^{N}\omega'(\theta_a)\,[G^{-1}]_{ab}\,\theta_b, \tag{32}
-%\]
-%où \(G_{ab}=\partial p_a/\partial\theta_b\) est la matrice de Gaudin.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Dans le cas thermique, on peut remarquer que $\langle \operator{\mathcal{N}} \rangle_{\{ \theta_a\} } \propto \sum_{a = 1}^N \theta_a^0 $ et $\langle \operator{\mathcal{H}}_N \rangle_{\{ \theta_a\} } \propto \sum_{a = 1}^N \theta_a^2 $. On peut donc réécrire $\sum_{i = 1}^\infty  \beta_i \langle \operator{\mathcal{O}}_i \rangle_{ \{\theta_a \} }$
-
-%Par analogie, la combinaison pondérée des valeurs moyennes d’un ensemble d’observables ${ \operator{\mathcal{O}}i }{i \in \mathbb{N}}$, associée aux multiplicateurs de Lagrange ${ \beta_i }$, peut être réécrite sous la forme :
-
-%\begin{eqnarray}
-%	\sum_{i = 1}^\infty  \beta_i \langle \operator{\mathcal{O}}_i \rangle_{ \{\theta_a \} } & = & \sum_{i = 0}^\infty \alpha_i \sum_{a = 1 }^N \theta_a^i		
-%\end{eqnarray}
-%où les coefficients $\alpha_i$ résultent d’une recombinaison des $\beta_i$.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\paragraph{Interprétation fonctionnelle et échange des sommes.}
-	
-%Pour chaque $a \in \llbracket 1, N \rrbracket$, la série $\sum_i \alpha_i \theta_a^i$ converge pour des $\theta_a$ dans un domaine convenable, ce qui autorise l’échange de l’ordre des deux sommes : 
-	
-%\begin{eqnarray}
-%	\sum_{i = 1}^\infty  \beta_i \langle \operator{\mathcal{O}}_i \rangle_{ \{\theta_a \} } & = & \sum_{a = 1 }^N  w(\theta_a) 
-%\end{eqnarray}
-	
-%avec 
-%\begin{eqnarray}
-%	w(\theta) = \sum_{i=0}^\infty \alpha_i \theta^i.	
-%\end{eqnarray}
-%une fonction réelle (sous hypothèses de convergence). On peut ainsi réécrire la contribution totale des charges conservées comme une somme de termes mono-particulaires dépendant de la rapidité.
-%La fonction $w(\theta)$ agit comme une fonction génératrice de poids associée aux charges conservées du système.
+\paragraph{Charges conservées généralisée.\label{sec:charges-gen}}
+Les fonction $f_i$ étant fixées, on note la fonction régulière
+\(
+  w:\mathbb R\!\to\!\mathbb R
+\)
+–– dorénavant appelée \emph{poids spectral}, ou \emph{potentiel spectral} ––
+\begin{eqnarray}
+	w = \sum_i \beta_i f_i \label{chap.2.w.1},	
+\end{eqnarray}
+on associe un opérateur-charge généralisé $\operator{\mathcal{Q}}^{(\mathcal{S})}[w]$ :
+\begin{eqnarray}\label{chap.2.charge.gen.1}
+	\operator{\mathcal{Q}}^{(\mathcal{S})}[w]\,\ket{\{\theta_a\} } =  \sum_{a=1}^{N}w(\theta_a)\,\ket{\{\theta_a\} } \quad \mbox{de sorte que} \quad \braket{\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}_{\{\theta_a\}} = \sum_{i} \beta_i  \braket{\operator{Q}^{(\mathcal{S})}_i}_{\{\theta_a\}}
+\end{eqnarray}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Expression de la matrice densité généralisée.}
-La matrice densité généralisée s’écrit sous la forme :
+La matrice densité  s’écrit sous la forme :
+L’ensemble général défini par $\operator{\rho}^{(\mathcal{S})}[w]$ 
 \begin{eqnarray}\label{chap.2.densite.1}
-	\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}[w]  =  \frac{e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}}{Z^{(\mathcal{S})}[w]}, \, \mbox{avec} \quad e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}  = 	\sum_{\{\theta_a \}} e^{- \sum_{a = 1}^N w(\theta_a) } \vert \{ \theta_a\} \rangle \langle  \{ \theta_a\}  \vert, 
+	\operator{\rho}^{(\mathcal{S})}[w]  =  \frac{e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}}{Z^{(\mathcal{S})}[w]}, \, \mbox{avec} \quad e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}  = 	\sum_{\{\theta_a \}} e^{- \sum_{a = 1}^N w(\theta_a) } \vert \{ \theta_a\} \rangle \langle  \{ \theta_a\}  \vert, 
 \end{eqnarray}	
 	%pour une certaine fonction $w$ relié à la charge% $\operator{\mathcal{Q}} [w]  = \sum_{\{\theta_a \}} \left ( \sum_{a = 1}^N w ( \theta_a )  \right ) \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert $.
 %où l'opérateur de charge associé à $w$ s’écrit :
 %\begin{eqnarray}
 %	\operator{\mathcal{Q}} [w]   & = &  \sum_{\{\theta_a \}} \left ( \sum_{a = 1}^N w ( \theta_a )  \right ) \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert,	
 %\end{eqnarray}
-et la fonction de partition $Z^{(\mathcal{S})}[w]$ est définie par :
-\(
-	Z^{(\mathcal{S})}[w]   =  \sum_{\{\theta_a \}} e^{-\sum_{a = 1}^N w(\theta_a)}.		
-\)
+et la fonction de partition \eqref{chap.TBA.op.Z.S} s'écrit $Z^{(\mathcal{S})}[w]\doteq \bm{\mathrm{Tr}}\left [ e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}\right ] $ vaux :
+\begin{eqnarray}
+	Z^{(\mathcal{S})}[w]   =  \sum_{\{\theta_a \}} e^{-\sum_{a = 1}^N w(\theta_a)},\label{chap.TBA.op.Z.S.1}	
+\end{eqnarray}
+devient un Generalized Gibbs Ensemble (GGE), $\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}$ (de l'équation \eqref{chap.TBA.op.rho.S})	 dès lors que $w(\theta) = \sum_i \beta_i f_i(\theta)$ (de l'équation \eqref{chap.2.w.1}) où $f_i$ sont les densités spectrales associées aux charges locales conservées (de l'équation \eqref{chap.2.charge.ordre.i.1}).
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Probabilité associée à une configuration de rapidités.}
 	%Et on peut réecrire la probabilité de la configuration $\{\theta_a\}$ :% $ P_{\{ \theta_a \}} = \langle \{ \theta_a \}\vert \operator{\rho}_{GGE}[w] \vert  \{ \theta_a \} \rangle = e^{-\sum_{a = 1}^N w(\theta_a)} / Z $ avec $Z = \sum_{\{\theta_a \}} e^{-\sum_{a = 1}^N w(\theta_a)}$.\\
 	%La probabilité d’occuper un état à $N$ particules caractérisé par les rapidités ${\theta_a}$ est alors :
-La probabilité d’occuper l’état $\ket{\{\theta \}}$ est donc
+Dans ce formalisme, la probabilité d’occuper l’état $\ket{\{\theta \}}$ \eqref{chap.TBA.P.1} est donc
 \begin{eqnarray}
-	\mathbb{P}^{(\mathcal{S})}_{\{ \theta_a \}} ~=~ \mathrm{Tr} \left [\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}[w] \vert \{ \theta_a \} \rangle \langle \{ \theta_a \} \vert  \right ] ~= ~ \langle \{ \theta_a \}\vert \operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}[w] \vert  \{ \theta_a \} \rangle = Z^{(\mathcal{S})}[w]^{-1}e^{-\sum_{a = 1}^N w(\theta_a)}. 		
+	\mathbb{P}^{(\mathcal{S})}_{\{ \theta_a \}} & = &  Z^{(\mathcal{S})}[w]^{-1}e^{-\sum_{a = 1}^N w(\theta_a)}\label{chap.TBA.P.w.2}. 		
 \end{eqnarray}
 %Cela montre que le poids statistique d’une configuration factorise naturellement sur les pseudo-moments, avec un poids spectrale / energie génralisé $w(\theta)$ attribué à chaque particule.
 On voit ainsi que le poids statistique factorise naturellement sur les
@@ -306,7 +292,7 @@ pseudo‑moments, chaque particule étant pondérée par $w(\theta_a)$.
 Pour tout opérateur local $\operator{\mathcal{O}}$ diagonal dans la base de Bethe,
 la moyenne généralisée vaut
 \begin{eqnarray}\label{chap.2.moyenne.1}
-	\langle \operator{\mathcal{O}}\rangle_{GGE} & \doteq & \displaystyle  \text{Tr} (\operator{\mathcal{O}}\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}[w]) = \frac{\text{Tr} (\operator{\mathcal{O}}e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]})}{\text{Tr} (e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]})}	 = \frac{\sum_{\{\theta_a \}} \langle  \{ \theta_a\}  \vert   \operator{\mathcal{O}} \vert \{ \theta_a\} \rangle e^{- \sum_{a = 1}^N w(\theta_a) }  }{\sum_{\{\theta_a  \}} e^{- \sum_{a = 1}^N  w(\theta_a) } }
+	\langle \operator{\mathcal{O}}\rangle_{\operator{\rho}^{(\mathcal{S})}[w]} & = & \displaystyle   \frac{\sum_{\{\theta_a \}} \braket{ \operator{\mathcal{O}}}_{\{ \theta_a\}} e^{- \sum_{a = 1}^N w(\theta_a) }  }{\sum_{\{\theta_a  \}} e^{- \sum_{a = 1}^N  w(\theta_a) } }
 \end{eqnarray}
 %Cette expression formelle montre que la connaissance de $w(\theta)$ suffit à déterminer les propriétés statistiques de toutes les observables diagonales dans cette base, incluant les charges conservées elles-mêmes.
 Ainsi, la connaissance de la fonction $w(\theta)$ suffit à déterminer
