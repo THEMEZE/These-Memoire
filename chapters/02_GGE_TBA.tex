@@ -373,218 +373,10 @@ où $\Omega[\rho]$ désigne le nombre de micro-états compatibles avec la distri
 %Avant de se plonger sur $\# \mbox{micro-états.}$, regardons le changement des équation de Bethes. 
 
 \medskip
-Avant d’étudier la fonction $\Omega[\rho]$, examinons d’abord la transformation des équations de Bethe dans cette limite.
-
-
-\paragraph{Équation de Bethe continue.}
-
-À température non nulle (hors de l’état fondamental), il n’y a plus de mer de Fermi définie, et les équations \eqref{chap.1.rho.2} et \eqref{chap.1.rho.3} ne sont plus valides (en particulier $\rho \neq \rho_s$). Les équations discrètes de Bethe \eqref{chap.1.rho.s.2} se condensent alors en une équation intégrale pour les densités de rapidité :
-\
-\begin{equation}
-	2\pi \rho_s \;=\; 1 \;+\;\Delta \star \rho,
-\label{eq:TBA-rhos}
-\end{equation}
-où le symbole $\star$ désigne la \emph{convolution} :
-\(
-	[\Delta \star \rho](\theta) = \int_{-\infty}^{\infty} d\theta' \, \Delta(\theta - \theta') \, \rho(\theta').
-\)
-%Pour le modèle de \textbf{Lieb–Liniger} de couplage $g>0$.  
-%le noyau
-%\(
-%\Delta(\theta)=\dfrac{2g}{\theta^{2}+g^{2}}
-%\)
-%provient de la dérivée de la phase de diffusion
-%$S(\theta)=\dfrac{\theta-ic}{\theta+ic}$.
-
-%------------------------------------------------------------------
-%\subsection{Opération de \emph{dressing}}
-%\label{sec:dressing}
-
-%\subsubsection{Définition}
-
-%\begin{align}
-%f^{\mathrm{dr}}(\theta) &= f(\theta) \;+\;
-%       \int_{-\infty}^{\infty}\!\frac{d\theta'}{2\pi}\;
-%             \Delta(\theta-\theta')\,\nu(\theta')\,f^{\mathrm{dr}}(\theta')
-%\nonumber\\
-%&= f(\theta)\;+\;\Bigl[\tfrac{\Delta}{2\pi}\star\bigl(\nu\,f^{\mathrm{dr}}\bigr)
-%     \Bigr](\theta),
-%\label{eq:dressing}
-%\end{align}
-
-\paragraph{Opération de \emph{dressing}.}
-\subparagraph{Définition.}
-À toute fonction $f(\theta)$ on associe sa version \emph{habillée} (ou \emph{dressed}) $f^{\mathrm{dr}}(\theta)$, définie comme la solution de l’équation intégrale suivante :
-\begin{eqnarray}
-	f^{\mathrm{dr}} & = & f  \;+\;\Bigl[\tfrac{\Delta}{2\pi}\star\bigl(\nu\,f^{\mathrm{dr}}\bigr)\Bigr] \label{eq:dressing}	
-\end{eqnarray}
-où $\nu = \rho/\rho_s$ est le \emph{facteur d’occupation}, et $\Delta/2\pi$ est le noyau de diffusion du modèle.
-
-%où $\Delta/2\pi$ est un noyau de convolution spécifique et 
-%\(
-%\nu=\dfrac{\rho}{\rho_s}
-%\)
-%est le \emph{facteur d’occupation}.
-
-\subparagraph{Interprétation physique}
-
-Le dressing incorpore à tous ordres les effets de rétrodiffusion entre quasi-particules. Il encode ainsi les corrections d’interaction aux grandeurs physiques initiales $f(\theta)$. %Dans le modèle de Lieb–Liniger, cette opération permet de déterminer : l’énergie habillée $\varepsilon^{\mathrm{dr}}(\theta)$ , l’impulsion habillée $p^{\mathrm{dr}}(\theta)$ , les susceptibilités thermodynamiques (cf. section~\ref{chap:GGE}).
-%
-%{\color{blue}
-%\paragraph{Susceptibilités thermodynamiques.}
-%
-%Les susceptibilités thermodynamiques décrivent la réponse linéaire du système à une variation infinitésimale de paramètres thermodynamiques conjugués aux charges conservées. Pour un système intégrable, elles mesurent la sensibilité des valeurs moyennes $\langle Q_i \rangle$ des charges conservées $Q_i$ par rapport aux potentiels thermodynamiques $\mu_j$ associés à ces charges :
-%
-%\begin{equation}
-%    \chi_{ij} = \frac{\partial \langle Q_i \rangle}{\partial \mu_j}.
-%\end{equation}
-%
-%Dans le cadre de la thermodynamique de Bethe, ces susceptibilités s’expriment à l’aide des fonctions habillées. Si $q_i(\theta)$ est la densité de charge $Q_i$ portée par une quasi-particule de rapidité $\theta$, alors la densité totale de charge est donnée par :
-%
-%\begin{equation}
-%    \langle Q_i \rangle = \int d\theta\, \rho(\theta)\, q_i^{\mathrm{dr}}(\theta),
-%\end{equation}
-%
-%où $q_i^{\mathrm{dr}}(\theta)$ est la charge habillée, solution de l’équation de dressing :
-%
-%\begin{equation}
-%    q_i^{\mathrm{dr}}(\theta) = q_i(\theta) + \int \frac{d\theta'}{2\pi}\, \Delta(\theta - \theta')\, \nu(\theta')\, q_i^{\mathrm{dr}}(\theta').
-%\end{equation}
-%
-%Par différentiation par rapport aux $\mu_j$, on obtient :
-%
-%\begin{equation}
-%    \chi_{ij} = \int d\theta\, \rho_s(\theta)\, \nu(\theta)\, q_i^{\mathrm{dr}}(\theta)\, q_j^{\mathrm{dr}}(\theta),
-%\end{equation}
-%
-%où $\rho_s(\theta)$ est la densité de sites disponibles, $\nu(\theta) = \rho(\theta)/\rho_s(\theta)$ est le facteur d’occupation, et $\Delta(\theta)$ est le noyau issu de la phase de diffusion du modèle considéré.
-%
-%Ces susceptibilités interviennent dans la théorie hydrodynamique généralisée (GHD) comme coefficients de la métrique thermodynamique et des corrélations à longue distance. Elles permettent également d’exprimer les fluctuations thermiques et les coefficients de transport linéaire (formules de Kubo généralisées).
-%
-%%\begin{tcolorbox}[colback=gray!5,colframe=gray!40!black,title=Exemple : susceptibilités dans le modèle de Lieb–Liniger]
-%\begin{mdframed}[
-%	linewidth=0.5pt, 
-%	backgroundcolor=gray!5, 
-%	roundcorner=50pt,	
-%	innerleftmargin=5pt,
-%    innerrightmargin=5pt,
-%    innertopmargin=5pt,
-%    innerbottommargin=2pt,
-%    leftmargin=2pt,
-%    rightmargin=2pt
-%	]
-%	
-%
-%Dans le modèle de Lieb–Liniger à couplage $g > 0$, les quasi-particules sont caractérisées par leur rapidité $\theta$ (proportionnelle à l’impulsion).
-%
-%\vspace{1mm}
-%\textbf{Phase de diffusion et noyau} : la phase de diffusion entre deux particules de rapidité $\theta$ et $\theta'$ est :
-%\[
-%\phi(\theta - \theta') = 2 \arctan\left( \frac{\theta - \theta'}{g} \right),
-%\]
-%ce qui donne, par dérivation, le noyau de Bethe :
-%\[
-%\Delta(\theta) = \frac{2g}{\theta^2 + g^2}.
-%\]
-%
-%\vspace{1mm}
-%\textbf{Charge de nombre de particules :} la densité de charge associée au nombre total de particules est $q(\theta) = 1$. Sa version habillée $q^{\mathrm{dr}} = 1^{\mathrm{dr}}$ satisfait :
-%\[
-%1^{\mathrm{dr}}(\theta) = 1 + \int \frac{d\theta'}{2\pi}\, \Delta(\theta - \theta')\, \nu(\theta')\, 1^{\mathrm{dr}}(\theta').
-%\]
-%
-%\vspace{1mm}
-%\textbf{Susceptibilité de compressibilité :}
-%La susceptibilité associée à cette charge, notée $\chi_{NN}$ (compressibilité isotherme), est alors donnée par :
-%\[
-%\chi_{NN} = \int d\theta\, \rho_s(\theta)\, \nu(\theta)\, [1^{\mathrm{dr}}(\theta)]^2.
-%\]
-%
-%\vspace{1mm}
-%Cette quantité mesure la variation du nombre de particules à l'équilibre lorsqu'on change le potentiel chimique, et encode les effets d’interactions à tous les ordres dans la phase d’équilibre.
-%%\end{tcolorbox}
-%
-%\end{mdframed}
-%\begin{mdframed}[
-%	linewidth=0.5pt, 
-%	backgroundcolor=gray!5, 
-%	roundcorner=50pt,	
-%	innerleftmargin=5pt,
-%    innerrightmargin=5pt,
-%    innertopmargin=5pt,
-%    innerbottommargin=2pt,
-%    leftmargin=2pt,
-%    rightmargin=2pt
-%	]
-%
-%%\begin{tcolorbox}[colback=blue!3,colframe=blue!50!black,title=Exemple : susceptibilité énergétique (capacité thermique)]
-%Pour la charge énergie, la densité associée est $q(\theta) = \epsilon(\theta)$, avec :
-%\[
-%\epsilon(\theta) = \theta^2,
-%\]
-%dans le modèle de Lieb–Liniger (masse $m=1/2$). Sa version habillée est $\epsilon^{\mathrm{dr}}(\theta)$, solution de :
-%\[
-%\epsilon^{\mathrm{dr}}(\theta) = \epsilon(\theta) + \int \frac{d\theta'}{2\pi}\, \Delta(\theta - \theta')\, \nu(\theta')\, \epsilon^{\mathrm{dr}}(\theta').
-%\]
-%
-%\vspace{1mm}
-%La \textbf{capacité thermique} (susceptibilité $\chi_{EE}$) s’écrit :
-%\[
-%\chi_{EE} = \int d\theta\, \rho_s(\theta)\, \nu(\theta)\, [\epsilon^{\mathrm{dr}}(\theta)]^2.
-%\]
-%
-%Cela mesure la variation de l’énergie en réponse à un changement de température — incluant les effets d’interaction via le dressing.
-%%\end{tcolorbox}
-%\end{mdframed}
-%\begin{mdframed}[
-%	linewidth=0.5pt, 
-%	backgroundcolor=gray!5, 
-%	roundcorner=50pt,	
-%	innerleftmargin=5pt,
-%    innerrightmargin=5pt,
-%    innertopmargin=5pt,
-%    innerbottommargin=2pt,
-%    leftmargin=2pt,
-%    rightmargin=2pt
-%	]
-%	
-%%\begin{tcolorbox}[colback=green!2,colframe=green!50!black,title=Exemple : susceptibilité d’impulsion]
-%La densité d’impulsion est $q(\theta) = p(\theta)$, avec :
-%\[
-%p(\theta) = \theta,
-%\]
-%(à masse $m=1/2$ dans le Lieb–Liniger). Le dressing $p^{\mathrm{dr}}$ obéit à :
-%\[
-%p^{\mathrm{dr}}(\theta) = p(\theta) + \int \frac{d\theta'}{2\pi}\, \Delta(\theta - \theta')\, \nu(\theta')\, p^{\mathrm{dr}}(\theta').
-%\]
-%
-%\vspace{1mm}
-%La susceptibilité $\chi_{PP}$ (fluctuation de l’impulsion totale) vaut :
-%\[
-%\chi_{PP} = \int d\theta\, \rho_s(\theta)\, \nu(\theta)\, [p^{\mathrm{dr}}(\theta)]^2.
-%\]
-%
-%Cette quantité intervient dans la description hydrodynamique et les corrélations à grande échelle des systèmes intégrables.
-%%\end{tcolorbox}
-%\end{mdframed}
-%
-%----------
-%\subparagraph{Interprétation physique}Le dressing incorpore à tous ordres les effets de rétrodiffusion entre quasi-particules.1 Il encode ainsi les corrections d’interaction aux grandeurs physiques initiales f(θ).4 Dans le modèle de Lieb–Liniger, cette opération permet de déterminer : l’énergie habillée εdr(θ) , l’impulsion habillée pdr(θ) 6 , les susceptibilités thermodynamiques (cf. section~\ref{chap:GGE}).{\color{blue}\paragraph{Susceptibilités thermodynamiques.}Les susceptibilités thermodynamiques décrivent la réponse linéaire du système à une variation infinitésimale de paramètres thermodynamiques conjugués aux charges conservées.8 Pour un système intégrable, elles mesurent la sensibilité des valeurs moyennes ⟨Qi​⟩ des charges conservées Qi​ par rapport aux potentiels thermodynamiques μj​ associés à ces charges 9 :\begin{equation}    \chi_{ij} = \frac{\partial \langle Q_i \rangle}{\partial \mu_j}.\end{equation}Dans le cadre de la thermodynamique de Bethe, ces susceptibilités s’expriment à l’aide des fonctions habillées.4 Si qi​(θ) est la densité de charge Qi​ portée par une quasi-particule de rapidité θ, alors la densité totale de charge est donnée par :\begin{equation}    \langle Q_i \rangle = \int d\theta, \rho(\theta), q_i^{\mathrm{dr}}(\theta),\end{equation}où qidr​(θ) est la charge habillée 4, solution de l’équation de dressing 6 :\begin{equation}    q_i^{\mathrm{dr}}(\theta) = q_i(\theta) + \int \frac{d\theta'}{2\pi}, \Delta(\theta - \theta'), \nu(\theta'), q_i^{\mathrm{dr}}(\theta').\end{equation}Par différentiation par rapport aux μj​, on obtient :\begin{equation}    \chi_{ij} = \int d\theta, \rho_s(\theta), \nu(\theta), q_i^{\mathrm{dr}}(\theta), q_j^{\mathrm{dr}}(\theta),\end{equation}où ρs​(θ) est la densité de sites disponibles 10, ν(θ)=ρ(θ)/ρs​(θ) est le facteur d’occupation 10, et Δ(θ) est le noyau issu de la phase de diffusion du modèle considéré.11Ces susceptibilités interviennent dans la théorie hydrodynamique généralisée (GHD) comme coefficients de la métrique thermodynamique et des corrélations à longue distance.9 Elles permettent également d’exprimer les fluctuations thermiques et les coefficients de transport linéaire (formules de Kubo généralisées).8$\%$\begin{tcolorbox}[colback=gray!5,colframe=gray!40!black,title=Exemple : susceptibilités dans le modèle de Lieb–Liniger]\begin{mdframed}[linewidth=0.5pt, backgroundcolor=gray!5, roundcorner=50pt,	innerleftmargin=5pt,    innerrightmargin=5pt,    innertopmargin=5pt,    innerbottommargin=2pt,    leftmargin=2pt,    rightmargin=2pt]Dans le modèle de Lieb–Liniger à couplage g>0, les quasi-particules sont caractérisées par leur rapidité θ (proportionnelle à l’impulsion).12\vspace{1mm}\textbf{Phase de diffusion et noyau} : la phase de diffusion entre deux particules de rapidité θ et θ′ est :[\phi(\theta - \theta') = 2 \arctan\left( \frac{\theta - \theta'}{g} \right),]ce qui donne, par dérivation, le noyau de Bethe :13\vspace{1mm}\textbf{Charge de nombre de particules :} la densité de charge associée au nombre total de particules est q(θ)=1. Sa version habillée qdr=1dr satisfait :\\vspace{1mm}\textbf{Susceptibilité de compressibilité :}La susceptibilité associée à cette charge, notée χNN​ (compressibilité isotherme), est alors donnée par :[\chi_{NN} = \int d\theta, \rho_s(\theta), \nu(\theta), [1^{\mathrm{dr}}(\theta)]^2.]\vspace{1mm}Cette quantité mesure la variation du nombre de particules à l'équilibre lorsqu'on change le potentiel chimique, et encode les effets d’interactions à tous les ordres dans la phase d’équilibre.\end{tcolorbox}\end{mdframed}\begin{mdframed}[linewidth=0.5pt, backgroundcolor=gray!5, roundcorner=50pt,	innerleftmargin=5pt,    innerrightmargin=5pt,    innertopmargin=5pt,    innerbottommargin=2pt,    leftmargin=2pt,    rightmargin=2pt]\begin{tcolorbox}[colback=blue!3,colframe=blue!50!black,title=Exemple : susceptibilité énergétique (capacité thermique)]Pour la charge énergie, la densité associée est q(θ)=ϵ(θ), avec :[\epsilon(\theta) = \theta^2,]dans le modèle de Lieb–Liniger (masse m=1/2). Sa version habillée est ϵdr(θ), solution de :6\vspace{1mm}La \textbf{capacité thermique} (susceptibilité χEE​) s’écrit :[\chi_{EE} = \int d\theta, \rho_s(\theta), \nu(\theta), [\epsilon^{\mathrm{dr}}(\theta)]^2.]Cela mesure la variation de l’énergie en réponse à un changement de température — incluant les effets d’interaction via le dressing.\end{tcolorbox}\end{mdframed}\begin{mdframed}[linewidth=0.5pt, backgroundcolor=gray!5, roundcorner=50pt,	innerleftmargin=5pt,    innerrightmargin=5pt,    innertopmargin=5pt,    innerbottommargin=2pt,    leftmargin=2pt,    rightmargin=2pt]\begin{tcolorbox}[colback=green!2,colframe=green!50!black,title=Exemple : susceptibilité d’impulsion]La densité d’impulsion est q(θ)=p(θ), avec :[p(\theta) = \theta,](à masse m=1/2 dans le Lieb–Liniger). Le dressing pdr obéit à :6\vspace{1mm}La susceptibilité χPP​ (fluctuation de l’impulsion totale) vaut :[\chi_{PP} = \int d\theta, \rho_s(\theta), \nu(\theta), [p^{\mathrm{dr}}(\theta)]^2.]Cette quantité intervient dans la description hydrodynamique et les corrélations à grande échelle des systèmes intégrables.9\end{tcolorbox}\end{mdframed}}
-%
-%
-%}
-
-\subparagraph{Exemple\,: densité de sites}
-
-En prenant $f(\theta) = 1$ dans l’équation~\eqref{eq:dressing}, on obtient :
-\(
-1^{\mathrm{dr}}=1+\frac{\Delta}{2\pi}\star\bigl(\nu\,1^{\mathrm{dr}}\bigr)
-\) soit directement : 
-\begin{eqnarray}
-	2\pi\rho_s = 1^{\mathrm{dr}},\label{eq:TBA-rhos-2}
-\end{eqnarray}
-ce qui n’est autre que la relation constitutive~\eqref{eq:TBA-rhos}.
-
+Pour établir la fonction $\Omega[\rho]$, repelons-nons de la transformation des équations de Bethe dans dans la limite thermodynamique, hors état fondamentale.
+\begin{eqnarray*}
+	2\pi \rho_s = 1
+\end{eqnarray*}
 \medskip
 Cette formalisation constitue la brique de base de la \textbf{hydrodynamique généralisée} et, dans la section suivante, permet de définir rigoureusement l’\textbf{entropie de Yang–Yang}, indispensable pour décrire la relaxation hors d’équilibre des systèmes intégrables.
 
@@ -1117,16 +909,13 @@ Ainsi, la méthode du point selle relie \emph{explicitement} le {\em poids spect
 
 \paragraph{Résolution numérique de l’équation TBA.}\label{para-algho-TBA}
 
-On se place à l’équilibre canonique, caractérisé par la température \( T \) et le potentiel chimique \( \mu \).  Dans ce cadre, le poids spectral vaut
+Prenons un poids spectrale quelconque, par exemple : 
 \begin{equation}
-  w(\theta)=\beta\bigl[\varepsilon(\theta)-\mu\bigr],\qquad\beta=\tfrac1T\; (k_B = 1 ),\quad\varepsilon(\theta)=\tfrac{\theta^{2}}{2}\;(m=1).\label{eq:TBA:w:canonical}
-\end{equation}
-En injectant \eqref{eq:TBA:w:canonical} dans l’équation intégrale pour lapseudo-énergie \eqref{chap:TBA:eq:e}, on obtient l’équation non linéaire :
-\begin{eqnarray*}
-	\epsilon & = & \beta(\varepsilon - \mu)  -  \frac{\Delta}{2\pi} \star \ln \left( 1 + e^{-\epsilon} \right) ,\label{eq:num:TBA}
-\end{eqnarray*}
+  w(\theta)= \theta^2 .\label{eq:TBA:w:quadra}
+\end{equation} 
+En injectant $w$ dans l’équation intégrale pour lapseudo-énergie \eqref{chap:TBA:eq:e}, on obtient l’équation non linéaire.
 Cette équation définit un opérateur contractant sur l’espace des fonctions
-\( \varepsilon(\theta) \) ; son Jacobien a une norme strictement
+\( \epsilon(\theta) \) ; son Jacobien a une norme strictement
 inférieure à 1, garantissant la convergence de l’itération de Picard.
 
 \medskip
@@ -1134,7 +923,7 @@ inférieure à 1, garantissant la convergence de l’itération de Picard.
 La structure contractante de l’équation garantit l’absence de cycles ou de points fixes multiples, assurant la convergence de l’itération vers l’unique solution admissible.
 L’équation \eqref{eq:num:TBA} est non linéaire ; pour la résoudre numériquement, on utilise une méthode itérative de type Picard. On initialise
 \(
-  \epsilon_0 = \beta (\varepsilon - \mu),
+  \epsilon_0 = w ,
 \)
 puis on construit une suite de fonctions \(\varepsilon_n\) définie par
 \begin{eqnarray*}
@@ -1160,13 +949,25 @@ L’opérateur de dressing \eqref{eq:dressing} étant linéaire, il se résout n
 où $\mathrm{id} \colon f \mapsto f$ est l’identité fonctionnelle, et $\ast$ désigne la multiplication.
 Après discrétisation de la variable $\theta$, cette équation devient un système linéaire de type $Ax=b$ , facilement résoluble numériquement.
 
-La distribution de rapidité est alors obtenue par $\rho_{\!eq} = \nu_{\!eq} \ast \rho_{\! s,eq}$.\\
+La distribution de rapidité est alors obtenue par $\rho_{\!\mathrm{eq}} = \nu_{\!\mathrm{eq}} \ast \rho_{\! s,\mathrm{eq}}$.\\
 
 \medskip
-Ainsi, pour tout couple \((T,\mu)\), l’algorithme fournit la pseudo-énergie \( \epsilon \), le facteur d’occupation \( \nu_{\mathrm{eq}} \) et la distribution de rapidité \( \rho_{\mathrm{eq}} \) à l’équilibre thermique, prêts à être utilisés pour le calcul des observables.
+Ainsi en fixant le poids spectral $w(\theta)$, l’algorithme fournit la pseudo-énergie \( \epsilon \), le facteur d’occupation \( \nu_{\mathrm{eq}} \) et la distribution de rapidité \( \rho_{\!\mathrm{eq}} \).
 
 \medskip
-Pour $w$ quelconque , l'algorythme est identique.
+\subparagraph{À l'équilibre thermique.} 
+Si on se place à l’équilibre canonique, caractérisé par la température \( T \) et le potentiel chimique \( \mu \).  Dans ce cadre, le poids spectral vaut
+\begin{equation}
+  w(\theta)=\beta\bigl[\varepsilon(\theta)-\mu\bigr],\qquad\beta=\tfrac1T\; (k_B = 1 ),\quad\varepsilon(\theta)=\tfrac{\theta^{2}}{2}\;(m=1).\label{eq:TBA:w:canonical}
+\end{equation}
+%En injectant \eqref{eq:TBA:w:canonical} dans l’équation intégrale pour lapseudo-énergie \eqref{chap:TBA:eq:e}, on obtient l’équation non linéaire :
+%\begin{eqnarray*}
+%	\epsilon & = & \beta(\varepsilon - \mu)  -  \frac{\Delta}{2\pi} \star \ln \left( 1 + e^{-\epsilon} \right) ,\label{eq:num:TBA}
+%\end{eqnarray*}
+%Ainsi, pour tout couple \((T,\mu)\), l’algorithme fournit la pseudo-énergie \( \epsilon \), le facteur d’occupation \( \nu_{\mathrm{eq}} \) et la distribution de rapidité \( \rho_{\mathrm{eq}} \) à l’équilibre thermique, prêts à être utilisés pour le calcul des observables.
+%
+%\medskip
+%Pour $w$ quelconque , l'algorythme est identique.
 
 
 
