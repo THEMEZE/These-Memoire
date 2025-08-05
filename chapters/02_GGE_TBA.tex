@@ -714,6 +714,57 @@ Dans la limite thermodynamique \( L \to \infty \), cette intégrale est dominée
 où $\rho_{eq}$ est la distribution de rapidité à l'équilibre \eqref{chap.2:eq.rho.eq.1}.
 Cette approximation correspond à une méthode de \textit{selle statique}, où l’on développe la \emph{fonction thermodynamique effective}, $\mathcal{S}_{YY}-\mathcal{W}$  au voisinage de la distribution dominante.
 
+\paragraph{Dérivée fonctionnelle directionnelle.}
+Introduit la {\bf dérivée fonctionnelle dans la direction d’une fonction test} $f$ appliquée à un fonctionnel $F[g]$, comme :
+\begin{eqnarray}\label{chap2:eq.diff.q.1}
+	\dfonc{f} F[g] & \doteq &  \underset{\epsilon \to 0 }{ \lim  } \frac{ F[g + \epsilon f ]  - F [ g] }{\epsilon} .	
+\end{eqnarray}
+Cette quantité est linéaire en $f(x)$ et admet donc une représentation intégrale de la forme :
+
+\section{Dérivée fonctionnelle comme dérivée directionnelle}
+
+Dans le cadre des systèmes continus, les observables physiques dépendent souvent d'un champ $\phi(x)$, et sont représentées par des \emph{fonctionnelles}, notées $F[\phi]$. Afin d'étudier la sensibilité de ces fonctionnelles à une variation infinitésimale du champ, on introduit la notion de \textbf{dérivée fonctionnelle}, définie par analogie avec la dérivée directionnelle en espace vectoriel de dimension finie.
+
+Considérons une variation infinitésimale du champ de la forme $\phi(x) \mapsto \phi(x) + \epsilon \lambda(x)$, où $\lambda(x)$ est une fonction test lisse de support compact. La variation induite sur la fonctionnelle est donnée par :
+
+\begin{equation}
+D[\lambda] F[\phi] \equiv \lim_{\epsilon \to 0} \frac{F[\phi + \epsilon \lambda] - F[\phi]}{\epsilon}
+\end{equation}
+
+La quantité $D[\lambda] F[\phi]$ est linéaire en $\lambda(x)$, et peut donc s’écrire sous forme d’un produit scalaire dans l’espace fonctionnel :
+
+\begin{equation}
+D[\lambda] F[\phi] = \int dx \, \frac{\delta F[\phi]}{\delta \phi(x)} \lambda(x)
+\end{equation}
+
+La fonction $\frac{\delta F[\phi]}{\delta \phi(x)}$ est appelée \textbf{dérivée fonctionnelle} de $F[\phi]$ au point $x$. Elle joue un rôle analogue au gradient dans les espaces de dimension finie, en ce qu’elle encode la variation de $F[\phi]$ sous une perturbation infinitésimale du champ au point $x$.
+
+\begin{tcolorbox}[title=Interprétation distributionnelle de la dérivée fonctionnelle, colback=gray!5!white, colframe=black!50]
+On peut interpréter la dérivée fonctionnelle $\delta F[\phi]/\delta \phi(x)$ comme le résultat de la dérivation directionnelle de $F[\phi]$ dans la direction de la distribution $\delta(x - x_0)$, qui représente une perturbation localisée du champ au point $x_0$ :
+\[
+\left. \frac{d}{d\epsilon} F[\phi + \epsilon \delta(x - x_0)] \right|_{\epsilon = 0} = \frac{\delta F[\phi]}{\delta \phi(x_0)}
+\]
+\end{tcolorbox}
+
+Dans le cas particulier où $F[\phi]$ est une fonctionnelle locale, c’est-à-dire s’écrit sous la forme :
+\[
+F[\phi] = \int dx \, f(\phi(x))
+\]
+où $f$ est une fonction suffisamment régulière, la dérivée fonctionnelle s’obtient directement par :
+
+\begin{equation}
+\frac{\delta F[\phi]}{\delta \phi(x)} = \frac{\partial f}{\partial \phi}(\phi(x))
+\end{equation}
+
+En effet, dans ce cas, la dérivée directionnelle devient :
+
+\begin{equation}
+D[\lambda] F[\phi] = \int dx \, \lambda(x) \frac{\partial f}{\partial \phi}(\phi(x))
+\end{equation}
+
+Cette construction générale sera utilisée dans la suite pour formuler des conditions d’extremum (par exemple dans des principes variationnels), ou pour dériver les équations de mouvement associées à une action.
+
+
 
 \paragraph{Développement fonctionnel au premier ordre.}
 
@@ -724,7 +775,7 @@ Cette approximation correspond à une méthode de \textit{selle statique}, où l
 \)
 et développons $(\mathcal{S}_{YY}-\mathcal{W})[\rho]$ à l’ordre linéaire :
 \begin{eqnarray*}
-	\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho] & \approx & \mathcal{S}_{YY}[ \rho_{eq}] - \mathcal{W}[ \rho_{eq}] +  \left. \frac{\delta (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho]) }{\delta \rho} \right|_{\rho = \rho_{eq} }	(\delta \rho) + \mathcal{O}(\delta \rho^2 ) ,
+	\left(  \mathcal{S}_{YY} - \mathcal{W }\right )[\rho] & \approx &\left(  \mathcal{S}_{YY} - \mathcal{W}\right )[ \rho_{\mathrm{eq}}] +  \dfonc{\delta \rho}\left (  \mathcal{S}_{YY} - \mathcal{W}\right )[ \rho_{\mathrm{eq}}]  + \mathcal{O}(\delta \rho^2 ) ,
 	\label{chap:TBA:eq:action}	
 \end{eqnarray*}	
 La condition de stationnarité au point selle impose :
@@ -953,7 +1004,7 @@ Prenons un poids spectrale quelconque, par exemple :
 \begin{equation}
   w(\theta)= \theta^2 .\label{eq:TBA:w:quadra}
 \end{equation} 
-En injectant $w$ dans l’équation intégrale pour lapseudo-énergie \eqref{chap:TBA:eq:e}, on obtient l’équation non linéaire.
+En injectant $w$ dans l’équation intégrale pour la pseudo-énergie \eqref{chap:TBA:eq:e}, on obtient l’équation non linéaire.
 Cette équation définit un opérateur contractant sur l’espace des fonctions
 \( \epsilon(\theta) \) ; son Jacobien a une norme strictement
 inférieure à 1, garantissant la convergence de l’itération de Picard.
