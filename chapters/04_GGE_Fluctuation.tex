@@ -307,18 +307,18 @@ On fixe un poids spectral , par exemple quadratique
 \begin{eqnarray}
 	w(\theta) = \tfrac{1}{2} \theta^2,
 \end{eqnarray}
-et on fixe les paramètres physiques du système : \( N = 7 \) particules, \( L = 10 \) la taille du système, et \( c = 1 \) l’intensité des interactions.
+et on fixe les paramètres physiques du système : \( N = 7 \) particules, \( L = 10 \) la taille du système, et \( g = 1 \) l’intensité des interactions.
 
 \subparagraph{Équations de Bethe.}
-Les états propres du gaz sont obtenus par la résolution des équations de Bethe~\eqref{??} que l'on rappelle :
+Les états propres du gaz sont obtenus par la résolution des équations de Bethe~\eqref{chap:1:eq:EBA} que l'on rappelle :
 \begin{eqnarray}
-	L \theta_j + \sum_{k \ne j} 2 \arctan \left( \frac{\theta_j - \theta_k}{c} \right) = 2 \pi I_j,
+	L \theta_j + \sum_{k \ne j} 2 \arctan \left( \frac{\theta_j - \theta_k}{g} \right) = 2 \pi I_j,
 \end{eqnarray}
 où \( \{I_j\} \) sont des entiers (ou demi-entiers) représentant une configuration de type Bethe.\\
 
 \subparagraph{Initialisation : état fondamental.}
 \begin{enumerate}
-    \item On commence par proposer une configuration d'entier de Bethe  \( \{I_j\} \) correspondant à l’état fondamental. Celle-ci est donnée par l'équation ~\eqref{??} que l'on rappelle ,
+    \item On commence par proposer une configuration d'entier de Bethe  \( \{I_j\} \) correspondant à l’état fondamental. Celle-ci est donnée par l'équation ~\eqref{chap:1:eq:EBA.1} que l'on rappelle ,
 		\begin{eqnarray}
 			I_j & = & j - \frac{N+1}{2}, \quad j \in \llbracket 1 , N \rrbracket	
 		\end{eqnarray}
@@ -585,7 +585,7 @@ représentant ainsi la densité continue de quasi-particules dans l’état stat
 Dans le cadre du GGE continu, l’état macroscopique est entièrement déterminé par une densité spectrale $\rho(\theta)$ qui maximise l’entropie de Yang–Yang, $\mathcal{S}_{\mathrm{YY}}[\rho]$, sous la contrainte de conservation des charges généralisées. Le poids spectral $w(\theta)$ est alors fixé.  
 Comme nous l’avons vu au chapitre~(\ref{chap:relaxation}), la condition d’équilibre \eqref{chap:TBA:eq:stationnarite-3} peut s’écrire sous la forme variationnelle :
 \begin{eqnarray}
-	\left. \frac{\delta \mathcal{S}_{\mathrm{YY}}[\rho]}{\delta \rho(\theta)} \right|_{\rho = \rho_{\mathrm{eq}}} = w(\theta). \label{chap:TBA:eq:stationnarite-3}
+	\left. \frac{\delta \mathcal{S}_{\mathrm{YY}}[\rho]}{\delta \rho(\theta)} \right)_{\rho = \rho_{\mathrm{eq}}} = w(\theta). \label{chap:TBA:eq:stationnarite-3}
 \end{eqnarray}
 
 \end{mdframed}
@@ -615,11 +615,11 @@ Dans un état de GGE consiste à exploiter le développement quadratique de l’
 
 On peut alors développer l’action $\mathcal{S}_{YY} - \mathcal{W}$ à second ordre autour de ce point d'équilibre :
 \begin{eqnarray}
-	(\mathcal{S}_{YY} - \mathcal{W})[\rho] \approx (\mathcal{S}_{YY} - \mathcal{W})[\rho_{\mathrm{eq}}]  + \underbrace{\int d\theta \left . \frac{ \delta (\mathcal{S}_{YY} - \mathcal{W})[\rho]}{\delta \rho (\theta) }  \right\vert_{\rho = \rho_{eq} } \delta \rho(\theta)}_{\text{= 0 par stationnarité}} - \frac{1}{2} \int d\theta d \theta' \delta \rho(\theta) \mathcal{H}(\theta, \theta' )\delta \rho(\theta') + \mathcal{O}(\delta \rho^3) 
+	(\mathcal{S}_{YY} - \mathcal{W})[\rho] \approx (\mathcal{S}_{YY} - \mathcal{W})[\rho_{\mathrm{eq}}]  + \underbrace{\int d\theta \left . \frac{ \delta (\mathcal{S}_{YY} - \mathcal{W})[\rho]}{\delta \rho (\theta) }  \right)_{\rho = \rho_{eq} } \delta \rho(\theta)}_{\text{= 0 par stationnarité}} - \frac{1}{2} \int d\theta d \theta' \delta \rho(\theta) \mathcal{H}(\theta, \theta' )\delta \rho(\theta') + \mathcal{O}(\delta \rho^3) 
 \end{eqnarray}
 où
 \(
-\displaystyle \mathcal{H}(\theta, \theta' ) = -\left.\frac{\delta^{2}(\mathcal{S}_{YY}-\mathcal{W})[\rho]}{\delta\rho(\theta)\,\delta\rho(\theta')}\right|_{\rho = \rho_{\mathrm{eq}}}
+\displaystyle \mathcal{H}(\theta, \theta' ) = -\left.\frac{\delta^{2}(\mathcal{S}_{YY}-\mathcal{W})[\rho]}{\delta\rho(\theta)\,\delta\rho(\theta')}\right)_{\rho = \rho_{\mathrm{eq}}}
 \)
 est le \textit{hessien} de l’action effective.
 
@@ -654,15 +654,13 @@ Ce développement quadratique justifie le caractère gaussien des fluctuations d
 \paragraph{Structure de \(\mathcal{H}\).}
 
 L’opérateur hessien de l’action effective se décompose naturellement comme la différence entre deux contributions fonctionnelles :
-\[
-\mathcal{H} = \mathcal{H}^{(\mathcal{W})} - \mathcal{H}^{(\mathcal{S}_{YY})},
-\]
+\begin{eqnarray}
+	\mathcal{H} = \mathcal{H}^{(\mathcal{W})} - \mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})},
+\end{eqnarray}
 où
-\[
-\mathcal{H}^{(\mathcal{W})}(\theta,\theta') := \left. \frac{\delta^2 \mathcal{W}}{\delta \rho(\theta)\, \delta \rho(\theta')} \right|_{\rho = \rho_{\mathrm{eq}}}, 
-\quad \text{et} \quad 
-\mathcal{H}^{(\mathcal{S}_{YY})}(\theta,\theta') := \left. \frac{\delta^2 \mathcal{S}_{YY}}{\delta \rho(\theta)\, \delta \rho(\theta')} \right|_{\rho = \rho_{\mathrm{eq}}}.
-\]
+\begin{eqnarray}
+	\mathcal{H}^{(\mathcal{W})}(\theta,\theta') \doteq \left. \frac{\delta^2 \mathcal{W}[\rho]}{\delta \rho(\theta)\, \delta \rho(\theta')} \right)_{\rho = \rho_{\mathrm{eq}}}, \quad \text{et} \quad \mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})}(\theta,\theta') \doteq \left. \frac{\delta^2 \mathcal{S}_{\mathrm{YY}}[\rho]}{\delta \rho(\theta)\, \delta \rho(\theta')} \right)_{\rho = \rho_{\mathrm{eq}}}.
+\end{eqnarray}
 
 L’opérateur inverse \(\mathcal{H}^{-1}\) est défini par la relation fonctionnelle :
 \begin{eqnarray}
@@ -674,57 +672,61 @@ où \(\delta(\theta - \theta')\) désigne la distribution de Dirac, et non une v
 \medskip
 
 On remarque tout d’abord que \(\mathcal{H}^{(\mathcal{W})} = 0\), car l’énergie généralisée par unité de longueur s’écrit simplement comme un couplage linéaire en \(\rho\) :
-\[
-\mathcal{W}[\rho] = \int d\theta \, w(\theta)\, \rho(\theta),
-\]
+\begin{eqnarray*}
+	\mathcal{W}[\rho] = \int d\theta \, w(\theta)\, \rho(\theta),
+\end{eqnarray*}
 avec un poids spectral \(w(\theta)\) fixé \eqref{chap.2.W.int}. La seconde dérivée fonctionnelle de \(\mathcal{W}\) s’annule donc identiquement.
 
 En revanche, la courbure fonctionnelle provient entièrement de l'entropie de Yang–Yang, dont l’expression \eqref{chap.2.entropi.int} est donnée par :
-\[
-\mathcal{S}_{YY}[\rho] = \int d\theta \left[
-\rho_s(\theta) \ln \rho_s(\theta) - \rho(\theta) \ln \rho(\theta) - (\rho_s(\theta) - \rho(\theta)) \ln(\rho_s(\theta) - \rho(\theta))
-\right],
-\]
-où \(\rho_s(\theta)\) désigne la densité d’états accessibles (ou densité totale) liée à \(\rho\) par les équations de Bethe.
+\begin{eqnarray}
+	\mathcal{S}_{\mathrm{YY}}[\rho] = \int d\theta \left[
+	\rho_s(\theta) \ln \rho_s(\theta) - \rho(\theta) \ln \rho(\theta) - (\rho_s(\theta) - \rho(\theta)) \ln(\rho_s(\theta) - \rho(\theta))
+	\right],
+\end{eqnarray}
+où \(\rho_s(\theta)\) désigne la {\em densité d’états} liée à \(\rho\) par les équations de Bethe \eqref{eq:TBA-rhos} :
+\begin{eqnarray}
+	2\pi \rho_s = 1 + \Delta \star \rho.	
+\end{eqnarray}
 
-Ainsi, l’opérateur de fluctuation \(\mathcal{H}\) coïncide avec la hessienne négative de l'entropie \(\mathcal{S}_{YY}\), et détermine complètement la covariance spectrale à l’équilibre.
+
+Ainsi, l’opérateur de fluctuation \(\mathcal{H}\) coïncide avec la hessienne négative de l'entropie \(\mathcal{S}_{\mathrm{YY}}\), et détermine complètement la covariance spectrale à l’équilibre.
 
 
-\paragraph{Interprétation.}
-La matrice $\chi(\theta, \theta')$ possède plusieurs interprétations équivalentes :
-\begin{itemize}[label = $\bullet$]
-  \item Elle mesure la réponse linéaire de la densité spectrale à une variation du potentiel conjugué :
-  \[
-  \chi_w(\theta, \theta') = - \frac{1}{L}\frac{\delta \rho_{\mathrm{eq}}(\theta)}{\delta w(\theta')}.
-  \]
-  \item Dans un état diagonal (comme le GGE), elle coïncide avec la matrice de corrélation, selon le principe fluctuation-réponse :
-  \[
-  \chi_w(\theta, \theta') = \langle \delta \operator{\rho}(\theta)\, \delta \operator{\rho}(\theta') \rangle_w%- \frac{1}{L}\frac{\delta \langle  \operator{\rho}(\theta) \rangle_w}{\delta w(\theta')}.
-  \]
-  \item Dans la limite thermodynamique, où $\operator{\rho}(\theta) \to \rho(\theta)$, on peut omettre les chapeaux :
-  \[
-  \chi_w(\theta, \theta') = \langle \delta \rho(\theta)\, \delta \rho(\theta') \rangle_w.
-  \]
-\end{itemize}
-
-\paragraph{Résumé.}
-L'équation variationnelle d'équilibre :
-\(
-\left.\frac{\delta \mathcal{S}_{YY}[\rho_{eq}]}{\delta \rho(\theta)} \right)_{\rho = \rho_{\mathrm{eq}}} = w(\theta)
-\)
-implique, par différentiation fonctionnelle et inversion de l’opérateur $\mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})}$, que :
-\[
-\chi_w(\theta, \theta') =   - \frac{1}{L}\frac{\delta \rho_{\mathrm{eq}}(\theta)}{\delta w(\theta')} = \langle \delta \rho(\theta)\, \delta \rho(\theta') \rangle_w  = - \left( L \mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})} \right)^{-1} (\theta, \theta') .
-\]
-
-\noindent
-En résumé, dans la limite thermodynamique, la matrice de susceptibilité spectrale $\chi(\theta, \theta')$ encode à la fois :
-
-\begin{itemize}[label = $\bullet$] 
-  \item la réponse linéaire de la densité d'équilibre à une variation du poids spectral $w(\theta)$ ;
-  \item la covariance (ou corrélation) entre densités spectrales ;
-  \item la courbure du potentiel thermodynamique générateur du GGE.
-\end{itemize}
+%\paragraph{Interprétation.}
+%La matrice $\chi(\theta, \theta')$ possède plusieurs interprétations équivalentes :
+%\begin{itemize}[label = $\bullet$]
+%  \item Elle mesure la réponse linéaire de la densité spectrale à une variation du potentiel conjugué :
+%  \[
+%  \chi_w(\theta, \theta') = - \frac{1}{L}\frac{\delta \rho_{\mathrm{eq}}(\theta)}{\delta w(\theta')}.
+%  \]
+%  \item Dans un état diagonal (comme le GGE), elle coïncide avec la matrice de corrélation, selon le principe fluctuation-réponse :
+%  \[
+%  \chi_w(\theta, \theta') = \langle \delta \operator{\rho}(\theta)\, \delta \operator{\rho}(\theta') \rangle_w%- \frac{1}{L}\frac{\delta \langle  \operator{\rho}(\theta) \rangle_w}{\delta w(\theta')}.
+%  \]
+%  \item Dans la limite thermodynamique, où $\operator{\rho}(\theta) \to \rho(\theta)$, on peut omettre les chapeaux :
+%  \[
+%  \chi_w(\theta, \theta') = \langle \delta \rho(\theta)\, \delta \rho(\theta') \rangle_w.
+%  \]
+%\end{itemize}
+%
+%\paragraph{Résumé.}
+%L'équation variationnelle d'équilibre :
+%\(
+%\left.\frac{\delta \mathcal{S}_{YY}[\rho_{eq}]}{\delta \rho(\theta)} \right)_{\rho = \rho_{\mathrm{eq}}} = w(\theta)
+%\)
+%implique, par différentiation fonctionnelle et inversion de l’opérateur $\mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})}$, que :
+%\[
+%\chi_w(\theta, \theta') =   - \frac{1}{L}\frac{\delta \rho_{\mathrm{eq}}(\theta)}{\delta w(\theta')} = \langle \delta \rho(\theta)\, \delta \rho(\theta') \rangle_w  = - \left( L \mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})} \right)^{-1} (\theta, \theta') .
+%\]
+%
+%\noindent
+%En résumé, dans la limite thermodynamique, la matrice de susceptibilité spectrale $\chi(\theta, \theta')$ encode à la fois :
+%
+%\begin{itemize}[label = $\bullet$] 
+%  \item la réponse linéaire de la densité d'équilibre à une variation du poids spectral $w(\theta)$ ;
+%  \item la covariance (ou corrélation) entre densités spectrales ;
+%  \item la courbure du potentiel thermodynamique générateur du GGE.
+%\end{itemize}
 
 %\subsection*{Lien avec les susceptibilités}
 %
