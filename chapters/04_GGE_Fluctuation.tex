@@ -681,7 +681,7 @@ En revanche, la courbure fonctionnelle provient entièrement de l'entropie de Ya
 \begin{eqnarray}
 	\mathcal{S}_{\mathrm{YY}}[\rho] = \int d\theta \left[
 	\rho_s(\theta) \ln \rho_s(\theta) - \rho(\theta) \ln \rho(\theta) - (\rho_s(\theta) - \rho(\theta)) \ln(\rho_s(\theta) - \rho(\theta))
-	\right],
+	\right] \label{chap.4.entropi.int},
 \end{eqnarray}
 où \(\rho_s(\theta)\) désigne la {\em densité d’états} liée à \(\rho\) par les équations de Bethe \eqref{eq:TBA-rhos} :
 \begin{eqnarray}
@@ -898,25 +898,24 @@ Ainsi, l’opérateur de fluctuation \(\mathcal{H}\) coïncide avec la hessienne
 %\end{equation}
 
 
-
-La Hessienne $ \mathcal{H}^{(\mathcal{S}_{YY})}$ se décompose alors
+En calculant la dérivée fonctionnelle seconde de l'entropie de Yang–Yang, définie en \eqref{chap.4.entropi.int}, dans la direction d'une variation $\delta \rho$, on obtient l'opérateur hessien $\mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})}$.  
+L'opérateur hermien $\mathcal{H}$ est donné par $\mathcal{H} = -\mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})}$, et se décompose comme suit :
 \begin{eqnarray}
-	\mathcal{H}^{(\mathcal{S}_{YY})}(\theta, \theta') & = & \mathcal{D}(\theta, \theta') + \mathcal{V}(\theta, \theta')
+	\mathcal{H}(\theta, \theta') & = & \mathcal{D}(\theta, \theta') + \mathcal{V}(\theta, \theta')
 	\label{chap:fluctu:eq:hessienne3} 	
 \end{eqnarray}
-avec une partie diagonale irrégulière reflètant une structure de type Fermi–Dirac, même dans un système bosonique,conséquence de l’exclusion statistique induite par l’intégrabilité,
+La contribution diagonale locale, notée $\mathcal{D}(\theta, \theta')$, présente une singularité caractéristique d’une structure de type Fermi–Dirac. Elle reflète l’exclusion statistique effective induite par l’intégrabilité, y compris dans un système bosonique. Elle s’écrit :
 \begin{eqnarray}
-	\mathcal{D}(\theta, \theta') & = & \left ( \frac{1}{\rho_{\! s , eq}(\theta) \nu_{\! eq}(\theta) (1 - \nu_{\! eq}(\theta)) }\right )  \delta(\theta, \theta') 	
+	\mathcal{D}(\theta, \theta') & = & \left ( \frac{1}{\rho_{\! s , eq}(\theta) \nu_{\! eq}(\theta) (1 - \nu_{\! eq}(\theta)) }\right )  \delta(\theta, \theta'). 	
 \end{eqnarray}
-avec une partie symétrique régulière
+La partie régulière symétrique, notée $\mathcal{V}(\theta, \theta')$, regroupe quant à elle les contributions non locales issues des interactions entre quasi-particules.
 \begin{eqnarray}
 	\mathcal{V}(\theta, \theta')	 & = & - \left ( \frac{1}{\rho_{\! s , eq}(\theta) (1 - \nu_{\! eq}(\theta) ) } + \frac{1}{\rho_{\! s, eq}(\theta')   (1 - \nu_{\! eq}(\theta')) }\right )\frac{\Delta(\theta - \theta')}{2\pi}\\
 	&&  + \int d \theta''  \frac{\nu_{\! eq}(\theta'')}{\rho_{\, s, eq}(\theta'')(1 - \nu_{\! eq}(\theta'')) } \frac{\Delta(\theta - \theta'' )}{2\pi} \frac{\Delta(\theta''  - \theta')}{2\pi}
 	\label{chap:fluctu:eq:reg}
 \end{eqnarray}
  
- en notant $\rho_{\! eq}(\theta) = \nu_{\! eq}(\theta)\rho_{\! s, eq}(\theta)$.\\
-
+ en notant $\rho_{\! eq}(\theta) = \nu_{\! eq}(\theta)\rho_{\! s, eq}(\theta)$.
 
 
 %\subsection*{Forme explicite du hessien : fluctuations gaussiennes}
@@ -1035,7 +1034,7 @@ avec une partie symétrique régulière
  
  \subsection{Fluctuations autour de la distribution moyenne et inversion de la Hessienne}
  
- On cherche alors \( \mathcal{H}^{-1} \) aussi sous la forme 
+ On cherche alors \(\mathcal{H}^{-1} \) aussi sous la forme 
 \begin{eqnarray}
 	\mathcal{H}^{-1}(\theta, \theta') & = & \mathcal{D}^{-1}(\theta, \theta') + \mathcal{B}(\theta, \theta') 
 	\label{chap:fluctu:eq:hessienner.inv.1}	
@@ -1050,15 +1049,18 @@ tel que
     (\mathcal{D}^{-1} \cdot  \mathcal{D})(\theta, \theta')  = (\mathcal{D}\cdot  \mathcal{D}^{-1})(\theta, \theta') =  \int d\theta'' \; \mathcal{D}(\theta, \theta'') \, \mathcal{D}^{-1}(\theta'', \theta') = \delta(\theta - \theta'),
     \label{chap:fluctu:eq:irreg.prod.inv}
 \end{eqnarray}
-avec une partie symetrique régulière $\mathcal{B}$.\\
-Les equations (\ref{chap:fluctu:eq:hessienne3}) , (\ref{chap:fluctu:eq:hessienner.inv.1}) , (\ref{chap:fluctu:eq:hessienner.prod.inv}) et (\ref{chap:fluctu:eq:irreg.prod.inv}) , il vient que cette série d'implication
+avec une partie symetrique régulière $\mathcal{B}$.
+
+\medskip
+
+Les equations (\ref{chap:fluctu:eq:hessienne3}) , (\ref{chap:fluctu:eq:hessienner.inv.1}) , (\ref{chap:fluctu:eq:hessienner.prod.inv}) et (\ref{chap:fluctu:eq:irreg.prod.inv}) , il vient que cette série d'équivalences
 \begin{eqnarray*}
-	\left \{\begin{array}{rcl} \mathcal{H}\cdot\mathcal{H}^{-1} & =& \delta \\  \mathcal{H}^{-1}\cdot\mathcal{H} & =& \delta  \end{array} \right.  \mbox{implique}	 \left \{\begin{array}{rcl} \mathcal{H}\cdot\mathcal{B} & =& - \mathcal{V}\cdot\mathcal{D}^{-1} \\  \mathcal{B}\cdot\mathcal{H} & =& - \mathcal{D}^{-1}\cdot\mathcal{V}  \end{array} \right. \mbox{implique} \left \{\begin{array}{rcl} \mathcal{B} & =& - \mathcal{H}^{-1}\cdot\mathcal{V}\cdot \mathcal{D}^{-1}  \\  \mathcal{B} & =& - \mathcal{D}^{-1}\cdot\mathcal{V}\cdot \mathcal{H}^{-1}  \end{array} \right.	
+	\left \{\begin{array}{rcl} \mathcal{H}\cdot\mathcal{H}^{-1} & =& \delta \\  \mathcal{H}^{-1}\cdot \mathcal{H}& =& \delta  \end{array} \right.  \mbox{\ie}	 \left \{\begin{array}{rcl} \mathcal{H}\cdot\mathcal{B} & =& - \mathcal{V}\cdot\mathcal{D}^{-1} \\  \mathcal{B}\cdot\mathcal{H} & =& - \mathcal{D}^{-1}\cdot\mathcal{V}  \end{array} \right. \mbox{\ie} \left \{\begin{array}{rcl} \mathcal{B} & =& - \mathcal{H}^{-1}\cdot\mathcal{V}\cdot \mathcal{D}^{-1}  \\  \mathcal{B} & =& - \mathcal{D}^{-1}\cdot\mathcal{V}\cdot \mathcal{H}^{-1}  \end{array} \right.	
 \end{eqnarray*}
-Du fait que tous ces fonctions ($\mathcal{H}$ , $\mathcal{D}$ , $\mathcal{V}$ et inverse ) soit symétriques alors l'equation ci-dessus ne forme qu'une et $\mathcal{B}$ étant donc symétrique .
+Du fait que tous ces fonctions ($\mathcal{H}$ , $\mathcal{D}$ , $\mathcal{V}$ et inverse ) soit symétriques alors l'equation ci-dessus sont tous équivalentes et $\mathcal{B}$ étant donc symétrique .
 Donc en utilisant (\ref{chap:fluctu:eq:reg}) et (\ref{chap:fluctu:eq:irreg.inv}) 
 \begin{eqnarray*}
-	\mathcal{B}(\theta , \theta ' )  & = & - (\mathcal{D}^{-1}\cdot\mathcal{V}\cdot \mathcal{H}^{-1})(\theta , \theta') 	,\\
+	\mathcal{B}(\theta , \theta ' )  & = & - (\mathcal{D}^{-1}\cdot\mathcal{V}\cdot (\mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})})^{-1})(\theta , \theta') 	,\\
 	& = & 	(\rho_{\! s , eq}(\theta) \nu_{\! eq}(\theta) (1 -  \nu_{\! eq}(\theta) )) \times \\
 	&& ~~~~~~~~~~~~~\left \{  \frac{\Delta}{2\pi} \star  \left [ \left (  \frac{1}{\rho_{\! s, eq}(\theta)  (1 - \nu_{\! eq}(\theta)  )} +  \frac{1}{\rho_{\! s, eq}(\cdot) (1 - \nu_{\! eq} (\cdot )  )}\right )  \, \mathcal{H}^{-1}( \cdot , \theta ' )   \right. \right .\\
 	&&  ~~~~~~~~~~~~~~~~~~~~~~~~~\left . \left .   -  \frac{\nu_{\! eq}(\cdot)}{\rho_{\! s, eq}(\cdot) ( 1 - \nu_{\! eq}(\cdot) )}  \, \left ( \frac{\Delta}{2\pi} \star \mathcal{H}^{-1}( \cdot , \theta ' )   \right )  \right ] \right \} (\theta),
@@ -1066,8 +1068,8 @@ Donc en utilisant (\ref{chap:fluctu:eq:reg}) et (\ref{chap:fluctu:eq:irreg.inv})
 où \( (f \star g)(x) \) désigne la convolution \( \int f(x - t)\, g(t)\, dt \).
 En injectant cette dernier équation et \eqref{chap:fluctu:eq:hessienner.inv.1} , dans \eqref{chap:fluctu:eq:fluctuations} , il vient que une éqution implicite:
 \begin{eqnarray*}
-	\langle \delta \rho(\theta) \delta	\rho(\theta') \rangle & = & \frac{1}{L} \mathcal{D}^{-1}(\theta , \theta') + \\
-	&& 	(\rho_{\! s , eq}(\theta) \nu_{\! eq}(\theta) (1 -  \nu_{\! eq}(\theta) )) \times \\
+	\langle \delta \rho(\theta) \delta	\rho(\theta') \rangle_w & = & \frac{1}{L} \mathcal{D}^{-1}(\theta , \theta') + \\
+	&& 	\frac{1}{L} (\rho_{\! s , eq}(\theta) \nu_{\! eq}(\theta) (1 -  \nu_{\! eq}(\theta) )) \times \\
 	&& ~~~~~~~~~~~~~\left \{  \frac{\Delta}{2\pi} \star  \left [ \left (  \frac{1}{\rho_{\! s, eq}(\theta)  (1 - \nu_{\! eq}(\theta)  )} +  \frac{1}{\rho_{\! s, eq}(\cdot) (1 - \nu_{\! eq} (\cdot )  )}\right )  \, \mathcal{H}^{-1}( \cdot , \theta ' )   \right. \right .\\
 	&&  ~~~~~~~~~~~~~~~~~~~~~~~~~\left . \left .   -  \frac{\nu_{\! eq}(\cdot)}{\rho_{\! s, eq}(\cdot) ( 1 - \nu_{\! eq}(\cdot) )}  \, \left ( \frac{\Delta}{2\pi} \star \mathcal{H}^{-1}( \cdot , \theta ' )   \right )  \right ] \right \} (\theta),
 \end{eqnarray*}
@@ -1089,16 +1091,16 @@ Dans cette section, nous proposons une vérification explicite de l'égalité fo
 À partir de \( \nu_{\mathrm{eq}} \), on calcule la courbure fonctionnelle de l'entropie de Yang-Yang.
 
 On inverse ensuite numériquement cet opérateur discretisé pour obtenir la matrice
-\[
- - \left( L \mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})} \right)^{-1} (\theta, \theta').
-\]
+\begin{eqnarray*}
+	\left( L \mathcal{H} \right)^{-1} (\theta, \theta').
+\end{eqnarray*}
 
 \paragraph{Calcul par différentiation numérique.}
 En parallèle, on calcule indépendamment la réponse linéaire
-\[
- - \frac{1}{L} \frac{\delta \rho_{\mathrm{eq}}(\theta)}{\delta w(\theta')},
-\]
-par différentiation numérique de la solution des équations TBA. Concrètement, on introduit une perturbation locale \( \delta w(\theta') \) sur le potentiel spectral et on mesure la variation de \( \rho_{\mathrm{eq}}(\theta) \) en résolvant à nouveau l’équation de Bethe pour chaque perturbation, en conservant \( c \), \( N \), et \( L \) constants.
+\begin{eqnarray*}
+ - \frac{1}{L} \frac{\delta \rho_{\mathrm{eq}}(\theta)}{\delta w(\theta')},	
+\end{eqnarray*}
+par différentiation numérique de la solution des équations TBA. Concrètement, on introduit une perturbation locale \( \delta w(\theta') \) sur le potentiel spectral et on mesure la variation de \( \rho_{\mathrm{eq}}(\theta) \) en résolvant à nouveau l’équation de Bethe pour chaque perturbation, en conservant \( g \), \( N \), et \( L \) constants.
 
 \paragraph{Comparaison.}
 Les deux approches produisent des matrices \(\chi_w(\theta, \theta')\) que l’on compare numériquement. La coïncidence entre ces deux résultats valide la structure variationnelle de l'entropie de Yang-Yang et confirme que la réponse linéaire (calculée comme dérivée fonctionnelle) coïncide avec l’inverse de la courbure thermodynamique.
@@ -1119,58 +1121,7 @@ Les deux approches produisent des matrices \(\chi_w(\theta, \theta')\) que l’o
 
 
 
-\section{Lien entre dérivée fonctionnelle et réponse linéaire aux facteurs de Lagrange}
-
-\subsection{Réponse linéaire des charges : dérivées fonctionnelles et projections} 
-
-\paragraph{Hypothèses.}
-On considère un poids/potentiel spectral défini par une combinaison linéaire :
-\[
-w(\theta) = \sum_j \beta_j f_j(\theta),
-\]
-où les \( \beta_j \) sont les multiplicateurs de Lagrange associés aux charges généralisées :
-\[
-\operator{Q}_i = \operator{\mathcal{Q}}[f_i] = L \int d\theta\, f_i(\theta)\, \operator{\rho}(\theta),
-\]
-et \( \operator{\rho}(\theta) \) est l’opérateur de densité spectrale.
-
-\paragraph{Dérivée par rapport à \( \beta_j \).}
-On utilise la règle de chaîne fonctionnelle :
-\[
-\left. \frac{\partial \langle \operator{Q}_i \rangle_w }{ \partial \beta_j } \right)_{\beta_{k \ne j}} = \int d\theta'\, \left. \frac{\delta \langle \operator{Q}_i \rangle_w }{ \delta w(\theta') } \right)_{w} \cdot \frac{\partial w(\theta')}{\partial \beta_j}.
-\]
-Comme \( \partial w(\theta') / \partial \beta_j = f_j(\theta') \), on obtient :
-\[
-\left. \frac{\partial \langle \operator{Q}_i \rangle_w }{ \partial \beta_j } \right)_{\beta_{k \ne j}} = \int d\theta'\, \left. \frac{\delta \langle \operator{Q}_i \rangle_w }{ \delta w(\theta') } \right)_{w} f_j(\theta').
-\]
-
-\paragraph{Expression de la dérivée fonctionnelle.}
-On écrit :
-\[
-\left. \frac{\delta \langle \operator{Q}_i \rangle_w }{ \delta w(\theta') } \right)_{w} = L \int d\theta\, f_i(\theta)\, \left. \frac{\delta \langle \operator{\rho}(\theta) \rangle_w }{ \delta w(\theta') } \right)_{w} = - L^2 \int d\theta\, f_i(\theta)\, \chi_w(\theta, \theta'),
-\]
-où \( \chi(\theta, \theta') \doteq  - \frac{1}{L} \left. \frac{\delta \langle \operator{\rho}(\theta) \rangle_w }{ \delta w(\theta') } \right)_{w} \) est la {\em matrice de susceptibilité spectrale locale}.
-
-\paragraph{Formule finale.}
-En injectant dans l'expression précédente, on obtient :
-\[
-\left. \frac{\partial \langle \operator{Q}_i \rangle }{ \partial \beta_j } \right|_{\beta_{k \ne j}} = L \int d\theta\, f_i(\theta) \int d\theta'\, \chi(\theta, \theta') f_j(\theta') = L^2 \iint d\theta\, d\theta'\, f_i(\theta)\, \chi(\theta, \theta')\, f_j(\theta').
-\]
-
-\paragraph{Résultat.}
-On définit alors la {\em matrice de susceptibilité croisée} \( \chi_{ij} \) par :
-\[
-%\boxed{
-\chi_w[\operator{Q}_i , \operator{Q}_j] \doteq - \left. \frac{\partial \langle \operator{Q}_i \rangle_w }{ \partial \beta_j } \right)_{\beta_{k \ne j}} = - \left. \frac{\delta \langle \operator{\mathcal{Q}}[f_i] \rangle_w }{ \delta f_j } \right)_{w} \doteq  \chi_w[f_i , f_j ] = C_w[f_i , f_j] 
-%}
-\]
-
-Ce résultat relie :
-\begin{itemize}[label =$\bullet$] 
-  \item la réponse linéaire de \( \langle \operator{Q}_i \rangle_w \) à une perturbation \( \beta_j \),
-  \item la dérivée fonctionnelle de l’observable \( \operator{\mathcal{Q}}[f_i] \) par rapport à sa fonction test,
-  \item la projection de la matrice de susceptibilité spectrale locale \( \chi_w(\theta, \theta') \) sur \( f_i, f_j \).
-\end{itemize}
+%\section{Lien entre dérivée fonctionnelle et réponse linéaire aux facteurs de Lagrange}
 
 \subsection{Vériﬁcation numérique thermique :  énergie et nombre de particules}
 
