@@ -109,7 +109,7 @@ pour désigner
 Considérons un système unidimensionnel de taille finie $L$. 
 Dans le chapitre~(\ref{chap:relaxation}), aux équations~\eqref{chap.2.charge.f.1} et \eqref{chap.2.rho.1}, nous avons introduit l’opérateur de charge généralisée $\operator{\mathcal{Q}}[f]$, défini à partir d'une fonction test $f \colon \mathbb{R} \to \mathbb{R}$ et de l'opérateur densité de rapidité  $\operator{\rho}(\theta)$ , selon la relation intégrale :
 \begin{eqnarray}\label{chap4:eq.charge.q.1}
-	\operator{\mathcal{Q}}[f] = L\int_0^L d\theta f(\theta) \operator{\rho}(\theta),\quad \text{où $\operator{\rho}(\theta)$ agit comme } \quad \operator{\rho}(\theta) \ket{ \{ \theta_a \} } = \frac{1}{L} \sum \delta ( \theta - \theta_a ) \ket{ \{ \theta_a \} }
+	\operator{\mathcal{Q}}[f] = L\int d\theta f(\theta) \operator{\rho}(\theta),\quad \text{où $\operator{\rho}(\theta)$ agit comme } \quad \operator{\rho}(\theta) \ket{ \{ \theta_a \} } = \frac{1}{L} \sum \delta ( \theta - \theta_a ) \ket{ \{ \theta_a \} }
 \end{eqnarray}
 
 \paragraph{États d'équilibre généralisés et poids spectral.}
@@ -132,7 +132,7 @@ associée à $w$, où \( w(\theta) \) est {\bf poids spectral} (ou {\bf potentie
     rightmargin=2pt
 	]
 \paragraph{Dérivée fonctionnelle directionnelle.}
-Comme introduit dans l'équation \eqref{chap4:eq.diff.q.1},  la {\bf dérivée fonctionnelle dans la direction d’une fonction test} $f$ appliquée à un fonctionnel $F[g]$, comme :
+Comme introduit dans l'équation \eqref{chap2:eq.diff.q.1},  la {\bf dérivée fonctionnelle dans la direction d’une fonction test} $f$ appliquée à un fonctionnel $F[g]$, comme :
 \begin{eqnarray}\label{chap4:eq.diff.q.1}
 	\dfonc{f} F[g] & \doteq &  \underset{\epsilon \to 0 }{ \lim  } \frac{ F[g + \epsilon f ]  - F [ g] }{\epsilon} .	
 \end{eqnarray}
@@ -233,7 +233,7 @@ Cela est en accord avec le fait que les dérivées fonctionnelles deviennent :
 
 L’équation~\eqref{chap4:eq.susceptibilite-fonctionnelle_2} s’écrit dans ce cas, en utilisant la notation de l’équation~\eqref{chap4:eq.w_fi_dif_0} et la propriété~\eqref{chap4:eq.diff.lin.q.1} :
 \begin{equation}
-	\chi_w(\theta, \theta') \doteq -\frac{1}{L} \frac{\delta \langle \operator{\rho}(\theta) \rangle}{\delta \omega(\theta')} 
+	\chi_w(\theta, \theta') \doteq -\frac{1}{L} \frac{\delta \langle \operator{\rho}(\theta) \rangle_w}{\delta \omega(\theta')} 
 \end{equation}
 où l’on a utilisé la notation $\chi_w(\theta, \theta') = \chi_w\left[\frac{\delta(\cdot - \theta)}{L}, \frac{\delta(\cdot - \theta')}{L} \right]$.
 
@@ -266,15 +266,15 @@ où les fonction régulières $f_i$ sont des densitées spectrale associées au 
 Cette expression est valable tant que les fonctions $f_j$ sont considérées comme fixées. En revanche, si les $f_j$ peuvent varier, alors la différentiation par rapport aux $\beta_j$ ne correspond plus à une dérivée fonctionnelle au sens strict.
 En injectant cette expression dans l'expression du {\em moment non-centré} \eqref{chap4:eq.moment.charge.q.1} nous l'obtenons l'expression \eqref{chap.TBA.mom.1}. du chapitre (\ref{chap:relaxation}) 
 
-Avec la condition \eqref{chap4:eq.w_fi} et la définition \eqref{chap4:eq.w_fi_dif}, nous pouvons donc réécrire les moments non centrés (des charges) \eqref{chap4:eq.moment.charge.q.1} et les cumulants (des charges) \eqref{chap4:eq.cumulant.charge.q.1}, et donc les moyennes \eqref{chap4:eq.moyenne.1} et corrélations \eqref{chap4:eq.susceptibilite-fonctionnelle}, en remplaçant les dérivées fonctionnelles $\dfonc{f_i}$ par $\left. \frac{ \partial}{ \partial \beta_i } \right|_{\{f_j\}}$.
+Avec la condition \eqref{chap4:eq.w_fi} et la définition \eqref{chap4:eq.w_fi_dif}, nous pouvons donc réécrire les moments non centrés (des charges) \eqref{chap4:eq.moment.charge.q.1} et les cumulants (des charges) \eqref{chap4:eq.cumulant.charge.q.1}, et donc les moyennes \eqref{chap4:eq.moyenne.1} et corrélations \eqref{chap4:eq.susceptibilite-fonctionnelle}, en remplaçant les dérivées fonctionnelles $\dfonc{f_i}$ par $\left. \frac{ \partial}{ \partial \beta_i } \right)_{\beta_{j\neq i}}$.
 
 De plus en remarquand que 
 \(
-	\left. \frac{ \partial w (\theta) }{ \partial \beta_i } \right|_{\{f_j\}} = f_i ,		
+	\left. \frac{ \partial w (\theta) }{ \partial \beta_i } \right)_{\beta_{j\neq i}} = f_i(\theta) ,		
 \)
-alors la derivé selon $\beta_i$ s'écrit 
+alors la dérivé selon $\beta_i$ s'écrit 
 \begin{eqnarray}\label{chap4:eq.w_fi_dif_2}
-	-\left. \frac{ \partial}{ \partial \beta_i } \right|_{\{f_j\}} & = & - \int d \theta  \left. \frac{ \partial w (\theta) }{ \partial \beta_i } \right|_{\{f_j\}} \frac{\delta}{\delta w(\theta)} \nonumber ,\\
+	-\left. \frac{ \partial}{ \partial \beta_i } \right)_{\beta_{j\neq i}} & = & - \int d \theta  \left. \frac{ \partial w (\theta) }{ \partial \beta_i } \right)_{\beta_{j\neq i}} \frac{\delta}{\delta w(\theta)} \nonumber ,\\
 	& = & L \int d\theta \, f_i(\theta) \left ( - \frac{1}{L} 	\frac{\delta}{\delta w(\theta)} \right ) \label{chap4:eq.moment.charge.q.2}.
 \end{eqnarray}
 Nous pouvons donc, encore une fois, en utilisant \eqref{chap4:eq.w_fi_dif_2}, réécrire les moments non centrés des charges \eqref{chap4:eq.moment.charge.q.1} en fonction des moments non centrés des distributions de rapidités \eqref{chap4:eq.moment.distr.q.1} : 
@@ -551,30 +551,57 @@ Par souci de lisibilité, nous omettrons les indices \((\mathcal{S})\) : le cara
 
 \subsection{Susceptibilités spectrales et structure variationnelle de l’entropie}
 
-Dans l’approximation thermodynamique, le système est décrit en termes de grandeurs macroscopiques, notamment par la distribution de rapidité $\rho(\theta)$.
-À l’équilibre thermodynamique, cette distribution satisfait l’équation \eqref{chap.2:eq.rho.eq.1}. Elle coïncide avec la moyenne de l’opérateur de densité de rapidité, soit : 
+\begin{mdframed}[
+	linewidth=0.5pt, 
+	backgroundcolor=gray!5, 
+	roundcorner=50pt,	
+	innerleftmargin=5pt,
+    innerrightmargin=5pt,
+    innertopmargin=-10pt,
+    innerbottommargin=2pt,
+    leftmargin=2pt,
+    rightmargin=2pt
+	]
+\paragraph{Rappels .}
+
+Dans l’approximation thermodynamique, le système est décrit en termes de grandeurs macroscopiques, notamment par la distribution de rapidité $\rho(\theta)$.  
+Dans l’équation \eqref{chap:TBA:eq:ensemble_average}, nous avons vu que, dans la limite thermodynamique, la moyenne d’un observable s’écrit :
+\begin{eqnarray}
+	\langle \operator{\mathcal{O}} \rangle_{w} & = & \frac{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])} \, \langle\operator{\mathcal{O}}\rangle_{[\rho]}}{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{\mathrm{YY}}[\rho] - \mathcal{W}[\rho])}}. \label{chap:Fluc:eq:ensemble_average}
+\end{eqnarray}
+où $\mathcal{S}_{\mathrm{YY}}$ est l’entropie de Yang–Yang et $\mathcal{W}$ l’énergie généralisée, introduites respectivement dans \eqref{chap.2.entropi.int} et \eqref{chap.2.W.int}.  
+La quantité $\langle\operator{\mathcal{O}}\rangle_{[\rho]}$ désigne la valeur propre de l’observable associée aux états caractérisés par la distribution de rapidité $\rho$.
+
+\medskip
+
+À l’équilibre thermodynamique, la distribution $\rho_{\mathrm{eq}}(\theta)$ satisfait l’équation \eqref{chap.2:eq.rho.eq.1}, et coïncide avec la moyenne de l’opérateur de densité de rapidité :
 \begin{eqnarray}
 	 \rho_{\mathrm{eq}} =  \braket{ \operator{\rho}(\theta) }_w	
 \end{eqnarray}
-ce qui représente la densité continue de quasi-particules dans l’état stationnaire d’équilibre.
+représentant ainsi la densité continue de quasi-particules dans l’état stationnaire d’équilibre.
 
-Dans le cadre du GGE continu, l’état macroscopique est entièrement déterminé par une densité spectrale $\rho(\theta)$ qui maximise l’entropie de Yang-Yang $\mathcal{S}_{\mathrm{YY}}[\rho]$, sous la contrainte d’une charge généralisée fixée. Le poids spectral $w$ est fixé. On a vus dans les chapitre (\ref{chap:relaxation}) que la condition d’équilibre \eqref{chap:TBA:eq:stationnarite-3} s’écrit :
+\medskip
+
+Dans le cadre du GGE continu, l’état macroscopique est entièrement déterminé par une densité spectrale $\rho(\theta)$ qui maximise l’entropie de Yang–Yang, $\mathcal{S}_{\mathrm{YY}}[\rho]$, sous la contrainte de conservation des charges généralisées. Le poids spectral $w(\theta)$ est alors fixé.  
+Comme nous l’avons vu au chapitre~(\ref{chap:relaxation}), la condition d’équilibre \eqref{chap:TBA:eq:stationnarite-3} peut s’écrire sous la forme variationnelle :
 \begin{eqnarray}
-	\left. \frac{\delta \mathcal{S}_{\mathrm{YY}}[\rho]}{\delta \rho(\theta)} \right)_{\rho = \rho_{\mathrm{eq}}} =  w(\theta).
+	\left. \frac{\delta \mathcal{S}_{\mathrm{YY}}[\rho]}{\delta \rho(\theta)} \right|_{\rho = \rho_{\mathrm{eq}}} = w(\theta). \label{chap:TBA:eq:stationnarite-3}
 \end{eqnarray}
+
+\end{mdframed}
 
 \medskip
 \paragraph{Dérivée fonctionnelle.}
 On peut considérer cette équation comme une relation implicite définissant $w$ comme une fonctionnelle de $\rho$. La dérivée fonctionnelle de cette relation donne :
 \begin{eqnarray}
-	\left.\frac{\delta w(\theta)}{\delta \rho(\theta')}\right)_{\rho = \rho_{\mathrm{eq}}} = \left. \frac{\delta^2 \mathcal{S}_{\mathrm{YY}}[\rho]}{\delta \rho(\theta)\, \delta \rho(\theta')} \right)_{\rho = \rho_{\mathrm{eq}}} \equiv \mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})}(\theta, \theta'),
+	\left.\frac{\delta w(\theta)}{\delta \rho(\theta')}\right)_{\rho = \rho_{\mathrm{eq}}} = \left. \frac{\delta^2 \mathcal{S}_{\mathrm{YY}}[\rho]}{\delta \rho(\theta)\, \delta \rho(\theta')} \right)_{\rho = \rho_{\mathrm{eq}}},
 \end{eqnarray}
-où $\mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})}$ est l'opérateur (généralement négatif) de courbure fonctionnelle de l'entropie.
+où $\left. \frac{\delta^2 \mathcal{S}_{\mathrm{YY}}[\rho]}{\delta \rho(\theta)\, \delta \rho(\theta')} \right)_{\rho = \rho_{\mathrm{eq}}}$ est l'opérateur négatif de courbure fonctionnelle de l'entropie.
 
 \paragraph{Inversion.}
 On en déduit que la réponse de $\rho$ à une variation du potentiel conjugué $w$ est donnée par l'inverse fonctionnel :
 \begin{eqnarray}
-	\chi_w(\theta, \theta') = \left( L \mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})} \right)^{-1} (\theta, \theta').
+	\chi_w(\theta, \theta') = \left( L \left. \frac{\delta^2 \mathcal{S}_{\mathrm{YY}}[\rho]}{\delta \rho(\theta)\, \delta \rho(\theta')} \right)_{\rho = \rho_{\mathrm{eq}}} \right)^{-1}.
 \end{eqnarray}
 
 
@@ -582,23 +609,23 @@ On en déduit que la réponse de $\rho$ à une variation du potentiel conjugué 
 
 Une autre approche pour accéder aux fluctuations de la distribution de rapidité $\rho = \rho_{\mathrm{eq}} + \delta \rho $  en étudiant 
 \begin{eqnarray*}
-	(\mathcal{S}_{YY} - \mathcal{W})[\rho_{\mathrm{eq}} + \delta \rho ]  = \exp \{\dfonc{\delta \rho }\}\left ( (\mathcal{S}_{YY} - \mathcal{W})[\rho_{\mathrm{eq}}] \right ) 	
+	(\mathcal{S}_{YY} - \mathcal{W})[\rho_{\mathrm{eq}} + \delta \rho ]  = \exp \{\dfonc{\delta \rho }\}\left ( (\mathcal{S}_{YY} - \mathcal{W})[\rho_{\mathrm{eq}}] \right ).	
 \end{eqnarray*}
 Dans un état de GGE consiste à exploiter le développement quadratique de l’action effective autour de l’équilibre thermodynamique. Cette méthode, dite \emph{gaussienne}, repose sur le fait que, dans la limite thermodynamique, l’intégrale fonctionnelle définissant le GGE est dominée par les configurations proches du point-selle $\rho_{\mathrm{eq}}$.
 
 On peut alors développer l’action $\mathcal{S}_{YY} - \mathcal{W}$ à second ordre autour de ce point d'équilibre :
 \begin{eqnarray}
-	(\mathcal{S}_{YY} - \mathcal{W})[\rho] \approx (\mathcal{S}_{YY} - \mathcal{W})[\rho_{eq}]  + \underbrace{\int d\theta \left . \frac{ \delta (\mathcal{S}_{YY} - \mathcal{W})}{\delta \rho (\theta) }  \right\vert_{\rho = \rho_{eq} } \delta \rho(\theta)}_{\text{= 0 par stationnarité}} - \frac{1}{2} \int d\theta d \theta'\mathcal{H}(\theta, \theta' )\delta \rho(\theta)\delta \rho(\theta') + \mathcal{O}(\delta \rho^3) 
+	(\mathcal{S}_{YY} - \mathcal{W})[\rho] \approx (\mathcal{S}_{YY} - \mathcal{W})[\rho_{\mathrm{eq}}]  + \underbrace{\int d\theta \left . \frac{ \delta (\mathcal{S}_{YY} - \mathcal{W})[\rho]}{\delta \rho (\theta) }  \right\vert_{\rho = \rho_{eq} } \delta \rho(\theta)}_{\text{= 0 par stationnarité}} - \frac{1}{2} \int d\theta d \theta' \delta \rho(\theta) \mathcal{H}(\theta, \theta' )\delta \rho(\theta') + \mathcal{O}(\delta \rho^3) 
 \end{eqnarray}
 où
 \(
-\displaystyle \mathcal{H}(\theta, \theta' ) = -\left.\frac{\delta^{2}(\mathcal{S}_{YY}-\mathcal{W})}{\delta\rho(\theta)\,\delta\rho(\theta')}\right|_{\rho = \rho_{\mathrm{eq}}}
+\displaystyle \mathcal{H}(\theta, \theta' ) = -\left.\frac{\delta^{2}(\mathcal{S}_{YY}-\mathcal{W})[\rho]}{\delta\rho(\theta)\,\delta\rho(\theta')}\right|_{\rho = \rho_{\mathrm{eq}}}
 \)
 est le \textit{hessien} de l’action effective.
 
 Sous l’approximation gaussienne autour de l'équilibre, la covariance des fluctuations est donnée par :
 \begin{eqnarray}
-\langle \delta \rho(\theta) \, \delta \rho(\theta') \rangle &=& \frac{
+\langle \delta \rho(\theta) \, \delta \rho(\theta') \rangle_w &=& \frac{
  \displaystyle \int \mathcal{D} \delta \rho \; \delta \rho(\theta) \, \delta \rho(\theta') 
     \, \exp \left[ 
         -\frac{L}{2} 
@@ -614,9 +641,9 @@ Sous l’approximation gaussienne autour de l'équilibre, la covariance des fluc
     \right]
 }, \nonumber \\
 &=& \frac{1}{L} \mathcal{H}^{-1}(\theta, \theta' ), \label{eq:fluctuations}
-\label{chap:fluctu:eq:fluctuations}
+\label{chap:fluctu:eq:fluctuations}.
 \end{eqnarray}
-confirmant ainsi que la matrice de susceptibilité spectrale $\chi(\theta, \theta')$ coïncide avec l’inverse du hessien.
+$C_w(\theta, \theta')$ coïncide avec l’inverse du hessien.
 
 \medskip
 
