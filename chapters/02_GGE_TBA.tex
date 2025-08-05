@@ -714,53 +714,53 @@ Dans la limite thermodynamique \( L \to \infty \), cette intégrale est dominée
 où $\rho_{eq}$ est la distribution de rapidité à l'équilibre \eqref{chap.2:eq.rho.eq.1}.
 Cette approximation correspond à une méthode de \textit{selle statique}, où l’on développe la \emph{fonction thermodynamique effective}, $\mathcal{S}_{YY}-\mathcal{W}$  au voisinage de la distribution dominante.
 
-\paragraph{Dérivée fonctionnelle directionnelle.}
-Introduit la {\bf dérivée fonctionnelle dans la direction d’une fonction test} $f$ appliquée à un fonctionnel $F[g]$, comme :
-\begin{eqnarray}\label{chap2:eq.diff.q.1}
-	\dfonc{f} F[g] & \doteq &  \underset{\epsilon \to 0 }{ \lim  } \frac{ F[g + \epsilon f ]  - F [ g] }{\epsilon} .	
-\end{eqnarray}
-Cette quantité est linéaire en $f(x)$ et admet donc une représentation intégrale de la forme :
-
-\section{Dérivée fonctionnelle comme dérivée directionnelle}
+%\paragraph{Dérivée fonctionnelle directionnelle.}
+%Introduit la {\bf dérivée fonctionnelle dans la direction d’une fonction test} $f$ appliquée à un fonctionnel $F[g]$, comme :
+%\begin{eqnarray}\label{chap2:eq.diff.q.1}
+%	\dfonc{f} F[g] & \doteq &  \underset{\epsilon \to 0 }{ \lim  } \frac{ F[g + \epsilon f ]  - F [ g] }{\epsilon} .	
+%\end{eqnarray}
+%Cette quantité est linéaire en $f(x)$ et admet donc une représentation intégrale de la forme :
+%
+\paragraph{Dérivée fonctionnelle comme dérivée directionnelle.}
 
 Dans le cadre des systèmes continus, les observables physiques dépendent souvent d'un champ $\phi(x)$, et sont représentées par des \emph{fonctionnelles}, notées $F[\phi]$. Afin d'étudier la sensibilité de ces fonctionnelles à une variation infinitésimale du champ, on introduit la notion de \textbf{dérivée fonctionnelle}, définie par analogie avec la dérivée directionnelle en espace vectoriel de dimension finie.
 
 Considérons une variation infinitésimale du champ de la forme $\phi(x) \mapsto \phi(x) + \epsilon \lambda(x)$, où $\lambda(x)$ est une fonction test lisse de support compact. La variation induite sur la fonctionnelle est donnée par :
 
-\begin{equation}
-D[\lambda] F[\phi] \equiv \lim_{\epsilon \to 0} \frac{F[\phi + \epsilon \lambda] - F[\phi]}{\epsilon}
+\begin{equation}\label{chap2:eq.diff.q.1}
+	\dfonc{\lambda} F[\phi] \equiv \lim_{\epsilon \to 0} \frac{F[\phi + \epsilon \lambda] - F[\phi]}{\epsilon}
 \end{equation}
 
-La quantité $D[\lambda] F[\phi]$ est linéaire en $\lambda(x)$, et peut donc s’écrire sous forme d’un produit scalaire dans l’espace fonctionnel :
+La quantité $\dfonc{\lambda} F[\phi]$ est linéaire en $\lambda(x)$, et peut donc s’écrire sous forme d’un produit scalaire dans l’espace fonctionnel :
 
-\begin{equation}
-D[\lambda] F[\phi] = \int dx \, \frac{\delta F[\phi]}{\delta \phi(x)} \lambda(x)
+\begin{equation}\label{chap2:eq.diff.q.2}
+	\dfonc{\lambda} F[\phi] = \int dx \, \frac{\delta F[\phi]}{\delta \phi(x)} \lambda(x)
 \end{equation}
 
 La fonction $\frac{\delta F[\phi]}{\delta \phi(x)}$ est appelée \textbf{dérivée fonctionnelle} de $F[\phi]$ au point $x$. Elle joue un rôle analogue au gradient dans les espaces de dimension finie, en ce qu’elle encode la variation de $F[\phi]$ sous une perturbation infinitésimale du champ au point $x$.
 
 \begin{tcolorbox}[title=Interprétation distributionnelle de la dérivée fonctionnelle, colback=gray!5!white, colframe=black!50]
 On peut interpréter la dérivée fonctionnelle $\delta F[\phi]/\delta \phi(x)$ comme le résultat de la dérivation directionnelle de $F[\phi]$ dans la direction de la distribution $\delta(x - x_0)$, qui représente une perturbation localisée du champ au point $x_0$ :
-\[
-\left. \frac{d}{d\epsilon} F[\phi + \epsilon \delta(x - x_0)] \right|_{\epsilon = 0} = \frac{\delta F[\phi]}{\delta \phi(x_0)}
-\]
+\begin{equation}\label{chap2:eq.diff.q.3}
+	\left. \frac{d}{d\epsilon} F[\phi + \epsilon \delta(x - x_0)] \right|_{\epsilon = 0} = \frac{\delta F[\phi]}{\delta \phi(x_0)}
+\end{equation}
 \end{tcolorbox}
 
-Dans le cas particulier où $F[\phi]$ est une fonctionnelle locale, c’est-à-dire s’écrit sous la forme :
-\[
-F[\phi] = \int dx \, f(\phi(x))
-\]
-où $f$ est une fonction suffisamment régulière, la dérivée fonctionnelle s’obtient directement par :
-
-\begin{equation}
-\frac{\delta F[\phi]}{\delta \phi(x)} = \frac{\partial f}{\partial \phi}(\phi(x))
-\end{equation}
-
-En effet, dans ce cas, la dérivée directionnelle devient :
-
-\begin{equation}
-D[\lambda] F[\phi] = \int dx \, \lambda(x) \frac{\partial f}{\partial \phi}(\phi(x))
-\end{equation}
+%Dans le cas particulier où $F[\phi]$ est une fonctionnelle locale, c’est-à-dire s’écrit sous la forme :
+%\[
+%F[\phi] = \int dx \, f(\phi(x))
+%\]
+%où $f$ est une fonction suffisamment régulière, la dérivée fonctionnelle s’obtient directement par :
+%
+%\begin{equation}
+%\frac{\delta F[\phi]}{\delta \phi(x)} = \frac{\partial f}{\partial \phi}(\phi(x))
+%\end{equation}
+%
+%En effet, dans ce cas, la dérivée directionnelle devient :
+%
+%\begin{equation}
+%D[\lambda] F[\phi] = \int dx \, \lambda(x) \frac{\partial f}{\partial \phi}(\phi(x))
+%\end{equation}
 
 Cette construction générale sera utilisée dans la suite pour formuler des conditions d’extremum (par exemple dans des principes variationnels), ou pour dériver les équations de mouvement associées à une action.
 
@@ -768,7 +768,6 @@ Cette construction générale sera utilisée dans la suite pour formuler des con
 
 \paragraph{Développement fonctionnel au premier ordre.}
 
-%On effectue un développement de Taylor fonctionnel de l'action à l’ordre linéaire en $\rho = \rho_{eq} + \delta \rho$ :
 Écrivons
 \(
 \rho=\rho_{\text{eq}}+\delta\rho
@@ -780,187 +779,25 @@ et développons $(\mathcal{S}_{YY}-\mathcal{W})[\rho]$ à l’ordre linéaire :
 \end{eqnarray*}	
 La condition de stationnarité au point selle impose :
 \(
-	\left. \frac{\delta (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho]) }{\delta \rho} \right|_{\rho = \rho_{eq} }	  =  0  	
+	\dfonc{\delta \rho}\left (  \mathcal{S}_{YY} - \mathcal{W}\right )[ \rho_{\mathrm{eq}}] 	  =  0  	
 \)
 soit 
 \begin{equation}
-\left. \frac{\delta \mathcal{S}_{YY}}{\delta \rho} \right|_{\rho = \rho_{eq}} = \left. \frac{\delta \mathcal{W}}{\delta \rho} \right|_{\rho = \rho_{eq}}. \label{chap:TBA:eq:stationnarite}
+	\dfonc{\delta \rho} \mathcal{S}_{YY}[ \rho_{\mathrm{eq}}]  = \dfonc{\delta \rho}\mathcal{W}[ \rho_{\mathrm{eq}}] . \label{chap:TBA:eq:stationnarite}
 \end{equation}
 
-%%%%%%%%%%%%%%%%
-%-----------------------------------------------------
-
-%------------------------------------------------------------------
-%\subsection{Équations intégrales de la TBA}
-
-%\paragraph{Moyenne des observables dans le Generalized Gibbs Ensemble.}
-
-%Dans la limite thermodynamique, la moyenne d’une observable locale
-%s’écrit formellement comme une intégrale fonctionnelle sur les densités de
-%rapidité\,\footnote{%
-%La mesure fonctionnelle $\mathcal{D}\rho$ est la limite continue de la
-%somme discrète sur les macro-états admissibles, chacun étant pondéré par
-%le facteur combinatoire $e^{L\mathcal{S}_{YY}[\rho]}$.}
-%
-%\begin{equation}\label{eq:TBA:ensemble_average}
-%\left\langle \mathcal{O} \right\rangle_{\!\text{GGE}}
-%=\frac{\displaystyle
-%      \int\!\mathcal{D}\rho\;
-%      e^{L\bigl[\mathcal{S}_{YY}[\rho]-\mathcal{W}[\rho]\bigr]}\;
-%      \langle\mathcal{O}\rangle_{[\rho]}}
-%     {\displaystyle
-%      \int\!\mathcal{D}\rho\;
-%      e^{L\bigl[\mathcal{S}_{YY}[\rho]-\mathcal{W}[\rho]\bigr]}} .
-%\end{equation}
-
-%------------------------------------------------------------------
-%\paragraph{Approximation au point selle («\,méthode de la selle statique\,»).}
-
-%Lorsque $L\to\infty$, les intégrales \eqref{eq:TBA:ensemble_average}
-%sont dominées par la distribution
-%$\rho_{\text{eq}}$ qui \emph{maximise} l’exposant
-%\(
-%\Phi[\rho]=\mathcal{S}_{YY}[\rho]-\mathcal{W}[\rho].
-%\)
-%On obtient à l’ordre principal
-%\begin{equation}
-%\left\langle \mathcal{O} \right\rangle_{\!\text{GGE}}
-%\;\simeq\;
-%\langle \mathcal{O} \rangle_{[\rho_{\text{eq}}]} .
-%\label{eq:TBA:saddle_average}
-%\end{equation}
-
-%------------------------------------------------------------------
-%\paragraph{Condition de stationnarité et équation variationnelle.}
-
-%Écrivons
-%\(
-%\rho=\rho_{\text{eq}}+\delta\rho
-%\)
-%et développons $\Phi[\rho]$ à l’ordre linéaire :
-%\[
-%\Phi[\rho]\;=\;
-%\Phi[\rho_{\text{eq}}]
-%+
-%\int d\theta\,
-%\left.
-%\frac{\delta\Phi}{\delta\rho(\theta)}
-%\right|_{\rho_{\text{eq}}}
-%\delta\rho(\theta)
-%+O(\delta\rho^{2}).
-%\]
-%La stationnarité impose
-%\(
-%\dfrac{\delta\Phi}{\delta\rho(\theta)}\bigl|_{\rho_{\text{eq}}}=0,
-%\)
-%soit
-%\begin{equation}
-%\left.
-%\frac{\delta\mathcal{S}_{YY}}{\delta\rho(\theta)}
-%\right|_{\rho_{\text{eq}}}
-%=
-%\left.
-%\frac{\delta\mathcal{W}}{\delta\rho(\theta)}
-%\right|_{\rho_{\text{eq}}}.
-%\label{eq:TBA:variational_condition}
-%\end{equation}
-
-%------------------------------------------------------------------
-%\paragraph{Forme explicite : introduction de la pseudo-énergie.}
-
-%Pour le modèle de Lieb–Liniger (et, plus généralement, pour un modèle
-%intégrable à noyau $\Delta$), on introduit la \emph{pseudo-énergie}
-%\[
-%\varepsilon(\theta)
-%\;=\;
-%w(\theta)
-%\;+\;\Bigl[\Delta\star\ln\!\bigl(1+e^{-\varepsilon}\bigr)\Bigr](\theta),
-%\]
-%obtenue en réécrivant \eqref{eq:TBA:variational_condition}.
-%Le \emph{facteur d’occupation}
-%\(
-%\nu(\theta)=\rho(\theta)/\rho_s(\theta)
-%\)
-%se donne alors par la statistique de type Fermi-Dirac
-%\[
-%\nu(\theta)=\frac1{1+e^{\varepsilon(\theta)}}.
-%\]
-
-%Les équations intégrales complètes de la \textbf{Thermodynamique de Bethe}
-%(TBA) sont donc
-%\begin{align}
-%2\pi\rho_s(\theta) &= 1 + \bigl[\Delta \star \rho\bigr](\theta),
-%\label{eq:TBA:rho_s}\\[4pt]
-%\rho(\theta) &= \frac{\rho_s(\theta)}{1+e^{\varepsilon(\theta)}},
-%\qquad
-%\varepsilon(\theta)=w(\theta)+\bigl[\Delta\star\ln(1+e^{-\varepsilon})\bigr](\theta).
-%\label{eq:TBA:epsilon}
-%\end{align}
-%Elles déterminent sans ambiguïté la distribution d’équilibre
-%$\rho_{\text{eq}}(\theta)$ en fonction du poids spectral $w(\theta)$.
-
-%\medskip
-%Ainsi, la méthode du point selle relie le \emph{poids spectral}
-%(caractéristique du GGE) à la distribution de rapidité la plus probable,
-%et permet d’évaluer les observables par la formule
-%\label{chap:TBA:eq:ensemble_average:approx}.
-
-
-%-----------------------------------------------------
-%%%%%%%%%%%%%%%%
-
-%\paragraph{Équation intégrale de la TBA.}
-
-%Cette égalité donne naissance à une équation intégrale pour le poids spectral \( w \), défini comme la dérivée fonctionnelle de l'énergie généralisée pris en $\rho_{eq}$ :
-%\(
-%w ~=~ \left. \frac{\delta \mathcal{W}[\rho]}{\delta \rho} \right|_{\rho =  \rho_{eq} }
-%\)
-%qui par stationnarité (cf équation \eqref{chap:TBA:eq:stationnarite}) est égale à la dérivée fonctionnelle de l'entropie de Yang-Yang pris en $\rho_{eq}$ :
-%\(
-%\left. \frac{\delta \mathcal{S}_{YY}[\rho]}{\delta \rho} \right|_{\rho = \rho_{eq} }
-%\) 
-%qui lui vaux 
-%\(
-%\ln ( \nu_{eq}^{-1}  - 1 ) - \frac{\Delta}{2\pi} \star \ln ( 1 -  \nu_{eq })
-%\)
-%avec le facteur d'ocupation à l'équilibre $\nu_{eq} = \rho_{eq}/{\rho_{eq}}_s$. Ainci on peux s'arreter sur l'équation 
-%\begin{eqnarray}
-%	w & = & \ln ( \nu_{eq}^{-1}  - 1 ) - \frac{\Delta}{2\pi} \star \ln ( 1 -  \nu_{eq }).\label{chap:TBA:eq:w}
-%\end{eqnarray}
-
-%\medskip
-%Ainsi, la méthode du point selle relie le \emph{poids spectral}
-%(caractéristique du GGE) à la distribution de rapidité la plus probable,
-%et permet d’évaluer les observables par la formule
-%\eqref{chap:TBA:eq:ensemble_average:approx}.\\
-
-%\paragraph{Forme explicite : introduction de la pseudo-énergie.}
-
-%Le \emph{facteur d’occupation}
-%\(
-%\nu_{eq}
-%\)
-%se donne alors par la statistique de type Fermi-Dirac
-%\begin{eqnarray}
-%	\nu_{eq}=\frac1{1+e^{\epsilon}},\label{chap:TBA:eq:nu_eq}
-%\end{eqnarray}
-%où \emph{pseudo-énergie} 
-%\(
-%\epsilon
-%\)
-%se définie en intectant \eqref{chap:TBA:eq:nu_eq} dans \eqref{chap:TBA:eq:w} : 
-%\begin{eqnarray}
-%	\epsilon & = & w + \frac{\Delta}{2\pi} \star \ln ( 1  + e^{-\epsilon}).\label{chap:TBA:eq:e}	
-%\end{eqnarray}
-
-
-%---------------------------------
-%------------------------------------------------------------------
 \paragraph{Équation intégrale de la TBA.}
-
-La condition de stationnarité au point selle \(\rho=\rho_{\mathrm{eq}}\) \eqref{chap:TBA:eq:stationnarite} implique :
+La condition de stationnarité au point selle \(\rho=\rho_{\mathrm{eq}}\) \eqref{chap:TBA:eq:stationnarite} réécrit de la forme de produit scalaire \eqref{chap2:eq.diff.q.2} implique que pour tous $\theta$ :
+\begin{eqnarray}\label{chap:TBA:eq:stationnarite-2}
+	\frac{\delta\mathcal{S}_{YY}[\rho_{\mathrm{eq}}]}{\delta\rho(\theta)} = \frac{\delta\mathcal{W}[\rho_{\mathrm{eq}}]}{\delta\rho(\theta)},
+\end{eqnarray}
+et la forme de l'{\em énergie généralisée} \eqref{chap.2.W.int} et le rappel \eqref{chap2:eq.diff.q.3} impliquent que le second membre de l'équation précédente \eqref{chap:TBA:eq:stationnarite-2} est 
 \begin{eqnarray}
-	\left.\frac{\delta\mathcal{S}_{YY}}{\delta\rho(\theta)}\right|_{\rho_{\mathrm{eq}}} = \left.\frac{\delta\mathcal{W}}{\delta\rho(\theta)}\right|_{\rho_{\mathrm{eq}}}\;\doteq\;w(\theta),\label{chap:TBA:eq:stationnarite-2}
+	\frac{\delta\mathcal{W}[\rho_{\mathrm{eq}}]}{\delta\rho(\theta)}  = w(\theta).
+\end{eqnarray}	
+Ainsi {chap:TBA:eq:stationnarite-2} se réécrit en 
+\begin{eqnarray}
+	\frac{\delta\mathcal{S}_{YY}[\rho_{\mathrm{eq}}]}{\delta\rho(\theta)} = w(\theta),\label{chap:TBA:eq:stationnarite-3}
 \end{eqnarray}
 En utilisant l’expression explicite de l’entropie de Yang–Yang \eqref{chap.2.entropi.int}, on obtient l’identité fonctionnelle
 \begin{eqnarray}
