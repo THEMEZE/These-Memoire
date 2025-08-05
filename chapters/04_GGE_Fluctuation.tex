@@ -195,19 +195,23 @@ Pour un état donné, la fonction $\langle \operator{\rho}(\theta) \rangle_w$ n�
 
 Cette identité relie la fonction de corrélation des fluctuations aux dérivées fonctionnelles de la valeur moyenne : elle exprime une \emph{susceptibilité fonctionnelle}, au sens où elle mesure la réponse linéaire d'une observable à une perturbation infinitésimale du poids $w(\theta)$. La susceptibilité s'identifie ainsi à la covariance entre charges généralisées, illustrant le principe de \emph{fluctuation-réponse}.
 
+\medskip
+
+Par souci de lisibilité, nous omettrons les indices \((\mathcal{S})\) : le caractère local des observables étant désormais implicite.
+
+\medskip
 
 \paragraph{Notation susceptibilité et fluctuations.}
 
-Considérons deux fonctions $f_1$ et $f_2$. On introduit la fonction de réponse croisée $\chi_\omega[f_1, f_2]$ définie par
+Considérons deux fonctions $f_1$ et $f_2$. On définie la {\bf suscesptibilité} (ou {\bf fonction de réponse croisée}), $\chi_\omega[f_1, f_2]$  par
 \begin{equation}\label{chap4:eq.susceptibilite-fonctionnelle_2}
 	\chi_w[f_1, f_2] \doteq - \dfonc{f_2}  \braket{\operator{\mathcal{Q}}[f_1]}_w.
 \end{equation}
-
-Remarquablement, cette fonction de réponse est reliée aux fluctuations dans le GGE. Plus précisément, $\chi_\omega[f_1, f_2]$ vérifie
+Cette fonction de réponse est reliée aux fluctuations dans le GGE. Plus précisément, $\chi_\omega[f_1, f_2]$ vérifie
 \begin{equation}\label{chap4:eq.suscep.corre.1}
 	\chi_w[f_1, f_2] = C_w[f_1, f_2],
 \end{equation}
-où $C_\omega(f_1, f_2)$, défini par
+où les {\bf corrélations à deux points} $C_\omega(f_1, f_2)$, défini par
 \begin{equation}\label{chap4:eq.corre.1}
 C_w[f_1, f_2] \doteq \langle \operator{\mathcal{Q}}[f_1] \operator{\mathcal{Q}}[f_2] \rangle_w - \langle \operator{\mathcal{Q}}[f_1] \rangle_w \langle \operator{\mathcal{Q}}[f_2] \rangle_w,
 \end{equation}
@@ -232,18 +236,18 @@ Cela est en accord avec le fait que les dérivées fonctionnelles deviennent :
 
 
 L’équation~\eqref{chap4:eq.susceptibilite-fonctionnelle_2} s’écrit dans ce cas, en utilisant la notation de l’équation~\eqref{chap4:eq.w_fi_dif_0} et la propriété~\eqref{chap4:eq.diff.lin.q.1} :
-\begin{equation}
+\begin{equation}\label{chap4:eq.susceptibilite-fonctionnelle_3}
 	\chi_w(\theta, \theta') \doteq -\frac{1}{L} \frac{\delta \langle \operator{\rho}(\theta) \rangle_w}{\delta \omega(\theta')} 
 \end{equation}
 où l’on a utilisé la notation $\chi_w(\theta, \theta') = \chi_w\left[\frac{\delta(\cdot - \theta)}{L}, \frac{\delta(\cdot - \theta')}{L} \right]$.
 
 L’équation~\eqref{chap4:eq.corre.1}, quant à elle, s’écrit :
-\begin{equation}
+\begin{equation}\label{chap4:eq.corre.2}
 C_\omega(\theta, \theta') \doteq \langle \operator{\rho}(\theta) \operator{\rho}(\theta') \rangle_w - \langle \operator{\rho}(\theta) \rangle_w \langle \operator{\rho}(\theta') \rangle_w 
 \end{equation}
 où l’on utilise la notation $C_\omega(\theta, \theta') = C_\omega\left( \frac{\delta(\cdot - \theta)}{L}, \frac{\delta(\cdot - \theta')}{L} \right)$.
 
-La relation~\eqref{chap4:eq.suscep.corre.1}, qui relie la susceptibilité aux fluctuations, s’écrit alors :
+La relation~\eqref{chap4:eq.suscep.corre.1}, qui relie la susceptibilité aux corrélation, inplique alors :
 \begin{equation}
 -\frac{1}{L} \frac{\delta \langle \operator{\rho}(\theta) \rangle_w}{\delta \omega(\theta')} = \langle \operator{\rho}(\theta) \operator{\rho}(\theta') \rangle_w - \langle \operator{\rho}(\theta) \rangle_w \langle \operator{\rho}(\theta') \rangle_w 
 \end{equation}
@@ -264,7 +268,9 @@ où les fonction régulières $f_i$ sont des densitées spectrale associées au 
 	& = & \left. \frac{ \partial F}{ \partial \beta_i } \right)_{\beta_{j\neq i} }.	
 \end{eqnarray}
 Cette expression est valable tant que les fonctions $f_j$ sont considérées comme fixées. En revanche, si les $f_j$ peuvent varier, alors la différentiation par rapport aux $\beta_j$ ne correspond plus à une dérivée fonctionnelle au sens strict.
-En injectant cette expression dans l'expression du {\em moment non-centré} \eqref{chap4:eq.moment.charge.q.1} nous l'obtenons l'expression \eqref{chap.TBA.mom.1}. du chapitre (\ref{chap:relaxation}) 
+En injectant cette expression dans l'expression du {\em moment non-centré} \eqref{chap4:eq.moment.charge.q.1} nous l'obtenons l'expression \eqref{chap.TBA.mom.1}. %du chapitre (\ref{chap:relaxation}) 
+
+\medskip
 
 Avec la condition \eqref{chap4:eq.w_fi} et la définition \eqref{chap4:eq.w_fi_dif}, nous pouvons donc réécrire les moments non centrés (des charges) \eqref{chap4:eq.moment.charge.q.1} et les cumulants (des charges) \eqref{chap4:eq.cumulant.charge.q.1}, et donc les moyennes \eqref{chap4:eq.moyenne.1} et corrélations \eqref{chap4:eq.susceptibilite-fonctionnelle}, en remplaçant les dérivées fonctionnelles $\dfonc{f_i}$ par $\left. \frac{ \partial}{ \partial \beta_i } \right)_{\beta_{j\neq i}}$.
 
@@ -288,7 +294,7 @@ De même, nous pouvons réécrire les cumulants des charges \eqref{chap4:eq.cumu
 Ces relations sont naturelles. En particulier, on retiendra que les moyennes et les corrélations des charges s’écrivent :
 \begin{eqnarray}
 	\braket{\operator{\mathcal{Q}}^{(\mathcal{S})}[f] }_w  & = & L \int d\theta f(\theta)  \braket{\operator{\rho}^{(\mathcal{S})}(\theta)}_w,\\
-	\braket{\delta\operator{\mathcal{Q}}^{(\mathcal{S})}[f_1] \, \delta\operator{\mathcal{Q}}^{(\mathcal{S})}[f_2]}_w  & = & L^2 \iint d\theta_1 d\theta_2 f_1(\theta_1) \braket{\delta\operator{\rho}^{(\mathcal{S})}(\theta_1)\, \delta\operator{\rho}^{(\mathcal{S})}(\theta_2)}_w  f_2(\theta_2) .		
+	\braket{\delta\operator{\mathcal{Q}}^{(\mathcal{S})}[f_1] \label{chap4:eq.moment.distr.q.10}\, \delta\operator{\mathcal{Q}}^{(\mathcal{S})}[f_2]}_w  & = & L^2 \iint d\theta_1 d\theta_2 f_1(\theta_1) \braket{\delta\operator{\rho}^{(\mathcal{S})}(\theta_1)\, \delta\operator{\rho}^{(\mathcal{S})}(\theta_2)}_w  f_2(\theta_2) \label{chap4:eq.cumulant.distr.q.10} .		
 \end{eqnarray}
 
 
@@ -302,7 +308,7 @@ On souhaite tester notre capaciter à eéchantillonner à échantillonner le GGE
 
 \paragraph{Méthode numérique de Monte Carlo  :} 
 
-\subparagraph{Parametres fixés.}
+\subparagraph{Paramètres fixés.}
 On fixe un poids spectral , par exemple quadratique
 \begin{eqnarray}
 	w(\theta) = \tfrac{1}{2} \theta^2,
@@ -421,7 +427,7 @@ Les deux matrices sont ensuite représentées sous forme d'images couleur pour v
 
 -----------
 
-Par souci de lisibilité, nous omettrons les indices \((\mathcal{S})\) : le caractère local des observables étant désormais implicite.\\
+
 
 %On a vus dans l'equation ~\eqref{??} que pour une fonction teste quelquonque , $f \colon \mathbb{R} \to \mathbb{R}$, $\operator{\mathcal{Q}}[f]$ s'écrit de la forme integrale 
 %
@@ -583,26 +589,31 @@ représentant ainsi la densité continue de quasi-particules dans l’état stat
 \medskip
 
 Dans le cadre du GGE continu, l’état macroscopique est entièrement déterminé par une densité spectrale $\rho(\theta)$ qui maximise l’entropie de Yang–Yang, $\mathcal{S}_{\mathrm{YY}}[\rho]$, sous la contrainte de conservation des charges généralisées. Le poids spectral $w(\theta)$ est alors fixé.  
-Comme nous l’avons vu au chapitre~(\ref{chap:relaxation}), la condition d’équilibre \eqref{chap:TBA:eq:stationnarite-3} peut s’écrire sous la forme variationnelle :
+Comme nous l’avons vu (au chapitre~(\ref{chap:relaxation})), la condition d’équilibre \eqref{chap:TBA:eq:stationnarite-3} peut s’écrire sous la forme variationnelle :
 \begin{eqnarray}
-	\left. \frac{\delta \mathcal{S}_{\mathrm{YY}}[\rho]}{\delta \rho(\theta)} \right)_{\rho = \rho_{\mathrm{eq}}} = w(\theta). \label{chap:TBA:eq:stationnarite-3}
+	\left. \frac{\delta \mathcal{S}_{\mathrm{YY}}[\rho]}{\delta \rho(\theta)} \right)_{\rho = \rho_{\mathrm{eq}}} = w(\theta). \label{chap:Fluc:eq:stationnarite-3}
 \end{eqnarray}
 
 \end{mdframed}
 
+
 \medskip
 \paragraph{Dérivée fonctionnelle.}
-On peut considérer cette équation comme une relation implicite définissant $w$ comme une fonctionnelle de $\rho$. La dérivée fonctionnelle de cette relation donne :
+On peut considérer l’équation d’équilibre comme une relation implicite définissant le poids spectral $w$ comme une fonctionnelle de la distribution de rapidité $\rho$. La dérivée fonctionnelle de cette relation s’écrit :
 \begin{eqnarray}
-	\left.\frac{\delta w(\theta)}{\delta \rho(\theta')}\right)_{\rho = \rho_{\mathrm{eq}}} = \left. \frac{\delta^2 \mathcal{S}_{\mathrm{YY}}[\rho]}{\delta \rho(\theta)\, \delta \rho(\theta')} \right)_{\rho = \rho_{\mathrm{eq}}},
+	\left. \frac{\delta w(\theta)}{\delta \rho(\theta')} \right)_{\rho = \rho_{\mathrm{eq}}} = \left. \frac{\delta^2 \mathcal{S}_{\mathrm{YY}}[\rho]}{\delta \rho(\theta)\, \delta \rho(\theta')} \right)_{\rho = \rho_{\mathrm{eq}}}, \label{chap:Fluc:eq:susp-1}
 \end{eqnarray}
-où $\left. \frac{\delta^2 \mathcal{S}_{\mathrm{YY}}[\rho]}{\delta \rho(\theta)\, \delta \rho(\theta')} \right)_{\rho = \rho_{\mathrm{eq}}}$ est l'opérateur négatif de courbure fonctionnelle de l'entropie.
+où le membre de droite représente l’opérateur hessien (ou courbure fonctionnelle) de l'entropie de Yang–Yang, évalué à l’équilibre. Cet opérateur est négatif défini, conformément à l’interprétation de $\mathcal{S}_{\mathrm{YY}}$ comme une entropie à maximiser.
 
 \paragraph{Inversion.}
-On en déduit que la réponse de $\rho$ à une variation du potentiel conjugué $w$ est donnée par l'inverse fonctionnel :
+On en déduit que la réponse de $\rho$ à une variation infinitésimale du poids spectral $w$ est donnée par l'inverse fonctionnel de \eqref{chap:Fluc:eq:susp-1} :
 \begin{eqnarray}
-	\chi_w(\theta, \theta') = \left( L \left. \frac{\delta^2 \mathcal{S}_{\mathrm{YY}}[\rho]}{\delta \rho(\theta)\, \delta \rho(\theta')} \right)_{\rho = \rho_{\mathrm{eq}}} \right)^{-1}.
+	-\frac{1}{L} \left. \frac{\delta \rho(\theta)}{\delta w(\theta')} \right)_{\rho = \rho_{\mathrm{eq}}} = - \left( L \left. \frac{\delta^2 \mathcal{S}_{\mathrm{YY}}[\rho]}{\delta \rho(\theta)\, \delta \rho(\theta')} \right)_{\rho = \rho_{\mathrm{eq}}} \right)^{-1}. \label{chap:Fluc:eq:susp-2}
 \end{eqnarray}
+La susceptibilité fonctionnelle $\chi_w(\theta, \theta')$, définie dans \eqref{chap4:eq.susceptibilite-fonctionnelle_3}, coïncide avec cette expression.
+
+
+
 
 
 \subsection{Fluctuations gaussiennes autour de l’équilibre thermodynamique}
@@ -621,7 +632,7 @@ où
 \(
 \displaystyle \mathcal{H}(\theta, \theta' ) = -\left.\frac{\delta^{2}(\mathcal{S}_{YY}-\mathcal{W})[\rho]}{\delta\rho(\theta)\,\delta\rho(\theta')}\right)_{\rho = \rho_{\mathrm{eq}}}
 \)
-est le \textit{hessien} de l’action effective.
+est la \textit{hessienne} de l’action effective.
 
 Sous l’approximation gaussienne autour de l'équilibre, la covariance des fluctuations est donnée par :
 \begin{eqnarray}
@@ -640,10 +651,10 @@ Sous l’approximation gaussienne autour de l'équilibre, la covariance des fluc
         \delta \rho(\theta_1) \, \mathcal{H}(\theta_1, \theta_2 )  \, \delta \rho(\theta_2) 
     \right]
 }, \nonumber \\
-&=& \frac{1}{L} \mathcal{H}^{-1}(\theta, \theta' ), \label{eq:fluctuations}
+&=& (L \mathcal{H})^{-1}(\theta, \theta' ), \label{eq:fluctuations}
 \label{chap:fluctu:eq:fluctuations}.
 \end{eqnarray}
-$C_w(\theta, \theta')$ coïncide avec l’inverse du hessien.
+Les corrélation $C_w(\theta, \theta')$ définie en \eqref{chap4:eq.corre.2} coïncide avec cette expression .
 
 \medskip
 
@@ -905,17 +916,17 @@ L'opérateur hermien $\mathcal{H}$ est donné par $\mathcal{H} = -\mathcal{H}^{(
 	\label{chap:fluctu:eq:hessienne3} 	
 \end{eqnarray}
 La contribution diagonale locale, notée $\mathcal{D}(\theta, \theta')$, présente une singularité caractéristique d’une structure de type Fermi–Dirac. Elle reflète l’exclusion statistique effective induite par l’intégrabilité, y compris dans un système bosonique. Elle s’écrit :
-\begin{eqnarray}
+\begin{eqnarray}\label{chap:fluctu:eq:irreg_0}
 	\mathcal{D}(\theta, \theta') & = & \left ( \frac{1}{\rho_{\! s , eq}(\theta) \nu_{\! eq}(\theta) (1 - \nu_{\! eq}(\theta)) }\right )  \delta(\theta, \theta'). 	
 \end{eqnarray}
 La partie régulière symétrique, notée $\mathcal{V}(\theta, \theta')$, regroupe quant à elle les contributions non locales issues des interactions entre quasi-particules.
 \begin{eqnarray}
-	\mathcal{V}(\theta, \theta')	 & = & - \left ( \frac{1}{\rho_{\! s , eq}(\theta) (1 - \nu_{\! eq}(\theta) ) } + \frac{1}{\rho_{\! s, eq}(\theta')   (1 - \nu_{\! eq}(\theta')) }\right )\frac{\Delta(\theta - \theta')}{2\pi}\\
-	&&  + \int d \theta''  \frac{\nu_{\! eq}(\theta'')}{\rho_{\, s, eq}(\theta'')(1 - \nu_{\! eq}(\theta'')) } \frac{\Delta(\theta - \theta'' )}{2\pi} \frac{\Delta(\theta''  - \theta')}{2\pi}
+	\left . \begin{array}{rcl}\mathcal{V}(\theta, \theta')	 & = &  \displaystyle - \left ( \frac{1}{\rho_{\! s , eq}(\theta) (1 - \nu_{\! eq}(\theta) ) } + \frac{1}{\rho_{\! s, eq}(\theta')   (1 - \nu_{\! eq}(\theta')) }\right )\frac{\Delta(\theta - \theta')}{2\pi}\\
+	&&  \displaystyle  + \int d \theta''  \frac{\nu_{\! eq}(\theta'')}{\rho_{\, s, eq}(\theta'')(1 - \nu_{\! eq}(\theta'')) } \frac{\Delta(\theta - \theta'' )}{2\pi} \frac{\Delta(\theta''  - \theta')}{2\pi}
+	\end{array}\right \} 
 	\label{chap:fluctu:eq:reg}
 \end{eqnarray}
- 
- en notant $\rho_{\! eq}(\theta) = \nu_{\! eq}(\theta)\rho_{\! s, eq}(\theta)$.
+avec $\rho_{\! eq}(\theta) = \nu_{\! eq}(\theta)\rho_{\! s, eq}(\theta)$.
 
 
 %\subsection*{Forme explicite du hessien : fluctuations gaussiennes}
@@ -1059,51 +1070,114 @@ Les equations (\ref{chap:fluctu:eq:hessienne3}) , (\ref{chap:fluctu:eq:hessienne
 \end{eqnarray*}
 Du fait que tous ces fonctions ($\mathcal{H}$ , $\mathcal{D}$ , $\mathcal{V}$ et inverse ) soit symétriques alors l'equation ci-dessus sont tous équivalentes et $\mathcal{B}$ étant donc symétrique .
 Donc en utilisant (\ref{chap:fluctu:eq:reg}) et (\ref{chap:fluctu:eq:irreg.inv}) 
-\begin{eqnarray*}
-	\mathcal{B}(\theta , \theta ' )  & = & - (\mathcal{D}^{-1}\cdot\mathcal{V}\cdot (\mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})})^{-1})(\theta , \theta') 	,\\
-	& = & 	(\rho_{\! s , eq}(\theta) \nu_{\! eq}(\theta) (1 -  \nu_{\! eq}(\theta) )) \times \\
-	&& ~~~~~~~~~~~~~\left \{  \frac{\Delta}{2\pi} \star  \left [ \left (  \frac{1}{\rho_{\! s, eq}(\theta)  (1 - \nu_{\! eq}(\theta)  )} +  \frac{1}{\rho_{\! s, eq}(\cdot) (1 - \nu_{\! eq} (\cdot )  )}\right )  \, \mathcal{H}^{-1}( \cdot , \theta ' )   \right. \right .\\
-	&&  ~~~~~~~~~~~~~~~~~~~~~~~~~\left . \left .   -  \frac{\nu_{\! eq}(\cdot)}{\rho_{\! s, eq}(\cdot) ( 1 - \nu_{\! eq}(\cdot) )}  \, \left ( \frac{\Delta}{2\pi} \star \mathcal{H}^{-1}( \cdot , \theta ' )   \right )  \right ] \right \} (\theta),
-\end{eqnarray*}
+\begin{eqnarray}
+	\mathcal{B}(\theta , \theta ' )  & = & - (\mathcal{D}^{-1}\cdot\mathcal{V}\cdot (\mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})})^{-1})(\theta , \theta') 	, \label{chap:fluctu:eq:B.1}\\
+	& = & 	(\rho_{\! s , eq}(\theta) \nu_{\! eq}(\theta) (1 -  \nu_{\! eq}(\theta) )) \times  \notag\\
+	&& ~~~~~~~~~~~~~\left \{  \frac{\Delta}{2\pi} \star  \left [ \left (  \frac{1}{\rho_{\! s, eq}(\theta)  (1 - \nu_{\! eq}(\theta)  )} +  \frac{1}{\rho_{\! s, eq}(\cdot) (1 - \nu_{\! eq} (\cdot )  )}\right )  \, \mathcal{H}^{-1}( \cdot , \theta ' )   \right. \right .\notag\\
+	&&  ~~~~~~~~~~~~~~~~~~~~~~~~~\left . \left .   -  \frac{\nu_{\! eq}(\cdot)}{\rho_{\! s, eq}(\cdot) ( 1 - \nu_{\! eq}(\cdot) )}  \, \left ( \frac{\Delta}{2\pi} \star \mathcal{H}^{-1}( \cdot , \theta ' )   \right )  \right ] \right \} (\theta) \notag,
+\end{eqnarray}
 où \( (f \star g)(x) \) désigne la convolution \( \int f(x - t)\, g(t)\, dt \).
 En injectant cette dernier équation et \eqref{chap:fluctu:eq:hessienner.inv.1} , dans \eqref{chap:fluctu:eq:fluctuations} , il vient que une éqution implicite:
-\begin{eqnarray*}
-	\langle \delta \rho(\theta) \delta	\rho(\theta') \rangle_w & = & \frac{1}{L} \mathcal{D}^{-1}(\theta , \theta') + \\
-	&& 	\frac{1}{L} (\rho_{\! s , eq}(\theta) \nu_{\! eq}(\theta) (1 -  \nu_{\! eq}(\theta) )) \times \\
-	&& ~~~~~~~~~~~~~\left \{  \frac{\Delta}{2\pi} \star  \left [ \left (  \frac{1}{\rho_{\! s, eq}(\theta)  (1 - \nu_{\! eq}(\theta)  )} +  \frac{1}{\rho_{\! s, eq}(\cdot) (1 - \nu_{\! eq} (\cdot )  )}\right )  \, \mathcal{H}^{-1}( \cdot , \theta ' )   \right. \right .\\
-	&&  ~~~~~~~~~~~~~~~~~~~~~~~~~\left . \left .   -  \frac{\nu_{\! eq}(\cdot)}{\rho_{\! s, eq}(\cdot) ( 1 - \nu_{\! eq}(\cdot) )}  \, \left ( \frac{\Delta}{2\pi} \star \mathcal{H}^{-1}( \cdot , \theta ' )   \right )  \right ] \right \} (\theta),
-\end{eqnarray*}
-
-
-
+\begin{eqnarray}
+	\left . \begin{array}{rcl}
+		\langle \delta \rho(\theta) \delta	\rho(\theta') \rangle_w & = &\displaystyle \frac{1}{L} \mathcal{D}^{-1}(\theta , \theta') + \\&& 	\frac{1}{L} (\rho_{\! s , eq}(\theta) \nu_{\! eq}(\theta) (1 -  \nu_{\! eq}(\theta) )) \times \\
+		&& \displaystyle  ~~~~~~~~~~~~~\left \{  \frac{\Delta}{2\pi} \star  \left [ \left (  \frac{1}{\rho_{\! s, eq}(\theta)  (1 - \nu_{\! eq}(\theta)  )} +  \frac{1}{\rho_{\! s, eq}(\cdot) (1 - \nu_{\! eq} (\cdot )  )}\right )  \, \mathcal{H}^{-1}( \cdot , \theta ' )   \right. \right .\\
+		&&  \displaystyle  ~~~~~~~~~~~~~~~~~~~~~~~~~\left . \left .   -  \frac{\nu_{\! eq}(\cdot)}{\rho_{\! s, eq}(\cdot) ( 1 - \nu_{\! eq}(\cdot) )}  \, \left ( \frac{\Delta}{2\pi} \star \mathcal{H}^{-1}( \cdot , \theta ' )   \right )  \right ] \right \} (\theta),
+	\end{array}\right\} \label{chap:fluctu:eq:fluctuations.10}
+\end{eqnarray}
 
 
 Cette expression explicite des corrélations permet d'évaluer les fluctuations des grandeurs macroscopiques comme le nombre total de particules ou l'énergie, en les exprimant comme des observables linéaires de la densité \( \rho(\theta) \).
 
-
 \subsection{Vérification numérique thermodynamique : inversion de la courbure et dérivée fonctionnelle}
 
-Dans cette section, nous proposons une vérification explicite de l'égalité fonctionnelle entre la susceptibilité spectrale \( \chi_w(\theta, \theta') \) par inversion de la courbure et par dérivée fonctionnelle dans le régime thermodynamique. Cette égalité exprime le principe de \emph{fluctuation-réponse} dans le cadre du GGE.
 
-\paragraph{Méthode.} On considère un gaz de bosons unidimensionnels intégrables, décrit par l’équation de Bethe, dans un état d’équilibre généralisé déterminé par un poids/potentiel spectral fixé \( w(\theta) \). À partir de ce poids, on résout numériquement les équations TBA pour déterminer les quantités thermodynamiques d'équilibre : la densité de quasi-particules \( \rho_{\mathrm{eq}}(\theta) \), la densité d'états \( \rho_{s,\mathrm{eq}}(\theta) \), et la fonction de remplissage \( \nu_{\! \mathrm{eq}}(\theta) = \rho_{\! \mathrm{eq}}(\theta) / \rho_{\! s,\mathrm{eq}}(\theta) \).
+\paragraph{Principe de fluctuation-réponse.}
+
+Dans cette sous-section, nous proposons de tester l’expression \eqref{chap:fluctu:eq:fluctuations.10}.  
+Dans cette équation, le membre de droite s’écrit :
+\begin{eqnarray*}
+\left( L \mathcal{H} \right)^{-1} (\theta, \theta'),
+\end{eqnarray*}
+où $\mathcal{H}$ désigne l’opposé de la hessienne de l'entropie de Yang–Yang.  
+Or $\left( L \mathcal{H} \right)^{-1} (\theta, \theta')$ est aussi le membre de droite de \eqref{chap:Fluc:eq:susp-2}.
+
+\medskip
+
+Le membre de gauche de l’équation \eqref{chap:Fluc:eq:susp-2}, à savoir
+\begin{eqnarray*}
+- \frac{1}{L} \frac{\delta \rho_{\mathrm{eq}}(\theta)}{\delta w(\theta')},
+\end{eqnarray*}
+peut être évalué numériquement sans avoir à recourir à l'entropie de Yang–Yang. Il suffit en effet de calculer la variation de la {\em distribution de rapidité à l'équilibre} $\rho_{\mathrm{eq}}(\theta)$ en réponse à une petite perturbation du {\em poids spectral} $w(\theta')$.
+
+\medskip
+
+Ainsi Nous proposons ainsi de comparer numériquement les deux expressions :
+\(
+\left( L \mathcal{H} \right)^{-1} (\theta, \theta') \quad \text{et} \quad - \frac{1}{L} \frac{\delta \rho_{\mathrm{eq}}(\theta)}{\delta w(\theta')},
+\)
+afin de tester la validité l’expression \eqref{chap:fluctu:eq:fluctuations.10}.
+
+%Dans cette section, nous proposons une vérification explicite de l'égalité fonctionnelle entre la susceptibilité spectrale \( \chi_w(\theta, \theta') \) par inversion de la courbure et par dérivée fonctionnelle dans le régime thermodynamique. Cette égalité exprime le principe de \emph{fluctuation-réponse} dans le cadre du GGE.
+
+\subsubsection{Méthode.} 
 
 \paragraph{Calcul de la matrice hermitienne.}
-À partir de \( \nu_{\mathrm{eq}} \), on calcule la courbure fonctionnelle de l'entropie de Yang-Yang.
 
-On inverse ensuite numériquement cet opérateur discretisé pour obtenir la matrice
-\begin{eqnarray*}
-	\left( L \mathcal{H} \right)^{-1} (\theta, \theta').
-\end{eqnarray*}
+%On considère un gaz de bosons unidimensionnels intégrables, décrit par l’équation de Bethe, dans un état d’équilibre généralisé déterminé par une {\em taille du système} \(L\), une intensité d'interaction \(g\)   un {\em poids spectral} \( w(\theta) \) fixé . À partir de ces paramètres , on résout numériquement les {\em équations TBA} \eqref{chap:TBA:eq:e} pour déterminer les quantités thermodynamiques d'équilibre : la {\em distribution de rapidité}  \( \rho_{\mathrm{eq}}(\theta) \), la {\em densité d'états} \( \rho_{s,\mathrm{eq}}(\theta) \), et la {\em fonction d'occupation} \( \nu_{\! \mathrm{eq}}(\theta) = \rho_{\! \mathrm{eq}}(\theta) / \rho_{\! s,\mathrm{eq}}(\theta) \). Avec ces paramètres et quantités thermodynamiques nous avons $ \mathcal{D}(\theta , \theta')$ (et son inverse $ \mathcal{D}^{-1}(\theta , \theta')$) définie en \eqref{chap:fluctu:eq:irreg_0} (resp. \eqref{chap:fluctu:eq:irreg.inv})  et puis  $ \mathcal{V}(\theta , \theta')$ avec \eqref{chap:fluctu:eq:reg} et donc $ \mathcal{H}(\theta , \theta')$ avec  \eqref{chap:fluctu:eq:hessienne3} est donc la partie irrégulière (diagonale) et réguilère de   \(\left( L \mathcal{H} \right)^{-1} (\theta, \theta')\) avec \eqref{chap:fluctu:eq:fluctuations.10} 
+
+On considère un gaz de bosons unidimensionnels intégrable, décrit par l'équation de Bethe, dans un état d'équilibre généralisé caractérisé par la {\em taille du système} \(L\), l'{\em intensité d'interaction} \(g\), et un {\em poids spectral} fixé \(w(\theta)\).
+
+À partir de ces paramètres, on résout numériquement les {\em équations de la thermodynamique de Bethe} (TBA) \eqref{chap:TBA:eq:e}, ce qui permet d'obtenir les grandeurs thermodynamiques d'équilibre :
+\begin{itemize}[label = $\bullet$]
+	\item la {\em distribution de rapidité} \( \rho_{\mathrm{eq}}(\theta) \),
+	\item la {\em densité d'états} \( \rho_{s,\mathrm{eq}}(\theta) \)
+	\item et la {\em fonction d'occupation} \( \nu_{\! \mathrm{eq}}(\theta) = \rho_{\! \mathrm{eq}}(\theta) / \rho_{\! s,\mathrm{eq}}(\theta) \).
+\end{itemize}
+
+
+Ces quantités permettent ensuite de construire :
+\begin{itemize}[label = $\bullet$]
+	\item la contribution diagonale singulière \( \mathcal{D}(\theta, \theta') \), définie par \eqref{chap:fluctu:eq:irreg_0}, ainsi que son inverse \( \mathcal{D}^{-1}(\theta, \theta') \) (voir \eqref{chap:fluctu:eq:irreg.inv}) ;	
+	\item la contribution régulière non locale \( \mathcal{V}(\theta, \theta') \), définie par \eqref{chap:fluctu:eq:reg}.
+\end{itemize}
+
+La matrice de fluctuation \( \mathcal{H}(\theta, \theta') \), définie par \eqref{chap:fluctu:eq:hessienne3}, est obtenue en combinant ces deux contributions. L’inverse \( \left(L \mathcal{H} \right)^{-1}(\theta, \theta') \) en \eqref{chap:fluctu:eq:fluctuations.10} fournie une partie irrégulière (diagonale) $\mathcal{D}^{-1}(\theta, \theta')/L$ et une partie régulière $\mathcal{B}(\theta, \theta')/L$ avec \eqref{chap:fluctu:eq:B.1}.
+
+
+%\paragraph{Calcul de la matrice hermitienne.}
+%À partir de \( \nu_{\mathrm{eq}} \), on calcule la courbure fonctionnelle de l'entropie de Yang-Yang.
+%
+%On inverse ensuite numériquement cet opérateur discretisé pour obtenir la matrice
+%\begin{eqnarray*}
+%	\left( L \mathcal{H} \right)^{-1} (\theta, \theta').
+%\end{eqnarray*}
 
 \paragraph{Calcul par différentiation numérique.}
-En parallèle, on calcule indépendamment la réponse linéaire
-\begin{eqnarray*}
- - \frac{1}{L} \frac{\delta \rho_{\mathrm{eq}}(\theta)}{\delta w(\theta')},	
-\end{eqnarray*}
-par différentiation numérique de la solution des équations TBA. Concrètement, on introduit une perturbation locale \( \delta w(\theta') \) sur le potentiel spectral et on mesure la variation de \( \rho_{\mathrm{eq}}(\theta) \) en résolvant à nouveau l’équation de Bethe pour chaque perturbation, en conservant \( g \), \( N \), et \( L \) constants.
+
+En parallèle, on effectue une variation infinitésimale du poids spectral \(w(\theta)\), et on résout à nouveau numériquement les équations TBA pour obtenir la distribution de rapidité correspondante. Par différentiation, on accède alors à :
+\[
+- \frac{1}{L} \frac{\delta \rho_{\mathrm{eq}}(\theta)}{\delta w(\theta')}.
+\]
+
+Cette quantité représente la réponse directe du système à une perturbation du poids spectral, et peut être comparée à l’inverse de la matrice hessienne obtenue précédemment.
+
+%par différentiation numérique de la solution des équations TBA. Concrètement, on introduit une perturbation locale \( \delta w(\theta') \) sur le potentiel spectral et on mesure la variation de \( \rho_{\mathrm{eq}}(\theta) \) en résolvant à nouveau l’équation de Bethe pour chaque perturbation, en conservant \( g \), \( N \), et \( L \) constants.
+
+
+\subsubsection{Dans une équilibre thermodynamique généralisé}
+
+\subparagraph{Paramètres fixés.}
+On fixe {\em un poids spectral} , par exemple quadratique
+\begin{eqnarray}
+	w(\theta) = \tfrac{1}{2} \theta^2,
+\end{eqnarray}
+et on fixe les paramètres physiques du système : \( L = 10 \) , et \( g = 1 \).
+
+En ne fixant pas $N$, la contribution du nombre de particule dans $w$ n'est pas fixées contrairement pour les simulations de la partie Monte-Carlos fais dans la section prècedent.
 
 \paragraph{Comparaison.}
-Les deux approches produisent des matrices \(\chi_w(\theta, \theta')\) que l’on compare numériquement. La coïncidence entre ces deux résultats valide la structure variationnelle de l'entropie de Yang-Yang et confirme que la réponse linéaire (calculée comme dérivée fonctionnelle) coïncide avec l’inverse de la courbure thermodynamique.
+Les deux approches produisent des matrices  que l’on compare numériquement. La coïncidence entre ces deux résultats valide la structure variationnelle de l'entropie de Yang-Yang et confirme que la réponse linéaire (calculée comme dérivée fonctionnelle) coïncide avec l’inverse de la courbure thermodynamique.
 %\[
 %\chi_w(\theta, \theta') = C_w(\theta, \theta') = - \left( L \mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})} \right)^{-1} (\theta, \theta').
 %\]
@@ -1117,19 +1191,56 @@ Les deux approches produisent des matrices \(\chi_w(\theta, \theta')\) que l’o
     \label{fig:chi_thermodynamique}
 \end{figure}
 
-\paragraph{Conclusion.} Cette vérification confirme que dans le régime thermodynamique, la structure variationnelle de l’entropie de Yang-Yang encode entièrement les fluctuations et les réponses spectrales du système. Elle constitue un test non trivial du principe de fluctuation-réponse dans les systèmes intégrables.
+\paragraph{Conclusion.} 
+Cette vérification confirme que, dans le régime thermodynamique, la structure variationnelle de l’entropie de Yang–Yang encode entièrement les fluctuations et les réponses spectrales du système. Il s’agit d’un test non trivial du principe de fluctuation–réponse appliqué aux systèmes intégrables.
+
+\medskip
+
+Dans un second temps, il est naturel de vouloir tester ce principe pour différentes formes du {\em poids spectral} $w$. Dans le cas général du GGE, $w$ appartient à un espace de dimension infinie. Afin de réduire cette complexité, nous nous restreignons à une sous-famille à deux paramètres, en nous plaçant dans le cadre de l’équilibre thermique. Ce choix permet de comparer explicitement les fluctuations de grandeurs thermodynamiques macroscopiques, telles que le nombre total de particules et l’énergie cinétique.
+
 
 
 
 %\section{Lien entre dérivée fonctionnelle et réponse linéaire aux facteurs de Lagrange}
 
-\subsection{Vériﬁcation numérique thermique :  énergie et nombre de particules}
+\subsubsection{Vériﬁcation numérique thermique :  énergie et nombre de particules}
 
 Nous testons à présent notre expression des fluctuations dans le cas particulier de l'équilibre thermique. Le système est supposé en contact avec un bain à température \( T \) et potentiel chimique \( \mu \). Le poids spectral prend alors la forme canonique :
 \(
 w(\theta) = \beta \varepsilon(\theta) - \beta \mu,
 \)
 avec \( \beta = 1 / (k_B T) \) et \( \varepsilon(\theta) \) l’énergie spectrale (par exemple \( \theta^2/2 \) pour des particules libres).
+
+\subparagraph{Paramètres fixés.}
+On reprend ici le formalisme de l’équation \eqref{chap4:eq.w_fi}, dans lequel le poids spectral s’écrit comme une combinaison linéaire :
+\begin{eqnarray*}
+	w(\theta) & = & \beta_0 f_0(\theta) + \beta_2 f_2(\theta),
+\end{eqnarray*}
+où \( f_i(\theta) \) sont les densités locales associées aux charges conservées.
+
+Dans le cas de l’équilibre thermique usuel (ensemble de Gibbs), seules deux charges sont conservées : le **nombre total de particules** \( \operator{Q} \) et l’**énergie cinétique totale** \( \operator{K} \). Cela correspond au choix suivant :
+\begin{align*}
+	f_0(\theta) &= 1, \quad &&\text{(densité de particules)} \\
+	f_1(\theta) &= \frac{1}{2}m \theta^2, \quad &&\text{(densité d’énergie cinétique)}
+\end{align*}
+les coefficients de Lagrange associés sont :
+\begin{align*}
+	\beta_0 &= -\beta \mu, \quad &&\text{(potentiel chimique)} \\
+	\beta_1 &= \beta, \quad &&\text{(inverse de la température)}
+\end{align*}
+
+\paragraph{Calcul de la matrice hermitienne.}
+Les densités locales $f_i$ sont toujours fixées. Et pour fixer le {\em poids spectral} $w$ on fixe les coefficients de Lagrange $\beta_0$ et $\beta_2$ en fixant dans une premier temps \(T = 60~\mathrm{nK}\) et  \( \mu = 27~\mathrm{nK} \). De plus pour se placer dans un régime particulier on fixes $L=?$ et $q =$. 
+Avec ces parametres  pars les meme procédecées que dans la sous-section précédent on la distribution de rapidité à l'équilibre $\rho_{\mathrm{eq}}$ et la partie singulières $\mathcal{D}^{-1}/L$ et interaction $\mathcal{B}/L$ de  $\mathcal{H}^{-1}/L$.
+
+\medskip
+
+Les diagrame de phase du modèle de Lieb-Liniger à pour abcisse la constante de Lieb $\gamma = g/n$ et pour ordonné $t = 1/(\beta g^2)$. Conformément à l'équation \eqref{chap4:eq.moment.distr.q.10} la densité linéaire $n$  
+
+{chap4:eq.cumulant.distr.q.10}
+
+Pour explorer différents  zone du diagramme de phase du modèle de Lieb-Liniger
+
  
 
 \paragraph{Cas du nombre de particules.}
