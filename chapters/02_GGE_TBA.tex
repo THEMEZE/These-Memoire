@@ -237,7 +237,7 @@ Ces charges agissent donc de manière diagonale sur les états de Bethe, avec de
 \)
 on associe un opérateur-charge loclal :
 \begin{eqnarray}\label{chap.2.charge.f.1}
-	\operator{\mathcal{Q}}^{(\mathcal{S})}[f] & = &  L \int_0^L d\theta \, f(\theta) \operator{\rho}^{(\mathcal{S})}(\theta).	
+	\operator{\mathcal{Q}}^{(\mathcal{S})}[f] & = &  L \int d\theta \, f(\theta) \operator{\rho}^{(\mathcal{S})}(\theta).	
 \end{eqnarray}
 où $\operator{\rho}(\theta)$ agit sur une état de Bethe comme 
 \begin{eqnarray}\label{chap.2.rho.1}
@@ -739,12 +739,12 @@ La quantité $\dfonc{\lambda} F[\phi]$ est linéaire en $\lambda(x)$, et peut do
 
 La fonction $\frac{\delta F[\phi]}{\delta \phi(x)}$ est appelée \textbf{dérivée fonctionnelle} de $F[\phi]$ au point $x$. Elle joue un rôle analogue au gradient dans les espaces de dimension finie, en ce qu’elle encode la variation de $F[\phi]$ sous une perturbation infinitésimale du champ au point $x$.
 
-\begin{tcolorbox}[title=Interprétation distributionnelle de la dérivée fonctionnelle, colback=gray!5!white, colframe=black!50]
+%\begin{tcolorbox}[title=Interprétation distributionnelle de la dérivée fonctionnelle, colback=gray!5!white, colframe=black!50]
 On peut interpréter la dérivée fonctionnelle $\delta F[\phi]/\delta \phi(x)$ comme le résultat de la dérivation directionnelle de $F[\phi]$ dans la direction de la distribution $\delta(x - x_0)$, qui représente une perturbation localisée du champ au point $x_0$ :
 \begin{equation}\label{chap2:eq.diff.q.3}
 	\left. \frac{d}{d\epsilon} F[\phi + \epsilon \delta(x - x_0)] \right|_{\epsilon = 0} = \frac{\delta F[\phi]}{\delta \phi(x_0)}
 \end{equation}
-\end{tcolorbox}
+%\end{tcolorbox}
 
 %Dans le cas particulier où $F[\phi]$ est une fonctionnelle locale, c’est-à-dire s’écrit sous la forme :
 %\[
@@ -795,7 +795,7 @@ et la forme de l'{\em énergie généralisée} \eqref{chap.2.W.int} et le rappel
 \begin{eqnarray}
 	\frac{\delta\mathcal{W}[\rho_{\mathrm{eq}}]}{\delta\rho(\theta)}  = w(\theta).
 \end{eqnarray}	
-Ainsi {chap:TBA:eq:stationnarite-2} se réécrit en 
+Ainsi \eqref{chap:TBA:eq:stationnarite-2} se réécrit en 
 \begin{eqnarray}
 	\frac{\delta\mathcal{S}_{YY}[\rho_{\mathrm{eq}}]}{\delta\rho(\theta)} = w(\theta),\label{chap:TBA:eq:stationnarite-3}
 \end{eqnarray}
