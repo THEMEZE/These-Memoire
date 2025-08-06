@@ -51,44 +51,44 @@ Nous commencerons par rappeler le formalisme variationnel, puis nous dériverons
 
 \section{Fluctuation-réponse et susceptibilités dans les états d’équilibre généralisés}
 
-Soient $\omega$, $f$ et $g$ des fonctions.
-
-La dérivée fonctionnelle de $\langle Q_{[f]} \rangle_{\omega}$ par rapport à la fonction $\omega$, dans la direction $g$, s'écrit
-\[
-\frac{\delta \langle Q_{[f]} \rangle_{\omega} }{\delta \omega}[g]
-\]
-et est définie par
-\[
-\frac{\delta \langle Q_{[f]} \rangle_{\omega} }{\delta \omega}[g] = \lim_{\epsilon \rightarrow 0} \frac{\langle Q_{[f]} \rangle_{\omega + \epsilon g} - \langle Q_{[f]} \rangle_{\omega}}{\epsilon}.
-\]
-
-Par conséquent, il faut remplacer dans ton texte les expressions
-\[
-\frac{\delta \langle Q_{[f_1]} \rangle_{\omega} }{\delta f_2}
-\]
-par
-\[
-\frac{\delta \langle Q_{[f_1]} \rangle_{\omega} }{\delta \omega}[f_2],
-\]
-et les expressions
-\[
-\frac{\delta Z}{\delta f_2}
-\]
-par
-\[
-\frac{\delta Z}{\delta \omega}[f_2].
-\]
-
-De plus, la section 1.1.2 n’est qu’une application du formalisme précédent dans le cas particulier où $f_1(\lambda) = \delta(\lambda - \theta)$ et $f_2(\lambda) = \delta(\lambda - \theta')$.
-
-Dans ce cas, on utilise la notation abrégée
-\[
-\frac{\delta \langle Q_{[f]} \rangle_{\omega} }{\delta \omega(\theta)}
-\]
-pour désigner
-\[
-\frac{\delta \langle Q_{[f]} \rangle_{\omega} }{\delta \omega}[\delta(\cdot - \theta)].
-\]
+%Soient $\omega$, $f$ et $g$ des fonctions.
+%
+%La dérivée fonctionnelle de $\langle Q_{[f]} \rangle_{\omega}$ par rapport à la fonction $\omega$, dans la direction $g$, s'écrit
+%\[
+%\frac{\delta \langle Q_{[f]} \rangle_{\omega} }{\delta \omega}[g]
+%\]
+%et est définie par
+%\[
+%\frac{\delta \langle Q_{[f]} \rangle_{\omega} }{\delta \omega}[g] = \lim_{\epsilon \rightarrow 0} \frac{\langle Q_{[f]} \rangle_{\omega + \epsilon g} - \langle Q_{[f]} \rangle_{\omega}}{\epsilon}.
+%\]
+%
+%Par conséquent, il faut remplacer dans ton texte les expressions
+%\[
+%\frac{\delta \langle Q_{[f_1]} \rangle_{\omega} }{\delta f_2}
+%\]
+%par
+%\[
+%\frac{\delta \langle Q_{[f_1]} \rangle_{\omega} }{\delta \omega}[f_2],
+%\]
+%et les expressions
+%\[
+%\frac{\delta Z}{\delta f_2}
+%\]
+%par
+%\[
+%\frac{\delta Z}{\delta \omega}[f_2].
+%\]
+%
+%De plus, la section 1.1.2 n’est qu’une application du formalisme précédent dans le cas particulier où $f_1(\lambda) = \delta(\lambda - \theta)$ et $f_2(\lambda) = \delta(\lambda - \theta')$.
+%
+%Dans ce cas, on utilise la notation abrégée
+%\[
+%\frac{\delta \langle Q_{[f]} \rangle_{\omega} }{\delta \omega(\theta)}
+%\]
+%pour désigner
+%\[
+%\frac{\delta \langle Q_{[f]} \rangle_{\omega} }{\delta \omega}[\delta(\cdot - \theta)].
+%\]
 
 
 \subsection{Cadre général : chages et dérivées fonctionnelles}
@@ -1050,7 +1050,7 @@ avec $\rho_{\! eq}(\theta) = \nu_{\! eq}(\theta)\rho_{\! s, eq}(\theta)$.
 	\mathcal{H}^{-1}(\theta, \theta') & = & \mathcal{D}^{-1}(\theta, \theta') + \mathcal{B}(\theta, \theta') 
 	\label{chap:fluctu:eq:hessienner.inv.1}	
 \end{eqnarray}
-avec une partie diagonale irrégulière
+avec une partie diagonale sans intéraction
 \begin{eqnarray}
 	\mathcal{D}^{-1}(\theta, \theta') & = & (\rho_{\! s , eq}(\theta)  \nu_{\! eq}(\theta)(1 -\nu_{\! eq}(\theta)))  \delta(\theta, \theta') 
 	 \label{chap:fluctu:eq:irreg.inv}	
@@ -1060,7 +1060,7 @@ tel que
     (\mathcal{D}^{-1} \cdot  \mathcal{D})(\theta, \theta')  = (\mathcal{D}\cdot  \mathcal{D}^{-1})(\theta, \theta') =  \int d\theta'' \; \mathcal{D}(\theta, \theta'') \, \mathcal{D}^{-1}(\theta'', \theta') = \delta(\theta - \theta'),
     \label{chap:fluctu:eq:irreg.prod.inv}
 \end{eqnarray}
-avec une partie symetrique régulière $\mathcal{B}$.
+avec une partie symétrique régulière avec interaction $\mathcal{B}$.
 
 \medskip
 
@@ -1142,7 +1142,7 @@ Ces quantités permettent ensuite de construire :
 	\item la contribution régulière non locale \( \mathcal{V}(\theta, \theta') \), définie par \eqref{chap:fluctu:eq:reg}.
 \end{itemize}
 
-La matrice de fluctuation \( \mathcal{H}(\theta, \theta') \), définie par \eqref{chap:fluctu:eq:hessienne3}, est obtenue en combinant ces deux contributions. L’inverse \( \left(L \mathcal{H} \right)^{-1}(\theta, \theta') \) en \eqref{chap:fluctu:eq:fluctuations.10} fournie une partie irrégulière (diagonale) $\mathcal{D}^{-1}(\theta, \theta')/L$ et une partie régulière $\mathcal{B}(\theta, \theta')/L$ avec \eqref{chap:fluctu:eq:B.1}.
+La matrice de fluctuation \( \mathcal{H}(\theta, \theta') \), définie par \eqref{chap:fluctu:eq:hessienne3}, est obtenue en combinant ces deux contributions. L’inverse \( \left(L \mathcal{H} \right)^{-1}(\theta, \theta') \) en \eqref{chap:fluctu:eq:fluctuations.10} fournie une partie sans interaction (diagonale) $\mathcal{D}^{-1}(\theta, \theta')/L$ et une partie avec intéraction $\mathcal{B}(\theta, \theta')/L$ avec \eqref{chap:fluctu:eq:B.1}.
 
 
 %\paragraph{Calcul de la matrice hermitienne.}
@@ -1230,56 +1230,150 @@ les coefficients de Lagrange associés sont :
 \end{align*}
 
 \paragraph{Calcul de la matrice hermitienne.}
-Les densités locales $f_i$ sont toujours fixées. Et pour fixer le {\em poids spectral} $w$ on fixe les coefficients de Lagrange $\beta_0$ et $\beta_2$ en fixant dans une premier temps \(T = 60~\mathrm{nK}\) et  \( \mu = 27~\mathrm{nK} \). De plus pour se placer dans un régime particulier on fixes $L=?$ et $q =$. 
-Avec ces parametres  pars les meme procédecées que dans la sous-section précédent on la distribution de rapidité à l'équilibre $\rho_{\mathrm{eq}}$ et la partie singulières $\mathcal{D}^{-1}/L$ et interaction $\mathcal{B}/L$ de  $\mathcal{H}^{-1}/L$.
+
+Les densités locales $f_i$ sont fixées. Pour spécifier le {\em poids spectral} $w$, on choisit les coefficients de Lagrange $\beta_0$ et $\beta_2$ en imposant dans un premier temps \( T = 60~\mathrm{nK} \) et \( \mu = 27~\mathrm{nK} \). De plus, afin de se placer dans un régime physique particulier, on fixe la taille du système à \( L = \, ? \) et l'impulsion maximale à \( q = \, ? \).
+
+À partir de ces paramètres, et suivant la même procédure numérique que dans la sous-section précédente, on obtient la distribution de rapidité à l'équilibre \( \braket{\operator{\rho}(\theta)}_w \equiv \rho_{\mathrm{eq}}(\theta) \), ainsi que les composantes de l’inverse de l’opérateur hessien \( \mathcal{H}^{-1}/L \) : la contribution diagonale sans interaction \( \mathcal{D}^{-1}/L \) et la contribution non locale issue des interactions \( \mathcal{B}/L \).
 
 \medskip
 
-Les diagrame de phase du modèle de Lieb-Liniger à pour abcisse la constante de Lieb $\gamma = g/n$ et pour ordonné $t = 1/(\beta g^2)$. Conformément à l'équation \eqref{chap4:eq.moment.distr.q.10} la densité linéaire $n$  
+Les {\bf points rouges} indiquent le régime considéré dans le diagramme de phase du modèle de Lieb-Liniger, présenté en figure~\ref{chap:4:fig:diagr}.  
+Ce diagramme a pour abscisse la {\bf constante de Lieb} \( \gamma = g/n \) et pour ordonnée la {\bf température réduite} \( t = 1/(\beta g^2) \).  
+La densité linéaire \( n \) n’est pas un paramètre d’entrée, mais elle est calculée via :
+\(
+n = \int \rho_{\mathrm{eq}}(\theta) \, d\theta.
+\)
 
-{chap4:eq.cumulant.distr.q.10}
+\medskip
 
-Pour explorer différents  zone du diagramme de phase du modèle de Lieb-Liniger
+Nous représentons également la quantité
+\[
+\frac{1}{L} \frac{\mathcal{D}^{-1}(\theta, \theta')}{\delta(\theta - \theta')}
+\]
+sur la figure~\ref{chap:4:fig:diag}.  
+La fonction delta dans \eqref{chap:fluctu:eq:irreg.inv} étant approximée numériquement par un pas de discrétisation, la matrice \( \mathcal{D}^{-1} \) est proportionnelle à ce pas.
+
+\medskip
+
+La contribution \( \mathcal{B}/L \) liée aux interactions est représentée en figure~\ref{chap:4:fig.fluctu.A}.
+
+\medskip
+
+Enfin, en faisant varier le potentiel chimique \( \mu \), nous répétons l'ensemble des calculs précédents.  
+Les régimes ainsi obtenus sont indiqués par des {\bf points bleus} dans le diagramme de phase (figure~\ref{chap:4:fig:diagr}).
+
+
+\paragraph{Corrélation des observables thermodynamiques.}
+
+\medskip
+Conformément à l’équation~\eqref{chap4:eq.cumulant.distr.q.10}, nous calculons les fluctuations du nombre total de particules ainsi que celles de l’énergie cinétique totale, respectivement données par :
+\begin{eqnarray}
+	C_w[f_0,f_0]  & = & L^2 \iint d\theta\, d\theta'\; f_0(\theta)\, \frac{1}{L}\mathcal{H}^{-1}(\theta , \theta')\, f_0(\theta') ,\\
+	C_w[f_2,f_2]  & = & L^2 \iint d\theta\, d\theta'\; f_2(\theta)\, \frac{1}{L}\mathcal{H}^{-1}(\theta , \theta')\, f_2(\theta').
+\end{eqnarray}
+
+Pour chaque régime simulé (correspondant aux {\bf points bleus} et {\bf rouges} sur la figure~\ref{chap:4:fig:diagr}), nous évaluons numériquement les quantités \( C_w[f_0,f_0] \) et \( C_w[f_2,f_2] \), qui représentent les fluctuations extensives des observables associées aux charges \( \operator{Q}_0 \) (nombre de particules) et \( \operator{Q}_2 \) (énergie cinétique).
+
+\medskip
+
+Ces résultats sont représentés par des {\bf points orange} dans la figure~\ref{chap:4:fig.fluctu.A_com}, illustrant l’évolution des fluctuations en fonction du régime thermodynamique du système.
+
+
+\paragraph{Susecptibilité des observables thermodynamiques.}
+
+\medskip
+En parallèle, pour chaque régime simulé (correspondant aux {\bf points bleus} et {\bf rouges} de la figure~\ref{chap:4:fig:diagr}), et conformément à l’équation~\eqref{chap4:eq.moment.distr.q.10}, nous calculons les moyennes des charges associées au nombre total de particules et à l’énergie cinétique totale, données respectivement par :
+\begin{eqnarray}
+	\braket{\operator{\mathcal{Q}}[f_0]}_w & = & L \int d\theta\; f_0(\theta)\, \braket{\operator{\rho}(\theta)}_w,\\
+	\braket{\operator{\mathcal{Q}}[f_2]}_w & = & L \int d\theta\; f_2(\theta)\, \braket{\operator{\rho}(\theta)}_w.
+\end{eqnarray}
+
+\medskip
+
+Nous souhaitons ensuite approximer les susceptibilités thermodynamiques définies par :
+\begin{eqnarray}
+	\chi_w[f_i, f_i] & = & - \left. \frac{\partial \braket{\operator{\mathcal{Q}}[f_i]}_w}{\partial \beta_i} \right|_{\beta_{j \neq i} \text{ fixés}}.
+\end{eqnarray}
+
+Pour cela, nous procédons à une variation infinitésimale du poids spectral $w$ :
+
+\begin{itemize}[label =$\bullet$]
+	\item Une variation infinitésimale $\epsilon_\mu$ du potentiel chimique $\mu$ correspond à une perturbation du poids spectral de la forme :  
+	\[
+	w \rightarrow w - \beta \epsilon_\mu f_0.
+	\]
+	On résout alors numériquement les équations TBA pour ce nouveau poids, afin de calculer :
+	\[
+	\braket{\operator{\mathcal{Q}}[f_0]}_{w - \beta \epsilon_\mu f_0}.
+	\]
+
+	\item On effectue ensuite une variation infinitésimale $\epsilon_\beta$ de l’inverse de la température, de sorte que la combinaison \( (\beta + \epsilon_\beta)(\mu + \epsilon_\mu) = \beta \mu \) reste constante, maintenant ainsi $\beta_0$ fixe. Cela conduit à une variation du poids spectral de la forme :
+	\[
+	w \rightarrow w + (\beta + \epsilon_\beta)(- \epsilon_\mu f_0 + f_2).
+	\]
+	On résout à nouveau les équations TBA pour obtenir :
+	\[
+	\braket{\operator{\mathcal{Q}}[f_2]}_{w + (\beta + \epsilon_\beta)(- \epsilon_\mu f_0 + f_2)}.
+	\]
+\end{itemize}
+
+\medskip
+
+Ces simulations permettent d’estimer numériquement les susceptibilités :
+\begin{eqnarray}
+	\chi_w[f_0, f_0]	 & \approx & \frac{\braket{\operator{\mathcal{Q}}[f_0]}_{w - \beta \epsilon_\mu f_0} - \braket{\operator{\mathcal{Q}}[f_0]}_w}{\beta \epsilon_\mu},	\\
+	\chi_w[f_2, f_2]	 & \approx & - \frac{\braket{\operator{\mathcal{Q}}[f_2]}_{w + (\beta + \epsilon_\beta)(- \epsilon_\mu f_0 + f_2)} - \braket{\operator{\mathcal{Q}}[f_2]}_w}{\epsilon_\beta}.
+\end{eqnarray}
+
+\medskip
+
+Ces approximations numériques sont représentées par des {\bf points bleus} dans la figure~\ref{chap:4:fig.fluctu.A_com}, et permettent de confronter les résultats issus de la dérivée fonctionnelle avec ceux provenant de la réponse directe à une perturbation du poids spectral.
+
+
+
+%Conformément à l'équation \eqref{chap4:eq.moment.distr.q.10} la densité linéaire $n$  
+
+%Pour explorer différents  zone du diagramme de phase du modèle de Lieb-Liniger
 
  
 
-\paragraph{Cas du nombre de particules.}
-On choisit la fonction test \( f_{\operator{Q}}(\theta) = 1 \), ce qui définit la charge associée :
-\[
-\operator{Q} = \operator{\mathcal{Q}}[1] = L \int d\theta\, \operator{\rho}(\theta).
-\]
-Son facteur de Lagrange / potentiel conjugué dans \( w(\theta) \) est simplement :
-\[
-w(\theta) \supset -\beta \mu \cdot 1.
-\]
-La susceptibilité  et les corrélations associée sont égaux:
-\[
-\chi_w[{\operator{Q},\operator{Q}}] \doteq \left . \frac{\partial \langle \operator{Q} \rangle_w}{\partial (\beta \mu)} \right)_\beta  = L^2 \iint d\theta\, d\theta'\, C_w(\theta, \theta') \doteq C_w(f_{\operator{Q}}, f_{\operator{Q}}).
-\]
+%\paragraph{Cas du nombre de particules.}
+%On choisit la fonction test \( f_{\operator{Q}}(\theta) = 1 \), ce qui définit la charge associée :
+%\[
+%\operator{Q} = \operator{\mathcal{Q}}[1] = L \int d\theta\, \operator{\rho}(\theta).
+%\]
+%Son facteur de Lagrange / potentiel conjugué dans \( w(\theta) \) est simplement :
+%\[
+%w(\theta) \supset -\beta \mu \cdot 1.
+%\]
+%La susceptibilité  et les corrélations associée sont égaux:
+%\[
+%\chi_w[{\operator{Q},\operator{Q}}] \doteq \left . \frac{\partial \langle \operator{Q} \rangle_w}{\partial (\beta \mu)} \right)_\beta  = L^2 \iint d\theta\, d\theta'\, C_w(\theta, \theta') \doteq C_w(f_{\operator{Q}}, f_{\operator{Q}}).
+%\]
+%
+%\paragraph{Cas de l’énergie.}
+%On prend maintenant \( f_{\operator{H}}(\theta) = \varepsilon(\theta) \), l’énergie spectrale (ici par ex. \( \theta^2/2 \) pour des particules libres), ce qui donne :
+%\[
+%\operator{H} = \operator{\mathcal{Q}}[\varepsilon] = L \int d\theta\, \varepsilon(\theta)\, \operator{\rho}(\theta),
+%\]
+%et facteur de Lagrange / potentiel conjugué  est simplement \( \beta \varepsilon(\theta) \), avec :
+%\[
+%w(\theta) \supset \beta \varepsilon(\theta).
+%\]
+%On en déduit la susceptibilité thermique :
+%\[
+%\chi_{\operator{H},\operator{H}} \doteq -\left.\frac{\partial \langle \operator{H} \rangle_w}{\partial \beta} \right)_{\beta \mu}  = L^2 \iint d\theta\, d\theta'\, \varepsilon(\theta)\, C_w(\theta, \theta')\, \varepsilon(\theta') \doteq C_w(f_{\operator{H}}, f_{\operator{H}}).
+%\]
 
-\paragraph{Cas de l’énergie.}
-On prend maintenant \( f_{\operator{H}}(\theta) = \varepsilon(\theta) \), l’énergie spectrale (ici par ex. \( \theta^2/2 \) pour des particules libres), ce qui donne :
-\[
-\operator{H} = \operator{\mathcal{Q}}[\varepsilon] = L \int d\theta\, \varepsilon(\theta)\, \operator{\rho}(\theta),
-\]
-et facteur de Lagrange / potentiel conjugué  est simplement \( \beta \varepsilon(\theta) \), avec :
-\[
-w(\theta) \supset \beta \varepsilon(\theta).
-\]
-On en déduit la susceptibilité thermique :
-\[
-\chi_{\operator{H},\operator{H}} \doteq -\left.\frac{\partial \langle \operator{H} \rangle_w}{\partial \beta} \right)_{\beta \mu}  = L^2 \iint d\theta\, d\theta'\, \varepsilon(\theta)\, C_w(\theta, \theta')\, \varepsilon(\theta') \doteq C_w(f_{\operator{H}}, f_{\operator{H}}).
-\]
-
-\paragraph{Évaluation numérique.}
+%\paragraph{Évaluation numérique.}
 
 %On fais les calcule des correlation pour $\gamma = g/n $ fixé à ?? et $t = 1/(\beta g^2)$ entre ?? et ??.Les points correspondants sont représentés en bleu sur un diagramme de phase du modèle de Lieb-Liniger (voir Fig.~\ref{fig:diag}).
 
 %Ce même diagramme contient également un point rouge correspondant à \( t = ?? \). Les fluctuations associées à ce point sont représentées en niveaux de couleur sur un graphique 2D (voir Fig.~\ref{fig.fluctu.A})
 
-Les corrélations de \( \rho(\theta) \) sont calculées numériquement pour un couplage \(\gamma = g/n\) fixé, et une température réduite \( t = 1 / (\beta g^2) \) variant dans un intervalle donné. Les points correspondants sont indiqués en \textbf{bleu} dans le diagramme de phase du modèle de Lieb-Liniger (Fig.~\ref{fig:diag}).
-
-Dans ce même diagramme, un \textbf{point rouge} correspond à des conditions fixes (\(T = 60~\mathrm{nK}\), \( \mu = 27~\mathrm{nK} \)), pour lesquelles la carte des fluctuations \( \delta \rho \) est représentée en niveaux de couleur (Fig.~\ref{fig.fluctu.A}).
+%Les corrélations de \( \rho(\theta) \) sont calculées numériquement pour un couplage \(\gamma = g/n\) fixé, et une température réduite \( t = 1 / (\beta g^2) \) variant dans un intervalle donné. Les points correspondants sont indiqués en \textbf{bleu} dans le diagramme de phase du modèle de Lieb-Liniger (Fig.~\ref{fig:diag}).
+%
+%Dans ce même diagramme, un \textbf{point rouge} correspond à des conditions fixes (\(T = 60~\mathrm{nK}\), \( \mu = 27~\mathrm{nK} \)), pour lesquelles la carte des fluctuations \( \delta \rho \) est représentée en niveaux de couleur (Fig.~\ref{fig.fluctu.A}).
 
 
 \begin{figure}[H]
@@ -1287,16 +1381,16 @@ Dans ce même diagramme, un \textbf{point rouge} correspond à des conditions fi
 	\begin{subfigure}[b]{0.45\textwidth}
 		\includegraphics[width=\textwidth]{Figures/04_GGE_Fluctuation/diagram.png}
 		\caption{Diagramme de phase du modèle de Lieb-Liniger.}
-		\label{fig:diag}
+		\label{chap:4:fig:diagr}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.45\textwidth}
 		\includegraphics[width=\textwidth]{Figures/04_GGE_Fluctuation/fluctu.png}
 		\caption{ \( \mathcal{B}(\theta, \theta') \).}
-		\label{fig.fluctu.A}
+		\label{chap:4:fig.fluctu.A}
 	\end{subfigure}
 	\caption{(a) Diagramme de phase du modèle de Lieb-Liniger à l’équilibre thermique. Différents régimes asymptotiques sont séparés par des transitions progressives. Les points bleus représentent les fluctuations calculées numériquement pour différentes températures. Les coordonnées sont données par \( \gamma = \frac{m g}{\hbar^2 n} \) et \( t = \frac{k_B T}{m g^2/\hbar^2} \). (b) Représentation en niveaux de couleur de la partie régulière $\mathcal{B}$ des fluctuations \( \delta \rho \) pour \( T = 60~\mathrm{nK} \) et \( \mu = 27~\mathrm{nK} \) (point rouge dans (a)){\color{red} (courbes blanches à enlevé)}.}
-	\label{fig:diag_fig}
+	\label{chap:4:fig:diag_fig}
 \end{figure}
 
 \paragraph{Comparaison avec les dérivées thermodynamiques.}
@@ -1310,7 +1404,7 @@ Les résultats obtenus à partir de l’analyse quadratique de l’action (fluct
 	\includegraphics[width=1\textwidth]{figures/04_GGE_Fluctuation/fluctuations_plot_log_gamma=-1.342.png}	
 	%\includegraphics[width=1\textwidth]{Figures/04_GGE_Fluctuation/fluctuations_relativ_plot_log_gamma=-1.342.png}	
 	\caption{Comparaison numérique entre les fluctuations calculées à partir de l’analyse quadratique de l’action (fluctuations de \( \rho \)) et celles obtenues par dérivées thermodynamiques des observables moyennes.{\color{red} ( revoir titres shema )} }
-	\label{fig.fluctu.A_com}
+	\label{chap:4:fig.fluctu.A_com}
 \end{figure}
 
 
