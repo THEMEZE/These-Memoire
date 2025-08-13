@@ -100,8 +100,8 @@ Le faisceau de repompage, qui transfère les atomes tombé  dans l’état $|F=1
 Un second laser à cavité étendue, est verrouillé par battement optique sur la fréquence du maître 1. L’émission est amplifiée au moyen d’un amplificateur à semi-conducteur évasé (Tapered Amplifier), fournissant plus de 1\,W en sortie. Le faisceau ainsi produit est distribué vers différentes parties de l’installation expérimentale : alimentation du piège magnéto-optique (PMO), formation de la mélasse optique, réalisation du pompage optique, imagerie par absorption,génération du faisceau de sélection.
 
 
-\paragraph{Contrôle de fréquence et polarisation}
-Les fréquences des différents faisceaux sont ajustées via des Modulateurs Acousto-Optiques (AOM), tandis que leur polarisation et leur intensité sont contrôlées à l’aide de cubes PBS en combinaison avec des lames demi-onde motorisées ou fixes. Cette configuration assure une grande flexibilité dans la mise en œuvre des différentes phases expérimentales.
+%\paragraph{Contrôle de fréquence et polarisation}
+%Les fréquences des différents faisceaux sont ajustées via des Modulateurs Acousto-Optiques (AOM), tandis que leur polarisation et leur intensité sont contrôlées à l’aide de cubes PBS en combinaison avec des lames demi-onde motorisées ou fixes. Cette configuration assure une grande flexibilité dans la mise en œuvre des différentes phases expérimentales.
 
 \paragraph{Gestion des fréquences et polarisations}
 %Les ajustements de fréquence des divers faisceaux sont réalisés à l’aide de modulateurs acousto-optiques (AOM).
@@ -121,22 +121,40 @@ Une présentation plus exhaustive du montage laser et de son système de verroui
     \item Refroidissement à des températures sub-$\mu~K$ Refroidissement sub-Doppler (détails renvoyés aux travaux précédents).
 \end{itemize}
 }
-Le dispositif expérimental permet de produire des gaz de rubidium ultra-froids, avec pour objectif final l’obtention de gaz unidimensionnels dans le régime quantique dégénéré. La production suit une séquence expérimentale déjà bien établie, initialement développée par d’anciens doctorants (voir par exemple la thèse d’A. Johnson~\cite{Johnson2016}), puis réoptimisée au début de la thèse de Léa-Dubois ~\cite{L.Dubois2024} sous la supervision d’I. Bouchoule.
+%Le dispositif expérimental permet de produire des gaz de rubidium ultra-froids, avec pour objectif final l’obtention de gaz unidimensionnels dans le régime quantique dégénéré. La production suit une séquence expérimentale déjà bien établie, initialement développée par d’anciens doctorants (voir par exemple la thèse d’A. Johnson~\cite{Johnson2016}), puis réoptimisée au début de la thèse de Léa-Dubois ~\cite{L.Dubois2024} sous la supervision d’I. Bouchoule.
+
+Le dispositif expérimental permet de produire des gaz ultra-froids de rubidium, en vue d’obtenir des gaz unidimensionnels dans le régime quantique dégénéré. La séquence expérimentale suit un protocole établi, initialement développé par d’anciens doctorants (voir par exemple la thèse d’A. Johnson~\cite{Johnson2016}) et réoptimisé au début de la thèse de Léa. Dubois~\cite{L.Dubois2024} sous la supervision d’I. Bouchoule.
+
+%\paragraph{Libération des atomes de rubidium}
+%Les atomes de $^{87}$Rb sont libérés à partir d’un \emph{dispenser}, placé directement dans l’enceinte à vide, sur le côté de la monture de la puce atomique. Ce composant, parcouru par un courant de \( 4.5\,\mathrm{A} \) pendant environ \( 5\,\mathrm{s} \), émet un flux d’atomes thermiques dans la chambre à vide.
 
 \paragraph{Libération des atomes de rubidium}
-Les atomes de $^{87}$Rb sont libérés à partir d’un \emph{dispenser}, placé directement dans l’enceinte à vide, sur le côté de la monture de la puce atomique. Ce composant, parcouru par un courant de \( 4.5\,\mathrm{A} \) pendant environ \( 5\,\mathrm{s} \), émet un flux d’atomes thermiques dans la chambre à vide.
+Les atomes de $^{87}$Rb sont émis à partir d’un \emph{dispenser} placé directement dans l’enceinte à vide, à proximité de la monture de la puce atomique. Un courant de \( 4.5\,\mathrm{A} \)  est appliqué pendant environ \( 5\,\mathrm{s} \), générant un flux d’atomes thermiques dans la chambre à vide.
 
-\paragraph{Capture par piège magnéto-optique (PMO)}
-Les atomes thermiques sont ralentis et piégés à l’aide d’un piège magnéto-optique. Celui-ci utilise quatre faisceaux laser (dont deux sont réfléchis par la puce) et un champ quadrupolaire magnétique généré par des bobines. Le nuage ainsi formé se situe à quelques millimètres de la surface de la puce.
+%
+%\paragraph{Capture par piège magnéto-optique (PMO)}
+%Les atomes thermiques sont ralentis et piégés à l’aide d’un piège magnéto-optique. Celui-ci utilise quatre faisceaux laser (dont deux sont réfléchis par la puce) et un champ quadrupolaire magnétique généré par des bobines. Le nuage ainsi formé se situe à quelques millimètres de la surface de la puce.
+
+\paragraph{Capture par le piège magnéto-optique (PMO)}
+Les atomes thermiques sont ralentis et confinés dans un piège magnéto-optique. Quatre faisceaux laser (dont deux réfléchis par la puce) combinés à un champ quadrupolaire magnétique produit par des bobines permettent de former un nuage atomique situé à quelques millimètres de la surface de la puce.
 
 \paragraph{Rapprochement vers la puce}
 Pour rapprocher les atomes de la puce, on transfère le champ quadrupolaire depuis les bobines vers un champ généré par le fil en forme de U de la puce (fil bleu dans la Fig.~\ref{fig:puce}). Ce fil est parcouru par un courant variant de \( 3.6\,\mathrm{A} \) à \( 1.5\,\mathrm{A} \), ce qui rapproche le nuage à quelques centaines de micromètres de la surface.
 
+\paragraph{Rapprochement vers la puce}
+Le nuage est rapproché de la surface de la puce en transférant le champ quadrupolaire depuis les bobines vers le champ produit par le fil en forme de U de la puce (fil bleu, Fig.~\ref{fig:puce}). Le courant dans ce fil est ajusté lentement de \( 3.6\,\mathrm{A} \) à \( 1.5\,\mathrm{A} \), ce qui positionne le nuage à quelques centaines de micromètres de la surface.
+
+%\paragraph{Mélasse optique}
+%Une phase de mélasse optique permet un refroidissement sub-Doppler des atomes capturés. Un système d’imagerie provisoire est utilisé à cette étape pour visualiser le nuage atomique, dont la taille dépasse le champ d’observation du système d’imagerie final.
+
 \paragraph{Mélasse optique}
-Une phase de mélasse optique permet un refroidissement sub-Doppler des atomes capturés. Un système d’imagerie provisoire est utilisé à cette étape pour visualiser le nuage atomique, dont la taille dépasse le champ d’observation du système d’imagerie final.
+Une étape de mélasse optique est ensuite appliquée pour atteindre un refroidissement sub-Doppler des atomes capturés. Un système d’imagerie provisoire permet de visualiser le nuage, dont la taille dépasse le champ d’observation du dispositif final.
+
+%\paragraph{Pompage optique}
+%Afin de polariser les atomes dans l’état magnétique \( |F=2,\,m_F=2\rangle \), un pompage optique est effectué avec un faisceau circulairement polarisé \( \sigma^+ \), résonant sur la transition \( |F=2\rangle \rightarrow |F'=2\rangle \).
 
 \paragraph{Pompage optique}
-Afin de polariser les atomes dans l’état magnétique \( |F=2,\,m_F=2\rangle \), un pompage optique est effectué avec un faisceau circulairement polarisé \( \sigma^+ \), résonant sur la transition \( |F=2\rangle \rightarrow |F'=2\rangle \).
+Enfin, les atomes sont préparés dans l’état magnétique \( |F=2,\,m_F=2\rangle \) par pompage optique. Un faisceau circulairement polarisé \( \sigma^+ \), résonant sur la transition \( |F=2\rangle \rightarrow |F'=2\rangle \), assure la polarisation du nuage.
 
 
 \subsection{Piégeage magnétique sur puce}
