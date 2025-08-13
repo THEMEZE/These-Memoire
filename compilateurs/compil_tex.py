@@ -59,11 +59,41 @@ def compile_bibtex(tex_stem):
         print(f"✅ BibTeX compilé : {stem}")
     except subprocess.CalledProcessError:
         print(f"❌ Erreur BibTeX : {stem}")
+        
+def compile_biblatex(tex_file, show_output=False):
+    """
+    Compile la bibliographie BibLaTeX d'un fichier .tex donné.
+
+    Args:
+        tex_file (str or Path): Chemin vers le fichier .tex
+        show_output (bool): Affiche stdout/stderr de Biber si True
+    """
+    tex_file = Path(tex_file)
+    cwd = tex_file.parent
+    stem = tex_file.stem
+    aux_file = cwd / f"{stem}.aux"
+
+    if not aux_file.exists():
+        print(f"⚠️ Aucun fichier .aux trouvé pour {stem}, compilation BibLaTeX ignorée.")
+        return
+
+    try:
+        subprocess.run(
+            ["biber", stem],
+            cwd=cwd,
+            check=True,
+            stdout=None if show_output else subprocess.DEVNULL,
+            stderr=None if show_output else subprocess.DEVNULL
+        )
+        print(f"✅ BibLaTeX compilé : {stem}")
+    except subprocess.CalledProcessError:
+        print(f"❌ Erreur lors de la compilation BibLaTeX : {stem}")
 
 def compile_latex_index_bibtex(path):
     compile_latex(path + ".tex")      # 1ère passe LaTeX
     compile_index(path + ".idx")      # makeindex
     compile_bibtex(path)              # bibtex
+    compile_biblatex(path)              # bibtex
     compile_latex(path + ".tex")      # 2e passe LaTeX
     compile_latex(path + ".tex")      # 3e passe LaTeX (pour les refs/bib à jour)
 
