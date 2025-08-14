@@ -322,38 +322,136 @@ Cet épisode m’a permis de me confronter plus directement aux paramètres crit
     \item Découplage transverse/longitudinal.
 \end{itemize}
 
-\paragraph{Caractérisation des potentiels longitudinal et transverse}
+\paragraph{Champ des micro-fils.}
+Puisque que $m_F = 2 $, (état assuré par pompage optique), le potentiel magnétique $-\vec{\mu} \vec{B}(\vec{r}) $ (avec moment dipolaire magnétique alors $\vec{\mu}$ et le champs magnetque totale que resente les atomes$\vec{B}(\vec{r})$) est proportionnel à $\vert \vec{B}(\vec{r}) \vert$  de sorte que les atomes, en état low-field seeking, sont attirés vers les régions de champ magnétique minimal. Les micro-fils, alignés selon l’axe horizontal $\vec{e}_x$, sont parcourus par des courants alternatifs $\pm I$ (déphasés) produisant le champ magnétique de confinement : un fil central parcouru par un courant \( I \), et deux fils latéraux par des courants opposés \(-I\). 
 
+\paragraph{Champ de biais.}
+Un champ de biais transverse $\vec{B}_{\mathrm{biais}} = {B}_{\mathrm{biais}} \, \vec{e}_y$ , avec l'axe verticale par $\vec{e}_y$ , est appliqué afin de régler la distance des atomes par rapport aux micro-fils. En notant $\vec{e}_z$ l’axe horizontal perpendiculaire à $\vec{e}_x$ et $\vec{e}_y$ l’annulation du champ total a lieu en
+%Dans cette configuration, un champ de biais transverse est appliqué pour ajuster la distance des atomes au-dessus des micro-fils. Pour y avoir une idée notons l'axe verticale par $\vec{e}_y$, et $\vec{B}_{biais} = {B}_{biais} \, \vec{e}_y$. Alors en notan $\vec{e}_z$ l'axe hortisontale perpetdiculaire à $\vec{e}_x$ et $\vec{e}_y$, le champs totale s'anume en ​
+  %permet ainsi de positionner précisément le minimum du potentiel à une hauteur
+$z_0 = \mu_0 I / (2 \pi {B}_{\mathrm{biais}} ) $ avec $\mu_0$ la perméabilité du vide . La modulation de ${B}_{\mathrm{biais}}$ permet de déplacer le point où le champ total s’annule, ce qui permet de positionner précisément le minimum du potentiel à une distance $d$ du plan des fils. 
+
+\paragraph{Champ d’Ioffe.}
+Afin d’éviter les pertes de Majorana liées à la présence d’un champ nul, un champ longitudinal $B_0 \, \vec{e}_x$ est ajouté, garantissant que le minimum de champ reste non nul.%.Un champ longitudinal (selon $\vec{e}_x$) $B_0$ est ajouté afin que ce minimum ne corresponde pas à un champ nul, ce qui supprime les pertes de Majorana dues aux inversions de spin au voisinage d’un zéro de champ. 
+
+%L’intérêt de ces pièges est que les atomes peuvent être confinés très près des micro-fils — ici à $ d = 15\, \mu m$ , soit l’espacement entre deux fils — ce qui maximise le gradient de champ et donc la fréquence de piégeage transverse
+
+\paragraph{Fréquence de piégeage transverse.}
+Dans la configuration étudiée, les atomes sont confinés à $ d = 15\, \mu m$ au-dessus de la puce, soit l’espacement entre deux micro-fils. Cette faible distance maximise le gradient de champ et donc la fréquence de piégeage transverse, qui s’écrit
+\begin{eqnarray*}
+	\omega_\perp^{(0)} =  \sqrt{\frac{\mu_B}{mB_0}} \frac{\mu_0 I }{2\pi d^2} 
+\end{eqnarray*}
+avec $\mu_B$ le magnéton de Bohr, $m$ la masse atomique et $\mu_0$ la perméabilité du vide.
+%Pour éviter que les atomes ne perçoivent les rugosités magnétiques dues aux défauts des conducteurs, on fait circuler dans les fils un courant alternatif à haute fréquence ($\sim 400\,KHz$) : le potentiel est alors moyenné temporellement, produisant un confinement plus lisse. À $15\, \mu m$ au-dessus de la puce, le profil de champ est localement harmonique, et la fréquence de piégeage transverse devient
+
+\paragraph{Rugosité et suppression par modulation}
+Les imperfections géométriques des micro-fils engendrent des fluctuations parasites du champ magnétique le long du guide, créant une rugosité du potentiel. Pour la supprimer, les courants sont modulés à haute fréquence ($\sim 400\,KHz$), bien au-delà des fréquences de piégeage. Dans ce régime, les atomes ne perçoivent que le potentiel moyenné temporellement, où la composante parasite longitudinale est fortement réduite. Le confinement effectif reste harmonique, avec une fréquence transverse donnée par
+\begin{eqnarray*}
+	\omega_\perp = \frac{\omega_\perp^{(0)}}{\sqrt{2}}.		
+\end{eqnarray*}
+
+
+
+
+%\paragraph{Découplage des confinements transverses et longitudinaux.}
+%Les courants qui parcourent les fils D, D', d, d' sons selon $\vec{e}_u$ donc les chanps induit sont selon $\vec{e}_x$ noté $B_\parallel^x$ et $\vec{e}_v$ (axex normale à la puce) , noté $B_\parallel^v$. Si les champs selon $\vec{e}_x$ est négligeable devant $B_0$ alors la moyenne de pottenstelle presente une partie transverce et longitudinale decouplés : $\braket{V} = V_\perp ( y , z ) + V_\parallel(x) $.
+\paragraph{Découplage des confinements transverses et longitudinaux.}
+Les courants qui parcourent les fils $D$, $D'$, $d$ et $d'$ sont orientés selon $\vec{e}_u$. 
+Les champs magnétiques induits possèdent alors une composante selon $\vec{e}_x$, notée $B_\parallel^x$, et une composante selon $\vec{e}_v$ (axe normal à la puce), notée $B_\parallel^v$. 
+Si le champ selon $\vec{e}_x$ est négligeable devant $B_0$, alors le potentiel moyen se sépare en une partie transverse et une partie longitudinale découplées : 
+\(
+\braket{V} = V_\perp(y,z) + V_\parallel(x) .
+\)
+
+
+\paragraph{Potentiel longitudinal harmonique.}
+Dans la configuration où seuls les fils $D$ et $D'$ sont utilisés, le potentiel longitudinal peut, à l’ordre 2 en $x$, être considéré comme harmonique :
+\begin{eqnarray*}
+	V_\parallel (x) = V_0 + \frac{1}{2} m \omega_\parallel^2 x^2 ,
+\end{eqnarray*}
+On note  $2L=1.89 \,mm$ est la distance séparant les fils $D$ et $D'$. Les courants circulant dans ces deux fils sont identiques et notés $I_D = I_{D'}$. Si la condition $B_0 \gg \mu_0 I_D d /(\pi L)^2 $ est vérifiée, alors le terme constant du potentiel vaut approximativement $V_0 \simeq \mu_B B_0$.
+
+\medskip
+
+La pulsation longitudinale totale $\omega_\parallel$ se décompose en deux contributions : (i) une pulsation $\omega_\parallel^x = \sqrt{\frac{6\, d \, \mu_B \, \mu_0 \,I_D }{\pi \, L^4 \, m}}$ induite par le champ longitudinal $B_\parallel^x$ et (ii) une pulsation $\omega_\parallel^v = \sqrt{\frac{\mu_B }{m \, B_0}}\frac{\mu_0 \, I_D }{\pi \, L^2}$ liée au champ  $B_\parallel^v$. Pour des courants $I>1A$ , on a $\omega_\parallel^v \gg \omega_\parallel^x$, et ainsi :  
+\begin{eqnarray*}
+	\omega_\parallel \propto \frac{I_D}{\sqrt{B_0} L^2}.
+\end{eqnarray*} 
+La fréquence longitudinale est donc réglée expérimentalement en ajustant $I_D$.
+
+\medskip
+
+Avec les dimensions caractéristiques de la puce et des fils, il est possible d’atteindre des confinements longitudinaux de fréquence $f_\parallel = \omega_\parallel/ 2 \pi$ allant jusqu’à $\sim 150 \, H_z$, la limite étant imposée par le chauffage des fils pour $I_D \leq =4 \, A$.
+ 
+ \medskip
+ 
+ \subparagraph{Mesure de la fréquence transverse et longitudinale}
+Pour la caractérisation, la pulsation transverse $\omega_\perp$ a été mesurée par la méthode du mode de respiration transverse \cite{Kagan1996}, tandis que $\omega_\parallel$ a été obtenue à partir des oscillations dipolaires longitudinales. Les détails expérimentaux de ces méthodes figurent dans le manuscrit de thèse de Léa Dubois \cite{L.Dubois2024}, p. 73 et p. 78.
+
+\medskip
+
+ \paragraph{Potentiel longitudinal quartic.}
+ Si on ajoute du courand  dans les fils $d$ et $d'$.  Alors on peux avoir un potentiel non gégligeable à l'ordre 4 . Pour simmplifier, les courants dans ces fils $I_d$ et $I_{d'}$ sont identique. et le potentiel s'écrit : 
+ \paragraph{Potentiel longitudinal quartique.}
+Si l’on ajoute un courant dans les fils $d$ et $d'$, on peut générer un potentiel longitudinal comportant un terme significatif à l’ordre 4 en $x$ . Pour simplifier, on suppose $I_d=I_{d'}$. On obtient alors : 
+ \begin{eqnarray*}
+ 	V_\parallel(x) \, = \, \mu_B B_0  & + & 	 \frac{\mu_B \, \mu_0}{\pi} d  \left [ \frac{I_D}{L^2} + \frac{I_d}{l^2} + 3 \left ( \frac{I_D}{L^4} + \frac{I_d}{l^4} \right ) x^2  +  5 \left ( \frac{I_D}{L^6} + \frac{I_d}{l^6} \right ) x^4 \right ] \\
+ 	& + & \frac{\mu_B}{B_0} \left ( \frac{\mu_0}{\pi} \right )^2  \left [ \left ( \frac{I_D}{L^2} + \frac{I_d}{l^2} \right ) x^2  + 2 \left ( \frac{I_D}{L^2} + \frac{I_d}{l^2} \right )\left ( \frac{I_D}{L^4} + \frac{I_d}{l^4} \right ) x^4 \right ].
+ \end{eqnarray*}
+ 
+ En ajustant $I_D$ et $i_d$, on peut réaliser par exemple un double puits \cite{Schemmer2019}, ou bien supprimer le terme quadratique $x^2$ afin d’obtenir un potentiel quartique pur :
+\begin{eqnarray*}
+	V_\parallel(x) = a_0 + a_4 x^4 	
+\end{eqnarray*}
+comme on le fais dans \cite{Dubois2025}.
+
+En pratique, la puce présente des dimensions finies et n’est pas parfaitement symétrique. Un calcul plus précis, prenant en compte la géométrie exacte (disposition et épaisseur des fils), est présenté en annexe de la thèse de Thibault Jacqmin \cite{???}, p. 151. Cela impose un ajustement fin et asymétrique des courants $I_D$, $I_{D'}$, $I_d$ et $I_{d'}$.
+
+
+On ajuste les courant $I_D$ et $i_d$ pour par exemple fais des douple puit \cite{Schemmer2019} ou en supriment le terme en $x^2$  d’obtenir un potentiel longitudinal quartique de la forme $V_\parallel(x) = a_0 + a_4 x^4$ \cite{Dubois2025}.\\
+
+En réalité la puce presente des dimention finie, Un calcul plus précis prenant en compte la géométrie exacte des fils (disposition sur la
+puce, épaisseur finie) se trouve en appendice de la thèse de Thibault Jacqmin [112] , page 151. De plus la pude n'est pas pardetement symetrique donc on doit ajuster les courant $I_D$, $I_{D'}$, $I_d$ et $I_{d'}$.
+
+
+\paragraph{Caractérisation des potentiels longitudinal et transverse.}
+Pour atteindre le régime unidimensionnel, les confinements doivent être fortement anisotropes : un piégeage transverse très fort et un piégeage longitudinal faible. La condition \(\mu, k_B T \ll \hbar \omega_\perp\) garantit le gel des degrés de liberté transverses.
+
+\medskip
+
+Cette configuration est particulièrement adaptée pour obtenir des profils de densité homogènes, nécessaires à certaines expériences de transport. Le transfert des atomes du piège harmonique vers le piège quartique est réalisé de manière \emph{diabatique} (changement rapide du potentiel), car un transfert adiabatique entraîne des pertes importantes.
+
+\paragraph{Caractérisation des potentiels longitudinal et transverse.}
 Pour atteindre le régime unidimensionnel, les potentiels de piégeage doivent être très asymétriques : un confinement transverse fort et un confinement longitudinal faible. La fréquence transverse \(\omega_\perp\) doit être suffisamment élevée pour geler les degrés de liberté dans cette direction, avec la condition \(\mu, k_B T \ll \hbar \omega_\perp\).
 
-\paragraph{Potentiel longitudinal}
-
-Le confinement longitudinal est produit par des courants continus ou modulés dans certains fils. Dans certains protocoles spécifiques, on utilise un potentiel quartique \( V_\parallel(x) = c_4 x^4 \). Le système reste dans le régime 1D tant que la longueur caractéristique longitudinale reste beaucoup plus grande que la transverse.
-
-\paragraph{Potentiel transverse}
-
-Le confinement transverse est réalisé à l’aide de trois micro-fils parallèles situés sur la puce : un fil central parcouru par un courant \( I \), et deux fils latéraux par des courants opposés \(-I\). Cette configuration crée un piège transverse harmonique avec une fréquence \(\omega_\perp\) contrôlable par la valeur du champ \( B_0 \) et le courant. Les atomes sont piégés à environ \( d = 15~\mu\text{m} \) au-dessus de la puce. La fréquence maximale accessible expérimentalement est de l’ordre de \( \sim 100~\text{kHz} \).
-
-\paragraph{Effet de rugosité et suppression par modulation}
-
-La rugosité des micro-fils induit des fluctuations parasites du champ magnétique le long du guide. Pour supprimer cet effet, les courants sont modulés à haute fréquence (environ 400~kHz). Grâce à cette modulation rapide, les atomes ne ressentent que le potentiel moyen, dans lequel la composante parasite longitudinale du champ s’annule. Ce procédé permet d’obtenir un potentiel transverse régulier et stable, avec une fréquence efficace \[ f_\perp = \frac{f_\perp^{(0)}}{\sqrt{2}}. \]
-
-\paragraph{Découplage des confinements transverse et longitudinal.}
-Dans notre dispositif, le confinement transverse est assuré par les micro-fils modulés, tandis que le confinement longitudinal est généré par quatre fils extérieurs (D, D', d, d'). L’analyse du potentiel magnétique moyen montre que, sous l’hypothèse d’un champ de bobine homogène et dominant, les contributions transverse et longitudinale du potentiel sont découplées. Cette propriété est cruciale pour nos expériences : elle permet de modifier la géométrie du potentiel longitudinal sans perturber le confinement transverse, facilitant ainsi l’exploration de différentes configurations dynamiques.
-
-\paragraph{Piégeage longitudinal harmonique.}
-Un piège longitudinal harmonique est réalisé en appliquant des courants égaux dans les fils D et D', disposés de manière symétrique. Le champ magnétique longitudinal produit conduit à un potentiel quadratique local :
-\[
-V_\parallel(x) = V_0 + \frac{1}{2} m \omega_\parallel^2 x^2,
-\]
-avec une fréquence $\omega_\parallel$ contrôlée par le courant et la géométrie de la puce. En pratique, des fréquences jusqu’à 150 Hz sont atteintes pour des courants de 4 A. Une correction peut être nécessaire pour prendre en compte un champ magnétique résiduel $B_{0v}$, responsable d’un déplacement du centre du nuage atomique.
-
-\paragraph{Piégeage longitudinal quartique.}
-L’ajout de deux fils supplémentaires (d et d') permet de modifier la forme du potentiel longitudinal jusqu’à l’ordre 4. En ajustant les courants dans les quatre fils, on peut annuler le terme quadratique et obtenir un potentiel quartique :
-\[
-V_\parallel(x) = a_0 + a_4 x^4.
-\]
-Cette configuration est particulièrement adaptée pour générer des profils de densité homogènes, comme requis dans certaines expériences de transport. Le transfert des atomes du piège harmonique vers le piège quartique est réalisé de manière diabatique (changement rapide du potentiel), car un transfert adiabatique entraînait des pertes importantes.
+%\paragraph{Potentiel longitudinal}
+%
+%Le confinement longitudinal est produit par des courants continus ou modulés dans certains fils. Dans certains protocoles spécifiques, on utilise un potentiel quartique \( V_\parallel(x) = c_4 x^4 \). Le système reste dans le régime 1D tant que la longueur caractéristique longitudinale reste beaucoup plus grande que la transverse.
+%
+%\paragraph{Potentiel transverse}
+%
+%Le confinement transverse est réalisé à l’aide de trois micro-fils parallèles situés sur la puce : un fil central parcouru par un courant \( I \), et deux fils latéraux par des courants opposés \(-I\). Cette configuration crée un piège transverse harmonique avec une fréquence \(\omega_\perp\) contrôlable par la valeur du champ \( B_0 \) et le courant. Les atomes sont piégés à environ \( d = 15~\mu\text{m} \) au-dessus de la puce. La fréquence maximale accessible expérimentalement est de l’ordre de \( \sim 100~\text{kHz} \).
+%
+%\paragraph{Effet de rugosité et suppression par modulation}
+%
+%La rugosité des micro-fils induit des fluctuations parasites du champ magnétique le long du guide. Pour supprimer cet effet, les courants sont modulés à haute fréquence (environ 400~kHz). Grâce à cette modulation rapide, les atomes ne ressentent que le potentiel moyen, dans lequel la composante parasite longitudinale du champ s’annule. Ce procédé permet d’obtenir un potentiel transverse régulier et stable, avec une fréquence efficace \[ f_\perp = \frac{f_\perp^{(0)}}{\sqrt{2}}. \]
+%
+%\paragraph{Découplage des confinements transverse et longitudinal.}
+%Dans notre dispositif, le confinement transverse est assuré par les micro-fils modulés, tandis que le confinement longitudinal est généré par quatre fils extérieurs (D, D', d, d'). L’analyse du potentiel magnétique moyen montre que, sous l’hypothèse d’un champ de bobine homogène et dominant, les contributions transverse et longitudinale du potentiel sont découplées. Cette propriété est cruciale pour nos expériences : elle permet de modifier la géométrie du potentiel longitudinal sans perturber le confinement transverse, facilitant ainsi l’exploration de différentes configurations dynamiques.
+%
+%\paragraph{Piégeage longitudinal harmonique.}
+%Un piège longitudinal harmonique est réalisé en appliquant des courants égaux dans les fils D et D', disposés de manière symétrique. Le champ magnétique longitudinal produit conduit à un potentiel quadratique local :
+%\[
+%V_\parallel(x) = V_0 + \frac{1}{2} m \omega_\parallel^2 x^2,
+%\]
+%avec une fréquence $\omega_\parallel$ contrôlée par le courant et la géométrie de la puce. En pratique, des fréquences jusqu’à 150 Hz sont atteintes pour des courants de 4 A. Une correction peut être nécessaire pour prendre en compte un champ magnétique résiduel $B_{0v}$, responsable d’un déplacement du centre du nuage atomique.
+%
+%\paragraph{Piégeage longitudinal quartique.}
+%L’ajout de deux fils supplémentaires (d et d') permet de modifier la forme du potentiel longitudinal jusqu’à l’ordre 4. En ajustant les courants dans les quatre fils, on peut annuler le terme quadratique et obtenir un potentiel quartique :
+%\[
+%V_\parallel(x) = a_0 + a_4 x^4.
+%\]
+%Cette configuration est particulièrement adaptée pour générer des profils de densité homogènes, comme requis dans certaines expériences de transport. Le transfert des atomes du piège harmonique vers le piège quartique est réalisé de manière diabatique (changement rapide du potentiel), car un transfert adiabatique entraînait des pertes importantes.
 
 
 
