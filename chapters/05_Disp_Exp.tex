@@ -138,8 +138,8 @@ Les atomes de $^{87}$Rb sont émis à partir d’un \emph{dispenser} placé dire
 \paragraph{Capture par le piège magnéto-optique (PMO)}
 Les atomes thermiques sont ralentis et confinés dans un piège magnéto-optique. Quatre faisceaux laser (dont deux réfléchis par la puce) combinés à un champ quadrupolaire magnétique produit par des bobines permettent de former un nuage atomique situé à quelques millimètres de la surface de la puce.
 
-\paragraph{Rapprochement vers la puce}
-Pour rapprocher les atomes de la puce, on transfère le champ quadrupolaire depuis les bobines vers un champ généré par le fil en forme de U de la puce (fil bleu dans la Fig.~\ref{fig:puce}). Ce fil est parcouru par un courant variant de \( 3.6\,\mathrm{A} \) à \( 1.5\,\mathrm{A} \), ce qui rapproche le nuage à quelques centaines de micromètres de la surface.
+%\paragraph{Rapprochement vers la puce}
+%Pour rapprocher les atomes de la puce, on transfère le champ quadrupolaire depuis les bobines vers un champ généré par le fil en forme de U de la puce (fil bleu dans la Fig.~\ref{fig:puce}). Ce fil est parcouru par un courant variant de \( 3.6\,\mathrm{A} \) à \( 1.5\,\mathrm{A} \), ce qui rapproche le nuage à quelques centaines de micromètres de la surface.
 
 \paragraph{Rapprochement vers la puce}
 Le nuage est rapproché de la surface de la puce en transférant le champ quadrupolaire depuis les bobines vers le champ produit par le fil en forme de U de la puce (fil bleu, Fig.~\ref{fig:puce}). Le courant dans ce fil est ajusté lentement de \( 3.6\,\mathrm{A} \) à \( 1.5\,\mathrm{A} \), ce qui positionne le nuage à quelques centaines de micromètres de la surface.
@@ -147,14 +147,25 @@ Le nuage est rapproché de la surface de la puce en transférant le champ quadru
 %\paragraph{Mélasse optique}
 %Une phase de mélasse optique permet un refroidissement sub-Doppler des atomes capturés. Un système d’imagerie provisoire est utilisé à cette étape pour visualiser le nuage atomique, dont la taille dépasse le champ d’observation du système d’imagerie final.
 
-\paragraph{Mélasse optique}
-Une étape de mélasse optique est ensuite appliquée pour atteindre un refroidissement sub-Doppler des atomes capturés. Un système d’imagerie provisoire permet de visualiser le nuage, dont la taille dépasse le champ d’observation du dispositif final.
+%\paragraph{Mélasse optique}
+%Une étape de mélasse optique est ensuite appliquée pour atteindre un refroidissement sub-Doppler des atomes capturés. %Un système d’imagerie provisoire permet de visualiser le nuage, dont la taille dépasse le champ d’observation du dispositif final.
 
 %\paragraph{Pompage optique}
 %Afin de polariser les atomes dans l’état magnétique \( |F=2,\,m_F=2\rangle \), un pompage optique est effectué avec un faisceau circulairement polarisé \( \sigma^+ \), résonant sur la transition \( |F=2\rangle \rightarrow |F'=2\rangle \).
 
 \paragraph{Pompage optique}
 Enfin, les atomes sont préparés dans l’état magnétique \( |F=2,\,m_F=2\rangle \) par pompage optique. Un faisceau circulairement polarisé \( \sigma^+ \), résonant sur la transition \( |F=2\rangle \rightarrow |F'=2\rangle \), assure la polarisation du nuage.
+
+\paragraph{Mélasse optique}
+Après la capture dans le PMO, une étape de mélasse optique est appliquée pour refroidir davantage le nuage atomique, au-delà de la limite de Doppler. La mélasse optique repose sur l’utilisation de faisceaux laser légèrement désaccordés en fréquence et polarisés de manière appropriée, qui interagissent avec les atomes selon le mécanisme de refroidissement sub-Doppler.
+
+Le principe physique est le suivant : les atomes en mouvement voient les faisceaux laser avec un décalage Doppler, ce qui modifie la probabilité d’absorption selon leur vitesse et leur position. Combiné avec les effets de polarisation (notamment les forces de type Sisyphus dans un champ de polarisation variable), cela crée un potentiel de friction optique qui ralentit les atomes. Contrairement au refroidissement Doppler standard, la mélasse optique permet de réduire l’énergie cinétique des atomes en dessous de la limite Doppler, atteignant des températures beaucoup plus basses.
+
+Ainsi, cette étape permet d’obtenir un nuage plus dense et plus froid, condition essentielle pour les manipulations ultérieures et la formation de gaz unidimensionnels dans le régime quantique dégénéré.
+
+
+
+
 
 
 \subsection{Piégeage magnétique sur puce}
@@ -170,8 +181,25 @@ Enfin, les atomes sont préparés dans l’état magnétique \( |F=2,\,m_F=2\ran
 \subsubsection{Piégeage magnétique sur puce}
 \label{sec:piegeage_puce}
 
+On peut utiliser des piégeage optique pour produire des stracture atomique longitudinale alongé. Certaines groupe de recherche utilise un redeau optique 2D pour obtenir un réseau 2D de tube longitudinaaux \cite{Kinoshita2004,LaburtheTolra2004,Paredes2004,Moritz2003}. Ce raseaux 2D produit un grand nombre de systéme atomique propise è l'étude de de gase 1D. Avec ce genre de dispositif on peux etudier des gas 1D peut dense car les densité peut etre moyenné sur tous les tudes. Mais avec ce genre de dispositif on ne peut pas étudier experimentalement les fluctudation dans le systéme. Nous pour gièger les atomes on utilise une puce atomique.
+
 \paragraph{Principe général}
-Les atomes de rubidium sont piégés grâce à une puce atomique intégrée dans l’enceinte à vide. Une puce atomique est un circuit microfabriqué contenant des micro-fils dans lesquels circulent des courants permettant de générer des champs magnétiques à géométrie contrôlée. Ce dispositif, développé dans les années 1990, permet une miniaturisation du système de piégeage et un accès à des confinements forts, particulièrement adaptés à l'étude de gaz de Bose unidimensionnels.
+Les atomes de rubidium sont piégés grâce à une puce atomique intégrée dans l’enceinte à vide. Une puce atomique est un circuit microfabriqué contenant des micro-fils dans lesquels circulent des courants permettant de générer des champs magnétiques à géométrie contrôlée. Ce dispositif, développé dans les années 1990 \cite{Denschlag1999,Fortagh1998}, permet une miniaturisation du système de piégeage \cite{Folman2000,Reichel1999}, les premiers condensats sur puce ont été obtenus en 2001 \cite{Haensel2001,Ott2001} et la premièref fois aux laboratoir Charles Fabry (LCF) \cite{Aussibal2003} et un accès à des confinements forts, particulièrement adaptés à l'étude de gaz de Bose unidimensionnels \cite{Schumm2005,Trebbia2006}.
+
+-------
+
+On peut créer des structures atomiques allongées en utilisant des techniques de piégeage optique. Par exemple, plusieurs groupes de recherche ont recours à des réseaux optiques bidimensionnels (2D) pour former un ensemble de tubes atomiques longitudinaux \cite{Kinoshita2004,LaburtheTolra2004,Paredes2004,Moritz2003}. Ces réseaux 2D permettent de produire un grand nombre de systèmes atomiques quasi-unidimensionnels, offrant ainsi une plateforme idéale pour l’étude des gaz 1D. Ce type de dispositif est particulièrement adapté à l’étude de gaz faiblement denses, car les densités peuvent être moyennées sur l’ensemble des tubes. Cependant, l’étude expérimentale des fluctuations locales dans chaque tube reste difficile avec ce genre de configuration. Pour surmonter cette limitation, on utilise le piégeage à l’aide de puces atomiques.
+
+\paragraph{Principe général}
+Les atomes de rubidium sont confinés par une puce atomique intégrée dans l’enceinte à vide. Une puce atomique est un circuit microfabriqué comportant de fins micro-fils parcourus par des courants électriques, ce qui permet de générer des champs magnétiques à géométrie contrôlée. Cette technologie, développée dans les années 1990 \cite{Denschlag1999,Fortagh1998}, offre une miniaturisation significative des dispositifs de piégeage \cite{Folman2000,Reichel1999}. Les premiers condensats de Bose–Einstein sur puce ont été réalisés en 2001 \cite{Haensel2001,Ott2001}, puis ultérieurement au Laboratoire Charles Fabry \cite{Aussibal2003}. Les puces atomiques permettent d’accéder à des confinements très forts, particulièrement adaptés à l’étude des gaz de Bose unidimensionnels et à l’exploration de leurs propriétés quantiques locales \cite{Schumm2005,Trebbia2006}.
+
+
+-----
+Des structures atomiques allongées peuvent être réalisées par piégeage optique. Dans ce cadre, des réseaux optiques bidimensionnels (2D) permettent de créer un ensemble de tubes atomiques quasi-unidimensionnels \cite{Kinoshita2004,LaburtheTolra2004,Paredes2004,Moritz2003}. Ces réseaux offrent un grand nombre de systèmes atomiques identiques, facilitant l’étude statistique de gaz 1D faiblement dense. Toutefois, l’accès expérimental aux fluctuations locales dans chaque tube reste limité.
+
+Pour contourner cette contrainte, les puces atomiques offrent une solution efficace. Ces dispositifs microfabriqués intègrent de fins micro-fils parcourus par des courants, générant des champs magnétiques de géométrie contrôlée et permettant des confinements très forts \cite{Denschlag1999,Fortagh1998,Folman2000,Reichel1999}. La miniaturisation ainsi obtenue a permis l’obtention des premiers condensats de Bose–Einstein sur puce dès 2001 \cite{Haensel2001,Ott2001}, y compris au Laboratoire Charles Fabry \cite{Aussibal2003}. Grâce à ces confinements, il devient possible d’étudier expérimentalement les propriétés de gaz de Bose unidimensionnels et leurs fluctuations locales \cite{Schumm2005,Trebbia2006}.
+
+-------
 
 \paragraph{Structure de la puce utilisée}
 La puce utilisée au cours de cette expérience a été conçue en collaboration avec S.~Bouchoule, A.~Durnez et A.~Harouri (C2N). Elle repose sur un substrat de carbure de silicium sur lequel est déposé le circuit électrique. Ce dernier est recouvert d’une couche de résine BCB, aplanie par des cycles d’enduction et d’attaque plasma. Une fine couche d’or (\(\sim200\,\mathrm{nm}\)) est finalement évaporée afin de permettre l’utilisation de la puce comme miroir pour l’imagerie à \(780\,\mathrm{nm}\). La puce est soudée à l’indium sur une monture en cuivre inclinée à \(45^\circ\) par rapport à l’axe optique.
