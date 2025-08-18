@@ -360,11 +360,15 @@ Les flux et termes de force \eqref{chap:GHD:eq.conserv.2.1} s’expriment alors 
 \end{equation}
 
 Dans le cadre de \eqref{chap:GHD:eq.ham.2} \(\partial_\theta h = \theta\) et   \(\partial_x h  = V' \). De plus en ne considérant que les premières charges conservées associées à $f(\theta) = 1$, $\theta$ et $\theta^2/2$ dans \eqref{chap:GHD:eq.conserv.2} et \eqref{chap:GHD:eq.conserv.2.1}, on retrouve les équations d’Euler classiques :
-\begin{align*}
-	\partial_t n + \partial_x (n u) &= 0, \\
-	\partial_t (n u) + \partial_x (n u^2 + \mathcal{P}) &= -n \, \partial_x V(x), \\
-	\partial_t E + \partial_x (u(E+\mathcal{P})) &= 0,
-\end{align*}
+\begin{eqnarray}\label{chap:3:eq:hydro.1}
+	\left\{
+	\begin{array}{rcl}
+	\partial_t n + \partial_x (n u) &=& 0, \\
+	\partial_t (n u) + \partial_x (n u^2 + \mathcal{P}) &=& -n \, \partial_x V(x), \\
+	\partial_t E + \partial_x (u(E+\mathcal{P})) &=& 0,
+	\end{array}
+	\right .  
+\end{eqnarray}
 avec la densité de particule $n(x, t) = q_{[1]}$, la vitesse moyenne du fluide $u = \frac{q_{[\theta]}}{n}$ , la pression cinétique du fluide $\mathcal{P}(x, t) = \left( q_{[\theta^2]} - \frac{q_{[\theta]}^2}{n} \right)$ , l'énergie totale $E = nu^2/2 + nV + ne$ où $e(x,t)$ est l'énergie interne d'une particule.
 
 

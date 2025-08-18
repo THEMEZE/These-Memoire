@@ -664,6 +664,354 @@ Cette section peut être la plus personnelle, en précisant ton rôle à chaque 
     \item Comparaison aux modèles analytiques : solutions homothétiques, GP, asymptotiques.
 \end{itemize}
 
+\subsection{Motivation et protocole expérimental d’expansion longitudinale}
+
+\paragraph{Motivation.}
+Une partie essentielle de mon travail de thèse a consisté à sonder la distribution de rapidités résolue spatialement, ce qui constitue une information clé pour comprendre la dynamique hors équilibre d’un gaz quantique unidimensionnel. Pour accéder à cette observable, il est nécessaire de réaliser un protocole qui relie la distribution de rapidités à des profils de densité mesurables expérimentalement. L’expansion longitudinale dans le guide 1D s’impose alors comme un outil naturel : en laissant le nuage se dilater librement dans la direction longitudinale, on convertit en partie l’information contenue dans les phases et les excitations collectives du système en une dynamique de densité directement accessible par imagerie. Ce protocole permet ainsi de comparer les prédictions issues des équations effectives, comme l’équation de Gross–Pitaevskii dans différents régimes de confinement, avec des mesures expérimentales résolues spatialement.
+
+\paragraph{Considérations physiques.}
+Au-delà de son intérêt pratique, l’expansion longitudinale offre une fenêtre unique sur la physique des gaz bosoniques 1D. Elle permet d’étudier comment un système initialement confiné évolue vers un état dilué, révélant à la fois l’impact du régime transverse (TF 3D vs TF 1D) et l’influence des fluctuations de phase. Dans le régime TF 1D, ces fluctuations deviennent dominantes et se traduisent par des ondulations de densité mesurables. Leur analyse expérimentale, via le spectre de puissance, fournit un accès direct aux corrélations de phase et à la thermodynamique effective du gaz.
+
+\paragraph{Protocole expérimental.}
+Concrètement, l’expansion longitudinale est réalisée selon la séquence illustrée en Fig.~??? :
+\begin{itemize}
+  \item Le nuage est initialement piégé dans un potentiel magnétique caractérisé par une fréquence longitudinale $f_{\parallel} = 5.0$ ou $9.4\,\mathrm{Hz}$ selon les jeux de données, et une fréquence transverse $f_{\perp} = 2.56\,\mathrm{kHz}$.
+  \item À $t=0$, le confinement longitudinal est éteint en annulant les courants $I_D=I_{D'}=0$. La coupure est réalisée sur un temps fini $t_{\parallel} = 70\,\mu\mathrm{s} \ll 1/f_{\parallel}$, ce qui évite un pic de courant parasite tout en préservant la dynamique du gaz.
+  \item Le nuage se dilate librement dans la direction longitudinale pendant une durée $\tau$. Ensuite, le confinement transverse est relâché en annulant $I_{\perp}$, avec un temps de coupure $t_{\perp} = 5\,\mu\mathrm{s} \ll 1/f_{\perp}$.
+  \item Une image par absorption est enfin prise après un temps de vol $t_v$. Pour l’étude des profils de densité, on utilise typiquement $t_v = 1\,\mathrm{ms}$.
+\end{itemize}
+
+%\paragraph{Découplage des confinements.}
+%Comme discuté en Section~\ref{chap:...}, l’architecture expérimentale rend ce protocole particulièrement simple à mettre en œuvre. La modulation des courants transverses $I_{\perp}$ garantit que le potentiel longitudinal est découplé de celui transverse, ce qui permet un contrôle précis et indépendant des deux confinements.
+
+\paragraph{Perspective.}
+La mise en œuvre de ce protocole d’expansion longitudinale ne répond donc pas seulement à un besoin technique de mesure, mais s’inscrit dans une stratégie plus générale : relier les prédictions théoriques de la GHD et des modèles effectifs à des observables accessibles, et sonder directement l’évolution des fluctuations et des corrélations dans un système quantique 1D.
+
+\paragraph{Équations Gross-Pitaevskii dépendantes du temps.}
+La dynamique du système étudié est décrite par l’équation de Gross-Pitaevskii (GP) \eqref{chap.1:eq.GP.1} :
+\begin{eqnarray*}
+	i \partial_\tau\phi = \left \{ - \frac{1}{2}\Delta_{\vec{r}} + V(\vec{r}) + g_{\mathrm{3D}} N \vert \phi \vert^2 \right \} \phi,
+\end{eqnarray*}
+avec $g_{\mathrm{3D}} = 4 \pi a_{\mathrm{3D}}$ et en présence d’un potentiel externe (voir \eqref{} et \eqref{}) :
+\begin{eqnarray*}
+	V(\vec{r}) = V_\perp(\vec{r}_\perp) + V_\parallel(x), 
+	\qquad 
+	V_\perp(\vec{r}_\perp) = \tfrac{1}{2} \, \omega_\perp^2 \, \vec{r}_\perp^2, 
+	\qquad 
+	V_\parallel(x) = \tfrac{1}{2} \, \omega_\parallel^2 \, x^2.
+\end{eqnarray*} 
+
+
+\paragraph{Séparation des degrés de liberté.}
+Dans un piège de type cigare, caractérisé par $\omega_\perp \gg \omega_\parallel$, la dynamique transverse se déroule sur des temps caractéristiques beaucoup plus courts que la dynamique longitudinale. On fait alors l’hypothèse d’un \emph{suivi adiabatique transverse} : l’état reste en permanence dans son état fondamental transverse. Ainsi, les degrés de liberté transverses et longitudinaux se découplent et la fonction d’onde peut se factoriser sous la forme
+\begin{equation}
+    \phi(r,\tau) = \psi(x,\tau)\,\Phi\!\left(\vec{r}_\perp, n(x,\tau)\right),
+\end{equation}
+où $\psi(x,\tau)$ décrit la dynamique longitudinale et $\Phi$ est la fonction d’onde transverse dépendant paramétriquement de la densité linéaire $n(x,\tau)$. La condition de normalisation 
+\(
+\int d \vec{r}_\perp \, \big|\Phi\!\left(\vec{r}_\perp, n\right)\big|^2 = 1
+\)
+permet de réécrire la densité linéaire définie par 
+\(
+n \doteq N \int d \vec{r}_\perp \, |\phi|^2
+\)
+sous la forme
+\begin{eqnarray*}
+	n(x,\tau) = N \, |\psi(x,\tau)|^2.
+\end{eqnarray*}
+L’équation de Gross-Pitaevskii se réécrit alors
+\begin{eqnarray}
+	\left( i \partial_\tau + \tfrac{1}{2} \partial_x^2 - V_\parallel(x) - \mu(n) \right) \psi = 0, 
+	\qquad 
+	\mu(n)\,\Phi = \left( - \tfrac{1}{2} \Delta_{\vec{r}_\perp} + V_\perp + g_{\mathrm{3D}} \, n \, \big|\Phi(\vec{r}_\perp,n)\big|^2 \right)\Phi.
+\end{eqnarray}
+
+\paragraph{Équations hydrodynamiques.}
+En utilisant la transformation de Madelung 
+\(
+\psi(x,\tau) = \sqrt{n(x,\tau)} \, e^{i \vartheta(x,\tau)},
+\)
+et en introduisant la vitesse $u = \partial_x \vartheta$, on obtient les équations hydrodynamiques associées :
+\begin{eqnarray}\label{chap:5:eq.hydro.1}
+	\left\{
+	\begin{array}{rcl}
+		\partial_\tau n + \partial_x ( n u )	 & = & 0, \\[0.3em]
+		\partial_\tau u + \partial_x \left( \tfrac{u^2}{2} + V_\parallel(x) + \mu(n) + Q(n) \right) & = & 0,
+	\end{array} 
+	\right.
+\end{eqnarray}
+où le terme de pression quantique est donné par
+\(
+Q(n) = - \frac{1}{2} \, \frac{\partial_x^2 \sqrt{n}}{\sqrt{n}}.
+\)
+Ces équations sont équivalentes aux deux premières de \eqref{chap:3:eq:hydro.1}, en tenant compte de la relation thermodynamique $dP = n \, d\mu$ et en négligeant le terme de pression quantique $Q(n)$.
+
+\medskip
+
+Pour notre protocole, pour $\tau < 0$ le système est à l’équilibre, avec la condition
+\(
+\mu(n) + V_\parallel(x) = \mu\bigl(n(x=0)\bigr).
+\)
+Pour $\tau \geq 0$, le potentiel longitudinal est éteint : $V_\parallel(x) = 0$.
+
+\medskip
+
+\paragraph{Solutions analytiques homothétique.}
+Si $n$ est solution des equation hydrodynamique \eqref{chap:5:eq.hydro.1} , pour $\tau \geq 0$. On fais l'hypothèse que la densité linéaire suit une forme homothétique
+\begin{eqnarray}
+	n(x,\tau) = \frac{1}{\lambda(\tau)} n_0 \left ( \frac{x}{\lambda(\tau)} \right ) ,	
+\end{eqnarray}
+avec $n_0$ le profil de densité à $\tau = 0 $ et $\lambda(\tau)$ le facter d'echelle à une temps d'expension $\tau$. Avec les containtes $\lambda(0) = 1$ et $\lambda'(0) = 0$ et $N = \int dx \, n(x , \tau ) $. En injectant dans \eqref{chap:5:eq.hydro.1} il vient que 
+\begin{eqnarray}\label{chap:5:eq.hydro.2}
+	\left\{
+	\begin{array}{rcl}
+		u(x, \tau ) & = & \displaystyle \frac{\dot\lambda(\tau)}{\lambda(\tau)} x , \\[0.3em]
+		\partial_x \mu ( n ( x , \tau ))  & = & - \displaystyle \frac{\ddot\lambda(\tau)}{\lambda(\tau)} x,
+	\end{array} 
+	\right.
+\end{eqnarray}
+(car \(\partial_\tau u=(\ddot\lambda/\lambda-\dot\lambda^2/\lambda^2)x\) et \(v\partial_x v=(\dot\lambda/\lambda)^2 x\), leur somme donne \((\ddot\lambda/\lambda)x\)) et initialement $\mu( n_0 ( x ) ) = \mu( n_0 ( x = 0  ) ) - \frac{1}{2} \omega_\parallel^2 x^2 $.
+
+\medskip
+
+Calculons maintenant \(\partial_x\mu(n(x))\). D'abord
+\[
+\partial_x n(x)=\frac{1}{\lambda^2}\,n_0'\!\Big(\frac{x}{\lambda}\Big).
+\]
+À l'équilibre \(\mu\big(n_0(y)\big)=\mu_0-\tfrac12 \omega_\parallel^2 y^2\), d'où
+\[
+\mu'(n_0(y))\,n_0'(y)=-\omega_\parallel^2 y
+\quad\Rightarrow\quad
+n_0'(y)=-\frac{\omega_\parallel^2\,y}{\mu'(n_0(y))}.
+\]
+En prenant \(y=x/\lambda\) on obtient
+\[
+n_0'\!\Big(\frac{x}{\lambda}\Big)
+= -\frac{\omega_\parallel^2}{\lambda}\,\frac{x}{\mu'\big(n_0(x/\lambda)\big)}.
+\]
+Donc
+\[
+\partial_x n(x) = -\frac{\omega_\parallel^2\,x}{\lambda^3}\;
+\frac{1}{\mu'\big(n_0(x/\lambda)\big)}.
+\]
+Puis
+\[
+\partial_x\mu(n(x))=\mu'\big(n(x)\big)\,\partial_x n(x)
+= -\frac{m\omega_\parallel^2\,x}{\lambda^3}\;
+\frac{\mu'\big(n(x)\big)}{\mu'\big(n_0(x/\lambda)\big)}.
+\]
+Or \(n_0(x/\lambda)=\lambda\,n(x)\), donc on définit
+\[
+f(\lambda)\equiv\frac{\mu'(n)}{\mu'(\lambda n)}.
+\]
+On obtient finalement
+\[
+\partial_x\mu(n(x)) = -\frac{\omega_\parallel^2}{\lambda^3}\,f(\lambda)\,x.
+\]
+
+%On souhaite calculer $\partial_x \mu\bigl(n(x,\tau)\bigr)$ en utilisant la règle de la chaîne et la forme homothétique. On a
+%\[
+%	\partial_x \mu\bigl(n(x)\bigr) 
+%	= \mu'(n(x)) \, \partial_x n(x) 
+%	= \frac{1}{\lambda^2} \, \mu'(n(x)) \, \partial_x n_0\!\left(\tfrac{x}{\lambda}\right),
+%\]
+%où le dernier terme s’écrit
+%\[
+%	\left. \frac{\partial n_0}{\partial x} \right|_{x/\lambda} 
+%	= \left. \frac{\partial n_0}{\partial \mu} \right|_{\mu(n_0(x/\lambda))} 
+%	\left. \frac{\partial \mu}{\partial x} \right|_{n_0(x/\lambda)} .
+%\]
+%On utilise alors 
+%\[
+%	\left. \frac{\partial \mu}{\partial x} \right|_{n_0(x/\lambda)} = - \frac{\omega_\parallel^2}{\lambda^2} \, x,
+%	\qquad 
+%	\left. \frac{\partial n_0}{\partial \mu} \right|_{\mu(n_0(x/\lambda))} 
+%	= \left. \frac{\partial n}{\partial \mu} \right|_{\mu(\lambda n)} .
+%\]
+%Il vient donc, en utilisant de plus la deuxième équation de 
+En remplaçant dans la deuxième d'Euler \eqref{chap:5:eq.hydro.2} et en simplifiant  \(x\),
+\begin{eqnarray}\label{chap:5:eq.hydro.3}
+	\frac{\ddot\lambda}{\lambda}  
+	 =  \frac{\omega_\parallel^2}{\lambda^3} \, f(\lambda)  .
+\end{eqnarray}
+
+\paragraph{Proposition.}
+Si le facteur
+\(
+f(\lambda)
+\)
+est bien défini indépendamment de \(n>0\) (ce qui est le cas pour les solutions homothétiques),
+alors \(f\) est une loi de puissance.
+
+\paragraph{Preuve.}
+Posons \(g(n) = \mu'(n)>0\) ou \(<0\) (\ie $\mu$ strictement monotone). La définition de \(f\) équivaut à l’existence d’une fonction
+\(\chi(\lambda)=1/f(\lambda)\) telle que
+\[
+g(\lambda n)=\chi(\lambda)\,g(n)\qquad(\forall\,\lambda,n>0).
+\]
+En prenant \(n=1\), on a \(\chi(\lambda)=g(\lambda)/g(1)\).
+Donc, pour tous \(a,b>0\),
+\[
+\chi(ab)=\frac{g(ab)}{g(1)}=\frac{\chi(a)\,g(b)}{g(1)}=g(a)\,g(b),
+\]
+c’est-à-dire que \(\chi\) est \emph{multiplicative}. Sous une hypothèse physique très faible
+(continuité/mesurabilité ou simple localement bornée), toute fonction multiplicative sur
+\(\mathbb{R}_+^\ast\) est de la forme
+\[
+\chi(\lambda)=\lambda^{\alpha-1}
+\quad\Rightarrow\quad
+f(\lambda)=\lambda^{1-\alpha}.
+\]
+%En réintégrant \(g=\mu'\propto n^{\alpha-1}\), on retrouve \(\mu(n)\propto n^\alpha\) pour \(\alpha\neq 0\)
+%(et \(\mu(n)\propto \ln n\) pour \(\alpha=0\)).
+\qed
+
+
+% --- Démonstration que f(λ)=λ^{1-\alpha} et réciproque ---
+\paragraph{Proposition.}
+$f(\lambda) = \lambda^{1-\alpha}$ et $\mu (n) \propto n^\alpha $ sont equivalents.
+%
+%On définit
+%\[
+%f(\lambda)=\frac{\mu'(n)}{\mu'(\lambda n)},
+%\]
+%en supposant \(\mu\in C^1\) et \(\mu'(n)>0\) pour \(n>0\).
+
+\paragraph{1. Si \(\mu(n)=C\,n^\alpha\) (avec \(C\neq0\)) :}
+Alors \(\mu'(n)=C\alpha\,n^{\alpha-1}\). Par conséquent
+\[
+f(\lambda)=\frac{C\alpha\,n^{\alpha-1}}{C\alpha\,(\lambda n)^{\alpha-1}}
+=\lambda^{1-\alpha}.
+\]
+
+\paragraph{2. Réciproque : si \(f(\lambda)=\lambda^{1-\alpha}\) pour tout \(\lambda>0\) (et tout \(n>0\)) :}
+Posons \(g(n)=\mu'(n)\). L'hypothèse s'écrit
+\[
+\frac{g(n)}{g(\lambda n)}=\lambda^{1-\alpha}
+\quad\Longleftrightarrow\quad
+g(\lambda n)=\lambda^{\alpha-1}\,g(n),
+\]
+pour tout \(n>0\) et tout \(\lambda>0\).
+
+Fixons \(n_0>0\) et définissons \(\varphi(\lambda)\equiv g(\lambda n_0)\). La relation ci-dessus donne
+\[
+\varphi(\lambda)=\lambda^{\alpha-1}\,\varphi(1).
+\]
+Autrement dit \(\varphi(\lambda)=C_1\,\lambda^{\alpha-1}\) pour une constante \(C_1=\varphi(1)=g(n_0)\). En remplaçant \(\lambda=x/n_0\) on obtient pour tout \(x>0\)
+\[
+g(x)=C_1\,x^{\alpha-1}.
+\]
+Ainsi \(g(n)=\mu'(n)=C\,n^{\alpha-1}\) avec \(C\) constant.
+
+En intégrant (en supposant \(\alpha\neq 0\)),
+%\[
+%\mu(n)=\int \mu'(n)\,dn = \int C\,n^{\alpha-1}\,dn = \frac{C}{\alpha}\,n^\alpha + \text{const},
+%\]
+%donc 
+\(\mu(n)\propto n^\alpha\). (Pour \(\alpha=0\) on obtient \(\mu'(n)=C\,n^{-1}\) et \(\mu(n)=C\ln n+\text{const}\).)
+
+\paragraph{Remarque sur les hypothèses.}
+La démonstration utilise la propriété fonctionnelle multiplicative
+\(g(\lambda n)=\lambda^{\alpha-1}g(n)\). Sous une hypothèse faible de continuité (ou dérivabilité) en \(n\) cette équation force la forme de puissance \(g(n)\propto n^{\alpha-1}\). Sans régularité, des solutions pathologiques peuvent exister mais ne sont pas physiquement pertinentes dans le contexte thermodynamique.
+
+\qed
+
+%% --- Bref argument (à insérer) ---
+%En posant \(g(n)=\mu'(n)\) et \(f(\lambda)=\dfrac{g(n)}{g(\lambda n)}=\lambda^{1-\alpha}\), on obtient
+%\[
+%g(\lambda n)=\lambda^{\alpha-1}g(n)\quad\forall\,\lambda,n>0,
+%\]
+%d'où \(g(n)=C\,n^{\alpha-1}\) et, pour \(\alpha\neq0\), \(\mu(n)=\dfrac{C}{\alpha}n^\alpha+\mathrm{const}\), i.e. \(\mu\propto n^\alpha\).
+%
+%
+%% --- Encadré pour le cas alpha = 0 ---
+%\medskip
+%\noindent\textbf{Remarque (cas \(\alpha=0\)).} Si \(\alpha=0\) alors la relation fonctionnelle donne \(g(n)=\mu'(n)=C\,n^{-1}\). En intégrant on obtient
+%\[
+%\mu(n)=C\ln n + \mathrm{const}.
+%\]
+%Ce cas correspond physiquement, par exemple, au gaz isotherme idéal en 1D (ou plus généralement à une dépendance logarithmique du potentiel chimique), où la compressibilité \(\mu'(n)\propto 1/n\).
+%
+%--------------------------------------------
+%
+%avec $f(\lambda) = \frac{\mu'(n)}{\mu'(\lambda n )}$ avec  $\mu(n)$ est continue et strictement monitone (donc inversible). Puisque $f(1)= 1$ et $f(\lambda_1 \lambda_2) =  f(\lambda_1) f( \lambda_2)$ alors $f$ est une fonction de puissace $f(\lambda) = \lambda^{1-\beta}$. Ainssi une solution de l'éqtation hydrondynamique homothètique donne  
+%\begin{eqnarray}
+%	\mu(n) = a n^\beta + b,  	
+%\end{eqnarray}
+%avec $a, b$ et $\beta$ des réelles. 
+
+\paragraph{Cas particulier.}
+Dans le régime quasi-1D on utilise l'expression d'interpolation (cf. Salasnich et al.)
+\[
+\mu(n)=\hbar\omega_\perp\Big(\sqrt{1+4\,a_{\mathrm{3D}}\,n}-1\Big),
+\]
+où \(n\) est la densité linéique et \(a_{\mathrm{3D}}\) le scattering length. De cette formule on obtient deux limites asymptotiques :
+
+\begin{itemize}
+\item \emph{Régime transverse Thomas--Fermi (TF), \(4a_{\mathrm{3D}}n\gg1\).} 
+Alors \(\sqrt{1+4a_{\mathrm{3D}}n}\simeq 2\sqrt{a_{\mathrm{3D}}n}\) et
+\[
+\mu(n)\simeq 2\hbar\omega_\perp\sqrt{a_{\mathrm{3D}}\,n},
+\]
+ce qui correspond à \(\mu\propto n^{1/2}\) (donc \(\alpha=\tfrac12\)). Ce régime décrit la situation où \(\mu\gg\hbar\omega_\perp\) et de nombreux niveaux transverses sont excités.
+\item \emph{Régime quasi-1D (transverse fondamental), \(4a_{\mathrm{3D}}n\ll1\).} 
+Alors \(\sqrt{1+4a_{\mathrm{3D}}n}\simeq 1+2a_{\mathrm{3D}}n\) et
+\[
+\mu(n)\simeq 2\hbar\omega_\perp\,a_{\mathrm{3D}}\,n \equiv g\,n,
+\]
+avec \(g=2\hbar\omega_\perp a_{\mathrm{3D}}\). Ici \(\mu\propto n\) (donc \(\alpha=1\)) ; on est proche de l'état fondamental transverse (gaussien).
+\end{itemize}
+
+Les deux formes ci-dessus sont bien les limites asymptotiques de l'expression d'interpolation donnée plus haut.
+
+\medskip
+
+Enfin, l'équation d'évolution du facteur d'échelle obtenue précédemment s'écrit correctement
+\[
+\boxed{\qquad \ddot\lambda\,\lambda^{\alpha+1}=\omega_\parallel^2 \qquad}
+\]
+
+
+% --- Table révisée (petites corrections typographiques) ---
+\begin{table}[h]
+\centering
+\begin{tabular}{l c c c}
+\hline
+Système & loi pour $\mu(n)$ & $\beta$ (avec $f(\lambda)=\lambda^{-\beta}$) & $\displaystyle \omega_{\rm breath}/\omega_\parallel$ \\
+\hline
+Gaz classique isotherme (1D, $\mu\propto\ln n$) 
+& $\mu'(n)\propto 1/n$ 
+& $-1$ 
+& $\sqrt{3}\approx1.732$ \\[4pt]
+
+Gaz de Bose 1D en régime moyen (GP, $\mu\propto n$) 
+& $\alpha=1$ 
+& $0$ 
+& $2$ \\[4pt]
+
+Tonks--Girardeau (1D, $\mu\propto n^2$) 
+& $\alpha=2$ 
+& $1$ 
+& $\sqrt{5}\approx2.236$ \\[4pt]
+
+Gaz de Fermi unitaire (ex. 3D, $\mu\propto n^{2/3}$) 
+& $\alpha=\tfrac{2}{3}$ 
+& $-\tfrac{1}{3}$ 
+& $\sqrt{3+\tfrac{2}{3}}\approx1.915$ \\[4pt]
+
+Cas général (loi de puissance) 
+& $\mu\propto n^\alpha$ 
+& $\beta=\alpha-1$ 
+& $\displaystyle \sqrt{3+\alpha}$ \\
+\hline
+\end{tabular}
+\caption{Valeurs de $\beta$ et fréquences du mode de souffle pour quelques régimes usuels.}
+\label{tab:breathing}
+\end{table}
+ 
+
+
+
 \subsection{Sonde locale de distribution de rapidité}
 \begin{itemize}
     \item Principe de la mesure : coupure d’une tranche puis expansion.
