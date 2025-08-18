@@ -28,11 +28,11 @@
 
 \section*{Introduction}
 
-\begin{itemize}
-	\item Objectif du chapitre : présentation synthétique de l’expérience
-	\item Distinction claire des contributions : mise en place initiale (précédents doctorants), développement (travail de Léa Dubois), contribution personnelle (prise de données, analyses spécifiques, participation à certaines manipulations)
-	\item Rôle de l’expérience dans l’étude de la dynamique des gaz de Bose 1D
-\end{itemize}
+%\begin{itemize}
+%	\item Objectif du chapitre : présentation synthétique de l’expérience
+%	\item Distinction claire des contributions : mise en place initiale (précédents doctorants), développement (travail de Léa Dubois), contribution personnelle (prise de données, analyses spécifiques, participation à certaines manipulations)
+%	\item Rôle de l’expérience dans l’étude de la dynamique des gaz de Bose 1D
+%\end{itemize}
 
 Ce chapitre présente l’expérience utilisée pour étudier les gaz unidimensionnels de rubidium ultra-froids. Nous décrivons l’architecture du dispositif, les méthodes d’imagerie et d’analyse, ainsi que les protocoles expérimentaux auxquels j’ai participé. Le développement initial du refroidissement et du piégeage avant la puce a été réalisé par d’anciens doctorants. La mise en place du piégeage sur la puce et du système de sélection spatiale à l’aide d’un DMD a été initiée par Léa Dubois, alors en première année de doctorat à mon arrivée. Mon travail s’est concentré principalement sur la prise de données, l’analyse et la participation à certaines expériences spécifiques telles que l’expansion longitudinale et la mesure locale de la distribution de rapidité.
 
@@ -52,20 +52,20 @@ Ce dispositif permet d’explorer des phénomènes hors équilibre dans des gaz 
 
 
 
-\section{Présentation générale de l’expérience}
-\subsection{Vue d’ensemble du dispositif}
-\begin{itemize}
-    \item Architecture générale : production, piégeage, manipulation et imagerie.
-    \item Systèmes étudiés : gaz de rubidium 87 dans des pièges 1D.
-    \item Objectifs : exploration de dynamiques hors équilibre.
-\end{itemize}
-
-\subsection{Historique et contributions successives}
-\begin{itemize}
-    \item Étapes de refroidissement et piégeage initial : travaux antérieurs (voir thèses citées).
-    \item Développement du piégeage 1D sur puce et du DMD : thèse de Léa Dubois.
-    \item Contributions personnelles : prise de données, protocoles dynamiques, analyse.
-\end{itemize}
+%\section{Présentation générale de l’expérience}
+%\subsection{Vue d’ensemble du dispositif}
+%\begin{itemize}
+%    \item Architecture générale : production, piégeage, manipulation et imagerie.
+%    \item Systèmes étudiés : gaz de rubidium 87 dans des pièges 1D.
+%    \item Objectifs : exploration de dynamiques hors équilibre.
+%\end{itemize}
+%
+%\subsection{Historique et contributions successives}
+%\begin{itemize}
+%    \item Étapes de refroidissement et piégeage initial : travaux antérieurs (voir thèses citées).
+%    \item Développement du piégeage 1D sur puce et du DMD : thèse de Léa Dubois.
+%    \item Contributions personnelles : prise de données, protocoles dynamiques, analyse.
+%\end{itemize}
 
 \section{Le dispositif expérimental}
 \subsection{Système laser et contrôle de fréquence}
@@ -169,14 +169,14 @@ Ainsi, cette étape permet d’obtenir un nuage plus dense et plus froid, condit
 
 
 \subsection{Piégeage magnétique sur puce}
-{\color{blue}
-\begin{itemize}
-    \item Présentation de la puce atomique.
-    \item Confinement transverse et longitudinal.
-    \item Régime 1D : conditions d’accès (\(\hbar \omega_\perp \gg k_B T\)).
-    \item Problèmes de rugosité, stabilité magnétique.
-\end{itemize}
-}
+%{\color{blue}
+%\begin{itemize}
+%    \item Présentation de la puce atomique.
+%    \item Confinement transverse et longitudinal.
+%    \item Régime 1D : conditions d’accès (\(\hbar \omega_\perp \gg k_B T\)).
+%    \item Problèmes de rugosité, stabilité magnétique.
+%\end{itemize}
+%}
 
 \subsubsection{Piégeage magnétique sur puce}
 \label{sec:piegeage_puce}
@@ -317,10 +317,10 @@ Cet épisode m’a permis de me confronter plus directement aux paramètres crit
 
 
 \subsection{Génération de potentiels modulés}
-\begin{itemize}
-    \item Courants modulés pour créer des pièges harmoniques ou quartiques.
-    \item Découplage transverse/longitudinal.
-\end{itemize}
+%\begin{itemize}
+%    \item Courants modulés pour créer des pièges harmoniques ou quartiques.
+%    \item Découplage transverse/longitudinal.
+%\end{itemize}
 
 \paragraph{Champ des micro-fils.}
 Puisque que $m_F = 2 $, (état assuré par pompage optique), le potentiel magnétique $-\vec{\mu} \vec{B}(\vec{r}) $ (avec moment dipolaire magnétique alors $\vec{\mu}$ et le champs magnetque totale que resente les atomes$\vec{B}(\vec{r})$) est proportionnel à $\vert \vec{B}(\vec{r}) \vert$  de sorte que les atomes, en état low-field seeking, sont attirés vers les régions de champ magnétique minimal. Les micro-fils, alignés selon l’axe horizontal $\vec{e}_x$, sont parcourus par des courants alternatifs $\pm I$ (déphasés) produisant le champ magnétique de confinement : un fil central parcouru par un courant \( I \), et deux fils latéraux par des courants opposés \(-I\). 
@@ -971,6 +971,152 @@ Enfin, l'équation d'évolution du facteur d'échelle obtenue précédemment s'�
 \boxed{\qquad \ddot\lambda\,\lambda^{\alpha+1}=\omega_\parallel^2 \qquad}
 \]
 
+% --- Première intégration de l'équation ---
+On part de
+\[
+\ddot\lambda\,\lambda^{\alpha+1}=\omega_\parallel^2,
+\]
+et on pose \(v=\dot\lambda\). Comme \(\ddot\lambda=\dot\lambda\frac{d\dot\lambda}{d\lambda}\), on obtient
+\[
+\dot\lambda\frac{d\dot\lambda}{d\lambda}=\omega_\parallel^2\,\lambda^{-(\alpha+1)}.
+\]
+
+\paragraph{Cas \(\alpha\neq0\).}
+Intégration par rapport à \(\lambda\) :
+\[
+\frac{1}{2}\dot\lambda^2
+= \omega_\parallel^2\int \lambda^{-(\alpha+1)}\,d\lambda
+= -\frac{\omega_\parallel^2}{\alpha}\,\lambda^{-\alpha} + C,
+\]
+où \(C\) est une constante d'intégration déterminée par les conditions initiales \(\lambda(0)=\lambda_0\), \(\dot\lambda(0)=\dot\lambda_0\) :
+\[
+C=\frac{1}{2}\dot\lambda_0^2+\frac{\omega_\parallel^2}{\alpha}\,\lambda_0^{-\alpha}.
+\]
+On a donc la première intégrale
+\[
+\boxed{\; \dot\lambda^2
+= \dot\lambda_0^2 + \frac{2\omega_\parallel^2}{\alpha}\big(\lambda_0^{-\alpha}-\lambda^{-\alpha}\big)\; }.
+\]
+%La solution en quadrature s'écrit alors
+%\[
+%t-t_0=\int_{\lambda_0}^{\lambda(t)}\frac{d\lambda}{\sqrt{\,v_0^2 + \dfrac{2\omega_\parallel^2}{\alpha}\big(\lambda_0^{-\alpha}-\lambda^{-\alpha}\big)\,}}.
+%\]
+
+\paragraph{Cas \(\alpha=0\).}
+L'équation devient \(\ddot\lambda\,\lambda=\omega_\parallel^2\). On obtient
+%\[
+%\frac{1}{2}v^2=\omega_\parallel^2\ln\lambda + C,
+%\]
+%avec \(C=\tfrac12 v_0^2-\omega_\parallel^2\ln\lambda_0\). D'où
+\[
+\boxed{\; \dot\lambda^2 = \dot\lambda_0^2 + 2\omega_\parallel^2\ln\!\big(\tfrac{\lambda}{\lambda_0}\big)\; }.
+\]
+
+%La quadrature est
+%\[
+%t-t_0=\int_{\lambda_0}^{\lambda(t)}\frac{d\lambda}{\sqrt{\,v_0^2 + 2\omega_\parallel^2\ln(\lambda/\lambda_0)\,}}.
+%\]
+
+%\paragraph{Remarques.}
+%\begin{itemize}
+%\item Ces intégrales donnent la solution implicite \(t(\lambda)\). En général on ne dispose pas d'une primitive élémentaire fermée pour \(\lambda(t)\) (sauf cas particuliers de choix des conditions initiales), mais la première intégrale ci-dessus est très utile pour l'analyse qualitative (points de retournement, énergie effective, petites oscillations).
+%\item Pour les petites oscillations autour de \(\lambda=1\) on peut linéariser et retrouver la fréquence \(\omega_{\rm breath}=\sqrt{4+\beta}\,\omega_\parallel=\sqrt{3+\alpha}\,\omega_\parallel\) (avec \(\beta=\alpha-1\)).
+%\end{itemize}
+
+
+%\subsubsection{Comportement asymptotique du facteur d'échelle}
+
+
+
+%\paragraph{Régime à temps longs.} 
+%On considère la condition initiale
+%\(
+%\lambda(0)=1,\,\dot\lambda(0)=0.
+%\) 
+%et pour $\alpha > 0$ 
+%Pour \(\tau\) très grand, on a \(\lambda^{-\alpha}\ll 1\). On a 
+%\[
+%\lambda(\tau) \simeq \frac{2}{\alpha}\,\omega_\parallel \tau.
+%\]
+%En particulier :  
+%\begin{itemize}
+%\item TF 1D (\(\alpha=1\)) : \(\lambda(\tau)\simeq \sqrt{2}\,\omega_\parallel \tau\),  
+%\item TF 3D (\(\alpha=1/2\)) : \(\lambda(\tau)\simeq 2\,\omega_\parallel \tau\).  
+%\end{itemize}
+%%Ces comportements sont observés sur la Fig.~7.4(b).
+%
+%\paragraph{Régime à temps courts.}  
+%À temps courts, on peut approximer \(\mu(x,\tau)\simeq \mu_0(x)=\mu_p-\frac{1}{2}m\omega_\parallel^2 x^2\). Le comportement initial est alors indépendant de l'équation d'état \(\mu(n)\). L'équation d'Euler sans potentiel extérieur donne
+%\[
+%\frac{d^2 x}{d\tau^2} \simeq \omega_\parallel^2 x \quad\Rightarrow\quad v(x,\tau)\simeq \omega_\parallel^2 x \,\tau \quad (\tau\to 0).
+%\]
+%En réinjectant ce profil dans l'équation de continuité et en intégrant, on obtient
+%\[
+%\frac{1}{\lambda(\tau)} \simeq 1 - \frac{\omega_\parallel^2 \tau^2}{2} + \mathcal{O}(\tau^4) \quad\Rightarrow\quad
+%\lambda(\tau)\simeq 1 + \frac{\omega_\parallel^2 \tau^2}{2} + \mathcal{O}(\tau^4),
+%\]
+%ce qui correspond au comportement observé à temps courts sur la Fig.~7.4(a), identique pour les régimes TF 1D et TF 3D.
+%
+%
+%------------------
+%
+%\paragraph{Régime à temps courts.}  
+%Pour \(\tau \to 0\), on linéarise le facteur d'échelle autour de l'équilibre \(\lambda=1\) en posant
+%\(\lambda(\tau) = 1 + \epsilon(\tau)\) avec \(|\epsilon|\ll 1\). L'équation de mouvement devient alors
+%\[
+%\ddot \epsilon + (1+\alpha)\,\omega_\parallel^2 \epsilon - \omega_\parallel^2 = 0,
+%\]
+%équivalente à un oscillateur harmonique forcé. La solution pour des conditions initiales
+%\(\epsilon(0)=0\), \(\dot\epsilon(0)=0\) est
+%\[
+%\epsilon(\tau) \simeq \frac{\omega_\parallel^2}{1+\alpha}\left[1 - \cos\left(\sqrt{1+\alpha}\,\omega_\parallel \tau\right)\right].
+%\]
+%Ainsi, à temps très courts \(\tau\ll 1/\omega_\parallel\), on retrouve
+%\[
+%\epsilon(\tau) \simeq \frac{1}{2}\,\omega_\parallel^2 \tau^2 + \mathcal{O}(\tau^4),
+%\]
+%et donc
+%\[
+%\lambda(\tau) \simeq 1 + \frac{\omega_\parallel^2 \tau^2}{2} + \mathcal{O}(\tau^4),
+%\]
+%ce qui coïncide avec le comportement universel observé à temps courts pour tous les régimes TF, indépendamment de \(\alpha\) et de l'équation d'état \(\mu(n)\).
+%
+%----------------------------
+
+On impose les conditions initiales
+\[
+\lambda(0)=1, \qquad \dot\lambda(0)=0,
+\]
+et l'on considère le cas \(\alpha>0\).
+
+\paragraph{Régime à temps courts (\(\tau \ll 1/\omega_\parallel\)).}  
+On linéarise autour de l'équilibre \(\lambda=1\) en posant \(\lambda(\tau)=1+\epsilon(\tau)\) avec \(|\epsilon|\ll 1\). L'équation de mouvement devient un oscillateur harmonique forcé :
+\[
+\ddot \epsilon + (1+\alpha)\,\omega_\parallel^2 \epsilon - \omega_\parallel^2 = 0.
+\]
+Pour les conditions initiales choisies, la solution à petits temps est
+\[
+\epsilon(\tau) \simeq \frac{1}{2}\,\omega_\parallel^2 \tau^2 \quad\Rightarrow\quad
+\lambda(\tau) \simeq 1 + \frac{\omega_\parallel^2 \tau^2}{2},
+\]
+indépendamment de l'équation d'état \(\mu(n)\). Ce comportement correspond au profil universel observé à temps courts (Fig.~7.4(a)) pour tous les régimes TF.
+
+\paragraph{Régime à temps longs (\(\tau \gg 1/\omega_\parallel\)).}  
+Pour \(\lambda^{-\alpha}\ll 1\), l'équation intégrée donne
+\[
+\dot\lambda \simeq \sqrt{\frac{2\omega_\parallel^2}{\alpha}} \quad\Rightarrow\quad
+\lambda(\tau) \simeq \frac{2}{\alpha}\,\omega_\parallel \tau.
+\]
+En particulier :
+\begin{itemize}
+\item TF 1D (\(\alpha=1\)) : \(\lambda(\tau)\simeq \sqrt{2}\,\omega_\parallel \tau\),  
+\item TF 3D (\(\alpha=1/2\)) : \(\lambda(\tau)\simeq 2\,\omega_\parallel \tau\).  
+\end{itemize}
+Ces comportements sont bien observés sur la Fig.~7.4(b) et correspondent à l’expansion asymptotique du gaz.
+
+
+
+
 
 % --- Table révisée (petites corrections typographiques) ---
 \begin{table}[h]
@@ -1020,6 +1166,32 @@ Cas général (loi de puissance)
     \item Comparaison avec les prédictions GHD.
     \item Limites et incertitudes
 \end{itemize}
+
+\subsubsection{Distribution de rapidités locale dans les gaz 1D}
+
+\paragraph{Motivation.}  
+La compréhension des gaz de bosons 1D avec interactions de contact répulsives repose sur la notion de distribution de rapidités \(\rho(\theta)\). Chaque état propre du système peut être paramétré par un ensemble de rapidités \(\{\theta_i\}\) (Ansatz de Bethe), ou interprété comme les vitesses de quasi-particules à durée de vie infinie. Ici, on utilise la définition pratique issue des expansions 1D : les rapidités correspondent aux vitesses asymptotiques des atomes après une expansion, avec \(x_j \simeq \tau \theta_j\) pour un temps \(\tau\) long. Cette définition est directement applicable à des mesures expérimentales de distribution de rapidités locales.
+
+\paragraph{Distribution locale et LDA.}  
+Pour un nuage atomique piégé dans un potentiel longitudinal variant lentement, on peut appliquer l’Approximation de Densité Locale (LDA). Le gaz est alors vu comme un fluide décomposé en cellules mésoscopiques de densité homogène et relaxée. Dans chaque cellule, l’état d’équilibre est décrit par un Ensemble de Gibbs Généralisé (GGE), ou équivalemment par une distribution de rapidités locale \(\rho(x,\theta)\). Cette description permet d’étudier non seulement l’équilibre, mais aussi la dynamique hors équilibre à grandes échelles spatiales et temporelles, via la théorie Hydrodynamique Généralisée (GHD).
+
+\paragraph{Protocole expérimental.}  
+Pour mesurer \(\rho(x,\theta)\) localement :  
+\begin{enumerate}
+    \item Une zone du nuage atomique de taille \(\ell\) centrée en \(x_0\) est sélectionnée à l’aide d’un dispositif de micromiroirs digitaux (DMD). La pression de radiation supprime instantanément les atomes en dehors de la zone, laissant uniquement ceux de la cellule.
+    \item Après la sélection, le confinement longitudinal est relâché, tandis que le confinement transverse reste actif. Les atomes réalisent une expansion 1D pendant un temps \(\tau\), puis le profil de densité est imagé (typiquement pour \(\tau\sim 1\) ms).
+    \item Le protocole est répété pour plusieurs positions \(x_0\), permettant d’obtenir la distribution de rapidités locale sur l’ensemble du nuage.
+\end{enumerate}
+
+\paragraph{Mesures à l’équilibre.}  
+Pour un gaz initialement à l’équilibre dans un piège harmonique, le profil de densité de chaque zone sélectionnée est analysé via la thermodynamique Yang-Yang et la LDA, donnant température \(T_{\rm YY}\) et potentiel chimique \(\mu_{\rm YY}\). Après un temps d’expansion long, le profil devient homothétique à la distribution de rapidités locale \(\rho(x,\theta)\). La comparaison avec les prédictions numériques montre une bonne cohérence, confirmant que le protocole permet de sonder efficacement \(\rho(x,\theta)\).
+
+\paragraph{Résumé.}  
+— Une sonde locale de distribution de rapidités a été mise en place grâce au DMD.  
+— Les atomes sélectionnés réalisent une expansion dans le guide 1D.  
+— Après un temps long, le profil de densité reflète la distribution de rapidités locale.  
+— Ce protocole a été appliqué avec succès sur un nuage atomique initialement à l’équilibre.
+
 
 \section{Discussion sur les limites et les perspectives}
 \begin{itemize}
