@@ -1192,6 +1192,28 @@ Pour un gaz initialement à l’équilibre dans un piège harmonique, le profil 
 — Après un temps long, le profil de densité reflète la distribution de rapidités locale.  
 — Ce protocole a été appliqué avec succès sur un nuage atomique initialement à l’équilibre.
 
+\paragraph{Dynamique.}
+\subparagraph{Motivation.}
+Pour vérifier si le régime asymptotique des expansions longitudinales est atteint, il est nécessaire de comparer les résultats expérimentaux à une théorie dynamique. L’outil adapté est l’Hydrodynamique Généralisée (GHD), déjà introduite au Chapitre~3, qui décrit l’évolution spatio-temporelle de la distribution de rapidités.
+
+\subparagraph{Invariance d’échelle hydrodynamique.}
+On considère une sélection initiale homogène de taille $\ell$ centrée en $x_0$. Dans ce cas, les équations GHD \eqref{chap:GHD:eq.conserv.3.1} s’écrivent sans potentiel, avec la condition initiale $\rho(x,\theta,0)=\rho_0(\theta)$ si $|x-x_0|\leq \ell/2$, et $0$ sinon. En introduisant les variables sans dimension $\alpha=(x-x_0)/\ell$ et $\beta=\tau/\ell$, l’équation devient indépendante de $\ell$. 
+\begin{eqnarray*}
+	\left \{ 
+	\begin{array}{rcl}
+		\partial_\beta \tilde{\rho} ( \alpha , \theta ; \beta ) +  \partial_x ( v^{\mathrm{ell}}_{[\tilde{\rho}]} (\theta)  \tilde{\rho} ( \alpha , \theta ; \beta )) = 0 \\
+		\tilde{\rho} ( \alpha , \theta ; 0 )	 = \rho_0(\theta) \, \mbox{si} \, \vert \alpha \vert \leq \frac12 \,, \,  0 \, \mbox{sinon}.
+	\end{array}
+	\right .
+\end{eqnarray*}
+Il en résulte que les profils de densité $n(x,\tau)$, exprimés en fonction de $\alpha$, ne dépendent que du rapport $\beta$. 
+Autrement dit, deux sélections de tailles différentes mais telles que $\tau/\ell$ soit constant doivent conduire aux mêmes profils après expansion. Cette invariance a été vérifiée expérimentalement : les profils se superposent de manière remarquable.
+
+\subparagraph{Lien avec les équations de Gross–Pitaevskii}
+Dans le régime quasi-condensat (qBEC), à basse température, la dynamique peut aussi être décrite par les équations hydrodynamiques issues de Gross–Pitaevskii (en négligeant la pression quantique) 
+Après changement de variables ($\alpha=(x-x_0)/\ell$, $\beta=\tau/\ell$, $\tilde n=n/n_0$), on retrouve un système d’équations qui ne dépend plus de $\ell$, mais uniquement du rapport adimensionné $\eta=\beta g n_0/m$.
+Il en découle que les profils de densité sont universels lorsqu’ils sont exprimés en fonction de $(\alpha,\eta)$. Expérimentalement, ce comportement est bien confirmé : les centres des profils se superposent pour des conditions initiales différentes, et l’accord est même bon sur les bords.
+
 
 \section{Discussion sur les limites et les perspectives}
 \begin{itemize}
