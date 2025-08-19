@@ -1202,7 +1202,10 @@ On considère une sélection initiale homogène de taille $\ell$ centrée en $x_
 	\left \{ 
 	\begin{array}{rcl}
 		\partial_\beta \tilde{\rho} ( \alpha , \theta ; \beta ) +  \partial_x ( v^{\mathrm{ell}}_{[\tilde{\rho}]} (\theta)  \tilde{\rho} ( \alpha , \theta ; \beta )) = 0 \\
-		\tilde{\rho} ( \alpha , \theta ; 0 )	 = \rho_0(\theta) \, \mbox{si} \, \vert \alpha \vert \leq \frac12 \,, \,  0 \, \mbox{sinon}.
+		\tilde{\rho} ( \alpha , \theta ; 0 )	 = \begin{cases}
+			\rho_0(\theta) & \text{si } |\alpha|\leq \tfrac{1}{2}, \\
+			0 & \text{sinon},
+		\end{cases}% \rho_0(\theta) \, \mbox{si} \, \vert \alpha \vert \leq \frac12 \,, \,  0 \, \mbox{sinon}.
 	\end{array}
 	\right .
 \end{eqnarray*}
@@ -1212,42 +1215,69 @@ Autrement dit, deux sélections de tailles différentes mais telles que $\tau/\e
 \subparagraph{Lien avec les équations de Gross–Pitaevskii}
 Dans le régime quasi-condensat (qBEC), à basse température, la dynamique peut aussi être décrite par les équations hydrodynamiques issues de Gross–Pitaevskii (en négligeant la pression quantique) 
 Après changement de variables ($\alpha=(x-x_0)/\ell$, $\beta=\tau/\ell$, $\tilde n=n/n_0$), on retrouve un système d’équations qui ne dépend plus de $\ell$, mais uniquement du rapport adimensionné $\eta=\beta g n_0/m$.
+\begin{eqnarray*}
+	\left \{ 
+	\begin{array}{rcl}
+		\partial_\beta \tilde n + \partial_\alpha ( \tilde v \tilde n) = 0, && \partial_\beta \tilde v + \tilde v \,\partial_\alpha \tilde v = - \dfrac{g n_0}{m}\,\partial_\alpha \tilde n, \\[6pt]
+	\tilde n(\alpha,\beta=0) = 
+		\begin{cases}
+			1 & \text{si } |\alpha|\leq \tfrac{1}{2}, \\
+			0 & \text{sinon},
+		\end{cases}, && 
+\tilde v(\alpha,\beta=0)=0.
+	\end{array}
+	\right.
+\end{eqnarray*}
 Il en découle que les profils de densité sont universels lorsqu’ils sont exprimés en fonction de $(\alpha,\eta)$. Expérimentalement, ce comportement est bien confirmé : les centres des profils se superposent pour des conditions initiales différentes, et l’accord est même bon sur les bords.
 
+\subparagraph{Régime asymptotique.}  
+L’expansion des tranches est bien décrite par l’hydrodynamique généralisée (GHD). Les comparaisons entre données expérimentales et simulations GHD (avec des distributions thermiques initiales) montrent un bon accord au centre des profils, mais révèlent que le régime asymptotique complet n’est pas atteint dans les temps accessibles expérimentalement. Pour $\tau=50$\,ms, l’écart reste d’environ $12\%$, et une convergence complète nécessiterait des temps irréalistes ($\sim 500$\,ms). L’extraction de la distribution de rapidité à partir des profils reste donc approximative.
 
-\section{Discussion sur les limites et les perspectives}
-\begin{itemize}
-    \item Contraintes techniques (bruit, alignement, stabilité de la puce…).
-    \item Améliorations potentielles (résolution, contrôle du potentiel, automatisation).
-    \item Perspectives pour d’autres types d’expériences (étude de chocs, turbulence quantique, etc.)
-\end{itemize}
+\subparagraph{Hypothèse thermique.}  
+Afin de restreindre le nombre de paramètres d’ajustement, on suppose que la distribution de rapidité locale est thermique. Dans ce cas, seule la température $T$ est ajustée, le potentiel chimique étant fixé par l’équation d’état. L’ajustement sur les profils expérimentaux conduit à une température effective $T_{\text{fit}}=230$\,nK, environ 2.5 fois plus grande que celle extraite à l’équilibre. Néanmoins, les distributions de rapidité obtenues restent proches, confirmant que, dans le régime fortement qBEC, la dynamique dépend surtout des interactions et peu de la température. L’influence possible d’une faible population transversale excitée a été évaluée et s’est révélée négligeable.
 
-\section*{Conclusion}
-\begin{itemize}
-    \item Résumé de l’architecture du dispositif).
-    \item Méthodes d’analyse utilisées et robustesse.
-    \item Importance de l’expérience dans le contexte de l’étude des gaz quantiques unidimensionnels
-\end{itemize}
-Ce chapitre a présenté les éléments essentiels du dispositif expérimental, les méthodes d’imagerie, ainsi que les expériences auxquelles j’ai participé. L’ensemble constitue une plateforme performante pour l’étude de la dynamique de gaz 1D hors équilibre.
+\subsection*{8.6 Mesure locale de distribution de rapidités hors équilibre}
 
-\paragraph{Résumé de l’architecture expérimentale}  
-Nous avons décrit les éléments clés du dispositif utilisé : un système de refroidissement laser basé sur trois sources couplées, un piégeage magnétique sur puce optimisé pour réaliser des géométries unidimensionnelles, une plateforme de modulation de potentiel via un DMD, et un système d’imagerie haute résolution. L’ensemble permet une manipulation fine des nuages atomiques dans un cadre reproductible et stable.
+\paragraph{}  
+Le faisceau de sélection (DMD) permet non seulement de sonder la distribution de rapidités locale, mais aussi de créer des situations hors équilibre. Un protocole illustratif consiste à retirer les atomes d’une région centrale de taille $\ell_0 = 70\,\mu$m, puis à laisser le gaz évoluer librement. Après un temps $\tau = 15$\,ms, la distribution de rapidités développe une structure doublement piquée, très différente d’une distribution thermique. Une seconde sélection locale ($\ell=35\,\mu$m) suivie d’une expansion révèle expérimentalement ce profil, en excellent accord avec les simulations GHD.
 
-\paragraph{Méthodes d’analyse et robustesse}  
-L’imagerie par absorption, couplée à une analyse rigoureuse des profils atomiques, fournit des outils fiables pour extraire les grandeurs pertinentes : densités, tailles, températures, distributions de vitesses. Ces méthodes ont permis de confronter les résultats expérimentaux à des prédictions théoriques de type GHD ou Yang-Yang.
-
-\paragraph{Importance du dispositif pour la thèse}  
-Ce dispositif a été essentiel pour mener à bien les expériences présentées dans cette thèse. Il offre à la fois un contrôle local (grâce au DMD), un bon confinement transverse (grâce à la puce) et une imagerie précise. La plateforme est ainsi bien adaptée pour étudier des systèmes 1D fortement corrélés hors équilibre, et pour tester les prédictions de la physique statistique intégrable.
-
-\paragraph{Perspectives}  
-Malgré ses atouts, le dispositif présente des limitations techniques (rugosité magnétique, sensibilité à l’alignement, etc.) qui laissent entrevoir des pistes d’amélioration. Des développements futurs pourraient notamment viser à augmenter la résolution spatiale, automatiser davantage les séquences, ou explorer d'autres régimes dynamiques comme la turbulence ou les collisions de chocs quantiques.
+\paragraph{}  
+Cette approche démontre l’importance d’une mesure locale : alors que la distribution globale $\int dx\,\rho(x,\theta)$ est conservée, la distribution locale $\rho(x,\theta)$ reflète directement la dynamique hors équilibre. Le dispositif basé sur le DMD offre ainsi un outil puissant pour générer et caractériser divers protocoles hors équilibre (cisaillement, jonctions de densité, états stationnaires non thermiques, etc.), ouvrant de nouvelles perspectives pour l’étude des gaz de Bose 1D.
 
 
-
-%\appendix
-\section*{Annexes}
-\begin{itemize}
-    \item Schémas techniques (puce, DMD, optique).
-    \item Tableaux de paramètres expérimentaux.
-    \item Exemples de motifs DMD utilisés.
-\end{itemize}
+%\section{Discussion sur les limites et les perspectives}
+%\begin{itemize}
+%    \item Contraintes techniques (bruit, alignement, stabilité de la puce…).
+%    \item Améliorations potentielles (résolution, contrôle du potentiel, automatisation).
+%    \item Perspectives pour d’autres types d’expériences (étude de chocs, turbulence quantique, etc.)
+%\end{itemize}
+%
+%\section*{Conclusion}
+%\begin{itemize}
+%    \item Résumé de l’architecture du dispositif).
+%    \item Méthodes d’analyse utilisées et robustesse.
+%    \item Importance de l’expérience dans le contexte de l’étude des gaz quantiques unidimensionnels
+%\end{itemize}
+%Ce chapitre a présenté les éléments essentiels du dispositif expérimental, les méthodes d’imagerie, ainsi que les expériences auxquelles j’ai participé. L’ensemble constitue une plateforme performante pour l’étude de la dynamique de gaz 1D hors équilibre.
+%
+%\paragraph{Résumé de l’architecture expérimentale}  
+%Nous avons décrit les éléments clés du dispositif utilisé : un système de refroidissement laser basé sur trois sources couplées, un piégeage magnétique sur puce optimisé pour réaliser des géométries unidimensionnelles, une plateforme de modulation de potentiel via un DMD, et un système d’imagerie haute résolution. L’ensemble permet une manipulation fine des nuages atomiques dans un cadre reproductible et stable.
+%
+%\paragraph{Méthodes d’analyse et robustesse}  
+%L’imagerie par absorption, couplée à une analyse rigoureuse des profils atomiques, fournit des outils fiables pour extraire les grandeurs pertinentes : densités, tailles, températures, distributions de vitesses. Ces méthodes ont permis de confronter les résultats expérimentaux à des prédictions théoriques de type GHD ou Yang-Yang.
+%
+%\paragraph{Importance du dispositif pour la thèse}  
+%Ce dispositif a été essentiel pour mener à bien les expériences présentées dans cette thèse. Il offre à la fois un contrôle local (grâce au DMD), un bon confinement transverse (grâce à la puce) et une imagerie précise. La plateforme est ainsi bien adaptée pour étudier des systèmes 1D fortement corrélés hors équilibre, et pour tester les prédictions de la physique statistique intégrable.
+%
+%\paragraph{Perspectives}  
+%Malgré ses atouts, le dispositif présente des limitations techniques (rugosité magnétique, sensibilité à l’alignement, etc.) qui laissent entrevoir des pistes d’amélioration. Des développements futurs pourraient notamment viser à augmenter la résolution spatiale, automatiser davantage les séquences, ou explorer d'autres régimes dynamiques comme la turbulence ou les collisions de chocs quantiques.
+%
+%
+%
+%%\appendix
+%\section*{Annexes}
+%\begin{itemize}
+%    \item Schémas techniques (puce, DMD, optique).
+%    \item Tableaux de paramètres expérimentaux.
+%    \item Exemples de motifs DMD utilisés.
+%\end{itemize}
