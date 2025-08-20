@@ -771,7 +771,6 @@ Pour rappel, les opérateurs de montée/descente agissant sur les états propres
 où l'opérateur $\operator{A} \in \{ \operator{S} , \operator{L} , \operator{J} , \cdots \}$.
 
 Donc 
-
 \begin{eqnarray*} 
 	\ket{5\,^2P_{1/2},m_J' = \pm\tfrac12} &=& \mp\sqrt{\tfrac{1}{3}}\,\ket{ m_L'=0,\,m_S'=\pm\tfrac12} \;\pm\;\sqrt{\tfrac{2}{3}}\,\ket{m_L'=\pm 1,\,m_S'=\mp\tfrac12},\\ 
 	\ket{5\,^2P_{3/2},m_J' = \pm\tfrac12} &=& +\sqrt{\tfrac{2}{3}}\,\ket{m_L'=0,\,m_S'=\pm\tfrac12} \;+\;\sqrt{\tfrac{1}{3}}\,\ket{ m_L'=\pm 1,\,m_S'=\mp\tfrac12},\\
@@ -784,7 +783,6 @@ Cette notation sera utile par la suite pour analyser les transitions permises et
 \end{eqnarray*}
 
 il vient que 
-
 \begin{eqnarray*}
 	\langle 5 {~}^2P_{1/2} , m_J' = \pm\tfrac12 \vert \operatorvec{D} \cdot \operatorvec{u}\vert 5 {~}^2S_{1/2} , m_J = \pm  \tfrac12 \rangle	 &=& \mp  \sqrt{\frac{1}{3}} d_{\scriptstyle 5S \rightarrow 5P},\\
 	\langle 5 {~}^2P_{3/2} , m_J' = \pm \tfrac12 \vert \operatorvec{D} \cdot \operatorvec{u}\vert 5 {~}^2S_{1/2} , m_J = \pm  \tfrac12 \rangle	 &=& \sqrt{\frac{2}{3}} d_{\scriptstyle 5S \rightarrow 5P} , \\
@@ -853,20 +851,20 @@ Dans cette configuration, les faisceaux lasers génèrent un potentiel optique c
 \subsubsection*{Critères de sélection}
 
 Deux critères fondamentaux guident notre choix de laser :
-\begin{itemize}
+\begin{itemize}[label = $\bullet$]
 	\item Le {\bf potentiel dipolaire} au niveau des atomes, $U_{dip}(0)$, doit être supérieur à une valeur minimale $U_{dip}^{(min)}$, fixée à :
-		\[
-			U_{dip}(0)  \geq U_{dip}^{(min)} = k_B \times 1 \mu K.
-		\]
+		\begin{equation}
+			U_{dip}(0)  \geq U_{dip}^{(min)} = k_B \times 1 \mu K.	
+		\end{equation}
 		Cette valeur garantit une barrière suffisante pour confiner les atomes contre leur agitation thermique résiduelle ou leur expansion quantique.
 	\item Le {\bf taux de diffusion spontané}  au point $x^\ast$ défini par $U_{dip}(x^\ast) = U_{dip}(0)/2$ doit rester inférieur à une valeur seuil pour limiter l’échauffement et les pertes :
-		\[
-			\Gamma_{sp}(x^\ast) \leq 2\pi \times 1~s^{-1}.
-		\]
+		\begin{equation}
+			\Gamma_{sp}(x^\ast) \leq 2\pi \times 1~s^{-1}.	
+		\end{equation}
 		Ce critère conduit, en utilisant le fait que le potentiel $U_{dip}^{(min)}(\vec{r})$ et le taux de diffusion spontanée $\Gamma_{sp}(\vec{r})$ soit proportionnele à l’intensité $I(\vec{r})$ , à la borne stricte suivante :
-		\[
-			\Gamma_{sp}(0) \leq \Gamma_{sp}^{(max)} = 2\pi \times 2~s^{-1}.
-		\]
+		\begin{equation}
+			\Gamma_{sp}(0) \leq \Gamma_{sp}^{(max)} = 2\pi \times 2~s^{-1}.	
+		\end{equation}
 \end{itemize}
 
 \subsubsection*{Figure de mérite : ratio potentiel / diffusion}
@@ -896,11 +894,15 @@ Un calcul numérique montre que, sous ces contraintes, il est nécessaire de sé
 %avec $P$ la puissance incidente. 
 \subsubsection*{Contraintes sur la puissance laser}
 
-Le faisceau utilisé est gaussien, avec un waist typique $w_0 \sim 1~\mu\text{m}$. %À première vue, cela peut sembler contre-intuitif dans le cadre d’un piégeage \textbf{blue-detuned}, où les atomes sont repoussés des régions d’intensité maximale. En effet, dans les pièges conventionnels (red-detuned), les atomes sont attirés vers zone  des maxima d’intensité ; on cherche alors à maximiser l’intensité sur une large zone , . 
+%À première vue, cela peut sembler contre-intuitif dans le cadre d’un piégeage \textbf{blue-detuned}, où les atomes sont repoussés des régions d’intensité maximale. En effet, dans les pièges conventionnels (red-detuned), les atomes sont attirés vers zone  des maxima d’intensité ; on cherche alors à maximiser l’intensité sur une large zone , . 
 
 %Dans notre cadre d’un piégeage \textbf{blue-detuned}, les atomes sont confinés dans la région \textbf{centrale de faible intensité}, située entre deux faisceaux focalisés. Le piégeage repose donc sur la présence de \textbf{parois optiques abruptes} générées par les faisceaux blue-detuned. Cela impose que chaque faisceau présente un fort gradient d’intensité, ce qui nécessite un waist petit.
 
-Dans le cadre d’un piégeage \textbf{blue-detuned}, les atomes sont confinés dans une région \textbf{centrale de faible intensité}, située entre deux faisceaux focalisés. Le piégeage repose alors sur la formation de \textbf{parois optiques abruptes}, créées par les gradients d’intensité des faisceaux. Pour obtenir un gradient suffisamment marqué, chaque faisceau doit présenter un \textbf{waist étroit}.\\
+Le faisceau utilisé est gaussien. On rappelle que le \textit{waist} $w_0$ désigne le rayon minimal du faisceau, défini comme la distance radiale $r$ pour laquelle l’intensité transverse chute à $1/e^2$ de sa valeur au centre du faisceau, et ce à la position où le faisceau est le plus focalisé. Typiquement, nous utilisons ici des faisceaux avec un waist de l’ordre de $w_0 \sim 1~\mu\text{m}$.  
+
+\medskip
+
+Dans le cadre d’un piégeage \textbf{blue-detuned}, les atomes sont confinés dans une région \textbf{centrale de faible intensité}, située entre deux faisceaux focalisés. Le piégeage repose alors sur la formation de \textbf{parois optiques abruptes}, engendrées par les gradients d’intensité des faisceaux. Pour obtenir un gradient suffisamment marqué, il est nécessaire que chaque faisceau possède un \textbf{waist étroit}.
 
 %Pour créer une boîte optique efficace, il faut que :
 %\begin{itemize}
@@ -918,15 +920,15 @@ Dans le cadre d’un piégeage \textbf{blue-detuned}, les atomes sont confinés 
 %Ce choix est également compatible avec les contraintes expérimentales : il est accessible avec des objectifs à grande ouverture numérique (NA~$\sim 0.32$) tout en restant compatible avec un montage sur fibre ou lentille asphérique. Il correspond aux valeurs couramment utilisées pour les expériences de piégeage unidimensionnel, typiquement $w_0 \sim 1~\mu\text{m}$.
 
 L’intensité maximale atteinte au centre du faisceau est donnée par :
-\[
-I(0) = \frac{2P}{\pi w_0^2}
-\]
+\begin{eqnarray}
+	I(0) = \frac{2P}{\pi w_0^2},
+\end{eqnarray}
 avec $P$ la puissance incidente. Cette expression relie directement la puissance requise aux contraintes de piégeage, et sera utilisée pour définir les bornes admissibles sur $P(\lambda)$ pour une longueur d’onde donnée.
 
 En reportant cette intensité dans les expressions standards du potentiel et de la diffusion, on obtient les bornes admissibles pour la puissance :
-\begin{eqnarray*}
+\begin{eqnarray}
 	 \underbrace{U_{dip}^{(min)} \cdot  \frac{\pi w_0^2}{2} \frac{8 I_{sat}}{\Gamma^2} \cdot \left( \frac{ 1}{ 3 \Delta_1} + \frac{2 }{ 3 \Delta_2}  \right )^{-1} }_{P^{(min)}(\lambda)}  \leq P(\lambda) \leq \underbrace{ \Gamma_{sc}^{(max)} \cdot \frac{\pi w_0^2}{2} \frac{8 I_{sat}}{\Gamma^3} \cdot \left( \frac{ 1}{ 3 \Delta_1^2} + \frac{2 }{ 3 \Delta_2^2}  \right )^{-1}}_{ P^{(max)}(\lambda)} 
-\end{eqnarray*}
+\end{eqnarray}
 
 \begin{center}
 \textit{[Insérer ici une figure avec les courbes $P^{(min)}(\lambda)$ et $P^{(max)}(\lambda)$, et la zone autorisée]}
@@ -935,7 +937,7 @@ En reportant cette intensité dans les expressions standards du potentiel et de 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\linewidth]{figures/07_Dipolaire/puissance_vs_lambda_log.png}
-    \caption{$P^{(min)}(\lambda)$ et $P^{(max)}(\lambda)$}
+    \caption{Puissance requise en fonction de la longueur d'onde pour $w_0 = 1 \, \mu m$ }
 \end{figure}
 
 L’intersection de ces courbes définit une {\bf zone de faisabilité expérimentale} dans l’espace $(\lambda, P)$. Le croisement des courbes fournit la longueur d’onde maximale admissible :
@@ -957,10 +959,9 @@ Un premier filtrage des sources laser admissibles impose que la longueur d’ond
 L’ensemble des éléments optiques traversés par le faisceau — incluant la sortie de fibre, les lentilles de collimation et de focalisation, les miroirs de redirection, les diaphragmes, ainsi que le diviseur de faisceau — induit des pertes cumulées non négligeables. Une estimation réaliste, fondée sur les caractéristiques typiques des composants et l'expérience de montage, indique que les pertes globales s’élèvent à environ $60$ à $75\%$.
 
 Ces pertes doivent être prises en compte dès le dimensionnement initial du système laser, afin de garantir que la puissance effectivement disponible au niveau des atomes soit suffisante pour atteindre les profondeurs de piège souhaitées. En pratique, on modélise cette efficacité par un facteur global $\eta$, défini comme :
-
-\[
-P_{\text{utile}} = \eta \cdot P_{\text{laser}}, \quad \text{avec} \quad \eta \simeq 0.25.
-\]
+\begin{eqnarray*}
+	P_{\text{utile}} = \eta \cdot P_{\text{laser}}, \quad \text{avec} \quad \eta \simeq 0.25.	
+\end{eqnarray*}
 
 Ce coefficient sera utilisé dans la suite pour évaluer les puissances minimales requises des sources laser candidates. Une marge de sécurité est également conservée pour pallier les éventuels désalignements ou dégradations optiques en conditions expérimentales réelles.
 
@@ -992,7 +993,7 @@ Ce coefficient sera utilisé dans la suite pour évaluer les puissances minimale
 
 Trois sources laser ont été sélectionnées pour la réalisation de la boîte optique blue-detuned destinée au piégeage dipolaire du Rubidium-87, dont deux répondent aux conditions de puissance admissibles $P^{(min)}(\lambda)$ et $P^{(max)}(\lambda)$.
 
-\begin{itemize}
+\begin{itemize}[label = $\bullet$]
     \item \textbf{DFB} à $\lambda = 772.5~\text{nm}$, puissance $P = 75~\text{mW}$.
     \item \textbf{DBR} à $\lambda = 778.0~\text{nm}$, puissance $P = 60~\text{mW}$. 
     \item \textbf{DBR} à $\lambda = 770.5~\text{nm}$, puissance $P = 32~\text{mW}$.
@@ -1029,6 +1030,12 @@ Avec le recul, cette valeur s’est avérée trop pessimiste. Le système optiqu
 \medskip
 
 Avec un waist de $w_0 = 300~\mu\text{m}$, les puissances minimales requises augmentent considérablement en raison de la baisse d’intensité au centre du faisceau. On obtient alors des puissances nécessaires de l’ordre de $102~\text{mW}$ pour la DFB à $772.5~\text{nm}$, $30~\text{mW}$ pour la DBR à $778.0~\text{nm}$, et $127~\text{mW}$ pour la DBR à $770.5~\text{nm}$. Seul le laser à $778.0~\text{nm}$ satisfait cette condition sans amplification supplémentaire. En revanche, les deux autres lasers se trouvent sous-dimensionnés dans ce scénario, ce qui justifie le recours à un amplificateur optique dans le cas du laser à $770.5~\text{nm}$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{figures/07_Dipolaire/puissance_vs_lambda_log_300.png}
+    \caption{Puissance requise en fonction de la longueur d'onde pour $w_0 = 300 \, \mu m$ }
+\end{figure}
 
 \medskip
 
