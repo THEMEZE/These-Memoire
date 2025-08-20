@@ -374,7 +374,7 @@ avec la densité de particule $n(x, t) = q_{[1]}$, la vitesse moyenne du fluide 
 
 
 \paragraph{Remarques sur les charges globales}
-En l’absence de potentiel externe ($V = 0$), le système conserve certaines charges globales. Dans un système classique non intégrable, seules ces quelques charges sont conservées. Par exemple dans un système de Gibbs sont conservé , nombre total de particules , quantité de mouvement totale , énergie cinétique totale soit respectivement $Q[1]  =  \int dx \, q[1]$ , $Q[\theta] = \int dx \, q[\theta$ et $Q\left[\frac{\theta^2}{2}\right] = \int dx \, q\left[\frac{\theta^2}{2}\right] $. 
+En l’absence de potentiel externe ($V = 0$), le système conserve certaines charges globales. Dans un système classique non intégrable, seules ces quelques charges sont conservées. Par exemple dans un système de Gibbs sont conservé , nombre total de particules , quantité de mouvement totale , énergie cinétique totale soit respectivement $Q[1]  =  \int dx \, q[1]$ , $Q[\theta] = \int dx \, q[\theta]$ et $Q\left[\frac{\theta^2}{2}\right] = \int dx \, q\left[\frac{\theta^2}{2}\right] $. 
 %\begin{equation}
 %	Q[1]  &= & \int dx \, q[1] \, \text{(nombre total de particules)},\\ 
 %	Q[\theta] = \int dx \, q[\theta] \, \text{(quantité de mouvement totale)},\\ 
@@ -423,15 +423,15 @@ Sur le plan physique, le premier terme peut être interprété comme un décalag
 
 Le résultat remarquable~\eqref{eq:46} a été obtenu pour la première fois par Bertini \emph{et al.}~\cite{Bertini2016} et Castro-Alvaredo \emph{et al.}~\cite{CastroAlvaredo2016}. Cette observation a constitué le point de départ des développements ultérieurs de l’hydrodynamique généralisée (GHD) dans les systèmes quantiques intégrables. Les travaux de Bertini \emph{et al.}~\cite{Bertini2016} s’appuient en partie sur ceux de Bonnes \emph{et al.}~\cite{Bonnes2014}, où la formule de la vitesse effective~\eqref{eq:47} avait été présentée pour la première fois dans le cadre d’un système quantique intégrable.
 
-Dans le cadre général de l’hydrodynamique généralisée (GHD), l’équation~(48) s’interprète comme une extension naturelle du résultat classique obtenu pour le gaz de tiges dures. La distinction essentielle réside dans le fait que le décalage de diffusion \(\Delta(\theta - \theta_0)\) dépend désormais explicitement de la rapidité relative entre les quasi-particules, alors que, dans le cas du gaz de tiges dures, \(\Delta\) est une constante égale à l’opposé du diamètre des particules.
+Dans le cadre général de l’hydrodynamique généralisée (GHD), l’équation~\eqref{chap:GHD:veff.4} s’interprète comme une extension naturelle du résultat classique obtenu pour le gaz de tiges dures. La distinction essentielle réside dans le fait que le décalage de diffusion \(\Delta(\theta - \theta_0)\) dépend désormais explicitement de la rapidité relative entre les quasi-particules, alors que, dans le cas du gaz de tiges dures, \(\Delta\) est une constante égale à l’opposé du diamètre des particules.
 
 Sur le plan cinématique, on peut décrire la situation de la manière suivante~: un quasi-particule \emph{traceur} de rapidité \(\theta\) --- c’est-à-dire de moment asymptotique \(\theta\) en l’absence d’interactions --- se déplacerait, dans le vide, à vitesse constante \( \theta \). En présence d’une densité finie \(\rho(\theta_0)\) de quasi-particules de rapidité \(\theta_0\), cette vitesse est modifiée par les processus de diffusion à deux corps.
 
 Pendant un intervalle de temps infinitésimal \([t,\, t + \delta t]\), le traceur subit en moyenne
 \[
-\delta t \times \left| v_{\mathrm{eff}}[\rho](\theta) - v_{\mathrm{eff}}[\rho](\theta_0) \right| \, \rho(\theta_0)
+\delta t \times \left| v^{\mathrm{eff}}(\theta) - v^{\mathrm{eff}}(\theta_0) \right| \, \rho(\theta_0)
 \]
-collisions avec des quasi-particules de rapidité \(\theta_0\). Chaque interaction provoque un décalage spatial \(\Delta(\theta - \theta_0)\) vers l’arrière. L’équation~(48) formalise précisément cet effet cumulatif, résultant de l’intégration des contributions de toutes les collisions binaires sur l’espace des rapidités.
+collisions avec des quasi-particules de rapidité \(\theta_0\). Chaque interaction provoque un décalage spatial \(\Delta(\theta - \theta_0)\) vers l’arrière. L’équation~\eqref{chap:GHD:veff.4} formalise précisément cet effet cumulatif, résultant de l’intégration des contributions de toutes les collisions binaires sur l’espace des rapidités.
 
 Cette analyse microscopique s’étend naturellement aux modèles à \(N\) corps, où les processus de diffusion se combinent et interagissent de manière non triviale, la fonction \(\Delta(\theta - \theta_0)\) encapsulant alors l’intégralité de la structure intégrable du système.
 
@@ -484,7 +484,7 @@ En injectant les définitions \eqref{chap:GHD:eq.nu.v.a.1} dans l'équation GHD 
 	\begin{array}{c}\left ( \left(\partial_t 1 \right)^{\mathrm{dr}} + \left(\partial_x  \partial_\theta h  \right)^{\mathrm{dr}} - \left(\partial_\theta  \partial_x h  \right)^{\mathrm{dr}} \right ) \nu + \left ( 1 + \nu \,  \frac{\Delta}{2 \pi } \star  \right ) \left ( 1^{\mathrm{dr}} \partial_t v +  \left ( \partial_\theta h \right )^{\mathrm{dr}} \partial_x \nu -  \left ( \partial_x h \right )^{\mathrm{dr}} \partial_\theta \nu\right ) = 0  \end{array}. 
 \end{eqnarray}
 Or, on a \(\partial_t 1 = 0\) et \(\partial_x \partial_\theta h = \partial_\theta \partial_x h\). Il en résulte donc l'équation locale de conservation :  
-\begin{equation}
+\begin{equation}\label{chap:GHD:eq.nu.1}
 	\partial_t \nu + v^{\mathrm{eff}}\partial_x \nu
 	+ a^{\mathrm{eff}} \partial_\theta \nu = 0.
 \end{equation}  
@@ -509,7 +509,7 @@ Cette diagonalisation est essentielle pour comprendre la structure hamiltonienne
 
 
 
-\section{Interpretation}
+%\section{Interpretation}
 
  
 

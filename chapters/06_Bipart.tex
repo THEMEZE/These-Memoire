@@ -70,25 +70,25 @@ Cette étude constitue une illustration directe du problème de Riemann quantiqu
 
 \medskip
 
-Nous structurons cette section en quatre sous-parties :
-\begin{itemize}[label = $\bullet$]
-	\item Préparation et protocole expérimental : description du gaz unidimensionnel, du piège et de la méthode de coupure.
-	\item Cadre théorique de la GHD : présentation des équations hydrodynamiques et de la solution auto-similaire du problème de Riemann.
-	\item Confrontation avec les données expérimentales : validation de la structure auto-similaire et test de la théorie à température nulle.
-\end{itemize}
+%Nous structurons cette section en quatre sous-parties :
+%\begin{itemize}[label = $\bullet$]
+%	\item Préparation et protocole expérimental : description du gaz unidimensionnel, du piège et de la méthode de coupure.
+%	\item Cadre théorique de la GHD : présentation des équations hydrodynamiques et de la solution auto-similaire du problème de Riemann.
+%	\item Confrontation avec les données expérimentales : validation de la structure auto-similaire et test de la théorie à température nulle.
+%\end{itemize}
 
 
 \subsection{Préparation expérimentale et protocole de coupure}
 \label{chap6:sec.propcol}
 
-{\color{blue} 
-Points clés :
-\begin{itemize}
-	\item Réalisation d’un gaz unidimensionnel de bosons dans un piège quartique plat.
-	\item Méthode d’illumination sélective à l’aide d’un DMD pour créer une discontinuité initiale.
-	\item Passage à un régime d’expansion libre unidimensionnelle après suppression du confinement longitudinal.
-\end{itemize}
-}
+%{\color{blue} 
+%Points clés :
+%\begin{itemize}
+%	\item Réalisation d’un gaz unidimensionnel de bosons dans un piège quartique plat.
+%	\item Méthode d’illumination sélective à l’aide d’un DMD pour créer une discontinuité initiale.
+%	\item Passage à un régime d’expansion libre unidimensionnelle après suppression du confinement longitudinal.
+%\end{itemize}
+%}
 
 
 \paragraph{Contexte expérimental et références}
@@ -166,7 +166,7 @@ Dans un système intégrable, les états stationnaires sont entièrement caract�
 \paragraph{Pourquoi travailler avec $\nu$ plutôt qu’avec $\rho$~?}
 \subparagraph{Équation de GHD en termes de $\rho$.}
 L’évolution à grande échelle du système est gouvernée par les équations de GHD~\cite{bertini_transport_2016, castro-alvaredo_emergent_2016}. 
-L'évolution pour la distribution de quasi-particules $\rho(x,\theta;t)$ (Eq~\eqref{???}), en l'absence de potentiel extérieur, prend la forme d’une équation convective :
+L'évolution pour la distribution des rapidités $\rho(x,\theta;t)$ (Eq~\eqref{chap:GHD:eq.conserv.3.1}), en l'absence de potentiel extérieur, prend la forme d’une équation convective :
 \begin{equation}
 	\label{eq:rho.cont}
 	\partial_t \rho + \partial_x \big( v^{\rm eff}_{[\rho]} \rho \big) = 0,
@@ -186,7 +186,7 @@ Nous considérons ici une condition initiale de type « coupure bipartite », re
 Ce type de condition correspond , pour chaque rapidité $\theta$ , au condition introduit dans l'introduction \eqref{chap6:eq.Rieman.cond.1}.\\
 
 \subparagraph{Équation de GHD en termes de $\nu$.}
-En comparaison, l’évolution de la densité de remplissage $\nu(x,\theta;t)$ (Eq~\eqref{???}) , qui, en l’absence de potentiel extérieur suit une équation de transport pur (type Liouville) :
+En comparaison, l’évolution du facteur d'occupation $\nu(x,\theta;t)$ (Eq~\eqref{chap:GHD:eq.nu.1}) , qui, en l’absence de potentiel extérieur suit une équation de transport pur :
 \begin{equation}
     \label{eq:nu.cont}
     \partial_t \nu + v^{\rm eff}_{[\nu]} \, \partial_x \nu = 0,
@@ -202,16 +202,17 @@ Les équation de transport pur \eqref{eq:nu.cont} ne sont pas  des cas particuli
         0 & \text{si } x < 0.
     \end{cases}
 \end{equation}
-sont du type \eqref{chap6:eq.Rieman.cond.1}, contrairement à \eqref{eq:rho.cont}, l'evolution \eqref{eq:nu.cont} ne génère pas de {\bf chocs}.\\
+sont du type \eqref{chap6:eq.Rieman.cond.1}.%, contrairement à \eqref{eq:rho.cont}, l'evolution \eqref{eq:nu.cont} ne génère pas de {\bf chocs}.\\
 
+\medskip
 
 Dans ce travail, nous choisissons de formuler la dynamique hydrodynamique généralisée en termes de la fonction d’occupation $\nu(x,\theta;t)$, plutôt que de la densité de quasi-particules $\rho(x,\theta,t)$. Cette approche présente plusieurs avantages. D’une part, l’équation vérifiée par $\nu$ est une équation de transport pur \eqref{eq:nu.cont}, ce qui permet une résolution naturelle par la méthode des caractéristiques, plus simplement que dans \eqref{eq:rho.cont}. D’autre part, $\nu$ possède une interprétation physique claire comme taux de remplissage des états accessibles, borné entre 0 et 1, ce qui en fait une variable plus stable et mieux adaptée aux calculs analytiques ou numériques.
 De plus, la dynamique effective des observables s’exprime naturellement en fonction de $\nu$.
-Enfin, $\nu$ et $\rho$ étant liés, résoudre l’équation en $\nu$ revient, une fois $v^{\rm eff}_{[\nu]}$ déterminé, à résoudre complètement la dynamique de $\rho$.
+Enfin, $\nu$ et $\rho$ étant liés (par \eqref{eq:TBA-nu}), résoudre l’équation en $\nu$ revient, une fois $v^{\rm eff}_{[\nu]}$ déterminé, à résoudre complètement la dynamique de $\rho$.
 
-\paragraph{Structure auto-similaire de la solution}
+\paragraph{Structure auto-similaire de la solution.}
 Un point central est que les conditions initiales ~\eqref{eq:nu.cont.init} sont invariantes par dilatation. En effet quelque soit $\alpha >0$ , et pour tout $x$ réelle, on a $\nu(\alpha x , \theta ; t = 0 ) = \nu( x , \theta ; t = 0 ) $.
-Un autre point central de la GHD est l’invariance d’échelle des solutions de l’équation~\eqref{eq:nu.cont} ( \eqref{eq:rho.cont} aussi et plus généralement de \eqref{chap6:eq.Rieman.1}) . En effet, si $\nu(x,\theta;t)$ est solution de  l’équation~\eqref{eq:nu.cont}, alors $\nu(\alpha x, \theta; \alpha t)$ l’est également ,  pour tout $\alpha > 0$ , avec les conditions initiales $\nu(\alpha x , \theta ; t = 0 )$. {\color{blue} Comme les fonctions $\nu(\alpha \cdot , \theta ; t = 0 )$ et $\nu( x , \theta ; t = 0 )$ coïncident, alors si $\eqref{eq:nu.cont}$ admet au plus une solution physique ( entropique Cf Annex ~\ref{chap6:annex.Rieman}) pour chaque données initiales, on doit avoir $\nu( \alpha x , \theta ; \alpha t ) = \nu(  x , \theta ;  t )$ pour tout $\alpha > 0 $}. Sous hypothèse d’unicité (Cf Annex ~(\ref{chap6:annex.Rieman})), cette propriété implique que :
+Un autre point central de la GHD est l’invariance d’échelle des solutions de l’équation~\eqref{eq:nu.cont} ( \eqref{eq:rho.cont} aussi et plus généralement de \eqref{chap6:eq.Rieman.1}) . En effet, si $\nu(x,\theta;t)$ est solution de  l’équation~\eqref{eq:nu.cont}, alors $\nu(\alpha x, \theta; \alpha t)$ l’est également ,  pour tout $\alpha > 0$ , avec les conditions initiales $\nu(\alpha x , \theta ; t = 0 )$. {\color{blue} Comme les fonctions $\nu(\alpha \cdot , \theta ; t = 0 )$ et $\nu( \alpha x , \theta ; t = 0 )$ coïncident, alors si $\eqref{eq:nu.cont}$ admet au plus une solution physique (entropique Cf Annex ~\ref{chap6:annex.Rieman}) pour chaque données initiales, on doit avoir $\nu( \alpha x , \theta ; \alpha t ) = \nu(  x , \theta ;  t )$ pour tout $\alpha > 0 $}. Sous hypothèse d’unicité (Cf Annex ~(\ref{chap6:annex.Rieman})), cette propriété implique que :
 \begin{equation}
     \nu(x,\theta;t) = \nu^*\left(\frac{x}{t},\theta\right),
     \label{eq:nuvsnuetoile}
@@ -250,12 +251,12 @@ La solution $\nu^*(\xi,\theta)$ s’écrit comme une fonction en escalier param�
     \end{cases}
     \quad \text{où on rappelle } v^{\rm eff}_{[\nu^*(\xi,\cdot)]}(\theta^*) = \xi.
 \end{equation}
-Cette équation implicite peut être résolue numériquement pour obtenir $\theta^*$ à chaque $v$, puis en déduire $\nu^*(v,\theta)$ et, via l’équation~\eqref{eq:????}, que je rapelle 
+Cette équation implicite peut être résolue numériquement afin d'obtenir $\theta^*$ pour chaque valeur de $\xi$. On en déduit ensuite $\nu^*(\xi,\theta)$, puis $\rho(x,\theta;t)$ via les équations~\eqref{eq:TBA-rhos-2} et \eqref{eq:TBA-nu}, ce qui permet finalement de déterminer le profil de densité linéaire $n(x,t)$ à un instant donné : 
 \begin{equation}
-    n(x;t) = \int d\theta \, \rho(x,\theta ; t),
+    n(x;t) = \int d\theta \, \rho(x,\theta ; t).
     \label{chap6:eq:lineardensity}
 \end{equation}
-le profil de densité $n(x,t)$ à un instant donné.
+
 
 \paragraph{Résumé}
 
@@ -264,51 +265,58 @@ Ainsi, dans le cadre de la GHD, la dynamique balistique résultant du quench bip
 \subsection{Validation expérimentale de la dynamique hydrodynamique}
 \label{sec.don_exp}
 
-{\color{blue}
-Points clés :
-\begin{itemize}
-	\item Observation directe des profils $n(x,t)$ à différents temps.
-	\item Mise en évidence de l’auto-similarité en $x/t$ dans un régime temporel intermédiaire.
-	\item Comparaison quantitative avec la solution de GHD à température nulle.
-\end{itemize}
-}
+%{\color{blue}
+%Points clés :
+%\begin{itemize}
+%	\item Observation directe des profils $n(x,t)$ à différents temps.
+%	\item Mise en évidence de l’auto-similarité en $x/t$ dans un régime temporel intermédiaire.
+%	\item Comparaison quantitative avec la solution de GHD à température nulle.
+%\end{itemize}
+%}
 
 
 Dans cette section, nous présentons les résultats expérimentaux obtenus après la coupure bipartite, et les comparons aux prédictions de la GHD à l’échelle d’Euler. L’objectif est de vérifier que la dynamique du gaz est bien décrite, à court et moyen terme, par une solution auto-similaire des équations hydrodynamiques.
 
-{\color{blue}
-Nous structurons cette analyse en quatre étapes :
-\begin{enumerate}
-    \item Description du protocole expérimental de libération.
-    \item Mise en évidence d’une structure auto-similaire.
-    \item Délimitation du domaine de validité temporelle de la GHD.
-    \item Comparaison quantitative avec la solution théorique à température nulle.
-\end{enumerate}
-}
+%{\color{blue}
+%Nous structurons cette analyse en quatre étapes :
+%\begin{enumerate}
+%    \item Description du protocole expérimental de libération.
+%    \item Mise en évidence d’une structure auto-similaire.
+%    \item Délimitation du domaine de validité temporelle de la GHD.
+%    \item Comparaison quantitative avec la solution théorique à température nulle.
+%\end{enumerate}
+%}
 
 \paragraph{Libération du gaz et expansion balistique.}
 
 À l’issue du protocole de coupure décrit en sous-section~\ref{chap6:sec.propcol}, le confinement longitudinal est entièrement supprimé, tandis que le confinement transverse est maintenu. Cette opération permet au gaz de s’étendre librement le long de l’axe longitudinal, tout en conservant un comportement unidimensionnel (cf. section~\ref{sec:confinement}).
 L’évolution du profil de densité $n(x,t)$ est alors enregistrée à différents temps $t$ après la libération, en utilisant une imagerie par absorption.
 
+
 \paragraph{Mise en évidence de l’auto-similarité (régime d’Euler).}
-Dans la section, pour se concentrer sur les facteur d'occupation $\nu$ , on a à peine mentionner que la distribution de rapidité $\rho$ suit aussi une structure auto-similaire : $\rho(x , \theta ;t) = \rho^\ast(x/t , \theta)$. 
+Pour se concentrer sur les facteurs d'occupation $\nu$, on note simplement que la distribution de rapidité $\rho$ adopte une forme auto-similaire :
+\(
+\rho(x,\theta;t) = \rho^\ast(\xi,\theta),
+\)
+avec $\xi = x/t$.
 En injectant dans l'equation~\eqref{chap6:eq:lineardensity}, il vient que dans le cadre de la GHD à l’échelle d’Euler, il est attendu que les profils de densité présentent une forme auto-similaire :
 \begin{equation}
-	n(x;t) = n^\ast\left( \frac{x}{t} \right),
+	n(x;t) = n^\ast\left( \xi \right),
 \end{equation}
-où $n^\ast$ est une fonction universelle qui ne dépend que de la variable réduite $\xi = x/t$.\\
+où $n^\ast$ ne dépend que de $\xi$.
 
-Cette propriété est testée expérimentalement en superposant les profils mesurés à différents temps, après mise à l’échelle selon $x/t$. La Fig.~\ref{fig:euler}(a) montre les profils normalisés mesurés entre $t = 10$~ms et $t = 18$~ms. L’excellent recouvrement obtenu confirme la validité du régime balistique et la pertinence de la description auto-similaire prédite par la GHD.
+\medskip
+
+Cette propriété est testée expérimentalement en superposant les profils mesurés à différents temps, après mise à l’échelle selon $\xi = x/t$. La Fig.~\ref{fig:euler}(a) montre les profils normalisés mesurés entre $t = 10$~ms et $t = 18$~ms. L’excellent recouvrement obtenu confirme la validité du régime balistique et la pertinence de la description auto-similaire prédite par la GHD.
 
 \paragraph{Contrainte experimentalles.}
 
 La description par la GHD à l’échelle d’Euler est limitée à un domaine temporel intermédiaire $t \in [t_m, t_M]$ :
 
-\begin{itemize}
+\begin{itemize}[label = $\bullet$]
   \item Pour $t > t_M \simeq 18$~ms, la densité maximale du gaz devient trop faible, et les effets de taille finie altèrent la validité de l’approximation d’un système semi-infini.
   \item Pour $t < t_m \simeq 6 \pm 2$~ms, plusieurs effets remettent en question la validité de la GHD :
-  \begin{itemize}
+  \begin{itemize}[label = $\circ$]
     \item La coupure initiale n’est pas parfaitement abrupte (longueur caractéristique $\sim 1~\mu$m).
     \item La résolution de l’imagerie limite la détection fine du bord.
     \item La GHD n’est valable qu’aux grandes échelles spatio-temporelles.
@@ -317,11 +325,11 @@ La description par la GHD à l’échelle d’Euler est limitée à un domaine t
 
 Ainsi, dans nos conditions expérimentales, le régime GHD est atteint de manière fiable pour des temps compris entre $t_m \approx 6$~ms et $t_M \approx 18$~ms.
 
-\paragraph{Comparaison avec la prédiction théorique à température nulle.}
-
-Une fois la structure auto-similaire établie, il est possible de comparer directement les données expérimentales avec la prédiction théorique de la GHD dans le régime de quasi-condensat à température nulle. Cette limite correspond à une solution exacte de l’équation~\eqref{eq:GPE}, avec un paramètre de Lieb $\gamma \ll 1$.
-
-La Fig.~\ref{fig:euler}(b) présente une telle comparaison pour $t = 10$~ms et $\gamma = 4{,}6 \times 10^{-3}$. On observe une bonne correspondance entre le profil mesuré et la prédiction théorique, confirmant que la dynamique observée est bien capturée par la GHD dans cette limite.
+%\paragraph{Comparaison avec la prédiction théorique à température nulle.}
+%
+%Une fois la structure auto-similaire établie, il est possible de comparer directement les données expérimentales avec la prédiction théorique de la GHD dans le régime de quasi-condensat à température nulle. Cette limite correspond à une solution exacte de l’équation~\eqref{eq:GPE}, avec un paramètre de Lieb $\gamma \ll 1$.
+%
+%La Fig.~\ref{fig:euler}(b) présente une telle comparaison pour $t = 10$~ms et $\gamma = 4{,}6 \times 10^{-3}$. On observe une bonne correspondance entre le profil mesuré et la prédiction théorique, confirmant que la dynamique observée est bien capturée par la GHD dans cette limite.
 
 \begin{figure}[!htb]
 \centering
@@ -352,26 +360,25 @@ La comparaison entre les données expérimentales et les prédictions de la GHD 
 \section{Sonder la distribution locale des rapidités}
 \label{sec:local}
 
-{\color{blue}
-Points clés :
-\begin{itemize}
-	\item Protocole expérimental pour extraire une tranche locale du gaz après évolution.
-	\item Expansion 1D de la tranche sélectionnée et reconstruction de la distribution de rapidités $\Pi(\theta)$.
-	\item Comparaison avec les prédictions GHD : asymétrie, effet de la largeur finie de la tranche, et limitations dues à la résolution et aux effets diffusifs.
-	\item Discussion sur les écarts observés et les hypothèses du modèle.
-\end{itemize}
-
-}
+%{\color{blue}
+%Points clés :
+%\begin{itemize}
+%	\item Protocole expérimental pour extraire une tranche locale du gaz après évolution.
+%	\item Expansion 1D de la tranche sélectionnée et reconstruction de la distribution de rapidités $\Pi(\theta)$.
+%	\item Comparaison avec les prédictions GHD : asymétrie, effet de la largeur finie de la tranche, et limitations dues à la résolution et aux effets diffusifs.
+%	\item Discussion sur les écarts observés et les hypothèses du modèle.
+%\end{itemize}
+%
+%}
 
 
 \subsection*{Introduction}
-\ref{chap6:sec:ghd}
 Les outils de l'hydrodynamique généralisée (GHD) introduits dans la section~\ref{chap6:sec:ghd} permettent de décrire la dynamique hors équilibre dans des configurations de type jonction bipartite.
-Dans le scénario de jonction bipartite — où deux parties du gaz, initialement préparées dans des états thermodynamiques distincts, sont soudainement mises en contact — la dynamique engendre des profils locaux fortement hors équilibre. En particulier, lorsque l’état initial consiste en un gaz homogène à droite et une région vide à gauche, la GHD prédit qu’à grand temps le système atteint un régime stationnaire autosimilaire, dans lequel les observables locales dépendent uniquement du rapport $\zeta = x/t$. Dans ce régime, la distribution locale des quasi-particules est décrite par un facteur d’occupation $\nu^*(\zeta,\theta)$, solution d’une équation de type~\eqref{eq:nuetoile}.
+Dans le scénario de jonction bipartite — où deux parties du gaz, initialement préparées dans des états thermodynamiques distincts, sont soudainement mises en contact — la dynamique engendre des profils locaux fortement hors équilibre. En particulier, lorsque l’état initial consiste en un gaz homogène à droite et une région vide à gauche, la GHD prédit qu’à grand temps le système atteint un régime stationnaire autosimilaire, dans lequel les observables locales dépendent uniquement du {\em variable auto-similaire} $\xi = x/t$. Dans ce régime, la distribution locale des quasi-particules est décrite par un facteur d’occupation $\nu^*(\xi,\theta)$, solution d’une équation de type~\eqref{eq:nuetoile}.
 
 \medskip
 
-Une prédiction remarquable de ce cadre est la présence, du côté droit du système, d’une discontinuité abrupte dans la distribution en rapidité du facteur d’occupation~$\nu^*(\zeta,\theta)$ — signature d’un état local proche du fondamental. À l’inverse, du côté gauche (où le gaz est initialement absent), la distribution reste lisse en rapidité, ce qui indique un état localement excité, distinct d’un état fondamental. Ce contraste fort entre les deux régions — l’une présentant une distribution lisse, l’autre une discontinuité abrupte — reflète la propagation balistique des quasi-particules, conséquence directe de l’intégrabilité du système. En effet, dans un système intégrable, les quasi-particules conservent leur individualité et se propagent à vitesse bien définie sans diffusion, ce qui permet de maintenir à grand temps des structures non thermalisées comme des discontinuités, absentes dans les systèmes non intégrables.
+Une prédiction remarquable de ce cadre est la présence, du côté droit du système, d’une discontinuité abrupte dans la distribution en rapidité du facteur d’occupation~$\nu^*(\xi,\theta)$ — signature d’un état local proche du fondamental. À l’inverse, du côté gauche (où le gaz est initialement absent), la distribution reste lisse en rapidité, ce qui indique un état localement excité, distinct d’un état fondamental. Ce contraste fort entre les deux régions — l’une présentant une distribution lisse, l’autre une discontinuité abrupte — reflète la propagation balistique des quasi-particules, conséquence directe de l’intégrabilité du système. En effet, dans un système intégrable, les quasi-particules conservent leur individualité et se propagent à vitesse bien définie sans diffusion, ce qui permet de maintenir à grand temps des structures non thermalisées comme des discontinuités, absentes dans les systèmes non intégrables.
 
 \medskip
 
@@ -379,13 +386,13 @@ L’objectif de cette section est de confronter ces prédictions théoriques à 
 
 \medskip
 
-{\color{blue}
-Nous structurons cette analyse en quatre étapes principales :
-\begin{itemize}
-    \item Sélection d’une tranche localisée du gaz après un temps d’évolution donné.
-    \item Observation du profil de vitesse après expansion libre, révélant une éventuelle asymétrie.
-\end{itemize}
-}
+%{\color{blue}
+%Nous structurons cette analyse en quatre étapes principales :
+%\begin{itemize}
+%    \item Sélection d’une tranche localisée du gaz après un temps d’évolution donné.
+%    \item Observation du profil de vitesse après expansion libre, révélant une éventuelle asymétrie.
+%\end{itemize}
+%}
 
 \begin{figure}[!htb]
 \centering
@@ -410,12 +417,12 @@ Nous structurons cette analyse en quatre étapes principales :
 
 \subsection{Sélection d’une tranche localisée après déformation du bord}
 
-{\color{blue}
-Nous laissons d’abord le gaz se dilater pendant un temps $t=18~\mathrm{ms}$, de sorte que le bord s’étale sur une large zone d’environ $350~\mathrm{\mu m}$, comme illustré en Fig.~\ref{fig:BiPart.coupure1} (e)-(f) et  Fig ~\ref{fig:simul_deformation} (a).  
-Nous sélectionnons ensuite une tranche du gaz comprise dans l’intervalle $[x_0-\ell/2, x_0+\ell/2]$, en éliminant tous les atomes situés hors de cette tranche à l’aide d’un faisceau de poussée~\cite{dubois_probing_2024}(Fig \ref{fig:BiPart.coupure2} (a)--(c)). 
- 
-
-}
+%{\color{blue}
+%Nous laissons d’abord le gaz se dilater pendant un temps $t=18~\mathrm{ms}$, de sorte que le bord s’étale sur une large zone d’environ $350~\mathrm{\mu m}$, comme illustré en Fig.~\ref{fig:BiPart.coupure1} (e)-(f) et  Fig ~\ref{fig:simul_deformation} (a).  
+%Nous sélectionnons ensuite une tranche du gaz comprise dans l’intervalle $[x_0-\ell/2, x_0+\ell/2]$, en éliminant tous les atomes situés hors de cette tranche à l’aide d’un faisceau de poussée~\cite{dubois_probing_2024}(Fig \ref{fig:BiPart.coupure2} (a)--(c)). 
+% 
+%
+%}
 
 
 \paragraph{Sélection locale d'une tranche du gaz.}
