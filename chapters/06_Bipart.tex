@@ -475,14 +475,15 @@ Pour ce faire, nous considérons une décomposition naturelle du profil autour d
 \begin{equation}
 \tilde{n}(x) = \tilde{n}_{\text{pair}}^{(x_s)}(x) + \tilde{n}_{\text{impair}}^{(x_s)}(x),\quad \mbox{où} \, \left\{\begin{array}{lcr}\tilde{n}_{\text{pair}}^{(x_s)}(x) &=&  \displaystyle \frac{\tilde{n}(x) + \tilde{n}(2x_s - x)}{2} , \\ \tilde{n}_{\text{impair}}^{(x_s)}(x) &=& \displaystyle \frac{\tilde{n}(x) - \tilde{n}(2x_s - x) }{2}\end{array} \right. .
 \end{equation}
-
 Cette décomposition correspond à une projection du profil sur les fonctions paires et impaires centrées en $x = x_s$.
 
-L’asymétrie du profil est directement liée à la composante impaire. Pour la quantifier, nous cherchons la valeur de $x_s$ qui minimise la norme $L^2$ de la partie impaire :
+\medskip
+
+L’asymétrie du profil est directement reliée à la composante impaire de la densité. Pour la quantifier, nous introduisons une mesure basée sur la symétrie par rapport à un axe $x_s$. Pour un décalage donné $x_s$, nous définissons la norme quadratique de la partie impaire comme :
 \begin{equation}
-\mathcal{\delta}^2(x_s) = \int dx\, \left[\tilde{n}(x) - \tilde{n}(2x_s - x)\right]^2.
+\mathcal{\delta}^2(x_s) = \int dx\, \left[\frac{\tilde{n}(x) - \tilde{n}(2x_s - x)}{2}\right]^2 \Big / \int dx \,  n(x)^2
 \end{equation}
-La valeur optimale de $x_s$ minimise cette fonctionnelle $\mathcal{\delta}^2(x_s)$ et fournit un axe de symétrie effectif pour le profil. Cette méthode permet de comparer de manière robuste différentes conditions expérimentales, ou différents temps d’expansion, en s’affranchissant d’un ajustement arbitraire de centre.
+La valeur optimale de $x_s$ minimise $\mathcal{\delta}^2(x_s)$ et fournit un axe de symétrie effectif pour le profil. Cette méthode permet de comparer de manière robuste différentes conditions expérimentales, ou différents temps d’expansion, en s’affranchissant d’un ajustement arbitraire de centre.
 
 
 \subparagraph{Effet de l’homogénéité de la tranche sélectionnée}
@@ -590,21 +591,21 @@ c) Facteur d’occupation $\nu_0(\theta)$ correspondant à la distribution therm
 
 Une fois le facteur d’occupation initial $\nu_0(\theta)$ déterminé, nous cherchons à décrire l’évolution temporelle de la région occupée dans l’espace des phases $(x,\theta)$. Cette région, notée $\Gamma_t$, est définie comme le support du facteur d’occupation $\nu(x,\theta,t)$ : elle contient l’ensemble des points pour lesquels $\nu$ est non nul à l’instant $t$.
 
-\paragraph{Interprétation lagrangienne et trajectoires caractéristiques :.}
-Dans l’hydrodynamique généralisée, l’évolution de $\nu$ est décrite par une équation de transport pur du type \eqref{eq:nu.cont}. Cette équation peut être interprétée selon une perspective \textbf{lagrangienne} :  le facteur d’occupation $\nu$ reste constant au cours du temps c'est à dire  
-\begin{eqnarray}\label{chap6:eq:traj_lagr_0}
-	 \nu ( x(t) , \theta(t) ; t ) = \nu ( x(0) , \theta(0) ; 0 ) 
-\end{eqnarray}
-lorsqu’on suit les trajectoires $(x(t), \theta(t))$ définies par :  
-\begin{eqnarray*}
-	\frac{d \nu}{dt} (x , \theta ; t ) = 0,	
-\end{eqnarray*}
-
-soit $\partial_t \nu + \dot{x} \partial_t \nu = 0$ soit en identifiant dans \eqref{eq:nu.cont}:
+\paragraph{Interprétation lagrangienne et trajectoires caractéristiques .}
+Dans le formalisme de l’hydrodynamique généralisée, l’évolution de $\nu$ est gouvernée par une équation de transport  \eqref{eq:nu.cont}.  
+Cette équation admet une interprétation \textbf{lagrangienne} : le facteur d’occupation $\nu$ reste constant lorsqu’on le suit le long des trajectoires caractéristiques $(x(t),\theta(t))$, c’est-à-dire
+\begin{equation}\label{chap6:eq:traj_lagr_0}
+\nu\big(x(t),\theta(t);t\big) = \nu\big(x(0),\theta(0);0\big).
+\end{equation}
+Autrement dit,
+\(
+\frac{d\nu}{dt}(x,\theta;t) = 0,
+\)
+ce qui conduit au système d’équations caractéristiques \eqref{chap:GHD:eq.nu.v.a.1.1} :
 \begin{equation}
 \label{chap6:eq:traj_lagr_1}
 \partial_t \left( \begin{array}{c} x(t) \\ \theta(t) \end{array} \right)  =  \left( \begin{array}{c} v^{\mathrm{eff}}_{[\nu]}(\theta(t)) \\ 0 \end{array} \right)\, \mbox{soit} \quad \left\{ \begin{array}{rcl}
-\displaystyle \frac{d x}{dt}(t) & = & v^{\mathrm{eff}}_{[\nu]}(\theta), \\
+\displaystyle \dot x (t) & = & v^{\mathrm{eff}}_{[\nu]}(\theta), \\
 \theta(t) & = & \theta(0) \equiv \theta.
 \end{array} \right. 
 \end{equation}
@@ -618,6 +619,7 @@ soit $\partial_t \nu + \dot{x} \partial_t \nu = 0$ soit en identifiant dans \eqr
 %\end{equation}
 
 Autrement dit, les quasi-particules de rapidité $\theta$ se déplacent à la vitesse efficace $v^{\mathrm{eff}}_{[\nu]}$, et leur répartition reste inchangée tout au long de leur trajectoire dans l’espace des phases. Cette conservation est analogue à une conservation lagrangienne classique, où l’on suit un élément de fluide individuellement.
+
 
 \medskip
 
@@ -836,9 +838,4 @@ L’analyse repose sur la \emph{Théorie Hydrodynamique Généralisée} (GHD), c
 Les mesures expérimentales, validées par des simulations numériques basées sur la GHD, confirment l’existence d’une structure auto-similaire de la dynamique, ainsi que l’asymétrie caractéristique des distributions de rapidité hors équilibre. Les écarts résiduels entre théorie et expérience soulignent la nécessité de développer des extensions de la GHD, intégrant des effets hors d’équilibre plus subtils, tels que la diffusion, le chauffage local ou les défauts de sélection.
 
 Ainsi, ce travail établit une correspondance quantitative entre un cadre mathématique hydrodynamique issu de l’intégrabilité quantique et des observations expérimentales fines, consolidant la GHD comme un outil efficace pour décrire la relaxation déterministe de systèmes quantiques unidimensionnels, et ouvrant des perspectives pour explorer les limites de cette approche dans des régimes plus complexes.
- 
 
-
-
-
-.................
