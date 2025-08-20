@@ -419,7 +419,7 @@ L’objectif de cette section est de confronter ces prédictions théoriques à 
 
 %{\color{blue}
 %Nous laissons d’abord le gaz se dilater pendant un temps $t=18~\mathrm{ms}$, de sorte que le bord s’étale sur une large zone d’environ $350~\mathrm{\mu m}$, comme illustré en Fig.~\ref{fig:BiPart.coupure1} (e)-(f) et  Fig ~\ref{fig:simul_deformation} (a).  
-%Nous sélectionnons ensuite une tranche du gaz comprise dans l’intervalle $[x_0-\ell/2, x_0+\ell/2]$, en éliminant tous les atomes situés hors de cette tranche à l’aide d’un faisceau de poussée~\cite{dubois_probing_2024}(Fig \ref{fig:BiPart.coupure2} (a)--(c)). 
+%Nous sélectionnons ensuite une tranche du gaz comprise dans l’intervalle $[x_0-\ell/2, x_0+\ell/2]$, en éliminant tous les atomes situés hors de cette tranche à l’aide d’un faisceau pousseur~\cite{dubois_probing_2024}(Fig \ref{fig:BiPart.coupure2} (a)--(c)). 
 % 
 %
 %}
@@ -431,13 +431,13 @@ Afin d’accéder localement à la distribution de rapidité, nous exploitons le
 
 \medskip
 \noindent
-Pour isoler une telle région, un {\bf faisceau de poussée} est appliqué afin d’{\bf éliminer tous les atomes situés hors d’un intervalle spatial} centré en $x_0 = 18~\mu\mathrm{m}$ et de largeur $\ell$. Cette technique, inspirée de la Réf.~\cite{dubois_probing_2024}, permet de ne conserver qu’une {\bf tranche localisée du gaz}, dont la distribution en rapidité reflète l’état local $\rho(x,\theta)$ aux abords de $x \approx x_0$, comme illustré en Fig.~\ref{fig:BiPart.coupure2}(a)--(c).
+Pour isoler une telle région, un {\bf faisceau pousseur} est appliqué afin d’{\bf éliminer tous les atomes situés hors d’un intervalle spatial} centré en $x_0 = 18~\mu\mathrm{m}$ et de largeur $\ell$. Cette technique, inspirée de la Réf.~\cite{dubois_probing_2024}, permet de ne conserver qu’une {\bf tranche localisée du gaz}, dont la distribution en rapidité reflète l’état local $\rho(x,\theta)$ aux abords de $x \approx x_0$, comme illustré en Fig.~\ref{fig:BiPart.coupure2}(a)--(c).
 
 
 \medskip
 \paragraph{Contrôle expérimental du faisceau de sélection.}
 
-La sélection spatiale du gaz est réalisée à l’aide d’un dispositif à micro-miroirs (DMD), qui permet de contrôler finement la forme du faisceau de poussée utilisé pour éliminer les atomes hors d’un intervalle centré en $x_0$. Ce dispositif est piloté via une interface logicielle développée au sein de l’équipe, basée sur les outils \textsc{Cicero-Iso} et \textsc{Spartacus}. Le DMD est commandé par une série de paramètres expérimentaux transmis à ces logiciels, dont certains (comme la position $x_0$) sont enregistrés systématiquement au cours de l’expérience. En revanche, d'autres paramètres, notamment la largeur effective $\ell$ du faisceau, n’ont pas été archivés dans la base de données associée aux séquences expérimentales. Ainsi, dans les paragraphes précédents, nous avons pu indiquer précisément la valeur de $x_0$ (ici $x_0 = 18~\mu\mathrm{m}$), mais non celle de $\ell$. Cette valeur sera déterminée a posteriori par analyse des profils expérimentaux, et jouera un rôle essentiel dans les simulations numériques présentées plus loin.
+La sélection spatiale du gaz est réalisée à l’aide d’un dispositif à micro-miroirs (DMD), qui permet de contrôler finement la forme du faisceau pousseur utilisé pour éliminer les atomes hors d’un intervalle centré en $x_0$. Ce dispositif est piloté via une interface logicielle développée au sein de l’équipe, basée sur les outils \textsc{Cicero-Iso} et \textsc{Spartacus}. Le DMD est commandé par une série de paramètres expérimentaux transmis à ces logiciels, dont certains (comme la position $x_0$) sont enregistrés systématiquement au cours de l’expérience. En revanche, d'autres paramètres, notamment la largeur effective $\ell$ du faisceau, n’ont pas été archivés dans la base de données associée aux séquences expérimentales. Ainsi, dans les paragraphes précédents, nous avons pu indiquer précisément la valeur de $x_0$ (ici $x_0 = 18~\mu\mathrm{m}$), mais non celle de $\ell$. Cette valeur sera déterminée a posteriori par analyse des profils expérimentaux, et jouera un rôle essentiel dans les simulations numériques présentées plus loin.
 
 \medskip
 \paragraph{Inhomogénéité de la tranche sélectionnée}
@@ -791,7 +791,7 @@ Cependant, le profil au bord correspondant à cette température, présenté en 
 Une analyse plus fine du profil expérimental révèle la présence de queues asymétriques à droite, absentes des prédictions GHD à l’échelle d’Euler. Ces queues pourraient résulter de phénomènes hors du cadre du modèle, notamment :
 
 \begin{itemize}
-\item \textbf{Effets de sélection de tranche} : le faisceau de poussée utilisé pourrait chauffer localement les atomes en bordure, entraînant des distributions de rapidité plus étendues que prévu.
+\item \textbf{Effets de sélection de tranche} : le faisceau pousseur utilisé pourrait chauffer localement les atomes en bordure, entraînant des distributions de rapidité plus étendues que prévu.
 \item \textbf{Effets diffusifs} : dans les régions de forts gradients, notamment au bord du gaz, des termes de diffusion (omnis présents dans la GHD à l’échelle d’Euler) pourraient devenir significatifs. De telles corrections ont été proposées récemment pour modéliser la GHD au-delà de l’approximation eulérienne.
 \end{itemize}
 
