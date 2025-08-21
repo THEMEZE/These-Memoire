@@ -132,7 +132,7 @@ tex_files = [
     #"./figures/06_Bipart/Figures.tex",
     #"./figures/06_Bipart/Shema.tex",
     #"./figures/06_Bipart/Shemas_2.tex",
-    #"./figures/07_Dipolaire/Figures.tex",
+    "./figures/07_Dipolaire/Figures.tex",
     # Ajoute ici les .tex à compiler seuls
 ]
 

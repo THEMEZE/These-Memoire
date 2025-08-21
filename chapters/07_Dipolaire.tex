@@ -581,87 +581,33 @@ Cette hypothèse permet de simplifier l’analyse perturbative de l’interactio
 \medskip
 
 Dans ce régime, l’interaction dipolaire sélectionne efficacement les couplages entre les états atomiques et photoniques \textbf{ayant une différence d’un seul photon} :
-\begin{eqnarray*}
-	\ket{g, N+1} \xleftrightarrow{\quad \operator{H}_{\text{int}}\quad} \ket{e_i, N},	
-\end{eqnarray*}
-soit 
 \begin{eqnarray}
-		\delta E_g^{(2)} 
-		\simeq \sum_{e_i} \left (  
-		\frac{|\bra{e_i, N-1} \operator{H}_{\mathrm{int}} \ket{g, N}|^2}{\hbar ( \omega - \omega_{\scriptscriptstyle g \rightarrow e_i } )} 
-		\right).
+\ket{g,\,N} \;\xleftrightarrow{\quad \operator{H}_{\text{int}}\quad }\; \ket{e_i,\,N-1},
+\end{eqnarray}
+soit 
+\begin{eqnarray}\label{chap:dipolaire:eq:nrj2.1}
+	\delta E_g^{(2)} 
+	\simeq \sum_{e_i} 
+	\frac{\left| \bra{e_i,\,N-1} \operator{H}_{\mathrm{int}} \ket{g,\,N} \right|^2}
+	{\hbar \left( \omega - \omega_{\scriptscriptstyle g \rightarrow e_i} \right)} .
 \end{eqnarray}
 
 \medskip
 
-
-Dans notre cas spécifique, nous utilisons un \textbf{faisceau laser à environ 770~nm}, soit légèrement \textbf{au bleu} des raies principales du rubidium 87 :
-\begin{itemize}[label = $\bullet$]
-  \item raie \textbf{D2} : \( \lambda = 780~\text{nm} \), correspondant à la transition \( 5S_{1/2} \rightarrow 5P_{3/2} \),
-  \item raie \textbf{D1} : \( \lambda = 795~\text{nm} \), correspondant à la transition \( 5S_{1/2} \rightarrow 5P_{1/2} \).
-\end{itemize}
-
-Le faisceau à environ 770~nm est donc \textbf{hors résonance}, mais \textbf{pas trop éloigné} de ces transitions (désaccord de l’ordre de quelques dizaines de THz), ce qui garantit que la structure hyperfine peut être \textbf{négligée} dans un premier temps, et que l’interaction est bien décrite par la contribution dominante des raies D1 et D2. Dans ce régime de désaccord modéré, le potentiel dipolaire est obtenu comme une somme pondérée des contributions des transitions proches, et les autres transitions atomiques (plus énergétiques) peuvent être ignorées.
-
-% INSERTION FIGURE D1 D2  niveaux 
-\begin{figure}[!htb]
-	\centering
-	\begin{tikzpicture}
-    	\node[rectangle, draw = none] (A) at (0,0) {
-       		\includegraphics[width=0.8\textwidth , page = 3]{figures/07_Dipolaire/Figures}
-    	};
-\end{tikzpicture}
-\caption{Structure fine (transitions D1 et D2)de l’atome de Rubidium $^{87}Rb$.}
-
-\end{figure}
-
 \subsubsection*{Expression des éléments de matrice dans l’interaction atome-champ cohérent}
 
-Les éléments intervenant dans l’équation de second ordre~, qui donne la correction d’énergie d’un état atomique sous l’effet du champ laser, sont des éléments de matrice du type :
+Les éléments intervenant dans l’équation de second ordre, qui donne la correction d’énergie d’un état atomique sous l’effet du champ laser, sont des éléments de matrice du type :
 \[
--\bra{e_i, N} \operatorvec{D} \cdot \operatorvec{E}_\perp \ket{g, N + 1}.
+-\bra{e_i,\,N-1}\,\vec{D} \cdot \vec{E}_\perp\,\ket{g,\,N}.
 \]
 
 \paragraph{Conclusion.} En conséquence, l’élément de matrice d’interaction s’écrit finalement :
 \[
-\bra{e_i, N} - \operatorvec{D} \cdot \operatorvec{E}_\perp \ket{g, N + 1} = - \frac{\mathcal{E}}{2} \bra{e_i} \operatorvec{D} \cdot \vec{u} \ket{g}.
+\bra{e_i,\,N-1} \, \hat H_{\text{int}} \, \ket{g,\,N}
+= - \frac{\mathcal{E}}{2} \, \bra{e_i} \vec{D}\cdot \vec{u} \ket{g}.
 \]
-Ce terme relie l’état atomique \( \ket{g} \) au niveau excité \( \ket{e_i} \), avec un couplage proportionnel à l’amplitude du champ classique et à l’élément de matrice dipolaire entre les deux états. C’est ce terme qui entre au numérateur dans l’expression de la correction d’énergie au second ordre , ce qui donne lieu au potentiel dipolaire optique.\\
+Ce terme relie l’état atomique \( \ket{g} \) au niveau excité \( \ket{e_i} \), avec un couplage proportionnel à l’amplitude du champ classique et à l’élément de matrice dipolaire entre les deux états. C’est ce terme qui entre au numérateur dans l’expression de la correction d’énergie au second ordre, et qui donne naissance au \textbf{potentiel dipolaire optique}.
 
-%{\color{blue} {\color{red} (pour d on travaille avec L)} 
-%\subsubsection{Structure des états électroniques et théorème de Wigner-Eckart}
-%
-%Les états électroniques d’un atome sont caractérisés par des nombres quantiques liés à leur structure fine. Un état est noté \( \ket{n, J, m} \), où :
-%\begin{itemize}[label = $\bullet$]
-%  \item \( n \) est le nombre quantique principal, qui détermine l’énergie orbitale globale ;
-%  \item \( J \) est le moment angulaire total (résultant du couplage spin-orbite \( \vec{J} = \vec{L} + \vec{S} \)) ;
-%  \item \( m \in [-J, J] \) est la projection du moment angulaire total sur un axe de quantification, généralement pris comme l’axe \( z \).
-%\end{itemize}
-%
-%L’opérateur dipolaire électrique \( \operatorvec{D} \) est une observable vectorielle, c’est-à-dire un opérateur de rang 1 au sens des tenseurs sphériques. Cela permet d’utiliser le \textbf{théorème de Wigner-Eckart} pour factoriser les éléments de matrice en une partie géométrique et une partie dynamique. Pour une transition entre deux états électroniques \( \ket{n_g, J_g, m_{J_g}} \) et \( \ket{n_e, J_e, m_{J_e}} \), l’élément de matrice dipolaire projeté sur une direction de polarisation \( \vec{\epsilon} \) s’écrit :
-%
-%\[
-%\bra{n_e, J_e, m_{J_e}} \operatorvec{D} \cdot \vec{u} \ket{n_g, J_g, m_g} = d_{n_g J_g  \leftrightarrow  n_eJ_e} \cdot \braket{J_g, 1; m_g, q | J_e, m_e},
-%\]
-%
-%où :
-%\begin{itemize}[label =$\bullet$]
-%  \item \( d_{n_g J_g  \leftrightarrow  n_eJ_e}  \) est l’élément de matrice réduit. Il ne dépend pas des projections \( m \), ni du type de polarisation, mais uniquement des orbitales atomiques et du moment angulaire total. Il contient l’information dynamique de la transition, souvent calculée ou mesurée expérimentalement.
-%  \item \( \braket{J_g, 1; m_g, q | J_e, m_e} \) est un \textbf{coefficient de Clebsch-Gordan}, qui encode les règles de sélection angulaires et dépend :
-%  \begin{itemize}[label =$\circ$]
-%    \item de \( q = 0, \pm1 \), indexant la composante du champ selon les polarisations \( \pi \) (\( q = 0 \)) ou \( \sigma^{\pm} \) (\( q = \pm1 \)) ;
-%    \item des valeurs de \( J_g, J_e \), et des projections \( m_g, m_e \).
-%  \end{itemize}
-%\end{itemize}
-%
-%Ainsi, l’amplitude de transition dépend à la fois :
-%\begin{enumerate}
-%  \item du couplage entre les enveloppes électroniques (contenu dans \( d_{n_g J_g  \leftrightarrow  n_eJ_e} \)) ;
-%  \item de la géométrie angulaire (par la polarisation du champ et les sous-niveaux magnétiques des états).
-%\end{enumerate}
-%
-%Ce formalisme est essentiel pour calculer précisément les amplitudes de transition et les forces dipolaires induites par un champ laser polarisé, notamment dans des atomes à structure fine/ hyperfine comme le Rubidium 87. Il permet de traiter l’ensemble des transitions atomiques pertinentes dans un gaz d’atomes refroidis et piégés, sans avoir à traiter individuellement chaque sous-niveau magnétique.
-%}
 
 \section{Cas du Rubidium 87 dans une polarisation rectiligne}
 
@@ -673,46 +619,98 @@ En première approximation, on peut donc modéliser le Rubidium comme un systèm
 
 La structure des niveaux d’énergie est ensuite raffinée par les effets suivants :
 \begin{itemize}
-  \item[$\bullet$] \textbf{Structure fine} : Elle résulte du couplage spin-orbite entre le moment angulaire orbital $\vec{L}$ et le spin $\vec{S}$ de l’électron de valence. Ce couplage divise chaque niveau orbital (par exemple, le niveau $5p$) en deux sous-niveaux caractérisés par le moment angulaire total $J = L \pm \tfrac{1}{2}$. Ainsi, la transition $5s \leftrightarrow 5p$ donne naissance aux deux raies bien connues : D1 (transition $5s_{1/2} \to 5p_{1/2}$ à 795 nm) et D2 (transition $5s_{1/2} \to 5p_{3/2}$ à 780 nm).
+  \item[$\bullet$] \textbf{Structure fine} : Elle résulte du couplage spin-orbite entre le moment angulaire orbital $\vec{L}$ et le spin $\vec{S}$ de l’électron de valence. Ce couplage divise chaque niveau orbital (par exemple, le niveau $5p$) en deux sous-niveaux caractérisés par le moment angulaire total $J = L \pm \tfrac{1}{2}$. Ainsi, la transition $5S \leftrightarrow 5P$ donne naissance aux deux raies bien connues :% D1 (transition $5s_{1/2} \to 5p_{1/2}$ à 795 nm) et D2 (transition $5s_{1/2} \to 5p_{3/2}$ à 780 nm).
+  		\begin{itemize}[label = $\circ$]
+  			\item raie \textbf{D2} : \( \lambda = 780~\text{nm} \), correspondant à la transition \( 5S_{1/2} \rightarrow 5P_{3/2} \),
+  			\item raie \textbf{D1} : \( \lambda = 795~\text{nm} \), correspondant à la transition \( 5S_{1/2} \rightarrow 5P_{1/2} \). 
+  		\end{itemize}
+  		
   
   \item[$\times$] \textbf{Structure hyperfine (non traitée ici)} : Elle résulte du couplage entre le moment angulaire total de l’électron ($\vec{J}$) et celui du noyau ($\vec{I}$), introduisant une subdivision supplémentaire des niveaux d’énergie. Bien que cette structure hyperfine soit essentielle dans certains contextes (résonances hyperfines, refroidissement laser, etc.), elle ne sera pas considérée ici car nous nous limitons à l’étude des effets associés à la structure fine.
 \end{itemize}
+
+% INSERTION FIGURE D1 D2  niveaux 
+\begin{figure}[!htb]
+	\centering
+	\begin{tikzpicture}
+    	\node[rectangle, draw = none] (A) at (0,0) {
+       		\includegraphics[width=0.8\textwidth , page = 3]{figures/07_Dipolaire/Figures}
+    	};
+\end{tikzpicture}
+\caption{Structure fine (transitions D1 et D2) de l’atome de Rubidium $^{87}\mathrm{Rb}$.}
+
+\end{figure}
+
+\medskip
+
+En effet le faisceau à environ 770~nm est donc \textbf{hors résonance}, mais \textbf{pas trop éloigné} de ces transitions (désaccord de l’ordre de quelques dizaines de THz), ce qui garantit que la structure hyperfine peut être \textbf{négligée} dans un premier temps, et que l’interaction est bien décrite par la contribution dominante des raies D1 et D2. Dans ce régime de désaccord modéré, le potentiel dipolaire est obtenu comme une somme pondérée des contributions des transitions proches, et les autres transitions atomiques (plus énergétiques) peuvent être ignorées.
+
+\medskip
 
 Ce modèle à un électron actif simplifie grandement l’analyse des interactions entre le Rubidium et un champ laser, en particulier dans le cadre du piégeage dipolaire et des transitions induites par effet Stark.
 
 
 \subsection{Structure matricielle du potentiel dipolaire}
 
-Lorsque la base hyperfine est prise en compte — en particulier dans le contexte du piégeage optique spin-dépendant ou vectoriel — le potentiel dipolaire ne se réduit plus à une simple fonction scalaire, mais devient un opérateur agissant dans l’espace des états internes de l’atome. Dans le cas le plus simple où seuls deux états internes sont pertinents (par exemple deux sous-niveaux hyperfins ou Zeeman), le potentiel dipolaire peut être représenté par une matrice $2 \times 2$ :
+%Lorsque la base hyperfine est prise en compte — en particulier dans le contexte du piégeage optique spin-dépendant ou vectoriel — le potentiel dipolaire ne se réduit plus à une simple fonction scalaire, mais devient un opérateur agissant dans l’espace des états internes de l’atome. Dans le cas le plus simple où seuls deux états internes sont pertinents (par exemple deux sous-niveaux hyperfins ou Zeeman), le potentiel dipolaire peut être écrit sous la forme générale :
+%\begin{eqnarray}
+%	U_{\mathrm{dip}} &=& U_{\mathrm{scal}}^{(0)} \cdot \mbox{Id}_2 \;+\; U^{(1)}_{\mathrm{vec}}\,(\operatorvec{J}\cdot\operatorvec{B}_{\rm fict})
+%\;+\; U^{(2)}_{\mathrm{tens}}(\operatorvec{J},\operatorvec{u}),\label{eq:dipole-potential-decomposition}
+%\end{eqnarray}
 
+Lorsque la structure fine est prise en compte, le potentiel dipolaire ne se réduit plus à une simple fonction scalaire, mais se décompose en contributions scalaire, vectorielle et tensorielle, définies dans l’espace des états électroniques $|J,m_J\rangle$. 
+%Ces contributions peuvent ensuite être projetées sur la base hyperfine $|F,m_F\rangle$ pertinente pour les atomes alcalins. 
+
+\medskip
+
+Dans un scénario expérimental où l’on restreint l’espace interne de l’atome à deux sous-niveaux hyperfins ou Zeeman (par exemple pour définir un pseudo-spin), le potentiel dipolaire peut être représenté par une matrice $2\times 2$ de la forme générale :
 \begin{eqnarray}
-U_{\mathrm{dip}} &=& U_{\mathrm{scal}}^{(0)} \cdot \mbox{id}_2 
-+ U_{\mathrm{vec}}^{(1)}.
+	U_{\mathrm{dip}} \;=\; U_{\mathrm{scal}}^{(0)} \cdot \mbox{Id}_2 
+	\;+\; U^{(1)}_{\mathrm{vec}}\;(\operatorvec{J}\cdot\operatorvec{B}_{\rm fict})
+	\;+\; U^{(2)}_{\mathrm{tens}}(\operatorvec{J},\operatorvec{u}).
+	\label{eq:dipole-potential-decomposition}
 \end{eqnarray}
 
+où : 
 \begin{itemize}[label = $\bullet$]
   \item \textbf{Terme scalaire} : $U_{\mathrm{scal}}^{(0)}$ génère un décalage isotrope du niveau atomique qui est indépendant du sous-niveau de $J$ (ou $F$). Ce décalage est la composante « classique » de l’effet Stark AC, proportionnelle à l’intensité lumineuse, et n’entraîne pas de structure fine dépendant de la polarisation de la lumière. Ce terme domine dans la plupart des configurations expérimentales, notamment avec un champ lumineux polarisé rectiligne, comme c’est le cas ici.
 
   \item \textbf{Terme vectoriel (Zeeman optique)} : $U_{\mathrm{vec}}^{(1)}$ agit comme un champ magnétique fictif (optical Zeeman effect) le long de $\operatorvec{B}_{\rm fict}\propto i(\operatorvec{E}^\ast\times \operatorvec{E})$. En effet, il est proportionnelle à l’opérateur $i(\operatorvec{u}^\ast\times\operatorvec{u})\cdot\operatorvec{J}$ se comportant comme $\operatorvec{J}\cdot \operatorvec{B}_{\rm fict}$. Ainsi, la polarisation circulaire du champ ($i[\operatorvec{u}^\ast\times\operatorvec{u}]\neq 0$) donne un décalage dépendant de l’orientation de $\operatorvec{J}$ (analogue à un effet Zeeman), alors que pour une polarisation rectiligne ($\operatorvec{u}$ réel) ce produit vectoriel s’annule et ce terme vectoriel disparaît. On parle souvent de champ fictif parce que, en convention, le terme vectoriel du Hamiltonien d’interaction s’écrit formellement $\mu_B g_J\,(\operatorvec{J}\cdot\operatorvec{B}_{\rm fict})$. Dans notre cas (polarisation rectiligne), ce terme est donc négligeable.
 
-  \item \textbf{Terme tensoriel} : $U_{\mathrm{tens}}^{(2)}$ introduit une anisotropie du potentiel selon l’orientation du moment angulaire par rapport à la polarisation du champ. Ce terme est proportionnel à une combinaison quadrupolaire des composantes de $\vec{J}$ :
-\[
-\frac{3[(\operatorvec{u}^*\!\cdot \operatorvec{J})(\operatorvec{u}\!\cdot\operatorvec{J})+(\operatorvec{u}\!\cdot\operatorvec{J})(\operatorvec{u}^*\!\cdot \operatorvec{J})]-2\operatorvec{J}^2}{2J(2J-1)}.
-\]
-Il ne contribue que pour les états atomiques ayant un moment cinétique total $J \geq 1$. Dans le cas des atomes alcalins, comme le rubidium 87, l’état fondamental est un état $S$ avec $J = 1/2$, et ce terme est donc strictement nul. 
+  \item[$\times$] \textbf{Terme tensoriel} : $U_{\mathrm{tens}}^{(2)}$ introduit une anisotropie du potentiel selon l’orientation du moment angulaire par rapport à la polarisation du champ. Ce terme est proportionnel à une combinaison quadrupolaire des composantes de $\vec{J}$ :
+\begin{eqnarray}
+	\frac{3[(\operatorvec{u}^*\!\cdot \operatorvec{J})(\operatorvec{u}\!\cdot\operatorvec{J})+(\operatorvec{u}\!\cdot\operatorvec{J})(\operatorvec{u}^*\!\cdot \operatorvec{J})]-2\operatorvec{J}^2}{2J(2J-1)}.	
+\end{eqnarray}
+Le terme tensoriel ne contribue que pour les états atomiques ayant un moment cinétique total $J \geq 1$. Pour les atomes alcalins, comme le ${}^{87}\mathrm{Rb}$, l’état fondamental est un état $S$ avec $J = 1/2$, et ce terme est donc strictement nul. En effet, un spin $1/2$ ne peut posséder de quadrupôle : seules les composantes scalaire et vectorielle du potentiel dipolaire subsistent (voir Annexe~\ref{annex:no_tensor} pour une démonstration détaillée).
+
+
 
 %C’est pourquoi, dans la grande majorité des expériences utilisant des atomes alcalins dans leur état fondamental — comme c’est le cas ici — le terme tensoriel peut être négligé. Il ne devient pertinent que pour des atomes multivalents (comme les terres rares ou les alcalino-terreux) ou si l’on utilise des états excités à $J \geq 1$ de manière contrôlée.
 
 \end{itemize}
 
+\paragraph{Résumé.}  
+La décomposition \eqref{eq:dipole-potential-decomposition} montre que :
+\begin{enumerate}[label=(\roman*)]
+	\item en toute généralité, le potentiel dipolaire comporte trois contributions (scalaire, vectorielle et tensorielle) ;
+	\item pour les atomes alcalins au repos dans leur état fondamental ($J=1/2$), seul le terme vectoriel peut subsister (si la polarisation est elliptique), tandis que le terme tensoriel disparaît.
+\end{enumerate}
+
+\medskip
+
 Cette structure matricielle du potentiel dipolaire joue un rôle central dans la manipulation cohérente des états internes de l’atome, la réalisation de barrières optiques dépendantes du spin, ou encore la mise en œuvre de qubits dans des réseaux d’atomes piégés. Elle permet également d’exploiter des phénomènes comme les transitions Raman induites optiquement ou la séparation de spin dans des pièges optiques.
 
-
-
  
- \subsection{Cas de désaccords très importants}
+% \subsection{Cas de désaccords très importants}
+%
+%Lorsque le désaccord du laser est très grand (i.e. $|\Delta| \gg$ structure fine, typiquement de l’ordre de $15\,\mathrm{nm}$ pour le rubidium), les différentes composantes de la structure fine ne peuvent plus être résolues par le champ lumineux. Autrement dit, les photons du faisceau laser ne "voient" plus la séparation entre, par exemple, les niveaux $5P_{1/2}$ et $5P_{3/2}$. Dans ce régime de désaccord très important, les niveaux excités sont décrits uniquement par leur moment angulaire orbital $L$, sans distinction de $J$ ou $F$. Ce régime permet de simplifier la description du couplage lumière-matière : seules les transitions entre niveaux caractérisés par les nombres quantiques orbitaux $L$ et leurs projections $m_L$ sont pertinentes.
 
-Lorsque le désaccord du laser est très grand (i.e. $|\Delta| \gg$ structure fine, typiquement de l’ordre de $15\,\mathrm{nm}$ pour le rubidium), les différentes composantes de la structure fine ne peuvent plus être résolues par le champ lumineux. Autrement dit, les photons du faisceau laser ne "voient" plus la séparation entre, par exemple, les niveaux $5P_{1/2}$ et $5P_{3/2}$. Dans ce régime de désaccord très important, les niveaux excités sont décrits uniquement par leur moment angulaire orbital $L$, sans distinction de $J$ ou $F$. Ce régime permet de simplifier la description du couplage lumière-matière : seules les transitions entre niveaux caractérisés par les nombres quantiques orbitaux $L$ et leurs projections $m_L$ sont pertinentes.
+\subsection{Régime de désaccord très important}
+
+Dans ce chapitre, nous ne considérons le régime de désaccord très important que dans le but de calculer les éléments de matrice du moment dipolaire $\operatorvec{D}$. En effet, pour un laser fortement détuné par rapport aux transitions électroniques ($|\Delta| \gg \Delta_{\rm fs}, \Delta_{\rm hfs}$), le champ lumineux ne peut plus distinguer les différents niveaux excités liés aux sous-niveaux $J$ ou $F$ (par exemple les niveaux $5P_{1/2}$ et $5P_{3/2}$ pour le rubidium). 
+
+Dans ce régime, les niveaux excités peuvent être traités uniquement en termes de moment angulaire orbital $L$ et de sa projection $m_L$, car le moment dipolaire $\operatorvec{D}$ ne dépend pas du spin de l’électron. Les éléments de matrice $\bra{e}\operatorvec{D}\ket{g}$ se calculent donc simplement en utilisant les états orbitalaux, ce qui permet de négliger les détails de la structure fine ou hyperfine dans cette approximation.
+
 
 % INSERTION FIGURE L=0 , L = 1  niveaux 
 \begin{figure}[!htb]
@@ -788,19 +786,11 @@ L’élément de matrice s’écrit alors, en utilisant le théorème de Wigner-
 & = & d_{\scriptstyle 5S \leftrightarrow 5P} \cdot \braket{L=0, 1; m_L = 0, q=0 | 1, m_L' }.
 \end{eqnarray}
 où :
-\begin{itemize}
+\begin{itemize}[label = $\bullet$]
 	\item $d_{\scriptstyle 5S \leftrightarrow 5P} = \braket{L' = 1 \vert \Vert \operator{D}_0 \Vert \vert L =0 }$  est l’élément de matrice réduit,  indépendant de $m_L$ ou de la polarisation $q$ ;
 	\item $\braket{L=0, 1; m_L = 0, q=0 | 1, m_L' }$ est un \textbf{coefficient de Clebsch-Gordan}.
 \end{itemize}
 Ce dernier impose une condition stricte de conservation de la projection du moment angulaire : $m_{L'} = m_L + q = 0 + 0  = 0 $. Par conséquent, seule la composante $m_{L'} = 0 $  de l’état excité est couplée à $\ket{L = 0 , m_L = 0}$ sous l’action du champ $\pi$-polarisé. Et comme $\braket{0,1;0,0|1,0}=1$, on obtient finalement :
-%Ce dernier impose une condition stricte de conservation de la projection du moment angulaire :
-%
-%Le \textbf{coefficient de Clebsch-Gordan}, qui encode les règles de sélection angulaires et dépend :
-%  \begin{itemize}[label =$\circ$]
-%    \item de \( q = 0, \pm1 \), indexant la composante du champ selon les polarisations \( \pi \) (\( q = 0 \)) ou \( \sigma^{\pm} \) (\( q = \pm1 \)) ;
-%    \item des valeurs de \( J_g, J_e \), et des projections \( m_g, m_e \).
-%  \end{itemize}
-%Le \textbf{coefficient de Clebsch-Gordan} : $\braket{L=0, 1; m_L = 0, q=0 | 1, m_L' } = \delta_{m_L', m_L + q}$ impose $m_L' = 0$, ce qui implique que seule la composante $q = 0$ (polarisation rectiligne) contribue à cette transition spécifique  :
 \begin{eqnarray}
  d_{\scriptstyle 5S \leftrightarrow 5P} = \bra{L' = 1, m_L'=0} \operatorvec{D} \cdot \vec{u}_{q=0} \ket{L = 0, m_L = 0} .
 \end{eqnarray}
@@ -811,7 +801,6 @@ Cette analyse met en évidence le rôle de la polarisation du champ lumineux dan
 \subparagraph{Valeur de l’élément de matrice réduit.}
 
 L'expression~\eqref{eq:WignerEckart} reste valable pour les éléments de matrice réduits~\cite{CCT_QO}. Dans le cas du rubidium 87, on peut ainsi déterminer numériquement la valeur de l’élément $\bra{L'}\!\|\operatorvec{D}\|\!\ket{L}$, noté $d_{\scriptstyle 5S \leftrightarrow 5P}$, à partir des données spectroscopiques expérimentales (fréquence de transition, largeur naturelle, etc.).
-
 \begin{eqnarray}
 d_{\scriptstyle 5S \leftrightarrow 5P} &\approx& 2{,}5 \times 10^{-29}~\mathrm{C \cdot m}.
 \end{eqnarray}
@@ -852,11 +841,10 @@ Lorsque le désaccord du faisceau laser devient comparable à la séparation ent
 
 \subparagraph{Décalage d’énergie au second ordre.}
 
-En notant $\hbar\omega_{\tiny 5S_{1/2} \rightarrow 5P_{J'}} = \hbar\omega_{5P_{J'}} - \hbar\omega_{5S_{1/2}}$ la différence d’énergie entre les états excités $\ket{e} \equiv \ket{5P_{J'}}$ et l’état fondamental $\ket{g} \equiv \ket{5S_{1/2}}$, le décalage d’énergie induit par un champ lumineux de polarisation \textbf{rectiligne} s’écrit, au second ordre en perturbation (voir équation~\eqref{chap:dipolaire:eq:nrj2.1}) :
-
+En notant $\hbar\omega_{\scriptscriptstyle \tiny 5S_{1/2} \rightarrow 5P_{J'}} = \hbar\omega_{5P_{J'}} - \hbar\omega_{5S_{1/2}}$ la différence d’énergie entre les états excités $\ket{e} \equiv \ket{5P_{J'}}$ et l’état fondamental $\ket{g} \equiv \ket{5S_{1/2}}$, le décalage d’énergie induit par un champ lumineux de polarisation \textbf{rectiligne} s’écrit, au second ordre en perturbation (voir équation~\eqref{chap:dipolaire:eq:nrj2.1}) :
 \begin{eqnarray}
 	\delta E_{5S_{1/2}}^{(2)} & = & \frac{|\mathcal{E}|^2}{4\hbar} \sum_{J' \in \left\{ \tfrac{1}{2}, \tfrac{3}{2} \right\}} 
-		\frac{|\langle 5P_{J'}|\operatorvec{u} \cdot \operatorvec{D}|5S_{1/2}\rangle|^2}{\omega - \omega_{\tiny 5S_{1/2} \rightarrow 5P_{J'}}}.
+		\frac{|\langle 5P_{J'}|\operatorvec{u} \cdot \operatorvec{D}|5S_{1/2}\rangle|^2}{\omega - \omega_{\scriptscriptstyle  \tiny 5S_{1/2} \rightarrow 5P_{J'}}}.
 	\label{chap:dipolaire:eq:nrj2.3}
 \end{eqnarray}
 
@@ -869,18 +857,27 @@ Ce décalage est purement scalaire dans le cas d’un champ à polarisation lin�
 
 Pour calculer les déplacements lumineux induits par un champ électromagnétique sur chacun des niveaux de structure fine, il est utile d'exprimer les états de la base couplée $|L, S; J, m_J\rangle$ dans la base découplée $|L, S; m_L, m_S\rangle$. Cette décomposition permet de faire apparaître explicitement les composantes orbitales et de spin, ce qui facilite l’évaluation des éléments de matrice du moment dipolaire.
 
-On utilise pour cela les coefficients de Clebsch-Gordan, qui relient les deux bases selon la relation :
+\medskip
+
+Pour effectuer ces calculs, on utilise les coefficients de Clebsch-Gordan, qui permettent de relier la base $|L,S;J,m_J\rangle$ à la base produit $|L,m_L;S,m_S\rangle$ selon la relation :
 \begin{eqnarray}
 	|L, S; J, m_J\rangle  &=& \sum_{\substack{-L \leq m_L \leq L,\\, -S \leq m_S \leq S  }}^{m_L + m_S = m_J} \langle L, m_L; S, m_S | J, m_J \rangle \; |L, m_L; S, m_S\rangle.
 \end{eqnarray}
 
-On calcule alors a l'aide de cette décomposition :
 
+
+
+Cette décomposition permet ensuite de calculer les éléments de matrice du moment dipolaire selon
 \begin{eqnarray}
-	&&\bra{L' , S' ; J' , m_J' }  \operatorvec{D} \cdot \operatorvec{u}_q 	\ket{L , S ; J , m_J }  \\
-	&&~ = ~ \sum_{\substack{-L' \leq m_L' \leq L',\\, -S' \leq m_S', \leq S''}}^{m_L' + m_S'= m_J'}\sum_{\substack{-L \leq m_L \leq L,\\, -S \leq m_S \leq S }}^{m_L + m_S = m_J} \overbrace{\bra{L',m_L';S',m_s'} \operatorvec{D} \cdot \operatorvec{u}_q \ket{L,m_L;S,m_s}}^{\propto \delta_{m_L',m_L+q}\delta_{m_S',m_S}} \langle J' , m_J' \vert L' , m_L' ; S' , m_S' \rangle \langle L , m_L ; S , m_S \vert J , m_J \rangle ,\\
-	&&~ = ~  \sum_{\substack{-L \leq m_L \leq L,\\, -S \leq m_S \leq S}}^{\substack{ m_L + m_S = m_J, \\ m_L + q + m_S = m_J'}} \bra{L', m_L+q} \operatorvec{D} \cdot \operatorvec{u}_q \ket{L,m_L}\langle J' , m_L + q + m_S \vert L' ,  m_L + q  ; S' ,  m_S \rangle \langle L , m_L ; S , m_S \vert J , m_J \rangle
+	\bra{L', S'; J', m_J'} \operatorvec{D} \cdot \operatorvec{u}_q \ket{L, S; J, m_J}.
 \end{eqnarray}
+
+
+%\begin{eqnarray}
+%	&&\bra{L' , S' ; J' , m_J' }  \operatorvec{D} \cdot \operatorvec{u}_q 	\ket{L , S ; J , m_J }  \\
+%	&&~ = ~ \sum_{\substack{-L' \leq m_L' \leq L',\\, -S' \leq m_S', \leq S''}}^{m_L' + m_S'= m_J'}\sum_{\substack{-L \leq m_L \leq L,\\, -S \leq m_S \leq S }}^{m_L + m_S = m_J} \overbrace{\bra{L',m_L';S',m_s'} \operatorvec{D} \cdot \operatorvec{u}_q \ket{L,m_L;S,m_s}}^{\propto \delta_{m_L',m_L+q}\delta_{m_S',m_S}} \langle J' , m_J' \vert L' , m_L' ; S' , m_S' \rangle \langle L , m_L ; S , m_S \vert J , m_J \rangle ,\\
+%	&&~ = ~  \sum_{\substack{-L \leq m_L \leq L,\\, -S \leq m_S \leq S}}^{\substack{ m_L + m_S = m_J, \\ m_L + q + m_S = m_J'}} \bra{L', m_L+q} \operatorvec{D} \cdot \operatorvec{u}_q \ket{L,m_L}\langle J' , m_L + q + m_S \vert L' ,  m_L + q  ; S' ,  m_S \rangle \langle L , m_L ; S , m_S \vert J , m_J \rangle
+%\end{eqnarray}
 
 
 \subparagraph{Application au cas $5S_{1/2} \rightarrow 5P_{1/2,\,3/2}$ avec $q = 0$.}
@@ -908,8 +905,6 @@ Continions avec les états exités $\ket{5\,^2P_{1/2},\,m_J'}$, que l’on peut 
 \end{eqnarray*}
 
 Pour rappel, les opérateurs de montée/descente agissant sur les états propres du moment angulaire vérifient la relation générale :
-
-
 \begin{eqnarray}
 	\operator{A}_\pm \vert n , A , m	_A \rangle & = & \hbar \sqrt{A(A+1) - m_A(m_A\pm 1 ) } \vert n , A , m	_A \pm 1  \rangle
 \end{eqnarray}
@@ -941,9 +936,15 @@ il vient que
 Potentiel dipolaire s'écrit :
 
 \begin{eqnarray*}
-	U_{\mathrm{dip}}(\operatorvec{r}) &  = & \frac{ \vert \mathcal{E} \vert^2}{4 \hbar} \left( \frac{ \vert \langle 5 {~}^2P_{1/2}  \vert \operatorvec{D} \cdot \operatorvec{u}\vert 5 {~}^2S_{1/2}  \rangle \vert^2}{ \Delta_1} + \frac{ \vert\langle 5 {~}^2P_{3/2}  \vert \operatorvec{D} \cdot \operatorvec{u}\vert 5 {~}^2S_{1/2}  \rangle \vert^2}{ \Delta_2}  \right )\\ & = &  \frac{  d_{\scriptstyle 5S \rightarrow 5P}^2 \vert \mathcal{E} \vert^2 }{4 \hbar} \left( \frac{ 1}{ 3 \Delta_1} + \frac{2 }{ 3 \Delta_2}  \right ) \\&=& \frac{\hbar \, \Gamma^2}{8 I_{\mathrm{sat}}} \left( \frac{ 1}{ 3 \Delta_1} + \frac{2 }{ 3 \Delta_2}  \right ) I(\operatorvec{r}) ,		
+	U_{\mathrm{dip}}(\operatorvec{r}) &  = & \frac{ \vert \mathcal{E} \vert^2}{4 \hbar} \left( \frac{ \vert \langle 5 {~}^2P_{1/2}  \vert \operatorvec{D} \cdot \operatorvec{u}\vert 5 {~}^2S_{1/2}  \rangle \vert^2}{ \Delta_1} + \frac{ \vert\langle 5 {~}^2P_{3/2}  \vert \operatorvec{D} \cdot \operatorvec{u}\vert 5 {~}^2S_{1/2}  \rangle \vert^2}{ \Delta_2}  \right )\\ & = &  \frac{  d_{\scriptstyle \tiny  5S \rightarrow 5P}^2 \vert \mathcal{E} \vert^2 }{4 \hbar} \left( \frac{ 1}{ 3 \Delta_1} + \frac{2 }{ 3 \Delta_2}  \right ).		
 \end{eqnarray*}
-avec $\Delta_1 = \omega -\omega_{\tiny 5S_{1/2} \rightarrow 5P_{1/2}} $ et $\Delta_2 = \omega -\omega_{\tiny 5S_{1/2} \rightarrow 5P_{3/2}} $.
+
+Ainsi finalement 
+\begin{eqnarray}
+	U_{\mathrm{dip}}(\operatorvec{r}) &=& \frac{\hbar \, \Gamma^2}{8 I_{\mathrm{sat}}} \left( \frac{ 1}{ 3 \Delta_1} + \frac{2 }{ 3 \Delta_2}  \right ) I(\operatorvec{r}) ,	
+\end{eqnarray}
+
+avec $\Delta_1 = \omega -\omega_{\scriptstyle \tiny 5S_{1/2} \rightarrow 5P_{1/2}} $ et $\Delta_2 = \omega -\omega_{\scriptstyle \tiny 5S_{1/2} \rightarrow 5P_{3/2}} $.
 
 \subparagraph{Taux d’émission spontanée}
 Le même hamiltonien d’interaction qui génère le potentiel dipolaire est aussi responsable des processus de diffusion de photons (absorption suivie de réémission spontanée), qui conduisent à des effets dissipatifs.
