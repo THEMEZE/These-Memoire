@@ -982,7 +982,7 @@ $D_1 : 795~nm$}};
   \node[below=-0cm of pignol] { \color{\colorOne} $\scriptscriptstyle \mu m $};
   
   
-  \node[right=of lensTele2] (mirrorTele1) {
+  \node[right=4mm of lensTele2] (mirrorTele1) {
   \begin{tikzpicture}
   	\draw[mirror , rotate = -45];
   \end{tikzpicture}
@@ -1012,7 +1012,8 @@ $D_1 : 795~nm$}};
  
 
   \draw[laser beam] (laser) -- (mirrord1) -- (mirrord2) -- (mirrorTA1) -- (mirrorTA2) -- (mirrorTele1)--(mirrorTele2) -- (Out) ;
-	%\drawgrid{-3.5}{7}{-1}{8};
+	
+	\drawgrid{-3.5}{7}{-1}{8};
 	
 	\draw[white] (-3.5,-1) rectangle (7,8) ;
 \end{tikzpicture}
