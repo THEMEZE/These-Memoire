@@ -121,11 +121,11 @@ Ici pour donner une visons simplement, on vas considerer un atomes à 2 niveaux.
 Considérons un atome modélisé par deux états, le fondamental $\ket{g}$ d'énergie $\hbar \omega_g$  et l’excité $\ket{e}$ d'énergie $\hbar \omega_e$, couplés par le champ électrique $\operatorvec{E}_\perp(\vec{r} , t ) = \operatorvec{\mathcal{E}}(\vec{r}) \cos ( \omega t )  $. le champ laser est loin de la résonance avec l’état excité $\ket{e}$ , c’est-à-dire que le désaccord $\Delta = \omega - \omega_{\scriptscriptstyle g\rightarrow e}$ (avec la fréquence de transition $\omega_{\scriptscriptstyle g\rightarrow e} = \omega_e - \omega_g $ ) est grand comparé à la fréquence de Rabi définissant le couplage entre le dipôle et le champ 
 \begin{eqnarray}
 	\Omega(\vec{r}) & = & -  \bra{e} \operatorvec{D} \cdot \operatorvec{\mathcal{E}}(\vec{r}) \ket{g}/\hbar\\
-	& = &- \vec{d}_{e\leftrightarrow g } \cdot  \vec{\mathcal{E}}(\vec{r}) /\hbar,	
+	& = &- \vec{d}_{\scriptscriptstyle g\leftrightarrow e } \cdot  \vec{\mathcal{E}}(\vec{r}) /\hbar,	
 \end{eqnarray}
 
 
-avec $\vec{d}_{\scriptscriptstyle e\leftrightarrow g } = \bra{e} \operatorvec{D} \ket{g} $ l’élément de matrice dipolaire réel entre $\ket{g}$ et $\ket{e}$. 
+avec $\vec{d}_{\scriptscriptstyle g\leftrightarrow e } = \bra{e} \operatorvec{D} \ket{g} $ l’élément de matrice dipolaire réel entre $\ket{g}$ et $\ket{e}$. 
 
 \vspace{1em}
 % INSERTION FIGURE
@@ -135,16 +135,38 @@ avec $\vec{d}_{\scriptscriptstyle e\leftrightarrow g } = \bra{e} \operatorvec{D}
 
 \subsection{Interprétation du traitement du second ordre : transition virtuelle et origine du potentiel dipolaire (AC-Stark)}
 
-\paragraph{Transition virtuelle et suppression des transitions réelles.}
-Lorsque le champ laser est fortement dé-tuné par rapport à la résonance atomique, c’est-à-dire que le désaccord \( \Delta = \omega - \omega_{g\rightarrow e} \) vérifie \( |\Delta| \gg \Gamma \), l’excitation réelle de l’atome devient négligeable. En effet, le paramètre \( \Gamma \) désigne la \emph{largeur naturelle} de la transition \( \ket{e} \rightarrow \ket{g} \), c’est-à-dire le taux d’émission spontanée d’un photon par un atome excité. Elle est liée à la durée de vie \( \tau \) de l’état \( \ket{e} \) par \( \Gamma = 1/\tau \), et  dans le cas d’une transition dipolaire électrique  peut être calculée à partir de l’électrodynamique quantique selon la formule :
+\paragraph{Transitions virtuelles et suppression des transitions réelles.}
+Lorsque le champ laser est fortement désaccordé par rapport à la résonance atomique, c’est-à-dire lorsque le désaccord 
+\(\Delta = \omega - \omega_{\scriptscriptstyle g\rightarrow e}\) vérifie \( \Gamma \ll |\Delta|  \), 
+l’excitation réelle de l’atome devient négligeable. 
+Le paramètre \(\Gamma\) désigne la \emph{largeur naturelle} de la transition \(\ket{e} \rightarrow \ket{g}\), 
+c’est-à-dire le taux d’émission spontanée d’un photon par un atome excité. 
+Il est relié à la durée de vie \(\tau\) de l’état \(\ket{e}\) par \(\Gamma = 1/\tau\). 
+Dans le cas d’une transition dipolaire électrique de type S–P, il peut être calculé à partir de l’électrodynamique quantique selon la formule :
 \begin{equation}
-	\Gamma = \frac{\omega_{e\rightarrow g}^3}{3 \pi \varepsilon_0 \hbar c^3} |\vec{d}_{e \leftrightarrow g } |^2,
+	\Gamma = \frac{\omega_{\scriptscriptstyle g\rightarrow e}^3}{3 \pi \varepsilon_0 \hbar c^3} 
+	| \vec{d}_{\scriptscriptstyle g \leftrightarrow e} |^2,
 \end{equation}
+où \(\varepsilon_0\) est la permittivité du vide et \(c\) la vitesse de la lumière. 
 
-où \( \varepsilon_0 \) est la permittivité du vide, et \( c \) la vitesse de la lumière.\\La probabilité d’exciter réellement l’atome vers l’état \( \ket{e} \) devient négligeable : le champ ne peut pas induire une véritable transition \( \ket{g} \to \ket{e} \).\\
+\medskip
+
+Ainsi, lorsque \(\Gamma \ll |\Delta| \), la probabilité d’exciter réellement l’atome vers l’état \(\ket{e}\) devient négligeable.
+
+\medskip
+
+De plus, pour que l’occupation réelle de l’état excité reste négligeable, 
+il faut également que la fréquence de Rabi \(\Omega\), qui mesure la force du couplage lumière–atome, 
+satisfasse la condition
+\(
+	\Omega \ll |\Delta|.
+\)
+Dans ce régime de fort désaccord et de couplage faible, 
+le champ ne peut alors induire qu’une \emph{transition virtuelle} \(\ket{g} \to \ket{e}\), sans véritable occupation de l’état excité.
 
 
-\bigskip
+\medskip
+
 
 \paragraph{Effet de second ordre : origine du potentiel dipolaire.}
 
@@ -154,43 +176,34 @@ où \( \varepsilon_0 \) est la permittivité du vide, et \( c \) la vitesse de l
 \]
 Ce processus modifie l’énergie propre de l’état \( \ket{g} \), générant un \textbf{décalage AC-Stark}, interprété comme un \emph{potentiel dipolaire}.
 
-
-Ce phénomène s’interprète naturellement comme un effet de second ordre en théorie des perturbations indépendantes du temps. La correction d’énergie associée à l’état \( \ket{g} \) s’écrit :
-
-\begin{equation}
-\delta E_g^{(2)} =  \frac{|\bra{e} \operator{H}_{\text{int}} \ket{g}|^2}{\hbar \Delta}.
-\end{equation}
-Cette correction est responsable de l’apparition d’un potentiel effectif ressenti par l’atome, appelé \emph{potentiel dipolaire optique}.
-
-
 \bigskip
 
-\paragraph{Analyse perturbative à différents ordres :}
+\subparagraph{Analyse perturbative à différents ordres :}
 
 \begin{itemize}[label = $\bullet$] 
 \item \textbf{Ordre 0} — énergie non perturbée :  
 L’atome est dans l’état fondamental \( \ket{g} \). Son énergie propre est simplement :  
-\[
+\begin{equation}
 E_g^{(0)} = E_g.
 \]
 
 \item \textbf{Ordre 1} — pas de correction diagonale :  
 
 Dans l’approximation des grandes longueurs d’onde \( \lambda \gg \langle \vec{r} \rangle \), c’est-à-dire lorsque la longueur d’onde du champ laser est grande devant la taille de l’atome, l’interaction lumière-matière se décrit par le \emph{Hamiltonien dipolaire électrique} . Dans ce cadre, la correction d’énergie au premier ordre est donnée par :
-\[
+\begin{equation}
 \delta E_g^{(1)} = \bra{g} \operator{H}_{\text{int}} \ket{g}.
-\]
+\end{equation}
 
 Or, pour un champ oscillant typiquement de la forme \( \vec{E}_{\perp}(t) = \frac{1}{2} \vec{\mathcal{E}}\, e^{-i\omega t} + \text{c.c.} \), ce terme est rapide et oscille à la fréquence du laser. De plus, dans une base d’états propres de parité définie (comme c’est le cas pour les niveaux atomiques), l’opérateur \( \operatorvec{D} \) étant de parité impaire, son \textbf{élément diagonal est nul} :
 
-\[
+\begin{equation}
 \bra{g}  \operatorvec{D} \ket{g} = 0 \quad \Rightarrow \quad \bra{g} \operator{H}_{\text{int}} \ket{g} = 0.
-\]
+\end{equation}
 
 Ainsi, non seulement \( \delta E_g^{(1)}(t) \sim \cos(\omega t) \) est une oscillation à haute fréquence, mais sa moyenne temporelle est aussi nulle :
-\[
+\begin{equation}
 \langle \delta E_g^{(1)} \rangle_t = 0.
-\]
+\end{equation}
 
 Par conséquent, il n’y a \textbf{aucun décalage d’énergie net à l’ordre 1} : c’est uniquement à l’ordre 2 que l’interaction induit un potentiel stationnaire, correspondant au déplacement AC-Stark.
 
@@ -206,6 +219,14 @@ Cette correction donne lieu à un \emph{potentiel effectif} ressenti par l’ato
 \end{itemize}
 
 \bigskip
+
+Ce phénomène s’interprète naturellement comme un effet de second ordre en théorie des perturbations indépendantes du temps. La correction d’énergie associée à l’état \( \ket{g} \) s’écrit :
+
+\begin{equation}
+\delta E_g^{(2)} =  \frac{|\bra{e} \operator{H}_{\text{int}} \ket{g}|^2}{\hbar \Delta}.
+\end{equation}
+Cette correction est responsable de l’apparition d’un potentiel effectif ressenti par l’atome, appelé \emph{potentiel dipolaire optique}.
+
 
 \subsection{Expression explicite du potentiel dipolaire}
 
