@@ -40,10 +40,10 @@ Le formalisme utilisé repose sur une description quantique du couplage dipolair
 
 \paragraph{Cadre sans potentiel vecteur.}
 
-Soit une particule de masse $m$ couplée à un champ électromagnétique. Dans une jauge $\mathcal{J} \equiv (\operatorvec{A}, \Phi)$, le quadrivecteur potentiel s’écrit $A^\mu = \left\{ A^0 \equiv \Phi/c,\, A^i \equiv \operatorvec{A} \right\}$. Si l’on définit la dérivée covariante comme $\mathcal{D}_\mu = \partial_\mu + \frac{iq}{\hbar} A_\mu = \{ \mathcal{D}_t \equiv \partial_t + \frac{iq}{\hbar} \Phi , \operatorvec{\mathcal{D}} = \operatorvec{\nabla} - \frac{iq}{\hbar} \operatorvec{A}  \} $, l’équation de Schrödinger régissant l’évolution de la fonction d’onde $\vert \psi \rangle$  prend la forme manifestement invariante :
-\begin{eqnarray*}
-	i\hbar \mathcal{D}_t \vert \psi \rangle = \frac{1}{2m} \left( \frac{\hbar}{i} \operatorvec{\mathcal{D}} \right)^2 \vert \psi \rangle, & soit &  i\hbar \partial_t \vert \psi \rangle = H_{\mathcal{J}} \vert \psi \rangle , ~\mbox{avec}~	H_{\mathcal{J}} = \frac{1}{2m} (\operatorvec{P} - q \operatorvec{A})^2 + q\Phi
-\end{eqnarray*}
+Soit une particule de masse $m$ couplée à un champ électromagnétique. Dans une jauge $\mathcal{J} \equiv (\operatorvec{A}, \Phi)$, le quadrivecteur potentiel s’écrit $A^\mu = \left\{ A^0 \equiv \Phi/c,\, A^i \equiv \operatorvec{A} \right\}$. Si l’on définit la dérivée covariante comme $\mathcal{D}_\mu = \partial_\mu + \frac{iq}{\hbar} A_\mu = \{ \mathcal{D}_t \equiv \partial_t + \frac{iq}{\hbar} \Phi , \operatorvec{\mathcal{D}} = \operatorvec{\nabla} - \frac{iq}{\hbar} \operatorvec{A}  \} $, l’équation de Schrödinger régissant l’évolution de la fonction d’onde $\vert \psi \rangle$  prend la forme la forme :
+\begin{eqnarray}
+	i\hbar \mathcal{D}_t \vert \psi \rangle = \frac{1}{2m} \left( \frac{\hbar}{i} \operatorvec{\mathcal{D}} \right)^2 \vert \psi \rangle, \, \quad   i\hbar \partial_t \vert \psi \rangle = H_{\mathcal{J}} \vert \psi \rangle , ~\mbox{avec}~	H_{\mathcal{J}} = \frac{1}{2m} (\operatorvec{P} - q \operatorvec{A})^2 + q\Phi
+\end{eqnarray}
 
 
 \paragraph{Hamiltonien simplifié.}
@@ -53,17 +53,17 @@ Dans une autre jauge $\mathcal{J}'$, le potentiel s’écrit $A'^\mu = \{ \Phi'/
 F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu
 \)
 est invariant par changement de jauge. Dans cette nouvelle jauge , la dérivé corariante s'écrit $\mathcal{D}_\mu' = \partial_\mu + \frac{iq}{\hbar} A_\mu' = \{ \mathcal{D}_t' \equiv \partial_t + \frac{iq}{\hbar} ( \Phi - \partial_t \chi )   , \operatorvec{\mathcal{D}}' \equiv \operatorvec{\nabla} - \frac{iq}{\hbar} (\operatorvec{A} + \operatorvec{\nabla}\chi)\} $, l’équation de Schrödinger s'écrit
-\begin{eqnarray*}
+\begin{eqnarray}
 	i\hbar \mathcal{D}_t' \vert \psi' \rangle = \frac{1}{2m} \left( \frac{\hbar}{i} \operatorvec{\mathcal{D}}' \right)^2 \vert \psi' \rangle, & soit &  i\hbar \partial_t \vert \psi' \rangle = H_{\mathcal{J}'} \vert \psi' \rangle , ~\mbox{avec}~	H_{\mathcal{J}'} = -q\partial_t \chi + \tilde{H}_{\mathcal{J}},% \frac{1}{2m} (\operatorvec{P} - q \operatorvec{A})^2 + q\Phi
-\end{eqnarray*}
-avec $\vert \psi'\rangle = \operator{T}_\chi(t) \vert \psi\rangle$, $\operator{T}_\chi(t) \equiv \exp\left( \frac{iq}{\hbar} \chi(\operatorvec{R}, t) \right)$ et $\tilde{H}_{\mathcal{J}} = \operator{T}_\chi H_{\mathcal{J}}\operator{T}_\chi^\dag = \frac{1}{2m} ( \operatorvec{P} - q  ( \operatorvec{A} + \operatorvec{\nabla}\chi  )  )^2 + q \Phi $. Je choisie $\chi = - \operatorvec{R}\cdot\operatorvec{A}$ (ie $\mathcal{J}' \equiv (\operatorvec{A})$). $\operator{T}_\chi(t)$ devient un operateur translation de $iq \operatorvec{A}$ dans l’espace des impultion , et l'opérateur champs électrique transverse étant $\operatorvec{E}_\perp = - \partial_t \operatorvec{A}$. L'Hamiltonien $H_{\mathcal{J}'}$ devient :
-\begin{eqnarray*}
+\end{eqnarray}
+avec $\vert \psi'\rangle = \operator{T}_\chi(t) \vert \psi\rangle$, $\operator{T}_\chi(t) \equiv \exp\left( \frac{iq}{\hbar} \chi(\operatorvec{R}, t) \right)$ et $\tilde{H}_{\mathcal{J}} = \operator{T}_\chi H_{\mathcal{J}}\operator{T}_\chi^\dag = \frac{1}{2m} ( \operatorvec{P} - q  ( \operatorvec{A} + \operatorvec{\nabla}\chi  )  )^2 + q \Phi $. Je choisie $\chi = - \operatorvec{R}\cdot\operatorvec{A}$ (\ie $\mathcal{J}' \equiv (\operatorvec{A})$). $\operator{T}_\chi(t)$ devient un operateur translation de $iq \operatorvec{A}$ dans l’espace des impultion , et l'opérateur champs électrique transverse étant $\operatorvec{E}_\perp = - \partial_t \operatorvec{A}$. L'Hamiltonien $H_{\mathcal{J}'}$ devient :
+\begin{eqnarray}
 	\operator{H}_{\mathcal{J}'} & = & 	\tilde{\operator{H}}_{\mathcal{J}}	+ \operator{H}_{\text{int}},
-\end{eqnarray*}
+\end{eqnarray}
 avec $\tilde{H}_{\mathcal{J}} = \frac{1}{2m}\operatorvec{P}^2 +q \Phi$. L’opérateur de couplage atome-rayonnement quantifié est donné par :
-\(
+\begin{eqnarray}
 \operator{H}_{\text{int}} = - \operatorvec{D} \cdot \operatorvec{E}_\perp,
-\)
+\end{eqnarray}
 où \(\operatorvec{D}\) est l’opérateur de moment dipolaire électrique, défini par :
 \(
 \operatorvec{D} = q \operatorvec{R}.
@@ -92,6 +92,7 @@ Un atome neutre placé dans un champ électrique $\operatorvec{E}_\perp$ dévelo
 
 Dans cette configuration, l’énergie potentielle est minimale là où l’intensité du champ est maximale. L’atome est alors attiré vers les régions de forte intensité du champ électrique : on parle de \textit{piège dipolaire optique}, ou encore de \textit{pince optique}.
 
+
 % INSERTION FIGURE 2 niveaux 
 \begin{figure}[!htb]
 \centering
@@ -113,10 +114,18 @@ Dans cette configuration, l’énergie potentielle est minimale là où l’inte
 
 \subsection{Système à deux niveaux et interaction avec le champ.}
 
+Ici pour donner une visons simplement, on vas considerer un atomes à 2 niveaux.
 
-Considérons un atome modélisé par deux états, le fondamental $\ket{g}$ d'énergie $\hbar \omega_g$  et l’excité $\ket{e}$ d'énergie $\hbar \omega_e$, couplés par le champ électrique $\operatorvec{E}_\perp(\vec{r} , t ) = \operatorvec{\mathcal{E}}(\vec{r}) \cos ( \omega t )  $. le champ laser est loin de la résonance avec l’état excité $\ket{e}$ , c’est-à-dire que le désaccord $\Delta = \omega - \omega_{e\rightarrow g}$ (avec la fréquence de transition $\omega_{g\rightarrow e} = \omega_e - \omega_g $ ) est grand comparé à la fréquence de Rabi définissant le couplage entre le dipôle et le champ 
-\[\Omega(\vec{r}) = -  \bra{e} \operatorvec{D} \cdot \operatorvec{\mathcal{E}}(\vec{r}) \ket{g}/\hbar = - \vec{d}_{g\leftrightarrow e } \cdot  \vec{\mathcal{E}}(\vec{r}) /\hbar,
-\] avec $\vec{d}_{g\leftrightarrow e } = \bra{e} \operatorvec{D} \ket{g} $ l’élément de matrice dipolaire réel entre $\ket{g}$ et $\ket{g}$. 
+\medskip
+
+Considérons un atome modélisé par deux états, le fondamental $\ket{g}$ d'énergie $\hbar \omega_g$  et l’excité $\ket{e}$ d'énergie $\hbar \omega_e$, couplés par le champ électrique $\operatorvec{E}_\perp(\vec{r} , t ) = \operatorvec{\mathcal{E}}(\vec{r}) \cos ( \omega t )  $. le champ laser est loin de la résonance avec l’état excité $\ket{e}$ , c’est-à-dire que le désaccord $\Delta = \omega - \omega_{\scriptscriptstyle g\rightarrow e}$ (avec la fréquence de transition $\omega_{\scriptscriptstyle g\rightarrow e} = \omega_e - \omega_g $ ) est grand comparé à la fréquence de Rabi définissant le couplage entre le dipôle et le champ 
+\begin{eqnarray}
+	\Omega(\vec{r}) & = & -  \bra{e} \operatorvec{D} \cdot \operatorvec{\mathcal{E}}(\vec{r}) \ket{g}/\hbar\\
+	& = &- \vec{d}_{e\leftrightarrow g } \cdot  \vec{\mathcal{E}}(\vec{r}) /\hbar,	
+\end{eqnarray}
+
+
+avec $\vec{d}_{\scriptscriptstyle e\leftrightarrow g } = \bra{e} \operatorvec{D} \ket{g} $ l’élément de matrice dipolaire réel entre $\ket{g}$ et $\ket{e}$. 
 
 \vspace{1em}
 % INSERTION FIGURE
