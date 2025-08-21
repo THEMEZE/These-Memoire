@@ -120,8 +120,8 @@ Ici pour donner une visons simplement, on vas considerer un atomes à 2 niveaux.
 
 Considérons un atome modélisé par deux états, le fondamental $\ket{g}$ d'énergie $\hbar \omega_g$  et l’excité $\ket{e}$ d'énergie $\hbar \omega_e$, couplés par le champ électrique $\operatorvec{E}_\perp(\vec{r} , t ) = \operatorvec{\mathcal{E}}(\vec{r}) \cos ( \omega t )  $. le champ laser est loin de la résonance avec l’état excité $\ket{e}$ , c’est-à-dire que le désaccord $\Delta = \omega - \omega_{\scriptscriptstyle g\rightarrow e}$ (avec la fréquence de transition $\omega_{\scriptscriptstyle g\rightarrow e} = \omega_e - \omega_g $ ) est grand comparé à la fréquence de Rabi définissant le couplage entre le dipôle et le champ 
 \begin{eqnarray}
-	\Omega(\vec{r}) & = & -  \bra{e} \operatorvec{D} \cdot \operatorvec{\mathcal{E}}(\vec{r}) \ket{g}/\hbar\\
-	& = &- \vec{d}_{\scriptscriptstyle g\leftrightarrow e } \cdot  \vec{\mathcal{E}}(\vec{r}) /\hbar,	
+	\Omega(\vec{r}) & = & -  \bra{e} \operatorvec{D} \cdot \operatorvec{\mathcal{E}}(\vec{r}) \ket{g}/\hbar \label{chap7:eq.Omega.1}\\
+	& = &- \vec{d}_{\scriptscriptstyle g\leftrightarrow e } \cdot  \vec{\mathcal{E}}(\vec{r}) /\hbar\label{chap7:eq.Omega.2},	
 \end{eqnarray}
 
 
@@ -145,7 +145,7 @@ Il est relié à la durée de vie \(\tau\) de l’état \(\ket{e}\) par \(\Gamma
 Dans le cas d’une transition dipolaire électrique de type S–P, il peut être calculé à partir de l’électrodynamique quantique selon la formule :
 \begin{equation}
 	\Gamma = \frac{\omega_{\scriptscriptstyle g\rightarrow e}^3}{3 \pi \varepsilon_0 \hbar c^3} 
-	| \vec{d}_{\scriptscriptstyle g \leftrightarrow e} |^2,
+	| \vec{d}_{\scriptscriptstyle g \leftrightarrow e} |^2, \label{chap7:eq.Gamma.1}
 \end{equation}
 où \(\varepsilon_0\) est la permittivité du vide et \(c\) la vitesse de la lumière. 
 
@@ -171,9 +171,9 @@ le champ ne peut alors induire qu’une \emph{transition virtuelle} \(\ket{g} \t
 \paragraph{Effet de second ordre : origine du potentiel dipolaire.}
 
 \noindent Toutefois, même si le champ laser ne permet pas de peupler réellement l’état excité, il peut induire des transitions \emph{virtuelles} via l’interaction dipolaire \(  \operator{H}_{\text{int}} \). Le système passe temporairement par l’état \( \ket{e} \) sans s’y stabiliser :
-\[
+\begin{equation}
 \ket{g} \xrightarrow{\quad \operator{H}_{\text{int}} \quad} \ket{e} \xrightarrow{\quad \operator{H}_{\text{int}} \quad} \ket{g},
-\]
+\end{equation}
 Ce processus modifie l’énergie propre de l’état \( \ket{g} \), générant un \textbf{décalage AC-Stark}, interprété comme un \emph{potentiel dipolaire}.
 
 \bigskip
@@ -185,7 +185,7 @@ Ce processus modifie l’énergie propre de l’état \( \ket{g} \), générant 
 L’atome est dans l’état fondamental \( \ket{g} \). Son énergie propre est simplement :  
 \begin{equation}
 E_g^{(0)} = E_g.
-\]
+\end{equation}
 
 \item \textbf{Ordre 1} — pas de correction diagonale :  
 
@@ -208,24 +208,31 @@ Ainsi, non seulement \( \delta E_g^{(1)}(t) \sim \cos(\omega t) \) est une oscil
 Par conséquent, il n’y a \textbf{aucun décalage d’énergie net à l’ordre 1} : c’est uniquement à l’ordre 2 que l’interaction induit un potentiel stationnaire, correspondant au déplacement AC-Stark.
 
 
-\item \textbf{Ordre 2} — transition virtuelle :  
-On applique alors la théorie des perturbations au second ordre, ce qui donne la correction :
+\item \textbf{Ordre 2} — transitions virtuelles :  
+À l’ordre 2 de la théorie des perturbations indépendantes du temps, la correction d’énergie associée à l’état fondamental \(\ket{g}\) s’écrit
 
 \begin{equation}
-\delta E_g^{(2)} =  \frac{|\bra{e} \operator{H}_{\text{int}} \ket{g}|^2}{\hbar \Delta},
+\delta E_g^{(2)} =  
+ \left( 
+\frac{|\bra{e} \operator{H}_{\text{int}} \ket{g}|^2}{\hbar(\omega - \omega_{\scriptscriptstyle g\rightarrow e})}
++ \frac{|\bra{e} \operator{H}_{\text{int}} \ket{g}|^2}{\hbar(\omega + \omega_{\scriptscriptstyle g\rightarrow e})}
+\right).
 \end{equation}
 
-Cette correction donne lieu à un \emph{potentiel effectif} ressenti par l’atome dans son état fondamental, appelé \textbf{potentiel dipolaire optique}.
+Le premier terme, en \(1/(\omega - \omega_{\scriptscriptstyle g\rightarrow e}) = 1/\Delta\), correspond au processus \emph{quasi-résonant} qui domine lorsque le laser est proche d’une transition atomique. 
+Le second terme, en \(1/(\omega + \omega_{\scriptscriptstyle g\rightarrow e})\), est dit \emph{anti-résonant}. 
+Dans l’approximation de l’ordre tournant (ou approximation séculière, RWA), ce terme est négligé car il est fortement décalé en énergie (\(\omega + \omega_{\scriptscriptstyle g\rightarrow e} \gg \omega_{\scriptscriptstyle g\rightarrow e}\)).
+
+On obtient alors, dans cette approximation, la correction simplifiée
+
+\begin{equation}
+\delta E_g^{(2)} \simeq \frac{|\bra{e} \operator{H}_{\text{int}} \ket{g}|^2}{\hbar \Delta}. \label{chap7:eq.E_g(2).1}
+\end{equation}
+
 \end{itemize}
 
-\bigskip
+Cette correction est responsable de l’apparition d’un \emph{potentiel effectif} ressenti par l’atome dans son état fondamental, appelé \textbf{potentiel dipolaire optique}.
 
-Ce phénomène s’interprète naturellement comme un effet de second ordre en théorie des perturbations indépendantes du temps. La correction d’énergie associée à l’état \( \ket{g} \) s’écrit :
-
-\begin{equation}
-\delta E_g^{(2)} =  \frac{|\bra{e} \operator{H}_{\text{int}} \ket{g}|^2}{\hbar \Delta}.
-\end{equation}
-Cette correction est responsable de l’apparition d’un potentiel effectif ressenti par l’atome, appelé \emph{potentiel dipolaire optique}.
 
 
 \subsection{Expression explicite du potentiel dipolaire}
@@ -238,17 +245,27 @@ On considère un champ électrique de la forme :
 où \( \vec{u} \) est un vecteur de polarisation unitaire, et \( {\mathcal{E}}(\vec{r}) \) est l’amplitude complexe spatiale du champ.
 
 
-\paragraph{Potentiel dipolaire}.
-La correction d’énergie à l’ordre 2 s’écrit alors :
-\begin{equation}
-	U_{\mathrm{dip}}(\vec{r}) = \delta E_g^{(2)} = \frac{\hbar \, \Omega^2(\vec{r})}{4 \Delta},\label{eq:Udip1}
+\paragraph{Potentiel dipolaire.}
+En utilisant l'expression de la fréquence de Rabi \eqref{chap7:eq.Omega.1}, la correction d’énergie à l’ordre 2 \eqref{chap7:eq.E_g(2).1}, que l’on notera \emph{potentiel dipolaire} (\ie \(U_{\mathrm{dip}}(\vec{r}) \equiv \delta E_g^{(2)}\)), s’écrit alors :
+\begin{equation}\label{chap7:eq.dip.1}
+	U_{\mathrm{dip}}(\vec{r}) = \frac{\hbar \, \Omega^2(\vec{r})}{4 \Delta} ,
 \end{equation}
-et en exprimant la fréquence de Rabi \( \Omega \) via \( \Gamma \) et \( I_{\mathrm{sat}} \), on obtient la forme opérationnelle suivante du potentiel :
+
+\medskip
+
+En utilisant l’expression de l’intensité locale du champ laser 
+\(
+I(\vec{r}) = \frac{1}{2} \varepsilon_0 c \, |\vec{\mathcal{E}}(\vec{r})|^2,
+\) 
+de l’intensité de saturation 
+\(
+I_{\mathrm{sat}} = \frac{\hbar \, \omega_{\scriptscriptstyle e \rightarrow g}^3 \, \Gamma}{12 \pi c^2},
+\) 
+de la largeur naturelle \eqref{chap7:eq.Gamma.1} et de la fréquence de Rabi \eqref{chap7:eq.Omega.2}, le potentiel dipolaire \eqref{chap7:eq.dip.1} s'écrit sous la forme opérationnelle du potentiel dipolaire devient :
 \begin{equation}
-	U_{\mathrm{dip}}(\vec{r}) = \frac{\hbar \Gamma^2}{8 I_{\mathrm{sat}}} \cdot \frac{I(\vec{r})}{\Delta},
-	\label{eq:Udip2}
+	U_{\mathrm{dip}}(\vec{r}) = \frac{\hbar \, \Gamma^2}{8 \, I_{\mathrm{sat}}} \; \frac{I(\vec{r})}{\Delta},
+	\label{chap7:eq.dip.2}
 \end{equation}
-où : \( I(\vec{r}) = \frac{1}{2} \varepsilon_0 c |\vec{\mathcal{E}}(\vec{r})|^2\) est l’intensité locale du champ laser et \( I_{\mathrm{sat}}  = \frac{\hbar \omega_{e \rightarrow g}^3 \Gamma}{12 \pi c^2}\) est l’intensité de saturation.
 
 
 Cette forme montre que le potentiel dipolaire est proportionnel à l’intensité lumineuse locale. 
