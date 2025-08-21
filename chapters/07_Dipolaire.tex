@@ -112,20 +112,21 @@ Dans cette configuration, l’énergie potentielle est minimale là où l’inte
 \end{figure}
 
 
-\subsection{Système à deux niveaux et interaction avec le champ.}
+\subsection{Système à deux niveaux et interaction avec le champ}
 
-Ici pour donner une visons simplement, on vas considerer un atomes à 2 niveaux.
-
-\medskip
-
-Considérons un atome modélisé par deux états, le fondamental $\ket{g}$ d'énergie $\hbar \omega_g$  et l’excité $\ket{e}$ d'énergie $\hbar \omega_e$, couplés par le champ électrique $\operatorvec{E}_\perp(\vec{r} , t ) = \operatorvec{\mathcal{E}}(\vec{r}) \cos ( \omega t )  $. le champ laser est loin de la résonance avec l’état excité $\ket{e}$ , c’est-à-dire que le désaccord $\Delta = \omega - \omega_{\scriptscriptstyle g\rightarrow e}$ (avec la fréquence de transition $\omega_{\scriptscriptstyle g\rightarrow e} = \omega_e - \omega_g $ ) est grand comparé à la fréquence de Rabi définissant le couplage entre le dipôle et le champ 
+Pour donner une vision simplifiée du phénomène, on considère un atome modélisé par {\bf deux niveaux} : l’état fondamental \(\ket{g}\) d’énergie \(\hbar \omega_g\) et l’état excité \(\ket{e}\) d’énergie \(\hbar \omega_e\), couplés par un champ électrique 
+\(\operatorvec{E}_\perp(\vec{r},t) = \operatorvec{\mathcal{E}}(\operatorvec{r}) \cos(\omega t)\). 
+On suppose que le champ laser est {\bf désacordé par rapport à la résonance}, c’est-à-dire que le désaccord
+\(
+\Delta \doteq \omega - \omega_{\scriptscriptstyle g\rightarrow e}
+\)
+(avec la fréquence de transition \(\omega_{\scriptscriptstyle g\rightarrow e} \doteq \omega_e - \omega_g\),
+est {\bf grand devant la fréquence de Rabi}, qui caractérise le couplage dipôle–champ :  
 \begin{eqnarray}
-	\Omega(\vec{r}) & = & -  \bra{e} \operatorvec{D} \cdot \operatorvec{\mathcal{E}}(\vec{r}) \ket{g}/\hbar \label{chap7:eq.Omega.1}\\
-	& = &- \vec{d}_{\scriptscriptstyle g\leftrightarrow e } \cdot  \vec{\mathcal{E}}(\vec{r}) /\hbar\label{chap7:eq.Omega.2},	
+	\Omega(\vec{r}) &=& - {\bra{e} \operatorvec{D} \cdot \operatorvec{\mathcal{E}}(\vec{r}) \ket{g}}/{\hbar} \label{chap7:eq.Omega.1} \\
+	&=& - {\vec{d}_{\scriptscriptstyle g \leftrightarrow e} \cdot \operatorvec{\mathcal{E}}(\operatorvec{r})}/{\hbar}, \label{chap7:eq.Omega.2}
 \end{eqnarray}
-
-
-avec $\vec{d}_{\scriptscriptstyle g\leftrightarrow e } = \bra{e} \operatorvec{D} \ket{g} $ l’élément de matrice dipolaire réel entre $\ket{g}$ et $\ket{e}$. 
+où \(\vec{d}_{\scriptscriptstyle g \leftrightarrow e} = \bra{e} \hat{\vec{D}} \ket{g}\) est l’élément de matrice dipolaire réel entre les niveaux \(\ket{g}\) et \(\ket{e}\).
 
 \vspace{1em}
 % INSERTION FIGURE
@@ -239,7 +240,7 @@ Cette correction est responsable de l’apparition d’un \emph{potentiel effect
 
 \subparagraph{Champ électrique appliqué.}
 On considère un champ électrique de la forme :
-\begin{equation}
+\begin{equation}\label{chap7:eq.elec.clas.1}
 \vec{E}_\perp(\vec{r},t) = \frac{1}{2} \vec{\mathcal{E}}(\vec{r}) \, e^{-i\omega t} + \text{c.c.}, \quad \mbox{avec}  \, \vec{\mathcal{E}}(\vec{r}) =  {\mathcal{E}}(\vec{r})\, \vec{u}
 \end{equation}
 où \( \vec{u} \) est un vecteur de polarisation unitaire, et \( {\mathcal{E}}(\vec{r}) \) est l’amplitude complexe spatiale du champ.
@@ -259,24 +260,28 @@ I(\vec{r}) = \frac{1}{2} \varepsilon_0 c \, |\vec{\mathcal{E}}(\vec{r})|^2,
 \) 
 de l’intensité de saturation 
 \(
-I_{\mathrm{sat}} = \frac{\hbar \, \omega_{\scriptscriptstyle e \rightarrow g}^3 \, \Gamma}{12 \pi c^2},
+I_{\mathrm{sat}} = \frac{\hbar \, \omega_{\scriptscriptstyle g \rightarrow e}^3 \, \Gamma}{12 \pi c^2},
 \) 
-de la largeur naturelle \eqref{chap7:eq.Gamma.1} et de la fréquence de Rabi \eqref{chap7:eq.Omega.2}, le potentiel dipolaire \eqref{chap7:eq.dip.1} s'écrit sous la forme opérationnelle du potentiel dipolaire devient :
+de la largeur naturelle \eqref{chap7:eq.Gamma.1} et de la fréquence de Rabi \eqref{chap7:eq.Omega.2}, on obtient également :
+\begin{equation}
+	\Omega^2(\vec{r}) = \frac{I(\vec{r})}{I_{\mathrm{sat}}} \frac{\Gamma^2}{2}.
+\end{equation}
+
+Le potentiel dipolaire \eqref{chap7:eq.dip.1} s’écrit alors sous la forme opérationnelle suivante :
 \begin{equation}
 	U_{\mathrm{dip}}(\vec{r}) = \frac{\hbar \, \Gamma^2}{8 \, I_{\mathrm{sat}}} \; \frac{I(\vec{r})}{\Delta},
 	\label{chap7:eq.dip.2}
 \end{equation}
+ce qui montre que le potentiel dipolaire est proportionnel à l’intensité lumineuse locale.
 
-
-Cette forme montre que le potentiel dipolaire est proportionnel à l’intensité lumineuse locale. 
-
+\medskip
 
 Ce potentiel permet de décrire le confinement des atomes dans des régions où \( I(\vec{r}) \) est élevé (ou faible, selon le signe de \( \Delta \)), formant ainsi des barrières optiques contrôlables avec une résolution sub-micronique.
 
 
 \subparagraph{Conditions de validité.}
 
-Les expressions~\eqref{eq:Udip1} et \eqref{eq:Udip2}  pour le potentiel dipolaire est obtenue sous les hypothèses suivantes, qui assurent la validité du modèle à deux niveaux et du traitement perturbatif :
+Les expressions~\eqref{chap7:eq.dip.1} et \eqref{chap7:eq.dip.2}  pour le potentiel dipolaire est obtenue sous les hypothèses suivantes, qui assurent la validité du modèle à deux niveaux et du traitement perturbatif :
 
 \begin{itemize}[label = $\bullet$]
   \item \textbf{Réduction à un sous-espace résonant} : le champ est quasi-résonant avec une seule transition atomique, ce qui suppose que le désaccord est faible devant les fréquences optiques impliquées, i.e. $|\Delta| \ll \omega, \omega_{\scriptstyle g \rightarrow e}$. Cela permet de restreindre le système à deux niveaux et d’ignorer les autres transitions dipolaires.
@@ -337,12 +342,16 @@ Dans le cas d’un désaccord bleu (\( \Delta > 0 \)), les atomes sont repoussé
 
 \subparagraph{Diffusion spontanée résiduelle.}
 
-Un autre aspect important de l’interaction lumière-matière est la diffusion spontanée induite par le champ lumineux. Même lorsque le champ est fortement dé-tuné et que l’état excité n’est que virtuellement peuplé, une faible probabilité de transition réelle subsiste. Elle conduit à l’émission spontanée de photons, accompagnée d’un transfert aléatoire d’impulsion à l’atome, ce qui génère un chauffage du nuage atomique.
+Un autre aspect important de l’interaction lumière-matière est la diffusion spontanée induite par le champ lumineux. Même lorsque le champ est fortement désaccordé et que l’état excité n’est que virtuellement peuplé, une faible probabilité de transition réelle subsiste. Elle conduit à l’émission spontanée de photons, accompagnée d’un transfert aléatoire d’impulsion à l’atome, ce qui génère un chauffage du nuage atomique.
 
 Le taux de diffusion spontanée dans le régime dispersif s’écrit :
+%\begin{eqnarray}
+%\Gamma_{\mathrm{sp}}(\operatorvec{r}) = \frac{\Gamma \, \Omega^2(\operatorvec{r})}{4 \Delta^2}
+%= \frac{\Gamma^3}{8 I_{\mathrm{sat}}} \cdot \frac{I(\operatorvec{r})}{\Delta^2}.
+%\label{eq:GammaSp}
+%\end{eqnarray}
 \begin{eqnarray}
-\Gamma_{\mathrm{sp}}(\operatorvec{r}) = \frac{\Gamma \, \Omega^2(\operatorvec{r})}{4 \Delta^2}
-= \frac{\Gamma^3}{8 I_{\mathrm{sat}}} \cdot \frac{I(\operatorvec{r})}{\Delta^2}.
+\Gamma_{\mathrm{sp}}(\operatorvec{r}) =  \frac{\Gamma^3}{8 I_{\mathrm{sat}}} \cdot \frac{I(\operatorvec{r})}{\Delta^2}.
 \label{eq:GammaSp}
 \end{eqnarray}
 
@@ -356,21 +365,26 @@ Il est donc crucial, pour limiter le réchauffement, de travailler à fort désa
 
 \subparagraph{Optimisation du régime dispersif pour un potentiel donné.}
 
-À partir des expressions~\eqref{eq:Udip2} et~\eqref{eq:GammaSp}, on peut analyser comment minimiser le taux de diffusion spontanée \( \Gamma_{\mathrm{sp}} \), sous la contrainte de produire un potentiel dipolaire \( U_{\mathrm{dip}} \) fixé.
+À partir des expressions~\eqref{chap7:eq.Gamma.1} et~\eqref{eq:GammaSp}, on peut analyser comment minimiser le taux de diffusion spontanée \( \Gamma_{\mathrm{sp}} \), sous la contrainte de produire un potentiel dipolaire \( U_{\mathrm{dip}} \) fixé.
 
 On observe en effet que :
-\[
-U_{\mathrm{dip}}(\vec{r}) \propto \frac{I(\vec{r})}{\Delta}, \quad \text{tandis que} \quad \Gamma_{\mathrm{sp}}(\vec{r}) \propto \frac{I(\vec{r})}{\Delta^2}.
-\]
-
+\begin{eqnarray}
+	U_{\mathrm{dip}}(\vec{r}) \propto \frac{I(\vec{r})}{\Delta}, \quad \text{tandis que} \quad \Gamma_{\mathrm{sp}}(\vec{r}) \propto \frac{I(\vec{r})}{\Delta^2}.	
+\end{eqnarray}
 À potentiel \( U_{\mathrm{dip}} \) fixé, cela implique que :
-\[
-I(\vec{r}) \propto \Delta \quad \Rightarrow \quad \Gamma_{\mathrm{sp}}(\vec{r}) \propto \frac{1}{\Delta}.
-\]
-
+\begin{eqnarray}
+	I(\vec{r}) \propto \Delta \quad \Rightarrow \quad \Gamma_{\mathrm{sp}}(\vec{r}) \propto \frac{1}{\Delta}.
+\end{eqnarray}
 Autrement dit, pour produire un potentiel donné, le taux de diffusion diminue linéairement avec \( |\Delta| \). Il est donc avantageux de travailler à grand désaccord : plus \( \Delta \) est grand, plus l’intensité requise est élevée, mais moins le taux de diffusion est important.
 
+\medskip
+
 Ce raisonnement montre que l’on n’a pas véritablement un « compromis » entre \( I \) et \( \Gamma_{\mathrm{sp}} \), mais plutôt une {\em stratégie optimale} : à potentiel fixé, augmenter le désaccord est toujours bénéfique vis-à-vis du chauffage.
+
+\medskip
+
+Cependant, d’un point de vue pratique, l’augmentation de l’intensité \(I\) pose des contraintes expérimentales : puissance laser plus élevée, coûts financiers plus importants et difficultés techniques accrues. 
+
 
 
 \section{Piégeage dipolaire d’un atome à plusieurs niveaux}
@@ -381,81 +395,205 @@ Le modèle à deux niveaux est suffisant pour introduire le concept de piégeage
 
 \subsubsection{Description quantique de l’atome et du champ laser}
 
-Considérons un atome immobile possédant un état fondamental \( \ket{g} \) et une série d’états excités \( \ket{e_i} \), d’énergies respectives \( \hbar\omega_g \) et \( \hbar\omega_i \). Le champ laser est quantifié dans un volume \( V \), polarisé selon \( \vec{u} \), et d'expression 
-\[
-\operatorvec{E}_\perp(t) = \operator{\mathcal{E}} \vec{u} \cos(\omega t) \quad \longrightarrow \quad \operator{E}_\perp = \sqrt{\frac{\hbar \omega}{2\varepsilon_0 V}} \, \vec{u} \, (\operator{a} + \operator{a}^\dagger),
-\]
+\paragraph{Quantification de champ laser.}
+
+Considérons un atome immobile possédant un état fondamental \( \ket{g} \) et une série d’états excités \( \ket{e_i} \), d’énergies respectives \( \hbar\omega_g \) et \( \hbar\omega_{e_i} \). Le champ laser \eqref{chap7:eq.elec.clas.1} est quantifié dans un volume \( V \), polarisé selon \( \vec{u} \),  et d'expression \cite{??}
+%\begin{eqnarray}
+%	\operatorvec{E}_\perp(t) = \operator{\mathcal{E}} \vec{u} \cos(\omega t) \quad \longrightarrow \quad \operator{E}_\perp = \sqrt{\frac{\hbar \omega}{2\varepsilon_0 V}} \, \vec{u} \, (\operator{a} + \operator{a}^\dagger),	
+%\end{eqnarray}
+\begin{eqnarray}\label{chap7:eq.elec.quat.1}
+	\operatorvec{E}_\perp = \sqrt{\frac{\hbar \omega}{2\varepsilon_0 V}} \, \vec{u} \, (\operator{a} + \operator{a}^\dagger),	
+\end{eqnarray}
 où \( \operator{a} \) et \( \operator{a}^\dagger \) sont les opérateurs d’annihilation et de création de photons à la fréquence \( \omega \).
 
-L’hamiltonien total du système « atome + champ » s’écrit alors :
-\[
-\operator{H} = \operator{H}_{\mathrm{at}} + \operator{H}_{\mathrm{L}} + \operator{H}_{\mathrm{int}},
-\]
+\medskip
+
+
+\paragraph{Champ cohérent et états de Fock.} Le champ électromagnétique émis par le laser est un état \textbf{cohérent}, noté \( \ket{\alpha} \), qui est une superposition d’états de Fock \( \ket{N} \) avec une distribution de Poisson centrée autour d’une valeur moyenne \( \langle N \rangle  = \vert \alpha \vert ^2 \gg 1 \). Cela signifie que les composantes principales du champ se trouvent dans une bande étroite \( \Delta N \ll \langle N \rangle \). Dans cette situation, les amplitudes de transition impliquant des changements d’un seul photon, comme \( \bra{N} \operatorvec{E}_\perp \ket{N+1} \), varient très peu avec \( N \), et l’on peut faire l’approximation :
+\begin{eqnarray}
+\bra{N} \operatorvec{E}_\perp \ket{N+1} \approx \sqrt{\frac{\hbar \omega}{2\varepsilon_0 V}}  \sqrt{N+1} \, \vec{u} \simeq \sqrt{\frac{\hbar \omega \langle N \rangle}{2\varepsilon_0 V}} \, \vec{u} .
+\end{eqnarray}
+Ainsi, l’élément de matrice global devient simplement proportionnel à l’amplitude classique du champ.
+
+Ainsi, dans l’approximation cohérente et intense (\(\langle N \rangle \gg 1\)), le champ quantique peut être remplacé par un {\bf champ classique}  :
+\begin{equation}
+	\operatorvec{E}_\perp \longrightarrow  \operator{\mathcal{E}} \, \operatorvec{u} \cos(\omega t),
+\end{equation}
+ce qui justifie l’usage des amplitudes de champ classiques dans le calcul de la fréquence de Rabi et du potentiel dipolaire.
+
+\medskip
+
+\paragraph{Hamiltonien total.}
+L’hamiltonien total du système « atome + champ » s’écrit alors \cite{??} :
+\begin{eqnarray}
+\operator{H} = \operator{H}_{\mathrm{at}} + \operator{H}_{\mathrm{L}} + \operator{H}_{\mathrm{int}},	
+\end{eqnarray}
+avec 
 dans le formalisme {\bf atome + champ quantifié}, aussi appelé {\bf formalisme de l’atome habillé} , avec :
 \begin{itemize}[label = $\bullet$]
-	\item \(\operator{H}_{\mathrm{at}} = \sum_i \hbar \omega_i \ket{e_i}\bra{e_i} \) l’hamiltonien de l’atome. Il décrit les états propres internes (typiquement les niveaux électroniques) sans interaction avec le champ. Ici, chaque état excité $\ket{e_i}$ est associé à une énergie $\hbar \omega_i$;
-	\item \(\operator{H}_{\mathrm{L}} = \hbar \omega \left(\operator{a}^\dagger \operator{a} + \frac{1}{2}\right)\) l’hamiltonien du {\bf champ électromagnétique quantifié} dans un mode unique (celui du laser). Il est représenté comme un oscillateur harmonique quantique avec énergie $ \hbar \omega $  par photon, et opérateurs \( \operator{a} \) , \( \operator{a}^\dagger \) de création/annihilation de photons. Le terme $\tfrac12 \hbar \omega $est l’énergie du vide (qui peut être ignorée dans la plupart des cas);
-	\item $\operator{H}_{\mathrm{int}} = - \operatorvec{D} \cdot \operatorvec{E}_\perp$ : interaction \textbf{dipolaire quantifiée} entre l’atome et le champ électrique transverse $\operatorvec{E}_\perp$.L’Hamiltonien décrivant cette interaction, dans l’\textit{approximation des grandes longueurs d’onde} ($\lambda \gg \langle \vec{r} \rangle$, où $\vec{r}$ est la position relative de l’électron par rapport au noyau), prend la forme de l’\textbf{Hamiltonien dipolaire électrique}~\cite{CohenTannoudjiPhotonsAtomes, SteckRubidium87}. L’opérateur de moment dipolaire atomique $\operatorvec{D}$ s’écrit :
-\(
-\operatorvec{D} = \sum_{e_i} \vec{d}_{g \rightarrow e_i} \ket{g} \bra{e_i} + \text{h.c.}
-\)
-où $\vec{d}_{g \rightarrow e_i} = \bra{g} \operatorvec{D} \ket{e_i}$ est l’élément de matrice dipolaire entre les états $\ket{g}$ et $\ket{e_i}$, et ``h.c.'' désigne le terme hermitien conjugué. 
-Cette forme exprime que seules les transitions dipolaires électriques autorisées par les règles de sélection (parité, moment angulaire) contribuent au couplage.
-
+	\item \(\operator{H}_{\mathrm{at}} = \sum_{e_i} \hbar \omega_{\scriptscriptstyle g \rightarrow e_i } \ket{e_i}\bra{e_i} \), l’hamiltonien de l’atome. Il décrit les états propres internes (typiquement les niveaux électroniques) sans interaction avec le champ. Ici, chaque état excité $\ket{e_i}$ est associé à une énergie $\hbar \omega_i$;
+	\item \(\operator{H}_{\mathrm{L}} = \hbar \omega \left(\operator{a}^\dagger \operator{a} + \frac{1}{2}\right)\), l’hamiltonien du {\bf champ électromagnétique quantifié} dans un mode unique (celui du laser). Il est représenté comme un oscillateur harmonique quantique avec énergie $ \hbar \omega $  par photon, et opérateurs \( \operator{a} \) , \( \operator{a}^\dagger \) de création/annihilation de photons. Le terme $\tfrac12 \hbar \omega$ est l’énergie du vide (qui peut être ignorée dans la plupart des cas);
+	\item $\operator{H}_{\mathrm{int}} = - \operatorvec{D} \cdot \operatorvec{E}_\perp$, l’interaction \textbf{dipolaire quantifiée} entre l’atome et le champ électrique transverse $\operatorvec{E}_\perp$ \eqref{chap7:eq.elec.quat.1} s’écrit :
+		\begin{eqnarray}
+			\operator{H}_{\mathrm{int}} 
+			= \sqrt{\frac{\hbar \omega}{2\varepsilon_0 V}} \, (\operatorvec{D} \cdot \vec{u}) \, (\operator{a} + \operator{a}^\dagger).
+		\end{eqnarray}
+		Dans l’\textit{approximation des grandes longueurs d’onde} ($\lambda \gg \langle \vec{r} \rangle$, où $\vec{r}$ désigne la coordonnée électronique relative au noyau), cet Hamiltonien prend la forme de l’\textbf{Hamiltonien dipolaire électrique}~\cite{CohenTannoudjiPhotonsAtomes, SteckRubidium87}.  L’opérateur de moment dipolaire atomique $\operatorvec{D}$ se décompose comme
+		\(
+		\operatorvec{D} 
+		= \sum_{e_i} \vec{d}_{g \leftrightarrow e_i} \, \ket{g} \bra{e_i} + \text{h.c.},
+		\)
+		où $\vec{d}_{g \leftrightarrow e_i} = \bra{g} \operatorvec{D} \ket{e_i}$ est l’élément de matrice dipolaire entre les états $\ket{g}$ et $\ket{e_i}$, et ``h.c.'' désigne le terme hermitien conjugué.  
+		
+		\medskip
+		
+		Cette écriture traduit le fait que seules les transitions dipolaires électriques permises par les règles de sélection (parité et conservation du moment angulaire) participent au couplage avec le champ quantifié.
+	
 \end{itemize}
+
+\paragraph{Équivalence entre champ quantique et champ classique}
+
+Considérons un champ électromagnétique monochromatique de fréquence \( \omega \), quantifié dans un volume \( V \), contenant en moyenne \( \langle N \rangle \) photons.
+
+\begin{itemize}[label = $\bullet$]
+  \item Du point de vue quantique, l’énergie moyenne d’un champ dans un seul mode est donnée par :
+  \(
+  \langle \operator{H}_{\mathrm{L}} \rangle = \hbar \omega \left( \langle N \rangle + \frac{1}{2} \right).
+  \)
+  En négligeant l’énergie du point zéro \( \frac{1}{2} \hbar \omega \), qui ne contribue pas aux transitions physiques, on obtient :
+  \begin{eqnarray}
+  E_{\mathrm{quantique}} = \langle N \rangle \hbar \omega.
+  \end{eqnarray}
+
+  \item Du point de vue classique, une onde électromagnétique de champ électrique \( \operatorvec{E}_\perp(t) = \operator{\mathcal{E}} \cos(\omega t) \vec{u} \) transporte une densité d’énergie électrique :
+  \(
+  u_E = \frac{1}{2} \varepsilon_0\mathcal{E}^2,
+  \)
+  ce qui donne une énergie totale dans le volume \( V \) :
+  \begin{eqnarray}
+  E_{\mathrm{classique}} = \frac{1}{2} \varepsilon_0 \mathcal{E}^2 V.
+  \end{eqnarray}
+  
+
+	En identifiant ces deux expressions dans un seul mode, on obtient la relation fondamentale :
+	\begin{eqnarray}
+		\langle N \rangle \hbar \omega = \frac{1}{2} \varepsilon_0 \mathcal{E}^2 V,
+	\end{eqnarray}
+	qui permet d’exprimer l’amplitude du champ électrique \( E_0 \) en fonction du nombre moyen de photons \( \langle N \rangle \) dans le champ laser.
+\end{itemize}
+
+\medskip
 
 
 \subsubsection{États habillés et structure des niveaux}
 
-Les états propres de l’Hamiltonien non-interactif \( \operator{H}_{\mathrm{at}} + \operator{H}_{\mathrm{L}} \) sont les produits tensoriels \( \ket{g, N} \) et \( \ket{e_i, N} \), décrivant un atome dans l’état \( \ket{g} \) ou \( \ket{e_i} \) avec \( N \) photons dans le mode du champ laser. Leurs énergies respectives sont \( E_g = \hbar \omega_{g} + N \hbar \omega \) et \( E_i = \hbar \omega_{e_i}  + N \hbar \omega \).
-
-On parle d’« états habillés » pour désigner cette base atomique + champ, qui servira à construire les états propres du système complet en présence d’interaction. L’interaction dipolaire \( \operator{H}_{\text{int}} = - \operatorvec{D} \cdot \operatorvec{E}_\perp \) couple les états \( \ket{g, N+1} \) et \( \ket{e_i, N} \) via l’absorption d’un photon. Ce sont les seules transitions significatives, les autres étant très hors-résonance et négligées dans l’approximation séculaire.
-
-
-\subsubsection{Traitement perturbatif et décalage d’énergie}
-
-Le champ étant loin de la résonance avec les états \( \ket{e_i} \), on applique la théorie des perturbations indépendantes du temps au second ordre. L’interaction induit un décalage de l’énergie de l’état \( \ket{f} \) donné par :
-
+Les états propres de l’Hamiltonien non-interactif 
+\( \operator{H}_{\mathrm{at}} + \operator{H}_{\mathrm{L}} \) 
+sont les produits tensoriels \( \ket{g, N} \) et \( \ket{e_i, N} \), décrivant un atome dans l’état 
+\( \ket{g} \) ou \( \ket{e_i} \) avec \( N \) photons dans le mode du champ laser. 
+Leurs énergies respectives sont :
 \[
-\delta E_f^{(2)} = \sum_{e_i} \frac{|\bra{e_i, N} \operator{H}_{\mathrm{int}} \ket{g, N+1}|^2}{E_i - E_g }.
+E_{g,N} = \hbar \omega_{g} + N \hbar \omega, 
+\qquad 
+E_{e_i,N} = \hbar \omega_{e_i}  + N \hbar \omega.
 \]
-\subsubsection{Annulation de la correction d’énergie au premier ordre}
 
-Dans le cadre de la théorie des perturbations indépendantes du temps, la correction d’énergie au premier ordre pour un état \( \ket{i} \) est donnée par :
-\[
-\delta E_i^{(1)} = \bra{i} \hat{H}_{\mathrm{int}} \ket{i}.
-\]
-Dans le cas de l’interaction dipolaire, l’opérateur d’interaction \( \operator{H}_{\text{int}} = - \operatorvec{D} \cdot \operatorvec{E}_\perp \) est de nature vectorielle, donc \emph{de parité impaire}. En revanche, les états électroniques \( \ket{g} \), \( \ket{e_i} \), etc., sont des états de parité définie.
+On parle d’« états habillés » pour désigner cette base atome + champ, qui servira à construire 
+les états propres du système complet en présence d’interaction. 
+L’interaction dipolaire 
+\( \operator{H}_{\text{int}} = - \operatorvec{D} \cdot \operatorvec{E}_\perp \) 
+couple les états \( \ket{g, N+1} \) et \( \ket{e_i, N} \) via l’absorption d’un photon, 
+ainsi que \( \ket{g, N} \) et \( \ket{e_i, N+1} \) via une émission virtuelle. 
+Les autres transitions, fortement hors résonance, sont négligées dans l’approximation séculaire.
 
-Or’un opérateur de parité impaire possède des éléments diagonaux nuls dans une base d’états de parité bien définie. Ainsi :
-\[
-\bra{g} \operator{H}_{\text{int}}  \ket{g} = 0, \qquad \bra{e_i} \operator{H}_{\text{int}}  \ket{e_i} = 0.
-\]
-De manière générale, \( \operator{H}_{\text{int}}  \) ne couple que des états de parité opposée : il est donc purement hors-diagonal dans la base des états propres de \( \operator{H}_{\mathrm{at}} \).
+\medskip
 
-\bigskip
+\paragraph{Annulation de la correction d’énergie au premier ordre.}
 
-\noindent Il en résulte que la correction d’énergie au premier ordre est strictement nulle :
-\[
-\delta E_i^{(1)} = 0.
-\]
-La première contribution non nulle provient donc du second ordre, qui décrit des transitions virtuelles, telles que \( \ket{g} \to \ket{e_i} \to \ket{g} \), responsables du décalage AC-Stark (ou potentiel dipolaire optique).
+\begin{itemize}[label = $\bullet$] 
+	\item \textbf{Ordre 1 — pas de correction diagonale :}\\ 
+	Dans le cadre de la théorie des perturbations indépendantes du temps, 
+	la correction d’énergie au premier ordre pour un état \( \ket{i} \) est donnée par :
+	\begin{eqnarray}
+		\delta E_i^{(1)} = \bra{i} \hat{H}_{\mathrm{int}} \ket{i}.
+	\end{eqnarray}
 
-\subsubsection*{Approximation séculaire et sélection des transitions pertinentes}
+	Or, dans le cas de l’interaction dipolaire, l’opérateur 
+	\( \operator{H}_{\text{int}} = - \operatorvec{D} \cdot \operatorvec{E}_\perp \) 
+	est de parité impaire, alors que les états électroniques 
+	\( \ket{g}, \ket{e_i}, \dots \) ont une parité bien définie.  
 
-Dans le cadre du piégeage dipolaire, nous faisons l’hypothèse que le champ laser est \textbf{quasi-résonant} avec un \textbf{nombre restreint de transitions atomiques}. Autrement dit, la fréquence du laser \( \omega \) est suffisamment proche de certaines transitions \( \omega_{g \rightarrow e_i} = \omega_{e_i} - \omega_g  \) de l’atome, de sorte que le désaccord \( \Delta_i = \omega - \omega_{g \rightarrow e_i} \) est \textbf{petit devant les fréquences optiques} elles-mêmes :
+	\medskip
+
+	Un opérateur de parité impaire possède des éléments diagonaux nuls dans une base d’états 
+	de parité définie. Ainsi :
+	\begin{eqnarray}
+		\bra{g} \operator{H}_{\text{int}}  \ket{g} = 0, 
+		\qquad 
+		\bra{e_i} \operator{H}_{\text{int}}  \ket{e_i} = 0.
+	\end{eqnarray}
+	De manière générale, \( \operator{H}_{\text{int}} \) ne couple que des états de parité opposée, 
+	et il est donc purement hors-diagonal dans la base des états propres de \( \operator{H}_{\mathrm{at}} \).  
+
+	\medskip
+	Il en résulte que la correction d’énergie au premier ordre est strictement nulle :
+	\begin{eqnarray}
+		\delta E_i^{(1)} = 0.
+	\end{eqnarray}
+	La première contribution non nulle provient donc du second ordre, 
+	qui décrit des transitions virtuelles de type 
+	\begin{eqnarray}
+	\begin{array}{ccc}
+		\ket{g,N} & \xrightarrow{\quad \operator{H}_{\text{int}} \quad}& \ket{e,N-1} \\ 
+		\ket{g, N } &  \xleftarrow{\quad \operator{H}_{\text{int}} \quad} & \ket{e,N+1}    ,		
+	\end{array}		
+	\end{eqnarray}
+	responsables du décalage AC-Stark (ou potentiel dipolaire optique).\\
+
+	\item \textbf{Ordre 2 — décalage d’énergie :}\\	
+	Le champ étant loin de la résonance avec les états \( \ket{e_i} \), 
+	on applique la théorie des perturbations indépendantes du temps au second ordre. 
+	L’interaction induit un décalage de l’énergie de l’état \( \ket{g} \) donné par :
+	\begin{eqnarray}
+		\delta E_g^{(2)} 
+		= \sum_{e_i} \left (  
+		\frac{|\bra{e_i, N-1} \operator{H}_{\mathrm{int}} \ket{g, N}|^2}{E_{g,N} - E_{e_i, N-1}} 
+		+ \frac{|\bra{e_i, N+1} \operator{H}_{\mathrm{int}} \ket{g, N}|^2}{E_{g,N} - E_{e_i, N+1}}
+		\right).
+	\end{eqnarray}
+
+\end{itemize}
+
+\medskip
+
+\paragraph{Approximation séculaire et sélection des transitions pertinentes.}
+
+Dans le cadre du piégeage dipolaire, nous faisons l’hypothèse que le champ laser est \textbf{quasi-résonant} avec un \textbf{nombre restreint de transitions atomiques}. Autrement dit, la fréquence du laser \( \omega \) est suffisamment proche de certaines transitions \( \omega_{\scriptscriptstyle g \rightarrow e_i} = \omega_{e_i} - \omega_g  \) de l’atome, de sorte que le désaccord \( \Delta_i = \omega - \omega_{g \rightarrow e_i} \) est \textbf{petit devant les fréquences optiques} elles-mêmes :
 \(
-|\Delta_i| \ll \omega_L, \omega_{g \rightarrow e_i}.
+|\Delta_i| \ll \omega_L, \omega_{\scriptscriptstyle g \rightarrow e_i}.
+\)
+et 
+\(
+|\Delta_i|\gg \Gamma,\,\Omega .
 \)
 Cette hypothèse permet de simplifier l’analyse perturbative de l’interaction atome-laser : dans la somme intervenant dans la correction d’énergie au second ordre,seuls les \textbf{termes proches de la résonance} (i.e., pour lesquels \( E_g \simeq E_i \pm \hbar \omega \)) contribuent significativement à la somme. En effet, pour ces termes, le dénominateur devient \textbf{petit}, ce qui rend leur contribution \textbf{dominante}. Les autres transitions, très éloignées en énergie, ont des dénominateurs très grands, et leur influence devient négligeable. Cette \textbf{troncature de la somme perturbative} constitue l’\textbf{approximation séculaire}.
 
+\medskip
+
 Dans ce régime, l’interaction dipolaire sélectionne efficacement les couplages entre les états atomiques et photoniques \textbf{ayant une différence d’un seul photon} :
-\[
-\operator{H}_{\text{int}} : \ket{g, N+1} \longleftrightarrow \ket{e_i, N},
-\]
-où \( \ket{g, N+1} \) est un état fondamental avec \( N+1 \) photons, et \( \ket{e_i, N} \) un état excité \( e_i \) avec \( N \) photons.
+\begin{eqnarray*}
+	\ket{g, N+1} \xleftrightarrow{\quad \operator{H}_{\text{int}}\quad} \ket{e_i, N},	
+\end{eqnarray*}
+soit 
+\begin{eqnarray}
+		\delta E_g^{(2)} 
+		\simeq \sum_{e_i} \left (  
+		\frac{|\bra{e_i, N-1} \operator{H}_{\mathrm{int}} \ket{g, N}|^2}{\hbar ( \omega - \omega_{\scriptscriptstyle g \rightarrow e_i } )} 
+		\right).
+\end{eqnarray}
 
 \medskip
+
 
 Dans notre cas spécifique, nous utilisons un \textbf{faisceau laser à environ 770~nm}, soit légèrement \textbf{au bleu} des raies principales du rubidium 87 :
 \begin{itemize}[label = $\bullet$]
@@ -483,45 +621,6 @@ Les éléments intervenant dans l’équation de second ordre~, qui donne la cor
 \[
 -\bra{e_i, N} \operatorvec{D} \cdot \operatorvec{E}_\perp \ket{g, N + 1}.
 \]
-
-
-\paragraph{Champ cohérent et états de Fock.} Le champ électromagnétique émis par le laser est un état \textbf{cohérent}, noté \( \ket{\alpha} \), qui est une superposition d’états de Fock \( \ket{N} \) avec une distribution de Poisson centrée autour d’une valeur moyenne \( \langle N \rangle \). Cela signifie que les composantes principales du champ se trouvent dans une bande étroite \( \Delta N \ll \langle N \rangle \). Dans cette situation, les amplitudes de transition impliquant des changements d’un seul photon, comme \( \bra{N} \operatorvec{E}_\perp \ket{N+1} \), varient très peu avec \( N \), et l’on peut faire l’approximation :
-\[
-\bra{N} \operatorvec{E}_\perp \ket{N+1} \approx \mathcal{E} \sqrt{N+1} \simeq \mathcal{E} \sqrt{\langle N \rangle}.
-\]
-Ainsi, l’élément de matrice global devient simplement proportionnel à l’amplitude classique du champ.
-
-\paragraph{Équivalence entre champ quantique et champ classique}
-
-Considérons un champ électromagnétique monochromatique de fréquence \( \omega \), quantifié dans un volume \( V \), contenant en moyenne \( \langle N \rangle \) photons.
-
-\begin{itemize}[label = $\bullet$]
-  \item Du point de vue quantique, l’énergie moyenne d’un champ dans un seul mode est donnée par :
-  \(
-  \langle \hat{H}_{\mathrm{L}} \rangle = \hbar \omega \left( \langle N \rangle + \frac{1}{2} \right).
-  \)
-  En négligeant l’énergie du point zéro \( \frac{1}{2} \hbar \omega \), qui ne contribue pas aux transitions physiques, on obtient :
-  \[
-  E_{\mathrm{quantique}} = \langle N \rangle \hbar \omega.
-  \]
-
-  \item Du point de vue classique, une onde électromagnétique de champ électrique \( \vec{E}_\perp(t) = \mathcal{E} \cos(\omega t) \vec{u} \) transporte une densité d’énergie électrique :
-  \(
-  u_E = \frac{1}{2} \varepsilon_0\mathcal{E}^2,
-  \)
-  ce qui donne une énergie totale dans le volume \( V \) :
-  \[
-  E_{\mathrm{classique}} = \frac{1}{2} \varepsilon_0 \mathcal{E}^2 V.
-  \]
-\end{itemize}
-
-En identifiant ces deux expressions dans un seul mode, on obtient la relation fondamentale :
-\[
-\langle N \rangle \hbar \omega = \frac{1}{2} \varepsilon_0 \mathcal{E}^2 V,
-\]
-qui permet d’exprimer l’amplitude du champ électrique \( E_0 \) en fonction du nombre moyen de photons \( \langle N \rangle \) dans le champ laser.
-
-
 
 \paragraph{Conclusion.} En conséquence, l’élément de matrice d’interaction s’écrit finalement :
 \[
