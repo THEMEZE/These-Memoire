@@ -975,7 +975,7 @@ $D_1 : 795~nm$}};
 	% DFB 
   \node[laser source] (laser) {DBR};
   \node[fiber ,  right=1mm of laser , draw = none] (fiberinput) {};
-  \node[below=-1.15cm of fiberinput] {\color{\colorSix} \tiny  Fibre};
+  \node[below=-1.05cm of fiberinput] {\color{\colorSix} \tiny  Fibre};
   \node[lens ,  right=1mm of fiberinput] (collimateurinput) {};  
   \node[below=-0cm of laser] {\color{\colorOne} $\scriptscriptstyle  \lambda = 770.5~nm$};
   \node[below=-0cm of collimateurinput] {\color{\colorFour} \tiny  Collimateur};
@@ -1004,6 +1004,7 @@ $D_1 : 795~nm$}};
   %% TA 
   \node[lens ,  left=5mm of lambda2TA] (lens1TA) {};
   \node[TA ,  left=2mm of lens1TA , xscale = 1  ] (TA) {};
+  \node[below=-0cm of TA] { \color{\colorOne} TA};
   \node[lens ,  left=2mm of TA] (lens2TA) {};
   
   
@@ -1053,13 +1054,13 @@ $D_1 : 795~nm$}};
   
   
   \node[AOM, left=of Iso] (Aom) {};
-  \node[below=-0cm of Aom] {\color{\colorOne}\tiny Aom};
+  \node[below=-0cm of Aom] {\color{\colorOne}\tiny AOM};
   
   \node[lens ,  left=10mm of Aom] (collimateuroutput) {};
   \node[below=-0cm of collimateuroutput] {\color{\colorFour} \tiny  Collimateur};
   
-  \node[fiber ,  left=5mm of collimateuroutput , xscale = -1 ] (fiberoutput) {};
-  \node[below=-1.15cm of fiberoutput] {\color{\colorSix} \tiny  Fibre};
+  \node[fiber ,  left=20mm of collimateuroutput , xscale = -1 ] (fiberoutput) {};
+  \node[below=-1.05cm of fiberoutput] {\color{\colorSix} \tiny  Fibre};
   %\node[ left=2cm of fiberoutput  ] (Out) {};
   
   \node[above=2cm of mirrorTA2] (Out) {};
