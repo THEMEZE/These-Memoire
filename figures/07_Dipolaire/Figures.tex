@@ -895,11 +895,14 @@ $D_1 : 795~nm$}};
     line width=0.2ex , rounded corners=0.0ex , color = colorOne , left color=colorOne, right color=colorOne , middle color=colorTwo , shading angle=90,
     path picture={
       \draw[<-, thick] 
-        ([shift={(-0.3,0)}]path picture bounding box.center)
-        -- ([shift={(0.3,0)}]path picture bounding box.center);
-      \draw[<-, thick, red] 
-        ([shift={(0.3,-0.3)}]path picture bounding box.center)
-        -- ([shift={(-0.3,-0.3)}]path picture bounding box.center);
+        ([shift={(-0.3,0.2)}]path picture bounding box.center)
+        -- ([shift={(0.3,0.2)}]path picture bounding box.center);
+        \draw[<-, thick] 
+        ([shift={(-0.3,-0.2)}]path picture bounding box.center)
+        -- ([shift={(0.3,-0.2)}]path picture bounding box.center);
+%      \draw[<-, thick, red] 
+%        ([shift={(0.3,-0.3)}]path picture bounding box.center)
+%        -- ([shift={(-0.3,-0.3)}]path picture bounding box.center);
     }
   }
 }
@@ -1070,7 +1073,7 @@ $D_1 : 795~nm$}};
 
   \draw[laser beam] (laser) -- (mirrord1) -- (mirrord2) -- (mirrorTA1) -- (mirrorTA2) -- (mirrorTele1)--(mirrorTele2) -- (Out) ;
 	
-	\drawgrid{-3.5}{7}{-1}{8};
+	%\drawgrid{-3.5}{7}{-1}{8};
 	
 	\draw[white] (-3.5,-1) rectangle (7,8) ;
 \end{tikzpicture}
