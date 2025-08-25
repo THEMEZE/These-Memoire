@@ -490,7 +490,7 @@ et son action sur $\ket{\{k_a\}}$ se traduit par :\\
 \textbf{Remarque :} 
 
 Cette construction n’est valable que pour un gaz \textbf{de particules libres, sans interaction}.  
-En présence d’un Hamiltonien avec interaction (par exemple dans le modèle de Lieb–Liniger), les états propres ne sont plus des produits d’ondes planes $\ket{\{k_a\}}$, et l’opérateur énergie cinétique $\operator{K}$ n’est plus diagonalisé dans cette base. Ce sont alors les états de Bethe qui diagonalise l’Hamiltonien complet (cinétique + interaction).
+En présence d’un Hamiltonien avec interaction (par exemple dans le modèle de Lieb–Liniger Sec \ref{chap1:sssec:LL}), les états propres ne sont plus des produits d’ondes planes $\ket{\{k_a\}}$, et l’opérateur énergie cinétique $\operator{K}$ n’est plus diagonalisé dans cette base. Ce sont alors les états de Bethe qui diagonalise l’Hamiltonien complet (cinétique + interaction).
 
 \medskip
 
@@ -577,18 +577,39 @@ où \( g \) est la constante de couplage.
 
 
 
-\subsubsection{Expression de l’Hamiltonien de Lieb-Liniger. }
+\subsubsection{Expression de l’Hamiltonien de Lieb-Liniger \gls{LL}. }\label{chap1:sssec:LL}
 
 À partir d’ici, on fixe $\hbar = m = 1 $. Ainsi, les dimensions (unités) des nombres d’onde $k$ et des vitesses ne sont plus différenciées.
 Dans le formalisme des opérateurs de champs, l’Hamiltonien d’un système soumis à des interactions ponctuelles est la somme de l’énergie cinétique $\operator{K}$ donnée par \eqref{eq.chap.1.cinietique.3}, et du terme d’interaction $\operator{V}$ introduit dans \eqref{chap.1:eq.rapel.opp.2.second.ponctuel.1} :
-%Le Hamiltonien du modèle est donné par
-%\begin{eqnarray}
-%	\operator{H} & = & \int dx \, \left [ \operator{\partial}_x \operator{\Psi}^\dag (x)\operator{\partial}_x \operator{\Psi}(x) + c \operator{\Psi}^\dag (x) \operator{\Psi}^\dag (x) \operator{\Psi} (x) \operator{\Psi} (x) \right ] \label{chap:1:ham.mod}
-%\end{eqnarray}
 \begin{eqnarray}\label{chap.1:eq.LL.champ.1}
 	\operator{H} & = & \int dx \, \operator{\Psi}^\dag (x)\left [-\frac{1}{2}\operator{\partial}_x^2 + \frac{g}{2}  \operator{\Psi}^\dag (x) \operator{\Psi} (x) \right ] \operator{\Psi} (x) \label{chap:1:ham.mod}.
 \end{eqnarray}
-Lorsqu’on applique cet Hamiltonien à un état de Fock à $N$ particules $\ket{\{\theta_1 , \cdots , \theta_N \}} $, où chaque paramètre $\theta_i$ est homogène à un nombre d’onde ou à une vitesse (mais pas nécessairement homogéne à un nombre d'onde $k$ d’où la notation $\theta$), on obtient — en utilisant les équations \eqref{eq.chap.1.cinietique.3} et \eqref{chap.1:eq.rapel.opp.2.second.ponctuel.2} : %, les règles de commutations (\ref{chap:1:com.1}) et la définition d'état de Fock (\ref{chap:eq.vide.fock}) impliquent que (cf Annex \ref{annex:N.part})
+%Lorsqu’on applique cet Hamiltonien à un état de Fock à $N$ particules $\ket{\{\theta_1 , \cdots , \theta_N \}} $, où chaque paramètre $\theta_i$ est homogène à un nombre d’onde ou à une vitesse (mais pas nécessairement homogéne à un nombre d'onde $k$ d’où la notation $\theta$), on obtient — en utilisant les équations \eqref{eq.chap.1.cinietique.4} et \eqref{chap.1:eq.rapel.opp.2.second.ponctuel.2} : \\
+
+\medskip
+
+
+Lorsqu’on applique cet Hamiltonien à un état à $N$ particules, il est important de distinguer deux situations :
+\begin{itemize}[label = $\bullet$]
+	\item {\bf Sans interaction ( $g =0$ )} : les états propres sont simplement les états de Fock en impulsion $\ket{\{k_a \}}$ définie en \eqref{eq.chap.1.ket.N}. Ce sont des produits d’ondes planes symétrisées.
+	\item {\bf Avec interaction ( $g \neq 0$ )} : les états propres ne sont plus des produits d’ondes planes. Ce sont les états de Bethe, que l’on note 
+		\begin{eqnarray}
+			\ket{\{\theta_a \}}	
+		\end{eqnarray}
+		où les paramètres $\theta_a$ jouent le rôle de {\bf quasi-moments (rapidités)}.Ceux-ci sont homogènes à un nombre d’onde ou à une vitesse, mais ne coïncident pas directement avec les impulsions libres $k_a$. La fonction d’onde correspondante est une combinaison linéaire de morceaux d’ondes planes, reliés par des phases de diffusion fixées par l’interaction locale.
+\end{itemize}
+
+\medskip
+
+Ainsi, la notation $\ket{\{\theta_a \}}$  est choisie pour rappeler que :
+\begin{itemize}[label = $\bullet$]
+	\item en absence d’interaction, $\theta_a = k_a$ et l’on retrouve les états de Fock,
+	\item en présence d’interaction, $\theta_a$ sont les quasi-moments de Bethe, qui généralisent les nombres d’onde libres.
+\end{itemize}
+
+\medskip
+
+En utilisant les équations \eqref{eq.chap.1.cinietique.4} et \eqref{chap.1:eq.rapel.opp.2.second.ponctuel.2}, on obtient : 
 \begin{eqnarray}\label{chap.1:eq.LL.champ.2}
 	\operator{H}\ket{\{\theta_a\}} =  \int d^Nz \, \operator{\mathcal{H}}_N \varphi_{\{\theta_a\}}(\{z_a\})\operator{\Psi}(z_1)\cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}, 
 \end{eqnarray}
@@ -609,30 +630,62 @@ avec $\{\theta_a\} \equiv \{ \theta_1 , \cdots , \theta_N \} $ et .
 
 \paragraph{Équation du mouvement associée.}
 
-L’équation du mouvement du champ \( \Psi(x) \) est obtenue à partir de l’équation de Heisenberg :
+L’équation du mouvement du champ \( \operator{\Psi}(x) \) s'obtient à partir de l’équation de Heisenberg :
 \begin{eqnarray}\label{chap.1:eq.GP.1}
-	i\operator{\partial}_t	\operator{\Psi} & = & [ \operator{\Psi} , \operator{H} ],
+	i\operator{\partial}_t	\operator{\Psi} & = & [ \operator{\Psi} , \operator{H} ].
 \end{eqnarray}
-ce qui, après évaluation explicite du commutateur (\ref{chap:1:com.1}), conduit à :
-%\begin{eqnarray}
-%	i \operator{\partial}_t \operator{\Psi}	 & = & - \operator{\partial}_x^2 \operator{\Psi} + 2c \operator{\Psi}^\dag\operator{\Psi} \operator{\Psi}
-%\end{eqnarray}
+En évaluant explicitement le commutateur (\ref{chap:1:com.1}), on trouve :
 \begin{eqnarray}
-	i \operator{\partial}_t \operator{\Psi}	 & = & - \frac{1}{2}\operator{\partial}_x^2 \operator{\Psi} + g \operator{\Psi}^\dag\operator{\Psi} \operator{\Psi}
+	i \operator{\partial}_t \operator{\Psi}	 & = & - \frac{1}{2}\operator{\partial}_x^2 \operator{\Psi} + g \operator{\Psi}^\dag\operator{\Psi} \operator{\Psi}.
 \end{eqnarray}
+Il est important de souligner que cette équation est encore {\bf quantique} : elle décrit l’évolution de l’opérateur de champ $\operator{\Psi}$.
 
-est appelée l'équation de \textbf{Schrödinger non linéaire (NS)}.
+\medskip
 
-Pour $g > 0$, l'état fondamental à température nulle est une sphère de Fermi. Seul ce cas sera considéré par la suite.
+En revanche, si l’on prend l’approximation dite de {\bf champ moyen}, où l’on remplace l’opérateur de champ par son espérance de valeur dans un état cohérent ou condensé
+\begin{eqnarray}
+	\Psi = \braket{\operator{\Psi}},		
+\end{eqnarray}
+on obtient alors l’équation de \textbf{Schrödinger non linéaire (NS)} (ou équation de Gross–Pitaevskii) pour une fonction d’onde classique :
+\begin{eqnarray}
+	i \partial_t \Psi	 & = & - \frac{1}{2}\partial_x^2 \Psi + g \vert \Psi \vert^2  \Psi.
+\end{eqnarray}
+Ainsi, l’appellation « équation de Schrödinger non linéaire » n’est pertinente qu’au niveau {\bf effectif classique} (champ moyen), et non au niveau fondamental de l’équation de Heisenberg pour les champs quantiques.
+
+%Pour $g > 0$, l'état fondamental à température nulle est une sphère de Fermi. Seul ce cas sera considéré par la suite.
 
 %\vspace{0.5cm}
 
+
 \paragraph{Conservation et commutation.}
-Les opérateurs nombre totale de particule $\operator{Q}$ et quantité tatole de mouvement  $\operator{Q}$  commutent avec l’Hamiltonien $\operator{H}$ du modèle de Lieb-Liniger :
+
+\subparagraph{À propos d’autres interactions.}
+
+La conservation des opérateurs nombre total de particules $\operator{Q}$ et quantité totale de mouvement $\operator{P}$ dépend uniquement des \textbf{symétries} de l’interaction, et non de sa force :  
+
+\begin{itemize}[label = $\bullet$]
+    \item Une interaction \textbf{locale et à deux corps} de type $g \, \operator{\Psi}^\dagger \operator{\Psi}^\dagger \operator{\Psi} \operator{\Psi}$ (cas du modèle de Lieb--Liniger) est invariante par $U(1)$ et par translation. Ainsi, $\operator{Q}$ et $\operator{P}$ sont conservés.  
+
+    \item Une interaction \textbf{à longue portée mais translationalement invariante} (par exemple un potentiel dipolaire uniforme, ou un potentiel $V(x-y)$ dépendant seulement de la distance relative) conserve encore $\operator{P}$, et si elle respecte la symétrie $U(1)$, alors $\operator{Q}$ reste aussi conservé.  
+
+    \item Une interaction \textbf{non uniforme ou dépendant explicitement de la position} (par exemple un potentiel externe $V(x)$, ou des bords durs) brise l’invariance par translation : $\operator{P}$ n’est alors plus conservé.  
+
+    \item Une interaction qui \textbf{crée ou détruit des particules} brise la symétrie $U(1)$ : $\operator{Q}$ n’est plus conservé.  
+\end{itemize}
+
+En résumé, la conservation de $\operator{Q}$ et $\operator{P}$ ne dépend pas de la nature microscopique de l’interaction, mais uniquement des \textbf{symétries correspondantes} de l’Hamiltonien.  
+
+\medskip
+
+\subparagraph{Interactions de contact.}
+
+Dans le cas particulier du modèle de Lieb--Liniger, les opérateurs nombre total de particules $\operator{Q}$ et quantité totale de mouvement $\operator{P}$ commutent avec l’Hamiltonien $\operator{H}$ :  
 \begin{eqnarray}
-[ \operator{H} , \operator{Q} ] = 0, \quad [ \operator{H} , \operator{P} ] = 0.
+[ \operator{H} , \operator{Q} ] = 0, 
+\qquad 
+[ \operator{H} , \operator{P} ] = 0.
 \end{eqnarray}
-Ils constituent ainsi des intégrales du mouvement. Cette propriété est une manifestation de la symétrie translationnelle du système (pour $\operator{P}$) et de la conservation du nombre total de particules (pour $\operator{Q}$).
+Ils constituent donc des \textbf{intégrales du mouvement}. Cette propriété reflète directement la conservation du nombre de particules (symétrie $U(1)$) et l’invariance par translation du système (symétrie spatiale).  
 
 \begin{mdframed}[
 	linewidth=0.5pt, 
@@ -645,15 +698,17 @@ Ils constituent ainsi des intégrales du mouvement. Cette propriété est une ma
     leftmargin=2pt,
     rightmargin=2pt
 	]
-	Nous verrons au chapitre (\ref{chap:relaxation}) que cette situation s’étend à une {\bf \em infinité d’intégrales du mouvement} dans les systèmes intégrables, ce qui permettra de construire l’ensemble de Gibbs généralisé (GGE).
+	Nous verrons au chapitre~(\ref{chap:relaxation}) que, dans les systèmes intégrables comme le Lieb--Liniger, cette situation s’étend à une {\bf \em infinité d’intégrales du mouvement}. 
+	Cette richesse supplémentaire de conservation conduira naturellement à l’introduction de l’ensemble de Gibbs généralisé (GGE).
 \end{mdframed}
 
+
 \paragraph{États propres et valeurs propres.}
-Les états propres $\ket{\{\theta_a\}}$, construits dans le cadre de la seconde quantification à partir de la solution du modèle de Lieb-Liniger, sont simultanément fonctions propres des opérateurs $\operator{Q}$, $\operator{P}$ et $\operator{K}$ :
+Les états propres $\ket{\{\theta_a\}}$, construits dans le cadre de la seconde quantification à partir de la solution du modèle de Lieb-Liniger, sont simultanément fonctions propres des opérateurs $\operator{Q}$, $\operator{P}$ et $\operator{H}$ :
 \begin{eqnarray}\label{chap1:eq.Q.P.K.theta.1}
 \operator{Q} \ket{\{\theta_a\}} = N \ket{\{\theta_a\}}, \quad
 \operator{P} \ket{\{\theta_a\}} = \left( \sum_{a=1}^N \theta_a \right) \ket{\{\theta_a\}}, \
-\operator{K} \ket{\{\theta_a\}} = \left( \frac{1}{2} \sum_{a=1}^N \theta_a^2 \right) \ket{\{\theta_a\}}.
+\operator{H} \ket{\{\theta_a\}} = \left( \frac{1}{2} \sum_{a=1}^N \theta_a^2 \right) \ket{\{\theta_a\}}.
 \end{eqnarray}
 
 \paragraph*{Conclusion.}

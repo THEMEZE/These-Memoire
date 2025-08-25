@@ -40,6 +40,82 @@ def compile_index(idx_path):
     except subprocess.CalledProcessError:
         print(f"❌ Erreur makeindex : {filename}")
 
+import subprocess
+from pathlib import Path
+
+def compile_indices(tex_path):
+    """
+    Compile l'index (.idx) et les acronymes (.acn) générés par LaTeX.
+    """
+    tex_path = Path(tex_path)
+    stem = tex_path.stem
+    cwd = tex_path.parent
+
+    # --- Index classique ---
+    idx_file = cwd / f"{stem}.idx"
+    if idx_file.exists():
+        try:
+            subprocess.run(
+                ["makeindex", idx_file.name],
+                cwd=cwd,
+                check=True,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL
+            )
+            print(f"✅ Index généré : {idx_file.stem}.ind")
+        except subprocess.CalledProcessError:
+            print(f"❌ Erreur makeindex sur {idx_file.name}")
+    else:
+        print(f"⚠️ Aucun .idx trouvé pour {stem}, index ignoré.")
+
+    # --- Acronymes glossaries ---
+    acn_file = cwd / f"{stem}.acn"
+    acr_file = cwd / f"{stem}.acr"
+    alg_file = cwd / f"{stem}.alg"
+    ist_file = cwd / "acronyms.ist"  # généré automatiquement par glossaries
+
+    if acn_file.exists():
+        try:
+            cmd = [
+                "makeindex",
+                "-s", str(ist_file) if ist_file.exists() else "acronyms.ist",
+                "-t", str(alg_file),
+                "-o", str(acr_file),
+                str(acn_file)
+            ]
+            subprocess.run(
+                cmd,
+                cwd=cwd,
+                check=True,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL
+            )
+            print(f"✅ Acronymes générés : {acr_file.name}")
+        except subprocess.CalledProcessError:
+            print(f"❌ Erreur makeindex sur {acn_file.name}")
+    else:
+        print(f"⚠️ Aucun .acn trouvé pour {stem}, acronymes ignorés.")
+
+def compile_acr(idx_path):
+    idx_path = Path(idx_path)
+    if not idx_path.exists():
+        print(f"⚠️ Aucun .idx trouvé pour {idx_path.stem}, index ignoré.")
+        return
+    cwd = idx_path.parent
+    filename = idx_path.name
+    try:
+        subprocess.run(
+            ["makeglossaries", filename],
+            cwd=cwd,
+            check=True,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL
+        )
+        print(f"✅ Index généré : {filename}")
+    except subprocess.CalledProcessError:
+        print(f"❌ Erreur makeindex : {filename}")
+
+
 def compile_bibtex(tex_stem):
     tex_stem = Path(tex_stem)
     cwd = tex_stem.parent
@@ -92,6 +168,8 @@ def compile_biblatex(tex_file, show_output=False):
 def compile_latex_index_bibtex(path):
     compile_latex(path + ".tex")      # 1ère passe LaTeX
     compile_index(path + ".idx")      # makeindex
+    #compile_indices(path + ".acn")
+    compile_acr(path)
     compile_bibtex(path)              # bibtex
     #compile_biblatex(path)              # biblatex
     compile_latex(path + ".tex")      # 2e passe LaTeX
@@ -105,7 +183,8 @@ def clean_auxiliary_files(tex_path):
 
     extensions = [
         ".aux", ".idx", ".ilg", ".ind", ".log",
-        ".maf", ".out", ".toc", ".bbl", ".blg"
+        ".maf", ".out", ".toc", ".bbl", ".blg",
+        ".acn" ,".acr" , ".alg", ".ist"
     ] + [f".mtc{i}" for i in range(15)]
 
     deleted_files = []
