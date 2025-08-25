@@ -40,7 +40,7 @@ Une fois ce cadre posé, nous généralisons le raisonnement au cas de \(N\) par
 
 \medskip
 
-Nous revenons ensuite sur le cas à deux particules, cette fois en tenant compte de l’interaction locale. L’analyse de ce système met en lumière les effets de l’interaction ponctuelle sur la régularité de la fonction d’onde et les conditions de raccord, ainsi que sur les modifications des équations de Bethe. Ce cas constitue une étape clé vers la généralisation à \(N\) particules.
+Nous traitons d'abord le cas à seulement deux particules, cette fois en tenant compte de l’interaction locale. L’analyse de ce système met en lumière les effets de l’interaction ponctuelle sur la régularité de la fonction d’onde et les conditions de raccord, ainsi que sur les modifications des équations de Bethe. Ce cas constitue une étape clé vers la généralisation à \(N\) particules.
 
 \medskip
 
@@ -341,9 +341,9 @@ L'opérateur $\operator{a}^\dagger_\lambda \operator{a}_\nu^{}$ fais la transiti
     leftmargin=2pt,
     rightmargin=2pt
 	]
-\subparagraph{Exemples : Énergie cinétique totale.}
+\subparagraph{Exemple : Énergie cinétique totale des particules libres.}
 
-Si l’on sait diagonaliser l’opérateur \( \operator{f} \), c’est-à-dire si l’on peut écrire :
+Si l’on sait diagonaliser l’opérateur à une particule \( \operator{f} \), c’est-à-dire si l’on peut écrire :
 \(
 	\operator{f} = \sum_k f_k \ket{k} \bra{k},
 \)
@@ -352,21 +352,29 @@ alors l’opérateur à $N$ corps associé s’écrit :
 	\operator{F} = \sum_k \bra{k} \operator{f} \ket{k} \operator{a}^\dagger_k \operator{a}_k^{}.
 \)
 On obtient ainsi une forme diagonale de \( \operator{F} \) en seconde quantification.
-%\begin{mdframed}[linewidth=0.5pt, backgroundcolor=gray!5, roundcorner=5pt]
-Un exemple immédiat est l'énergie des particules libres; on rappelle que pour une :
+
+Un exemple immédiat est celui des \textbf{particules libres sans interaction}. On rappelle que :
 \(
 	\operator{\mathcal{H}} \ket{k} = \varepsilon(k) \ket{k},
 \)
-avec $\varepsilon(k)$ l'énergie du mode $k$ \eqref{chap.1.rapel.libre.3}.
-Alors en injectant $\operator{f} = \operator{\mathcal{H}} ~( = \frac{\operator{p}^2}{2m})$ dans \eqref{chap.1:eq.rapel.opp.1.prim.1} on obtient l’énergie cinétique totale du système :
+avec $\varepsilon(k)$ l’énergie du mode $k$ \eqref{chap.1.rapel.libre.3}.
+En injectant $\operator{f} = \operator{\mathcal{H}} \,( = \frac{\operator{p}^2}{2m})$ dans \eqref{chap.1:eq.rapel.opp.1.prim.1}, on obtient l’énergie cinétique totale du système :
 \begin{equation}
 	\operator{K} = \sum_{k} \varepsilon(k) \, \operator{b}^\dagger_k \operator{b}_k^{}.\label{eq.chap.1.cinietique.1}
 \end{equation}
 
-Et pour $N$ particules, en écrivant l’état sous la forme~\eqref{eq.chap.1.ket.N}, en utilisant les relations de commutation~\eqref{chap:1:com.1.k} et la définition de l’état de Fock~\eqref{chap:eq.vide.fock.k}, on trouve que $\ket{\{k_a\}}$ est un état propre de $\operator{K}$ associé à l'énergie $\left( \sum_{i = 1}^N \varepsilon(k_i) \right)$, c’est-à-dire :
+Pour $N$ particules libres, en écrivant l’état sous la forme~\eqref{eq.chap.1.ket.N}, en utilisant les relations de commutation~\eqref{chap:1:com.1.k} et la définition de l’état de Fock~\eqref{chap:eq.vide.fock.k}, on trouve que $\ket{\{k_a\}}$ est un état propre de $\operator{K}$ associé à l’énergie
+\(
+	\sum_{i = 1}^N \varepsilon(k_i),
+\)
+c’est-à-dire :
 \begin{eqnarray}
 	\operator{K} \ket{\{k_a\}} = \left( \sum_{i = 1}^N \varepsilon(k_i) \right) \ket{\{k_a\}}.\label{eq.chap.1.cinietique.2}
 \end{eqnarray}
+
+%On insiste sur le fait que cette diagonalisation n’est valable que pour un gaz de particules \textbf{libres sans interaction}. 
+%Dès que des interactions sont présentes, les états propres du système ne sont plus simplement donnés par les produits d’ondes planes $\ket{\{k_a\}}$, et l’opérateur énergie cinétique $\operator{K}$ n’est plus diagonal dans cette base.
+
 \end{mdframed}
 
 \subparagraph{Dans la base continue des positions \( \{ \ket{x} \} \).}
@@ -387,27 +395,48 @@ En injectant les relation des changement de base d'état
     leftmargin=2pt,
     rightmargin=2pt
 ]
-\subparagraph{Exemples : Énergie cinétique totale.}
-Reprenons l'exemple de l'énergie cinétique totale avec  $\operator{f} = \frac{\operator{p}^2}{2m}$. En injectant $\bra{x} \operator{f} \ket{x'} = - \frac{\hbar^2}{2m} \operator{\partial}_{y}^2 \delta ( y - x )$ dans \eqref{chap.1:eq.rapel.opp.1.second.2} on réécrit l'opérateur énergie cinétique total $\operator{K}$ de l'équation \eqref{eq.chap.1.cinietique.1} :
+
+\subparagraph{Exemple : Énergie cinétique totale des particules libres.}
+
+Reprenons l’exemple de l’énergie cinétique totale avec  
+\(
+	\operator{f} = \frac{\operator{p}^2}{2m}.
+\) 
+En injectant 
+\(
+	\bra{x} \operator{f} \ket{x'} = - \frac{\hbar^2}{2m} \partial_{y}^2 \delta ( y - x )
+\) 
+dans \eqref{chap.1:eq.rapel.opp.1.second.2}, on réécrit l’opérateur énergie cinétique total $\operator{K}$ de l’équation \eqref{eq.chap.1.cinietique.1} :
 \begin{eqnarray}
 \operator{K} =  -\frac{\hbar^2}{2m} \int_0^L dx \, \operator{\Psi}^\dagger(x) \, \operator{\partial}_x^2 \operator{\Psi}(x)
 = \frac{\hbar^2}{2m} \int_0^L dx \, \operator{\partial}_x \operator{\Psi}^\dagger(x) \cdot \operator{\partial}_x \operator{\Psi}(x). \label{eq.chap.1.cinietique.3}
 \end{eqnarray}
-%En injectant l'expression \eqref{eq.chap.1.TF.1} dans \eqref{eq.chap.1.cinietique.3}, on retrouve la forme discrète \eqref{eq.chap.1.cinietique.1}, cette fois exprimée en termes des opérateurs $\operator{b}_k$.
 
-Lorsque cet Hamiltonien agit sur l’état de Fock à $N$ particules $\ket{\{k_a\}}$, les règles de commutation (\ref{chap:1:com.1}) ainsi que la définition des états de Fock (\ref{chap:eq.vide.fock}) impliquent (cf. Annexe \ref{annex:N.part}) :
+Lorsque cet Hamiltonien agit sur l’état de Fock à $N$ particules libres $\ket{\{k_a\}}$, les règles de commutation (\ref{chap:1:com.1}) ainsi que la définition des états de Fock (\ref{chap:eq.vide.fock}) impliquent (cf. Annexe \ref{annex:N.part}) :
 \begin{eqnarray}\label{eq.chap.1.cinietique.4}
 \operator{K}\ket{ \{k_a\}} =  \int_0^L d^N z \, \operator{\mathcal{K}}_N \, \varphi_{\{k_a\}}(\{z_a\} ) \operator{\Psi}(z_1) \cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}\, , \quad \mbox{avec} \quad \operator{\mathcal{K}}_N = -\sum_{i=1}^N \frac{\hbar^2\operator{\partial}_{z_i}^2}{2m}, 
 \end{eqnarray}
-%avec :
-%\[
-%	\operator{\mathcal{K}}_N = \sum_{i=1}^N \frac{\operator{p}_i^2}{2m},
-%\]
-où \( -i \hbar \operator{\partial}_{z_i} \) désigne l’opérateur impulsion de la position \( z_i \) particule.
+où \( -i \hbar \operator{\partial}_{z_i} \)  désigne l’opérateur impulsion associé à la coordonnée \( z_i \) de la $i$-ème particule.
+
+\medskip
+
+
+
 \end{mdframed}
 
 \subparagraph{Quantité de mouvement totale et nombre total de particules.}
-Dans l'exemple de l'énergie cinétique, l'opérateur  $\operator{f}$ est proportionnel à l'opérateur impulsion au carré $\operator{p}^2$. On peut appliquer un raisonnement similaire à d'autres observables : pour la {\bf quantité de mouvement totale}, on choisit $\operator{f} = \operator{p}$ (puissance 1), et pour le {\bf nombre total de particules}, on prend  $\operator{f} = \operator{p}^0$, c’est-à-dire l’identité. On note $\operator{Q}$ l'opérateur nombre total de particule et $\operator{P}$ l'opérateur quantité mouvement totale . En seconde quantification, ces opérateurs s'écrivent dans la base \( \{ \ket{k} \} \) : 
+Dans l'exemple de l'énergie cinétique, l'opérateur  $\operator{f}$ est proportionnel à l'opérateur impulsion au carré $\operator{p}^2$. On peut appliquer un raisonnement similaire à d'autres observables : pour le {\bf nombre total de particules}, on prend  $\operator{f} = \operator{p}^0$, c’est-à-dire l’identité et pour la {\bf quantité de mouvement totale}, on choisit $\operator{f} = \operator{p}$ (puissance 1). On note $\operator{Q}$ l'opérateur nombre total de particule et $\operator{P}$ l'opérateur quantité mouvement totale . 
+
+\medskip
+
+Ces observables sont liées à des symétries fondamentales du système : $\operator{Q}$ est associé à la symétrie $U(1)$ (conservation du nombre de particules) ; $\operator{P}$ est associé à la translation (conservation de la quantité de mouvement).
+
+Pour ces observables, les états $\ket{\{k_a\}}$ sont des états propres, et cela reste vrai \textbf{avec ou sans interaction}, tant que le système conserve ces symétries fondamentales. Ainsi, $\ket{\{k_a\}}$ diagonalise directement $\operator{Q}$ et $\operator{P}$, même en présence d’interactions locales qui respectent $U(1)$ et la translation.
+
+\medskip
+
+
+En seconde quantification, ces opérateurs s'écrivent dans la base \( \{ \ket{k} \} \) : 
 \begin{equation}
 	\operator{Q} = \sum_{k}  \operator{b}^\dagger_k \operator{b}_k^{} , \quad  \operator{P} = i\hbar\sum_{k} k \, \operator{b}^\dagger_k \operator{b}_k^{},\label{eq.chap.1.Q.P.k.1}
 \end{equation}
@@ -424,7 +453,7 @@ où l'expression symétrisée de $\operator{P}$ assure son hermiticité.\\
 Lorsqu'on applique ces opérateurs à l’état \(\ket{\{k_a\}}\), on obtient (comme pour l’énergie cinétique) :
 \begin{eqnarray}
 	\operator{Q}\ket{ \{k_a\}} =  \int_0^L d^N z \, \operator{\mathcal{N}}_N \, \varphi_{\{k_a\}}(\{z_a\} ) \operator{\Psi}(z_1) \cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}\, , \quad &\mbox{avec}& \quad \operator{\mathcal{N}}_N = \sum_{i=1}^N 1,\label{eq.chap.1.Q.1}\\
-	\operator{P}\ket{ \{k_a\}} =  \int_0^L d^N z \, \operator{\mathcal{P}}_N \, \varphi_{\{k_a\}}(\{z_a\} ) \operator{\Psi}(z_1) \cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}\, , \quad &\mbox{avec}& \quad \operator{\mathcal{P}}_N = -i\hbar \sum_{i=1}^N \operator{\partial}_{z_i}\label{eq.chap.1.P.1}.
+	\operator{P}\ket{ \{k_a\}} =  \int_0^L d^N z \, \operator{\mathcal{P}}_N \, \varphi_{\{k_a\}}(\{z_a\} ) \operator{\Psi}(z_1) \cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}\, , \quad &\mbox{avec}& \quad \operator{\mathcal{P}}_N = \hbar \sum_{i=1}^N \operator{\partial}_{z_i}\label{eq.chap.1.P.1}.
 \end{eqnarray}
 
 \begin{mdframed}[
@@ -438,21 +467,39 @@ Lorsqu'on applique ces opérateurs à l’état \(\ket{\{k_a\}}\), on obtient (c
     leftmargin=2pt,
     rightmargin=2pt
 	]
-\subparagraph{On s'avance sur le chapitre (\ref{chap:relaxation}).} , en voulant généraliser avec $\operator{f} = \operator{p}^q$ où $q$ est un entier. Soit dans la base \(\{\ket{k}\}\) : \(\operator{F} = \hbar^q \sum_k k^q \operator{b}_k^\dagger \operator{b}_k^{} \) et en l'appliquant à \(\ket{\{k_a\}}\) :  
+\subparagraph{On s'avance sur le chapitre (\ref{chap:relaxation}).} , en voulant généraliser avec $\operator{f} = \operator{p}^q$ où $q$ est un entier. Soit dans la base \(\{\ket{k}\}\) : \(\operator{F} = \hbar^q \sum_k k^q \operator{b}_k^\dagger \operator{b}_k^{} \) et en l'appliquant à \(\ket{\{k_a\}}\) :
+On peut généraliser cette construction en considérant des opérateurs à une particule de la forme $\operator{f} = \operator{p}^q$, où $q$ est entier. Dans la base impulsion \(\{\ket{k}\}\), l’opérateur à $N$ corps associé s’écrit : \(\operator{F} = \hbar^q \sum_k k^q \operator{b}_k^\dagger \operator{b}_k^{} \) et son action sur un état de Fock libre est immédiatement 
 \begin{eqnarray}\label{chap.1:eq.rapel.opp.1.second.3}
 	 \operator{F} \ket{\{k_a\}} = \hbar^q \left( \sum_{i = 1}^N k_i^q \right) \ket{\{k_a\}},
 \end{eqnarray}
-et dans la base \(\{\ket{x}\}\) : 	
+En représentation position \(\{\ket{x}\}\) , on obtient l’opérateur hermitisé \\	
 \(
 	\operator{F}  =  \frac{\hbar^q}2 \int_0^L \left \{  \operator{\Psi}^\dag(x) \operator{\partial}_x^q \operator{\Psi}(x) + (-1)^q \left [\operator{\partial}_x^q \operator{\Psi}^\dag(x)\right ]\operator{\Psi}(x)\right \} dx
 \)
-et en l'appliquant à \(\ket{\{k_a\}}\) : 
+et son action sur $\ket{\{k_a\}}$ se traduit par :\\ 
 \(
 	\operator{F}\ket{ \{k_a\}} =  \int_0^L d^N z \, \operator{\mathcal{F}}_N \, \varphi_{\{k_a\}}(\{z_a\} ) \operator{\Psi}(z_1) \cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}\, 
 \) \mbox{avec} 
 \(\operator{\mathcal{F}}_N = \hbar^q \sum_{i=1}^N (\operator{\partial}_{z_i})^q.
 \)
+
+\medskip
+
+
+
+\textbf{Remarque :} 
+
+Cette construction n’est valable que pour un gaz \textbf{de particules libres, sans interaction}.  
+En présence d’un Hamiltonien avec interaction (par exemple dans le modèle de Lieb–Liniger), les états propres ne sont plus des produits d’ondes planes $\ket{\{k_a\}}$, et l’opérateur énergie cinétique $\operator{K}$ n’est plus diagonalisé dans cette base. Ce sont alors les états de Bethe qui diagonalise l’Hamiltonien complet (cinétique + interaction).
+
+\medskip
+
+Pour $q \ge 2$, si l’on ajoute une interaction locale (comme dans le modèle de Lieb–Liniger), l’opérateur $\operator{F}$ à une particule n’est plus suffisant pour définir une charge conservée : il faut inclure des termes à deux corps (ou davantage) pour assurer la commutation avec l’Hamiltonien.  
+On passe ainsi progressivement des observables simples $\operator{Q}$ et $\operator{P}$, liées à des symétries fondamentales, aux \textbf{charges conservées d’intégrabilité} à plusieurs corps, qui sont précisément celles qui caractérisent les états de Bethe.
+
 \end{mdframed}
+
+
 
 \paragraph{Opérateurs à deux corps}
 

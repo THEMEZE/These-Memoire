@@ -38,6 +38,16 @@ Le formalisme utilisé repose sur une description quantique du couplage dipolair
 
 %(cf. Complément HIII du tome 1 de Cohen-Tannoudji)\\
 
+\subparagraph{Petites réserves et extensions}
+
+\begin{itemize}
+    \item Si un \textbf{potentiel externe} $V(x)$ est présent, ou si la translation est brisée (bords durs, conditions aux limites), la quantité de mouvement totale $P$ n’est plus conservée.
+    \item En présence d’un \textbf{champ électromagnétique} (jauge), le moment cinétique devient $\Pi = p - q A$ et l’expression de $P$ change.
+    \item De même, pour des \textbf{potentiels dipolaires} ou à longue portée, la forme des charges conservées peut être modifiée et nécessite de prendre en compte des contributions supplémentaires pour préserver les symétries pertinentes.
+\end{itemize}
+
+Ces considérations constituent une pré-introduction utile avant d’aborder les systèmes avec interactions complexes et les charges conservées d’ordre supérieur.
+
 \paragraph{Cadre sans potentiel vecteur.}
 
 Soit une particule de masse $m$ couplée à un champ électromagnétique. Dans une jauge $\mathcal{J} \equiv (\operatorvec{A}, \Phi)$, le quadrivecteur potentiel s’écrit $A^\mu = \left\{ A^0 \equiv \Phi/c,\, A^i \equiv \operatorvec{A} \right\}$. Si l’on définit la dérivée covariante comme $\mathcal{D}_\mu = \partial_\mu + \frac{iq}{\hbar} A_\mu = \{ \mathcal{D}_t \equiv \partial_t + \frac{iq}{\hbar} \Phi , \operatorvec{\mathcal{D}} = \operatorvec{\nabla} - \frac{iq}{\hbar} \operatorvec{A}  \} $, l’équation de Schrödinger régissant l’évolution de la fonction d’onde $\vert \psi \rangle$  prend la forme la forme :
@@ -1166,27 +1176,52 @@ Enfin, les troix lasers  se situent dans la zone de tolérence définie par les 
 
 Avec un waist de $w_0 = 1~\mu\text{m}$, les puissances minimales requises pour satisfaire les conditions $U_{dip}^{(min)}$ et $\Gamma_{sp}^{(max)}$ sont extrêmement faibles : environ $1.1~\mu\text{W}$ pour la DFB à $772.5~\text{nm}$, $0.3~\mu\text{W}$ pour la DBR à $778.0~\text{nm}$, et $1.4~\mu\text{W}$ pour la DBR à $770.5~\text{nm}$. Ces valeurs sont très largement inférieures aux puissances disponibles pour chacun de ces lasers, même en tenant compte des pertes optiques, ce qui confirme la faisabilité expérimentale du dispositif.
 
-\paragraph{Choix initial du waist.}
+\paragraph{Choix du waist pour les projets futurs.}
 
-Lors de la sélection initiale des lasers, une hypothèse conservative a été faite en supposant un waist focalisé de $w_0 = 300~\text{nm}$ au niveau des atomes. Ce choix était motivé par une estimation de l’échelle typique des variations du potentiel dans la boîte optique, et visait à garantir une intensité suffisante à petite échelle.
+On souhaite choisir une source laser adaptée à différents projets. 
+Notamment, on peut n’utiliser qu’un seul faisceau focalisé sur les atomes, et avec un acousto-optique dessiner un potentiel sur le plan focal des atomes. 
+L’avantage par rapport à la double barrière expliquée plus haut est qu’ici un seul faisceau suffit. 
+Il faut cependant que l’acousto-optique dessine plus rapidement que le temps de relaxation des atomes. 
+Ce projet est mené par Florence Nogrette. 
 
 \medskip
 
-Avec le recul, cette valeur s’est avérée trop pessimiste. Le système optique finalement mis en place permet des waists plus larges (de l’ordre du micron), mieux adaptés à la géométrie expérimentale et aux contraintes de focalisation. Cette hypothèse initialement sous-estimée a toutefois eu pour effet bénéfique de conduire à une surévaluation des puissances requises, fournissant une marge de sécurité bienvenue dans le dimensionnement des sources laser.
+Un autre projet, plus simple et utilisant également un seul faisceau, consiste à employer un faisceau gaussien avec un waist suffisamment grand pour recouvrir tous les atomes et à utiliser le DMD pour façonner un potentiel sur le plan des atomes. 
+Afin de garder une marge pour ces projets, nous avons choisi un waist de $300\,\mu\mathrm{m}$.
+ 
+
+%Lors de la sélection initiale des lasers, une hypothèse conservative a été faite en supposant un waist focalisé de $w_0 = 300~\text{nm}$ au niveau des atomes. Ce choix était motivé par une estimation de l’échelle typique des variations du potentiel dans la boîte optique, et visait à garantir une intensité suffisante à petite échelle.
+
+%\medskip
+
+%Avec le recul, cette valeur s’est avérée trop pessimiste. Le système optique finalement mis en place permet des waists plus larges (de l’ordre du micron), mieux adaptés à la géométrie expérimentale et aux contraintes de focalisation. Cette hypothèse initialement sous-estimée a toutefois eu pour effet bénéfique de conduire à une surévaluation des puissances requises, fournissant une marge de sécurité bienvenue dans le dimensionnement des sources laser.
 
 \medskip
 
-Avec un waist de $w_0 = 300~\mu\text{m}$, les puissances minimales requises augmentent considérablement en raison de la baisse d’intensité au centre du faisceau. On obtient alors des puissances nécessaires de l’ordre de $102~\text{mW}$ pour la DFB à $772.5~\text{nm}$, $30~\text{mW}$ pour la DBR à $778.0~\text{nm}$, et $127~\text{mW}$ pour la DBR à $770.5~\text{nm}$. Seul le laser à $778.0~\text{nm}$ satisfait cette condition sans amplification supplémentaire. En revanche, les deux autres lasers se trouvent sous-dimensionnés dans ce scénario, ce qui justifie le recours à un amplificateur optique dans le cas du laser à $770.5~\text{nm}$.
+%Avec un waist de $w_0 = 300~\mu\text{m}$, les puissances minimales requises augmentent considérablement en raison de la baisse d’intensité au centre du faisceau. On obtient alors des puissances nécessaires de l’ordre de $102~\text{mW}$ pour la DFB à $772.5~\text{nm}$, $30~\text{mW}$ pour la DBR à $778.0~\text{nm}$, et $127~\text{mW}$ pour la DBR à $770.5~\text{nm}$ (Fig . \ref{chap7:fig:puiss.2} ). Pour assurer un potentiel dipolaire plus propre avec les moins de diffusion et de chauffauge possible, on a choisi la source laser avec le desaccord le plus grand : la DBR à $770.5~\text{nm}$. Neanmoins pour avoir une puit assez profond sa puissance n'est pas assez.  %Seul le laser à $778.0~\text{nm}$ satisfait cette condition sans amplification supplémentaire. En revanche, les deux autres lasers se trouvent sous-dimensionnés dans ce scénario, ce qui justifie le recours à un amplificateur optique dans le cas du laser à $770.5~\text{nm}$.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\linewidth]{figures/07_Dipolaire/puissance_vs_lambda_log_300.png}
     \caption{Puissance requise en fonction de la longueur d'onde pour $w_0 = 300 \, \mu m$ }
+    \label{chap7:fig:puiss.2}
 \end{figure}
 
 \medskip
 
-Ce constat a notamment motivé l’ajout d’un amplificateur optique (TA — Tapered Amplifier) en sortie du laser à $770.5~\text{nm}$, afin de compenser la puissance disponible limitée et garantir des conditions de piégeage satisfaisantes malgré les pertes optiques du système.
+%Ce constat a notamment motivé l’ajout d’un amplificateur optique (TA — Tapered Amplifier) en sortie du laser à $770.5~\text{nm}$, afin de compenser la puissance disponible limitée et garantir des conditions de piégeage satisfaisantes malgré les pertes optiques du système.
+
+Avec un waist de $w_0 = 300~\mu\text{m}$, les puissances minimales requises augmentent considérablement en raison de la baisse d’intensité au centre du faisceau. On obtient ainsi des puissances nécessaires de l’ordre de $102~\text{mW}$ pour la DFB à $772.5~\text{nm}$, $30~\text{mW}$ pour la DBR à $778.0~\text{nm}$, et $127~\text{mW}$ pour la DBR à $770.5~\text{nm}$ (Fig.~\ref{chap7:fig:puiss.2}).  
+
+\medskip
+
+Afin d’assurer un potentiel dipolaire plus propre, avec le moins de diffusion et de chauffage possible, nous avons choisi la source laser présentant le plus grand désaccord : la DBR à $770.5~\text{nm}$. Néanmoins, pour obtenir un puits suffisamment profond, la puissance disponible reste insuffisante.  
+
+\medskip
+
+Ce constat a motivé l’ajout d’un amplificateur optique (TA — \emph{Tapered Amplifier}) en sortie du laser à $770.5~\text{nm}$, afin de compenser la puissance limitée et de garantir des conditions de piégeage satisfaisantes malgré les pertes optiques du système.
+
+
 
 \begin{center}
 \textit{[Photos laser à $770.5~\text{nm}$ ]}
