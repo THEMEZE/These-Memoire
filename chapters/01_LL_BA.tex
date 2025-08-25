@@ -490,7 +490,7 @@ et son action sur $\ket{\{k_a\}}$ se traduit par :\\
 \textbf{Remarque :} 
 
 Cette construction n’est valable que pour un gaz \textbf{de particules libres, sans interaction}.  
-En présence d’un Hamiltonien avec interaction (par exemple dans le modèle de Lieb–Liniger Sec \ref{chap1:sssec:LL}), les états propres ne sont plus des produits d’ondes planes $\ket{\{k_a\}}$, et l’opérateur énergie cinétique $\operator{K}$ n’est plus diagonalisé dans cette base. Ce sont alors les états de Bethe qui diagonalise l’Hamiltonien complet (cinétique + interaction).
+En présence d’un Hamiltonien avec interaction (par exemple dans le modèle de  \gls{LL} Sec \ref{chap1:sssec:LL}), les états propres ne sont plus des produits d’ondes planes $\ket{\{k_a\}}$, et l’opérateur énergie cinétique $\operator{K}$ n’est plus diagonalisé dans cette base. Ce sont alors les états de Bethe qui diagonalise l’Hamiltonien complet (cinétique + interaction).
 
 \medskip
 
@@ -577,7 +577,7 @@ où \( g \) est la constante de couplage.
 
 
 
-\subsubsection{Expression de l’Hamiltonien de Lieb-Liniger \gls{LL}. }\label{chap1:sssec:LL}
+\subsubsection{Expression de l’Hamiltonien de Lieb-Liniger \acrshort{LL}. }\label{chap1:sssec:LL}
 
 À partir d’ici, on fixe $\hbar = m = 1 $. Ainsi, les dimensions (unités) des nombres d’onde $k$ et des vitesses ne sont plus différenciées.
 Dans le formalisme des opérateurs de champs, l’Hamiltonien d’un système soumis à des interactions ponctuelles est la somme de l’énergie cinétique $\operator{K}$ donnée par \eqref{eq.chap.1.cinietique.3}, et du terme d’interaction $\operator{V}$ introduit dans \eqref{chap.1:eq.rapel.opp.2.second.ponctuel.1} :
@@ -646,7 +646,7 @@ En revanche, si l’on prend l’approximation dite de {\bf champ moyen}, où l�
 \begin{eqnarray}
 	\Psi = \braket{\operator{\Psi}},		
 \end{eqnarray}
-on obtient alors l’équation de \textbf{Schrödinger non linéaire (NS)} (ou équation de Gross–Pitaevskii) pour une fonction d’onde classique :
+on obtient alors l’équation de \gls{NS} (ou équation de  \gls{GP}) pour une fonction d’onde classique :
 \begin{eqnarray}
 	i \partial_t \Psi	 & = & - \frac{1}{2}\partial_x^2 \Psi + g \vert \Psi \vert^2  \Psi.
 \end{eqnarray}
@@ -697,9 +697,10 @@ Ils constituent donc des \textbf{intégrales du mouvement}. Cette propriété re
     innerbottommargin=2pt,
     leftmargin=2pt,
     rightmargin=2pt
-	]
-	Nous verrons au chapitre~(\ref{chap:relaxation}) que, dans les systèmes intégrables comme le Lieb--Liniger, cette situation s’étend à une {\bf \em infinité d’intégrales du mouvement}. 
-	Cette richesse supplémentaire de conservation conduira naturellement à l’introduction de l’ensemble de Gibbs généralisé (GGE).
+	]	
+	Nous verrons au chapitre~\ref{chap:relaxation} que, dans les systèmes intégrables comme le modèle de Lieb--Liniger, cette situation s’étend à une {\bf \em infinité d’intégrales du mouvement}. 
+	Cette richesse supplémentaire de conservation conduit naturellement à l’introduction de l’ensemble de Gibbs généralisé, appelé en anglais \gls{GGE}.
+
 \end{mdframed}
 
 
@@ -1083,7 +1084,7 @@ Cela nous motive à multiplier l’ansatz dans le référentiel du centre de mas
 
 Pour \(\theta_1 > \theta_2\), les deux termes exponentiels 
 \(e^{i z_1 \theta_1 + i z_2 \theta_2}\) et \(e^{i z_1 \theta_2 + i z_2 \theta_1}\)
-correspondent respectivement aux ondes entrantes et sortantes dans le canal de diffusion à deux corps.  
+correspondent respectivement aux ondes entrantes et sortantes dans le canal de diffusion à deux corps \cite{Bouchoule_2022}.  
 Le rapport de leurs amplitudes définit la {\bf phase de diffusion} $\Phi$ et  {\bf matrice diffusion} $S$  à deux corps \eqref{chap:1:dif.mod.2.part.3} , reste inchangé mais voici une autre écriture :
 
 \begin{equation}\label{chap:1:dif.mod.2.part.4}
@@ -1212,7 +1213,7 @@ Pour bien comprendre le sens physique des équations de Bethe~\eqref{eq:Bethe2},
 
 \medskip
 
-Pour décrire ces {\bf excitations} , ces {\bf quasi-particules}, on introduit le paramètre $\theta$ appelé {\bf rapidité}. Ce terme vient de la théorie relativiste \cite{zamolodchikov1979factorized,babelon2003introduction}, mais reste pertinent même dans des modèles non relativistes, comme ici. La rapidité est choisie comme {\bf paramètre spectral naturel} : elle étiquette les états propres, linéarise les relations de dispersion dans certains régimes, et elle simplifie considérablement les équations de Bethe.
+Pour décrire ces {\bf excitations} , ces {\bf quasi-particules}, on introduit le paramètre $\theta$ appelé {\bf rapidité}. Ce terme vient de la théorie relativiste \cite{ZAMOLODCHIKOV1979253,Babelon2003}, mais reste pertinent même dans des modèles non relativistes, comme ici. La rapidité est choisie comme {\bf paramètre spectral naturel} : elle étiquette les états propres, linéarise les relations de dispersion dans certains régimes, et elle simplifie considérablement les équations de Bethe.
 
 \medskip
 
@@ -1227,7 +1228,7 @@ Ainsi, dans l’image de Bethe, les états propres sont des configurations stabl
 \subsection{Fonction d’onde dans le secteur ordonné et représentation de Gaudin}
 
 Sans en donner ici la démonstration, donnons une forme généralisée de la fonction propre à $N$ particules [cf. équation \eqref{chap.1:eq.rapel.fonction.propre.N}], qui prolonge naturellement l’expression obtenue pour le cas à deux corps [cf. équation \eqref{eq:I-1-10}].
-Dans le domaine $z_1 < z_2 < \cdots < z_N$, la fonction d’onde pour un état de Bethe à $N$ particules s’écrit ({\color{blue}Gaudin 2014}, {\color{blue}Korepin et al. 1997}, {\color{black}Lieb et Liniger 1963}) :
+Dans le domaine $z_1 < z_2 < \cdots < z_N$, la fonction d’onde pour un état de Bethe à $N$ particules s’écrit ({\color{blue} \cite{Korepin_1997,Gaudin_2014,LL_1963_1,Franchini_2016,Wouters2015}}) :
 \begin{eqnarray}
 	\varphi_{\{\theta_a\}} ( z_1 , \cdots , z_N ) & = &  \frac{1}{\sqrt{N!}}\langle \emptyset \vert \operator{\Psi} ( z_1 ) \cdots \operator{\Psi} (z_N ) \vert \{ \theta_a \} \rangle \notag\\
 	& \propto & \sum_\sigma (-1)^{|\sigma|} \left( \prod_{1 \leq a < b \leq N} (\theta_{\sigma(b)} - \theta_{\sigma(a)} - i g) \right) e^{i \sum_{j=1}^{N} z_j \theta_{\sigma(j)}},\label{eq:I-2-17}
@@ -1365,12 +1366,12 @@ et, comme \( \rho = \rho_s \), à l'état fondamental, on obtient l’équation 
 
 \subsection{Excitations élémentaires}
 
-À partir de l’état fondamental dans le régime d’interaction forte, les excitations élémentaires du modèle de Lieb-Liniger ont été classifiées par Lieb en deux types distincts~\cite{Lieb1963}. Ces excitations peuvent être comprises comme des perturbations de la mer de Fermi formée par les quasi-particules.
+À partir de l’état fondamental dans le régime d’interaction forte, les excitations élémentaires du modèle de Lieb-Liniger ont été classifiées par Lieb en deux types distincts~\cite{LL_1963_2}. Ces excitations peuvent être comprises comme des perturbations de la mer de Fermi formée par les quasi-particules.
 
 \begin{itemize}
     \item \textbf{Excitations de type I :} Il s’agit remplacer une quasi-particule avec un nombre fermionique au bord de Fermi $I_{N}$ (ou $I_{-N}$) par une quasi-particule avec un nombre fermionique $I'> I_N$ (resp.$I' <I_{-N}$), c’est-à-dire au-delà du bord de la mer de Fermi. Ces excitations sont analogues à des excitations de particules libres et, dans la limite des faibles interactions ($g \to 0$), leur relation de dispersion reproduit celle prédite par la théorie de Bogoliubov.
 
-    \item \textbf{Excitations de type II :} Ces excitations sont de type particule-trou. Elles sont obtenues en remplaçant une quasi-particule de la mer de Fermi avec une nombre fermionique $I_a$ (\ie, en créant un trou dans l’état fondamental) et de le remplacer par une quasi-particule avec $I' = I_{N+1} = N/2$ ou $I' = I_{N-1} = -N/2$ et en réarrangeant les autres nombres fermionique. Cela correspond à une excitation interne du Fermi pseudo-mer, avec conservation du nombre de particules. Pour de petits $I'$, la dispersion est linéaire, correspondant à des modes phononiques. Dans la limite d’interaction faible \( g \to 0 \), ces excitations peuvent être interprétées comme des solitons sombres~\cite{Kulish1976}.
+    \item \textbf{Excitations de type II :} Ces excitations sont de type particule-trou. Elles sont obtenues en remplaçant une quasi-particule de la mer de Fermi avec une nombre fermionique $I_a$ (\ie, en créant un trou dans l’état fondamental) et de le remplacer par une quasi-particule avec $I' = I_{N+1} = N/2$ ou $I' = I_{N-1} = -N/2$ et en réarrangeant les autres nombres fermionique. Cela correspond à une excitation interne du Fermi pseudo-mer, avec conservation du nombre de particules. Pour de petits $I'$, la dispersion est linéaire, correspondant à des modes phononiques. Dans la limite d’interaction faible \( g \to 0 \), ces excitations peuvent être interprétées comme des solitons sombres~\cite{Ishikawa1980SolitonsIA,Karpiuk_2015}.
 \end{itemize}
 
 Ces deux types d’excitations définissent ensemble le spectre complet du modèle de Lieb-Liniger et permettent d’accéder aux propriétés dynamiques du système, telles que les fonctions de réponse ou la structure du spectre d’énergie.
