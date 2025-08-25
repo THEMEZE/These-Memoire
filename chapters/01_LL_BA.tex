@@ -74,7 +74,7 @@ La première quantification est la mécanique quantique standard, celle que vous
 \end{eqnarray}
 où $\hbar$ est la constante de Planck réduite, satisfaisant la {\bf relation de commutation canonique} fondamentale $[\operator{x}, \operator{p}] = i\hbar$. L’état du système est alors décrit par une {\bf fonction d’onde} $\psi(x,t)$, solution de {\bf l’équation de  Schrödinger} indépendante du nombre de particules :
 \begin{eqnarray}
-\quad i \hbar \frac{\partial \psi }{\partial t}  &= \operator{\mathcal{H}} \psi,\label{chap.1.rapel.2}
+\quad i \hbar \frac{\partial \psi }{\partial t}  &= \operator{\mathcal{H}} \, \psi,\label{chap.1.rapel.2}
 \end{eqnarray}
 
 avec $\operator{\mathcal{H}}$ l’opérateur hamiltonien. 
@@ -97,7 +97,7 @@ avec $\operator{\mathcal{H}}$ l’opérateur hamiltonien.
 	\begin{eqnarray}
 		\operator{\mathcal{H}} = -\frac{\hbar^2}{2m} \partial_x^2.\label{chap.1.rapel.libre.1}
 	\end{eqnarray}
-	Les états propres stationnaires de \eqref{chap.1.rapel.2} dépendant du temps sont de la forme $\psi_k(x,t) = \varphi_k(x)\,e^{-i\varepsilon(k)t/\hbar}$ où $\varphi_k(x)$ est une fonction propre de l’hamiltonien,  soit de  l’équation stationnaire  $\operator{\mathcal{H}}\varphi_k = \varepsilon(k)\varphi_k$ \ie pour une particule libre:
+	Les états propres stationnaires de \eqref{chap.1.rapel.2} dépendant du temps sont de la forme $\psi_k(x,t) = \varphi_k(x)\,e^{-i\varepsilon(k)t/\hbar}$ où $\varphi_k(x)$ est une fonction propre de l’hamiltonien,  soit de  l’équation stationnaire  $\operator{\mathcal{H}} \, \varphi_k = \varepsilon(k)\varphi_k$ \ie pour une particule libre:
 	\begin{eqnarray}
 		\frac{\hbar^2}{2m} \partial_x^2 \varphi_k = \varepsilon(k) \varphi_k,\label{chap.1.rapel.libre.2}
 	\end{eqnarray}
@@ -679,7 +679,7 @@ En résumé, la conservation de $\operator{Q}$ et $\operator{P}$ ne dépend pas 
 
 \subparagraph{Interactions de contact.}
 
-Dans le cas particulier du modèle de Lieb--Liniger, les opérateurs nombre total de particules $\operator{Q}$ et quantité totale de mouvement $\operator{P}$ commutent avec l’Hamiltonien $\operator{H}$ :  
+Dans le cas particulier du modèle de \gls{LL}, les opérateurs nombre total de particules $\operator{Q}$ et quantité totale de mouvement $\operator{P}$ commutent avec l’Hamiltonien $\operator{H}$ :  
 \begin{eqnarray}
 [ \operator{H} , \operator{Q} ] = 0, 
 \qquad 
@@ -698,7 +698,7 @@ Ils constituent donc des \textbf{intégrales du mouvement}. Cette propriété re
     leftmargin=2pt,
     rightmargin=2pt
 	]	
-	Nous verrons au chapitre~\ref{chap:relaxation} que, dans les systèmes intégrables comme le modèle de Lieb--Liniger, cette situation s’étend à une {\bf \em infinité d’intégrales du mouvement}. 
+	Nous verrons au chapitre~\ref{chap:relaxation} que, dans les systèmes intégrables comme le modèle de \gls{LL}, cette situation s’étend à une {\bf \em infinité d’intégrales du mouvement}. 
 	Cette richesse supplémentaire de conservation conduit naturellement à l’introduction de l’ensemble de Gibbs généralisé, appelé en anglais \gls{GGE}.
 
 \end{mdframed}
@@ -718,11 +718,11 @@ La première quantification constitue la base indispensable pour comprendre le c
 
 \medskip
 
-Les opérateurs $\operator{Q}$, $\operator{P}$ (\eqref{eq.chap.1.Q.P.k.3}) et $\operator{H}$ \eqref{chap.1:eq.LL.champ.1} possèdent une structure diagonale commune dans la base des états propres $\ket{\{\theta_a\}}$, révélant la nature intégrable du modèle de Lieb-Liniger. Leurs valeurs propres sont respectivement les 0\textsuperscript{e}, 1\textsuperscript{er} et 2\textsuperscript{e} moments des $\theta_a$. Cette structure permet de généraliser la construction à une hiérarchie complète d’observables conservées, qui seront présentées au chapitre suivant.
+Les opérateurs $\operator{Q}$, $\operator{P}$ (\eqref{eq.chap.1.Q.P.k.3}) et $\operator{H}$ \eqref{chap.1:eq.LL.champ.1} possèdent une structure diagonale commune dans la base des états propres $\ket{\{\theta_a\}}$, révélant la nature intégrable du modèle de \gls{LL}. Leurs valeurs propres sont respectivement les 0\textsuperscript{e}, 1\textsuperscript{er} et 2\textsuperscript{e} moments des $\theta_a$. Cette structure permet de généraliser la construction à une hiérarchie complète d’observables conservées, qui seront présentées au chapitre suivant.
 
 \medskip
 
-En passant par la seconde quantification, nous avons pu relier l’Hamiltonien à une particule $\operator{\mathcal{H}}_1$ \eqref{chap.1.rapel.libre.1} à un Hamiltonien à $N$ particules $\operator{\mathcal{H}}_N$ \eqref{chap.1:eq.LL.eta.1} dans le modèle de Lieb-Liniger (système avec interactions ponctuelles). Les états $\varphi_{\{ \theta_a \}}$ sont des états propres du nombre total de particules $\operator{\mathcal{N}}_N$ \eqref{eq.chap.1.Q.1}, de la quantité de mouvement totale $\operator{\mathcal{P}}_N$ \eqref{eq.chap.1.P.1} et de l’hamiltonien $\operator{\mathcal{H}}_N$.
+En passant par la seconde quantification, nous avons pu relier l’Hamiltonien à une particule $\operator{\mathcal{H}}_1$ \eqref{chap.1.rapel.libre.1} à un Hamiltonien à $N$ particules $\operator{\mathcal{H}}_N$ \eqref{chap.1:eq.LL.eta.1} dans le modèle de \gls{LL}(système avec interactions ponctuelles). Les états $\varphi_{\{ \theta_a \}}$ sont des états propres du nombre total de particules $\operator{\mathcal{N}}_N$ \eqref{eq.chap.1.Q.1}, de la quantité de mouvement totale $\operator{\mathcal{P}}_N$ \eqref{eq.chap.1.P.1} et de l’hamiltonien $\operator{\mathcal{H}}_N$.
 
 \medskip
 
@@ -887,14 +887,14 @@ L’énergie totale se décompose enfin en la somme du mouvement du centre
 de masse et du mouvement relatif :
 \(
    \overline{\theta}^{2}
-   \;+\;
+   +
    \tilde{\varepsilon}(\tilde{\theta})
-   \;=\;
+   =
    \varepsilon(\theta_{1})
-   \;+\;
+   +
    \varepsilon(\theta_{2}),
 \)
-où \(\overline{\theta}= \tfrac{\theta_{1}+\theta_{2}}{2}\).
+ où \(\overline{\theta}= \tfrac{\theta_{1}+\theta_{2}}{2}\).
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -986,7 +986,7 @@ En répétant l'argument précédent de la stationnarité de phase, on trouve qu
 \begin{eqnarray}
 	\vert Y \vert & \simeq & 	\tilde{\theta} t  - 2 \Delta (\tilde{\theta} )
 \end{eqnarray}
-où le {\bf déplacement de diffusion} $\Delta (\theta)$ est donné par la dérivée de la {\em phase de diffusion},
+où le {\bf déplacement collisionnel} $\Delta (\theta)$ est donné par la dérivée de la {\em phase de diffusion},
 \begin{eqnarray}\label{eq:I-1-16}
 	\Delta ( \theta ) & \doteq & \frac{ d \Phi }{ d \theta } ( \theta )= \frac{ 2 g }{ g^2 + \theta^2} . 	
 \end{eqnarray}
@@ -1092,49 +1092,21 @@ Le rapport de leurs amplitudes définit la {\bf phase de diffusion} $\Phi$ et  {
 	= \frac{\theta_1 - \theta_2 - ig}{\theta_2 - \theta_1 - ig}.
 \end{equation}
 
-Cette phase caractérise entièrement le processus de diffusion dans le modèle de Lieb-Liniger à deux particules.
+Cette phase caractérise entièrement le processus de diffusion dans le modèle de \gls{LL} à deux particules.
 
 \paragraph{Conditions périodiques et équations de Bethe pour deux bosons {\color{red}(à révoir)}.}
 
-%La fonction d’onde obtenue par Bethe ansatz (voir
-%\eqref{eq:I-1-10}) est, pour $z_{1}<z_{2}$,
-%\[
-%	\varphi_{\{\theta_{1},\theta_{2}\}}(z_{1},z_{2})
-%		= a\,e^{i\theta_{1}z_{1}+i\theta_{2}z_{2}}
-%		+b\,e^{i\theta_{2}z_{1}+i\theta_{1}z_{2}},
-%	\quad
-%	a=\theta_{2}-\theta_{1}-ic,\;
-%	b=-(\theta_{1}-\theta_{2}-ic).
-%\]
-
-%\medskip
-%\subparagraph{Périodicité sur $z_{2}$.}  
-%On impose à la fonction d’onde obtenue par Bethe ansatz (voir
-%\eqref{eq:I-1-10})
-%\(
-%	\varphi_{\{\theta_{1},\theta_{2}\}}(z_{1},z_{2}\!=\!L)
-%	=
-%	\varphi_{\{\theta_{1},\theta_{2}\}}(z_{1},z_{2}\!=\!0)
-%\)
-%avec $0<z_{1}<z_{2}=L$.  
-%Au point $z_{2}=L$ on reste dans le secteur $z_{1}<z_{2}$, tandis qu’au point $z_{2}=0$ le domaine pertinent devient $z_{2}<z_{1}$;  la fonction d’onde y est obtenue en échangeant $z_{1}\leftrightarrow z_{2}$ , soit 
-%\(
-%	\varphi_{\{\theta_{1},\theta_{2}\}}(z_{1},\!L)
-%	=
-%	\varphi_{\{\theta_{1},\theta_{2}\}}(0 , z_{1})
-%\)
-%.  
-%On obtient ainsi
-%\begin{eqnarray*}
-%	a\,e^{i\theta_{1}z_{1}+i\theta_{2}L}+b\,e^{i\theta_{2}z_{1}+i\theta_{1}L} & = &
-%	a\,e^{i\theta_{2}z_{1}}\,e^{i\theta_{1}\! \cdot 0} + b \,e^{i\theta_{1}z_{1}}\,e^{i\theta_{2}\! \cdot 0},	
-%\end{eqnarray*}
-%avec la condition $z_1< z_2$, avec le rapport $a$ et $b$ vérifiant \eqref{chap:1:dif.mod.2.part.4} de la sorte $-b/a = e^{i\Phi(\theta_1 - \theta_2)}$ .
-
-%%%%%%%%%%%%%%%%
+Dans ce paragraphe, on écrit la fonction d’onde obtenue en \eqref{eq:I-1-10} sous la forme
+\begin{eqnarray}\label{eq:I-1-10-1}
+	\varphi_{\{\theta_1 < \theta_2\}}(z_1 , z_2) 
+	&=&  a\, e^{ i z_1 \theta_1 + i z_2 \theta_2 } 
+	+ b\, e^{ i z_1 \theta_2 + i z_2 \theta_1}, 
+\end{eqnarray}
+où $a$ et $b$ sont deux coefficients complexes.
 
 \subparagraph{Périodicité en \( z_2 \).}  
-On impose une condition de périodicité sur la fonction d’onde obtenue par ansatz de Bethe (voir équation~\eqref{eq:I-1-10}) :
+%On impose une condition de périodicité sur la fonction d’onde obtenue par ansatz de Bethe (voir équation~\eqref{eq:I-1-10}) :
+On impose une condition de périodicité sur la fonction ~\eqref{eq:I-1-10-1} :
 \(
 	\varphi_{\{\theta_1,\theta_2\}}(z_1, z_2 = L) = \varphi_{\{\theta_1,\theta_2\}}(z_1, z_2 = 0),
 \)
@@ -1144,61 +1116,49 @@ Au point \( z_2 = L \), la configuration reste dans le secteur \( z_1 < z_2 \), 
 	\varphi_{\{\theta_1,\theta_2\}}(z_1, L) = \varphi_{\{\theta_1,\theta_2\}}(0, z_1).
 \)
 En utilisant l’expression explicite de l’ansatz dans les deux secteurs, on obtient l’égalité suivante :
-\begin{eqnarray*}
+\begin{eqnarray}\label{eq:I-1-10-2}
 	a\,e^{i\theta_1 z_1 + i\theta_2 L} + b\,e^{i\theta_2 z_1 + i\theta_1 L}
 	&=& a\,e^{i\theta_2 z_1} + b\,e^{i\theta_1 z_1}.
-\end{eqnarray*}
-%où le second membre correspond à la fonction d’onde dans le secteur \( z_2 < z_1 \), évaluée en \( z_2 = 0 \) et \( z_1 = z_1 \).  
-%La condition de périodicité impose donc :
-%\[
-%	a\,e^{i\theta_1 z_1 + i\theta_2 L} + b\,e^{i\theta_2 z_1 + i\theta_1 L}
-%	= a\,e^{i\theta_2 z_1} + b\,e^{i\theta_1 z_1}.
-%\]
-Cette relation, valable pour tout \( z_1 \in [0,L] \), fixe une contrainte sur le rapport \( b/a \). En utilisant l’expression de la phase de diffusion introduite en \eqref{chap:1:dif.mod.2.part.4} pour $z_1<z_2$ :
-\begin{eqnarray*}
-	-\frac{b}{a} = e^{i\Phi(\theta_1 - \theta_2)},
-\end{eqnarray*}
-on obtient une condition sur les phases \( \theta_1 \) et \( \theta_2 \), cœur de la quantification imposée par le formalisme de Bethe.
+\end{eqnarray}
 
-%\[
-%	( \theta_2 - \theta_1 - ig)\,e^{i\theta_{1}z_{1}+i\theta_{2}L}
-%	- ( \theta_1 - \theta_2 - ig)\,e^{i\theta_{2}z_{1}+i\theta_{1}L}
-%	=
-%	( \theta_2 - \theta_1 - ig)\,e^{i\theta_{2}z_{1}}\,e^{i\theta_{1}\! \cdot 0}
-%	- ( \theta_1 - \theta_2 - ig)\,e^{i\theta_{1}z_{1}}\,e^{i\theta_{2}\! \cdot 0}.
-%\]
+Cette relation, valable pour tout \( z_1 \in [0,L] \), fixe une contrainte sur le rapport \( b/a \). En utilisant l’expression de la phase de diffusion introduite en \eqref{chap:1:dif.mod.2.part.4} (valable pour $z_1<z_2$), on a :
+\begin{eqnarray}\label{eq:I-1-10-3}
+	-\frac{b}{a} = e^{i\Phi(\theta_1 - \theta_2)},
+\end{eqnarray}
+avec la fonction $\Phi$ donnée par l'équation \eqref{chap:1:dif.mod.2.part.2}.
+
+\medskip
+
+
+On obtient une condition sur les phases \( \theta_1 \) et \( \theta_2 \), cœur de la quantification imposée par le formalisme de Bethe.
 En identifiant les coefficients de $e^{i\theta_{1}z_{1}}$ et
-$e^{i\theta_{2}z_{1}}$ indépendamment, on obtient
+$e^{i\theta_{2}z_{1}}$ indépendamment dans~\eqref{eq:I-1-10-2} , on obtient
 \(
 	e^{i\theta_{2}L}\;a = b, 
 	\,
 	e^{i\theta_{1}L}\;b = a,
 \)
-c’est‑à‑dire l'équations de Bethe
-%\begin{equation}\label{eq:PC2}
-%	e^{i\theta_{2}L} = \frac{b}{a}
-%	= \frac{\theta_{1}-\theta_{2}+ic}{\theta_{2}-\theta_{1}+ic},
-%\quad
-%	e^{i\theta_{1}L} = \frac{a}{b}
-%	= \frac{\theta_{2}-\theta_{1}+ic}{\theta_{1}-\theta_{2}+ic}.
-%\end{equation}
+c’est‑à‑dire en utilisant \eqref{eq:I-1-10-3}, les \textbf{équations de Bethe à deux particules} :
 \begin{eqnarray}\label{eq:PC2}
 	e^{i\theta_{1}L}\,e^{i\Phi(\theta_{1}-\theta_{2})} = -1,
 	\qquad
 	e^{i\theta_{2}L}\,e^{i\Phi(\theta_{2}-\theta_{1})} = -1.	
 \end{eqnarray}
-En prenant le logarithme on obtient les \emph{équations de Bethe à deux
-particules} :
+En prenant le logarithme, elles se réécrivent sous la forme usuelle :
 \begin{equation}\label{eq:Bethe2}
 	\theta_{1}L + \Phi(\theta_{1}-\theta_{2}) = 2\pi I_{1}, 
 	\qquad
 	\theta_{2}L + \Phi(\theta_{2}-\theta_{1}) = 2\pi I_{2},
 \end{equation}
-où $I_{1},I_{2}\in\mathbb{Z}/2$ sont les nombres demis entiers. 
+où $I_{1},I_{2}\in\mathbb{Z} + \tfrac{1}{2}$ sont des nombres demi-entiers. 
 
 \subparagraph{Périodicité sur $z_{1}$.}  Le raisonnement symétrique conduit exactement aux mêmes égalités \eqref{eq:PC2} et \eqref{eq:Bethe2}.  Ces équations  constituent la quantification complète du gaz de Lieb–Liniger à deux bosons sur un cercle de longueur $L$ et seront le point de départ pour l’étude de l’état fondamental et des excitations.
 
+\medskip
 
+%Au debut du chapitre on a mis en équation les confition au bord pertiodique pour une une particule qui est bien connue pour maintent en comparant avec les equation de Bethe à deux particule \eqref{eq:PC2} et \eqref{eq:Bethe2} pour voir metre en evidende que la fonction $\Phi$ définie en \eqref{chap:1:dif.mod.2.part.2} encode les interaction 
+
+En comparaison avec le cas d’une seule particule (où la condition aux bords périodiques impose simplement $\theta L = 2\pi n$ ~\eqref{chap.1.rapel.libre.5}), on voit que les équations de Bethe à deux particules \eqref{eq:PC2}--\eqref{eq:Bethe2} incorporent la fonction $\Phi$, qui encode explicitement l’\textbf{interaction entre particules}.
 
 \begin{figure}[H]
 	\centering
@@ -1266,20 +1226,11 @@ En prenant le logarithme du membre gauche et du membre droit de l’équation~\e
 \begin{equation}\label{chap:1:eq:EBA}
 	L \theta_a + \sum_{b=1}^N \Phi(\theta_a - \theta_b) = 2\pi I_a, \qquad a = 1, \dots, N,
 \end{equation}
-où les $I_a$ sont des nombres quantiques fermioniques, c’est-à-dire des entiers $I_a \in \mathbb{Z}$ si $N$ est impair, et des demi-entiers $I_a \in \mathbb{Z} + \tfrac{1}{2}$ si $N$ est pair.
+où les $I_a$ sont des nombres quantiques. Ce sont des entiers $I_a \in \mathbb{Z}$ si $N$ est impair, et des demi-entiers $I_a \in \mathbb{Z} + \tfrac{1}{2}$ si $N$ est pair.
 
 \medskip
 
-Cette écriture révèle un lien direct avec un gaz de {\bf fermions libres} en une dimension : en interaction forte (\ie $g \to \infty$ c’est-à-dire si $\Phi = 0$), les équations \eqref{chap:1:eq:EBA} se réduisent à $L \theta_a = 2\pi I_a$, soit $\theta_a = 2\pi I_a / L$. Cela correspond exactement aux quantifications de l'impulsion pour des {\bf fermions libres sans spin}, dans une boîte de taille $L$, avec conditions aux bords périodiques.
-
-\medskip
-
-L’interprétation est alors la suivante : les solutions de Bethe ${ \theta_a }$ décrivent des quasi-particules interagissantes, dont la configuration est déterminée par l’ensemble des nombres quantiques ${ I_a }$, eux-mêmes analogues aux {\bf moments quantiques d’un gaz de fermions libres}. C’est pourquoi on parle de {\em nombres fermioniques} $I_a$ dans ce contexte.
-%où les $I_a \in \mathbb{Z}$ (resp. $\mathbb{Z} + \tfrac{1}{2}$) sont des nombres entiers (resp. demi-entiers) si $N$ est impair (resp. pair).L'equation de Bethe \eqref{chap:1:eq:EBA} nous donne le lien entre la configuration des rapidité $\{ \theta_a \} $ et $N$ fermions sans interaction, ni spin et de vecteur d'onde $K_a = 2\pi I_a/L$. Dans la suite, les $I_a$ seront appelés {\bf nombres fermionique}. 
-
-\medskip
-
-Dans la configuration d’état fondamental (ou de type “mer de Fermi”), ces {\em nombres fermionique} sont pris de manière symétrique autour de zéro :
+Dans la configuration d’état fondamental (ou de type “mer de Fermi”), ces nombres sont pris de manière symétrique autour de zéro :
 \begin{equation}\label{chap:1:eq:EBA.1}
 	I_a = a - \frac{N+1}{2}, \quad \text{pour } a \in \llbracket 1 , N \rrbracket.
 \end{equation}
@@ -1287,11 +1238,29 @@ ce qui correspond au choix symétrique des nombres quantiques pour l’état fon
 %Ce choix garantit une distribution uniforme des $\theta_a$ à l’état fondamental.
 %\vspace{1em}
 
+\medskip
+
+Tous les nombres $I_a$ sont distincts. Cette propriété établit un lien direct avec un gaz de \textbf{fermions libres} en une dimension : bien que les particules du modèle de Lieb–Liniger soient bosoniques, la structure des équations de Bethe impose une exclusion effective au niveau des nombres quantiques. Pour cette raison, on parle de \textbf{nombres quantiques fermioniques}.  
+L’équation de Bethe \eqref{chap:1:eq:EBA} définit ainsi une bijection entre une configuration de rapidité $\{ \theta_a \}$ (\gls{BA}) et un ensemble de nombres quantiques $\{ I_a \}$ (\gls{FBA}) \cite{Girardeau_1960}.
+
+
+\medskip
+
+En particulier, dans la limite d’\textbf{interaction forte} (\ie $g \to \infty$ c’est-à-dire si $\Phi = 0$), les équations \eqref{chap:1:eq:EBA} se réduisent à $L \theta_a = 2\pi I_a$, soit $\theta_a = 2\pi I_a / L$. Cela correspond exactement aux quantifications de l'impulsion pour des {\bf fermions libres sans spin}, dans une boîte de taille $L$, avec conditions aux bords périodiques.
+
+\medskip
+
+L’interprétation est alors la suivante : les solutions de Bethe ${ \theta_a }$ décrivent des quasi-particules interagissantes, dont la configuration est déterminée par l’ensemble des nombres quantiques ${ I_a }$, eux-mêmes analogues aux {\bf moments quantiques d’un gaz de fermions libres}. %C’est pourquoi on parle de {\em nombres fermioniques} $I_a$ dans ce contexte.
+%où les $I_a \in \mathbb{Z}$ (resp. $\mathbb{Z} + \tfrac{1}{2}$) sont des nombres entiers (resp. demi-entiers) si $N$ est impair (resp. pair).L'equation de Bethe \eqref{chap:1:eq:EBA} nous donne le lien entre la configuration des rapidité $\{ \theta_a \} $ et $N$ fermions sans interaction, ni spin et de vecteur d'onde $K_a = 2\pi I_a/L$. Dans la suite, les $I_a$ seront appelés {\bf nombres fermionique}. 
+
+
+
+
 \subsubsection{Interprétation physique}
 
 Les équations de Bethe~\eqref{chap:1:eq:EBA} représentent une {\em quantification des pseudo‑impulsions $\theta_a$} des particules en interaction, résultant d’un {\em interféromètre multi‑corps sur le cercle} : chaque particule accumule une phase $e^{i \theta_a L}$ due au mouvement libre, ainsi que des phases de diffusion lorsqu’elle croise les autres.
 
-Ce système d'équations détermine les états propres du système de Lieb–Liniger en volume fini, et joue un rôle fondamental dans la description exacte de ses propriétés thermodynamiques et dynamiques.
+Ce système d'équations détermine les états propres du système de \gls{LL}  en volume fini, et joue un rôle fondamental dans la description exacte de ses propriétés thermodynamiques et dynamiques.
 
 
 \subsection{Thermodynamique du gaz de Lieb–Liniger à l'état fondamental}
@@ -1306,25 +1275,13 @@ où \( n \) désigne la densité linéique de particules.
 
 Considérons désormais le système à température nulle. L’état fondamental dans le secteur à nombre de particules fixé correspond à la configuration d’énergie minimale parmi les solutions des équations de Bethe \eqref{chap:1:eq:EBA}.
 
-Dans la limite thermodynamique $(\underset{\text{\tiny therm}}{\lim} \equiv \underset{\underset{ N \to \infty}{L \to \infty}}{\lim} )$ , les valeurs de \( \theta_a \) deviennent quasi-continues, avec un espacement \( \theta_{a+1} - \theta_a = \mathcal{O}(1/L) \), et se condensent dans un intervalle symétrique autour de zéro $[-\theta_{\mbox{\tiny max}} , \theta_{\mbox{\tiny max}} ]$ . En supposant l'ordre \( I_a \geq I_b  \) implique \(\theta_a \geq \theta_b \), cet intervalle constitue ce qu'on appelle la {\em mer de Dirac} (ou sphère de Fermi en dimension un).
-
-Nous introduisons la {\bf densité d’états}  \( \rho_s(\theta) \), définie par
-\begin{eqnarray}
-	 \rho_s(\theta_a) &\doteq & \frac{1}{L} \lim_{\text{\tiny therm}} \frac{|I_{a+1} - I_a|}{|\theta_{a+1} - \theta_a|},
-\end{eqnarray}
-soit en notant la fonction \( I(\theta_a) = I_a \)
-\begin{eqnarray}
-	2\pi \rho_s(\theta_a) &=&  \frac{2\pi}{L} \frac{\partial I}{\partial \theta}(\theta_a).
-\end{eqnarray}
-L’application des équations de Bethe sous forme logarithmique \eqref{chap:1:eq:EBA} conduit alors à
-\begin{eqnarray}
-	2\pi \rho_s(\theta_a) = 1 + \frac{1}{L} \sum_{b = 1}^N \Delta(\theta_a - \theta_b),
-\end{eqnarray}
-ce qui relie \( \rho_s \) à le déplacement de diffusion  \( \Delta \) définie dans l'équation  \eqref{eq:I-1-16}.
+Dans la limite thermodynamique $(\underset{\text{\tiny therm}}{\lim} \equiv \underset{\underset{ N/L = \mathrm{cnst}}{L \to \infty}}{\lim} )$ , les valeurs de \( \theta_a \) deviennent quasi-continues, avec un espacement \( \theta_{a+1} - \theta_a = \mathcal{O}(1/L) \), et se condensent dans un intervalle symétrique autour de zéro $[-\theta_{\mbox{\tiny max}} , \theta_{\mbox{\tiny max}} ]$ . En supposant l'ordre \( I_a \geq I_b  \) implique \(\theta_a \geq \theta_b \), cet intervalle constitue ce qu'on appelle la {\em mer de Dirac} (ou sphère de Fermi en dimension un).
 
 \medskip
 
-Intéressons-nous maintenant à la {\em densité de particules dans l’espace des moments}, que l'on nome la {\bf distribution de rapidité macroscopique} et notée \( \rho(\theta) \), et définie par
+\paragraph{Distribution de rapidité $\rho(\theta)$.}
+
+Nous introduisons la {\bf distribution de rapidité macroscopique} par unité de longueur, notée \( \rho(\theta) \), et définie par
 \begin{eqnarray}
 	L \rho(\theta) \delta \theta & \doteq & \mbox{nombre de quasi-particules ayant une rapidité dans } [\theta , \theta + \delta \theta].	
 \end{eqnarray}
@@ -1341,24 +1298,47 @@ On peut aussi écrire la distribution de rapidité sous la forme :
 	\rho(\theta) & = & \frac{1}{L} \sum_{a = 1}^N \delta ( \theta - \theta_a ) .	
 \end{eqnarray}
 
+\medskip
+
+\paragraph{Densité d’états $\rho_s(\theta)$.}
+
+Intéressons-nous maintenant à la {\bf densité d’états}  \( \rho_s(\theta) \), définie par
+\begin{eqnarray}
+	 \rho_s(\theta_a) &\doteq & \frac{1}{L} \lim_{\text{\tiny therm}} \frac{|I_{a+1} - I_a|}{|\theta_{a+1} - \theta_a|},
+\end{eqnarray}
+soit en notant la fonction \( I(\theta_a) = I_a \), le passage discret-continue permet d'écrire :
+\begin{eqnarray}
+	2\pi \rho_s(\theta_a) &=&  \frac{2\pi}{L} \frac{\partial I}{\partial \theta}(\theta_a).
+\end{eqnarray}
+L’application des équations de Bethe sous forme logarithmique \eqref{chap:1:eq:EBA} conduit alors à
+\begin{eqnarray}\label{chap1:eq:rho.s.1}
+	2\pi \rho_s(\theta_a) = 1 + \frac{1}{L} \sum_{b = 1}^N \Delta(\theta_a - \theta_b),
+\end{eqnarray}
+ce qui relie \( \rho_s \) à le déplacement collisionel \( \Delta \) définie dans l'équation  \eqref{eq:I-1-16}.
+
+\medskip
+
+
 Dans l’état fondamental, toutes les positions disponibles dans l’intervalle \( [-\theta_{\mbox{\tiny max}}, +\theta_{\mbox{\tiny max}}] \) sont occupées. On a donc :
 \begin{eqnarray}\label{chap.1.rho.2}
 	\rho(\theta) = \rho_s(\theta).
 \end{eqnarray}
 
+\medskip
+
 La quantité \( L \rho(\theta) d\theta \) représente le nombre de rapidités dans la cellule infinitésimale \( [\theta, \theta + d\theta] \), tandis que
 \(
 	N = L \int_{-\theta_{\mbox{\tiny max}}}^{+\theta_{\mbox{\tiny max}}} \rho(\theta)\, d\theta
 \)
-donne le nombre total de particules dans le système. Le passage de la somme discrète à l'intégrale dans le second membre de l'équation de Bethe permet d’écrire :
+donne le nombre total de particules dans le système. Le passage de la somme discrète à l'intégrale dans le second membre de l'équation de Bethe s'effectue en utilisant la correspondance:
 \begin{eqnarray}
 	\frac{1}{L} \sum_{b = 1}^N \Delta(\theta_a - \theta_b) \underset{\text{\tiny therm}}{\longrightarrow }\int_{-\theta_{\mbox{\tiny max}}}^{+\theta_{\mbox{\tiny max}}} \Delta(\theta_a - \theta)\, \rho(\theta)\, d\theta.
 \end{eqnarray}
-Ainsi, l'équation pour la densité d'états devient :
+Ainsi, l'équation pour la densité d'états \eqref{chap1:eq:rho.s.1} devient :
 \begin{eqnarray}\label{chap.1.rho.s.2}
 	2\pi \rho_s(\theta) = 1 + \int_{-\theta_{\mbox{\tiny max}}}^{+\theta_{\mbox{\tiny max}}} \Delta(\theta - \theta')\, \rho(\theta')\, d\theta',
 \end{eqnarray}
-et, comme \( \rho = \rho_s \), à l'état fondamental, on obtient l’équation linéaire intégrale satisfaite par la densité de rapidités :
+et, comme \( \rho = \rho_s \), à l'état fondamental, on obtient l’équation linéaire intégrale satisfaite par la distribution de rapidités :
 \begin{eqnarray}\label{chap.1.rho.3}
 	\rho(\theta) - \int_{-\theta_{\mbox{\tiny max}}}^{+\theta_{\mbox{\tiny max}}} \frac{\Delta(\theta - \theta')}{2\pi} \rho(\theta')\, d\theta' = \frac{1}{2\pi}.
 \end{eqnarray}
@@ -1366,9 +1346,9 @@ et, comme \( \rho = \rho_s \), à l'état fondamental, on obtient l’équation 
 
 \subsection{Excitations élémentaires}
 
-À partir de l’état fondamental dans le régime d’interaction forte, les excitations élémentaires du modèle de Lieb-Liniger ont été classifiées par Lieb en deux types distincts~\cite{LL_1963_2}. Ces excitations peuvent être comprises comme des perturbations de la mer de Fermi formée par les quasi-particules.
+À partir de l’état fondamental dans le régime d’interaction forte, les excitations élémentaires du modèle de \gls{LL} ont été classifiées par Lieb en deux types distincts~\cite{LL_1963_2}. Ces excitations peuvent être comprises comme des perturbations de la mer de Fermi formée par les quasi-particules.
 
-\begin{itemize}
+\begin{itemize}[label = $\bullet$]
     \item \textbf{Excitations de type I :} Il s’agit remplacer une quasi-particule avec un nombre fermionique au bord de Fermi $I_{N}$ (ou $I_{-N}$) par une quasi-particule avec un nombre fermionique $I'> I_N$ (resp.$I' <I_{-N}$), c’est-à-dire au-delà du bord de la mer de Fermi. Ces excitations sont analogues à des excitations de particules libres et, dans la limite des faibles interactions ($g \to 0$), leur relation de dispersion reproduit celle prédite par la théorie de Bogoliubov.
 
     \item \textbf{Excitations de type II :} Ces excitations sont de type particule-trou. Elles sont obtenues en remplaçant une quasi-particule de la mer de Fermi avec une nombre fermionique $I_a$ (\ie, en créant un trou dans l’état fondamental) et de le remplacer par une quasi-particule avec $I' = I_{N+1} = N/2$ ou $I' = I_{N-1} = -N/2$ et en réarrangeant les autres nombres fermionique. Cela correspond à une excitation interne du Fermi pseudo-mer, avec conservation du nombre de particules. Pour de petits $I'$, la dispersion est linéaire, correspondant à des modes phononiques. Dans la limite d’interaction faible \( g \to 0 \), ces excitations peuvent être interprétées comme des solitons sombres~\cite{Ishikawa1980SolitonsIA,Karpiuk_2015}.
@@ -1378,40 +1358,42 @@ Ces deux types d’excitations définissent ensemble le spectre complet du modè
 
 \paragraph{Équation de Bethe continue.}
 
-À température non nulle (hors de l’état fondamental), il n’y a plus de mer de Fermi définie, et les équations \eqref{chap.1.rho.2} et \eqref{chap.1.rho.3} ne sont plus valides (en particulier $\rho \neq \rho_s$). Les équations discrètes de Bethe \eqref{chap.1.rho.s.2} se condensent alors en une équation intégrale pour les densités de rapidité :
+Hors de l’état fondamental, la notion de « mer de Fermi » n’est plus bien définie, et les équations~\eqref{chap.1.rho.2} et \eqref{chap.1.rho.3} ne sont donc plus valides (en particulier, on n’a plus $\rho = \rho_s$).  
+Dans ce cadre, les équations discrètes de Bethe~\eqref{chap.1.rho.s.2} se condensent, à la limite thermodynamique, en une équation intégrale reliant les densités de rapidité :
 
-\begin{equation}
-	2\pi \rho_s \;=\; 1 \;+\;\Delta \star \rho,
-\label{eq:TBA-rhos}
+\begin{equation}\label{eq:TBA-rhos}
+	2\pi \rho_s(\theta) \;=\; 1 \;+\; \bigl(\Delta \star \rho\bigr)(\theta),
 \end{equation}
 où le symbole $\star$ désigne la \emph{convolution} :
-\(
-	[\Delta \star \rho](\theta) = \int_{-\infty}^{\infty} d\theta' \, \Delta(\theta - \theta') \, \rho(\theta').
-\)
-Et on peut définir la distribution de trou $\rho_h$ , tel que $\rho_s = \rho + \rho_h$. \\
+\[
+	\bigl[\Delta \star \rho\bigr](\theta) \;=\; \int_{-\infty}^{\infty} d\theta'\, \Delta(\theta - \theta')\, \rho(\theta').
+\]
+
+On introduit alors la \textbf{densité de trous} $\rho_h(\theta)$ définie par
+\begin{equation}
+	\rho_s(\theta) \;=\; \rho(\theta) + \rho_h(\theta),
+\end{equation}
+ainsi que la \emph{fonction d’occupation} (ou facteur d’occupation de type Fermi–Dirac)
+\begin{equation}\label{eq:TBA-nu}
+	\nu(\theta) \;=\; \frac{\rho(\theta)}{\rho_s(\theta)}.
+\end{equation}
 
 \paragraph{Opération de \emph{dressing}.}
-\subparagraph{Définition.}
-À toute fonction $f(\theta)$ on associe sa version \emph{habillée} (ou \emph{dressed}) $f^{\mathrm{dr}}_{[\nu]}(\theta)$, définie comme la solution de l’équation intégrale suivante :
-\begin{eqnarray}\label{eq:dessing}
-	f^{\mathrm{dr}}_{[\nu]} & = & f  \;+\;\tfrac{\Delta}{2\pi}\star\bigl(\nu\,f^{\mathrm{dr}}\bigr) \label{eq:dressing}	
-\end{eqnarray}
-où pour notre système 
-\begin{eqnarray}
-	\nu = \frac{\rho}{\rho_s	}\label{eq:TBA-nu}
-\end{eqnarray}
-est le {\bf facteur d’occupation}, et $\Delta/2\pi$ est le {\bf noyau de diffusion} du modèle.
-Dans la suite, il est pratique de décrire la thermodynapique et la dynamique des système à l'aide de la {\em fonction d'occumation}.
 
-%où $\Delta/2\pi$ est un noyau de convolution spécifique et 
-%\(
-%\nu=\dfrac{\rho}{\rho_s}
-%\)
-%est le \emph{facteur d’occupation}.
+\subparagraph{Définition.}  
+À toute fonction $f(\theta)$, on associe sa version \emph{habillée} (ou \emph{dressed}) $f^{\mathrm{dr}}_{[\nu]}(\theta)$, définie comme la solution de l’équation intégrale suivante :
+\begin{equation}\label{eq:dressing}
+	f^{\mathrm{dr}}_{[\nu]}(\theta) 
+	\;=\; f(\theta) \;+\; \frac{1}{2\pi}\,\bigl(\Delta \star [\nu\, f^{\mathrm{dr}}]\bigr)(\theta).
+\end{equation}
+
+Ici, $\nu(\theta)$ est le \textbf{facteur d’occupation}, et $\Delta/2\pi$ est le \textbf{noyau de diffusion} caractéristique du modèle considéré.  
+
+\medskip
 
 \subparagraph{Interprétation physique}
 
-Le dressing incorpore à tous ordres les effets de rétrodiffusion entre quasi-particules. Il encode ainsi les corrections d’interaction aux grandeurs physiques initiales $f(\theta)$. %Dans le modèle de Lieb–Liniger, cette opération permet de déterminer : l’énergie habillée $\varepsilon^{\mathrm{dr}}(\theta)$ , l’impulsion habillée $p^{\mathrm{dr}}(\theta)$ , les susceptibilités thermodynamiques (cf. section~\ref{chap:GGE}).
+Le dressing incorpore à tous ordres les effets de rétrodiffusion entre quasi-particules. Il encode ainsi les corrections d’interaction aux grandeurs physiques initiales $f(\theta)$. L’opération de \emph{dressing} joue un rôle central dans la description thermodynamique et dynamique des systèmes intégrables : elle permet d’exprimer les grandeurs physiques effectives (charges, courants, vitesses de groupe, etc.) en termes de leurs versions habillées par les interactions. %Dans le modèle de Lieb–Liniger, cette opération permet de déterminer : l’énergie habillée $\varepsilon^{\mathrm{dr}}(\theta)$ , l’impulsion habillée $p^{\mathrm{dr}}(\theta)$ , les susceptibilités thermodynamiques (cf. section~\ref{chap:GGE}).
 %
 %{\color{blue}
 %\paragraph{Susceptibilités thermodynamiques.}
