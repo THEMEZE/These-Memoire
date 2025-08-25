@@ -1052,8 +1052,19 @@ Dans le référentiel du laboratoire, le centre de masse évolue selon
 Ainsi, la position semi-classique des deux particules après la collision s’écrit
 \begin{eqnarray}
 	z_1 = Z + \frac{Y}{2} \;\simeq\; \theta_1 t - \Delta(\theta_1 - \theta_2),\quad
-	z_2 = Z - \frac{Y}{2} \;\simeq\; \theta_2 t + \Delta(\theta_1 - \theta_2),
+	z_2 = Z - \frac{Y}{2} \;\simeq\; \theta_2 t + \Delta(\theta_1 - \theta_2).
 \end{eqnarray}
+
+La figure~\ref{fig:collision_shift} illustre schématiquement la collision de deux particules et le décalage spatial $\Delta(\theta_1 - \theta_2)$ qui en résulte dans l’évolution semi-classique de leurs positions.
+
+\begin{figure}[h!]
+    \centering
+	\includegraphics[width=0.5\textwidth , page = 1 ]{figures/01_LL_BA/Figures.pdf}
+    \caption{Schéma de collision entre deux quasi-particules et du décalage spatial $\Delta(\theta_1-\theta_2)$.}
+    \label{fig:collision_shift}
+\end{figure}
+
+
 %où \(\Delta(\theta_1 - \theta_2)\) représente le décalage dû à l’interaction entre les deux particules.
 %On rappelle les définitions :
 %\[
@@ -1190,7 +1201,7 @@ Ainsi, dans l’image de Bethe, les états propres sont des configurations stabl
 Sans en donner ici la démonstration, donnons une forme généralisée de la fonction propre à $N$ particules [cf. équation \eqref{chap.1:eq.rapel.fonction.propre.N}], qui prolonge naturellement l’expression obtenue pour le cas à deux corps [cf. équation \eqref{eq:I-1-10}].
 Dans le domaine $z_1 < z_2 < \cdots < z_N$, la fonction d’onde pour un état de Bethe à $N$ particules s’écrit ({\color{blue} \cite{Korepin_1997,Gaudin_2014,LL_1963_1,Franchini_2016,Wouters2015}}) :
 \begin{eqnarray}
-	\varphi_{\{\theta_a\}} ( z_1 , \cdots , z_N ) & = &  \frac{1}{\sqrt{N!}}\langle \emptyset \vert \operator{\Psi} ( z_1 ) \cdots \operator{\Psi} (z_N ) \vert \{ \theta_a \} \rangle \notag\\
+	\varphi_{\{\theta_a\}} ( z_1 < \cdots < z_N ) & = &  \frac{1}{\sqrt{N!}}\langle \emptyset \vert \operator{\Psi} ( z_1 ) \cdots \operator{\Psi} (z_N ) \vert \{ \theta_a \} \rangle \notag\\
 	& \propto & \sum_\sigma (-1)^{|\sigma|} \left( \prod_{1 \leq a < b \leq N} (\theta_{\sigma(b)} - \theta_{\sigma(a)} - i g) \right) e^{i \sum_{j=1}^{N} z_j \theta_{\sigma(j)}},\label{eq:I-2-17}
 \end{eqnarray}
 où la somme s'étend sur toutes les permutations $\sigma$ de $\{1,\dots,N\}$. Le facteur $(-1)^{|\sigma|}$ est la signature de la permutation, et les amplitudes dépendent des différences de quasi-moments $\theta_j$ ainsi que du couplage $g$.
