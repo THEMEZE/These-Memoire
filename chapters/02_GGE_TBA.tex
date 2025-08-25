@@ -80,7 +80,31 @@ Nous avons introduit ces observables en injectant des opérateurs $\operator{f}$
 	 \operator{F} \ket{\{\theta_a\}} =   \sum_{ \{\theta_a\} }\left( \sum_{a = 1}^N \theta_a^q \right) \ket{\{\theta_a\}},
 \end{eqnarray}
 avec des valeurs propres données par des puissances de $\theta$. Cela motive l’étude d’états d’équilibre statistique au-delà de l’équilibre thermique, c’est-à-dire au-delà de l’ensemble de Gibbs.
-\end{mdframed}   
+\end{mdframed}  
+
+
+\subparagraph{Pourquoi pas de terme d’interaction pour $Q$ et $P$ ?}
+
+Les opérateurs $Q$ (nombre total de particules, lié à la symétrie $U(1)$) et $P$ (quantité de mouvement totale, liée à l’invariance par translation) sont des \textbf{charges de Noether simples}.  
+
+Pour un Hamiltonien comme celui du modèle de Lieb–Liniger :
+\[
+H = \int dx \left[ \frac{\hbar^2}{2m} \, \partial_x \Psi^\dagger \, \partial_x \Psi + \frac{g}{2} \, \Psi^\dagger \Psi^\dagger \Psi \Psi \right],
+\]
+l’interaction locale $g \, \Psi^\dagger \Psi^\dagger \Psi \Psi$ est \textbf{invariante par $U(1)$ et par translation}.  
+
+Par conséquent, $Q$ et $P$ commutent avec $H$ sans qu’il soit nécessaire d’ajouter des termes de contact supplémentaires.  
+Autrement dit, les états $\ket{\{k_a\}}$ restent propres pour ces observables, même en présence d’une interaction locale respectant ces symétries.
+
+En revanche, pour les charges plus hautes $Q_3, Q_4, \dots$ (celles qui apparaissent dans le cadre de l’intégrabilité), il est nécessaire d’inclure explicitement des termes d’interaction (contacts) afin d’assurer que
+\[
+[Q_n,H] = 0.
+\]
+C’est là que les corrections apparaissent — mais cela ne concerne pas $Q$ et $P$.
+
+Cette remarque prépare naturellement la discussion des \textbf{Generalized Gibbs Ensembles (GGE)}, où l’ensemble des charges conservées au-delà de $Q$ et $P$ joue un rôle central pour décrire la relaxation des systèmes intégrables.
+
+\medskip 
 
 
 
