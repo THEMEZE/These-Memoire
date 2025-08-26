@@ -1241,11 +1241,25 @@ où les $I_a$ sont des nombres quantiques. Ce sont des entiers $I_a \in \mathbb{
 
 \medskip
 
-Dans la configuration d’état fondamental (ou de type “mer de Fermi”), ces nombres sont pris de manière symétrique autour de zéro :
+Dans la configuration d’état fondamental (ou de type “mer de Fermi”), ces nombres sont pris de manière symétrique autour de zéro (voir Fig \ref{fig:fermi_excitations}(a) ):
 \begin{equation}\label{chap:1:eq:EBA.1}
 	I_a = a - \frac{N+1}{2}, \quad \text{pour } a \in \llbracket 1 , N \rrbracket.
 \end{equation}
 ce qui correspond au choix symétrique des nombres quantiques pour l’état fondamental. Il en résulte une distribution uniforme des $\theta_a$ dans l’intervalle autour de zéro $[-\theta_{\mbox{\tiny max}} , \theta_{\mbox{\tiny max}} ]$ où \( \theta_{\mbox{\tiny max}} \) est le paramètre de Fermi (ou rapidité maximale).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth , page = 2 ]{figures/01_LL_BA/Figures.pdf}
+    \caption{
+    Représentation schématique de la mer de Fermi pour un système de $N$ particules :  
+    (a) distribution occupée à l’état fondamental, analogue à une mer de Fermi idéale ;  
+    (b) modification de cette distribution sous l’effet d’une excitation élémentaire de type~I ;  
+    (c) modification correspondante en présence d’une excitation élémentaire de type~II.
+    }
+    \label{fig:fermi_excitations}
+\end{figure}
+
+
 %Ce choix garantit une distribution uniforme des $\theta_a$ à l’état fondamental.
 %\vspace{1em}
 
@@ -1360,9 +1374,9 @@ et, comme \( \rho = \rho_s \), à l'état fondamental, on obtient l’équation 
 À partir de l’état fondamental dans le régime d’interaction forte, les excitations élémentaires du modèle de \gls{LL} ont été classifiées par Lieb en deux types distincts~\cite{LL_1963_2}. Ces excitations peuvent être comprises comme des perturbations de la mer de Fermi formée par les quasi-particules.
 
 \begin{itemize}[label = $\bullet$]
-    \item \textbf{Excitations de type I :} Il s’agit remplacer une quasi-particule avec un nombre fermionique au bord de Fermi $I_{N}$ (ou $I_{-N}$) par une quasi-particule avec un nombre fermionique $I'> I_N$ (resp.$I' <I_{-N}$), c’est-à-dire au-delà du bord de la mer de Fermi. Ces excitations sont analogues à des excitations de particules libres et, dans la limite des faibles interactions ($g \to 0$), leur relation de dispersion reproduit celle prédite par la théorie de Bogoliubov.
+    \item \textbf{Excitations de type I :} Il s’agit remplacer une quasi-particule avec un nombre fermionique au bord de Fermi $I_{N}$ (ou $I_{-N}$) par une quasi-particule avec un nombre fermionique $I'> I_N$ (resp.$I' <I_{-N}$), c’est-à-dire au-delà du bord de la mer de Fermi (voir Fig \ref{fig:fermi_excitations}(b)). Ces excitations sont analogues à des excitations de particules libres et, dans la limite des faibles interactions ($g \to 0$), leur relation de dispersion reproduit celle prédite par la théorie de Bogoliubov .
 
-    \item \textbf{Excitations de type II :} Ces excitations sont de type particule-trou. Elles sont obtenues en remplaçant une quasi-particule de la mer de Fermi avec une nombre fermionique $I_a$ (\ie, en créant un trou dans l’état fondamental) et de le remplacer par une quasi-particule avec $I' = I_{N+1} = N/2$ ou $I' = I_{N-1} = -N/2$ et en réarrangeant les autres nombres fermionique. Cela correspond à une excitation interne du Fermi pseudo-mer, avec conservation du nombre de particules. Pour de petits $I'$, la dispersion est linéaire, correspondant à des modes phononiques. Dans la limite d’interaction faible \( g \to 0 \), ces excitations peuvent être interprétées comme des solitons sombres~\cite{Ishikawa1980SolitonsIA,Karpiuk_2015}.
+    \item \textbf{Excitations de type II :} Ces excitations sont de type particule-trou. Elles sont obtenues en remplaçant une quasi-particule de la mer de Fermi avec une nombre fermionique $I_a$ (\ie, en créant un trou dans l’état fondamental) et de le remplacer par une quasi-particule avec $I' = I_{N+1} = N/2$ ou $I' = I_{N-1} = -N/2$ et en réarrangeant les autres nombres fermionique (voir Fig \ref{fig:fermi_excitations}(c) ). Cela correspond à une excitation interne du Fermi pseudo-mer, avec conservation du nombre de particules. Pour de petits $I'$, la dispersion est linéaire, correspondant à des modes phononiques. Dans la limite d’interaction faible \( g \to 0 \), ces excitations peuvent être interprétées comme des solitons sombres~\cite{Ishikawa1980SolitonsIA,Karpiuk_2015}.
 \end{itemize}
 
 Ces deux types d’excitations définissent ensemble le spectre complet du modèle de Lieb-Liniger et permettent d’accéder aux propriétés dynamiques du système, telles que les fonctions de réponse ou la structure du spectre d’énergie.
