@@ -1249,7 +1249,7 @@ ce qui correspond au choix symétrique des nombres quantiques pour l’état fon
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.5\textwidth , page = 2 ]{figures/01_LL_BA/Figures.pdf}
+    \includegraphics[width=0.7\textwidth , page = 2 ]{figures/01_LL_BA/Figures.pdf}
     \caption{
     Représentation schématique de la mer de Fermi pour un système de $N$ particules :  
     (a) distribution occupée à l’état fondamental, analogue à une mer de Fermi idéale ;  
@@ -1341,6 +1341,16 @@ L’application des équations de Bethe sous forme logarithmique \eqref{chap:1:e
 \end{eqnarray}
 ce qui relie \( \rho_s \) à le déplacement collisionel \( \Delta \) définie dans l'équation  \eqref{eq:I-1-16}.
 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth , page = 3 ]{figures/01_LL_BA/Figures.pdf}
+    \caption{
+    Rapiditées dans l’intervalle $[\theta, \theta + \delta\theta]$ s’associent à un ensemble de nombres quantiques fermioniques situés dans $[I, I + \delta I]$. La densité d’états $\rho_s$ se déduit alors de la relation $\delta I \simeq L \rho_s(\theta) \delta \theta $
+    }
+    \label{fig:rho_s.I}
+\end{figure}
+
 \medskip
 
 
@@ -1359,7 +1369,7 @@ donne le nombre total de particules dans le système. Le passage de la somme dis
 \begin{eqnarray}
 	\frac{1}{L} \sum_{b = 1}^N \Delta(\theta_a - \theta_b) \underset{\text{\tiny therm}}{\longrightarrow }\int_{-\theta_{\mbox{\tiny max}}}^{+\theta_{\mbox{\tiny max}}} \Delta(\theta_a - \theta)\, \rho(\theta)\, d\theta.
 \end{eqnarray}
-Ainsi, l'équation pour la densité d'états \eqref{chap1:eq:rho.s.1} devient :
+Ainsi, l'équation pour la densité d'états \eqref{chap1:eq:rho.s.1} devient (Fig ~\ref{fig:rho_s.I}):
 \begin{eqnarray}\label{chap.1.rho.s.2}
 	2\pi \rho_s(\theta) = 1 + \int_{-\theta_{\mbox{\tiny max}}}^{+\theta_{\mbox{\tiny max}}} \Delta(\theta - \theta')\, \rho(\theta')\, d\theta',
 \end{eqnarray}
@@ -1574,5 +1584,20 @@ En prenant $f(\theta) = 1$ dans l’équation~\eqref{eq:dressing}, on obtient :
 	2\pi\rho_s = 1^{\mathrm{dr}}_{[\nu]},\label{eq:TBA-rhos-2}
 \end{eqnarray}
 ce qui n’est autre que la relation constitutive~\eqref{eq:TBA-rhos}.
+
+
+
+\section*{Conclusion du chapitre}
+
+Dans ce chapitre, nous avons introduit le modèle de Lieb–Liniger (LL), qui décrit un gaz de bosons unidimensionnel soumis à une interaction de contact. Dans ce cadre, les grandeurs conservées naturelles ne sont pas seulement le nombre total de particules $\operator{Q}$ et la quantité de mouvement totale $\operator{P}$, mais également l’énergie associée à l’Hamiltonien de Lieb–Liniger $\operator{H}$, plutôt qu’à la simple énergie cinétique $\operator{K}$. Ces charges conservées correspondent respectivement aux moments d’ordre $0$, $1$ et $2$ en rapidité. Comme nous le verrons au chapitre suivant, des charges d’ordre supérieur interviennent dans la description des états hors équilibre, notamment via l’ensemble généralisé d’ensembles (GGE).
+
+\medskip
+
+L’imposition de conditions aux bords périodiques conduit naturellement aux équations de Bethe Ansatz. Dans la limite thermodynamique, celles-ci se condensent en une équation intégrale reliant la densité d’états $\rho_s(\theta)$, la densité de particules occupées $\rho(\theta)$, la densité de trous $\rho_h(\theta)$, ainsi que la fonction d’occupation $\nu(\theta)$. L’Ansatz de Bethe établit ainsi le lien fondamental entre ces différentes grandeurs et constitue la base de la description thermodynamique du modèle.
+
+\medskip
+
+Le chapitre suivant sera consacré à l’introduction des ensembles généralisés (GGE) et à l’écriture explicite de la thermodynamique de Bethe Ansatz (TBA), qui fournit un cadre puissant pour décrire les propriétés thermodynamiques et hors équilibre des systèmes intégrables.
+
 
 
