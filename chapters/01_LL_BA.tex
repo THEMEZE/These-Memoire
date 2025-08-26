@@ -414,7 +414,7 @@ dans \eqref{chap.1:eq.rapel.opp.1.second.2}, on réécrit l’opérateur énergi
 
 Lorsque cet Hamiltonien agit sur l’état de Fock à $N$ particules libres $\ket{\{k_a\}}$, les règles de commutation (\ref{chap:1:com.1}) ainsi que la définition des états de Fock (\ref{chap:eq.vide.fock}) impliquent (cf. Annexe \ref{annex:N.part}) :
 \begin{eqnarray}\label{eq.chap.1.cinietique.4}
-\operator{K}\ket{ \{k_a\}} =  \int_0^L d^N z \, \operator{\mathcal{K}}_N \, \varphi_{\{k_a\}}(\{z_a\} ) \operator{\Psi}(z_1) \cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}\, , \quad \mbox{avec} \quad \operator{\mathcal{K}}_N = -\sum_{i=1}^N \frac{\hbar^2\operator{\partial}_{z_i}^2}{2m}, 
+\operator{K}\ket{ \{k_a\}} =  \int_0^L d^N z \, \operator{\mathcal{K}}_N \, \varphi_{\{k_a\}}(\{z_a\} ) \operator{\Psi}^\dag(z_1) \cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}\, , \quad \mbox{avec} \quad \operator{\mathcal{K}}_N = -\sum_{i=1}^N \frac{\hbar^2\operator{\partial}_{z_i}^2}{2m}, 
 \end{eqnarray}
 où \( -i \hbar \operator{\partial}_{z_i} \)  désigne l’opérateur impulsion associé à la coordonnée \( z_i \) de la $i$-ème particule.
 
@@ -438,11 +438,11 @@ Pour ces observables, les états $\ket{\{k_a\}}$ sont des états propres, et cel
 
 En seconde quantification, ces opérateurs s'écrivent dans la base \( \{ \ket{k} \} \) : 
 \begin{equation}
-	\operator{Q} = \sum_{k}  \operator{b}^\dagger_k \operator{b}_k^{} , \quad  \operator{P} = i\hbar\sum_{k} k \, \operator{b}^\dagger_k \operator{b}_k^{},\label{eq.chap.1.Q.P.k.1}
+	\operator{Q} = \sum_{k}  \operator{b}^\dagger_k \operator{b}_k^{} , \quad  \operator{P} = \hbar\sum_{k} k \, \operator{b}^\dagger_k \operator{b}_k^{},\label{eq.chap.1.Q.P.k.1}
 \end{equation}
 Lorsqu’on les applique à un état de Fock à $N$ particules \(\ket{\{k_a\}}\), on obtient :
 \begin{eqnarray}\label{eq.chap.1.Q.P.k.2}
-	\operator{Q} \ket{\{k_a\}} = \left( \sum_{i = 1}^N 1 \right) \ket{\{k_a\}},\quad \operator{P} \ket{\{k_a\}} = -i\hbar \left( \sum_{i = 1}^N k \right) \ket{\{k_a\}}.
+	\operator{Q} \ket{\{k_a\}} = \left( \sum_{i = 1}^N 1 \right) \ket{\{k_a\}},\quad \operator{P} \ket{\{k_a\}} = \hbar \left( \sum_{i = 1}^N k \right) \ket{\{k_a\}}.
 \end{eqnarray}
 Dans la base position \( \{ \ket{x} \} \), les opérateurs s’écrivent : 
 \begin{eqnarray}\label{eq.chap.1.Q.P.k.3}
@@ -452,8 +452,8 @@ Dans la base position \( \{ \ket{x} \} \), les opérateurs s’écrivent :
 où l'expression symétrisée de $\operator{P}$ assure son hermiticité.\\ 
 Lorsqu'on applique ces opérateurs à l’état \(\ket{\{k_a\}}\), on obtient (comme pour l’énergie cinétique) :
 \begin{eqnarray}
-	\operator{Q}\ket{ \{k_a\}} =  \int_0^L d^N z \, \operator{\mathcal{N}}_N \, \varphi_{\{k_a\}}(\{z_a\} ) \operator{\Psi}(z_1) \cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}\, , \quad &\mbox{avec}& \quad \operator{\mathcal{N}}_N = \sum_{i=1}^N 1,\label{eq.chap.1.Q.1}\\
-	\operator{P}\ket{ \{k_a\}} =  \int_0^L d^N z \, \operator{\mathcal{P}}_N \, \varphi_{\{k_a\}}(\{z_a\} ) \operator{\Psi}(z_1) \cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}\, , \quad &\mbox{avec}& \quad \operator{\mathcal{P}}_N = \hbar \sum_{i=1}^N \operator{\partial}_{z_i}\label{eq.chap.1.P.1}.
+	\operator{Q}\ket{ \{k_a\}} =  \int_0^L d^N z \, \operator{\mathcal{N}}_N \, \varphi_{\{k_a\}}(\{z_a\} ) \operator{\Psi}^\dag(z_1) \cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}\, , \quad &\mbox{avec}& \quad \operator{\mathcal{N}}_N = \sum_{i=1}^N 1,\label{eq.chap.1.Q.1}\\
+	\operator{P}\ket{ \{k_a\}} =  \int_0^L d^N z \, \operator{\mathcal{P}}_N \, \varphi_{\{k_a\}}(\{z_a\} ) \operator{\Psi}^\dag(z_1) \cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}\, , \quad &\mbox{avec}& \quad \operator{\mathcal{P}}_N = -i\hbar \sum_{i=1}^N \operator{\partial}_{z_i}\label{eq.chap.1.P.1}.
 \end{eqnarray}
 
 \begin{mdframed}[
@@ -478,7 +478,7 @@ En représentation position \(\{\ket{x}\}\) , on obtient l’opérateur hermitis
 \)
 et son action sur $\ket{\{k_a\}}$ se traduit par :\\ 
 \(
-	\operator{F}\ket{ \{k_a\}} =  \int_0^L d^N z \, \operator{\mathcal{F}}_N \, \varphi_{\{k_a\}}(\{z_a\} ) \operator{\Psi}(z_1) \cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}\, 
+	\operator{F}\ket{ \{k_a\}} =  \int_0^L d^N z \, \operator{\mathcal{F}}_N \, \varphi_{\{k_a\}}(\{z_a\} ) \operator{\Psi}^\dag(z_1) \cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}\, 
 \) \mbox{avec} 
 \(\operator{\mathcal{F}}_N = \hbar^q \sum_{i=1}^N (\operator{\partial}_{z_i})^q.
 \)
@@ -564,7 +564,7 @@ soit pour des interactions ponctuelles :
 \end{eqnarray}
 et quand on l'applique à l'état $\ket{\{k_a\}}$, les règles de commutations (\ref{chap:1:com.1}) et la définition d'état de Fock (\ref{chap:eq.vide.fock}) impliquent que (cf Annex \ref{annex:N.part})
 \begin{eqnarray}\label{chap.1:eq.rapel.opp.2.second.ponctuel.2}
-\operator{V}\ket{\{k_a \}} =  \int d^Nz \, \operator{\mathcal{V}}_N \varphi_{\{k_a\}}( \{z_a\} )\operator{\Psi}(z_1)\cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset} \, \quad \mbox{avec} \quad  \operator{\mathcal{V}}_N 	= g\sum_{1\leq i < j \leq N } \operator{\delta}(z_i - z_j)	
+\operator{V}\ket{\{k_a \}} =  \int d^Nz \, \operator{\mathcal{V}}_N \varphi_{\{k_a\}}( \{z_a\} )\operator{\Psi}^\dag(z_1)\cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset} \, \quad \mbox{avec} \quad  \operator{\mathcal{V}}_N 	= g\sum_{1\leq i < j \leq N } \operator{\delta}(z_i - z_j)	
 \end{eqnarray}
 %avec 
 %\(
@@ -1589,15 +1589,15 @@ ce qui n’est autre que la relation constitutive~\eqref{eq:TBA-rhos}.
 
 \section*{Conclusion du chapitre}
 
-Dans ce chapitre, nous avons introduit le modèle de Lieb–Liniger (LL), qui décrit un gaz de bosons unidimensionnel soumis à une interaction de contact. Dans ce cadre, les grandeurs conservées naturelles ne sont pas seulement le nombre total de particules $\operator{Q}$ et la quantité de mouvement totale $\operator{P}$, mais également l’énergie associée à l’Hamiltonien de Lieb–Liniger $\operator{H}$, plutôt qu’à la simple énergie cinétique $\operator{K}$. Ces charges conservées correspondent respectivement aux moments d’ordre $0$, $1$ et $2$ en rapidité. Comme nous le verrons au chapitre suivant, des charges d’ordre supérieur interviennent dans la description des états hors équilibre, notamment via l’ensemble généralisé d’ensembles (GGE).
+Dans ce chapitre, nous avons introduit le modèle de \glsreset{LL}\gls{LL} , qui décrit un gaz de bosons unidimensionnel soumis à une interaction de contact. Dans ce cadre, les grandeurs conservées naturelles ne sont pas seulement le nombre total de particules $\operator{Q}$ et la quantité de mouvement totale $\operator{P}$, mais également l’énergie associée à l’Hamiltonien de \gls{LL} $\operator{H}$, (plutôt qu’à la simple énergie cinétique $\operator{K}$). Ces charges conservées correspondent respectivement aux moments d’ordre $0$, $1$ et $2$ en rapidité. Comme nous le verrons au chapitre suivant, des charges d’ordre supérieur interviennent dans la description des états en équilibre, notamment via l’Ensemble de Gibs Généralisé \gls{GGE}.
 
 \medskip
 
-L’imposition de conditions aux bords périodiques conduit naturellement aux équations de Bethe Ansatz. Dans la limite thermodynamique, celles-ci se condensent en une équation intégrale reliant la densité d’états $\rho_s(\theta)$, la densité de particules occupées $\rho(\theta)$, la densité de trous $\rho_h(\theta)$, ainsi que la fonction d’occupation $\nu(\theta)$. L’Ansatz de Bethe établit ainsi le lien fondamental entre ces différentes grandeurs et constitue la base de la description thermodynamique du modèle.
+L’imposition de conditions aux bords périodiques conduit naturellement aux équations de \glsreset{BA}\gls{BA} \eqref{chap:1:eq:EBA}. Dans la limite thermodynamique, celles-ci se condensent en une équation intégrale reliant la densité d’états $\rho_s(\theta)$, la densité de particules occupées $\rho(\theta)$, la densité de trous $\rho_h(\theta)$, ainsi que la fonction d’occupation $\nu(\theta)$. L’\glsentrylong{BA} établit ainsi le lien fondamental entre ces différentes grandeurs et constitue la base de la description thermodynamique du modèle \reqref{eq:TBA-rhos-2}.
 
 \medskip
 
-Le chapitre suivant sera consacré à l’introduction des ensembles généralisés (GGE) et à l’écriture explicite de la thermodynamique de Bethe Ansatz (TBA), qui fournit un cadre puissant pour décrire les propriétés thermodynamiques et hors équilibre des systèmes intégrables.
+Le chapitre suivant sera consacré à l’introduction du \gls{GGE} et à l’écriture explicite de le \gls{TBA}, qui fournit un cadre puissant pour décrire les propriétés thermodynamiques et hors équilibre des systèmes intégrables.
 
 
 
