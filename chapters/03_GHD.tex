@@ -8,11 +8,11 @@
 
 
 \paragraph{De l’état stationnaire à la dynamique}  
-Après avoir étudié les propriétés stationnaires des gaz de bosons unidimensionnels, nous nous tournons désormais vers leur évolution temporelle. Ce chapitre s’appuie sur une approche hydrodynamique adaptée aux systèmes intégrables : la théorie dite d’Hydrodynamique Généralisée (GHD). Celle-ci est largement documentée dans la littérature (voir par exemple [????????]) et nous en présentons ici les concepts essentiels.
+Après avoir étudié les propriétés stationnaires des gaz de bosons unidimensionnels, nous nous tournons désormais vers leur évolution temporelle. Ce chapitre s’appuie sur une approche hydrodynamique adaptée aux systèmes intégrables : la théorie dite d’\gls{GHD}. Celle-ci est largement documentée dans la littérature (voir par exemple \cite{Doyon_GHD_2020,Bouchoule_2022,ESSLER2023127572,kerr2023theory}) et nous en présentons ici les concepts essentiels.
 
 \paragraph{Principe général d’une approche hydrodynamique}  
 De manière générale, l’hydrodynamique vise à décrire la dynamique à grande échelle (\emph{coarse grained dynamics}) d’un système, également appelée « échelle d’Euler ». L’idée consiste à découper l’espace-temps d’un système de taille $L$ en cellules de dimensions $\ell \times \tau$, comme illustré en Fig.~???.  
-La longueur $\ell$ est choisie de sorte que $L \gg \ell \gg \ell_c$, où $\ell_c$ désigne une longueur microscopique caractéristique, par exemple la distance inter-particule. On peut alors considérer que la densité est uniforme à l’intérieur de chaque cellule, ce qui correspond à l’Approximation de Densité Locale.
+La longueur $\ell$ est choisie de sorte que $L \gg \ell \gg \ell_c$, où $\ell_c$ désigne une longueur microscopique caractéristique, par exemple la distance inter-particule. On peut alors considérer que la densité est uniforme à l’intérieur de chaque cellule, ce qui correspond à l’\gls{LDA}.
 
 \paragraph{Choix des échelles spatio-temporelles}  
 Le temps $\tau$ est fixé pour être beaucoup plus grand que le temps caractéristique de relaxation. Ainsi, chaque cellule de l’espace-temps est supposée décrire un état localement relaxé. La notion de relaxation occupe donc une place centrale dans la construction des approches hydrodynamiques.
@@ -421,11 +421,22 @@ On obtient
 et dans le modèle de Lieb-Liniger $\partial_\theta h ( \theta )   = \theta$.
 Sur le plan physique, le premier terme peut être interprété comme un décalage spatial induit par un processus de diffusion à deux corps. Le second terme quantifie le taux de ces processus de diffusion par unité de temps. L’équation ainsi obtenue correspond à l’équation hydrodynamique généralisée (GHD), formulée pour la première fois en 2016\cite{Bertini2016,CastroAlvaredo2016}.
 
+\medskip
+
 Le résultat remarquable~\eqref{eq:46} a été obtenu pour la première fois par Bertini \emph{et al.}~\cite{Bertini2016} et Castro-Alvaredo \emph{et al.}~\cite{CastroAlvaredo2016}. Cette observation a constitué le point de départ des développements ultérieurs de l’hydrodynamique généralisée (GHD) dans les systèmes quantiques intégrables. Les travaux de Bertini \emph{et al.}~\cite{Bertini2016} s’appuient en partie sur ceux de Bonnes \emph{et al.}~\cite{Bonnes2014}, où la formule de la vitesse effective~\eqref{eq:47} avait été présentée pour la première fois dans le cadre d’un système quantique intégrable.
+
+\medskip
+
 
 Dans le cadre général de l’hydrodynamique généralisée (GHD), l’équation~\eqref{chap:GHD:veff.4} s’interprète comme une extension naturelle du résultat classique obtenu pour le gaz de tiges dures. La distinction essentielle réside dans le fait que le décalage de diffusion \(\Delta(\theta - \theta_0)\) dépend désormais explicitement de la rapidité relative entre les quasi-particules, alors que, dans le cas du gaz de tiges dures, \(\Delta\) est une constante égale à l’opposé du diamètre des particules.
 
+\medskip
+
+
 Sur le plan cinématique, on peut décrire la situation de la manière suivante~: un quasi-particule \emph{traceur} de rapidité \(\theta\) --- c’est-à-dire de moment asymptotique \(\theta\) en l’absence d’interactions --- se déplacerait, dans le vide, à vitesse constante \( \theta \). En présence d’une densité finie \(\rho(\theta_0)\) de quasi-particules de rapidité \(\theta_0\), cette vitesse est modifiée par les processus de diffusion à deux corps.
+
+\medskip
+
 
 Pendant un intervalle de temps infinitésimal \([t,\, t + \delta t]\), le traceur subit en moyenne
 \[
@@ -434,6 +445,15 @@ Pendant un intervalle de temps infinitésimal \([t,\, t + \delta t]\), le traceu
 collisions avec des quasi-particules de rapidité \(\theta_0\). Chaque interaction provoque un décalage spatial \(\Delta(\theta - \theta_0)\) vers l’arrière. L’équation~\eqref{chap:GHD:veff.4} formalise précisément cet effet cumulatif, résultant de l’intégration des contributions de toutes les collisions binaires sur l’espace des rapidités.
 
 Cette analyse microscopique s’étend naturellement aux modèles à \(N\) corps, où les processus de diffusion se combinent et interagissent de manière non triviale, la fonction \(\Delta(\theta - \theta_0)\) encapsulant alors l’intégralité de la structure intégrable du système.
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/03_GHD/trajectoires_hard_rods.png}
+    \caption{Trajectoires des particules d'un gaz de hard rods en 1D. Les lignes noires représentent les particules individuelles, la ligne rouge correspond à la trajectoire effective (vitesse GHD) de la particule suivie, et la ligne orange indique la trajectoire de la particule si elle conservait sa vitesse initiale (bare velocity).}
+    \label{fig:trajectoires_hard_rods}
+\end{figure}
+
 
 \subsection{Modèle de Lieb–Liniger}
 
@@ -452,7 +472,7 @@ Dans ce modèle, la vitesse effective et l’accélération effective de \eqref{
 	\quad a^{\mathrm{eff}} = - V'(x).
 \end{equation}
 
-Avec l'equation \eqref{chap:GHD:veff.4} la vitesse effectiff dans le modèle de LL s'écrit 
+Avec l'equation \eqref{chap:GHD:veff.4} la vitesse effectiff dans le modèle de \gls{LL} s'écrit 
 \begin{equation}
 	v^{\mathrm{eff}} = \theta +	\int d \theta' \, \Delta(\theta - \theta') \rho ( \theta') ( v^{\mathrm{eff}} ( \theta' ) - v^{\mathrm{eff}} ( \theta )  ) 
 \end{equation}
