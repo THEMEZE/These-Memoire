@@ -1410,7 +1410,7 @@ les coefficients de Lagrange associés sont :
 
 Les densités locales $f_i$ sont fixées. Pour spécifier le {\em poids spectral} $w$, on choisit les coefficients de Lagrange $\beta_0$ et $\beta_2$ en imposant dans un premier temps \( T = 60~\mathrm{nK} \) et \( \mu = 27~\mathrm{nK} \). De plus, afin de se placer dans un régime physique particulier, on fixe la taille du système à \( L = \, ? \) et l'impulsion maximale à \( q = \, ? \).
 
-À partir de ces paramètres, et suivant la même procédure numérique que dans la sous-section précédente, on obtient la distribution de rapidité à l'équilibre \( \braket{\operator{\rho}(\theta)}_w \equiv \rho_{\mathrm{eq}}(\theta) \), ainsi que les composantes de l’inverse de l’opérateur hessien \( \mathcal{H}^{-1}/L \) : la contribution diagonale sans interaction \( \mathcal{D}^{-1}/L \) et la contribution non locale issue des interactions \( \mathcal{B}/L \).
+À partir de ces paramètres, et suivant la même procédure numérique que dans la sous-section précédente, on obtient la distribution de rapidité à l'équilibre \( \braket{\operator{\rho}(\theta)}_w \equiv \rho_{\mathrm{eq}}(\theta) \), ainsi que les composantes de l’inverse de l’opérateur hessien \( (L\mathcal{H})^{-1} \) : la contribution diagonale sans interaction \( (L\mathcal{D})^{-1} \) et la contribution non locale issue des interactions \( \mathcal{B}/L \).
 
 \medskip
 
@@ -1556,22 +1556,80 @@ Ces approximations numériques sont représentées par des {\bf points bleus} da
 %Dans ce même diagramme, un \textbf{point rouge} correspond à des conditions fixes (\(T = 60~\mathrm{nK}\), \( \mu = 27~\mathrm{nK} \)), pour lesquelles la carte des fluctuations \( \delta \rho \) est représentée en niveaux de couleur (Fig.~\ref{fig.fluctu.A}).
 
 
+%\begin{figure}[H]
+%	\centering
+%	\begin{subfigure}[b]{0.25\textwidth}
+%		\includegraphics[width=\textwidth]{Figures/04_GGE_Fluctuation/diagram.png}
+%		\caption{Diagramme de phase du modèle de Lieb-Liniger.}
+%		\label{chap:4:fig:diagr}
+%	\end{subfigure}
+%	\hfill
+%	\begin{subfigure}[b]{0.3\textwidth}
+%		\includegraphics[width=\textwidth]{Figures/04_GGE_Fluctuation/diag_fluctu_1.png}
+%		\caption{ \( \mathcal{D}^{-1}(\theta, \theta)/\delta(\theta, \theta) \).}
+%		\label{chap:4:fig.fluctu.A}
+%	\end{subfigure}
+%	\hfill
+%	\begin{subfigure}[b]{0.4\textwidth}
+%		\includegraphics[width=\textwidth]{Figures/04_GGE_Fluctuation/fluctu_1.png}
+%		\caption{ \( \mathcal{B}(\theta, \theta') \).}
+%		\label{chap:4:fig.fluctu.A}
+%	\end{subfigure}
+%	\caption{(a) Diagramme de phase du modèle de Lieb-Liniger à l’équilibre thermique. Différents régimes asymptotiques sont séparés par des transitions progressives. Les points bleus représentent les fluctuations calculées numériquement pour différentes températures. Les coordonnées sont données par \( \gamma = \frac{m g}{\hbar^2 n} \) et \( t = \frac{k_B T}{m g^2/\hbar^2} \). On Représenter les régimes choisir pour les simulation en point blue ( à \( \gamma = 10^{-1.7} \) constant et en rouge pour \( t = 89.125 \) un point représenté en (b) et (c). (b) Representation de diagolale $\mathcal{D}^{-1}(\theta, \theta)/\delta(\theta, \theta)$ et (c) Représentation en niveaux de couleur de la partie régulière $\mathcal{B}$ des fluctuations \( \delta \rho \) pour \( t = 89.125 \) et \( \gamma = 10^{-1.7} \) (point rouge dans (a)).}
+%	\label{chap:4:fig:diag_fig}
+%\end{figure}
+%
+%\begin{figure}[H]
+%    \centering
+%    \begin{subfigure}[b]{0.25\textwidth}
+%        \includegraphics[width=\textwidth]{Figures/04_GGE_Fluctuation/diagram.png}
+%        \caption{Diagramme de phase du modèle de Lieb-Liniger à l’équilibre thermique.}
+%        \label{chap:4:fig:diagr}
+%    \end{subfigure}
+%    \hfill
+%    \begin{subfigure}[b]{0.3\textwidth}
+%        \includegraphics[width=\textwidth]{Figures/04_GGE_Fluctuation/diag_fluctu_1.png}
+%        \caption{Diagonale \( \mathcal{D}^{-1}(\theta, \theta)/\delta(\theta, \theta) \) des fluctuations.}
+%        \label{chap:4:fig:fluctu_diag}
+%    \end{subfigure}
+%    \hfill
+%    \begin{subfigure}[b]{0.4\textwidth}
+%        \includegraphics[width=\textwidth]{Figures/04_GGE_Fluctuation/fluctu_1.png}
+%        \caption{Représentation en niveaux de couleur de la partie régulière \( \mathcal{B}(\theta, \theta') \) des fluctuations \( \delta \rho \) pour \( t = 89.125 \) et \( \gamma = 10^{-1.7} \).}
+%        \label{chap:4:fig:fluctu_B}
+%    \end{subfigure}
+%    \caption{(a) Diagramme de phase du modèle de Lieb-Liniger, avec les différents régimes asymptotiques séparés par des transitions progressives. Les points bleus indiquent les valeurs des fluctuations calculées numériquement pour différentes températures. Les coordonnées sont données par \( \gamma = \frac{m g}{\hbar^2 n} \) et \( t = \frac{k_B T}{m g^2/\hbar^2} \). Le point rouge correspond aux paramètres utilisés pour les sous-figures (b) et (c). (b) Diagonale de \( \mathcal{D}^{-1}(\theta, \theta)/\delta(\theta, \theta) \). (c) Partie régulière \( \mathcal{B}(\theta, \theta') \) des fluctuations \( \delta \rho \).}
+%    \label{chap:4:fig:diag_fig}
+%\end{figure}
+
 \begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{Figures/04_GGE_Fluctuation/diagram.png}
-		\caption{Diagramme de phase du modèle de Lieb-Liniger.}
-		\label{chap:4:fig:diagr}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.45\textwidth}
-		\includegraphics[width=\textwidth]{Figures/04_GGE_Fluctuation/fluctu.png}
-		\caption{ \( \mathcal{B}(\theta, \theta') \).}
-		\label{chap:4:fig.fluctu.A}
-	\end{subfigure}
-	\caption{(a) Diagramme de phase du modèle de Lieb-Liniger à l’équilibre thermique. Différents régimes asymptotiques sont séparés par des transitions progressives. Les points bleus représentent les fluctuations calculées numériquement pour différentes températures. Les coordonnées sont données par \( \gamma = \frac{m g}{\hbar^2 n} \) et \( t = \frac{k_B T}{m g^2/\hbar^2} \). (b) Représentation en niveaux de couleur de la partie régulière $\mathcal{B}$ des fluctuations \( \delta \rho \) pour \( T = 60~\mathrm{nK} \) et \( \mu = 27~\mathrm{nK} \) (point rouge dans (a)){\color{red} (courbes blanches à enlevé)}.}
-	\label{chap:4:fig:diag_fig}
+    \centering
+    \begin{subfigure}[b]{0.25\textwidth}
+        \includegraphics[width=\textwidth]{Figures/04_GGE_Fluctuation/diagram.png}
+        \caption{Diagramme de phase du modèle de Lieb-Liniger.}
+        \label{chap:4:fig:diagr}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Figures/04_GGE_Fluctuation/diag_fluctu_1.png}
+        \caption{\( \mathcal{D}^{-1}(\theta, \theta)/\delta(\theta, \theta) \).}
+        \label{chap:4:fig:fluctu_diag}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{Figures/04_GGE_Fluctuation/fluctu_1.png}
+        \caption{\( \mathcal{B}(\theta, \theta') \).}
+        \label{chap:4:fig:fluctu_B}
+    \end{subfigure}
+    \caption{
+    (a) Diagramme de phase du modèle de Lieb-Liniger à l’équilibre thermique. Différents régimes asymptotiques sont séparés par des transitions progressives. Les points bleus représentent les fluctuations calculées numériquement pour différentes températures. Les coordonnées sont données par \( \gamma = \frac{m g}{\hbar^2 n} \) et \( t = \frac{k_B T}{m g^2/\hbar^2} \). Les régimes choisis pour les simulations sont indiqués par les points bleus (\( \gamma = 10^{-1.7} \) constant) et le point rouge correspond à \( t = 89.125 \), utilisé dans les sous-figures (b) et (c). 
+    (b) Représentation de la diagonale \( \mathcal{D}^{-1}(\theta, \theta)/\delta(\theta, \theta) \). 
+    (c) Représentation en niveaux de couleur de la partie régulière \( \mathcal{B} \) des fluctuations \( \delta \rho \) pour \( t = 89.125 \) et \( \gamma = 10^{-1.7} \) (point rouge dans (a)).
+    }
+    \label{chap:4:fig:diag_fig}
 \end{figure}
+
+
 
 \paragraph{Comparaison avec les dérivées thermodynamiques.}
 
@@ -1581,7 +1639,7 @@ Les résultats obtenus à partir de l’analyse quadratique de l’action (fluct
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{figures/04_GGE_Fluctuation/fluctuations_plot_log_gamma=-1.342.png}	
+	\includegraphics[width=1\textwidth]{figures/04_GGE_Fluctuation/fluctuations_plot_log_gamma=-1.700.png}	
 	%\includegraphics[width=1\textwidth]{Figures/04_GGE_Fluctuation/fluctuations_relativ_plot_log_gamma=-1.342.png}	
 	\caption{Comparaison numérique entre les fluctuations calculées à partir de l’analyse quadratique de l’action (fluctuations de \( \rho \)) et celles obtenues par dérivées thermodynamiques des observables moyennes.{\color{red} ( revoir titres shema )} }
 	\label{chap:4:fig.fluctu.A_com}
