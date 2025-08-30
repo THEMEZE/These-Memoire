@@ -987,8 +987,8 @@ Si on se place à l’équilibre canonique, caractérisé par la température \(
 	\end{cases}	
 \end{equation}
 où $\theta_{\tiny \mathrm{max}}$ dépend de la densité du système. La distribution de rapidités à l’état fondamental peut alors être obtenue à partir des équations constitutives de Lieb \cite{LL_1963_1}. Cette distribution ne dépend que d’un paramètre adimensionné, appelé \emph{paramètre de Lieb} :
-\begin{equation}
-\gamma = \frac{g}{n}, 
+\begin{equation}\label{chap2:eq:gamma.1}
+\gamma = \frac{mg}{\hbar^2 n}, 
 \end{equation}
 avec $g$ le paramètre d’interaction 1D et $n$ la densité linéique du gaz.
 
@@ -999,7 +999,7 @@ En fonction de $\gamma$, deux régimes limites apparaissent :
 
     \item \textbf{Régime de \gls{qBEC}} : pour $\gamma \ll 1$, les interactions sont faibles et la distribution de rapidités se déforme par rapport à la mer de Fermi. Dans la limite $\gamma \to 0$, la distribution attendue est un demi-cercle :
     \begin{equation}
-        \rho(\theta) = \frac{n}{\pi c} \sqrt{1 - \frac{\theta^2}{c^2}}, \qquad c = \sqrt{gn}.
+        \rho(\theta) = \frac{n}{\pi c} \sqrt{1 - \left ( \frac{\theta}{2c} \right )^2}, \qquad c = \sqrt{gn/m}.
     \end{equation}
     Pour des $\gamma$ petits mais non nuls, la distribution est proche du demi-cercle mais présente une discontinuité aux bords, comme illustré sur la Fig.~\ref{fig:rapidites}(b). 
 \end{itemize}
@@ -1018,8 +1018,8 @@ Les expériences sur puce atomique du LCF ont permis d’étudier ces régimes. 
 \paragraph{Diagramme des régimes du gaz de Lieb-Liniger.}
 
 À l’équilibre thermique, les propriétés du système ne dépendent pas uniquement du paramètre de Lieb $\gamma$, mais également de la température $T$, que l’on peut rendre adimensionnelle via le paramètre :
-\begin{equation}
-t = \frac{2 T}{g^2}.
+\begin{equation}\label{chap2:eq:t.1}
+t = \frac{k_B T}{mg^2/\hbar^2}.
 \end{equation}
 
 Pour synthétiser les différents comportements, les régimes principaux peuvent être représentés dans le plan $(\gamma, t)$. Le diagramme de la Fig.~\ref{fig:diagramme} distingue trois zones : gaz de Bose idéal, gaz de Tonks-Girardeau et qBEC. Les courbes qui délimitent ces zones correspondent à des conditions analytiques sur $\gamma$ et $t$, par exemple $\gamma^{3/2} t = 1$, $\gamma^2 t = 1$ et $\gamma t = 1$. Il ne s’agit pas de transitions de phase, mais de cross-over entre régimes asymptotiques. La zone grise indique la gamme de paramètres expérimentaux explorés pendant cette thèse.

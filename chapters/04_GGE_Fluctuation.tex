@@ -95,7 +95,7 @@ Nous commencerons par rappeler le formalisme variationnel, puis nous dériverons
 %\]
 
 
-\subsection{Cadre général : chages et dérivées fonctionnelles}
+\subsection{Charges généralisées et dérivées fonctionnelles}
 
 
 \begin{mdframed}[
@@ -109,7 +109,7 @@ Nous commencerons par rappeler le formalisme variationnel, puis nous dériverons
     leftmargin=2pt,
     rightmargin=2pt
 	]
-\paragraph{Formulation fonctionnelle des moments et cumulants des charges.}
+\paragraph{Rappel : Formulation fonctionnelle des moments et cumulants des charges.}
 Considérons un système unidimensionnel de taille finie $L$. 
 Dans le chapitre~(\ref{chap:relaxation}), aux équations~\eqref{chap.2.charge.f.1} et \eqref{chap.2.rho.1}, nous avons introduit l’opérateur de charge généralisée $\operator{\mathcal{Q}}[f]$, défini à partir d'une fonction test $f \colon \mathbb{R} \to \mathbb{R}$ et de l'opérateur densité de rapidité  $\operator{\rho}(\theta)$ , selon la relation intégrale :
 \begin{eqnarray}\label{chap4:eq.charge.q.1}
@@ -142,7 +142,7 @@ Dans ce chapitre, le caractère local des charges est implicite; nous omettrons 
     leftmargin=2pt,
     rightmargin=2pt
 	]
-\paragraph{Dérivée fonctionnelle directionnelle.}
+\paragraph{Rappel : Dérivée fonctionnelle directionnelle.}
 Nous avons introduit dans l'équation \eqref{chap2:eq.diff.q.1},  la {\bf dérivée fonctionnelle dans la direction d’une fonction test} $f$ appliquée à un fonctionnel $F[g]$, comme :
 \begin{eqnarray}\label{chap4:eq.diff.q.1}
 	\dfonc{f} F[g] & \doteq &  \underset{\epsilon \to 0 }{ \lim  } \frac{ F[g + \epsilon f ]  - F [ g] }{\epsilon} .	
@@ -222,15 +222,17 @@ Considérons deux fonctions $f_1$ et $f_2$. On définie la {\bf suscesptibilité
 \begin{equation}\label{chap4:eq.susceptibilite-fonctionnelle_2}
 	\chi_w[f_1, f_2] \doteq - \dfonc{f_2}  \braket{\operator{\mathcal{Q}}[f_1]}_w.
 \end{equation}
-Cette fonction de réponse est reliée aux fluctuations dans le GGE. Plus précisément, $\chi_\omega[f_1, f_2]$ vérifie
+Cette fonction de réponse est reliée aux fluctuations dans le \gls{GGE}. Plus précisément, $\chi_\omega[f_1, f_2]$ vérifie
 \begin{equation}\label{chap4:eq.suscep.corre.1}
-	\chi_w[f_1, f_2] = C_w[f_1, f_2],
+	C_w[f_1, f_2] = \chi_w[f_1, f_2],
 \end{equation}
 où les {\bf corrélations à deux points} $C_\omega(f_1, f_2)$, défini par
 \begin{equation}\label{chap4:eq.corre.1}
 C_w[f_1, f_2] \doteq \langle \operator{\mathcal{Q}}[f_1] \operator{\mathcal{Q}}[f_2] \rangle_w - \langle \operator{\mathcal{Q}}[f_1] \rangle_w \langle \operator{\mathcal{Q}}[f_2] \rangle_w,
 \end{equation}
 quantifie les fluctuations dans le GGE.
+
+\medskip
 
 L'équation précédente, qui relie la réponse linéaire aux fluctuations, est une relation très importante qui sera utilisée pour des tests numériques dans cette section.
 
@@ -263,24 +265,49 @@ L’équation~\eqref{chap4:eq.corre.1}, quant à elle, s’écrit :
 \begin{equation}\label{chap4:eq.corre.2}
 C_w(\theta, \theta') \doteq \langle \operator{\rho}(\theta) \operator{\rho}(\theta') \rangle_w - \langle \operator{\rho}(\theta) \rangle_w \langle \operator{\rho}(\theta') \rangle_w 
 \end{equation}
-où l’on utilise la notation $C_w(\theta, \theta') = C_w\left( \frac{\delta(\cdot - \theta)}{L}, \frac{\delta(\cdot - \theta')}{L} \right)$.
+où l’on utilise la notation $C_w(\theta, \theta') = C_w\left[ \frac{\delta(\cdot - \theta)}{L}, \frac{\delta(\cdot - \theta')}{L} \right]$.
+
+\medskip
+
 
 La relation~\eqref{chap4:eq.suscep.corre.1}, qui relie la susceptibilité aux corrélation, inplique alors :
-\begin{equation}
--\frac{1}{L} \frac{\delta \langle \operator{\rho}(\theta) \rangle_w}{\delta \omega(\theta')} = \langle \operator{\rho}(\theta) \operator{\rho}(\theta') \rangle_w - \langle \operator{\rho}(\theta) \rangle_w \langle \operator{\rho}(\theta') \rangle_w 
+%\begin{equation}
+%-\frac{1}{L} \frac{\delta \langle \operator{\rho}(\theta) \rangle_w}{\delta \omega(\theta')} = \langle \operator{\rho}(\theta) \operator{\rho}(\theta') \rangle_w - \langle \operator{\rho}(\theta) \rangle_w \langle \operator{\rho}(\theta') \rangle_w 
+%\end{equation}
+\begin{equation}\label{chap4:eq.suscep.corre.1111}
+	C_w(\theta, \theta') = \chi_w(\theta, \theta').
 \end{equation}
 
 
-\subsection{Cadre d'Équilibre de Gibbs Généralisée}
+\subsection{Poids spectral et formulation du GGE}
 
-\paragraph{Paramétrisation du potentiel spectral et réécriture des moments des charges.}
-\paragraph{Lien entre dérivées fonctionnelles, paramétrisation spectrale et moments des charges.}
 
-Dans le cadre de l'Équilibre de Gibbs Généralisées (GGE), le {\em poids spectral} s'écrit 
+\begin{mdframed}[
+	linewidth=0.5pt, 
+	backgroundcolor=gray!5, 
+	roundcorner=50pt,	
+	innerleftmargin=5pt,
+    innerrightmargin=5pt,
+    innertopmargin=-10pt,
+    innerbottommargin=2pt,
+    leftmargin=2pt,
+    rightmargin=2pt
+	]
+\paragraph{Rappel : Lien entre poids spectral et multiplicateurs de Lagrange.}
+Dans la formulation fonctionnelle, un \gls{GGE} est entièrement déterminé par une fonction arbitraire $w(\theta)$, appelée {\em poids spectral}. Cette description est donc plus générale que l’approche usuelle, où l’on considère uniquement une combinaison discrète de charges locales (ou quasi-locales). Dans ce cas particulier, le poids spectral prend la forme :
 \begin{eqnarray}\label{chap4:eq.w_fi}
 	w(\theta) = \sum_i \beta_i f_i(\theta),	
 \end{eqnarray}
-où les fonction régulières $f_i$ sont des densitées spectrale associées au charges $\operator{Q}_i$,de sorte que les charges soient bien $\operator{Q}_i^{(\mathcal{S})} = \operator{\mathcal{Q}}^{(\mathcal{S})}[f_i] $, alors on peut considérer la variation fonctionnelle d'une fonctionnelle $F[w]$ par rapport à la direction $f_i$, ce qui revient à effectuer une perturbation $w \rightarrow w + \epsilon f_i$, autrement dit $\beta_i \rightarrow \beta_i + \epsilon$.La dérivée fonctionnelle de $F[w]$ dans la direction $f_i$ s’écrit alors :
+ce qui ramène le \gls{GGE} à la forme standard définie par les {\em multiplicateurs de Lagrange} $\beta_i$. Les fonction régulières $f_i$ sont des densités spectrale associées au charges $\operator{Q}_i$,de sorte que les charges soient bien $\operator{Q}_i = \operator{\mathcal{Q}}[f_i] $.
+
+\end{mdframed}
+	
+%\paragraph{Paramétrisation du potentiel spectral et réécriture des moments des charges.}
+\paragraph{Lien entre dérivées fonctionnelles, paramétrisation spectrale et moments des charges.}
+
+\medskip
+
+Alors on peut considérer la variation fonctionnelle d'une fonctionnelle $F[w]$ par rapport à la direction $f_i$, ce qui revient à effectuer une perturbation $w \rightarrow w + \epsilon f_i$, autrement dit $\beta_i \rightarrow \beta_i + \epsilon$.La dérivée fonctionnelle de $F[w]$ dans la direction $f_i$ s’écrit alors :
 \begin{eqnarray}\label{chap4:eq.w_fi_dif}
 	\dfonc{f_i} F[w]  &\doteq &  \underset{\epsilon \to 0 }{ \lim  } \frac{ F\left[\sum_j ( \beta_j + \delta_{ij} \epsilon) f_j \right]  - F \left[\sum_j  \beta_j f_j\right] }{\epsilon},\\
 	& = & \left. \frac{ \partial F}{ \partial \beta_i } \right)_{\beta_{j\neq i} }.	
@@ -319,42 +346,73 @@ Ces relations sont naturelles. En particulier, on retiendra que les moyennes et 
 
 \subsection{Vérification numérique : Echantillonnage du GGE}
 
-On souhaite tester notre capaciter à eéchantillonner à échantillonner le \gls{GGE}avec Metropolice. Pour cela on va utiliser le principe de \emph{fluctuation-réponse} définie ci dessus dans l'équation \eqref{chap4:eq.susceptibilite-fonctionnelle}. On va dans un premier temps calculer numériquement les corrélation des distrivution de rapidité en utilisant un algorithme de Monte Carlo basé sur les états propres du modèle de \gls{LL} et dans un deuxiemment temps en utilisant la suceptibilité.
+%On souhaite tester notre capaciter à eéchantillonner à échantillonner le \gls{GGE} avec Metropolice. Pour cela on va utiliser le principe de \emph{fluctuation-réponse} définie ci dessus dans l'équation \eqref{chap4:eq.suscep.corre.1111}. On va dans un premier temps calculer numériquement les corrélation des distribution de rapidité en utilisant un algorithme de Monte Carlo basé sur les états propres du modèle de \gls{LL} et dans un deuxièmement temps en utilisant la susceptibilité.
 
+On souhaite tester notre capacité à échantillonner le \gls{GGE} avec l’algorithme de Metropolis. 
+Pour cela, nous utiliserons le principe de \emph{fluctuation-réponse}, défini à l’équation~\eqref{chap4:eq.suscep.corre.1111}. 
+Deux approches numériques seront comparées : (i) le calcul direct des corrélations de la distribution de rapidité à l’aide d’un algorithme de Monte Carlo basé sur les états propres du modèle de \gls{LL}, et (ii) le calcul indirect à partir de la susceptibilité.
 
+\medskip
 
+Pour introduire les notations employées dans cette sous-section, rappelons brièvement quelques éléments du chapitre~(\ref{chap:LL-BA}) :  
 
-\paragraph{Méthode numérique de Monte Carlo  :} 
+\medskip
 
+\begin{mdframed}[
+	linewidth=0.5pt, 
+	backgroundcolor=gray!5, 
+	roundcorner=50pt,	
+	innerleftmargin=5pt,
+    innerrightmargin=5pt,
+    innertopmargin=-10pt,
+    innerbottommargin=2pt,
+    leftmargin=2pt,
+    rightmargin=2pt
+	]
+\paragraph{Rappel : Cadre de Bethe pour le modèle de Lieb–Liniger.}
+
+\subparagraph{Équations de Bethe.}  
+Les états propres du gaz de \gls{LL} sont décrits par les équations de Bethe~\eqref{chap:1:eq:EBA} :
+\begin{eqnarray}\label{chap:4:eq:EBA}
+	L \theta_a + \sum_{b \ne a} 2 \arctan \!\left( \frac{\theta_a - \theta_b}{g} \right) = 2 \pi I_a,
+\end{eqnarray}
+où \( \{I_a\} \) est un ensemble d’entiers (ou demi-entiers) caractérisant une configuration de type Bethe .%et \( g  \) l’intensité des interactions.
+
+\subparagraph{État fondamental.}  
+Dans le cas du fondamental, les nombres quantiques sont distribués de façon régulière selon~\eqref{chap:1:eq:EBA.1} :
+\begin{eqnarray}\label{chap:4:eq:EBA.1}
+	I_a = a - \frac{N+1}{2}, \qquad a \in \llbracket 1 , N \rrbracket.
+\end{eqnarray}
+
+\subparagraph{Distribution de rapidité.}  
+La configuration \( \{\theta_a\} \) définissent une densité de rapidité, notée \( \rho(\theta) \) (cf Eq ~ \eqref{chap.1:eq.rho.111111}):
+\begin{eqnarray}\label{chap.4:eq.rho.111111}
+	\rho(\theta) = \frac{1}{L} \sum_{a=1}^N \delta(\theta - \theta_a).
+\end{eqnarray}
+
+\end{mdframed}
+
+\paragraph{Méthode numérique de Monte Carlo.}
+
+Nous travaillons avec $ \hbar = m = g = 1 $.
 \subparagraph{Paramètres fixés.}
 On fixe un poids spectral , par exemple quadratique
 \begin{eqnarray}
 	w(\theta) = \tfrac{1}{2} \theta^2,
 \end{eqnarray}
-et on fixe les paramètres physiques du système : \( N = 7 \) particules, \( L = 10 \) la taille du système, et \( g = 1 \) l’intensité des interactions.
+et on fixe les paramètres physiques du système : \( N = 7 \) particules,\( L = 10 \) la taille du système et \( g = 1 \)  l’intensité des interactions.
 
-\subparagraph{Équations de Bethe.}
-Les états propres du gaz sont obtenus par la résolution des équations de Bethe~\eqref{chap:1:eq:EBA} que l'on rappelle :
-\begin{eqnarray}
-	L \theta_a + \sum_{b \ne a} 2 \arctan \left( \frac{\theta_a - \theta_b}{g} \right) = 2 \pi I_a,
-\end{eqnarray}
-où \( \{I_a\} \) sont des entiers (ou demi-entiers) représentant une configuration de type Bethe.
+
 
 \medskip
 
 \subparagraph{Initialisation : état fondamental.}
 \begin{enumerate}
-    \item On commence par proposer une configuration d'entier de Bethe  \( \{I_a\} \) correspondant à l’état fondamental. Celle-ci est donnée par l'équation ~\eqref{chap:1:eq:EBA.1} que l'on rappelle ,
-		\begin{eqnarray}
-			I_a & = & a - \frac{N+1}{2}, \quad a \in \llbracket 1 , N \rrbracket	
-		\end{eqnarray}
+    \item On commence par proposer une configuration d'entier de Bethe  \( \{I_a\} \) correspondant à l’état fondamental. Celle-ci est donnée par l'équation ~\eqref{chap:4:eq:EBA.1}.
 
-    \item On résout ensuite les équations de Bethe associées afin d'obtenir l’ensemble des rapidités \( \{ \theta_a \} \).
+    \item On résout ensuite les équations de Bethe \eqref{chap:4:eq:EBA} associées afin d'obtenir l’ensemble des rapidités \( \{ \theta_a \} \).
 
-	\item Ces rapidités définissent une distribution empirique de rapidité, notée \( \rho(\theta) \), que l’on enregistre sous la forme :
-	\begin{eqnarray}
-    	\rho(\theta) = \frac{1}{L} \sum_{a=1}^N \delta(\theta - \theta_a)
-	\end{eqnarray}
+	\item Ces rapidités définissent une distribution empirique de rapidité, notée \( \rho^e(\theta) \), que l’on enregistre sous la forme \eqref{chap.4:eq.rho.111111}.
 	Pour rendre cette distribution exploitable numériquement, on la binne sur une grille discrète \( \{ \theta_a \} \).
 \end{enumerate}
 
@@ -430,7 +488,7 @@ Les algorithmes de Monte Carlo produisent des estimations bruitées des grandeur
 
 \smallskip
 
-Pour \(N_{\text{conf}} = 2*10^6\), nous avons répété dix fois l’algorithme de Monte Carlo afin de calculer l’écart-type des moyennes \(\mathrm{std}(\langle \rho^e(\theta) \rangle)\). 
+Pour \(N_{\text{conf}} = 2\cdot 10^6\), nous avons répété dix fois l’algorithme de Monte Carlo afin de calculer l’écart-type des moyennes \(\mathrm{std}(\langle \rho^e(\theta) \rangle)\). 
 On observe que, pour les valeurs de \(\theta\) où \(\langle \rho^e(\theta) \rangle\) est petite, le rapport 
 \begin{equation}\label{cha4:eq:std.1}
 	\frac{\mathrm{std}(\langle \rho^e(\theta) \rangle)}{\langle \rho^e(\theta) \rangle}	
@@ -438,7 +496,7 @@ On observe que, pour les valeurs de \(\theta\) où \(\langle \rho^e(\theta) \ran
 
 est plus grand que pour les valeurs de \(\theta\) où \(\langle \rho^e(\theta) \rangle\) est plus grande. 
 Ainsi, pour quantifier globalement la convergence, nous considérons la moyenne de ce rapport sur l’ensemble des \(\theta\). 
-Dans notre cas, cette quantité est inférieure à \(2\%\), ce qui montre que \(\langle \rho^e(\theta) \rangle\) constitue une très bonne approximation de la moyenne \(\braket{\operator{\rho}(\theta)}_w\). Ainsi, pour \( N_{\text{conf}} = 2*10^6 \), les équations \eqref{cahp4:eq.rho.e.1} et \eqref{cahp4:eq.corre.e.1} sont bien vérifiées. 
+Dans notre cas, cette quantité est inférieure à \(2\%\), ce qui montre que \(\langle \rho^e(\theta) \rangle\) constitue une très bonne approximation de la moyenne \(\braket{\operator{\rho}(\theta)}_w\). Ainsi, pour \( N_{\text{conf}} = 2\cdot 10^6 \), les équations \eqref{cahp4:eq.rho.e.1} et \eqref{cahp4:eq.corre.e.1} sont bien vérifiées. 
 
 \smallskip
 
@@ -496,7 +554,7 @@ de sorte que \eqref{cahp4:eq.sus.e.1} soit verrifié.
 
 \medskip
 
-Nous avons généré \( N_{\text{conf}} = 2*10^6 \) configurations et calculé les susceptibilités avec un paramètre de perturbation \( \varepsilon = 10^{-1} \). Et \eqref{cahp4:eq.sus.e.1} était verier, la matrice obtenue sera notée $\chi_w(\theta, \theta')$ (Fig \ref{fig:comparison_chi_C}).
+Nous avons généré \( N_{\text{conf}} = 2 \cdot 10^6 \) configurations et calculé les susceptibilités avec un paramètre de perturbation \( \varepsilon = 10^{-1} \). Et \eqref{cahp4:eq.sus.e.1} était verier, la matrice obtenue sera notée $\chi_w(\theta, \theta')$ (Fig \ref{fig:comparison_chi_C}).
 
 \medskip
 
@@ -534,17 +592,26 @@ Pour quantifier leur similarité, on calcule une {\em norme relative} en utilisa
 
 Les figures montrent une concordance satisfaisante entre les deux matrices. L’écart résiduel visible sur la troisième image, d’environ 13,5\%, provient principalement des erreurs statistiques liées à la méthode Monte Carlo et de l’approximation par différences finies dans le calcul de la dérivée fonctionnelle.  
 
+\medskip
+
 Le principe de fluctuation-réponse dans le cadre du GGE étant supposé valide, l’objectif de cette analyse n’est pas de le confirmer, mais de vérifier que l’on reste en capacité d’échantillonner correctement les fluctuations à partir de \(\chi_w(\theta,\theta')\) avec un nombre fini de configurations. L’erreur relative observée est donc acceptable et reflète les limites statistiques de l’expérience numérique.  
 
-La précision peut être améliorée en augmentant le nombre de configurations \(N_{\rm conf}\) :  
-- Le calcul de \(C_w(\theta, \theta')\) est en \(\mathcal{O}(N_{\rm conf})\) et celui de \(\chi_w(\theta, \theta')\) en \(\mathcal{O}(N_{\rm conf} \cdot N_{\rm cell})\), où \(N_{\rm cell}\) est le nombre de points de la grille en \(\theta\).  
-- Pour \(N_{\rm conf} = 2\times 10^6\) et \(N_{\rm cell} = 20\), la matrice \(C_w(\theta, \theta')\) se calcule en environ 6 minutes et \(\chi_w(\theta, \theta')\) en environ 2 heures.  
-- On peut envisager \(N_{\rm conf} = 10^7\) : \(C_w(\theta, \theta')\) en 30 minutes et \(\chi_w(\theta, \theta')\) en 10 heures.
+\medskip
+
+La précision peut être améliorée en augmentant le nombre de configurations \(N_{\rm conf}\) : 
+
+\begin{itemize}[label = $\bullet$]
+	\item Le calcul de \(C_w(\theta, \theta')\) est en \(\mathcal{O}(N_{\rm conf})\) et celui de \(\chi_w(\theta, \theta')\) en \(\mathcal{O}(N_{\rm conf} \cdot N_{\rm cell})\), où \(N_{\rm cell}\) est le nombre de points de la grille en \(\theta\).
+	\item Pour \(N_{\rm conf} = 2\times 10^6\) et \(N_{\rm cell} = 20\), la matrice \(C_w(\theta, \theta')\) se calcule en environ 6 minutes et \(\chi_w(\theta, \theta')\) en environ 2 heures. 
+	\item On peut envisager \(N_{\rm conf} = 10^7\) : \(C_w(\theta, \theta')\) en 30 minutes et \(\chi_w(\theta, \theta')\) en 10 heures.
+\end{itemize} 
+
+\medskip
 
 Pour de petits \(N_{\rm conf}\), la perturbation \(\varepsilon\) doit être augmentée pour que les fluctuations calculées ne soient pas noyées dans le bruit. Si \(\varepsilon\) est trop grand, on observe toujours la structure globale de \(\chi_w(\theta, \theta')\), mais avec une amplitude réduite :  
-\[
-\chi_w(\theta, \theta') \approx \alpha C_w(\theta, \theta'), \quad 0 < \alpha < 1
-\]
+\begin{eqnarray*}
+	\chi_w(\theta, \theta') \approx \alpha C_w(\theta, \theta'), \quad 0 < \alpha < 1
+\end{eqnarray*}
 
 Par exemple, pour \(N_{\rm conf} = 10^5\), la mesure \eqref{cha4:eq:std.1} est de $8\%$ ;0n peut utiliser \(N_{\rm cell} = 100\) et \(\varepsilon = 1\), et obtenir :  
 \begin{eqnarray*}
@@ -563,8 +630,6 @@ avec $\alpha = 0.078$ et pour une temps de calcule de $26~min$ (Fig~\ref{fig:com
 
 Physiquement, \(\alpha < 1\) reflète le fait que pour un nombre limité de configurations, la réponse calculée par différences finies sous-estime légèrement l’amplitude des fluctuations par rapport à la covariance brute \(C_w\), mais la structure globale reste correcte. En augmentant \(N_{\rm conf}\), \(\alpha \to 1\) et \(\chi_w(\theta, \theta')\) converge vers \(C_w(\theta, \theta')\) dans la limite des grandes statistiques.
 
-
------------
 
 
 
@@ -707,7 +772,7 @@ Physiquement, \(\alpha < 1\) reflète le fait que pour un nombre limité de conf
     leftmargin=2pt,
     rightmargin=2pt
 	]
-\paragraph{Rappels .}
+\paragraph{Rappel : Approche thermodynamique (Yang–Yang et énergie généralisée).}
 
 Dans l’approximation thermodynamique, le système est décrit en termes de grandeurs macroscopiques, notamment par la distribution de rapidité $\rho(\theta)$.  
 Dans l’équation \eqref{chap:TBA:eq:ensemble_average}, nous avons vu que, dans la limite thermodynamique, la moyenne d’un observable s’écrit :
@@ -772,7 +837,8 @@ Une autre approche pour accéder aux fluctuations de la distribution de rapidit�
 \begin{eqnarray*}
 	(\mathcal{S}_{YY} - \mathcal{W})[\rho_{\mathrm{eq}} + \delta \rho ]  = \exp \{\dfonc{\delta \rho }\}\left ( (\mathcal{S}_{YY} - \mathcal{W})[\rho_{\mathrm{eq}}] \right ).	
 \end{eqnarray*}
-Dans un état de \gls{GGE} consiste à exploiter le développement quadratique de l’action effective autour de l’équilibre thermodynamique. Cette méthode, dite \emph{gaussienne}, repose sur le fait que, dans la limite thermodynamique, l’intégrale fonctionnelle définissant le GGE est dominée par les configurations proches du point-selle $\rho_{\mathrm{eq}}$.
+%Dans un état de \gls{GGE} consiste à exploiter le développement quadratique de l’action effective autour de l’équilibre thermodynamique. Cette méthode, dite \emph{gaussienne}, repose sur le fait que, dans la limite thermodynamique, l’intégrale fonctionnelle définissant le GGE est dominée par les configurations proches du point-selle $\rho_{\mathrm{eq}}$.
+Dans la limite thermodynamique, l’intégrale fonctionnelle définissant le \gls{GGE} est dominée par les configurations proches du point-selle $\rho_{\mathrm{eq}}$. Cette approximation, dite gaussienne, repose alors sur le développement quadratique de l’action effective en $\delta \rho$.
 
 \smallskip
 
@@ -791,7 +857,7 @@ est la \textit{hessienne} de l’action effective.
 
 \smallskip
 
-Sous l’approximation gaussienne autour de l’équilibre (en particulier lorsque \(L \to \infty\)), la covariance des fluctuations est donnée par :
+Sous l’approximation gaussienne autour de l’état d’équilibre (en particulier lorsque \(L \to \infty\), cf. Fig.~\ref{fig:Act.gauss}), la covariance des fluctuations s’exprime comme suit :
 \begin{eqnarray}
 \langle \delta \rho(\theta) \, \delta \rho(\theta') \rangle_w &=& \frac{
  \displaystyle \int \mathcal{D} \delta \rho \; \delta \rho(\theta) \, \delta \rho(\theta') 
@@ -825,10 +891,12 @@ L’opérateur hessien de l’action effective se décompose naturellement comme
 \begin{eqnarray}
 	\mathcal{H} = \mathcal{H}^{(\mathcal{W})} - \mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})},
 \end{eqnarray}
-où
 \begin{eqnarray}
-	\mathcal{H}^{(\mathcal{W})}(\theta,\theta') \doteq \left. \frac{\delta^2 \mathcal{W}[\rho]}{\delta \rho(\theta)\, \delta \rho(\theta')} \right)_{\rho = \rho_{\mathrm{eq}}}, \quad \text{et} \quad \mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})}(\theta,\theta') \doteq \left. \frac{\delta^2 \mathcal{S}_{\mathrm{YY}}[\rho]}{\delta \rho(\theta)\, \delta \rho(\theta')} \right)_{\rho = \rho_{\mathrm{eq}}}.
+	\mbox{où} \quad \mathcal{H}^{(\mathcal{W})}(\theta,\theta') \doteq \left. \frac{\delta^2 \mathcal{W}[\rho]}{\delta \rho(\theta)\, \delta \rho(\theta')} \right)_{\rho = \rho_{\mathrm{eq}}}, \quad \text{et} \quad \mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})}(\theta,\theta') \doteq \left. \frac{\delta^2 \mathcal{S}_{\mathrm{YY}}[\rho]}{\delta \rho(\theta)\, \delta \rho(\theta')} \right)_{\rho = \rho_{\mathrm{eq}}}.
 \end{eqnarray}
+
+\medskip
+
 
 L’opérateur inverse \(\mathcal{H}^{-1}\) est défini par la relation fonctionnelle :
 \begin{eqnarray}
@@ -986,11 +1054,9 @@ Ainsi, l’opérateur de fluctuation \(\mathcal{H}\) coïncide avec la hessienne
 %Cette approximation quadratique constitue la base du traitement gaussien des fluctuations autour de l’état typique, permettant d’accéder aux corrélations et à la structure fine de l’ensemble statistique effectif.
 
 
-
 \begin{figure}[H]
 	\centering
-	\begin{subfigure}[b]{0.3\textwidth}
-		\begin{tikzpicture}
+	\begin{tikzpicture}
 			\begin{scope}[shift={(2,0)}]
 				\begin{scope}[transform canvas={scale=0.6}]
 					\input{figures/04_GGE_Fluctuation/Fonc_A_code}	
@@ -1000,32 +1066,51 @@ Ainsi, l’opérateur de fluctuation \(\mathcal{H}\) coïncide avec la hessienne
 				\draw[color = red , scale = 0.5 , draw = none  ] (-2 , -1) rectangle (5, 6) ; 	
 			\end{scope}
 					
-		\end{tikzpicture}
-		\caption{}
-		\label{fig:grap.A}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.65\textwidth}
-		\begin{tikzpicture}
-
-			\begin{scope}[shift={(-11,2.7)}]
-				\begin{scope}[transform canvas={scale=0.6}]
-					%\input{figures/04_GGE_Fluctuation/Occupation_theta_code}	
-			
-				\end{scope}
-				\begin{scope}[scale=1]
-					\draw[color = red , scale = 1 , draw = none  ] (-1 , -1) rectangle (5, 5) ; 
-				\end{scope}	
-			\end{scope}
-			
-		\end{tikzpicture}
-		\caption{}
-		\label{fig.fluctu.A}
-	\end{subfigure}
-	\caption{}
-	\label{fig:diag_fig}
+	\end{tikzpicture}
+	\caption{Représentation schématique de l’action effective $L(\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])$ en fonction de la distribution de rapidité $\rho$. La configuration la plus probable, (associée à $\rho_{\mathrm{ed}}$) , correspond au minimum (point-selle) de l’action. Les fluctuations autour de l’équilibre sont modélisées par un développement quadratique de l’action, conduisant à une approximation gaussienne des fluctuations de $\rho$. Pour faciliter la compréhension, on représente ici $\rho$ comme une variable unidimensionnelle, alors qu’en réalité il s’agit d’une fonction définie dans un espace de dimension infinie.}
+	\label{fig:Act.gauss}
 \end{figure}
 
+
+%\begin{figure}[H]
+%	\centering
+%	\begin{subfigure}[b]{0.3\textwidth}
+%		\begin{tikzpicture}
+%			\begin{scope}[shift={(2,0)}]
+%				\begin{scope}[transform canvas={scale=0.6}]
+%					\input{figures/04_GGE_Fluctuation/Fonc_A_code}	
+%			
+%				\end{scope}
+%			
+%				\draw[color = red , scale = 0.5 , draw = none  ] (-2 , -1) rectangle (5, 6) ; 	
+%			\end{scope}
+%					
+%		\end{tikzpicture}
+%		\caption{}
+%		\label{fig:grap.A}
+%	\end{subfigure}
+%	\hfill
+%	\begin{subfigure}[b]{0.65\textwidth}
+%		\begin{tikzpicture}
+%
+%			\begin{scope}[shift={(-11,2.7)}]
+%				\begin{scope}[transform canvas={scale=0.6}]
+%					\input{figures/04_GGE_Fluctuation/Occupation_theta_code}	
+%			
+%				\end{scope}
+%				\begin{scope}[scale=1]
+%					\draw[color = red , scale = 1 , draw = none  ] (-1 , -1) rectangle (5, 5) ; 
+%				\end{scope}	
+%			\end{scope}
+%			
+%		\end{tikzpicture}
+%		\caption{}
+%		\label{fig.fluctu.A}
+%	\end{subfigure}
+%	\caption{}
+%	\label{fig:diag_fig}
+%\end{figure}
+%
 
 %\begin{figure}[H]
 %	\centering 
@@ -1272,7 +1357,7 @@ Dans cette sous-section, nous proposons de tester l’expression \eqref{chap:flu
 
 On considère un gaz de bosons unidimensionnels intégrable, décrit par l'équation de Bethe, dans un état d'équilibre généralisé caractérisé par la {\em taille du système} \(L\), l'{\em intensité d'interaction} \(g\), et un {\em poids spectral} fixé \(w(\theta)\).
 
-À partir de ces paramètres, on résout numériquement les {\em équations } \gls{TBA} \eqref{chap:TBA:eq:e}, ce qui permet d'obtenir les grandeurs thermodynamiques d'équilibre :
+À partir de ces paramètres, on résout numériquement les {\em équations} \gls{TBA} (cf \eqref{chap:TBA:eq:e}), ce qui permet d'obtenir les grandeurs thermodynamiques d'équilibre :
 \begin{itemize}[label = $\bullet$]
 	\item la {\em distribution de rapidité} \( \rho_{\mathrm{eq}}(\theta) \),
 	\item la {\em densité d'états} \( \rho_{s,\mathrm{eq}}(\theta) \)
@@ -1382,65 +1467,85 @@ Dans un second temps, il est naturel de vouloir tester ce principe pour différe
 
 \subsubsection{Vériﬁcation numérique thermique :  énergie et nombre de particules}
 
-Nous testons à présent notre expression des fluctuations dans le cas particulier de l'équilibre thermique. Le système est supposé en contact avec un bain à température \( T \) et potentiel chimique \( \mu \). Le poids spectral prend alors la forme canonique :
-\(
-w(\theta) = \beta \varepsilon(\theta) - \beta \mu,
-\)
-avec \( \beta = 1 / (k_B T) \) et \( \varepsilon(\theta) \) l’énergie spectrale (par exemple \( \theta^2/2 \) pour des particules libres).
+Nous testons à présent notre expression des fluctuations dans le cas particulier de l'équilibre thermique. Le système est supposé en contact avec un bain à température \( T \) et potentiel chimique \( \mu \). 
+%Le poids spectral prend alors la forme canonique :
+%\(
+%w(\theta) = \beta \varepsilon(\theta) - \beta \mu,
+%\)
+%avec \( \beta = 1 / (k_B T) \) et \( \varepsilon(\theta) \) l’énergie (par exemple \( m\theta^2/2 \) pour des particules libres).
 
 \subparagraph{Paramètres fixés.}
-On reprend ici le formalisme de l’équation \eqref{chap4:eq.w_fi}, dans lequel le poids spectral s’écrit comme une combinaison linéaire :
-\begin{eqnarray*}
-	w(\theta) & = & \beta_0 f_0(\theta) + \beta_2 f_2(\theta),
-\end{eqnarray*}
-où \( f_i(\theta) \) sont les densités locales associées aux charges conservées.
-
-Dans le cas de l’équilibre thermique usuel (ensemble de Gibbs), seules deux charges sont conservées : le **nombre total de particules** \( \operator{Q} \) et l’**énergie cinétique totale** \( \operator{K} \). Cela correspond au choix suivant :
+Dans le cas de l’équilibre thermique usuel (ensemble de Gibbs), seules deux charges sont conservées : le {\bf nombre total de particules} \( \operator{\mathcal{Q}}[f_0] \) et l’{\bf énergie totale} \( \operator{\mathcal{Q}}[f_2] \). Cela correspond au choix suivant :
 \begin{align*}
 	f_0(\theta) &= 1, \quad &&\text{(densité de particules)} \\
-	f_1(\theta) &= \frac{1}{2}m \theta^2, \quad &&\text{(densité d’énergie cinétique)}
+	f_2(\theta) &= \frac{1}{2}m \theta^2, \quad &&\text{(densité d’énergie $\varepsilon$)}
 \end{align*}
 les coefficients de Lagrange associés sont :
 \begin{align*}
 	\beta_0 &= -\beta \mu, \quad &&\text{(potentiel chimique)} \\
-	\beta_1 &= \beta, \quad &&\text{(inverse de la température)}
+	\beta_2 &= \beta, \quad &&\text{(inverse de la température)},
 \end{align*}
+avec $\beta = 1 / ( k_B T )$ et  $k_B$ constante de Boltzmann.
+
+\medskip
+
+On reprend ici le formalisme de l’équation \eqref{chap4:eq.w_fi}, dans lequel le poids spectral s’écrit comme une combinaison linéaire :
+\begin{eqnarray}\label{chap4:eq.w.1}
+	w(\theta) & = & \beta_0 f_0(\theta) + \beta_2 f_2(\theta),
+\end{eqnarray}
+où \( f_i(\theta) \) sont les densités locales associées aux charges conservées.
+
+
 
 \paragraph{Calcul de la matrice hermitienne.}
 
-Les densités locales $f_i$ sont fixées. Pour spécifier le {\em poids spectral} $w$, on choisit les coefficients de Lagrange $\beta_0$ et $\beta_2$ en imposant dans un premier temps \( T = 60~\mathrm{nK} \) et \( \mu = 27~\mathrm{nK} \). De plus, afin de se placer dans un régime physique particulier, on fixe la taille du système à \( L = \, ? \) et l'impulsion maximale à \( q = \, ? \).
-
-À partir de ces paramètres, et suivant la même procédure numérique que dans la sous-section précédente, on obtient la distribution de rapidité à l'équilibre \( \braket{\operator{\rho}(\theta)}_w \equiv \rho_{\mathrm{eq}}(\theta) \), ainsi que les composantes de l’inverse de l’opérateur hessien \( (L\mathcal{H})^{-1} \) : la contribution diagonale sans interaction \( (L\mathcal{D})^{-1} \) et la contribution non locale issue des interactions \( \mathcal{B}/L \).
+Les densités locales $f_i$ sont fixées. Pour spécifier le {\em poids spectral} $w$, on choisit les coefficients de Lagrange $\beta_0$ et $\beta_2$ en imposant une température \(T\) et un potentiel chimique \(\mu\).
 
 \medskip
 
-Les {\bf points rouges} indiquent le régime considéré dans le diagramme de phase du modèle de Lieb-Liniger, présenté en figure~\ref{chap:4:fig:diagr}.  
-Ce diagramme a pour abscisse la {\bf constante de Lieb} \( \gamma = g/n \) et pour ordonnée la {\bf température réduite} \( t = 1/(\beta g^2) \).  
-La densité linéaire \( n \) n’est pas un paramètre d’entrée, mais elle est calculée via :
-\(
-n = \int \rho_{\mathrm{eq}}(\theta) \, d\theta.
-\)
-
-\medskip
-
-Nous représentons également la quantité
-%\[
-%\frac{1}{L} \frac{\mathcal{D}^{-1}(\theta, \theta')}{\delta(\theta - \theta')}
-%\]
+Dans les équations \eqref{chap2:eq:gamma.1} et \eqref{chap2:eq:t.1}, nous avons défini les grandeurs adimensionnées, le {\bf paramètre de Lieb} $\gamma$ et la {\bf température réduite} $t$, telles que :
 \begin{eqnarray*}
-	\frac{\mathcal{D}^{-1}(\theta, \theta')}{\delta(\theta - \theta')} 	
+	\gamma = \frac{m g}{\hbar^2 n}, \quad t = \frac{\hbar^2}{m \beta g^2}.
+\end{eqnarray*} 
+
+\subparagraph{Paramètres fixes.} 
+Nous travaillons avec $\hbar = m = k_B = 1$, et nous choisissons $L = 100$ et $g = 1$.
+
+\subparagraph{Paramètres variables.}
+La température $T$ est alors donnée par la température réduite $t$, et la densité linéaire $n$ est inversement proportionnelle au paramètre adimensionné $\gamma$.
+
+La densité linéaire \( n \) ne paramétrise pas directement le poids spectral $w$ \eqref{chap4:eq.w.1}, mais est liée au potentiel chimique \(\mu\) via :
+\[
+	L n = \braket{\operator{\mathcal{Q}}[f_0]}_w.
+\]
+C’est ainsi que les simulations numériques seront effectuées en utilisant $\gamma$ et $t$.
+
+\medskip
+
+On choisit 
+\begin{eqnarray*}
+	\gamma = 10^{-1.7}, \quad t =  89.125.	
 \end{eqnarray*}
-sur la figure~\ref{chap:4:fig:diag}.  
-La fonction delta dans \eqref{chap:fluctu:eq:irreg.inv} étant approximée numériquement par un pas de discrétisation, la matrice \( \mathcal{D}^{-1} \) est proportionnelle à ce pas.
+Ce paramètre est représenté par un {\bf point rouge} dans le diagramme de phase du modèle de \gls{LL}, présenté en figure~\ref{chap:4:fig:diagr}.
 
 \medskip
 
-La contribution \( \mathcal{B}/L \) liée aux interactions est représentée en figure~\ref{chap:4:fig.fluctu.A}.
+À partir de ce paramètre, et suivant la même procédure numérique que dans la sous-section précédente, on obtient la distribution de rapidité à l'équilibre 
+\(\braket{\operator{\rho}(\theta)}_w \equiv \rho_{\mathrm{eq}}(\theta)\), ainsi que les composantes de l’inverse de l’opérateur hessien \((L\mathcal{H})^{-1}\) : la contribution diagonale sans interaction \((L\mathcal{D})^{-1}\) (Fig.~\ref{chap:4:fig:fluctu_diag}) et la contribution non locale issue des interactions \(\mathcal{B}/L\) (Fig.~\ref{chap:4:fig:fluctu_B}).
 
 \medskip
 
-Enfin, en faisant varier le potentiel chimique \( \mu \), nous répétons l'ensemble des calculs précédents.  
+Plus précisément, dans la figure~\ref{chap:4:fig:fluctu_diag}, on représente 
+\begin{eqnarray*}
+	\frac{\mathcal{D}^{-1}(\theta, \theta')}{\delta(\theta - \theta')} \quad  \left( =  \rho_{s, \mathrm{eq}}(\theta) \, \nu_{\mathrm{eq}}(\theta) \, (1 - \nu_{\mathrm{eq}}(\theta)) \right),
+\end{eqnarray*}
+la fonction delta dans \eqref{chap:fluctu:eq:irreg.inv} étant approximée numériquement par un pas de discrétisation, la matrice \(\mathcal{D}^{-1}\) est proportionnelle à ce pas.
+
+\medskip
+
+Enfin, en faisant varier $t$ (\ie la température \(T\)), on répète l'ensemble des calculs précédents.  
 Les régimes ainsi obtenus sont indiqués par des {\bf points bleus} dans le diagramme de phase (figure~\ref{chap:4:fig:diagr}).
+
 
 
 \paragraph{Corrélation des observables thermodynamiques.}
@@ -1472,7 +1577,7 @@ En parallèle, pour chaque régime simulé (correspondant aux {\bf points bleus}
 
 Nous souhaitons ensuite approximer les susceptibilités thermodynamiques définies par :
 \begin{eqnarray}
-	\chi_w[f_i, f_i] & = & - \left. \frac{\partial \braket{\operator{\mathcal{Q}}[f_i]}_w}{\partial \beta_i} \right|_{\beta_{j \neq i} \text{ fixés}}.
+	\chi_w[f_i, f_i] & = & - \left. \frac{\partial \braket{\operator{\mathcal{Q}}[f_i]}_w}{\partial \beta_i} \right)_{\beta_{j \neq i} \text{ fixés}}.
 \end{eqnarray}
 
 Pour cela, nous procédons à une variation infinitésimale du poids spectral $w$ :
@@ -1633,7 +1738,10 @@ Ces approximations numériques sont représentées par des {\bf points bleus} da
 
 \paragraph{Comparaison avec les dérivées thermodynamiques.}
 
-Les résultats obtenus à partir de l’analyse quadratique de l’action (fluctuations de \( \rho \)) sont comparés aux fluctuations extraites directement par différentiation des observables thermodynamiques \( \langle \operator{Q} \rangle_w \) et \( \langle \operator{H} \rangle_w \). Ces comparaisons sont présentées dans la Fig.~\ref{fig.fluctu.A_com} et révèlent une excellente concordance.
+Les résultats obtenus à partir de l’analyse quadratique de l’action (fluctuations de \( \rho \)) sont comparés aux fluctuations extraites directement par différentiation des observables thermodynamiques \( \langle \operator{Q} \rangle_w \) et \( \langle \operator{H} \rangle_w \). Ces comparaisons sont présentées dans la Fig.~\ref{chap:4:fig.fluctu.A_com} et révèlent une excellente concordance. On le quantifie avec :
+\begin{eqnarray*}
+	\left \vert \frac{C_w[f_0,f_0] -  \chi_w[f_0,f_0]}{C_w[f_0,f_0]} \right \vert < 0.004\% , \quad \left \vert \frac{C_w[f_2,f_2] -  \chi_w[f_2,f_2]}{C_w[f_2,f_2]} \right \vert < 0.14 \%.
+\end{eqnarray*}
 
 %Les résultats obtenus à l’aide de cette méthode thermodynamique sont comparés à ceux issus du calcul direct des fluctuations de \( \rho \). Ces comparaisons sont représentées sur la Fig.~\ref{fig.fluctu.A_com}, et montrent une excellente concordance entre les deux approches.
 
@@ -1641,7 +1749,7 @@ Les résultats obtenus à partir de l’analyse quadratique de l’action (fluct
 	\centering
 	\includegraphics[width=1\textwidth]{figures/04_GGE_Fluctuation/fluctuations_plot_log_gamma=-1.700.png}	
 	%\includegraphics[width=1\textwidth]{Figures/04_GGE_Fluctuation/fluctuations_relativ_plot_log_gamma=-1.342.png}	
-	\caption{Comparaison numérique entre les fluctuations calculées à partir de l’analyse quadratique de l’action (fluctuations de \( \rho \)) et celles obtenues par dérivées thermodynamiques des observables moyennes.{\color{red} ( revoir titres shema )} }
+	\caption{Comparaison numérique entre  $C_w[f_0,f_0]$ et $\chi_w[f_0,f_0]$ et entre $C_w[f_2,f_2]$ et $\chi_w[f_2,f_2]$.}
 	\label{chap:4:fig.fluctu.A_com}
 \end{figure}
 
