@@ -211,6 +211,7 @@ tex_files = [
     "./figures/01_LL_BA/Figures.tex",
     "./figures/02_GGE_TBA/Figures.tex",
     "./figures/04_GGE_Fluctuation/Figures.tex",
+    "./figures/05_Disp_Exp/Figures.tex",
     #"./figures/06_Bipart/Figures.tex",
     #"./figures/06_Bipart/Shema.tex",
     #"./figures/06_Bipart/Shemas_2.tex",

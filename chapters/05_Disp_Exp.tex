@@ -34,7 +34,8 @@
 %	\item Rôle de l’expérience dans l’étude de la dynamique des gaz de Bose 1D
 %\end{itemize}
 
-Ce chapitre présente l’expérience utilisée pour étudier les gaz unidimensionnels de rubidium ultra-froids. Nous décrivons l’architecture du dispositif, les méthodes d’imagerie et d’analyse, ainsi que les protocoles expérimentaux auxquels j’ai participé. Le développement initial du refroidissement et du piégeage avant la puce a été réalisé par d’anciens doctorants. La mise en place du piégeage sur la puce et du système de sélection spatiale à l’aide d’un DMD a été initiée par Léa Dubois, alors en première année de doctorat à mon arrivée. Mon travail s’est concentré principalement sur la prise de données, l’analyse et la participation à certaines expériences spécifiques telles que l’expansion longitudinale et la mesure locale de la distribution de rapidité.
+Ce chapitre présente l’expérience utilisée pour étudier les gaz unidimensionnels de rubidium ultra-froids. Nous décrivons l’architecture du dispositif, les méthodes d’imagerie et d’analyse, ainsi que les protocoles expérimentaux auxquels j’ai participé. Le développement initial du refroidissement et du piégeage avant la puce a été réalisé par d’anciens doctorants \cite{jacqm2012,Fang2014,Johnson2016} . La mise en place du piégeage sur la puce a été réalisé par d’anciens doctorants \cite{jacqm2012,Fang2014,Johnson2016,schem2019,L.Dubois2024}. La mise en place du système de sélection spatiale à l’aide d’un \gls{DMD}  a été initiée par Léa Dubois \cite{L.Dubois2024}, alors en première année de doctorat à mon arrivée. Mon travail s’est concentré principalement sur la prise de données, l’analyse et la participation à certaines expériences spécifiques telles que l'étude de l’expansion longitudinale et la mesure de la distribution de rapidité locale.
+
 
 
 \paragraph{Objectif du chapitre}  
@@ -44,10 +45,10 @@ Ce chapitre a pour objectif de fournir une présentation synthétique et structu
 Nous présentons d'abord l’architecture complète de l’expérience, depuis la production des atomes jusqu’à leur imagerie, en passant par les étapes de refroidissement, de piégeage magnétique sur puce, de manipulation optique, et de génération de potentiels. Cette description s’accompagne d’une mise en contexte des contributions historiques au dispositif.
 
 \paragraph{Contributions successives et personnelles}  
-Une attention particulière est portée à la répartition chronologique des contributions. Les étapes initiales (source atomique, MOT, piège DC) ont été développées par d’anciens doctorants. La mise en place du piégeage 1D sur puce ainsi que l’utilisation du DMD pour la sélection spatiale ont été réalisées au cours de la thèse de Léa Dubois. Mon travail s’inscrit dans cette continuité et concerne principalement la prise de données, l’analyse de protocoles dynamiques, ainsi que la participation à certaines opérations de maintenance et d’optimisation du système.
+Une attention particulière est portée à la répartition chronologique des contributions. Les étapes initiales (source atomique, \gls{PMO}, piège \acrshort{DC} pour \acrlong{DC} en anglais) ont été développées par d’anciens doctorants. La mise en place du piégeage 1D sur puce ainsi que l’utilisation du \gls{DMD} pour la sélection spatiale ont été réalisées au cours de la thèse de Léa Dubois \cite{L.Dubois2024}. Mon travail s’inscrit dans cette continuité et concerne principalement la prise de données, l’analyse de protocoles dynamiques, ainsi que la participation à certaines opérations de maintenance et d’optimisation du système.
 
 \paragraph{Rôle du dispositif dans la thèse}  
-Ce dispositif permet d’explorer des phénomènes hors équilibre dans des gaz quantiques 1D. Il constitue une plateforme particulièrement adaptée à l’étude de protocoles d’expansion, de sondes locales, ou de dynamiques guidées par la théorie hydrodynamique généralisée (GHD), qui sont au cœur de cette thèse.
+Ce dispositif permet d’explorer des phénomènes hors équilibre dans des gaz quantiques 1D. Il constitue une plateforme particulièrement adaptée à l’étude de protocoles d’expansion, de sondes locales, ou de dynamiques guidées par \gls{GHD}, qui sont au cœur de cette thèse.
 
 
 
@@ -75,7 +76,7 @@ Ce dispositif permet d’explorer des phénomènes hors équilibre dans des gaz 
 %La référence principale de fréquence pour l'ensemble des faisceaux utilisés dans l'expérience est fournie par un laser à cavité étendue, développé au SYRTE. Ce laser est asservi par spectroscopie d’absorption saturée sur la transition D2 du $^{87}$Rb, au croisement des transitions $|F=2\rangle \rightarrow |F'=2,3\rangle$. Ce signal de référence est utilisé pour verrouiller les autres sources laser par battement optique.
 
 \paragraph{Laser maître 1 : référence de fréquence}
-La stabilité en fréquence de l’ensemble des faisceaux employés dans l’expérience est assurée par un laser à cavité étendue conçu au SYRTE. Ce laser est verrouillé par spectroscopie d’absorption saturée sur la raie D2 du $^{87}$Rb, en ciblant le croisement des transitions $|F=2\rangle \rightarrow |F'=2,3\rangle$. Ce verrouillage fournit la référence absolue de fréquence à partir de laquelle les autres sources laser sont synchronisées par battement optique.
+La stabilité en fréquence de l’ensemble des faisceaux employés dans l’expérience est assurée par un laser à cavité étendue conçu selon un schéma du \gls{SYRTE}. Ce laser est verrouillé par spectroscopie d’absorption saturée sur la raie D2 du $^{87}$Rb, en ciblant le croisement des transitions $|F=2\rangle \rightarrow |F'=2,3\rangle$. Ce verrouillage fournit la référence absolue de fréquence à partir de laquelle les autres sources laser sont synchronisées par battement optique.
 
 %\paragraph{Laser repompeur}
 %Un laser DFB (Distributed Feedback Diode) est utilisé pour produire le faisceau repompeur, permettant de transférer les atomes retombés dans l’état $|F=1\rangle$ vers l’état $|F=2\rangle$. Ce laser est asservi à une fréquence distante de 6\,GHz de celle du maître 1, en utilisant un montage de battement optique et mélange avec un oscillateur à 6.6\,GHz. Une diode Fabry-Perot injectée par la DFB permet d’amplifier la puissance au-delà de 100\,mW.
@@ -84,7 +85,7 @@ La stabilité en fréquence de l’ensemble des faisceaux employés dans l’exp
 %Le faisceau de repompage, qui permet de transférer les atomes piégés dans l’état $|F=1\rangle$ vers l’état $|F=2\rangle$, est généré par une diode DFB (Distributed Feedback). Sa fréquence est décalée de 6,GHz par rapport au maître 1 grâce à un système de battement optique combiné à un mélange avec un oscillateur micro-onde à 6.6,GHz. Une diode Fabry–Perot, injectée par la DFB, permet d’augmenter la puissance de sortie au-delà de 100,mW.
 
 \paragraph{Laser repompeur}
-Le faisceau de repompage, qui transfère les atomes tombé  dans l’état $|F=1\rangle$ vers l’état $|F=2\rangle$, est produit par une diode DFB (Distributed Feedback). Sa fréquence est décalée de 6 GHz par rapport au maître 1 par battement optique et mélange avec un oscillateur à micro-ondes de 6.6 GHz. Une diode Fabry–Perot, injectée par la DFB, élève la puissance de sortie au-delà de 100 mW.
+Le faisceau de repompage, qui transfère les atomes tombé  dans l’état $|F=1\rangle$ vers l’état $|F=2\rangle$, est produit par une diode \gls{DFB} . Sa fréquence est décalée de $6~GHz$ par rapport au maître 1 par battement optique et mélange avec un oscillateur à micro-ondes de $6.6~GHz$. Une diode Fabry–Perot, injectée par la \gls{DFB}, élève la puissance de sortie au-delà de $200~mW$.
 
 %\paragraph{Laser maître 2 : laser principal de manipulation}
 %Un second laser à cavité étendue, identique au maître 1, est asservi par battement optique à la fréquence du maître 1. Il est amplifié par un amplificateur à semi-conducteur évasé (Tapered Amplifier), permettant d’atteindre une puissance de sortie supérieure à 1\,W. Ce faisceau est ensuite divisé en plusieurs branches pour alimenter :
@@ -97,7 +98,7 @@ Le faisceau de repompage, qui transfère les atomes tombé  dans l’état $|F=1
 %\end{itemize}
 
 \paragraph{Laser maître 2 : source principale de manipulation}
-Un second laser à cavité étendue, est verrouillé par battement optique sur la fréquence du maître 1. L’émission est amplifiée au moyen d’un amplificateur à semi-conducteur évasé (Tapered Amplifier), fournissant plus de 1\,W en sortie. Le faisceau ainsi produit est distribué vers différentes parties de l’installation expérimentale : alimentation du piège magnéto-optique (PMO), formation de la mélasse optique, réalisation du pompage optique, imagerie par absorption,génération du faisceau de sélection.
+Un second laser à cavité étendue, est verrouillé par battement optique sur la fréquence du maître 1. L’émission est amplifiée au moyen d’un amplificateur à semi-conducteur évasé (\gls{TA}), fournissant plus de $1\,W$ en sortie. Le faisceau ainsi produit est distribué vers différentes parties de l’installation expérimentale : alimentation du piège magnéto-optique \gls{PMO}, formation de la mélasse optique, réalisation du pompage optique, imagerie par absorption,génération du faisceau de sélection.
 
 
 %\paragraph{Contrôle de fréquence et polarisation}
@@ -105,7 +106,7 @@ Un second laser à cavité étendue, est verrouillé par battement optique sur l
 
 \paragraph{Gestion des fréquences et polarisations}
 %Les ajustements de fréquence des divers faisceaux sont réalisés à l’aide de modulateurs acousto-optiques (AOM).
-Les faisceaux peuvent être interrompus soit à l’aide d’obturateurs mécaniques, soit via des modulateurs acousto-optiques (AOM). Ces derniers offrent un temps de commutation beaucoup plus court que les systèmes mécaniques, car ils permettent de sélectionner uniquement un ordre de diffraction non nul et d’éteindre instantanément le faisceau en interrompant l’alimentation radiofréquence. L’intensité et la polarisation sont réglées via des cubes séparateurs PBS associés à des lames demi-onde, fixes ou motorisées. Ce dispositif offre une grande souplesse pour adapter la configuration optique aux différentes étapes de l’expérience.
+Les faisceaux peuvent être interrompus soit à l’aide d’obturateurs mécaniques, soit via des modulateurs acousto-optiques (en anglais \gls{AOM}). Ces derniers offrent un temps de commutation beaucoup plus court que les systèmes mécaniques, car ils permettent de sélectionner uniquement un ordre de diffraction non nul et d’éteindre en quelque $ms$ le faisceau en interrompant l’alimentation radiofréquence. L’intensité et la polarisation sont réglées via des cubes séparateurs (\gls{PBS}) associés à des lames demi-onde, fixes ou motorisées. Ce dispositif offre une grande souplesse pour adapter la configuration optique aux différentes étapes de l’expérience.
 
 %\paragraph{Remarque}
 %Une description plus détaillée du montage laser et de son verrouillage peut être trouvée dans la thèse de A.~Johnson~\cite{Johnson2016}. L’ensemble a été maintenu et utilisé sans modifications majeures au cours de ma thèse.
@@ -114,13 +115,13 @@ Les faisceaux peuvent être interrompus soit à l’aide d’obturateurs mécani
 Une présentation plus exhaustive du montage laser et de son système de verrouillage est disponible dans la thèse de A.Johnson\cite{Johnson2016}. Le dispositif a été conservé dans son architecture d’origine tout au long de mes travaux, avec seulement un entretien régulier.
 
 
-\subsection{Production et refroidissement des atomes (non détaillé ici, renvoi à d'autres travaux)}
-{\color{blue}
-\begin{itemize}
-    \item Source chaude de rubidium, MOT, molasses optique.
-    \item Refroidissement à des températures sub-$\mu~K$ Refroidissement sub-Doppler (détails renvoyés aux travaux précédents).
-\end{itemize}
-}
+\subsection{Production et refroidissement des atomes}
+%{\color{blue}
+%\begin{itemize}
+%    \item Source chaude de rubidium, MOT, molasses optique.
+%    \item Refroidissement à des températures sub-$\mu~K$ Refroidissement sub-Doppler (détails renvoyés aux travaux précédents).
+%\end{itemize}
+%}
 %Le dispositif expérimental permet de produire des gaz de rubidium ultra-froids, avec pour objectif final l’obtention de gaz unidimensionnels dans le régime quantique dégénéré. La production suit une séquence expérimentale déjà bien établie, initialement développée par d’anciens doctorants (voir par exemple la thèse d’A. Johnson~\cite{Johnson2016}), puis réoptimisée au début de la thèse de Léa-Dubois ~\cite{L.Dubois2024} sous la supervision d’I. Bouchoule.
 
 Le dispositif expérimental permet de produire des gaz ultra-froids de rubidium, en vue d’obtenir des gaz unidimensionnels dans le régime quantique dégénéré. La séquence expérimentale suit un protocole établi, initialement développé par d’anciens doctorants (voir par exemple la thèse d’A. Johnson~\cite{Johnson2016}) et réoptimisé au début de la thèse de Léa. Dubois~\cite{L.Dubois2024} sous la supervision d’I. Bouchoule.
@@ -129,39 +130,43 @@ Le dispositif expérimental permet de produire des gaz ultra-froids de rubidium,
 %Les atomes de $^{87}$Rb sont libérés à partir d’un \emph{dispenser}, placé directement dans l’enceinte à vide, sur le côté de la monture de la puce atomique. Ce composant, parcouru par un courant de \( 4.5\,\mathrm{A} \) pendant environ \( 5\,\mathrm{s} \), émet un flux d’atomes thermiques dans la chambre à vide.
 
 \paragraph{Libération des atomes de rubidium}
-Les atomes de $^{87}$Rb sont émis à partir d’un \emph{dispenser} placé directement dans l’enceinte à vide, à proximité de la monture de la puce atomique. Un courant de \( 4.5\,\mathrm{A} \)  est appliqué pendant environ \( 5\,\mathrm{s} \), générant un flux d’atomes thermiques dans la chambre à vide.
+Les atomes de $^{87}$Rb sont émis à partir d’un dispositif appelé \emph{dispenser}, placé directement dans l’enceinte à vide à proximité de la monture de la puce atomique. Un courant de \( 4.5\,\mathrm{A} \) y est appliqué pendant environ \( 5\,\mathrm{s} \), ce qui génère un flux d’atomes thermiques dans la chambre à vide.
 
-%
-%\paragraph{Capture par piège magnéto-optique (PMO)}
-%Les atomes thermiques sont ralentis et piégés à l’aide d’un piège magnéto-optique. Celui-ci utilise quatre faisceaux laser (dont deux sont réfléchis par la puce) et un champ quadrupolaire magnétique généré par des bobines. Le nuage ainsi formé se situe à quelques millimètres de la surface de la puce.
-
-\paragraph{Capture par le piège magnéto-optique (PMO)}
+\paragraph{Capture par le piège magnéto-optique (\gls{PMO})}
 Les atomes thermiques sont ralentis et confinés dans un piège magnéto-optique. Quatre faisceaux laser (dont deux réfléchis par la puce) combinés à un champ quadrupolaire magnétique produit par des bobines permettent de former un nuage atomique situé à quelques millimètres de la surface de la puce.
 
-%\paragraph{Rapprochement vers la puce}
-%Pour rapprocher les atomes de la puce, on transfère le champ quadrupolaire depuis les bobines vers un champ généré par le fil en forme de U de la puce (fil bleu dans la Fig.~\ref{fig:puce}). Ce fil est parcouru par un courant variant de \( 3.6\,\mathrm{A} \) à \( 1.5\,\mathrm{A} \), ce qui rapproche le nuage à quelques centaines de micromètres de la surface.
 
 \paragraph{Rapprochement vers la puce}
-Le nuage est rapproché de la surface de la puce en transférant le champ quadrupolaire depuis les bobines vers le champ produit par le fil en forme de U de la puce (fil bleu, Fig.~\ref{fig:puce}). Le courant dans ce fil est ajusté lentement de \( 3.6\,\mathrm{A} \) à \( 1.5\,\mathrm{A} \), ce qui positionne le nuage à quelques centaines de micromètres de la surface.
-
-%\paragraph{Mélasse optique}
-%Une phase de mélasse optique permet un refroidissement sub-Doppler des atomes capturés. Un système d’imagerie provisoire est utilisé à cette étape pour visualiser le nuage atomique, dont la taille dépasse le champ d’observation du système d’imagerie final.
-
-%\paragraph{Mélasse optique}
-%Une étape de mélasse optique est ensuite appliquée pour atteindre un refroidissement sub-Doppler des atomes capturés. %Un système d’imagerie provisoire permet de visualiser le nuage, dont la taille dépasse le champ d’observation du dispositif final.
-
-%\paragraph{Pompage optique}
-%Afin de polariser les atomes dans l’état magnétique \( |F=2,\,m_F=2\rangle \), un pompage optique est effectué avec un faisceau circulairement polarisé \( \sigma^+ \), résonant sur la transition \( |F=2\rangle \rightarrow |F'=2\rangle \).
-
-\paragraph{Pompage optique}
-Enfin, les atomes sont préparés dans l’état magnétique \( |F=2,\,m_F=2\rangle \) par pompage optique. Un faisceau circulairement polarisé \( \sigma^+ \), résonant sur la transition \( |F=2\rangle \rightarrow |F'=2\rangle \), assure la polarisation du nuage.
+Le nuage est rapproché de la surface de la puce en transférant le champ quadrupolaire des bobines vers un champ homogène produit par ces bobines, combiné au champ généré par le fil en forme de U de la puce (fil bleu, Fig.~\ref{fig:puce}). Le courant dans ce fil est ajusté lentement de \(3.6\,\mathrm{A}\) à \(1.5\,\mathrm{A}\), ce qui positionne le nuage à quelques centaines de micromètres de la surface.
 
 \paragraph{Mélasse optique}
-Après la capture dans le PMO, une étape de mélasse optique est appliquée pour refroidir davantage le nuage atomique, au-delà de la limite de Doppler. La mélasse optique repose sur l’utilisation de faisceaux laser légèrement désaccordés en fréquence et polarisés de manière appropriée, qui interagissent avec les atomes selon le mécanisme de refroidissement sub-Doppler.
+Après la capture dans le PMO, une étape de mélasse optique est appliquée pour refroidir davantage le nuage atomique, au-delà de la limite de Doppler. La mélasse optique repose sur l’utilisation de faisceaux laser légèrement désaccordés en fréquence par rapport à la résonance de la transition atomique utilisée pour le refroidissement et polarisés de manière appropriée, qui interagissent avec les atomes selon le mécanisme de refroidissement sub-Doppler.
 
 Le principe physique est le suivant : les atomes en mouvement voient les faisceaux laser avec un décalage Doppler, ce qui modifie la probabilité d’absorption selon leur vitesse et leur position. Combiné avec les effets de polarisation (notamment les forces de type Sisyphus dans un champ de polarisation variable), cela crée un potentiel de friction optique qui ralentit les atomes. Contrairement au refroidissement Doppler standard, la mélasse optique permet de réduire l’énergie cinétique des atomes en dessous de la limite Doppler, atteignant des températures beaucoup plus basses.
 
 Ainsi, cette étape permet d’obtenir un nuage plus dense et plus froid, condition essentielle pour les manipulations ultérieures et la formation de gaz unidimensionnels dans le régime quantique dégénéré.
+
+\paragraph{Pompage optique}
+Enfin, les atomes sont préparés dans l’état magnétique \( |F=2,\,m_F=2\rangle \) par pompage optique. Un faisceau circulairement polarisé \( \sigma^+ \), résonant sur la transition \( |F=2\rangle \rightarrow |F'=2\rangle \), assure la polarisation du nuage.
+
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+			\begin{scope}[shift={(2,0)}]
+				%\begin{scope}[transform canvas={scale=1.6}]
+				\begin{scope}[scale=1.0]
+					\input{figures/05_Disp_Exp/Etat_hiperfine_code}	
+			
+				\end{scope}
+			
+				\draw[color = red , scale = 0.5 , draw = none  ] (-2 , -1) rectangle (5, 6) ; 	
+			\end{scope}
+					
+	\end{tikzpicture}
+	\caption{}
+	\label{chap:5:fig:hiperfin}
+\end{figure}
 
 
 
