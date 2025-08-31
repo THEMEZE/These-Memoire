@@ -31,3 +31,9 @@ if [[ "$reponse_git" == "o" || "$reponse_git" == "O" ]]; then
     python3 ./compilateurs/synchroniser_git.py
 fi
 
+# Demander si on veut faire un git push
+read -p "Backup ? (o/n) " reponse_Backup
+if [[ "$reponse_Backup" == "o" || "$reponse_Backup" == "O" ]]; then
+    bash ./compilateurs/backup.sh
+fi
+

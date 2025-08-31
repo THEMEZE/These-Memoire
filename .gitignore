@@ -55,3 +55,4 @@ build/
 
 
 *.jld2
+figures/04_GGE_Fluctuation/*.jld2
