@@ -1,0 +1,86 @@
+
+\chapter{Interprétation de l'opérateur de \textit{dressing} en GHD}
+
+En \textit{Generalized Hydrodynamics} (GHD), l’un des concepts centraux est
+l’opérateur de \textit{dressing}. Cet opérateur traduit la manière dont une quantité
+microscopique, définie sur une particule quasi-libre, est modifiée par la présence
+des interactions à l’échelle macroscopique, en tenant compte de la structure des
+quasi-particules et de leur densité d’occupation.
+
+\subsection*{Définition}
+
+Étant donné une fonction nue $h(\theta)$, définie sur l’espace des rapidités
+$\theta$, son \textit{dressing} est défini par l’équation intégrale :
+\begin{equation}
+    h^{\mathrm{dr}}(\theta) = h(\theta) + \int \dd{\alpha}\,
+    \varphi(\theta-\alpha)\, n(\alpha)\, h^{\mathrm{dr}}(\alpha),
+\end{equation}
+où :
+\begin{itemize}
+    \item $\varphi(\theta-\alpha)$ est le noyau de diffusion lié à la matrice de
+    diffusion à deux corps du modèle intégrable ;
+    \item $n(\alpha)$ est la fonction d’occupation (ou facteur de remplissage)
+    caractérisant l’état macroscopique.
+\end{itemize}
+
+\subsection*{Interprétation physique}
+
+L’opérateur de \textit{dressing} traduit le fait qu’une quasi-particule donnée
+n’est jamais réellement libre dans un modèle intégrable : son énergie, sa
+quantité de mouvement, ou encore sa vitesse de groupe sont modifiées par
+l’ensemble des autres quasi-particules présentes dans l’état.
+Ainsi :
+\begin{itemize}
+    \item $p^{\mathrm{dr}}(\theta)$ correspond à la quantité de mouvement
+    effective d’une excitation ;
+    \item $E^{\mathrm{dr}}(\theta)$ correspond à son énergie effective ;
+    \item la vitesse de groupe se réécrit comme :
+    \begin{equation}
+        v^{\mathrm{eff}}(\theta) =
+        \frac{(E')^{\mathrm{dr}}(\theta)}{(p')^{\mathrm{dr}}(\theta)}.
+    \end{equation}
+\end{itemize}
+
+\subsection*{Résumé}
+
+L’opérateur de \textit{dressing} joue donc un rôle analogue à une
+\og renormalisation hydrodynamique \fg{} des observables : il encode les effets
+collectifs des interactions entre quasi-particules et permet de relier les
+quantités microscopiques aux grandeurs effectives pertinentes pour la dynamique
+à grande échelle en GHD.
+
+\section*{Interprétation de l’opérateur de \textit{dressing}}
+
+En \gls{GHD}, l’opérateur de \textit{dressing} joue un rôle fondamental.
+
+\paragraph{Idée physique.}
+Dans un système intégrable, les quasi-particules ne sont jamais libres : elles
+interagissent entre elles uniquement par des décalages de phase
+(\emph{phase shifts}) lors des collisions.
+Ainsi, la propagation d’une excitation dépend de la présence des autres
+quasi-particules dans l’état macroscopique.
+
+\paragraph{Quantités nues vs. quantités habillées.}
+Chaque observable locale (énergie, impulsion, charges conservées, courants, etc.)
+possède une valeur dite \emph{nue} (ou \emph{bare}).
+L’opérateur de \textit{dressing} transforme cette quantité nue en une quantité
+\emph{effective}, qui incorpore les effets collectifs des interactions avec toutes
+les autres excitations présentes.
+
+\paragraph{Conséquences.}
+\begin{itemize}
+    \item Le \textit{dressing} dépend de la distribution des quasi-particules
+    (densités de rapidité) caractérisant l’état.
+    \item Il modifie la vitesse de propagation des excitations, ce qui conduit à la
+    notion de \emph{vitesse effective}.
+    \item Il redéfinit aussi la valeur transportée des charges conservées et de leurs
+    courants.
+\end{itemize}
+
+\paragraph{Résumé.}
+L’opérateur de \textit{dressing} est la traduction mathématique des effets
+d’interactions collectives entre quasi-particules.
+Il permet de passer de la description en termes de particules « nues »
+à celle des excitations « effectives », qui sont les véritables degrés de liberté
+hydrodynamiques se propageant dans le fluide intégrable.
+

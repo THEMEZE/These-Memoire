@@ -1,0 +1,110 @@
+\chapter{Réduction GHD $\to$ transport d’Euler lorsque le \textit{dressing} est l’identité}\label{annex:Euler}
+
+\paragraph{Point de départ : équation GHD.}
+La GHD s’écrit, pour la densité de quasi-particules $\rho(x,\theta,t)$,
+\begin{equation}\label{eq:GHD-base}
+  \partial_t \rho + \partial_x\!\big(v^{\rm eff}\rho\big) + \partial_\theta\!\big(a^{\rm eff}\rho\big)=0.
+\end{equation}
+Les vitesses/accélérations \emph{effectives} sont obtenues par habillage.
+
+\paragraph{Hypothèse ``sans interactions'' : $^{\rm dr}=\mathrm{Id}$.}
+Si l’opérateur d’habillage est l’identité (\emph{no dressing}),
+\[
+\nu = 2\pi \rho, \qquad
+v^{\rm eff}(\theta)\ \to\ \partial_\theta h(x,\theta),
+\qquad a^{\rm eff}(\theta)\ \to\ -\partial_x h(x,\theta),
+\]
+où $h(x,\theta)$ est l’hamiltonien \emph{nu} (par exemple $h=\epsilon(\theta)+V(x)$).
+L’équation \eqref{eq:GHD-base} devient alors une équation de transport collisionless (type Vlasov) :
+\begin{equation}\label{eq:transport-libre}
+  \partial_t \rho + \partial_x\!\big( \partial_\theta h\ \rho \big)
+  - \partial_\theta\!\big( \partial_x h\ \rho \big) = 0.
+\end{equation}
+
+\paragraph{Hiérarchie des moments (charges nues).}
+Pour toute fonction test $f(\theta)$, définissons
+\[
+q_{[f]}(x,t)=\int d\theta\, f(\theta)\,\rho(x,\theta,t), \qquad
+j_{[f]}(x,t)=\int d\theta\, f(\theta)\,\partial_\theta h\,\rho(x,\theta,t).
+\]
+En multipliant \eqref{eq:transport-libre} par $f(\theta)$ et en intégrant en $\theta$, on obtient
+\begin{equation}\label{eq:conserv-f}
+  \partial_t q_{[f]} + \partial_x j_{[f]}
+  \;=\; - \int d\theta\, f'(\theta)\, \partial_x h\, \rho
+  \;=\; -\,\partial_x V(x)\, \int d\theta\, f'(\theta)\, \rho,
+\end{equation}
+où la dernière égalité vaut si $h(\theta,x)=\epsilon(\theta)+V(x)$.
+
+\paragraph{Trois premiers moments (``masse'', ``momentum'', ``énergie'').}
+En choisissant $f(\theta)=1,\ \theta,\ \theta^2/2$, on obtient respectivement :
+\begin{align}
+  &\text{(Continuité)}
+  && \partial_t n + \partial_x (n u) = 0,
+  && n := q_{[1]},\quad n u := j_{[1]}, \label{eq:euler-1}\\[2pt]
+  &\text{(Quantité de mouvement)}
+  && \partial_t (n u) + \partial_x \big( q_{[\theta^2]} \big) = -\,n\,\partial_x V,
+  && q_{[\theta^2]} := \int d\theta\, \theta^2 \rho, \label{eq:euler-2}\\[2pt]
+  &\text{(Énergie cinétique)}
+  && \partial_t q_{[\theta^2/2]} + \partial_x \big( j_{[\theta^2/2]} \big)
+     = -\,(\partial_x V)\, q_{[\theta]},
+  && j_{[\theta^2/2]} := \int d\theta\, \tfrac{\theta^2}{2}\, \partial_\theta h\, \rho. \label{eq:euler-3}
+\end{align}
+\emph{Remarque :} pour $h=\tfrac{\theta^2}{2}+V(x)$, on a $\partial_\theta h=\theta$, d’où
+$j_{[\theta^2/2]}=\int d\theta\, \tfrac{\theta^2}{2}\, \theta\, \rho$.
+
+\paragraph{Lien (et limite) avec les équations d’Euler classiques.}
+Les équations \eqref{eq:euler-1}–\eqref{eq:euler-3} ont la structure des lois de conservation d’Euler
+(masse, quantité de mouvement, énergie).
+Cependant, \textbf{le système n’est pas fermé en l’état} : par exemple,
+$\partial_t (n u)$ fait intervenir $q_{[\theta^2]}$,
+qui requiert une relation de fermeture (\emph{équation d’état}) pour être exprimé
+en fonction de $n$ et $u$ (p.~ex. hypothèse de \emph{local Maxwell–Boltzmann} menant à une pression $\mathcal{P}$).
+
+\medskip
+\noindent
+\textbf{Conclusion.}
+Lorsque $^{\rm dr}=\mathrm{Id}$, la GHD se réduit à une cinétique collisionless
+dont les moments reproduisent \emph{formellement} les équations d’Euler.
+La véritable différence entre hydrodynamique classique et GHD complète réside donc dans le
+\emph{dressing} : dès que $^{\rm dr}\neq \mathrm{Id}$,
+les vitesses et charges deviennent \emph{effectives} et la dynamique s’écarte des lois d’Euler classiques.
+
+
+\begin{mdframed}[linewidth=0.5pt, backgroundcolor=gray!5, roundcorner=8pt, innerleftmargin=6pt, innerrightmargin=6pt]
+\paragraph{Encadré : fermeture et équations d'Euler fermées.}
+Pour obtenir un système d'équations d'Euler \emph{fermées} à partir de la hiérarchie \eqref{eq:euler-1}--\eqref{eq:euler-3}, il faut fournir une \emph{relation de fermeture} (ou \emph{équation d'état}) reliant les moments d'ordre supérieur aux variables hydrodynamiques de base $(n,u)$.
+
+Un choix simple et classique est l'hypothèse d'une distribution locale de Maxwell–Boltzmann (ou locale thermale) :
+\[
+\rho(x,\theta,t) \;=\; n(x,t)\,\frac{1}{\sqrt{2\pi T_{\rm loc}(x,t)}}\,
+\exp\!\Big(-\frac{(\theta-u(x,t))^2}{2T_{\rm loc}(x,t)}\Big),
+\]
+où $T_{\rm loc}(x,t)$ est la température locale (en unités appropriées). Sous cette hypothèse on calcule directement les moments :
+\[
+q_{[\theta]} = n u,\qquad
+q_{[\theta^2]} = n\big(u^2 + T_{\rm loc}\big).
+\]
+On peut identifier la pression cinétique comme
+\[
+\mathcal{P} = q_{[\theta^2]} - \frac{q_{[\theta]}^2}{n} = n\,T_{\rm loc}.
+\]
+En remplaçant ces expressions dans \eqref{eq:euler-1}--\eqref{eq:euler-3}, on obtient les équations d'Euler fermées :
+\begin{align*}
+&\partial_t n + \partial_x(n u) = 0, \\
+&\partial_t (n u) + \partial_x(n u^2/2 + \mathcal{P}) = -\,n\,\partial_x V, \\
+&\partial_t E + \partial_x\big(u(E+\mathcal{P})\big) = 0,
+\end{align*}
+avec $E = \tfrac12 n u^2 + n V + n e_{\rm int}$ et $e_{\rm int}$ l'énergie interne par particule liée à $T_{\rm loc}$.
+
+\medskip
+
+\noindent\textbf{Forme vectorielle compacte.} En posant l'état vectoriel $U=(n,\; n u,\; E)^\top$ et le flux $F(U)=(n u,\; n u^2 + \mathcal{P},\; u(E+\mathcal{P}))^\top$, les équations s'écrivent
+\[
+\partial_t U + \partial_x F(U) = S(U),
+\]
+où la source $S(U)$ regroupe les termes dus au potentiel externe, par exemple $S(U)=(0,\,-n\partial_x V,\,0)^\top$.
+
+\medskip
+
+\noindent\textbf{Remarque importante.} Dans la GHD complète, la distribution $\rho(x,\theta,t)$ n'est en général pas une Maxwellienne locale : les effets d'interaction et le \emph{dressing} modifient les relations entre moments. Par conséquent, la \emph{fermeture} dans GHD ne résulte pas automatiquement d'une hypothèse simple de type Maxwell–Boltzmann ; elle requiert soit une approximation adéquate (ex. développement en moments, hypothèse d'équation d'état empirique) soit la prise en compte explicite du dressing et des vitesses/charges effectives.
+\end{mdframed}

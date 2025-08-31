@@ -1,0 +1,52 @@
+%\chapter{Pourquoi le terme tensoriel disparaît pour $J=\tfrac12$}
+\chapter[Moment tensoriel pour J=1/2]{Pourquoi le terme tensoriel disparaît pour $J=\tfrac12$}
+
+\label{annex:no_tensor}
+
+Le terme tensoriel du potentiel dipolaire s'exprime formellement comme la composante d'ordre~2 d'une combinaison de produits d'opérateurs angulaires \(\{J_iJ_j\}\). On peut le voir comme un tenseur sphérique de rang \(k=2\), noté \(T^{(2)}\). Deux arguments simples montrent que cette contribution est nulle pour un état à \(J=\tfrac12\).
+
+\medskip
+
+\noindent\textbf{Argument par règles de sélection (Wigner–Eckart).}
+Le théorème de Wigner–Eckart et les règles de couplage angulaire imposent des contraintes sur les éléments de matrice réduits d'un tenseur sphérique \(T^{(k)}\). En particulier, pour des états \(|J,m\rangle\), l'élément de matrice réduit \(\langle J\Vert T^{(k)}\Vert J\rangle\) peut être non nul seulement si la condition triangulaire est satisfaite :
+\[
+|J-J|\le k \le J+J \quad\Longrightarrow\quad 0\le k\le 2J.
+\]
+Autrement dit, le rang \(k\) du tenseur ne peut dépasser \(2J\). Pour \(J=\tfrac12\) on a \(2J=1\) : les tenseurs de rang \(k\ge2\) (dont \(k=2\)) sont donc interdits — leur élément de matrice réduit s'annule. Par conséquent tous les composantes du tenseur d'ordre~2 ont des éléments de matrice nuls entre états de \(J=\tfrac12\), et le terme tensoriel ne contribue pas.
+
+\medskip
+
+\noindent\textbf{Intuition physique.}
+Le terme tensoriel représente une interaction quadrupolaire : il mesure l'anisotropie de la distribution de charge (ou de la densité électronique) de rang~2 (quadrupôle) et la façon dont cette anisotropie couple à la polarisation de la lumière. Un système ayant un moment cinétique minimal \(J=\tfrac12\) ne peut porter qu'un dipôle (rang~1) mais pas de quadrupôle indépendant ; il est donc incapable de présenter une réponse tensorielle.
+
+\medskip
+
+\noindent\textbf{Justification par calcul élémentaire (esquisse).}
+Pour rendre cela plus concret, on peut écrire les produits symétrisés d'opérateurs de spin pour \(J=\tfrac12\) en termes des matrices de Pauli \(\sigma_i\) :
+\[
+J_i=\tfrac{\hbar}{2}\sigma_i,\qquad
+J_iJ_j=\frac{\hbar^2}{4}\sigma_i\sigma_j.
+\]
+Or les matrices de Pauli satisfont
+\(
+\sigma_i\sigma_j=\delta_{ij}\,\mathbb{1}+ i\varepsilon_{ijk}\sigma_k,
+\)
+si bien que toute combinaison symétrique et sans trace construite à partir de \(\sigma_i\sigma_j\) se réduit à une combinaison de l'identité et d'opérateurs de rang~1 (proportionnels à \(\sigma_k\)). Il n'existe donc pas de composante indépendante de rang~2 dans l'algèbre des opérateurs sur l'espace à deux dimensions. En particulier, la combinaison traceless/ quadrupolaire
+\[
+3[(\vec{u}^{\,*}\!\cdot \vec{J})(\vec{u}\!\cdot\vec{J})+(\vec{u}\!\cdot\vec{J})(\vec{u}^{\,*}\!\cdot\vec{J})]-2\vec{J}^2
+\]
+s'annule (ou se réduit à une combinaison triviale proportionnelle à l'identité) lorsqu'elle est restreinte à l'espace \(J=\tfrac12\). Ceci confirme algébriquement l'argument angulaire précédent.
+
+\medskip
+
+\noindent\textbf{Remarque sur la forme normale de la fraction.}
+La formule souvent écrite
+\[
+\frac{3[(\vec{u}^{\,*}\!\cdot \vec{J})(\vec{u}\!\cdot\vec{J})+(\vec{u}\!\cdot\vec{J})(\vec{u}^{\,*}\!\cdot \vec{J})]-2\vec{J}^2}{2J(2J-1)}
+\]
+est valable pour \(J\ge1\). Pour \(J=\tfrac12\) le dénominateur \(2J(2J-1)\) s'annule formellement ; ceci indique simplement que l'écriture fractionnaire n'est pas définie là où le terme tensoriel n'a pas de sens physique. Le bon énoncé est : «\,pour \(J<1\) (en particulier \(J=\tfrac12\)), la composante tensorielle est identiquement nulle\,».
+
+\medskip
+
+\noindent\textbf{Conclusion.}
+Pour les atomes alcalins dans leur état fondamental (configuration \(nS_{1/2}\), donc \(J=\tfrac12\)), la contribution tensorielle du potentiel dipolaire est strictement nulle. On conserve alors uniquement les termes scalaire et, éventuellement, vectoriel (ce dernier ne dépendant que de la polarisation elliptique/circulaire).
