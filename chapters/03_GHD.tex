@@ -239,11 +239,13 @@ Grâce à cela, on peut affirmer que la fonction $\nu (x , \theta)$  s’interpr
 Cette diagonalisation est essentielle pour comprendre la structure hamiltonienne du système et simplifier l'analyse de sa dynamique, notamment dans le cadre spatialement étendu avec un dressing dépendant de la position. 
 
 \section{Formulation hamiltonienne de la GHD}
-{\color{blue}
+
 Dans  \cite{bonnemain2024hamiltonian}, il est montré que les équation \gls{GHD} peuvent
 avoir une formulation Hamiltonienne dans le cadre d'une théorie de champ classique,
 moyennant une redéfinition du crochet de Poisson. J'ai trouvé cette approche intéressante
-et je présente ici ce résultat. En aucun cas les calculs ci-dessous ne sont une dérivation de \gls{GHD}.}
+et je présente ici ce résultat. En aucun cas les calculs ci-dessous ne sont une dérivation de \gls{GHD}.
+
+
 \subsection{Crochet de Poisson fonctionnel}
 
 \paragraph{Interprétation et limite non-interactive}  
@@ -476,7 +478,7 @@ Pour $f(\theta) = 1$, $\theta$ et $\theta^2/2$ et $h(\theta,x)=\varepsilon(\thet
 	\end{array}
 	\right .  
 \end{eqnarray}
-avec la densité de particule $n = q_{[1]}$, la vitesse moyenne du fluide $u = {q_{[\theta]}}/{q_{[1]}}$ , la pression cinétique du fluide $\mathcal{P} =  q_{[\theta^2]} - {q_{[\theta]}^2}/{q_{[1]}} $ , l'énergie totale $E = nu^2/2 + nV + ne_{\rm int}$ où $e_{\rm int} = q_{[\theta^2/2]}$ est l'énergie interne d'une particule {\color{blue} ?????????????????}.
+avec la densité de particule $n = q_{[1]}$, la vitesse moyenne du fluide $u = {q_{[\theta]}}/{q_{[1]}}$ , la pression cinétique du fluide $\mathcal{P} =  q_{[\theta^2]} - {q_{[\theta]}^2}/{q_{[1]}} $ , l'énergie totale $E = nu^2/2 + nV + ne_{\rm int}$ où $e_{\rm int} = q_{[\theta^2/2]}$ est l'énergie interne d'une particule .
 
 
 
@@ -486,22 +488,27 @@ En l’absence de potentiel externe ($V = 0$), le système conserve certaines ch
 
 \medskip
 
-En revanche, dans un système intégrable, une infinité de charges sont conservées. En particulier, pour tout $\theta \in \mathbb{R}$:
+En revanche, dans un système intégrable, une infinité de charges sont conservées. Chaque valeur de la rapidité \(\theta\) définit une charge globale
+\begin{equation*}
+\rho(\theta,t) = Q[\delta(\cdot - \theta)] = \int dx \, \rho(x,\theta,t),
+\end{equation*}
+et les charges associées à une observable \(f(\theta)\) quelconque s’écrivent
 \(
-\rho(\theta , t ) = Q[\delta(\cdot - \theta)] = \int dx \, \rho(x, \theta, t),
-\)
-et les charges associées à une observable quelconque $f(\theta)$ s’écrivent :
-\(
-Q[f] = \int d\theta \, f(\theta) \, \rho(\theta, t).
+Q[f] = \int d\theta \, f(\theta) \, \rho(\theta,t).
 \)
 
 \medskip
 
-{\color{blue} ??? Cette structure est l’analogue classique de la description en termes de {\bf distribution de rapidité} dans le cadre intégrable.} Elle constitue le point de départ naturel pour développer une description \gls{GHD} dans le cas intégrable.
+Cette structure constitue l’analogue classique de la description en termes de {\bf distribution de rapidité} dans le cadre intégrable et fournit le point de départ naturel pour développer la théorie de l’hydrodynamique généralisée (GHD). 
+
+\medskip
+ 
+En particulier, pour décrire la dynamique à l’échelle d’Euler, il devient nécessaire de suivre l’évolution de \(\rho(x,\theta,t)\) pour toutes les valeurs de \(\theta\), contrairement au cas non intégrable où seules quelques densités locales suffisent.
 
 
 
 {\color{blue}
+
 
 
 }
