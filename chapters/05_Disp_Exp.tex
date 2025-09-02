@@ -140,7 +140,7 @@ Les atomes thermiques sont ralentis et confinés dans un piège magnéto-optique
 Le nuage est rapproché de la surface de la puce en transférant le champ quadrupolaire des bobines vers un champ homogène produit par ces bobines, combiné au champ généré par le fil en forme de U de la puce (fil bleu, Fig.~\ref{fig:puce}). Le courant dans ce fil est ajusté lentement de \(3.6\,\mathrm{A}\) à \(1.5\,\mathrm{A}\), ce qui positionne le nuage à quelques centaines de micromètres de la surface.
 
 \paragraph{Mélasse optique}
-Après la capture dans le PMO, une étape de mélasse optique est appliquée pour refroidir davantage le nuage atomique, au-delà de la limite de Doppler. La mélasse optique repose sur l’utilisation de faisceaux laser légèrement désaccordés en fréquence par rapport à la résonance de la transition atomique utilisée pour le refroidissement et polarisés de manière appropriée, qui interagissent avec les atomes selon le mécanisme de refroidissement sub-Doppler.
+Après la capture dans le \gls{PMO}, une étape de mélasse optique est appliquée pour refroidir davantage le nuage atomique, au-delà de la limite de Doppler. La mélasse optique repose sur l’utilisation de faisceaux laser légèrement désaccordés en fréquence par rapport à la résonance de la transition atomique utilisée pour le refroidissement et polarisés de manière appropriée, qui interagissent avec les atomes selon le mécanisme de refroidissement sub-Doppler.
 
 Le principe physique est le suivant : les atomes en mouvement voient les faisceaux laser avec un décalage Doppler, ce qui modifie la probabilité d’absorption selon leur vitesse et leur position. Combiné avec les effets de polarisation (notamment les forces de type Sisyphus dans un champ de polarisation variable), cela crée un potentiel de friction optique qui ralentit les atomes. Contrairement au refroidissement Doppler standard, la mélasse optique permet de réduire l’énergie cinétique des atomes en dessous de la limite Doppler, atteignant des températures beaucoup plus basses.
 
@@ -160,7 +160,7 @@ Enfin, les atomes sont préparés dans l’état magnétique \( |F=2,\,m_F=2\ran
 			
 				\end{scope}
 			
-				\draw[color = red , scale = 0.5 , draw = none  ] (-2 , -1) rectangle (5, 6) ; 	
+				%\draw[color = red , scale = 0.5 , draw = none  ] (-2 , -1) rectangle (5, 6) ; 	
 			\end{scope}
 					
 	\end{tikzpicture}
@@ -183,31 +183,51 @@ Enfin, les atomes sont préparés dans l’état magnétique \( |F=2,\,m_F=2\ran
 %\end{itemize}
 %}
 
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+			\begin{scope}[shift={(0,0)}]
+				\begin{scope}[transform canvas={scale=0.6}]
+				%\begin{scope}[scale=0.5]
+					\input{figures/05_Disp_Exp/Structure_fils}	
+			
+				\end{scope}
+			
+				\draw[color = red , scale = 0.5 , draw = red  ] (-10 , -1) rectangle (6, 9) ; 	
+			\end{scope}
+			
+			\begin{scope}[shift={(9,0)}]
+				\begin{scope}[transform canvas={scale=0.6}]
+				%\begin{scope}[scale=0.5]
+					\input{figures/05_Disp_Exp/Tranche_puce}	
+			
+				\end{scope}
+			
+				\draw[color = red , scale = 0.5 , draw = red  ] (-10 , -1) rectangle (6, 9) ; 	
+			\end{scope}
+					
+	\end{tikzpicture}
+	\caption{Structure hyperfine (transitions D1 et D2) de l’atome de Rubidium $^{87}$Rb. Les longueurs d’onde des différents lasers utilisés dans l’expérience sont représentées en rouge vif (Fig adaptée de \cite{L.Dubois2024})}
+	\label{chap:5:fig:hiperfin}
+\end{figure}
+
 \subsubsection{Piégeage magnétique sur puce}
 \label{sec:piegeage_puce}
 
-%On peut utiliser des piégeage optique pour produire des stracture atomique longitudinale alongé. Certaines groupe de recherche utilise un redeau optique 2D pour obtenir un réseau 2D de tube longitudinaaux \cite{Kinoshita2004,LaburtheTolra2004,Paredes2004,Moritz2003}. Ce raseaux 2D produit un grand nombre de systéme atomique propise è l'étude de de gase 1D. Avec ce genre de dispositif on peux etudier des gas 1D peut dense car les densité peut etre moyenné sur tous les tudes. Mais avec ce genre de dispositif on ne peut pas étudier experimentalement les fluctudation dans le systéme. Nous pour gièger les atomes on utilise une puce atomique.
-%
-%\paragraph{Principe général}
-%Les atomes de rubidium sont piégés grâce à une puce atomique intégrée dans l’enceinte à vide. Une puce atomique est un circuit microfabriqué contenant des micro-fils dans lesquels circulent des courants permettant de générer des champs magnétiques à géométrie contrôlée. Ce dispositif, développé dans les années 1990 \cite{Denschlag1999,Fortagh1998}, permet une miniaturisation du système de piégeage \cite{Folman2000,Reichel1999}, les premiers condensats sur puce ont été obtenus en 2001 \cite{Haensel2001,Ott2001} et la premièref fois aux laboratoir Charles Fabry (LCF) \cite{Aussibal2003} et un accès à des confinements forts, particulièrement adaptés à l'étude de gaz de Bose unidimensionnels \cite{Schumm2005,Trebbia2006}.
-
--------
-
-On peut créer des structures atomiques allongées en utilisant des techniques de piégeage optique. Par exemple, plusieurs groupes de recherche ont recours à des réseaux optiques bidimensionnels (2D) pour former un ensemble de tubes atomiques longitudinaux \cite{Kinoshita2004,LaburtheTolra2004,Paredes2004,Moritz2003}. Ces réseaux 2D permettent de produire un grand nombre de systèmes atomiques quasi-unidimensionnels, offrant ainsi une plateforme idéale pour l’étude des gaz 1D. Ce type de dispositif est particulièrement adapté à l’étude de gaz faiblement denses, car les densités peuvent être moyennées sur l’ensemble des tubes. Cependant, l’étude expérimentale des fluctuations locales dans chaque tube reste difficile avec ce genre de configuration. Pour surmonter cette limitation, on utilise le piégeage à l’aide de puces atomiques.
+On peut créer des structures atomiques allongées en utilisant des techniques de piégeage optique. Par exemple, plusieurs groupes de recherche ont recours à des réseaux optiques bidimensionnels (2D) pour former un ensemble de tubes atomiques longitudinaux \cite{Kinoshita2004,LaburtheTolra2004,Paredes2004,Moritz2003}. Ces réseaux 2D permettent de produire un grand nombre de systèmes atomiques quasi-unidimensionnels, offrant ainsi une plateforme idéale pour l’étude des gaz 1D. Ce type de dispositif est particulièrement adapté à l’étude de gaz faiblement denses, car les densités peuvent être moyennées sur l’ensemble des tubes. Cependant, avec ce type de configuration, on observe essentiellement une moyenne sur l’ensemble des tubes, ce qui rend difficile l’étude des fluctuations locales dans chaque tube individuellement. Pour surmonter cette limitation, on utilise le piégeage à l’aide de puces atomiques.
 
 \paragraph{Principe général}
-Les atomes de rubidium sont confinés par une puce atomique intégrée dans l’enceinte à vide. Une puce atomique est un circuit microfabriqué comportant de fins micro-fils parcourus par des courants électriques, ce qui permet de générer des champs magnétiques à géométrie contrôlée. Cette technologie, développée dans les années 1990 \cite{Denschlag1999,Fortagh1998}, offre une miniaturisation significative des dispositifs de piégeage \cite{Folman2000,Reichel1999}. Les premiers condensats de Bose–Einstein sur puce ont été réalisés en 2001 \cite{Haensel2001,Ott2001}, puis ultérieurement au Laboratoire Charles Fabry \cite{Aussibal2003}. Les puces atomiques permettent d’accéder à des confinements très forts, particulièrement adaptés à l’étude des gaz de Bose unidimensionnels et à l’exploration de leurs propriétés quantiques locales \cite{Schumm2005,Trebbia2006}.
+%Les atomes de rubidium sont confinés par une puce atomique intégrée dans l’enceinte à vide. Une puce atomique est un circuit microfabriqué comportant de fins micro-fils parcourus par des courants électriques, ce qui permet de générer des champs magnétiques à géométrie contrôlée. Cette technologie, développée dans les années 1990 \cite{Denschlag1999,Fortagh1998}, offre une miniaturisation significative des dispositifs de piégeage \cite{Folman2000,Reichel1999}. Les premiers condensats de Bose–Einstein sur puce ont été réalisés en 2001 \cite{Haensel2001,Ott2001}, puis ultérieurement au Laboratoire Charles Fabry \cite{Aussibal2003}. Les puces atomiques permettent d’accéder à des confinements très forts, particulièrement adaptés à l’étude des gaz de Bose unidimensionnels et à l’exploration de leurs propriétés quantiques locales \cite{Schumm2005,Trebbia2006}.
 
 
------
-Des structures atomiques allongées peuvent être réalisées par piégeage optique. Dans ce cadre, des réseaux optiques bidimensionnels (2D) permettent de créer un ensemble de tubes atomiques quasi-unidimensionnels \cite{Kinoshita2004,LaburtheTolra2004,Paredes2004,Moritz2003}. Ces réseaux offrent un grand nombre de systèmes atomiques identiques, facilitant l’étude statistique de gaz 1D faiblement dense. Toutefois, l’accès expérimental aux fluctuations locales dans chaque tube reste limité.
+%-----
+%Des structures atomiques allongées peuvent être réalisées par piégeage optique. Dans ce cadre, des réseaux optiques bidimensionnels (2D) permettent de créer un ensemble de tubes atomiques quasi-unidimensionnels \cite{Kinoshita2004,LaburtheTolra2004,Paredes2004,Moritz2003}. Ces réseaux offrent un grand nombre de systèmes atomiques identiques, facilitant l’étude statistique de gaz 1D faiblement dense. Toutefois, l’accès expérimental aux fluctuations locales dans chaque tube reste limité.
 
-Pour contourner cette contrainte, les puces atomiques offrent une solution efficace. Ces dispositifs microfabriqués intègrent de fins micro-fils parcourus par des courants, générant des champs magnétiques de géométrie contrôlée et permettant des confinements très forts \cite{Denschlag1999,Fortagh1998,Folman2000,Reichel1999}. La miniaturisation ainsi obtenue a permis l’obtention des premiers condensats de Bose–Einstein sur puce dès 2001 \cite{Haensel2001,Ott2001}, et dés 2003 au Laboratoire Charles Fabry \cite{Aussibal2003}. Grâce à ces confinements, il devient possible d’étudier expérimentalement les propriétés de gaz de Bose unidimensionnels et leurs fluctuations locales \cite{Schumm2005,Trebbia2006}.
+Pour contourner cette contrainte, les puces atomiques offrent une solution efficace. Ces dispositifs microfabriqués intègrent de micro-fils parcourus par des courants, générant des champs magnétiques de géométrie contrôlée et permettant des confinements très forts \cite{Denschlag1999,Fortagh1998,Folman2000,Reichel1999}. La miniaturisation ainsi obtenue a permis l’obtention des premiers condensats de Bose–Einstein sur puce dès 2001 \cite{Haensel2001,Ott2001}, et dés 2003 au \gls{LCF} \cite{Aussibal2003}. Grâce à ces confinements, il devient possible d’étudier expérimentalement les propriétés d’un nuage unique de gaz de Bose unidimensionnel et ses fluctuations locales \cite{Schumm2005,Trebbia2006}..
 
--------
 
 \paragraph{Structure de la puce utilisée}
-La puce utilisée au cours de cette expérience a été conçue en collaboration avec S.~Bouchoule, A.~Durnez et A.~Harouri (C2N). Elle repose sur un substrat de carbure de silicium sur lequel est déposé le circuit électrique. Ce dernier est recouvert d’une couche de résine BCB, aplanie par des cycles d’enduction et d’attaque plasma. Une fine couche d’or (\(\sim200\,\mathrm{nm}\)) est finalement évaporée afin de permettre l’utilisation de la puce comme miroir pour l’imagerie à \(780\,\mathrm{nm}\). La puce est soudée à l’indium sur une monture en cuivre inclinée à \(45^\circ\) par rapport à l’axe optique.
+La puce utilisée au cours de cette expérience a été conçue en collaboration avec S.~Bouchoule, A.~Durnez et A.~Harouri (\gls{C2N}). Elle repose sur un substrat de carbure de silicium (\gls{SiC}) sur lequel est déposé le circuit électrique. Ce dernier est recouvert d’une couche de résine \gls{BCB}, aplanie par des cycles d’enduction et d’attaque plasma. Une fine couche d’or (\gls{Au}) (\(\sim 150\,\mathrm{nm}\)) est finalement évaporée afin de permettre l’utilisation de la puce comme miroir pour l’imagerie à \(780\,\mathrm{nm}\). La puce est soudée à l’indium sur une monture en cuivre inclinée à \(45^\circ\) par rapport à l’axe optique.
 
 %\paragraph{Fils de piégeage et géométrie des champs}
 %Plusieurs fils sont intégrés à la puce pour assurer les différentes étapes du piégeage et du transport des atomes : un fil en forme de Z est utilisé pour le piégeage initial (DC), tandis que trois micro-fils (symétriques et parallèles) sont utilisés pour former un guide unidimensionnel par courants alternatifs (AC). La géométrie des fils a été optimisée pour minimiser la dissipation de chaleur, limiter les couplages parasites et améliorer la symétrie du piège. Dans la zone d’intérêt, les atomes sont piégés à environ \(15\,\mu\mathrm{m}\) au-dessus des fils, soit à \(8\,\mu\mathrm{m}\) au-dessus de la surface de la puce.
@@ -215,7 +235,7 @@ La puce utilisée au cours de cette expérience a été conçue en collaboration
 %\paragraph{Fils de piégeage et géométrie des champs}
 %La puce atomique comporte plusieurs ensembles de fils, chacun jouant un rôle précis dans les différentes étapes de la capture, du transport et du confinement des atomes.
 \paragraph{Fils de piégeage et géométrie des champs}
-La puce atomique intègre plusieurs ensembles de conducteurs, chacun conçu pour une étape spécifique de la capture, du transport et du confinement des atomes. L’ensemble de la séquence de transfert, depuis le piège magnéto-optique (PMO) jusqu’au guide unidimensionnel, repose sur une succession de configurations magnétiques générées par ces différents fils.
+La puce atomique intègre plusieurs ensembles de conducteurs, chacun conçu pour une étape spécifique de la capture, du transport et du confinement des atomes. L’ensemble de la séquence de transfert, depuis le \gls{PMO} jusqu’au guide unidimensionnel, repose sur une succession de configurations magnétiques générées par ces différents fils.
 
 %\medskip
 %\subparagraph{Fil en forme de U .}
@@ -230,78 +250,70 @@ Après la phase de pré-refroidissement, le nuage est initialement capturé dans
 %Après le pompage optique, les atomes sont transférés dans un piège magnétique combinant un courant continu circulant dans le fil en forme de Z de la puce (fil orange dans la Fig.~\ref{fig:puce}) et un champ magnétique externe. Ce piège, noté \emph{piège DC}, permet un confinement transverse important. Un refroidissement par évaporation radiofréquence est alors réalisé pendant environ \( 2.3\,\mathrm{s} \), ce qui abaisse la température du nuage à environ \( 1\,\mu\mathrm{K} \), pour un nombre d’atomes typiquement autour de \( 2.5 \times 10^5 \).
 
 \subparagraph{Phase Z : piège DC et refroidissement}
-À l’issue du pompage optique, les atomes sont transférés dans un piège magnétique combinant un courant continu circulant dans un fil en forme de Z (fil orange) et un champ magnétique externe. Ce \emph{piège DC} assure un confinement transverse fort. Un refroidissement par évaporation radiofréquence, d’une durée d’environ \(2.3\,\mathrm{s}\), abaisse la température du nuage à environ \(1\,\mu\mathrm{K}\), pour un nombre typique d’atomes de l’ordre de \(2.5\times 10^5\).
+À l’issue du pompage optique, les atomes sont transférés dans un piège magnétique combinant un courant continu circulant dans un fil en forme de Z (fil orange) et un champ magnétique externe. Ce \emph{piège \gls{DC}} assure un confinement transverse fort. Un refroidissement par évaporation radiofréquence, d’une durée d’environ \(2.3\,\mathrm{s}\), abaisse la température du nuage à environ \(1\,\mu\mathrm{K}\), pour un nombre typique d’atomes de l’ordre de \(2.5\times 10^5\).
 %\medskip
 %Une fois chargé dans ce piège intermédiaire, le nuage est transporté vers la zone expérimentale. Dans cette région, trois micro-fils parallèles et symétriques (jaune), parcourus par des courants alternatifs (AC), créent un guide magnétique unidimensionnel assurant le confinement transversal des atomes. Le confinement longitudinal est obtenu grâce à deux paires de fils : d/d′ (rose) et D/D′ (vert).
 
 \subparagraph{Transfert vers le guide unidimensionnel}
-Une fois refroidi, le nuage est acheminé vers la zone expérimentale où trois micro-fils parallèles et symétriques (fils jaunes) parcourus par des courants alternatifs (AC) génèrent un guide magnétique unidimensionnel assurant le confinement transverse. Le confinement longitudinal est fourni par deux paires de fils : $d/d'$ (rose) et $D/D'$ (vert).
+Une fois refroidi, le nuage est acheminé vers la zone expérimentale où trois micro-fils parallèles et symétriques (fils jaunes) parcourus par des courants alternatifs (\gls{AC}) génèrent un guide magnétique unidimensionnel assurant le confinement transverse. Le confinement longitudinal est fourni par deux paires de fils : $d/d'$ (rose) et $D/D'$ (vert).
 
-Le passage du piège DC au guide 1D est réalisé de manière adiabatique grâce à cinq rampes linéaires de courant d’une durée comprise entre \(50\) et \(60\,\mathrm{ms}\) chacune. Durant cette opération :  
+Le passage du piège \gls{DC} au guide 1D est réalisé de manière adiabatique grâce à cinq rampes linéaires de courant d’une durée comprise entre \(50\) et \(60\,\mathrm{ms}\) chacune. Durant cette opération :  
 (i) le courant dans le fil Z est progressivement réduit,  
 (ii) le courant dans les micro-fils du guide est augmenté jusqu’à environ \(50\,\mathrm{mA}\),  
 (iii) un courant initial de \(0.5\,\mathrm{A}\) est appliqué dans les fils $D$ et $D'$, puis ajusté pour maintenir fixe la position du centre de masse du nuage.  
 
-Ce protocole minimise les oscillations résiduelles dans le guide et assure un découplage efficace entre la dynamique longitudinale et le confinement transverse. Ce dispositif a été développé au cours de la thèse de Léa Dubois~\cite{TheseLea} et a été utilisé dans le cadre de mes protocoles expérimentaux sur l’expansion longitudinale et les sondes locales de distribution de rapidité.
+\medskip
+
+
+La configuration des fils de cette puce permet de réduire au minimum les oscillations résiduelles dans le guide. Sa géométrie assure également un découplage efficace entre la dynamique longitudinale et le confinement transverse. Ce dispositif, développé dans le cadre des thèses \cite{Fang2014,schem2019,L.Dubois2024}, a été utilisé dans mes protocoles expérimentaux pour étudier l’expansion longitudinale et réaliser des mesures locales de la distribution de rapidité.
+
 
 \subparagraph{Optimisation géométrique}
 La géométrie des conducteurs de la puce a été conçue pour réduire la dissipation thermique, limiter les couplages parasites et garantir une bonne symétrie des champs magnétiques. Dans la zone expérimentale, les atomes sont piégés à environ \(15\,\mu\mathrm{m}\) au-dessus des fils, soit \(8\,\mu\mathrm{m}\) au-dessus de la surface de la puce.
 
 
 \paragraph{Refroidissement final et accès au régime unidimensionnel}
-Une dernière phase de refroidissement par évaporation radiofréquence est effectuée directement dans le guide AC. Grâce à l’anisotropie marquée du piège, le confinement transverse atteint une fréquence \(\omega_\perp\) telle que l’énergie quantique \(\hbar \omega_\perp\) dépasse largement les énergies thermique et chimique du système. On atteint ainsi le régime unidimensionnel, caractérisé par la hiérarchie d’énergies :
+Une dernière phase de refroidissement par évaporation radiofréquence est effectuée directement dans le guide \gls{AC}. Grâce à l’anisotropie marquée du piège, le confinement transverse atteint une fréquence \(\omega_\perp\) telle que l’énergie quantique \(\hbar \omega_\perp\) dépasse largement les énergies thermique et chimique du système. On atteint ainsi le régime unidimensionnel, caractérisé par la hiérarchie d’énergies :
 \[
 k_B T, \mu \ll \hbar \omega_\perp,
 \]
 où \(\mu\) désigne le potentiel chimique et \(T\) la température du gaz.
 
+\medskip
+
 Dans ce régime, le confinement transverse est assuré principalement par la géométrie des micro-fils et la présence de champs magnétiques externes, tandis que le confinement longitudinal, plus faible, est ajustable via une combinaison de champs magnétiques externes et de courants circulant dans des fils additionnels ($d/d'$ et $D/D'$). 
 
-Les gaz obtenus contiennent typiquement entre \(3\times 10^3\) et \(1.5\times 10^4\) atomes, pour des températures de l’ordre de \(50\) à \(200\,\mathrm{nK}\). La Fig.~\ref{fig:gaz1D} illustre un exemple de nuage dans ce régime, observé avec le système d’imagerie final.
+\medskip
+
+Les gaz obtenus contiennent typiquement entre \(3\times 10^3\) et \(1.5\times 10^4\) atomes, pour des températures de l’ordre de \(50\) à \(200\,\mathrm{nK}\). %La Fig.~\ref{fig:gaz1D} illustre un exemple de nuage dans ce régime, observé avec le système d’imagerie final.
 
 
-
-%\paragraph{Confinement transverse et longitudinal}
-%Le confinement transverse est assuré principalement par la géométrie des fils et la présence de champs magnétiques externes. Sa fréquence élevée permet d’atteindre des énergies de confinement \(\hbar \omega_\perp\) bien supérieures aux énergies thermiques et chimiques du système, condition nécessaire à l’accès au régime 1D :
-%\[
-%k_B T, \mu \ll \hbar \omega_\perp.
-%\]
-%Le confinement longitudinal, plus faible, est modulable par combinaison de champs magnétiques externes et courants dans les fils additionnels.
 
 \paragraph{Avantages du piégeage sur puce}
 Comparé aux systèmes utilisant des réseaux optiques 2D, le piégeage sur puce ne fournit qu’un seul tube, ce qui permet un meilleur accès aux fluctuations locales de densité et aux observables résolues spatialement. Ce type de dispositif est ainsi particulièrement adapté à l'étude de la thermodynamique et de la dynamique de gaz 1D isolés.
 
 \paragraph{Limitations et effets parasites}
-Parmi les limitations spécifiques au piégeage sur puce figurent la rugosité des potentiels magnétiques due aux imperfections des fils, qui peut induire des modulations parasites du confinement longitudinal. De plus, la stabilité du dispositif est sensible aux champs parasites magnétiques externes ainsi qu’aux échauffements dus aux courants continus.
+Parmi les limitations spécifiques au piégeage sur puce, on peut citer la rugosité des potentiels magnétiques liée aux imperfections des fils, pouvant induire des défauts parasites dans le confinement longitudinal. De plus, la stabilité du dispositif est sensible aux champs magnétiques externes parasites et aux échauffements provoqués par les courants continus, qui peuvent entraîner une déformation de la puce.
 
-
-
-
-
-\paragraph{Imagerie finale}
-À l’issue de ce refroidissement, les atomes sont observés avec le système d’imagerie final (voir Fig.~\ref{fig:imagerieFinale}), adapté aux tailles caractéristiques du gaz dans le piège. Une image typique de ce nuage est présentée en Fig.~\ref{fig:nuageDC}.
-
-
-
-%\paragraph{Refroidissement final et accès au régime unidimensionnel}
-%Une dernière phase de refroidissement par évaporation radiofréquence est ensuite réalisée dans le guide AC. Ce refroidissement, mené dans le piège à forte anisotropie, permet d’atteindre le régime unidimensionnel, caractérisé par la hiérarchie d’énergies :
-%\[
-%k_B T, \mu \ll \hbar \omega_\perp
-%\]
-%où \( \omega_\perp \) est la fréquence de confinement transverse, \( \mu \) le potentiel chimique et \( T \) la température du gaz.
-%
-%Les gaz obtenus contiennent typiquement entre \( 3 \times 10^3 \) et \( 1.5 \times 10^4 \) atomes, pour des températures de l’ordre de \( 50 \text{ à } 200\,\mathrm{nK} \). La Fig.~\ref{fig:gaz1D} montre un exemple de tel gaz observé avec le système d’imagerie final.
 
 
 \paragraph{Remarques expérimentales}
-Lorsque j’ai rejoint l’équipe, la première année thèse de Léa Dubois touchait à sa fin et le dispositif expérimental était en fonctionnement stable. Les différentes étapes du cycle (dispenser, PMO, mélasse, pompage optique, piège DC, transfert vers le guide, évaporation finale) avaient été mises en place et optimisées pendant les premières années de sa thèse, sous la supervision d’I. Bouchoule.Le cycle expérimental complet dure environ 15 secondes. Une description plus détaillée peut être trouvée dans la thèse d’A. Johnson~\cite{Johnson2016}.
+Lorsque j’ai rejoint l’équipe, la première année thèse de L.Dubois touchait à sa fin et le dispositif expérimental était en fonctionnement stable. Les différentes étapes du cycle (dispenser, \gls{PMO}, mélasse, pompage optique, piège \gls{DC}, transfert vers le guide, évaporation finale) avaient été mises en place et optimisées pendant les premières années de sa thèse, sous la supervision d’I. Bouchoule. Le cycle expérimental complet dure environ 15 secondes. Une description plus détaillée peut être trouvée dans la thèse d’A. Johnson~\cite{Johnson2016}.
+
+\medskip
+
+Pendant ma première année, j’ai principalement participé à la prise de données en collaboration avec L. Dubois . Grâce à la qualité de son travail, le dispositif était globalement très fiable, ce qui a permis de mener des campagnes expérimentales riches sans intervention lourde. Néanmoins, cette stabilité avait pour contrepartie que je n’ai pas été directement impliqué dans la résolution des pannes complexes ou dans le reconditionnement complet de la manipulation, ce qui a limité ma formation sur les aspects de maintenance approfondie du dispositif.
+
+\medskip
 
 
-Pendant ma première année, j’ai principalement participé à la prise de données en collaboration avec Léa. Grâce à la qualité de son travail, le dispositif était globalement très fiable, ce qui a permis de mener des campagnes expérimentales riches sans intervention lourde. Néanmoins, cette stabilité avait pour contrepartie que je n’ai pas été directement impliqué dans la résolution des pannes complexes ou dans le reconditionnement complet de la manipulation, ce qui a limité ma formation sur les aspects de maintenance approfondie du dispositif.
+En revanche, peu avant la fin de la thèse de L. Dubois et au début de ma troisième année, nous avons observé que le nombre d’atomes tombait à zéro. Il s’est avéré que les connecteurs du "\emph{dispenser}", responsable de la libération de $^{87}$Rb, étaient rompus. Cette opération a été mise à profit pour installer un nouveau "\emph{dispenser}". Cette opération nécessite une intervention assez lourde et implique de rompre le vide de l’enceinte. Comme la puce avait déjà plus de trois ans, nous avons décidé de la remplacer par une nouvelle puce atomique.
 
-En revanche, peu avant la fin de la thèse de Léa et au début de ma troisième année, nous avons observé une chute significative du nombre d’atomes capturés. Sous la supervision d’I. Bouchoule, une intervention lourde a alors été décidée : nous avons cassé le vide pour diagnostiquer le problème. Il s’est avéré que les connecteurs du dispenser étaient endommagés. L’opération a été mise à profit pour installer un nouveau dispenser et remplacer la puce atomique.
+\medskip
 
-Cette opération a mobilisé plusieurs personnes du laboratoire et de ses partenaires : S. Bouchoule (C2N) et Anne [Nom complet à préciser] ont participé à la manipulation et à la pose de la puce, tandis que j’ai pu assister à l’étuvage de l’enceinte à vide avec F. Nogrette. Après cette intervention, j’ai suivi avec I. Bouchoule le réajustement progressif de la séquence de refroidissement : alignement des faisceaux, réglages de la mélasse, optimisation du chargement dans le piège DC, puis dans le guide.
+Cette opération a mobilisé plusieurs personnes du laboratoire et de ses partenaires : Sophie Bouchoule (\gls{C2N}) et  Anne-Lise Coutrot (\gls{LCF}) ont participé à la manipulation et à la pose de la puce, tandis que j’ai pu assister à l’étuvage de l’enceinte à vide avec Florence Nogrette (\gls{LCF}). Après cette intervention, j’ai suivi avec I. Bouchoule le réajustement progressif de la séquence de refroidissement : alignement des faisceaux, réglages de la mélasse, optimisation du chargement dans le piège \gls{DC}, puis dans le guide.
+
+\medskip
 
 Cet épisode m’a permis de me confronter plus directement aux paramètres critiques du cycle d’évaporation et à la reprise d’une séquence complète. Toutefois, le départ de Léa, qui maîtrisait tous les aspects de la manipulation, a marqué une rupture importante dans la continuité des savoir-faire pratiques liés à cette expérience.
 
