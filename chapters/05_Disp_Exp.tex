@@ -193,7 +193,8 @@ Enfin, les atomes sont préparés dans l’état magnétique \( |F=2,\,m_F=2\ran
 			
 				\end{scope}
 			
-				\draw[color = red , scale = 0.5 , draw = red  ] (-10 , -1) rectangle (6, 9) ; 	
+				\draw[color = red , scale = 0.5 , draw = none  ] (-6 , -1) rectangle (6, 9) ; 
+				\node[below , shift={(-3cm , 5cm)}] at (0,0) {\fontsize{15pt}{8pt}\selectfont a)};	
 			\end{scope}
 			
 			\begin{scope}[shift={(9,0)}]
@@ -203,12 +204,13 @@ Enfin, les atomes sont préparés dans l’état magnétique \( |F=2,\,m_F=2\ran
 			
 				\end{scope}
 			
-				\draw[color = red , scale = 0.5 , draw = red  ] (-10 , -1) rectangle (6, 9) ; 	
+				\draw[shift={(0,0)} , color = red , scale = 0.5 , draw = none  ] (-10 , -1) rectangle (6, 9) ;
+				\node[below , shift={(-5cm , 5cm)}] at (0,0) {\fontsize{15pt}{8pt}\selectfont b)};	 	
 			\end{scope}
 					
 	\end{tikzpicture}
-	\caption{Structure hyperfine (transitions D1 et D2) de l’atome de Rubidium $^{87}$Rb. Les longueurs d’onde des différents lasers utilisés dans l’expérience sont représentées en rouge vif (Fig adaptée de \cite{L.Dubois2024})}
-	\label{chap:5:fig:hiperfin}
+	\caption{a) {\bf Zoom sur la zone d’intérêt}. Les fils {\color{\colorFour}U (bleu)} et {\color{\colorSix} Z (rouge vif)} créent des pièges magnétiques intermédiaires, les trois micro-fils {jaunes} forment le guide longitudinal, et les fils {\color{\colorFive} d/d' (marron)} et {\color{\colorThree} D/D' (gris)} assurent le confinement longitudinal. b) Schéma des différentes couches constituant la puce atomique. (Figs adaptée de \cite{L.Dubois2024})}
+	\label{chap:5:fig:puce_zoom_coup}
 \end{figure}
 
 \subsubsection{Piégeage magnétique sur puce}
@@ -227,35 +229,24 @@ Pour contourner cette contrainte, les puces atomiques offrent une solution effic
 
 
 \paragraph{Structure de la puce utilisée}
-La puce utilisée au cours de cette expérience a été conçue en collaboration avec S.~Bouchoule, A.~Durnez et A.~Harouri (\gls{C2N}). Elle repose sur un substrat de carbure de silicium (\gls{SiC}) sur lequel est déposé le circuit électrique. Ce dernier est recouvert d’une couche de résine \gls{BCB}, aplanie par des cycles d’enduction et d’attaque plasma. Une fine couche d’or (\gls{Au}) (\(\sim 150\,\mathrm{nm}\)) est finalement évaporée afin de permettre l’utilisation de la puce comme miroir pour l’imagerie à \(780\,\mathrm{nm}\). La puce est soudée à l’indium sur une monture en cuivre inclinée à \(45^\circ\) par rapport à l’axe optique.
+La puce utilisée au cours de cette expérience a été conçue en collaboration avec S.~Bouchoule, A.~Durnez et A.~Harouri (\gls{C2N}). Elle repose sur un substrat de carbure de silicium (\gls{SiC}) sur lequel est déposé le circuit électrique. Ce dernier est recouvert d’une couche de résine \gls{BCB}, aplanie par des cycles d’enduction et d’attaque plasma. Une fine couche d’or (\gls{Au}) (\(\sim 150\,\mathrm{nm}\)) est finalement évaporée afin de permettre l’utilisation de la puce comme miroir pour l’imagerie à \(780\,\mathrm{nm}\) (Fig ~ \ref{chap:5:fig:puce_zoom_coup} b)). La puce est soudée à l’indium sur une monture en cuivre inclinée à \(45^\circ\) par rapport à l’axe optique.
 
-%\paragraph{Fils de piégeage et géométrie des champs}
-%Plusieurs fils sont intégrés à la puce pour assurer les différentes étapes du piégeage et du transport des atomes : un fil en forme de Z est utilisé pour le piégeage initial (DC), tandis que trois micro-fils (symétriques et parallèles) sont utilisés pour former un guide unidimensionnel par courants alternatifs (AC). La géométrie des fils a été optimisée pour minimiser la dissipation de chaleur, limiter les couplages parasites et améliorer la symétrie du piège. Dans la zone d’intérêt, les atomes sont piégés à environ \(15\,\mu\mathrm{m}\) au-dessus des fils, soit à \(8\,\mu\mathrm{m}\) au-dessus de la surface de la puce.
 
-%\paragraph{Fils de piégeage et géométrie des champs}
-%La puce atomique comporte plusieurs ensembles de fils, chacun jouant un rôle précis dans les différentes étapes de la capture, du transport et du confinement des atomes.
 \paragraph{Fils de piégeage et géométrie des champs}
 La puce atomique intègre plusieurs ensembles de conducteurs, chacun conçu pour une étape spécifique de la capture, du transport et du confinement des atomes. L’ensemble de la séquence de transfert, depuis le \gls{PMO} jusqu’au guide unidimensionnel, repose sur une succession de configurations magnétiques générées par ces différents fils.
 
-%\medskip
-%\subparagraph{Fil en forme de U .}
-%Après la phase de pré-refroidissement, le nuage est initialement capturé dans un piège magnéto-optique (PMO) situé au-dessus de la puce. Il est ensuite approché de la surface en transférant progressivement le champ quadrupolaire des bobines externes vers celui produit par un fil en forme de U intégré à la puce (phase \textit{U} : transfert du PMO vers la puce + mélace optique + ponpage optique). 
 
 \subparagraph{Phase U : approche de la surface}
-Après la phase de pré-refroidissement, le nuage est initialement capturé dans un PMO situé au-dessus de la puce. Il est ensuite rapproché de la surface en transférant progressivement le champ quadrupolaire des bobines externes vers celui produit par un fil en forme de U intégré à la puce (fils bleus dans la Fig.~\ref{fig:puce}). Cette étape (\textit{phase U}) est accompagnée d’un mélange optique et d’un pompage optique afin de préparer les atomes pour le piégeage magnétique.
-
-
-%\medskip
-%\subparagraph{Fil en forme de Z : Chargement dans le piège DC .}
-%Après le pompage optique, les atomes sont transférés dans un piège magnétique combinant un courant continu circulant dans le fil en forme de Z de la puce (fil orange dans la Fig.~\ref{fig:puce}) et un champ magnétique externe. Ce piège, noté \emph{piège DC}, permet un confinement transverse important. Un refroidissement par évaporation radiofréquence est alors réalisé pendant environ \( 2.3\,\mathrm{s} \), ce qui abaisse la température du nuage à environ \( 1\,\mu\mathrm{K} \), pour un nombre d’atomes typiquement autour de \( 2.5 \times 10^5 \).
+Après la phase de pré-refroidissement, le nuage est initialement capturé dans un \gls{PMO} situé au-dessus de la puce. Il est ensuite rapproché de la surface en transférant progressivement le champ quadrupolaire des bobines externes vers celui produit par un fil en forme de U intégré à la puce (fils bleus dans la Fig.~\ref{chap:5:fig:puce_zoom_coup} a)). Cette étape (\textit{phase U}) est accompagnée d’un mélange optique et d’un pompage optique afin de préparer les atomes pour le piégeage magnétique.
 
 \subparagraph{Phase Z : piège DC et refroidissement}
-À l’issue du pompage optique, les atomes sont transférés dans un piège magnétique combinant un courant continu circulant dans un fil en forme de Z (fil orange) et un champ magnétique externe. Ce \emph{piège \gls{DC}} assure un confinement transverse fort. Un refroidissement par évaporation radiofréquence, d’une durée d’environ \(2.3\,\mathrm{s}\), abaisse la température du nuage à environ \(1\,\mu\mathrm{K}\), pour un nombre typique d’atomes de l’ordre de \(2.5\times 10^5\).
-%\medskip
-%Une fois chargé dans ce piège intermédiaire, le nuage est transporté vers la zone expérimentale. Dans cette région, trois micro-fils parallèles et symétriques (jaune), parcourus par des courants alternatifs (AC), créent un guide magnétique unidimensionnel assurant le confinement transversal des atomes. Le confinement longitudinal est obtenu grâce à deux paires de fils : d/d′ (rose) et D/D′ (vert).
+À l’issue du pompage optique, les atomes sont transférés dans un piège magnétique combinant un courant continu circulant dans un fil en forme de Z (fil rouge vif) et un champ magnétique externe. Ce \emph{piège (\acrshort{DC}) pour \acrlong{DC}} assure un confinement transverse fort. Un refroidissement par évaporation radiofréquence, d’une durée d’environ \(2.3\,\mathrm{s}\), abaisse la température du nuage à environ \(1\,\mu\mathrm{K}\), pour un nombre typique d’atomes de l’ordre de \(2.5\times 10^5\).
+
 
 \subparagraph{Transfert vers le guide unidimensionnel}
-Une fois refroidi, le nuage est acheminé vers la zone expérimentale où trois micro-fils parallèles et symétriques (fils jaunes) parcourus par des courants alternatifs (\gls{AC}) génèrent un guide magnétique unidimensionnel assurant le confinement transverse. Le confinement longitudinal est fourni par deux paires de fils : $d/d'$ (rose) et $D/D'$ (vert).
+Une fois refroidi, le nuage est acheminé vers la zone expérimentale où trois micro-fils parallèles et symétriques (fils jaunes) parcourus par des courants alternatifs (\gls{AC}) génèrent un guide magnétique unidimensionnel assurant le confinement transverse. Le confinement longitudinal est fourni par deux paires de fils : $d/d'$ (marron) et $D/D'$ (gris).
+
+\medskip
 
 Le passage du piège \gls{DC} au guide 1D est réalisé de manière adiabatique grâce à cinq rampes linéaires de courant d’une durée comprise entre \(50\) et \(60\,\mathrm{ms}\) chacune. Durant cette opération :  
 (i) le courant dans le fil Z est progressivement réduit,  
@@ -274,9 +265,9 @@ La géométrie des conducteurs de la puce a été conçue pour réduire la dissi
 
 \paragraph{Refroidissement final et accès au régime unidimensionnel}
 Une dernière phase de refroidissement par évaporation radiofréquence est effectuée directement dans le guide \gls{AC}. Grâce à l’anisotropie marquée du piège, le confinement transverse atteint une fréquence \(\omega_\perp\) telle que l’énergie quantique \(\hbar \omega_\perp\) dépasse largement les énergies thermique et chimique du système. On atteint ainsi le régime unidimensionnel, caractérisé par la hiérarchie d’énergies :
-\[
-k_B T, \mu \ll \hbar \omega_\perp,
-\]
+\begin{eqnarray*}
+	k_B T, \mu \ll \hbar \omega_\perp,	
+\end{eqnarray*}
 où \(\mu\) désigne le potentiel chimique et \(T\) la température du gaz.
 
 \medskip
@@ -315,21 +306,21 @@ Cette opération a mobilisé plusieurs personnes du laboratoire et de ses parten
 
 \medskip
 
-Cet épisode m’a permis de me confronter plus directement aux paramètres critiques du cycle d’évaporation et à la reprise d’une séquence complète. Toutefois, le départ de Léa, qui maîtrisait tous les aspects de la manipulation, a marqué une rupture importante dans la continuité des savoir-faire pratiques liés à cette expérience.
+Cet épisode m’a permis de me confronter plus directement aux paramètres critiques du cycle d’évaporation et à la reprise d’une séquence complète. Toutefois, le départ de L. Dubois, qui maîtrisait tous les aspects de la manipulation, a marqué une rupture importante dans la continuité des savoir-faire pratiques liés à cette expérience.
 
 
-\begin{center}
-	({fig:puce} — Schéma de la puce atomique avec fils U, Z, AC, D et D'.)
-\end{center}
-\begin{center}
-	({fig:imagerieFinale} — Schéma optique du système d’imagerie final)
-\end{center}
-\begin{center}
-	[{fig:nuageDC} — Image du gaz dans le piège DC après évaporation]
-\end{center}
-\begin{center}
-	[{fig:gaz1D} — Image typique d’un gaz dans le régime 1D]
-\end{center}
+%\begin{center}
+%	({fig:puce} — Schéma de la puce atomique avec fils U, Z, AC, D et D'.)
+%\end{center}
+%\begin{center}
+%	({fig:imagerieFinale} — Schéma optique du système d’imagerie final)
+%\end{center}
+%\begin{center}
+%	[{fig:nuageDC} — Image du gaz dans le piège DC après évaporation]
+%\end{center}
+%\begin{center}
+%	[{fig:gaz1D} — Image typique d’un gaz dans le régime 1D]
+%\end{center}
 
 
 
@@ -339,17 +330,20 @@ Cet épisode m’a permis de me confronter plus directement aux paramètres crit
 %    \item Découplage transverse/longitudinal.
 %\end{itemize}
 
-\paragraph{Champ des micro-fils.}
-Puisque que $m_F = 2 $, (état assuré par pompage optique), le potentiel magnétique $-\vec{\mu} \vec{B}(\vec{r}) $ (avec moment dipolaire magnétique alors $\vec{\mu}$ et le champs magnetque totale que resente les atomes$\vec{B}(\vec{r})$) est proportionnel à $\vert \vec{B}(\vec{r}) \vert$  de sorte que les atomes, en état low-field seeking, sont attirés vers les régions de champ magnétique minimal. Les micro-fils, alignés selon l’axe horizontal $\vec{e}_x$, sont parcourus par des courants alternatifs $\pm I$ (déphasés) produisant le champ magnétique de confinement : un fil central parcouru par un courant \( I \), et deux fils latéraux par des courants opposés \(-I\). 
 
-\paragraph{Champ de biais.}
-Un champ de biais transverse $\vec{B}_{\mathrm{biais}} = {B}_{\mathrm{biais}} \, \vec{e}_y$ , avec l'axe verticale par $\vec{e}_y$ , est appliqué afin de régler la distance des atomes par rapport aux micro-fils. En notant $\vec{e}_z$ l’axe horizontal perpendiculaire à $\vec{e}_x$ et $\vec{e}_y$ l’annulation du champ total a lieu en
-%Dans cette configuration, un champ de biais transverse est appliqué pour ajuster la distance des atomes au-dessus des micro-fils. Pour y avoir une idée notons l'axe verticale par $\vec{e}_y$, et $\vec{B}_{biais} = {B}_{biais} \, \vec{e}_y$. Alors en notan $\vec{e}_z$ l'axe hortisontale perpetdiculaire à $\vec{e}_x$ et $\vec{e}_y$, le champs totale s'anume en ​
-  %permet ainsi de positionner précisément le minimum du potentiel à une hauteur
-$z_0 = \mu_0 I / (2 \pi {B}_{\mathrm{biais}} ) $ avec $\mu_0$ la perméabilité du vide . La modulation de ${B}_{\mathrm{biais}}$ permet de déplacer le point où le champ total s’annule, ce qui permet de positionner précisément le minimum du potentiel à une distance $d$ du plan des fils. 
+\paragraph{Champ des micro-fils.}
+Puisque les atomes, préparés dans l'état $m_F = 2$  (l'axe de quantification étant donné par le champ magnétique $\vec{B}$) par pompage optique. Le potentiel magnétique ressenti par les atomes est donné par $-\vec{\mu} \cdot \vec{B}(\vec{r})$, où $\vec{\mu}$ est le moment dipolaire magnétique de l'atome et $\vec{B}(\vec{r})$ le champ magnétique total. Pour cet état, ce potentiel est proportionnel à $\vert \vec{B}(\vec{r}) \vert$, de sorte que les atomes sont attirés vers les régions de champ magnétique minimal.
+
+\medskip  
+
+Les micro-fils, alignés selon l’axe horizontal $\vec{e}_x$, sont parcourus par des courants alternatifs déphasés $\pm I$, produisant le champ de confinement. Un fil central est parcouru par un courant $I$, tandis que deux fils latéraux portent des courants opposés $-I$ (Fig.~\ref{chap:5:fig:puce_zoom_coup}b).
+
+
+%\paragraph{Champ de biais.}
+%Un champ de biais transverse $\vec{B}_{\mathrm{biais}} = {B}_{\mathrm{biais}} \, \vec{e}_y$ , avec l'axe verticale par $\vec{e}_y$ , est appliqué afin de régler la distance des atomes par rapport aux micro-fils. En notant $\vec{e}_z$ l’axe horizontal perpendiculaire à $\vec{e}_x$ et $\vec{e}_y$ l’annulation du champ total a lieu en $z_0 = \mu_0 I / (2 \pi {B}_{\mathrm{biais}} ) $ avec $\mu_0$ la perméabilité du vide . La modulation de ${B}_{\mathrm{biais}}$ permet de déplacer le point où le champ total s’annule, ce qui permet de positionner précisément le minimum du potentiel à une distance $d$ du plan des fils. 
 
 \paragraph{Champ d’Ioffe.}
-Afin d’éviter les pertes de Majorana liées à la présence d’un champ nul, un champ longitudinal $B_0 \, \vec{e}_x$ est ajouté, garantissant que le minimum de champ reste non nul.%.Un champ longitudinal (selon $\vec{e}_x$) $B_0$ est ajouté afin que ce minimum ne corresponde pas à un champ nul, ce qui supprime les pertes de Majorana dues aux inversions de spin au voisinage d’un zéro de champ. 
+Afin d’éviter les pertes de Majorana \cite{PhysRevA.74.035401} liées à la présence d’un champ nul, un champ longitudinal $B_0 \, \vec{e}_x$ est ajouté, garantissant que le minimum de champ reste non nul.%.Un champ longitudinal (selon $\vec{e}_x$) $B_0$ est ajouté afin que ce minimum ne corresponde pas à un champ nul, ce qui supprime les pertes de Majorana dues aux inversions de spin au voisinage d’un zéro de champ. 
 
 %L’intérêt de ces pièges est que les atomes peuvent être confinés très près des micro-fils — ici à $ d = 15\, \mu m$ , soit l’espacement entre deux fils — ce qui maximise le gradient de champ et donc la fréquence de piégeage transverse
 
@@ -362,10 +356,10 @@ avec $\mu_B$ le magnéton de Bohr, $m$ la masse atomique et $\mu_0$ la perméabi
 %Pour éviter que les atomes ne perçoivent les rugosités magnétiques dues aux défauts des conducteurs, on fait circuler dans les fils un courant alternatif à haute fréquence ($\sim 400\,KHz$) : le potentiel est alors moyenné temporellement, produisant un confinement plus lisse. À $15\, \mu m$ au-dessus de la puce, le profil de champ est localement harmonique, et la fréquence de piégeage transverse devient
 
 \paragraph{Rugosité et suppression par modulation}
-Les imperfections géométriques des micro-fils engendrent des fluctuations parasites du champ magnétique le long du guide, créant une rugosité du potentiel. Pour la supprimer, les courants sont modulés à haute fréquence ($\sim 400\,KHz$), bien au-delà des fréquences de piégeage. Dans ce régime, les atomes ne perçoivent que le potentiel moyenné temporellement, où la composante parasite longitudinale est fortement réduite. Le confinement effectif reste harmonique, avec une fréquence transverse donnée par
-\begin{eqnarray*}
+Les imperfections géométriques des micro-fils engendrent des fluctuations parasites du champ magnétique le long du guide, créant une rugosité du potentiel \cite{SKraft_2002,PhysRevA.70.043629}. Pour la supprimer, les courants sont modulés à haute fréquence ($\sim 400\,KHz$) \cite{PhysRevLett.98.263201,jacqm2012}, bien au-delà des fréquences de piégeage. Dans ce régime, les atomes ne perçoivent que le potentiel moyenné temporellement, où la composante parasite longitudinale est fortement réduite. Le confinement effectif reste harmonique, avec une fréquence transverse donnée par
+\begin{eqnarray}\label{chap5:eq.pot.perp.1}
 	\omega_\perp = \frac{\omega_\perp^{(0)}}{\sqrt{2}}.		
-\end{eqnarray*}
+\end{eqnarray}
 
 
 
@@ -383,14 +377,14 @@ Si le champ selon $\vec{e}_x$ est négligeable devant $B_0$, alors le potentiel 
 
 \paragraph{Potentiel longitudinal harmonique.}
 Dans la configuration où seuls les fils $D$ et $D'$ sont utilisés, le potentiel longitudinal peut, à l’ordre 2 en $x$, être considéré comme harmonique :
-\begin{eqnarray*}
+\begin{eqnarray}\label{chap5:eq.pot.long.1}
 	V_\parallel (x) = V_0 + \frac{1}{2} m \omega_\parallel^2 x^2 ,
-\end{eqnarray*}
-On note  $2L=1.89 \,mm$ est la distance séparant les fils $D$ et $D'$. Les courants circulant dans ces deux fils sont identiques et notés $I_D = I_{D'}$. Si la condition $B_0 \gg \mu_0 I_D d /(\pi L)^2 $ est vérifiée, alors le terme constant du potentiel vaut approximativement $V_0 \simeq \mu_B B_0$.
+\end{eqnarray}
+On note  $2L=1.89 \,mm$ est la distance séparant les fils $D$ et $D'$ (Fig~\ref{chap:5:fig:puce_zoom_coup}a)). Les courants circulant dans ces deux fils sont identiques et notés $I_D = I_{D'}$. Si la condition $B_0 \gg \mu_0 I_D d /(\pi L)^2 $ est vérifiée, alors le terme constant du potentiel vaut approximativement $V_0 \simeq \mu_B B_0$.
 
 \medskip
 
-La pulsation longitudinale totale $\omega_\parallel$ se décompose en deux contributions : (i) une pulsation $\omega_\parallel^x = \sqrt{\frac{6\, d \, \mu_B \, \mu_0 \,I_D }{\pi \, L^4 \, m}}$ induite par le champ longitudinal $B_\parallel^x$ et (ii) une pulsation $\omega_\parallel^v = \sqrt{\frac{\mu_B }{m \, B_0}}\frac{\mu_0 \, I_D }{\pi \, L^2}$ liée au champ  $B_\parallel^v$. Pour des courants $I>1A$ , on a $\omega_\parallel^v \gg \omega_\parallel^x$, et ainsi :  
+La pulsation longitudinale totale $\omega_\parallel$ se décompose en deux contributions\cite{jacqm2012} : (i) une pulsation $\omega_\parallel^x = \sqrt{\frac{6\, d \, \mu_B \, \mu_0 \,I_D }{\pi \, L^4 \, m}}$ induite par le champ longitudinal $B_\parallel^x$ et (ii) une pulsation $\omega_\parallel^v = \sqrt{\frac{\mu_B }{m \, B_0}}\frac{\mu_0 \, I_D }{\pi \, L^2}$ liée au champ  $B_\parallel^v$. Pour des courants $I>1A$ , on a $\omega_\parallel^v \gg \omega_\parallel^x$, et ainsi :  
 \begin{eqnarray*}
 	\omega_\parallel \propto \frac{I_D}{\sqrt{B_0} L^2}.
 \end{eqnarray*} 
@@ -398,17 +392,17 @@ La fréquence longitudinale est donc réglée expérimentalement en ajustant $I_
 
 \medskip
 
-Avec les dimensions caractéristiques de la puce et des fils, il est possible d’atteindre des confinements longitudinaux de fréquence $f_\parallel = \omega_\parallel/ 2 \pi$ allant jusqu’à $\sim 150 \, H_z$, la limite étant imposée par le chauffage des fils pour $I_D \leq =4 \, A$.
+Avec les dimensions caractéristiques de la puce et des fils, il est possible d’atteindre des confinements longitudinaux de fréquence $f_\parallel = \omega_\parallel/ 2 \pi$ allant jusqu’à $\sim 150 \, H_z$, la limite étant imposée par le chauffage des fils pour $I_D \leq 4 \, A$.
  
  \medskip
  
- \subparagraph{Mesure de la fréquence transverse et longitudinale}
-Pour la caractérisation, la pulsation transverse $\omega_\perp$ a été mesurée par la méthode du mode de respiration transverse \cite{Kagan1996}, tandis que $\omega_\parallel$ a été obtenue à partir des oscillations dipolaires longitudinales. Les détails expérimentaux de ces méthodes figurent dans le manuscrit de thèse de Léa Dubois \cite{L.Dubois2024}, p. 73 et p. 78.
+\subparagraph{Mesure des fréquences transverse et longitudinale.}
+Pour caractériser le piège, la pulsation transverse $\omega_\perp$ a été mesurée en excitant le mode de respiration transverse. On s'attend à ce que ce mode oscille à une fréquence $2 \, f_\perp$, quel que soit le régime considéré (\gls{qBEC}, Tonks, ...)\cite{PhysRevA.54.R1753}. La pulsation longitudinale $\omega_\parallel$ a, quant à elle, été obtenue à partir des oscillations dipolaires longitudinales. Les détails expérimentaux de ces méthodes sont décrits dans le manuscrit de thèse de L. Dubois \cite{L.Dubois2024}, pp. 73 et 78.
+
 
 \medskip
 
- \paragraph{Potentiel longitudinal quartic.}
- Si on ajoute du courand  dans les fils $d$ et $d'$.  Alors on peux avoir un potentiel non gégligeable à l'ordre 4 . Pour simmplifier, les courants dans ces fils $I_d$ et $I_{d'}$ sont identique. et le potentiel s'écrit : 
+
  \paragraph{Potentiel longitudinal quartique.}
 Si l’on ajoute un courant dans les fils $d$ et $d'$, on peut générer un potentiel longitudinal comportant un terme significatif à l’ordre 4 en $x$ . Pour simplifier, on suppose $I_d=I_{d'}$. On obtient alors : 
  \begin{eqnarray*}
@@ -416,19 +410,17 @@ Si l’on ajoute un courant dans les fils $d$ et $d'$, on peut générer un pote
  	& + & \frac{\mu_B}{B_0} \left ( \frac{\mu_0}{\pi} \right )^2  \left [ \left ( \frac{I_D}{L^2} + \frac{I_d}{l^2} \right ) x^2  + 2 \left ( \frac{I_D}{L^2} + \frac{I_d}{l^2} \right )\left ( \frac{I_D}{L^4} + \frac{I_d}{l^4} \right ) x^4 \right ].
  \end{eqnarray*}
  
- En ajustant $I_D$ et $i_d$, on peut réaliser par exemple un double puits \cite{Schemmer2019}, ou bien supprimer le terme quadratique $x^2$ afin d’obtenir un potentiel quartique pur :
+ En ajustant $I_D$ et $I_d$, on peut réaliser par exemple un double puits \cite{PhysRevLett.122.090601}, ou bien supprimer le terme quadratique $x^2$ afin d’obtenir un potentiel quartique pur :
 \begin{eqnarray*}
 	V_\parallel(x) = a_0 + a_4 x^4 	
 \end{eqnarray*}
 comme on le fais dans \cite{Dubois2025}.
 
-En pratique, la puce présente des dimensions finies et n’est pas parfaitement symétrique. Un calcul plus précis, prenant en compte la géométrie exacte (disposition et épaisseur des fils), est présenté en annexe de la thèse de Thibault Jacqmin \cite{???}, p. 151. Cela impose un ajustement fin et asymétrique des courants $I_D$, $I_{D'}$, $I_d$ et $I_{d'}$.
+\medskip
 
+En pratique, la puce présente des dimensions finies et n’est pas parfaitement symétrique. Un calcul plus précis, prenant en compte la géométrie exacte (disposition et épaisseur des fils), est présenté en annexe de la thèse de Thibault Jacqmin \cite{jacqm2012}, p. 151. Cela impose un ajustement fin et asymétrique des courants $I_D$, $I_{D'}$, $I_d$ et $I_{d'}$.
 
-On ajuste les courant $I_D$ et $i_d$ pour par exemple fais des douple puit \cite{Schemmer2019} ou en supriment le terme en $x^2$  d’obtenir un potentiel longitudinal quartique de la forme $V_\parallel(x) = a_0 + a_4 x^4$ \cite{Dubois2025}.\\
-
-En réalité la puce presente des dimention finie, Un calcul plus précis prenant en compte la géométrie exacte des fils (disposition sur la
-puce, épaisseur finie) se trouve en appendice de la thèse de Thibault Jacqmin [112] , page 151. De plus la pude n'est pas pardetement symetrique donc on doit ajuster les courant $I_D$, $I_{D'}$, $I_d$ et $I_{d'}$.
+\medskip
 
 
 \paragraph{Caractérisation des potentiels longitudinal et transverse.}
@@ -439,47 +431,18 @@ Pour atteindre le régime unidimensionnel, les confinements doivent être fortem
 Cette configuration est particulièrement adaptée pour obtenir des profils de densité homogènes, nécessaires à certaines expériences de transport. Le transfert des atomes du piège harmonique vers le piège quartique est réalisé de manière \emph{diabatique} (changement rapide du potentiel), car un transfert adiabatique entraîne des pertes importantes.
 
 \paragraph{Caractérisation des potentiels longitudinal et transverse.}
-Pour atteindre le régime unidimensionnel, les potentiels de piégeage doivent être très asymétriques : un confinement transverse fort et un confinement longitudinal faible. La fréquence transverse \(\omega_\perp\) doit être suffisamment élevée pour geler les degrés de liberté dans cette direction, avec la condition \(\mu, k_B T \ll \hbar \omega_\perp\).
-
-%\paragraph{Potentiel longitudinal}
-%
-%Le confinement longitudinal est produit par des courants continus ou modulés dans certains fils. Dans certains protocoles spécifiques, on utilise un potentiel quartique \( V_\parallel(x) = c_4 x^4 \). Le système reste dans le régime 1D tant que la longueur caractéristique longitudinale reste beaucoup plus grande que la transverse.
-%
-%\paragraph{Potentiel transverse}
-%
-%Le confinement transverse est réalisé à l’aide de trois micro-fils parallèles situés sur la puce : un fil central parcouru par un courant \( I \), et deux fils latéraux par des courants opposés \(-I\). Cette configuration crée un piège transverse harmonique avec une fréquence \(\omega_\perp\) contrôlable par la valeur du champ \( B_0 \) et le courant. Les atomes sont piégés à environ \( d = 15~\mu\text{m} \) au-dessus de la puce. La fréquence maximale accessible expérimentalement est de l’ordre de \( \sim 100~\text{kHz} \).
-%
-%\paragraph{Effet de rugosité et suppression par modulation}
-%
-%La rugosité des micro-fils induit des fluctuations parasites du champ magnétique le long du guide. Pour supprimer cet effet, les courants sont modulés à haute fréquence (environ 400~kHz). Grâce à cette modulation rapide, les atomes ne ressentent que le potentiel moyen, dans lequel la composante parasite longitudinale du champ s’annule. Ce procédé permet d’obtenir un potentiel transverse régulier et stable, avec une fréquence efficace \[ f_\perp = \frac{f_\perp^{(0)}}{\sqrt{2}}. \]
-%
-%\paragraph{Découplage des confinements transverse et longitudinal.}
-%Dans notre dispositif, le confinement transverse est assuré par les micro-fils modulés, tandis que le confinement longitudinal est généré par quatre fils extérieurs (D, D', d, d'). L’analyse du potentiel magnétique moyen montre que, sous l’hypothèse d’un champ de bobine homogène et dominant, les contributions transverse et longitudinale du potentiel sont découplées. Cette propriété est cruciale pour nos expériences : elle permet de modifier la géométrie du potentiel longitudinal sans perturber le confinement transverse, facilitant ainsi l’exploration de différentes configurations dynamiques.
-%
-%\paragraph{Piégeage longitudinal harmonique.}
-%Un piège longitudinal harmonique est réalisé en appliquant des courants égaux dans les fils D et D', disposés de manière symétrique. Le champ magnétique longitudinal produit conduit à un potentiel quadratique local :
-%\[
-%V_\parallel(x) = V_0 + \frac{1}{2} m \omega_\parallel^2 x^2,
-%\]
-%avec une fréquence $\omega_\parallel$ contrôlée par le courant et la géométrie de la puce. En pratique, des fréquences jusqu’à 150 Hz sont atteintes pour des courants de 4 A. Une correction peut être nécessaire pour prendre en compte un champ magnétique résiduel $B_{0v}$, responsable d’un déplacement du centre du nuage atomique.
-%
-%\paragraph{Piégeage longitudinal quartique.}
-%L’ajout de deux fils supplémentaires (d et d') permet de modifier la forme du potentiel longitudinal jusqu’à l’ordre 4. En ajustant les courants dans les quatre fils, on peut annuler le terme quadratique et obtenir un potentiel quartique :
-%\[
-%V_\parallel(x) = a_0 + a_4 x^4.
-%\]
-%Cette configuration est particulièrement adaptée pour générer des profils de densité homogènes, comme requis dans certaines expériences de transport. Le transfert des atomes du piège harmonique vers le piège quartique est réalisé de manière diabatique (changement rapide du potentiel), car un transfert adiabatique entraînait des pertes importantes.
+Pour atteindre le régime unidimensionnel, les potentiels de piégeage doivent être très asymétriques : un confinement transverse fort est souhaité avec un confinement longitudinal faible. La fréquence transverse \(\omega_\perp\) doit être suffisamment élevée pour geler les degrés de liberté dans cette direction, avec la condition \(\mu, k_B T \ll \hbar \omega_\perp\).
 
 
 
 \section{Sélection spatiale avec DMD}
 \subsection{Motivation et principe}
-{\color{blue}
-\begin{itemize}
-    \item Besoin de préparer des tranches homogènes.
-    \item Intérêt dans les protocoles hors équilibre.
-\end{itemize}
-}
+%{\color{blue}
+%\begin{itemize}
+%    \item Besoin de préparer des tranches homogènes.
+%    \item Intérêt dans les protocoles hors équilibre.
+%\end{itemize}
+%}
 
 \paragraph{Objectif du dispositif de sélection}
 
@@ -487,44 +450,46 @@ L’outil de sélection spatiale a été conçu pour permettre une action locale
 
 \paragraph{Intérêt pour les protocoles hors équilibre}
 
-Ce dispositif permet ainsi de générer des protocoles analogues à des configurations classiques comme le pendule de Newton, ou de sonder directement la dynamique d’un gaz de Lieb-Liniger dans des conditions contrôlées. Il constitue une brique essentielle pour les expériences de dynamique et de transport quantique.
+Ce dispositif permet ainsi de générer des protocoles analogues à des configurations classiques comme le pendule de Newton, ou de sonder directement la dynamique d’un gaz de \gls{LL} dans des conditions contrôlées. Il constitue une brique essentielle pour les expériences de dynamique et de transport quantique.
 
 
 \subsection{Mise en place technique (initiée par Léa Dubois)}
 
-{\color{blue}
-\begin{itemize}
-    \item Dispositif optique de projection.
-    \item Contrôle numérique des motifs.
-    \item Calibration et stabilité.
-\end{itemize}
-}
+%{\color{blue}
+%\begin{itemize}
+%    \item Dispositif optique de projection.
+%    \item Contrôle numérique des motifs.
+%    \item Calibration et stabilité.
+%\end{itemize}
+%}
 
-\paragraph{Principe de sélection par pression de radiation}
+\paragraph{Principe de sélection par pression de radiation.}
 
-La sélection repose sur l’illumination d’une zone définie du gaz avec un faisceau quasi-résonant avec la transition cyclique \( F=2 \rightarrow F'=3 \) de la ligne D2 du rubidium. Les atomes subissent une pression de radiation due aux cycles absorption/émission spontanée, ce qui les pousse hors du piège ou les amène dans un état non piégé.
+La sélection s’effectue en illuminant une zone définie du gaz avec un faisceau quasi-résonant sur la transition cyclique \( F=2 \rightarrow F'=3 \) de la ligne D2 du rubidium $^{87}$Rb (Fig.~\ref{chap:5:fig:hiperfin}). Les atomes subissent alors une pression de radiation au cours d’une vingtaine de cycles d’absorption et d’émission spontanée, ce qui les expulse du piège ou les place dans un état non piégé.
 
-\paragraph{Façonnage spatial du faisceau}
+
+\paragraph{Façonnage spatial du faisceau.}
 
 La sélection doit être spatialement résolue. Le profil d’intensité dans le plan des atomes est de type binaire :
-\[
-I(x) = 
-\begin{cases}
-0 & \text{si } x \in [x_1, x_2] \\
-I_0 & \text{sinon}
-\end{cases}
-\]
+\begin{eqnarray*}
+	I(x) = 
+		\begin{cases}
+			0 & \text{si } x \in [x_1, x_2] \\
+			I_0 & \text{sinon}
+		\end{cases}	
+\end{eqnarray*}
+
 ce qui permet de préserver ou d’éjecter les atomes selon leur position longitudinale.
 
-\paragraph{Utilisation du DMD}
+\paragraph{Utilisation du DMD.}
 
-Pour générer ce profil, un DMD (Digital Micromirror Device) est utilisé. Il s’agit d’une matrice de \(1024 \times 768\) micro-miroirs orientables individuellement (±12°). En inclinant ces miroirs, on contrôle localement la réflexion de la lumière. L’image du DMD est projetée directement sur le plan des atomes, en imagerie directe.
+Pour générer ce profil, un \gls{DMD} (Digital Micromirror Device) est utilisé. Il s’agit d’une matrice de \(1024 \times 768\) micro-miroirs de $14 \, \mu m$ de coté et  orientables individuellement (±12°). En inclinant ces miroirs, on contrôle localement la réflexion de la lumière. L’image du \gls*{DMD} est projetée directement sur le plan des atomes, en imagerie directe.
 
-\paragraph{Avantages du DMD}
+\paragraph{Avantages du DMD.}
 
-Le DMD permet une reconfiguration rapide et programmable du motif de lumière. Cette technologie est largement utilisée dans les expériences d’atomes froids pour produire des potentiels structurés, homogénéiser un faisceau ou adresser localement les atomes.
+Le  \gls*{DMD} permet une reconfiguration rapide et programmable du motif de lumière. Cette technologie est largement utilisée dans les expériences d’atomes froids pour produire des potentiels structurés, homogénéiser un faisceau ou adresser localement les atomes.
 
-\paragraph{Alternatives possibles}
+\paragraph{Alternatives possibles.}
 
 Il est possible, en théorie, d’atteindre un effet similaire par un transfert cohérent des atomes vers un état anti-piégé via un pulse micro-onde ou une transition Raman. Cependant, la méthode par pression de radiation est plus simple à mettre en œuvre et adaptée à nos objectifs expérimentaux.
 
@@ -551,9 +516,9 @@ La quantité de photons diffusés est également mesurée par l’analyse du sig
 \paragraph{Limitations expérimentales de la sélection}
 
 Plusieurs effets peuvent limiter l'efficacité ou la propreté de la sélection :
-\begin{itemize}
+\begin{itemize}[label = $\bullet$]
     \item La diffraction liée à la taille finie de l’objectif entraîne un flou de l’ordre de \(1{-}2\,\mu\)m au bord des zones éclairées.
-    \item Une diffusion parasite par la puce peut se produire à forte intensité si tout le DMD est illuminé ; cela est évité en réduisant la taille transverse du faisceau à quelques micro-miroirs seulement.
+    \item Une diffusion parasite par la puce peut se produire à forte intensité si tout le \gls*{DMD} est illuminé ; cela est évité en réduisant la taille transverse du faisceau à quelques micro-miroirs seulement.
     \item Des inhomogénéités d’éclairement dues à la gaussienne du faisceau et au speckle peuvent conduire à une sur-illumination de certaines zones. Un effort a été fait pour homogénéiser l’intensité en sortie de fibre.
     \item La réabsorption des photons diffusés pourrait entraîner un échauffement du gaz restant. Un désaccord en fréquence de 15 MHz a été testé pour éviter ce phénomène, sans effet visible sur la température du gaz.
 \end{itemize}
@@ -567,29 +532,29 @@ La température du gaz sélectionné est comparée avant et après sélection vi
 
 \subsection{Utilisation dans les protocoles}
 
-{\color{blue}
-\begin{itemize}
-    \item Formes utilisées : boîtes, barrières, coupures.
-    \item Préparation initiale contrôlée du gaz.
-    \item Exemples de protocoles expérimentaux utilisant le DMD
-\end{itemize}
-}
+%{\color{blue}
+%\begin{itemize}
+%    \item Formes utilisées : boîtes, barrières, coupures.
+%    \item Préparation initiale contrôlée du gaz.
+%    \item Exemples de protocoles expérimentaux utilisant le DMD
+%\end{itemize}
+%}
 
-\paragraph{Sélection locale et mesure de rapidité}
+\paragraph{Sélection locale et mesure de rapidité.}
 
-En sélectionnant une tranche du gaz, on peut ensuite couper le confinement longitudinal et laisser cette tranche s’étendre. Le profil de densité asymptotique obtenu après un long temps d’expansion est proportionnel à la distribution de rapidité locale du gaz initial. Ce protocole permet ainsi une mesure résolue de \(\rho(x,t \to \infty) \sim \rho(v)\).
+En sélectionnant une tranche du gaz, on peut ensuite couper le confinement longitudinal et laisser cette tranche s’étendre. Le profil de densité asymptotique obtenu après un long temps d’expansion est proportionnel à la distribution de rapidité locale du gaz initial. Ce protocole permet ainsi une mesure résolue en $x$ de \(n(x,t \to \infty) \sim n(v)\).
 
 \paragraph{Génération d’états hors équilibre}
 
-La sélection permet également de créer des discontinuités dans le profil de densité, et donc d’initier une dynamique hors équilibre. Par exemple, on peut ne conserver que deux paquets séparés de gaz, qui vont alors osciller l’un vers l’autre. Cette configuration est analogue à un pendule de Newton quantique.
+La sélection permet également de créer des discontinuités dans le profil de densité, et donc d’initier une dynamique hors équilibre. Par exemple, on peut ne conserver que deux paquets séparés de gaz, qui vont alors osciller l’un vers l’autre. Cette configuration est analogue à un pendule de Newton quantique \cite{10.21468/SciPostPhys.6.6.070,Kinoshita}.
 
 \paragraph{Formes utilisées}
 
-Les motifs projetés par le DMD peuvent prendre différentes formes : boîtes, barrières, coupures, etc. Cette flexibilité rend l’outil extrêmement précieux pour explorer diverses configurations initiales et protocoles dynamiques.
+Les motifs projetés par le \gls*{DMD} peuvent prendre différentes formes : boîtes, barrières, coupures, etc. Cette flexibilité rend l’outil extrêmement précieux pour explorer diverses configurations initiales et protocoles dynamiques.
 
 \paragraph{Contrôle logiciel du DMD}
 
-Le pilotage du DMD repose sur l’utilisation d’un module intégré fourni par Vialux (V7001-SuperSpeed), qui comprend les bibliothèques logicielles ALP-4. Plusieurs configurations du DMD peuvent être chargées en mémoire au début de chaque cycle expérimental, puis sélectionnées en cours de séquence à l’aide d’un signal digital. Le temps de commutation des miroirs est inférieur à \(30\,\mu\mathrm{s}\), ce qui est compatible avec les protocoles étudiés.
+Le pilotage du \gls*{DMD} repose sur l’utilisation d’un module intégré fourni par Vialux (V7001-SuperSpeed), qui comprend les bibliothèques logicielles ALP-4. Plusieurs configurations du DMD peuvent être chargées en mémoire au début de chaque cycle expérimental, puis sélectionnées en cours de séquence à l’aide d’un signal digital. Le temps de commutation des miroirs est inférieur à \(30\,\mu\mathrm{s}\), ce qui est compatible avec les protocoles étudiés.
 
 \paragraph{Partage du faisceau avec la voie d’imagerie}
 
@@ -598,15 +563,18 @@ Le faisceau utilisé pour la sélection spatiale est prélevé à partir du fais
 \paragraph{Blocage du faisceau de sélection}
 
 Deux systèmes permettent de couper le faisceau de sélection pendant le cycle expérimental :
-\begin{itemize}
+\begin{itemize}[label=$\bullet$]
     \item un cache mécanique (type électro-aimant), utilisé pour un blocage longue durée ;
-    \item un modulateur acousto-optique (AOM), permettant de produire des impulsions brèves de quelques dizaines de \(\mu\mathrm{s}\), en amont du séparateur.
+    \item un  \gls{AOM}, permettant de produire des impulsions brèves de quelques dizaines de \(\mu\mathrm{s}\), en amont du séparateur.
 \end{itemize}
-Pour garantir que le faisceau ne perturbe pas l’imagerie, le cache mécanique reste fermé pendant l’utilisation du faisceau sonde.
+%Pour garantir que le faisceau ne perturbe pas l’imagerie, le cache mécanique reste fermé pendant l’utilisation du faisceau sonde.
+%Pour éviter que le faisceau ne perturbe l’imagerie, le cache mécanique reste fermé pendant son utilisation. L’AOM est placé avant la lame séparatrice des faisceaux.
+
+Pour garantir que le faisceau ne perturbe pas l’imagerie, le cache mécanique reste fermé pendant l’utilisation du faisceau sonde, l’\gls*{AOM} étant placé avant la lame séparatrice des faisceaux.
 
 \paragraph{Montage optique de projection}
 
-Le faisceau façonné par le DMD est projeté dans le plan des atomes à l’aide d’un système optique permettant de sélectionner l’ordre 0 de diffraction. L’ensemble des optiques est dimensionné (diamètre \(50\,\mathrm{mm}\)) pour limiter la diffraction. L’alignement est effectué en superposant le faisceau de sélection à la voie d’imagerie.
+Le faisceau façonné par le \gls*{DMD} est projeté dans le plan des atomes à l’aide d’un système optique permettant de sélectionner l’ordre 0 de diffraction. L’ensemble des optiques est dimensionné (diamètre \(50\,\mathrm{mm}\)) pour limiter la diffraction. L’alignement est effectué en superposant le faisceau de sélection à la voie d’imagerie.
 
 \paragraph{Grandissement et champ couvert}
 
@@ -614,42 +582,41 @@ Le montage permet de couvrir une zone de l’ordre de \(600\,\mu\mathrm{m}\) dan
 
 \paragraph{Visualisation et interface}
 
-Le contrôle du DMD s’effectue via une interface graphique permettant de prévisualiser les configurations de miroirs. Une capture d’écran de cette interface est présentée dans la Fig.~\ref{fig:dmd_interface}, où la zone active réfléchie est visualisée en rouge. Cette interface est pilotée de manière automatisée pendant le déroulement de la séquence expérimentale.
+Le contrôle du \gls*{DMD} s’effectue via une interface graphique permettant de prévisualiser les configurations de miroirs. Cette interface graphique à été programmé par F. Nogrette . Cette interface est pilotée de manière automatisée pendant le déroulement de la séquence expérimentale.
 
 
 \section{Techniques d’imagerie et d’analyse}
 \subsection{Imagerie par absorption}
-{\color{blue}
-\begin{itemize}
-    \item Imagerie \textit{in situ} et après temps de vol.
-    \item Résolution, limites instrumentales.
-\end{itemize}
-}
+%{\color{blue}
+%\begin{itemize}
+%    \item Imagerie \textit{in situ} et après temps de vol.
+%    \item Résolution, limites instrumentales.
+%\end{itemize}
+%}
 
 \paragraph{Système d’imagerie par absorption}
 
-L’imagerie est réalisée à l’aide d’une caméra CCD à déplétion profonde, optimisée pour une grande efficacité quantique à la longueur d’onde de 780 nm. On utilise des techniques d’imagerie par absorption permettant d’extraire la densité optique \( D(x, z) \), elle-même reliée à la densité atomique 3D via la loi de Beer-Lambert. Le profil de densité linéaire \( n(x) \) est obtenu par intégration sur les directions transverses.
+L’imagerie est réalisée à l’aide d’une caméra \gls{CCD} à déplétion profonde, optimisée pour une grande efficacité quantique à la longueur d’onde de 780 nm. On utilise des techniques d’imagerie par absorption permettant d’extraire la densité optique \( D(x, z) \), elle-même reliée à la densité atomique 3D via la loi de Beer-Lambert. Le profil de densité linéaire \( n(x) \) est obtenu par intégration sur les directions transverses.
 
 \paragraph{Imagerie après temps de vol}
 
 En appliquant un champ magnétique vertical (\( B = 8\,\mathrm{G} \)), la polarisation du faisceau peut être rendue circulaire (\( \sigma^+ \)) pour adresser la transition fermée \( |F=2, m_F=2\rangle \rightarrow |F'=3, m_F'=3\rangle \). Cette configuration assure une meilleure définition de la section efficace d’absorption. Un temps de vol de quelques ms est utilisé avant l’imagerie, permettant également de décomprimer le nuage.
 
-\paragraph{Imagerie in situ}
-
-Sans champ magnétique, les atomes sont imagés à $7~\mu m$ de la puce, ce qui implique une double absorption du faisceau incident et réfléchi. Dans ce cas, la transition n’est pas fermée, ce qui nécessite une calibration du facteur de conversion entre la densité mesurée et la densité réelle. Un ajustement linéaire permet de relier les profils in situ aux profils obtenus après temps de vol.
+\paragraph{Imagerie "in situ"}
+Les atomes sont imagés à $7~\mu m$ de la puce, ce qui implique une double absorption du faisceau incident et réfléchi. Dans ce cas, la transition n’est pas fermée, ce qui nécessite une calibration du facteur de conversion entre la densité mesurée et la densité réelle. Un ajustement linéaire permet de relier les profils in situ aux profils obtenus après temps de vol. En pratique, un temps de vol d’une centaine de microsecondes est utilisé. 
 
 \paragraph{Choix des paramètres d’imagerie}
 
-L’intensité du faisceau sonde est choisie typiquement à \( I_0/I_{\mathrm{sat}} \approx 0.3 \) pour optimiser le rapport signal sur bruit tout en restant dans une zone de linéarité acceptable. Dans ces conditions, le nombre de photons diffusés est de l’ordre de \( N_{\mathrm{sc}} \approx 230 \) et le rayon de diffusion reste comparable à la résolution du système d’imagerie (\( \sim 2.6\,\mu \mathrm{m} \)).
+L’intensité du faisceau sonde est choisie typiquement à \( I_0/I_{\mathrm{sat}} \approx 0.3 \) pour optimiser le rapport signal sur bruit tout en restant dans une zone de linéarité acceptable. Dans ces conditions, le nombre de photons diffusés est de l’ordre de \( N_{\mathrm{sc}} \approx 230 \) .%et le rayon de diffusion reste comparable à la résolution du système d’imagerie (\( \sim 2.6\,\mu \mathrm{m} \)).
 
-\paragraph{Limites du modèle de Beer-Lambert}
-
-La validité de la loi de Beer-Lambert repose sur une approximation à une particule. Dans le cas des gaz fortement denses ou quasi 1D, les effets collectifs, les réabsorptions et les couplages dipolaires peuvent invalider ce modèle. Pour cette raison, même pour l’imagerie in situ, un temps de vol court (\( \sim 1\,\mathrm{ms} \)) est souvent appliqué afin de diluer le gaz transversalement.
+%\paragraph{Limites du modèle de Beer-Lambert}
+%
+%La validité de la loi de Beer-Lambert repose sur une approximation à une particule. Dans le cas des gaz fortement denses ou quasi 1D, les effets collectifs, les réabsorptions et les couplages dipolaires peuvent invalider ce modèle. Pour cette raison, même pour l’imagerie in situ, un temps de vol court (\( \sim 1\,\mathrm{ms} \)) est souvent appliqué afin de diluer le gaz transversalement.
 
 \paragraph{Défauts et instabilités expérimentales}
 
 Plusieurs limitations instrumentales ont été identifiées :
-\begin{itemize}
+\begin{itemize}[label = $\bullet$]
     \item La caméra initialement utilisée montrait des motifs parasites aléatoires ainsi qu’un offset variant au cours du temps. Le remplacement de la caméra a permis de résoudre ces problèmes.
     \item Des franges d’interférences apparaissaient lors de la division des images d’absorption, probablement dues à des effets Fabry-Pérot dans les optiques. Le désaxage du faisceau d’imagerie a permis d’en limiter l’impact.
     \item Des photons résiduels, même en l’absence de faisceau sonde, ont été détectés. Ces derniers proviennent vraisemblablement de diffusions multiples dans le système optique.
@@ -660,40 +627,40 @@ Plusieurs limitations instrumentales ont été identifiées :
 La combinaison de l’imagerie in situ et après temps de vol, ainsi qu’une calibration soigneuse des paramètres optiques et expérimentaux, permettent d’accéder à des profils de densité fiables malgré les limites intrinsèques du système d’imagerie. Une attention particulière a été portée à la réduction des artefacts expérimentaux afin de garantir la précision des mesures.
 
 
-\subsection{Analyse des profils}
-
-{\color{blue}
-\begin{itemize}
-    \item Extraction des densités, tailles, températures.
-    \item Distribution longitudinale.
-    \item Estimation de la température par ajustement Yang-Yang (optionnel si pertinent).
-\end{itemize}
-}
+%\subsection{Analyse des profils}
+%
+%{\color{blue}
+%\begin{itemize}
+%    \item Extraction des densités, tailles, températures.
+%    \item Distribution longitudinale.
+%    \item Estimation de la température par ajustement Yang-Yang (optionnel si pertinent).
+%\end{itemize}
+%}
 
 
 \section{Expériences et protocoles étudiés}
 Cette section peut être la plus personnelle, en précisant ton rôle à chaque fois.
 \subsection{Expansion longitudinale}
-\begin{itemize}
-    \item Protocole d’expansion (libération longitudinale, maintien du confinement transverse).
-    \item Suivi de l’évolution du profil.
-    \item Analyse à différents temps d’expansion
-    \item Comparaison aux modèles analytiques : solutions homothétiques, GP, asymptotiques.
-\end{itemize}
+%\begin{itemize}
+%    \item Protocole d’expansion (libération longitudinale, maintien du confinement transverse).
+%    \item Suivi de l’évolution du profil.
+%    \item Analyse à différents temps d’expansion
+%    \item Comparaison aux modèles analytiques : solutions homothétiques, GP, asymptotiques.
+%\end{itemize}
 
 \subsection{Motivation et protocole expérimental d’expansion longitudinale}
 
 \paragraph{Motivation.}
-Une partie essentielle de mon travail de thèse a consisté à sonder la distribution de rapidités résolue spatialement, ce qui constitue une information clé pour comprendre la dynamique hors équilibre d’un gaz quantique unidimensionnel. Pour accéder à cette observable, il est nécessaire de réaliser un protocole qui relie la distribution de rapidités à des profils de densité mesurables expérimentalement. L’expansion longitudinale dans le guide 1D s’impose alors comme un outil naturel : en laissant le nuage se dilater librement dans la direction longitudinale, on convertit en partie l’information contenue dans les phases et les excitations collectives du système en une dynamique de densité directement accessible par imagerie. Ce protocole permet ainsi de comparer les prédictions issues des équations effectives, comme l’équation de Gross–Pitaevskii dans différents régimes de confinement, avec des mesures expérimentales résolues spatialement.
+Une partie essentielle de mon travail de thèse a consisté à sonder la distribution de rapidités résolue spatialement, ce qui constitue une information clé pour comprendre la dynamique hors équilibre d’un gaz quantique unidimensionnel. Pour accéder à cette observable, il est nécessaire de réaliser un protocole qui relie la distribution de rapidités à des profils de densité mesurables expérimentalement. %L’expansion longitudinale dans le guide 1D s’impose alors comme un outil naturel : en laissant le nuage se dilater librement dans la direction longitudinale, on convertit en partie l’information contenue dans les phases et les excitations collectives du système en une dynamique de densité directement accessible par imagerie. Ce protocole permet ainsi de comparer les prédictions issues des équations effectives, comme l’équation de Gross–Pitaevskii dans différents régimes de confinement, avec des mesures expérimentales résolues spatialement.
 
 \paragraph{Considérations physiques.}
-Au-delà de son intérêt pratique, l’expansion longitudinale offre une fenêtre unique sur la physique des gaz bosoniques 1D. Elle permet d’étudier comment un système initialement confiné évolue vers un état dilué, révélant à la fois l’impact du régime transverse (TF 3D vs TF 1D) et l’influence des fluctuations de phase. Dans le régime TF 1D, ces fluctuations deviennent dominantes et se traduisent par des ondulations de densité mesurables. Leur analyse expérimentale, via le spectre de puissance, fournit un accès direct aux corrélations de phase et à la thermodynamique effective du gaz.
+Au-delà de son intérêt pratique, l’expansion longitudinale offre une fenêtre sur la physique des gaz bosoniques 1D. Elle permet d’étudier comment un système initialement confiné évolue vers un état dilué, révélant à la fois l’impact du régime transverse (\gls{TF} 3D vs (\gls{TF}) 1D).% et l’influence des fluctuations de phase. Dans le régime TF 1D, ces fluctuations deviennent dominantes et se traduisent par des ondulations de densité mesurables. Leur analyse expérimentale, via le spectre de puissance, fournit un accès direct aux corrélations de phase et à la thermodynamique effective du gaz.
 
 \paragraph{Protocole expérimental.}
 Concrètement, l’expansion longitudinale est réalisée selon la séquence illustrée en Fig.~??? :
-\begin{itemize}
+\begin{itemize}[label = $\bullet$]
   \item Le nuage est initialement piégé dans un potentiel magnétique caractérisé par une fréquence longitudinale $f_{\parallel} = 5.0$ ou $9.4\,\mathrm{Hz}$ selon les jeux de données, et une fréquence transverse $f_{\perp} = 2.56\,\mathrm{kHz}$.
-  \item À $t=0$, le confinement longitudinal est éteint en annulant les courants $I_D=I_{D'}=0$. La coupure est réalisée sur un temps fini $t_{\parallel} = 70\,\mu\mathrm{s} \ll 1/f_{\parallel}$, ce qui évite un pic de courant parasite tout en préservant la dynamique du gaz.
+  \item À $t=0$, le confinement longitudinal est éteint en annulant les courants $I_D=I_{D'}=0$. La coupure est réalisée sur un temps fini $t_{\parallel} = 70\,\mu\mathrm{s} \ll 1/f_{\parallel}$, ce qui évite un pic de courant parasite.% tout en préservant la dynamique du gaz.
   \item Le nuage se dilate librement dans la direction longitudinale pendant une durée $\tau$. Ensuite, le confinement transverse est relâché en annulant $I_{\perp}$, avec un temps de coupure $t_{\perp} = 5\,\mu\mathrm{s} \ll 1/f_{\perp}$.
   \item Une image par absorption est enfin prise après un temps de vol $t_v$. Pour l’étude des profils de densité, on utilise typiquement $t_v = 1\,\mathrm{ms}$.
 \end{itemize}
@@ -702,14 +669,14 @@ Concrètement, l’expansion longitudinale est réalisée selon la séquence ill
 %Comme discuté en Section~\ref{chap:...}, l’architecture expérimentale rend ce protocole particulièrement simple à mettre en œuvre. La modulation des courants transverses $I_{\perp}$ garantit que le potentiel longitudinal est découplé de celui transverse, ce qui permet un contrôle précis et indépendant des deux confinements.
 
 \paragraph{Perspective.}
-La mise en œuvre de ce protocole d’expansion longitudinale ne répond donc pas seulement à un besoin technique de mesure, mais s’inscrit dans une stratégie plus générale : relier les prédictions théoriques de la GHD et des modèles effectifs à des observables accessibles, et sonder directement l’évolution des fluctuations et des corrélations dans un système quantique 1D.
+La mise en œuvre de ce protocole d’expansion longitudinale ne répond donc pas seulement à un besoin technique de mesure, mais s’inscrit dans une stratégie plus générale : relier les prédictions théoriques de la \gls{GHD}.% et des modèles effectifs à des observables accessibles, et sonder directement l’évolution des fluctuations et des corrélations dans un système quantique 1D.
 
 \paragraph{Équations Gross-Pitaevskii dépendantes du temps.}
-La dynamique du système étudié est décrite par l’équation de Gross-Pitaevskii (GP) \eqref{chap.1:eq.GP.1} :
+Pour un systemps dans les regime \gls{qBEC} ( pour une paramètre de Lieb definie en \ref{chap2:eq:gamma.1} , $\gamma  \ll 1$ et $T \sim 0$), la dynamique du système étudié est décrite par l’équation de \gls{GP} \eqref{chap.1:eq.GP.2} : 
 \begin{eqnarray*}
 	i \partial_\tau\phi = \left \{ - \frac{1}{2}\Delta_{\vec{r}} + V(\vec{r}) + g_{\mathrm{3D}} N \vert \phi \vert^2 \right \} \phi,
 \end{eqnarray*}
-avec $g_{\mathrm{3D}} = 4 \pi a_{\mathrm{3D}}$ et en présence d’un potentiel externe (voir \eqref{} et \eqref{}) :
+avec $g_{\mathrm{3D}} = 4 \pi a_{\mathrm{3D}}$ et en présence d’un potentiel externe (voir \eqref{chap5:eq.pot.perp.1} et \eqref{chap5:eq.pot.perp.1}) :
 \begin{eqnarray*}
 	V(\vec{r}) = V_\perp(\vec{r}_\perp) + V_\parallel(x), 
 	\qquad 
@@ -761,7 +728,16 @@ où le terme de pression quantique est donné par
 \(
 Q(n) = - \frac{1}{2} \, \frac{\partial_x^2 \sqrt{n}}{\sqrt{n}}.
 \)
-Ces équations sont équivalentes aux deux premières de \eqref{chap:3:eq:hydro.1}, en tenant compte de la relation thermodynamique $dP = n \, d\mu$ et en négligeant le terme de pression quantique $Q(n)$.
+En négligeant le terme de pression quantique $Q(n)$, ces équations sont équivalentes aux deux premières de \eqref{chap:3:eq:hydro.1}, en tenant compte de la relation thermodynamique $dP = n \, d\mu$:
+
+\begin{eqnarray}\label{chap:5:eq.hydro.1.1}
+	\left\{
+	\begin{array}{rcl}
+		\partial_\tau n + \partial_x ( n u )	 & = & 0, \\[0.3em]
+		\partial_\tau u + \partial_x \left( \tfrac{u^2}{2} + V_\parallel(x) + \mu(n) \right) & = & 0,
+	\end{array} 
+	\right.
+\end{eqnarray}
 
 \medskip
 
@@ -774,8 +750,8 @@ Pour $\tau \geq 0$, le potentiel longitudinal est éteint : $V_\parallel(x) = 0$
 \medskip
 
 \paragraph{Solutions analytiques homothétique.}
-Si $n$ est solution des equation hydrodynamique \eqref{chap:5:eq.hydro.1} , pour $\tau \geq 0$. On fais l'hypothèse que la densité linéaire suit une forme homothétique
-\begin{eqnarray}
+Si $n$ est solution des equation hydrodynamique \eqref{chap:5:eq.hydro.1.1} , pour $\tau \geq 0$. On fais l'hypothèse que la densité linéaire suit une forme homothétique
+\begin{eqnarray}\label{chap:5:eq.hydro.1.3}
 	n(x,\tau) = \frac{1}{\lambda(\tau)} n_0 \left ( \frac{x}{\lambda(\tau)} \right ) ,	
 \end{eqnarray}
 avec $n_0$ le profil de densité à $\tau = 0 $ et $\lambda(\tau)$ le facter d'echelle à une temps d'expension $\tau$. Avec les containtes $\lambda(0) = 1$ et $\lambda'(0) = 0$ et $N = \int dx \, n(x , \tau ) $. En injectant dans \eqref{chap:5:eq.hydro.1} il vient que 
@@ -789,245 +765,95 @@ avec $n_0$ le profil de densité à $\tau = 0 $ et $\lambda(\tau)$ le facter d'e
 \end{eqnarray}
 (car \(\partial_\tau u=(\ddot\lambda/\lambda-\dot\lambda^2/\lambda^2)x\) et \(v\partial_x v=(\dot\lambda/\lambda)^2 x\), leur somme donne \((\ddot\lambda/\lambda)x\)) et initialement $\mu( n_0 ( x ) ) = \mu( n_0 ( x = 0  ) ) - \frac{1}{2} \omega_\parallel^2 x^2 $.
 
-\medskip
+\bigskip
 
-Calculons maintenant \(\partial_x\mu(n(x))\). D'abord
-\[
-\partial_x n(x)=\frac{1}{\lambda^2}\,n_0'\!\Big(\frac{x}{\lambda}\Big).
-\]
-À l'équilibre \(\mu\big(n_0(y)\big)=\mu_0-\tfrac12 \omega_\parallel^2 y^2\), d'où
-\[
-\mu'(n_0(y))\,n_0'(y)=-\omega_\parallel^2 y
-\quad\Rightarrow\quad
-n_0'(y)=-\frac{\omega_\parallel^2\,y}{\mu'(n_0(y))}.
-\]
-En prenant \(y=x/\lambda\) on obtient
-\[
-n_0'\!\Big(\frac{x}{\lambda}\Big)
-= -\frac{\omega_\parallel^2}{\lambda}\,\frac{x}{\mu'\big(n_0(x/\lambda)\big)}.
-\]
-Donc
-\[
-\partial_x n(x) = -\frac{\omega_\parallel^2\,x}{\lambda^3}\;
-\frac{1}{\mu'\big(n_0(x/\lambda)\big)}.
-\]
-Puis
-\[
-\partial_x\mu(n(x))=\mu'\big(n(x)\big)\,\partial_x n(x)
-= -\frac{m\omega_\parallel^2\,x}{\lambda^3}\;
-\frac{\mu'\big(n(x)\big)}{\mu'\big(n_0(x/\lambda)\big)}.
-\]
-Or \(n_0(x/\lambda)=\lambda\,n(x)\), donc on définit
-\[
-f(\lambda)\equiv\frac{\mu'(n)}{\mu'(\lambda n)}.
-\]
-On obtient finalement
-\[
-\partial_x\mu(n(x)) = -\frac{\omega_\parallel^2}{\lambda^3}\,f(\lambda)\,x.
-\]
-
-%On souhaite calculer $\partial_x \mu\bigl(n(x,\tau)\bigr)$ en utilisant la règle de la chaîne et la forme homothétique. On a
-%\[
-%	\partial_x \mu\bigl(n(x)\bigr) 
-%	= \mu'(n(x)) \, \partial_x n(x) 
-%	= \frac{1}{\lambda^2} \, \mu'(n(x)) \, \partial_x n_0\!\left(\tfrac{x}{\lambda}\right),
-%\]
-%où le dernier terme s’écrit
-%\[
-%	\left. \frac{\partial n_0}{\partial x} \right|_{x/\lambda} 
-%	= \left. \frac{\partial n_0}{\partial \mu} \right|_{\mu(n_0(x/\lambda))} 
-%	\left. \frac{\partial \mu}{\partial x} \right|_{n_0(x/\lambda)} .
-%\]
-%On utilise alors 
-%\[
-%	\left. \frac{\partial \mu}{\partial x} \right|_{n_0(x/\lambda)} = - \frac{\omega_\parallel^2}{\lambda^2} \, x,
-%	\qquad 
-%	\left. \frac{\partial n_0}{\partial \mu} \right|_{\mu(n_0(x/\lambda))} 
-%	= \left. \frac{\partial n}{\partial \mu} \right|_{\mu(\lambda n)} .
-%\]
-%Il vient donc, en utilisant de plus la deuxième équation de 
-En remplaçant dans la deuxième d'Euler \eqref{chap:5:eq.hydro.2} et en simplifiant  \(x\),
-\begin{eqnarray}\label{chap:5:eq.hydro.3}
-	\frac{\ddot\lambda}{\lambda}  
-	 =  \frac{\omega_\parallel^2}{\lambda^3} \, f(\lambda)  .
+Calculons maintenant \(\partial_x\mu(n(x))\). Tout d'abord, on utilise 
+\begin{eqnarray}\label{chap:5:eq.hydro.2.1}
+	\partial_x\mu(n(x)) = \mu'(n)\partial_x n.
+\end{eqnarray}
+Intéressons nous maintenant à $\partial_x n$. Comme $n(x)$ vérifie \eqref{chap:5:eq.hydro.1.3} :
+\begin{eqnarray}\label{chap:5:eq.hydro.2.2}
+	\partial_x n(x)=\frac{1}{\lambda^2}\,n_0'\!\Big(\frac{x}{\lambda}\Big).	
 \end{eqnarray}
 
-\paragraph{Proposition.}
-Si le facteur
-\(
-f(\lambda)
-\)
-est bien défini indépendamment de \(n>0\) (ce qui est le cas pour les solutions homothétiques),
-alors \(f\) est une loi de puissance.
+En utilisant q'à l'équilibre \(\mu\big(n_0(y)\big)=\mu_0-\tfrac12 \omega_\parallel^2 y^2\), soit \(\mu'(n_0(y))\,n_0'(y)=-\omega_\parallel^2 y\) soit 
+\begin{eqnarray}\label{chap:5:eq.hydro.2.3}
+	n_0'(y)=-\frac{\omega_\parallel^2\,y}{\mu'(n_0(y))}.	
+\end{eqnarray}
+En injectant \eqref{chap:5:eq.hydro.2.3} dans \eqref{chap:5:eq.hydro.2.2} et en injectant evoute \eqref{chap:5:eq.hydro.2.2} dans \eqref{chap:5:eq.hydro.2.1} on obtient finalement
+\begin{eqnarray}\label{chap:5:eq.hydro.2.4}
+	\partial_x \mu ( n (x)) = -\frac{\omega_\parallel^2}{\lambda^3}\,f(\lambda,n)\,x 	
+\end{eqnarray}
+où
+\begin{eqnarray}\label{chap:5:eq.hydro.2.4}
+	f(\lambda,n)\equiv\frac{\mu'(n)}{\mu'(\lambda n)}.	
+\end{eqnarray}
 
-\paragraph{Preuve.}
-Posons \(g(n) = \mu'(n)>0\) ou \(<0\) (\ie $\mu$ strictement monotone). La définition de \(f\) équivaut à l’existence d’une fonction
-\(\chi(\lambda)=1/f(\lambda)\) telle que
-\[
-g(\lambda n)=\chi(\lambda)\,g(n)\qquad(\forall\,\lambda,n>0).
-\]
-En prenant \(n=1\), on a \(\chi(\lambda)=g(\lambda)/g(1)\).
-Donc, pour tous \(a,b>0\),
-\[
-\chi(ab)=\frac{g(ab)}{g(1)}=\frac{\chi(a)\,g(b)}{g(1)}=g(a)\,g(b),
-\]
-c’est-à-dire que \(\chi\) est \emph{multiplicative}. Sous une hypothèse physique très faible
-(continuité/mesurabilité ou simple localement bornée), toute fonction multiplicative sur
-\(\mathbb{R}_+^\ast\) est de la forme
-\[
-\chi(\lambda)=\lambda^{\alpha-1}
-\quad\Rightarrow\quad
-f(\lambda)=\lambda^{1-\alpha}.
-\]
-%En réintégrant \(g=\mu'\propto n^{\alpha-1}\), on retrouve \(\mu(n)\propto n^\alpha\) pour \(\alpha\neq 0\)
-%(et \(\mu(n)\propto \ln n\) pour \(\alpha=0\)).
-\qed
+En substituant dans la deuxième équation d'Euler \eqref{chap:5:eq.hydro.2}, on obtient
+\begin{eqnarray}\label{chap:5:eq.hydro.3}
+	\frac{\ddot\lambda}{\lambda}  
+	 =  \frac{\omega_\parallel^2}{\lambda^3} \, f(\lambda,n)  .
+\end{eqnarray}
+On en déduit que $f$ ne dépend que du facteur d'échelle $\lambda$, c’est-à-dire
+\begin{eqnarray}\label{chap:5:eq.hydro.3.1}
+	f(\lambda , n ) = f(\lambda).	
+\end{eqnarray}
+En utilisant le résultat de l'annexe \ref{annex:homo}, l’équation \eqref{chap:5:eq.hydro.3.1} conduit à
+\begin{eqnarray}\label{chap:5:eq.hydro.3.2}
+	\mu \propto n^\alpha.
+\end{eqnarray}
+Et de plus 
+\begin{eqnarray}\label{chap:5:eq.hydro.3.3}
+	f(\lambda) = \lambda^{1-\alpha}.
+\end{eqnarray}
 
-
-% --- Démonstration que f(λ)=λ^{1-\alpha} et réciproque ---
-\paragraph{Proposition.}
-$f(\lambda) = \lambda^{1-\alpha}$ et $\mu (n) \propto n^\alpha $ sont equivalents.
-%
-%On définit
-%\[
-%f(\lambda)=\frac{\mu'(n)}{\mu'(\lambda n)},
-%\]
-%en supposant \(\mu\in C^1\) et \(\mu'(n)>0\) pour \(n>0\).
-
-\paragraph{1. Si \(\mu(n)=C\,n^\alpha\) (avec \(C\neq0\)) :}
-Alors \(\mu'(n)=C\alpha\,n^{\alpha-1}\). Par conséquent
-\[
-f(\lambda)=\frac{C\alpha\,n^{\alpha-1}}{C\alpha\,(\lambda n)^{\alpha-1}}
-=\lambda^{1-\alpha}.
-\]
-
-\paragraph{2. Réciproque : si \(f(\lambda)=\lambda^{1-\alpha}\) pour tout \(\lambda>0\) (et tout \(n>0\)) :}
-Posons \(g(n)=\mu'(n)\). L'hypothèse s'écrit
-\[
-\frac{g(n)}{g(\lambda n)}=\lambda^{1-\alpha}
-\quad\Longleftrightarrow\quad
-g(\lambda n)=\lambda^{\alpha-1}\,g(n),
-\]
-pour tout \(n>0\) et tout \(\lambda>0\).
-
-Fixons \(n_0>0\) et définissons \(\varphi(\lambda)\equiv g(\lambda n_0)\). La relation ci-dessus donne
-\[
-\varphi(\lambda)=\lambda^{\alpha-1}\,\varphi(1).
-\]
-Autrement dit \(\varphi(\lambda)=C_1\,\lambda^{\alpha-1}\) pour une constante \(C_1=\varphi(1)=g(n_0)\). En remplaçant \(\lambda=x/n_0\) on obtient pour tout \(x>0\)
-\[
-g(x)=C_1\,x^{\alpha-1}.
-\]
-Ainsi \(g(n)=\mu'(n)=C\,n^{\alpha-1}\) avec \(C\) constant.
-
-En intégrant (en supposant \(\alpha\neq 0\)),
-%\[
-%\mu(n)=\int \mu'(n)\,dn = \int C\,n^{\alpha-1}\,dn = \frac{C}{\alpha}\,n^\alpha + \text{const},
-%\]
-%donc 
-\(\mu(n)\propto n^\alpha\). (Pour \(\alpha=0\) on obtient \(\mu'(n)=C\,n^{-1}\) et \(\mu(n)=C\ln n+\text{const}\).)
-
-\paragraph{Remarque sur les hypothèses.}
-La démonstration utilise la propriété fonctionnelle multiplicative
-\(g(\lambda n)=\lambda^{\alpha-1}g(n)\). Sous une hypothèse faible de continuité (ou dérivabilité) en \(n\) cette équation force la forme de puissance \(g(n)\propto n^{\alpha-1}\). Sans régularité, des solutions pathologiques peuvent exister mais ne sont pas physiquement pertinentes dans le contexte thermodynamique.
-
-\qed
-
-%% --- Bref argument (à insérer) ---
-%En posant \(g(n)=\mu'(n)\) et \(f(\lambda)=\dfrac{g(n)}{g(\lambda n)}=\lambda^{1-\alpha}\), on obtient
-%\[
-%g(\lambda n)=\lambda^{\alpha-1}g(n)\quad\forall\,\lambda,n>0,
-%\]
-%d'où \(g(n)=C\,n^{\alpha-1}\) et, pour \(\alpha\neq0\), \(\mu(n)=\dfrac{C}{\alpha}n^\alpha+\mathrm{const}\), i.e. \(\mu\propto n^\alpha\).
-%
-%
-%% --- Encadré pour le cas alpha = 0 ---
-%\medskip
-%\noindent\textbf{Remarque (cas \(\alpha=0\)).} Si \(\alpha=0\) alors la relation fonctionnelle donne \(g(n)=\mu'(n)=C\,n^{-1}\). En intégrant on obtient
-%\[
-%\mu(n)=C\ln n + \mathrm{const}.
-%\]
-%Ce cas correspond physiquement, par exemple, au gaz isotherme idéal en 1D (ou plus généralement à une dépendance logarithmique du potentiel chimique), où la compressibilité \(\mu'(n)\propto 1/n\).
-%
-%--------------------------------------------
-%
-%avec $f(\lambda) = \frac{\mu'(n)}{\mu'(\lambda n )}$ avec  $\mu(n)$ est continue et strictement monitone (donc inversible). Puisque $f(1)= 1$ et $f(\lambda_1 \lambda_2) =  f(\lambda_1) f( \lambda_2)$ alors $f$ est une fonction de puissace $f(\lambda) = \lambda^{1-\beta}$. Ainssi une solution de l'éqtation hydrondynamique homothètique donne  
-%\begin{eqnarray}
-%	\mu(n) = a n^\beta + b,  	
-%\end{eqnarray}
-%avec $a, b$ et $\beta$ des réelles. 
-
-\paragraph{Cas particulier.}
-Dans le régime quasi-1D on utilise l'expression d'interpolation (cf. Salasnich et al.)
-\[
-\mu(n)=\hbar\omega_\perp\Big(\sqrt{1+4\,a_{\mathrm{3D}}\,n}-1\Big),
-\]
-où \(n\) est la densité linéique et \(a_{\mathrm{3D}}\) le scattering length. De cette formule on obtient deux limites asymptotiques :
-
-\begin{itemize}
-\item \emph{Régime transverse Thomas--Fermi (TF), \(4a_{\mathrm{3D}}n\gg1\).} 
-Alors \(\sqrt{1+4a_{\mathrm{3D}}n}\simeq 2\sqrt{a_{\mathrm{3D}}n}\) et
-\[
-\mu(n)\simeq 2\hbar\omega_\perp\sqrt{a_{\mathrm{3D}}\,n},
-\]
-ce qui correspond à \(\mu\propto n^{1/2}\) (donc \(\alpha=\tfrac12\)). Ce régime décrit la situation où \(\mu\gg\hbar\omega_\perp\) et de nombreux niveaux transverses sont excités.
-\item \emph{Régime quasi-1D (transverse fondamental), \(4a_{\mathrm{3D}}n\ll1\).} 
-Alors \(\sqrt{1+4a_{\mathrm{3D}}n}\simeq 1+2a_{\mathrm{3D}}n\) et
-\[
-\mu(n)\simeq 2\hbar\omega_\perp\,a_{\mathrm{3D}}\,n \equiv g\,n,
-\]
-avec \(g=2\hbar\omega_\perp a_{\mathrm{3D}}\). Ici \(\mu\propto n\) (donc \(\alpha=1\)) ; on est proche de l'état fondamental transverse (gaussien).
-\end{itemize}
-
-Les deux formes ci-dessus sont bien les limites asymptotiques de l'expression d'interpolation donnée plus haut.
 
 \medskip
 
-Enfin, l'équation d'évolution du facteur d'échelle obtenue précédemment s'écrit correctement
-\[
-\boxed{\qquad \ddot\lambda\,\lambda^{\alpha+1}=\omega_\parallel^2 \qquad}
-\]
+\paragraph{Équation pour le facteur d'échelle $\lambda$.}
+
+En utilisant \eqref{chap:5:eq.hydro.3.3}, l'équation d'évolution du facteur d'échelle obtenue précédemment \eqref{chap:5:eq.hydro.3} s'écrit :
+\begin{eqnarray}\label{chap:5:eq.hydro.3.4}
+	\qquad \ddot\lambda\,\lambda^{\alpha+1}=\omega_\parallel^2	
+\end{eqnarray}
+
 
 % --- Première intégration de l'équation ---
-On part de
-\[
-\ddot\lambda\,\lambda^{\alpha+1}=\omega_\parallel^2,
-\]
-et on pose \(v=\dot\lambda\). Comme \(\ddot\lambda=\dot\lambda\frac{d\dot\lambda}{d\lambda}\), on obtient
-\[
-\dot\lambda\frac{d\dot\lambda}{d\lambda}=\omega_\parallel^2\,\lambda^{-(\alpha+1)}.
-\]
+On pose \(v=\dot\lambda\). Comme \(\ddot\lambda=\dot\lambda\frac{d\dot\lambda}{d\lambda}\), on obtient
+\begin{eqnarray}
+	\dot\lambda\frac{d\dot\lambda}{d\lambda}=\omega_\parallel^2\,\lambda^{-(\alpha+1)}.
+\end{eqnarray}
 
-\paragraph{Cas \(\alpha\neq0\).}
+\subparagraph{Cas \(\alpha\neq0\).}
 Intégration par rapport à \(\lambda\) :
-\[
+\begin{eqnarray}
 \frac{1}{2}\dot\lambda^2
 = \omega_\parallel^2\int \lambda^{-(\alpha+1)}\,d\lambda
 = -\frac{\omega_\parallel^2}{\alpha}\,\lambda^{-\alpha} + C,
-\]
+\end{eqnarray}
 où \(C\) est une constante d'intégration déterminée par les conditions initiales \(\lambda(0)=\lambda_0\), \(\dot\lambda(0)=\dot\lambda_0\) :
-\[
+\begin{eqnarray}
 C=\frac{1}{2}\dot\lambda_0^2+\frac{\omega_\parallel^2}{\alpha}\,\lambda_0^{-\alpha}.
-\]
+\end{eqnarray}
 On a donc la première intégrale
-\[
-\boxed{\; \dot\lambda^2
-= \dot\lambda_0^2 + \frac{2\omega_\parallel^2}{\alpha}\big(\lambda_0^{-\alpha}-\lambda^{-\alpha}\big)\; }.
-\]
+\begin{eqnarray}
+\dot\lambda^2
+= \dot\lambda_0^2 + \frac{2\omega_\parallel^2}{\alpha}\big(\lambda_0^{-\alpha}-\lambda^{-\alpha}\big).
+\end{eqnarray}
 %La solution en quadrature s'écrit alors
 %\[
 %t-t_0=\int_{\lambda_0}^{\lambda(t)}\frac{d\lambda}{\sqrt{\,v_0^2 + \dfrac{2\omega_\parallel^2}{\alpha}\big(\lambda_0^{-\alpha}-\lambda^{-\alpha}\big)\,}}.
 %\]
 
-\paragraph{Cas \(\alpha=0\).}
+\subparagraph{Cas \(\alpha=0\).}
 L'équation devient \(\ddot\lambda\,\lambda=\omega_\parallel^2\). On obtient
 %\[
 %\frac{1}{2}v^2=\omega_\parallel^2\ln\lambda + C,
 %\]
 %avec \(C=\tfrac12 v_0^2-\omega_\parallel^2\ln\lambda_0\). D'où
-\[
-\boxed{\; \dot\lambda^2 = \dot\lambda_0^2 + 2\omega_\parallel^2\ln\!\big(\tfrac{\lambda}{\lambda_0}\big)\; }.
-\]
+\begin{eqnarray}
+\dot\lambda^2 = \dot\lambda_0^2 + 2\omega_\parallel^2\ln\!\big(\tfrac{\lambda}{\lambda_0}\big).
+\end{eqnarray}
 
 %La quadrature est
 %\[
@@ -1100,89 +926,109 @@ L'équation devient \(\ddot\lambda\,\lambda=\omega_\parallel^2\). On obtient
 %
 %----------------------------
 
+\medskip
+
 On impose les conditions initiales
-\[
+\(
 \lambda(0)=1, \qquad \dot\lambda(0)=0,
-\]
+\)
 et l'on considère le cas \(\alpha>0\).
+
+\medskip
 
 \paragraph{Régime à temps courts (\(\tau \ll 1/\omega_\parallel\)).}  
 On linéarise autour de l'équilibre \(\lambda=1\) en posant \(\lambda(\tau)=1+\epsilon(\tau)\) avec \(|\epsilon|\ll 1\). L'équation de mouvement devient un oscillateur harmonique forcé :
-\[
+\begin{eqnarray}
 \ddot \epsilon + (1+\alpha)\,\omega_\parallel^2 \epsilon - \omega_\parallel^2 = 0.
-\]
+\end{eqnarray}
 Pour les conditions initiales choisies, la solution à petits temps est
-\[
+\begin{eqnarray}
 \epsilon(\tau) \simeq \frac{1}{2}\,\omega_\parallel^2 \tau^2 \quad\Rightarrow\quad
 \lambda(\tau) \simeq 1 + \frac{\omega_\parallel^2 \tau^2}{2},
-\]
+\end{eqnarray}
 indépendamment de l'équation d'état \(\mu(n)\). Ce comportement correspond au profil universel observé à temps courts (Fig.~7.4(a)) pour tous les régimes TF.
 
 \paragraph{Régime à temps longs (\(\tau \gg 1/\omega_\parallel\)).}  
 Pour \(\lambda^{-\alpha}\ll 1\), l'équation intégrée donne
-\[
+\begin{eqnarray}
 \dot\lambda \simeq \sqrt{\frac{2\omega_\parallel^2}{\alpha}} \quad\Rightarrow\quad
 \lambda(\tau) \simeq \frac{2}{\alpha}\,\omega_\parallel \tau.
-\]
+\end{eqnarray}
 En particulier :
 \begin{itemize}
-\item TF 1D (\(\alpha=1\)) : \(\lambda(\tau)\simeq \sqrt{2}\,\omega_\parallel \tau\),  
-\item TF 3D (\(\alpha=1/2\)) : \(\lambda(\tau)\simeq 2\,\omega_\parallel \tau\).  
+\item \gls{TF} 1D (\(\alpha=1\)) : \(\lambda(\tau)\simeq \sqrt{2}\,\omega_\parallel \tau\),  
+\item \gls{TF} 3D (\(\alpha=1/2\)) : \(\lambda(\tau)\simeq 2\,\omega_\parallel \tau\).  
 \end{itemize}
 Ces comportements sont bien observés sur la Fig.~7.4(b) et correspondent à l’expansion asymptotique du gaz.
 
 
+\paragraph{Le potentiel chimique.}
+Dans le régime quasi-1D on utilise l'expression d'interpolation \cite{PhysRevA.68.043610}.
+\begin{eqnarray}
+	\mu(n)=\hbar\omega_\perp\Big(\sqrt{1+4\,a_{\mathrm{3D}}\,n}-1\Big),
+\end{eqnarray}
+où \(n\) est la densité linéique et \(a_{\mathrm{3D}}\) le scattering length. De cette formule on obtient deux limites asymptotiques :
 
+\begin{itemize}[label =$\bullet$]
+	\item \emph{Régime transverse Thomas--Fermi (\gls{TF} 3D), \(4a_{\mathrm{3D}}n\gg1\).} 
+		Alors \(\sqrt{1+4a_{\mathrm{3D}}n}\simeq 2\sqrt{a_{\mathrm{3D}}n}\) et
+		\begin{eqnarray}
+			\mu(n)\simeq 2\hbar\omega_\perp\sqrt{a_{\mathrm{3D}}\,n},
+		\end{eqnarray}
+		ce qui correspond à \(\mu\propto n^{1/2}\) (donc \(\alpha=\tfrac12\)). Ce régime décrit la situation où \(\mu\gg\hbar\omega_\perp\) et de nombreux niveaux transverses sont excités.
+	\item \emph{Régime quasi-1D (transverse fondamental) (\gls{TF} 1D), \(4a_{\mathrm{3D}}n\ll1\).} 
+		Alors \(\sqrt{1+4a_{\mathrm{3D}}n}\simeq 1+2a_{\mathrm{3D}}n\) et
+		\begin{eqnarray}
+			\mu(n)\simeq 2\hbar\omega_\perp\,a_{\mathrm{3D}}\,n \equiv g\,n,
+		\end{eqnarray}
+	avec \(g=2\hbar\omega_\perp a_{\mathrm{3D}}\). Ici \(\mu\propto n\) (donc \(\alpha=1\)) ; on est proche de l'état fondamental transverse (gaussien).
+\end{itemize}
+
+Les deux formes ci-dessus sont bien les limites asymptotiques de l'expression d'interpolation donnée plus haut.
 
 
 % --- Table révisée (petites corrections typographiques) ---
-\begin{table}[h]
-\centering
-\begin{tabular}{l c c c}
-\hline
-Système & loi pour $\mu(n)$ & $\beta$ (avec $f(\lambda)=\lambda^{-\beta}$) & $\displaystyle \omega_{\rm breath}/\omega_\parallel$ \\
-\hline
-Gaz classique isotherme (1D, $\mu\propto\ln n$) 
-& $\mu'(n)\propto 1/n$ 
-& $-1$ 
-& $\sqrt{3}\approx1.732$ \\[4pt]
-
-Gaz de Bose 1D en régime moyen (GP, $\mu\propto n$) 
-& $\alpha=1$ 
-& $0$ 
-& $2$ \\[4pt]
-
-Tonks--Girardeau (1D, $\mu\propto n^2$) 
-& $\alpha=2$ 
-& $1$ 
-& $\sqrt{5}\approx2.236$ \\[4pt]
-
-Gaz de Fermi unitaire (ex. 3D, $\mu\propto n^{2/3}$) 
-& $\alpha=\tfrac{2}{3}$ 
-& $-\tfrac{1}{3}$ 
-& $\sqrt{3+\tfrac{2}{3}}\approx1.915$ \\[4pt]
-
-Cas général (loi de puissance) 
-& $\mu\propto n^\alpha$ 
-& $\beta=\alpha-1$ 
-& $\displaystyle \sqrt{3+\alpha}$ \\
-\hline
-\end{tabular}
-\caption{Valeurs de $\beta$ et fréquences du mode de souffle pour quelques régimes usuels.}
-\label{tab:breathing}
-\end{table}
- 
+%\begin{table}[h]
+%\centering
+%\begin{tabular}{l c c c}
+%\hline
+%Système & loi pour $\mu(n)$ & $\beta$ (avec $f(\lambda)=\lambda^{-\beta}$) & $\displaystyle \omega_{\rm breath}/\omega_\parallel$ \\
+%\hline
+%Gaz classique isotherme (1D, $\mu\propto\ln n$) 
+%& $\mu'(n)\propto 1/n$ 
+%& $-1$ 
+%& $\sqrt{3}\approx1.732$ \\[4pt]
+%
+%Gaz de Bose 1D en régime moyen (GP, $\mu\propto n$) 
+%& $\alpha=1$ 
+%& $0$ 
+%& $2$ \\[4pt]
+%
+%Tonks--Girardeau (1D, $\mu\propto n^2$) 
+%& $\alpha=2$ 
+%& $1$ 
+%& $\sqrt{5}\approx2.236$ \\[4pt]
+%
+%Gaz de Fermi unitaire (ex. 3D, $\mu\propto n^{2/3}$) 
+%& $\alpha=\tfrac{2}{3}$ 
+%& $-\tfrac{1}{3}$ 
+%& $\sqrt{3+\tfrac{2}{3}}\approx1.915$ \\[4pt]
+%
+%Cas général (loi de puissance) 
+%& $\mu\propto n^\alpha$ 
+%& $\beta=\alpha-1$ 
+%& $\displaystyle \sqrt{3+\alpha}$ \\
+%\hline
+%\end{tabular}
+%\caption{Valeurs de $\beta$ et fréquences du mode de souffle pour quelques régimes usuels.}
+%\label{tab:breathing}
+%\end{table}
+% 
 
 
 
 \subsection{Sonde locale de distribution de rapidité}
-\begin{itemize}
-    \item Principe de la mesure : coupure d’une tranche puis expansion.
-    \item Rôle du DMD dans la sélection.
-    \item Accès à la distribution de vitesse locale.
-    \item Comparaison avec les prédictions GHD.
-    \item Limites et incertitudes
-\end{itemize}
+
 
 \subsubsection{Distribution de rapidités locale dans les gaz 1D}
 
@@ -1190,31 +1036,31 @@ Cas général (loi de puissance)
 La compréhension des gaz de bosons 1D avec interactions de contact répulsives repose sur la notion de distribution de rapidités \(\rho(\theta)\). Chaque état propre du système peut être paramétré par un ensemble de rapidités \(\{\theta_i\}\) (Ansatz de Bethe), ou interprété comme les vitesses de quasi-particules à durée de vie infinie. Ici, on utilise la définition pratique issue des expansions 1D : les rapidités correspondent aux vitesses asymptotiques des atomes après une expansion, avec \(x_j \simeq \tau \theta_j\) pour un temps \(\tau\) long. Cette définition est directement applicable à des mesures expérimentales de distribution de rapidités locales.
 
 \paragraph{Distribution locale et LDA.}  
-Pour un nuage atomique piégé dans un potentiel longitudinal variant lentement, on peut appliquer l’Approximation de Densité Locale (LDA). Le gaz est alors vu comme un fluide décomposé en cellules mésoscopiques de densité homogène et relaxée. Dans chaque cellule, l’état d’équilibre est décrit par un Ensemble de Gibbs Généralisé (GGE), ou équivalemment par une distribution de rapidités locale \(\rho(x,\theta)\). Cette description permet d’étudier non seulement l’équilibre, mais aussi la dynamique hors équilibre à grandes échelles spatiales et temporelles, via la théorie Hydrodynamique Généralisée (GHD).
+Pour un nuage atomique piégé dans un potentiel longitudinal variant lentement, on peut appliquer la \gls{LDA}. Le gaz est alors vu comme un fluide décomposé en cellules mésoscopiques de densité homogène et relaxée. Dans chaque cellule, l’état d’équilibre est décrit par un \gls{GGE}, ou équivalemment par une distribution de rapidités locale \(\rho(x,\theta)\). Cette description permet d’étudier non seulement l’équilibre, mais aussi la dynamique hors équilibre à grandes échelles spatiales et temporelles, via la théorie \gls{GHD}.
 
 \paragraph{Protocole expérimental.}  
 Pour mesurer \(\rho(x,\theta)\) localement :  
 \begin{enumerate}
-    \item Une zone du nuage atomique de taille \(\ell\) centrée en \(x_0\) est sélectionnée à l’aide d’un dispositif de micromiroirs digitaux (DMD). La pression de radiation supprime instantanément les atomes en dehors de la zone, laissant uniquement ceux de la cellule.
+    \item Une zone du nuage atomique de taille \(\ell\) centrée en \(x_0\) est sélectionnée à l’aide du \gls{DMD}. La pression de radiation supprime instantanément les atomes en dehors de la zone, laissant uniquement ceux de la cellule.
     \item Après la sélection, le confinement longitudinal est relâché, tandis que le confinement transverse reste actif. Les atomes réalisent une expansion 1D pendant un temps \(\tau\), puis le profil de densité est imagé (typiquement pour \(\tau\sim 1\) ms).
     \item Le protocole est répété pour plusieurs positions \(x_0\), permettant d’obtenir la distribution de rapidités locale sur l’ensemble du nuage.
 \end{enumerate}
 
 \paragraph{Mesures à l’équilibre.}  
-Pour un gaz initialement à l’équilibre dans un piège harmonique, le profil de densité de chaque zone sélectionnée est analysé via la thermodynamique Yang-Yang et la LDA, donnant température \(T_{\rm YY}\) et potentiel chimique \(\mu_{\rm YY}\). Après un temps d’expansion long, le profil devient homothétique à la distribution de rapidités locale \(\rho(x,\theta)\). La comparaison avec les prédictions numériques montre une bonne cohérence, confirmant que le protocole permet de sonder efficacement \(\rho(x,\theta)\).
+Pour un gaz initialement à l’équilibre dans un piège harmonique, le profil de densité de chaque zone sélectionnée est analysé via la thermodynamique Yang-Yang et la \gls{LDA}, donnant température \(T_{\rm YY}\) et potentiel chimique \(\mu_{\rm YY}\). Après un temps d’expansion long, le profil devient homothétique à la distribution de rapidités locale \(\rho(x,\theta)\). La comparaison avec les prédictions numériques montre une bonne cohérence, confirmant que le protocole permet de sonder efficacement \(\rho(x,\theta)\).
 
 \paragraph{Résumé.}  
-— Une sonde locale de distribution de rapidités a été mise en place grâce au DMD.  
+— Une sonde locale de distribution de rapidités a été mise en place grâce au \gls{DMD}.  
 — Les atomes sélectionnés réalisent une expansion dans le guide 1D.  
 — Après un temps long, le profil de densité reflète la distribution de rapidités locale.  
 — Ce protocole a été appliqué avec succès sur un nuage atomique initialement à l’équilibre.
 
 \paragraph{Dynamique.}
 \subparagraph{Motivation.}
-Pour vérifier si le régime asymptotique des expansions longitudinales est atteint, il est nécessaire de comparer les résultats expérimentaux à une théorie dynamique. L’outil adapté est l’Hydrodynamique Généralisée (GHD), déjà introduite au Chapitre~3, qui décrit l’évolution spatio-temporelle de la distribution de rapidités.
+Pour vérifier si le régime asymptotique des expansions longitudinales est atteint, il est nécessaire de comparer les résultats expérimentaux à une théorie dynamique. L’outil adapté est de \gls{GHD}, déjà introduite au Chapitre~\ref{chap:GHD}, qui décrit l’évolution spatio-temporelle de la distribution de rapidités.
 
 \subparagraph{Invariance d’échelle hydrodynamique.}
-On considère une sélection initiale homogène de taille $\ell$ centrée en $x_0$. Dans ce cas, les équations GHD \eqref{chap:GHD:eq.conserv.3.1} s’écrivent sans potentiel, avec la condition initiale $\rho(x,\theta,0)=\rho_0(\theta)$ si $|x-x_0|\leq \ell/2$, et $0$ sinon. En introduisant les variables sans dimension $\alpha=(x-x_0)/\ell$ et $\beta=\tau/\ell$, l’équation devient indépendante de $\ell$. 
+On considère une sélection initiale homogène de taille $\ell$ centrée en $x_0$. Dans ce cas, les équations \gls{GHD} \eqref{chap:GHD:eq.conserv.3.1} s’écrivent sans potentiel, avec la condition initiale $\rho(x,\theta,0)=\rho_0(\theta)$ si $|x-x_0|\leq \ell/2$, et $0$ sinon. En introduisant les variables sans dimension $\alpha=(x-x_0)/\ell$ et $\beta=\tau/\ell$, l’équation devient indépendante de $\ell$. 
 \begin{eqnarray*}
 	\left \{ 
 	\begin{array}{rcl}
@@ -1230,7 +1076,7 @@ Il en résulte que les profils de densité $n(x,\tau)$, exprimés en fonction de
 Autrement dit, deux sélections de tailles différentes mais telles que $\tau/\ell$ soit constant doivent conduire aux mêmes profils après expansion. Cette invariance a été vérifiée expérimentalement : les profils se superposent de manière remarquable.
 
 \subparagraph{Lien avec les équations de Gross–Pitaevskii}
-Dans le régime quasi-condensat (qBEC), à basse température, la dynamique peut aussi être décrite par les équations hydrodynamiques issues de Gross–Pitaevskii (en négligeant la pression quantique) 
+Dans le régime \gls{qBEC}, à basse température, la dynamique peut aussi être décrite par les équations hydrodynamiques issues de \gls{GP} (en négligeant la pression quantique) 
 Après changement de variables ($\alpha=(x-x_0)/\ell$, $\beta=\tau/\ell$, $\tilde n=n/n_0$), on retrouve un système d’équations qui ne dépend plus de $\ell$, mais uniquement du rapport adimensionné $\eta=\beta g n_0/m$.
 \begin{eqnarray*}
 	\left \{ 
@@ -1248,18 +1094,18 @@ Après changement de variables ($\alpha=(x-x_0)/\ell$, $\beta=\tau/\ell$, $\tild
 Il en découle que les profils de densité sont universels lorsqu’ils sont exprimés en fonction de $(\alpha,\eta)$. Expérimentalement, ce comportement est bien confirmé : les centres des profils se superposent pour des conditions initiales différentes, et l’accord est même bon sur les bords.
 
 \subparagraph{Régime asymptotique.}  
-L’expansion des tranches est bien décrite par l’hydrodynamique généralisée (GHD). Les comparaisons entre données expérimentales et simulations GHD (avec des distributions thermiques initiales) montrent un bon accord au centre des profils, mais révèlent que le régime asymptotique complet n’est pas atteint dans les temps accessibles expérimentalement. Pour $\tau=50$\,ms, l’écart reste d’environ $12\%$, et une convergence complète nécessiterait des temps irréalistes ($\sim 500$\,ms). L’extraction de la distribution de rapidité à partir des profils reste donc approximative.
+L’expansion des tranches est bien décrite par \gls{GHD}. Les comparaisons entre données expérimentales et simulations \gls{GHD} (avec des distributions thermiques initiales) montrent un bon accord au centre des profils, mais révèlent que le régime asymptotique complet n’est pas atteint dans les temps accessibles expérimentalement. Pour $\tau=50$\,ms, l’écart reste d’environ $12\%$, et une convergence complète nécessiterait des temps irréalistes ($\sim 500$\,ms). L’extraction de la distribution de rapidité à partir des profils reste donc approximative.
 
 \subparagraph{Hypothèse thermique.}  
-Afin de restreindre le nombre de paramètres d’ajustement, on suppose que la distribution de rapidité locale est thermique. Dans ce cas, seule la température $T$ est ajustée, le potentiel chimique étant fixé par l’équation d’état. L’ajustement sur les profils expérimentaux conduit à une température effective $T_{\text{fit}}=230$\,nK, environ 2.5 fois plus grande que celle extraite à l’équilibre. Néanmoins, les distributions de rapidité obtenues restent proches, confirmant que, dans le régime fortement qBEC, la dynamique dépend surtout des interactions et peu de la température. L’influence possible d’une faible population transversale excitée a été évaluée et s’est révélée négligeable.
+Afin de restreindre le nombre de paramètres d’ajustement, on suppose que la distribution de rapidité locale est thermique. Dans ce cas, seule la température $T$ est ajustée, le potentiel chimique étant fixé par l’équation d’état. L’ajustement sur les profils expérimentaux conduit à une température effective $T_{\text{fit}}=230$\,nK, environ 2.5 fois plus grande que celle extraite à l’équilibre. Néanmoins, les distributions de rapidité obtenues restent proches, confirmant que, dans le régime fortement \gls{qBEC}, la dynamique dépend surtout des interactions et peu de la température. L’influence possible d’une faible population transversale excitée a été évaluée et s’est révélée négligeable.
 
 \subsection*{8.6 Mesure locale de distribution de rapidités hors équilibre}
 
 \paragraph{}  
-Le faisceau de sélection (DMD) permet non seulement de sonder la distribution de rapidités locale, mais aussi de créer des situations hors équilibre. Un protocole illustratif consiste à retirer les atomes d’une région centrale de taille $\ell_0 = 70\,\mu$m, puis à laisser le gaz évoluer librement. Après un temps $\tau = 15$\,ms, la distribution de rapidités développe une structure doublement piquée, très différente d’une distribution thermique. Une seconde sélection locale ($\ell=35\,\mu$m) suivie d’une expansion révèle expérimentalement ce profil, en excellent accord avec les simulations GHD.
+Le faisceau de sélection (\gls{DMD}) permet non seulement de sonder la distribution de rapidités locale, mais aussi de créer des situations hors équilibre. Un protocole illustratif consiste à retirer les atomes d’une région centrale de taille $\ell_0 = 70\,\mu$m, puis à laisser le gaz évoluer librement. Après un temps $\tau = 15$\,ms, la distribution de rapidités développe une structure doublement piquée, très différente d’une distribution thermique. Une seconde sélection locale ($\ell=35\,\mu$m) suivie d’une expansion révèle expérimentalement ce profil, en excellent accord avec les simulations GHD.
 
 \paragraph{}  
-Cette approche démontre l’importance d’une mesure locale : alors que la distribution globale $\int dx\,\rho(x,\theta)$ est conservée, la distribution locale $\rho(x,\theta)$ reflète directement la dynamique hors équilibre. Le dispositif basé sur le DMD offre ainsi un outil puissant pour générer et caractériser divers protocoles hors équilibre (cisaillement, jonctions de densité, états stationnaires non thermiques, etc.), ouvrant de nouvelles perspectives pour l’étude des gaz de Bose 1D.
+Cette approche démontre l’importance d’une mesure locale : alors que la distribution globale $\int dx\,\rho(x,\theta)$ est conservée, la distribution locale $\rho(x,\theta)$ reflète directement la dynamique hors équilibre. Le dispositif basé sur le \gls{DMD} offre ainsi un outil puissant pour générer et caractériser divers protocoles hors équilibre (cisaillement, jonctions de densité, états stationnaires non thermiques, etc.), ouvrant de nouvelles perspectives pour l’étude des gaz de Bose 1D.
 
 
 %\section{Discussion sur les limites et les perspectives}
