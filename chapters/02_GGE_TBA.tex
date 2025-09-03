@@ -120,7 +120,7 @@ avec $ \sum_{\{ \theta_a\}}$ une somme sur tous les états de Bethe.\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Contexte et GGE dans les systèmes intégrables.}
 
-Dans un système quantique {\bf intégrable}, il existe une infinité de charges conservées locales $\operator{Q}_i$ commutant entre elles et avec l’Hamiltonien $\operator{H}$ ([Rigol et al. 2007] ) \cite{rigol2007relaxation, rigol2007}. Concrètement, chaque charge se présente sous la forme $\operator{Q}_i = \int dx \,\operator{q}_i(x)$, où $\operator{q}_i(x)$ est une densité d’observable locale à support borné. L’intégrabilité implique une caractérisation complète des états propres par un ensemble de paramètres (rapidités $\{\theta_j\}$ dans le modèle de Lieb-Liniger) \cite{Nardis_2016}. En particulier, contrairement aux systèmes génériques, un système intégrable ne thermalise pas au sens canonique classique, car la présence de toutes ces contraintes empêche l’oubli des conditions initiales. Les points clés sont alors :
+Dans un système quantique {\bf intégrable}, il existe une infinité de charges conservées locales $\operator{Q}_i$ commutant entre elles et avec l’Hamiltonien $\operator{H}$  \cite{rigol2007relaxation, rigol2007}. Concrètement, chaque charge se présente sous la forme $\operator{Q}_i = \int dx \,\operator{q}_i(x)$, où $\operator{q}_i(x)$ est une densité d’observable locale à support borné. L’intégrabilité implique une caractérisation complète des états propres par un ensemble de paramètres (rapidités $\{\theta_j\}$ dans le modèle de Lieb-Liniger) \cite{Nardis_2016}. En particulier, contrairement aux systèmes génériques, un système intégrable ne thermalise pas au sens canonique classique, car la présence de toutes ces contraintes empêche l’oubli des conditions initiales. Les points clés sont alors :
 
 \begin{itemize}[label = $\bullet$]
 	\item {\bf Charges conservées} : infinité de locales $\operator{Q}_i$ satisfaisant et $[\operator{Q}_i , \operator{H} ] = 0$ et $[\operator{Q}_i , \operator{Q}_j ] = 0$.
@@ -130,7 +130,7 @@ Dans un système quantique {\bf intégrable}, il existe une infinité de charges
 
 \medskip
 
-Pour décrire cet état, on introduit le \gls{GGE} . Rigol et al,. ont montré qu’une « extension naturelle de l’ensemble de Gibbs aux systèmes intégrables » prédit correctement les valeurs moyennes des observables après relaxation \cite{rigol2007relaxation}.  Formellement, pour une région finie du système $\mathcal{S} \subset \mathbb{R}$, on définit la matrice densité locale :
+Pour décrire cet état, on introduit le \gls{GGE} \cite{rigol2007relaxation}, ont montré qu’une « extension naturelle de l’ensemble de Gibbs aux systèmes intégrables » prédit correctement les valeurs moyennes des observables après relaxation .  Formellement, pour une région finie du système $\mathcal{S} \subset \mathbb{R}$, on définit la matrice densité locale :
 \begin{eqnarray}
 	\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}} = \frac{1}{Z^{(\mathcal{S})}}\exp \left ( - \sum_i \beta_i \operator{Q}_i^{(\mathcal{S})} \right), \quad \operator{Q}_i^{(\mathcal{S})} = \int_\mathcal{S} dx \, \operator{q}_i(x), \label{chap.TBA.op.rho.S}	
 \end{eqnarray}
@@ -143,11 +143,11 @@ où $\beta_i \in \mathbb{R}$ sont les multiplicateurs de Lagrange (ou « tempér
  \medskip
 
  \subparagraph{Interprétation des multiplicateurs de Lagrange.}
-Les multiplicateurs de Lagranges $\beta_i$ apparaissent naturellement lors de la maximisation de l'entropie sous contraintes, par exemple dans le formalisme de le \gls{GGE}, oû il imposent la conservation des valeurs moyennes des charges $\langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} = \bm{\mathrm{Tr}}[\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}} \operator{Q}_i^{(\mathcal{S})}]   $.
+Les multiplicateurs de Lagranges $\beta_i$ apparaissent naturellement lors de la maximisation de l'entropie sous contraintes, par exemple dans le formalisme du \gls{GGE}, oû il imposent la conservation des valeurs moyennes des charges $\langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} = \bm{\mathrm{Tr}}[\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}} \operator{Q}_i^{(\mathcal{S})}]   $.
 
 \medskip
 
-En résumé, la GGE généralise les ensembles canoniques standard : au lieu de retenir uniquement l’énergie, on impose la conservation de l’ensemble complet $\{\operator{Q}_i \}$. Cette construction rend compte du fait que, dans un système intégrable, les observables locals convergent vers les valeurs moyennes calculées par $\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}$ , et non vers celles d’un Gibbs thermique ordinaire \cite{Nardis_2016,rigol2007relaxation}. On comprend ainsi pourquoi la {\em thermalisation habituelle} (canonique ou microcanonique) échoue : seul l’ensemble de Gibbs généralisé peut intégrer toutes les contraintes locales.
+En résumé, le \gls{GGE} généralise les ensembles canoniques standard : au lieu de retenir uniquement l’énergie, on impose la conservation de l’ensemble complet $\{\operator{Q}_i \}$. Cette construction rend compte du fait que, dans un système intégrable, les observables locals convergent vers les valeurs moyennes calculées par $\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}$ , et non vers celles d’un Gibbs thermique ordinaire \cite{Nardis_2016,rigol2007relaxation}. On comprend ainsi pourquoi la {\em thermalisation habituelle} (canonique ou microcanonique) échoue : seul l’ensemble de Gibbs généralisé peut intégrer toutes les contraintes locales.
 
 \medskip
 
@@ -472,7 +472,7 @@ Pour établir la fonction $\Omega[\rho]$, reppelons-nons de la transformation de
 	\nu = \frac{\rho}{\rho_s} \, , \qquad 2\pi \rho_s = 1^{\mathrm{dr}}_{[\nu]} 
 \label{chap.2:eq:TBA-rhos}
 \end{equation}
-où $f^{\mathrm{dr}}_{[\nu]}$ est définie en \eqref{eq:dessing}.
+où $f^{\mathrm{dr}}_{[\nu]}$ est définie en \eqref{eq:dressing}.
 
 \medskip
 
@@ -568,7 +568,7 @@ Les particules occupent ces niveaux de manière analogue à des fermions libres 
 %				
 %			
 %		\end{tikzpicture}
-		\includegraphics[width=0.7\textwidth , page = 1 ]{figures/02_GGE_TBA/Figures.pdf}
+		\includegraphics[width=1.0\textwidth , page = 1 ]{figures/02_GGE_TBA/Figures.pdf}
 		\captionsetup{skip=10pt} % Ajoute de l’espace après la légende
     	\caption{
     	}
@@ -683,7 +683,7 @@ facteur exponentiel}
 \(
 e^{\,L(\mathcal{S}_{YY}[\rho]-\mathcal{W}[\rho])}.
 \)
-Finalement, la moyenne d'une observable dans le GGE \eqref{chap.2.moyenne.3} s’écrit comme une intégrale fonctionnelle/de chemin :
+Finalement, la moyenne d'une observable dans le \gls{GGE} \eqref{chap.2.moyenne.3} s’écrit comme une intégrale fonctionnelle/de chemin :
 \begin{eqnarray}
 	\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}} \rangle_{\operator{\varrho}[w]} & = & \frac{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])} \, \langle\operator{\mathcal{O}}\rangle_{[\rho]}}{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])}}. \label{chap:TBA:eq:ensemble_average}
 \end{eqnarray}
@@ -898,7 +898,7 @@ l’équation intégrale canonique de la thermodynamique de Bethe :
 %\tag{TBA–$\varepsilon$}\label{eq:TBA:eq:e}
 %\]
 
-Les relations \eqref{chap:TBA:eq:nu}–\eqref{chap:TBA:eq:e} déterminent de façon univoque la distribution de rapidité d’équilibre \(\rho_{\!eq}\) à partir du poids spectral \(w\), caractéristique du GGE.
+Les relations \eqref{chap:TBA:eq:nu}–\eqref{chap:TBA:eq:e} déterminent de façon univoque la distribution de rapidité d’équilibre \(\rho_{\!eq}\) à partir du poids spectral \(w\), caractéristique du \gls{GGE}.
 
 \medskip
 Ainsi, la méthode du point selle relie \emph{explicitement} le {\em poids spectral}, $w$  (caractéristique du GGE) au \emph{macro-état le plus probable}, $\rho_{eq}$ , et permet d’évaluer les observables par la formule d’ensemble \eqref{chap:TBA:eq:ensemble_average:approx}.
@@ -1028,7 +1028,7 @@ Pour synthétiser les différents comportements, les régimes principaux peuvent
 \begin{figure}[h!]
     \centering
     %\includegraphics[width=0.7\textwidth]{fig_diagramme.pdf}
-    \caption{Diagramme des régimes principaux du gaz de Lieb-Liniger : gaz de Bose idéal, Tonks-Girardeau et qBEC, en fonction des paramètres adimensionnés $\gamma$ et $t$. Les courbes noires, bleues et orange délimitent les cross-overs entre régimes. La zone grise correspond aux paramètres expérimentaux explorés pendant la thèse. Figure adaptée de \cite{ref_experiment}.}
+    \caption{Diagramme des régimes principaux du gaz de \gls{LL} : gaz de Bose idéal, Tonks-Girardeau et \gls{qBEC}, en fonction des paramètres adimensionnés $\gamma$ et $t$. Les courbes noires, bleues et orange délimitent les cross-overs entre régimes. La zone grise correspond aux paramètres expérimentaux explorés pendant la thèse. Figure adaptée de \cite{ref_experiment}.}
     \label{fig:diagramme}
 \end{figure}
 
@@ -1046,7 +1046,7 @@ Dans la limite thermodynamique, $w(\theta)$ sert de donnée d’entrée pour les
 
 \medskip 
 
-Enfin, le formalisme du \gls{GGE} offre un cadre puissant non seulement pour les moyennes des observables, mais également pour l’étude des corrélations et des fluctuations, comme nous le verrons au Chapitre~\ref{chap:fluctuations}.
+Enfin, le formalisme du \gls{GGE} offre un cadre puissant non seulement pour les moyennes des observables, mais également pour l’étude des corrélations et des fluctuations, comme nous le verrons au Chapitre~\ref{chap:Fluctu}.
 
 
 
