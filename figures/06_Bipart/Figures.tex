@@ -427,17 +427,17 @@
 			] 
   			(0,0) rectangle (8,3.5);
   			
-    	\draw[line width=0.8ex  ,color=\colorSix ,  fill = none] 	
+    	\draw[line width=1.5ex  ,color=\colorSix ,  fill = none] 	
 			plot[smooth] file {data/GHD_article_distribution_24-04-2024.table}
-			(-11.5,9) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{20pt}{19pt}\selectfont \bf $\tau \ast n_{\mbox{\tiny GHD}}(\tau \ast \cdot - x_0)$ } (-10,9)
+			(-11.5,9) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{20pt}{19pt}\selectfont \bf $\tau \, n_{\mathrm{\small GHD}}(\tau \ast \cdot - x_0)$ } (-10,9)
 		;
-		\draw[line width=0.8ex  ,color=\colorFive,  fill = none] 	
+		\draw[line width=1.5ex  ,color=\colorFive,  fill = none] 	
 			plot[smooth] file {data/Pi_article_distribution_24-04-2024.table}
 			(-11.5,8) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{20pt}{19pt}\selectfont \bf $\Pi $  } (-10,8)
 		;
-		\draw[line width=0.8ex  ,color=\colorFour, dashed , dash pattern=on 10pt off 6pt,  fill = none] 	
+		\draw[line width=1.5ex  ,color=\colorFour, dashed , dash pattern=on 10pt off 6pt,  fill = none] 	
 			plot[] file {data/rho_article_distribution_24-04-2024.table}
-			(-11.5,7) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{20pt}{19pt}\selectfont \bf $\ell \ast \rho  $  } (-10,7)
+			(-11.5,7) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{20pt}{19pt}\selectfont \bf $\ell \, \rho  $  } (-10,7)
 		;
     \end{scope}
     
@@ -498,15 +498,15 @@
 			] 
   			(0,0) rectangle (8.6,3.5);
   			
-    	\draw[line width=0.8ex  ,color=\colorFour ,  fill = none] 	
+    	\draw[line width=1.0ex  ,color=\colorFour ,  fill = none] 	
 			plot[smooth] file {data/Donnee_article_simul_expansion_1_24-04-2024-T-x0.table}
 			(-10.2,10) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{16pt}{19pt}\selectfont \bf Données } (-8.7,10)
 		;
-		\draw[line width=0.8ex  ,color=\colorSix,  fill = none] 	
+		\draw[line width=1.5ex  ,color=\colorSix,  fill = none] 	
 			plot[smooth] file {data/GHD_1_article_simul_expansion_1_24-04-2024-T-x0.table}
 			(-10.2,9) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{16pt}{19pt}\selectfont \bf T = 560 nK  } (-8.7,9)
 		;
-		\draw[line width=0.8ex  ,color=\colorThree,  fill = none] 	
+		\draw[line width=1.5ex  ,color=\colorThree,  fill = none] 	
 			plot[] file {data/GHD_2_article_simul_expansion_1_24-04-2024-T-x0.table}
 			(-10.2,8) edge[] node[shift = {(0,0)} , pos=1, right ]{\fontsize{16pt}{19pt}\selectfont \bf Ajust : T = 1550 nK  } (-8.7,8)
 		;

@@ -71,7 +71,7 @@ L’état propre correspondant est noté $\ket{\{ \theta_a \}}\;=\;\ket{\{\theta
     leftmargin=2pt,
     rightmargin=2pt
 	]
-\paragraph{Observables diagonales dans la base des états propres.}
+\paragraph{Rappel : Observables diagonales dans la base des états propres.}
 Dans le chapitre précédent (\ref{chap:LL-BA}), on a vu que l'état $\ket{\{ \theta_a \}}$ associé à cette configuration est une état propre des observables nombre d'atome, quantité de mouvement  et  énergie totale \eqref{chap1:eq.Q.P.K.theta.1}. Ces observables sont diagonales dans la base des états propres :
 \begin{eqnarray}
 	\operator{Q}  =  \sum_{ \{\theta_a\} } \left ( \sum_{a = 1}^{N}  1 \right )  \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \}\vert, \, 
@@ -225,7 +225,7 @@ de le charge locale $\operator{Q}_i^{(\mathcal{S})}$, en injectant \eqref{chap.T
 Dans le cas particulier de l’équilibre thermique standard (c’est-à-dire l’équilibre statistique de Gibbs), le système est décrit par une seule contrainte d’énergie (ou par les contraintes d’énergie et de nombre de particules, dans le cas grand canonique). Les multiplicateurs de Lagrange associés aux charges conservées s’identifient alors à des grandeurs thermodynamiques classiques.
 
 \begin{itemize}[label=$\bullet$]
-	\item Si la seule charge conservée est le nombre de particules $\operator{Q}_0^{(\mathcal{S})} = \operator{Q}$, le multiplicateur associé est $\beta_0 = -\beta \mu$, où $\mu$ est le potentiel chimique et $\beta = T^{-1}$ l’inverse de la température (avec $k_B = 1$).
+	\item Si la seule charge conservée est le nombre de particules $\operator{Q}_0^{(\mathcal{S})} = \operator{Q}$, le multiplicateur associé est $\beta_0 = -\beta \mu$, où $\mu$ est le potentiel chimique et $\beta = (k_BT)^{-1}$ l’inverse de la température (avec $k_B = 1$).
 	
 	\item Si la charge conservée est $\operator{Q}_2^{(\mathcal{S})}-\mu\operator{Q}_0^{(\mathcal{S})}  = \operator{H} - \mu \operator{Q} $ (ensemble grand canonique), alors le multiplicateur est simplement $ \beta$.
 \end{itemize}
@@ -553,7 +553,7 @@ et le nombre total d'états disponibles (\ie, le nombre d’états possibles si 
 \end{eqnarray*}
 %La densité de niveaux $\rho_s(\theta)$ tient compte du fait que les moments sont quantifiés de manière discrète, en raison des équations de Bethe (voir équation (??)).
 
-Les particules occupent ces niveaux de manière analogue à des fermions libres (principe d’exclusion de Pauli), le nombre de manières différentes de choisir $N_a$ niveaux parmi $M_a$ est donné par :
+Les particules occupent ces niveaux de manière analogue à des fermions libres (principe d’exclusion de Pauli), le nombre de manières différentes de choisir $N_a$ niveaux parmi $M_a$  (Fig~\ref{chap2:fig:discr}	) est donné par :
 	
 	
 	\begin{figure}[H]
@@ -568,11 +568,11 @@ Les particules occupent ces niveaux de manière analogue à des fermions libres 
 %				
 %			
 %		\end{tikzpicture}
-		\includegraphics[width=1.0\textwidth , page = 1 ]{figures/02_GGE_TBA/Figures.pdf}
+		\includegraphics[width=0.9\textwidth , page = 1 ]{figures/02_GGE_TBA/Figures.pdf}
 		\captionsetup{skip=10pt} % Ajoute de l’espace après la légende
-    	\caption{
-    	}
-    	\label{chap2:fig:???}		
+    	\caption{Schéma illustrant la discrétisation de l’espace des rapidités en cellules de largeur $\delta\theta$.}
+
+    	\label{chap2:fig:discr}		
 	\end{figure}
 	
 	
@@ -771,7 +771,7 @@ L’exposant $e^{L(\mathcal{S}_{YY}-\mathcal{W})[\rho]}$ fixe la \textbf{probabi
 %\input{TBA/Relax/Conf/main}
 \subsection{Équations intégrales de la TBA}
 
-\paragraph{Moyenne des observables dans l’ensemble généralisé de Gibbs.}
+%\paragraph{Moyenne des observables dans l’ensemble généralisé de Gibbs.}
 
 \paragraph{Approximation au point selle («\,méthode de la selle statique\,»)}
 
@@ -790,6 +790,19 @@ Cette approximation correspond à une méthode de \textit{selle statique}, où l
 %\end{eqnarray}
 %Cette quantité est linéaire en $f(x)$ et admet donc une représentation intégrale de la forme :
 %
+
+
+\begin{mdframed}[
+	linewidth=0.5pt, 
+	backgroundcolor=gray!5, 
+	roundcorner=50pt,	
+	innerleftmargin=5pt,
+    innerrightmargin=5pt,
+    innertopmargin=5pt,
+    innerbottommargin=2pt,
+    leftmargin=2pt,
+    rightmargin=2pt
+	]
 \paragraph{Dérivée fonctionnelle comme dérivée directionnelle.}
 
 Dans le cadre des systèmes continus, les observables physiques dépendent souvent d'un champ $\phi(x)$, et sont représentées par des \emph{fonctionnelles}, notées $F[\phi]$. Afin d'étudier la sensibilité de ces fonctionnelles à une variation infinitésimale du champ, on introduit la notion de \textbf{dérivée fonctionnelle}, définie par analogie avec la dérivée directionnelle en espace vectoriel de dimension finie.
@@ -833,6 +846,7 @@ On peut interpréter la dérivée fonctionnelle $\delta F[\phi]/\delta \phi(x)$ 
 
 Cette construction générale sera utilisée dans la suite pour formuler des conditions d’extremum (par exemple dans des principes variationnels), ou pour dériver les équations de mouvement associées à une action.
 
+\end{mdframed}
 
 
 \paragraph{Développement fonctionnel au premier ordre.}
@@ -908,7 +922,7 @@ Ainsi, la méthode du point selle relie \emph{explicitement} le {\em poids spect
 
 Prenons un poids spectrale quelconque, par exemple : 
 \begin{equation}
-  w(\theta)= \theta^2 .\label{eq:TBA:w:quadra}
+  w(\theta)= \frac{1}{2}\theta^2 .\label{eq:TBA:w:quadra}
 \end{equation} 
 En injectant $w$ dans l’équation intégrale pour la pseudo-énergie \eqref{chap:TBA:eq:e}, on obtient l’équation non linéaire.
 Cette équation définit un opérateur contractant sur l’espace des fonctions
@@ -955,7 +969,34 @@ Après discrétisation de la variable $\theta$, cette équation devient un syst�
 La distribution de rapidité est alors obtenue par $\rho_{\!\mathrm{eq}} = \nu_{\!\mathrm{eq}} \ast \rho_{\! s,\mathrm{eq}}$.\\
 
 \medskip
-Ainsi en fixant le poids spectral $w(\theta)$, l’algorithme fournit la pseudo-énergie \( \epsilon \), le facteur d’occupation \( \nu_{\mathrm{eq}} \) et la distribution de rapidité \( \rho_{\!\mathrm{eq}} \).
+Ainsi en fixant le poids spectral $w(\theta)$, l’algorithme fournit la pseudo-énergie \( \epsilon \), le facteur d’occupation \( \nu_{\mathrm{eq}} \) et la distribution de rapidité \( \rho_{\!\mathrm{eq}} \) (Fig~\ref{fig:spectral_weight}).
+
+
+\begin{figure}[ht]
+    \centering
+    
+    % (a) Facteur d’occupation
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth , page = 2 ]{figures/02_GGE_TBA/Figures.pdf}
+        \caption{Facteur d’occupation $\nu(\theta)$.}
+        \label{fig:nu_theta}
+    \end{subfigure}
+    \hfill
+    % (b) Distribution de rapidité
+    \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[width=1\textwidth , page = 3 ]{figures/02_GGE_TBA/Figures.pdf}
+        \caption{Distribution de rapidité $\rho(\theta)$ et densité d’états $\rho_s(\theta)$.}
+        \label{fig:rho_rhos}
+    \end{subfigure}
+    
+    \caption{Représentation spectrale pour le poids $w(\theta) = \theta^2/2$, avec $\hbar = m = q = 1$. 
+    (a) Facteur d’occupation $\nu(\theta)$. 
+    (b) Distribution de rapidité $\rho(\theta)$ et densité d’états $\rho_s(\theta)$.}
+    \label{fig:spectral_weight}
+\end{figure}
+
 
 \medskip
 \subparagraph{À l'équilibre thermique.} 
@@ -1017,10 +1058,54 @@ Les expériences sur puce atomique du LCF ont permis d’étudier ces régimes. 
 
 \paragraph{Diagramme des régimes du gaz de Lieb-Liniger.}
 
+\subparagraph{Paramètres fixés.}
+Dans le cas de l’équilibre thermique usuel (ensemble de Gibbs), seules deux charges sont conservées : le {\bf nombre total de particules} \( \operator{\mathcal{Q}}[f_0] \) et l’{\bf énergie totale} \( \operator{\mathcal{Q}}[f_2] \). Cela correspond au choix suivant :
+\begin{align*}
+	f_0(\theta) &= 1, \quad &&\text{(densité de particules)} \\
+	f_2(\theta) &= \frac{1}{2}m \theta^2, \quad &&\text{(densité d’énergie $\varepsilon$)}
+\end{align*}
+les coefficients de Lagrange associés sont :
+\begin{align*}
+	\beta_0 &= -\beta \mu, \quad &&\text{(potentiel chimique)} \\
+	\beta_2 &= \beta, \quad &&\text{(inverse de la température)},
+\end{align*}
+avec $\beta = 1 / ( k_B T )$ et  $k_B$ constante de Boltzmann.
+
+\medskip
+
+On reprend ici le formalisme de l’équation \eqref{chap4:eq.w_fi}, dans lequel le poids spectral s’écrit comme une combinaison linéaire :
+\begin{eqnarray}\label{chap4:eq.w.1}
+	w(\theta) & = & \beta_0 f_0(\theta) + \beta_2 f_2(\theta),
+\end{eqnarray}
+où \( f_i(\theta) \) sont les densités locales associées aux charges conservées.
+
+
+
+%\paragraph{Calcul de la matrice hermitienne.}
+
+Les densités locales $f_i$ sont fixées. Pour spécifier le {\em poids spectral} $w$, on choisit les coefficients de Lagrange $\beta_0$ et $\beta_2$ en imposant une température \(T\) et un potentiel chimique \(\mu\).
+
+\medskip
+
 À l’équilibre thermique, les propriétés du système ne dépendent pas uniquement du paramètre de Lieb $\gamma$, mais également de la température $T$, que l’on peut rendre adimensionnelle via le paramètre :
 \begin{equation}\label{chap2:eq:t.1}
 t = \frac{k_B T}{mg^2/\hbar^2}.
 \end{equation}
+
+\subparagraph{Paramètres fixes.} 
+Nous travaillons avec $\hbar = m = k_B = 1$, et nous choisissons $L = 100$ et $g = 1$.
+
+\subparagraph{Paramètres variables.}
+La température $T$ est alors donnée par la température réduite $t$, et la densité linéaire $n$ est inversement proportionnelle au paramètre adimensionné $\gamma$.
+
+La densité linéaire \( n \) ne paramétrise pas directement le poids spectral $w$ \eqref{chap4:eq.w.1}, mais est liée au potentiel chimique \(\mu\) via :
+\begin{equation}\label{chap2:eq:n.1}
+	L n = \braket{\operator{\mathcal{Q}}[f_0]}_w \, \left ( = \int d\theta  \, \rho_{\mathrm{eq}}(\theta)  \right)  .
+\end{equation}
+C’est ainsi que les simulations numériques seront effectuées en utilisant $\gamma$ et $t$.
+
+
+
 
 Pour synthétiser les différents comportements, les régimes principaux peuvent être représentés dans le plan $(\gamma, t)$. Le diagramme de la Fig.~\ref{fig:diagramme} distingue trois zones : gaz de Bose idéal, gaz de Tonks-Girardeau et qBEC. Les courbes qui délimitent ces zones correspondent à des conditions analytiques sur $\gamma$ et $t$, par exemple $\gamma^{3/2} t = 1$, $\gamma^2 t = 1$ et $\gamma t = 1$. Il ne s’agit pas de transitions de phase, mais de cross-over entre régimes asymptotiques. La zone grise indique la gamme de paramètres expérimentaux explorés pendant cette thèse.
 

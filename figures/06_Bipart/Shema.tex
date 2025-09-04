@@ -56,25 +56,25 @@
 \newcommand{\Axex}[1][$x$]{ % "x" est la valeur par défaut de #1
     \draw
         (-10, 0) edge[thick, line width=0.8ex, ->, >=Triangle, color=\colorThree] 
-        node[shift = {(0,1)} , pos=1.01, below]{ \huge #1 } (10, 0)
+        node[shift = {(-2,2)} , pos=1.01, below]{ \fontsize{15pt}{10pt}\selectfont \Huge #1 } (10, 0)
         ;
 }
 
 \newcommand{\Axetheta}[1][$\theta$]{
 	\draw
-		(-10, 0 ) edge [thick,line width=0.8ex,->,>=Triangle , color = \colorThree ]node [pos=1.01,right]{\huge #1 } ( 10  , 0 )
+		(-10, 0 ) edge [thick,line width=0.8ex,->,>=Triangle , color = \colorThree ]node [pos=1.01,right]{\fontsize{15pt}{10pt}\selectfont \Huge #1 } ( 10  , 0 )
 	;
 }
 
 \newcommand{\Axedensity}[1][$n$]{
 	\draw
-		(0, -1 ) edge [thick,line width=0.8ex,->,>=Triangle , color = \colorThree ]node [pos=1.01,left  ]{\huge #1 } ( 0  , 6 )
+		(0, -1 ) edge [thick,line width=0.8ex,->,>=Triangle , color = \colorThree ]node [pos=1.01,left  ]{\fontsize{15pt}{10pt}\selectfont \Huge #1 } ( 0  , 6 )
 	;
 }
 
 \newcommand{\Axedistribution}[1][$\nu$]{
 	\draw
-		(0, -1 ) edge [thick,line width=0.8ex,->,>=Triangle , color = \colorThree ]node [pos=1.01,left  ]{\huge #1 } ( 0  , 6 )
+		(0, -1 ) edge [thick,line width=0.8ex,->,>=Triangle , color = \colorThree ]node [pos=1.01,left  ]{\fontsize{15pt}{10pt}\selectfont \Huge #1 } ( 0  , 6 )
 	;
 }
 
@@ -288,7 +288,7 @@ table [meta=z] {./data/donnees1.dat};
 				
 	\draw[opacity = 0.5 , dashed , dash pattern=on 6pt off 3pt, line width=1.8ex , color = \colorTwo , fill = none] 
 		plot[smooth] file {data/bord_0_0.table}
-		(-7,7) edge []node [pos=1.1, right ]{\huge $bord$ } ( -6.5  , 7 )	 
+		(-7,7) edge []node [pos=1.1, right ]{\huge $\partial \Gamma_{t=0}^b $ } ( -6.5  , 7 )	 
 	;
 				
 	\node at (0,0) [circle, ] {\begin{tikzpicture}[transform canvas={scale=1}] \Axesphase[$x ~ (\mu m)$]{$\theta ~ (\mu m / {ms}) $} \end{tikzpicture}};
@@ -311,7 +311,7 @@ table [meta=z] {./data/donnees1.dat};
 	\end{scope}
 				
 	\draw 
-		(-8,4) edge [thick,line width=1.8ex,opacity = 0.6 , dashed , color = \colorThree ]node [pos=1.1, right ]{\huge $n( t = 0^{-})$ } ( -7.5  , 4 )	
+		(-8,4) edge [thick,line width=1.8ex,opacity = 0.9 , dashed , color = \colorThree ]node [pos=1.1, right ]{\huge $n( t = 0^{-})$ } ( -7.5  , 4 )	
     	(-8,3) edge [thick,line width=1.8ex , color = \colorFour ]node [pos=1.1, right ]{\huge $n( t = 0^{+} )$ } ( -7.5  , 3 )	
     				
     ;
@@ -334,13 +334,13 @@ table [meta=z] {./data/donnees1.dat};
     	\draw[opacity = 0.6 , dashed , line width=1.8ex , color = \colorThree , fill = none] plot[smooth] file {data/insitut.table};
     				
     	\draw[line width=1.8ex , color = \colorFour]     	
-    		(-0.3, 5 ) edge [thick,line width=0.8ex, color = \colorThree ]node [pos=-0.01, left  ]{\huge $1$ } ( 0.3  , 5 )	
+    		(-0.3, 5 ) edge [ thick,line width=0.8ex, color = \colorThree ]node [shift ={(3.5, 0)}, pos=-0.01, left  ]{\huge $1$ } ( 0.3  , 5 )	
     		(-0.3, 0 ) edge [thick,line width=0.8ex,, color = \colorThree ]node [pos=-0.01, below left ]{\huge $0$ } ( 0.3  , 0 )	
     					;				
 	\end{scope}	
 				
 	\draw 
-		(4,5) edge [thick,line width=1.8ex,opacity = 0.6 , dashed , color = \colorThree ]node [pos=1.1, right ]{\huge $\nu(x < 0 ; t = 0^{-})$ } ( 4.5  , 5 )	
+		(4,5) edge [thick,line width=1.8ex,opacity = 0.9 , dashed , color = \colorThree ]node [pos=1.1, right ]{\huge $\nu(x < 0 ; t = 0^{-})$ } ( 4.5  , 5 )	
     	(4,4) edge [thick,line width=1.8ex , color = \colorFour ]node [pos=1.1, right ]{\huge $\nu(x < 0 ; t = 0^{+} )$ } ( 4.5  , 4 )	
     				
     ;	
@@ -356,8 +356,8 @@ table [meta=z] {./data/donnees1.dat};
 		%\filldraw[  smooth, line width=1.8ex, color=\colorFour, fill=\colorThree] (-10,0)  .. controls (0,0) and (-10,5) .. (0,5) .. controls (10,5) and (0,0) .. (10,0);	
     	\draw[line width=1.8ex , color = \colorFour , fill = none] plot[smooth] file {data/insitut_minus.table};
     	\draw[line width=1.8ex , color = \colorFour] 
-    		(-0.3, -5 ) edge [thick,line width=0.8ex, color = \colorThree ]node [pos=-0.01, left  ]{\huge $1$ } ( 0.3  , -5 )	
-    		(-0.3, 0 ) edge [thick,line width=0.8ex,, color = \colorThree ]node [pos=-0.01, above left ]{\huge $0$ } ( 0.3  , 0 )	
+    		(-0.3, -5 ) edge [ thick,line width=0.8ex, color = \colorThree ]node [shift ={(3.5, 0)}, pos=-0.01, left  ]{\huge $1$ } ( 0.3  , -5 )	
+    		(-0.3, 0 ) edge [thick,line width=0.8ex,, color = \colorThree ]node [shift ={(0, -0.5)} , pos=-0.01, above left ]{\huge $0$ } ( 0.3  , 0 )	
     	;			
 	\end{scope}	
 				
@@ -390,9 +390,9 @@ table [meta=z] {./data/donnees1.dat};
 			\Axesphase[$x/t ~ (\mu m / ms) $]{$\theta ~ (\mu m / {ms}) $}
 			\draw
     			(0.45, 0.2) edge[line width=1.8ex, color=\colorTwo] 
-        						node[pos=1.0, below]{ \color{\colorTwo}\huge $x_b(s)/t$} (0.45, -0.2)
+        						node[pos=1.0, below]{ \color{\colorTwo}\huge $x_b/t$} (0.45, -0.2)
         		(0.2 , 1.45 ) edge[line width=1.8ex, color=\colorTwo] 
-        						node[pos=1.1, left ]{ \color{\colorTwo}\huge $\theta_b(s)$} (-0.2 , 1.45 )
+        						node[pos=1.1, left ]{ \color{\colorTwo}\huge $\theta_b$} (-0.2 , 1.45 )
         		(0.45 , -0.2 ) edge[line width=0.8ex, color=\colorTwo , dashed ] (0.45 , 2.0 )
         		(-0.2 , 1.45 )  edge[line width=0.8ex, color=\colorTwo , dashed ] (1.0  , 1.45 )
         	;
@@ -400,9 +400,19 @@ table [meta=z] {./data/donnees1.dat};
 		\end{tikzpicture}};
 	\draw[opacity = 0.5 , dashed , dash pattern=on 6pt off 3pt, line width=1.8ex , color = \colorTwo , fill = none] 
 		plot[smooth] file {data/bord_0_sur_18.table}
-		(-7,7) edge []node [pos=1.1, right ]{\huge $bord : v^{\mbox{\tiny eff}}$ } ( -6.5  , 7 )	 
+		(-7,7) edge []node [pos=1.1, right ]{\huge $\partial \Gamma_t^b \, \& \, v^{\mathrm{eff}}$ } ( -6.5  , 7 )	 
 	;
-	%\drawgrid{-10}{10}{-10}{10}
+	
+	\node[
+    	rotate=90,
+    	shift={(0,-14)},
+    	fill=\colorTwo,        % couleur du fond
+    	draw=none,             % pas de contour
+    	inner sep=2mm,          % espace autour du texte
+    	rectangle
+	] at (0,0) {\fontsize{20pt}{10pt}\selectfont $\nu^\ast(x/t,\theta)$};
+
+	%\drawgrid{-10}{15}{-10}{10}
 }
 %% density
 \newcommand{\CoupureUnVeffDensity}[0]{
@@ -420,14 +430,14 @@ table [meta=z] {./data/donnees1.dat};
         			
         \draw
     		(0.45, 0.2) edge[line width=1.8ex, color=\colorOne] 
-        						node[pos=1.0, below]{ \color{\colorOne}\huge $x_b(s)/t$} (0.45, -0.2)
+        						node[pos=1.0, below]{ \color{\colorOne}\huge $x_b/t$} (0.45, -0.2)
         	(0.45 , -0.2 ) edge[line width=0.8ex, color=\colorOne , dashed ] (0.45 , 4.0 )
         ;	
 
 
 	\end{scope}
 		
-	\Axesdensity[$x/t ~ (\mu m / ms)$]{$n^\ast ~ ({\mu m}^{-1})$}
+	\Axesdensity[$x/t ~ (\mu m / ms)$]{$n^\ast ~({\mu m}^{-1})$}
 				        				
 	%\drawgrid{-10}{10}{-10}{10}
 }
@@ -448,18 +458,20 @@ table [meta=z] {./data/donnees1.dat};
     	\draw[opacity = 0.6 , line width=1.8ex , dashed ,  color = \colorThree , fill = none] plot[smooth] file {data/insitut.table};
     				
     	\draw[line width=1.8ex , color = \colorFour] 
-    		(-0.3, 5 ) edge [thick,line width=0.8ex, color = \colorThree ]node [pos=-0.01, left  ]{\huge $1$ } ( 0.3  , 5 )	
-    		(-0.3, 0 ) edge [thick,line width=0.8ex,, color = \colorThree ]node [pos=-0.01, below left ]{\huge $0$ } ( 0.3  , 0 )		
+    		(-0.3, 5 ) edge [thick,line width=0.8ex, color = \colorThree ]node [ shift ={(3.5, 0)} , pos=-0.01, left  ]{\huge $1$ } ( 0.3  , 5 )	
+    		(-0.3, 0 ) edge [shift ={(0, -0.5)} , thick,line width=0.8ex,, color = \colorThree ]node [pos=-0.01, below left ]{\huge $0$ } ( 0.3  , 0 )		
     	;			
 	\end{scope}
 	\draw
     	(1.45, 0.2) edge[line width=1.8ex, color=\colorThree] 
-        				node[pos=1.1, below]{ \color{\colorThree}\huge $\theta_b(s)$} (1.45, -0.2)
+        				node[pos=1.1, below]{ \color{\colorThree}\huge $\theta_b$} (1.45, -0.2)
         				
-        (4,5) edge [thick,line width=1.8ex,opacity = 0.3 , dashed , color = \colorThree ]node [pos=1.1, right ]{\huge $\nu(x_b(s); t = 0^{-})$ } ( 4.5  , 5 )	
-    	(4,4) edge [thick,line width=1.8ex , color = \colorFour ]node [pos=1.1, right ]{\huge $\nu(x_b(s); t = 18 ~ms )$ } ( 4.5  , 4 )	
+        (4,5) edge [thick,line width=1.8ex,opacity = 0.9 , dashed , color = \colorThree ]node [pos=1.1, right ]{\huge $\nu(x_b; t = 0^{-})$ } ( 4.5  , 5 )	
+    	(4,4) edge [thick,line width=1.8ex , color = \colorFour ]node [pos=1.1, right ]{\huge $\nu(x_b; t = 18 ~ms )$ } ( 4.5  , 4 )	
     ;		
-	\Axesdistribution[$\theta ~ (\mu m/ms)$]{$\nu ( x_b(s) ) $}
+	\Axesdistribution[$\theta ~ (\mu m/ms)$]{$\nu ( x_b ) $}
+	
+	
 				
 	%\drawgrid{0}{10}{-10}{10}
 }
@@ -487,25 +499,35 @@ table [meta=z] {./data/donnees1.dat};
 			\Axesphase[$x~(\mu m)$]{$\theta~(\mu m/ms)$}
 			\draw
     			(0.45, 0.2) edge[line width=1.8ex, color=\colorTwo] 
-        						node[pos=1.1, below]{ \color{\colorTwo}\huge $x_b(s)$} (0.45, -0.2)
+        						node[pos=1.1, below]{ \color{\colorTwo}\huge $x_b$} (0.45, -0.2)
         		(0.2 , 1.4 ) edge[line width=1.8ex, color=\colorTwo] 
-        						node[pos=1.1, left ]{ \color{\colorTwo}\huge $\theta_g(s)$} (-0.2 , 1.4 )
+        						node[pos=1.1, left ]{ \color{\colorTwo}\huge $\theta_g$} (-0.2 , 1.4 )
         		(0.45 , -0.2 ) edge[line width=0.8ex, color=\colorTwo , dashed ] (0.45 , 2 )
         		(-0.2 , 1.4 )  edge[line width=0.8ex, color=\colorTwo , dashed ] (1.0  , 1.4 )
         					; 
 		\end{tikzpicture}};
 	\draw[opacity = 0.3 , dashed , dash pattern=on 6pt off 3pt, line width=0.5ex , color = \colorTwo , fill = none] 
 		plot[smooth] file {data/bord_0_sur_18.table}
-		(-7,7) edge []node [pos=1.1, right ]{\huge $bord~v^{\mbox{\tiny{eff}}}$ } ( -6.5  , 7 )	 
+		(-7,7) edge []node [pos=1.1, right ]{\huge $\partial \Gamma_{t = 18\, ms}^b$ } ( -6.5  , 7 )	 
 	;
 	\draw[opacity = 0.5 , dotted , dash pattern=on 2pt off 2pt, line width=0.5ex , color = \colorTwo , fill = none] 
 		plot[smooth] file {data/bord_1_0.table}
-		(-7,6) edge []node [pos=1.1, right ]{\huge $bord~gauche$ } ( -6.5  , 6 )	 
+		(-7,6) edge []node [pos=1.1, right ]{\huge $\partial \Gamma_{\tau = 0}^g$ } ( -6.5  , 6 )	 
 	;
 	\draw[opacity = 0.5 , dash dot , dash pattern=on 8pt off 2pt on 2pt off 2pt, line width=0.5ex , color = \colorTwo , fill = none] 
 		plot[smooth] file {data/bord_2_0.table}
-		(-7,5) edge []node [pos=1.1, right ]{\huge $bord~droite$ } ( -6.5  , 5 )	 
+		(-7,5) edge []node [pos=1.1, right ]{\huge $\partial \Gamma_{\tau = 0}^d$ } ( -6.5  , 5 )	 
 	;
+	
+	\node[
+    	rotate=90,
+    	shift={(0,-14)},
+    	fill=\colorTwo,        % couleur du fond
+    	draw=none,             % pas de contour
+    	inner sep=2mm,          % espace autour du texte
+    	rectangle
+	] at (0,0) {\fontsize{20pt}{10pt}\selectfont $\ell\rho(x,\theta)~(ms/\mu s)$};
+	
 	%\drawgrid{-10}{10}{-10}{10}
 }
 %% Density
@@ -515,7 +537,7 @@ table [meta=z] {./data/donnees1.dat};
  
         			
         \draw[opacity = 1 , line width=1.8ex , color = \colorFour , fill = none ] plot[] file {data/density_coupure_2_0.table};
-        \draw[opacity = 0.6 , line width=1.8ex , dashed ,  color = \colorThree , fill = none ] plot[] file {data/density_coupure_1_sur_18.table};
+        \draw[opacity = 0.9 , line width=1.8ex , dashed ,  color = \colorThree , fill = none ] plot[] file {data/density_coupure_1_sur_18.table};
      	\draw[line width=1.8ex , color = \colorFour] 
         	(-0.3, 5 ) edge [thick,line width=0.8ex,, color = \colorThree ]node [pos=-0.01, left  ]{\huge $56$ } ( 0.3  , 5 )	
         	(-0.3, 0 ) edge [thick,line width=0.8ex,, color = \colorThree ]node [pos=-0.01, below left ]{\huge $0$ } ( 0.3  , 0 )	
@@ -525,7 +547,7 @@ table [meta=z] {./data/donnees1.dat};
 	\end{scope}
 				
 	\draw 
-		(-8,4) edge [thick,line width=1.8ex,opacity = 0.6 , dashed , color = \colorThree ]node [pos=1.1, right ]{\huge $\tilde{n}( \tau = 0^{-})$ } ( -7.5  , 4 )	
+		(-8,4) edge [thick,line width=1.8ex,opacity = 0.9 , dashed , color = \colorThree ]node [pos=1.1, right ]{\huge $\tilde{n}( \tau = 0^{-})$ } ( -7.5  , 4 )	
     	(-8,3) edge [thick,line width=1.8ex , color = \colorFour ]node [pos=1.1, right ]{\huge $\tilde{n}( \tau = 0^{+} )$ } ( -7.5  , 3 )	
     				
     ;
@@ -537,8 +559,8 @@ table [meta=z] {./data/donnees1.dat};
 	;
 	\draw
     	(0.45, 0.2) edge[line width=1.8ex, color=\colorOne] 
-        						node[pos=1.0, below]{ \color{\colorOne}\huge $x(s)$} (0.45, -0.2)
-        (0.45 , -0.2 ) edge[line width=0.8ex, color=\colorOne , dashed ] (0.45 , 4.0 )
+        						 (0.45, -0.2)
+        (0.45 , -0.2 ) edge[line width=0.8ex, color=\colorOne , dashed ] node[pos=1.0, above]{ \color{\colorOne}\huge $x$}(0.45 , 4.0 )
     ;
 				        				
 	%\drawgrid{-10}{10}{-10}{10}
@@ -562,12 +584,12 @@ table [meta=z] {./data/donnees1.dat};
     		(-0.3, 5 ) edge [thick,line width=0.8ex, color = \colorThree ]node [pos=-0.01, left  ]{\huge $107$ } ( 0.3  , 5 )	
     		(-0.3, 0 ) edge [thick,line width=0.8ex,, color = \colorThree ]node [pos=-0.01, below left ]{\huge $0$ } ( 0.3  , 0 )
     		(4,5) edge [thick,line width=1.8ex,, color = \colorFive ]node [pos=1.1, right ]{\huge $\Pi$ } ( 4.5  , 5 )	
-    		(4,4) edge [thick,line width=1.8ex, dashed , color = \colorFour ]node [pos=1.1, right ]{\huge $\rho \ast \ell$ } ( 4.5  , 4 )	
+    		(4,4) edge [thick,line width=1.8ex, dashed , color = \colorFour ]node [pos=1.1, right ]{\huge $ \ell \rho$ } ( 4.5  , 4 )	
     	;			
 	\end{scope}
 	\draw
     	(1.4, 0.2) edge[line width=1.8ex, color=\colorThree] 
-        				node[pos=1.1, below]{ \color{\colorThree}\huge $\theta_g(s)$} (1.4, -0.2);
+        				node[pos=1.1, below]{ \color{\colorThree}\huge $\theta_g$} (1.4, -0.2);
 	\Axesdistribution[$\theta ~ (\mu m/ms)$]{$~(m s/\mu s)  $}
 				
 	%\drawgrid{0}{10}{-10}{10}
@@ -596,24 +618,33 @@ table [meta=z] {./data/donnees1.dat};
 			\Axesphase[$x/\tau ~ ( \mu m / m s )$]{$\theta ~ ( \mu m / m s ) $}
 			\draw
     			(1.9, 0.2) edge[line width=1.8ex, color=\colorTwo] 
-        						node[pos=1.1, below]{ \color{\colorTwo}\huge $x_b(s)/\tau$} (1.9, -0.2)
+        						node[pos=1.1, below]{ \color{\colorTwo}\huge $x_b/\tau$} (1.9, -0.2)
                 (1.9 , -0.2 ) edge[line width=0.8ex, color=\colorTwo , dashed ] (1.9 , 2 )
         		(0.2 , 1.3 ) edge[line width=1.8ex, color=\colorTwo]
-        						node[pos=1.1, left ]{ \color{\colorTwo}\huge $\theta_g(s)$} (-0.2 , 1.3 )
+        						node[pos=1.1, left ]{ \color{\colorTwo}\huge $\theta_g$} (-0.2 , 1.3 )
         		(-0.2 , 1.3 )  edge[line width=0.8ex, color=\colorTwo , dashed ] (3.5  , 1.3 )
                 (0.2 , 0.45 ) edge[line width=1.8ex, color=\colorTwo]
-                                node[pos=1.1, left ]{ \color{\colorTwo}\huge $\theta_d(s)$} (-0.2 , 0.45 )
+                                node[pos=1.1, left ]{ \color{\colorTwo}\huge $\theta_d$} (-0.2 , 0.45 )
                 (-0.2 , 0.45 )  edge[line width=0.8ex, color=\colorTwo , dashed ] (3.5  ,0.45 )
         	;
 		\end{tikzpicture}};
 	\draw[opacity = 0.5 , dotted ,dash pattern=on 2pt off 2pt, line width=0.5ex , color = \colorTwo , fill = none] 
 		plot[smooth] file {data/bord_1_30.table}
-		(-7,6) edge []node [pos=1.1, right ]{\huge $bord~gauche$ } ( -6.5  , 6 )	 
+		(-7,6) edge []node [pos=1.1, right ]{\huge $\partial \Gamma_{\tau }^g$ } ( -6.5  , 6 )	 
 	;
 	\draw[opacity = 0.5 , dash dot , dash pattern=on 8pt off 2pt on 2pt off 2pt,line width=0.5ex , color = \colorTwo , fill = none] 
 		plot[smooth] file {data/bord_2_30.table}
-		(-7,5) edge []node [pos=1.1, right ]{\huge $bord~droite$ } ( -6.5  , 5 )	 
+		(-7,5) edge []node [pos=1.1, right ]{\huge $\partial \Gamma_{\tau}^d$ } ( -6.5  , 5 )	 
 	;
+	
+	\node[
+    	rotate=90,
+    	shift={(0,-14)},
+    	fill=\colorTwo,        % couleur du fond
+    	draw=none,             % pas de contour
+    	inner sep=2mm,          % espace autour du texte
+    	rectangle
+	] at (0,0) {\fontsize{20pt}{10pt}\selectfont $\ell\rho(x,\theta)~(ms/\mu s)$};
 	%\drawgrid{-10}{10}{-10}{10}
 }
 %% Density
@@ -631,7 +662,7 @@ table [meta=z] {./data/donnees1.dat};
 		%\drawgrid{0}{10}{0}{10}
 	\end{scope}
 		
-	\Axesdensity[$x/\tau ~ ( \mu m / ms ) $]{$\tilde{n}*\tau ~( m s / \mu m )$}
+	\Axesdensity[$x/\tau ~ ( \mu m / ms ) $]{$\tau \tilde{n} ~( m s / \mu m )$}
         				
 	%\drawgrid{-10}{10}{-10}{10}
 
@@ -650,7 +681,7 @@ table [meta=z] {./data/donnees1.dat};
 	\end{scope}
 	\draw
     	(1.4, 0.2) edge[line width=1.8ex, color=\colorThree] 
-        				node[pos=1.1, below]{ \color{\colorThree}\huge $\theta_g(s)$} (1.4, -0.2);
+        				node[pos=1.1, below]{ \color{\colorThree}\huge $\theta_g$} (1.4, -0.2);
 	\Axesdistribution[$\theta ~ ( \mu m / m s )$]{$\Pi~(m s/\mu s)  $}
 				
 	%\drawgrid{0}{10}{-10}{10}

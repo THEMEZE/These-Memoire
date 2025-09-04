@@ -270,5 +270,67 @@ decorations.pathreplacing}
 				
 			
 		\end{tikzpicture}
+		
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={$\theta~(\mu\text{m}/\text{ms})$},
+    ylabel={$\nu(\theta)$},
+    grid=both,
+    width=10cm,
+    height=6cm
+]
+\addplot+[smooth, \colorFour , thick] table {../02_GGE_TBA/nu_vs_theta.dat};
+\end{axis}
+
+%\draw[line width=1.0ex, color=\colorFour, fill=none]
+%    plot[smooth] file {../02_GGE_TBA/nu_vs_theta.dat}
+%    (6,0.8) edge[] node[shift={(0,1)}, pos=1, right]
+%        {\fontsize{16pt}{19pt}\selectfont \bf $\nu(\theta)$} (6.5,0.8);
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\begin{axis}[
+    xlabel={$\theta~(\mu\text{m}/\text{ms})$},
+    ylabel={$(\text{ms}/\mu\text{m}^2)$},
+    grid=both,
+    width=10cm,
+    height=6cm,
+    legend style={at={(0.98,0.98)}, anchor=north east, font=\small}
+]
+
+% rho_s
+\addplot+[smooth,\colorSix, thick] table {../02_GGE_TBA/rho_s_vs_theta.dat};
+\addlegendentry{$\rho_s(\theta)$}
+
+% rho
+\addplot+[smooth,\colorFour, thick] table {../02_GGE_TBA/rho_vs_theta.dat};
+\addlegendentry{$\rho(\theta)$}
+
+\end{axis}
+\end{tikzpicture}
+
+
+\begin{tikzpicture}
+    % Axe horizontal (gamma)
+    \draw[->, line width=0.8ex, color=\colorOne] 
+        (0,0) -- (9,0) 
+        node[pos=0.5, below] {\fontsize{16pt}{19pt}\selectfont $\gamma$};
+
+    % Axe vertical (t)
+    \draw[->, line width=0.8ex, color=\colorOne] 
+        (0,0) -- (0,6) 
+        node[pos=0.5, below, rotate=90] {\fontsize{16pt}{19pt}\selectfont $t$};
+        
+    % Rectangle avec texte "Tonks Girardeau"
+    \node[draw, fill=\colorFive, minimum width=3cm, minimum height=2cm, align=center] 
+        at (5,4) {\fontsize{1pt}{16pt}\selectfont Tonks Girardeau};
+        
+    \fill[fill=\colorFive] (6,0) -- (6,2) -- (9,2) -- (9,0) ;
+        
+    \drawgrid{-2}{10}{-1}{7};
+\end{tikzpicture}
+
+
+
 
 \end{document}

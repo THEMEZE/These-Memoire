@@ -24,7 +24,7 @@
 
 \section*{Introduction}
 
-Ce chapitre est consacré à la présentation progressive du modèle de Lieb-Liniger et de l’Ansatz de Bethe, outils centraux pour la description d’un gaz de bosons unidimensionnel en interaction via un potentiel de type delta. L’objectif est d’accompagner rigoureusement le lecteur depuis la formulation quantique du système jusqu’aux solutions exactes obtenues par l’approche de Bethe.
+Ce chapitre est consacré à la présentation progressive du modèle de \gls{LL} et de l’Ansatz de Bethe (en anglais \gls{BA}), outils centraux pour la description d’un gaz de bosons unidimensionnel en interaction via un potentiel de type delta. L’objectif est d’accompagner rigoureusement le lecteur depuis la formulation quantique du système jusqu’aux solutions exactes obtenues par l’approche de Bethe.
 
 \medskip
 
@@ -412,7 +412,7 @@ dans \eqref{chap.1:eq.rapel.opp.1.second.2}, on réécrit l’opérateur énergi
 = \frac{\hbar^2}{2m} \int_0^L dx \, \operator{\partial}_x \operator{\Psi}^\dagger(x) \cdot \operator{\partial}_x \operator{\Psi}(x). \label{eq.chap.1.cinietique.3}
 \end{eqnarray}
 
-Lorsque cet Hamiltonien agit sur l’état de Fock à $N$ particules libres $\ket{\{k_a\}}$, les règles de commutation (\ref{chap:1:com.1}) ainsi que la définition des états de Fock (\ref{chap:eq.vide.fock}) impliquent (cf. Annexe \ref{annex:N.part}) :
+Lorsque cet Hamiltonien agit sur l’état de Fock à $N$ particules libres $\ket{\{k_a\}}$, les règles de commutation (\ref{chap:1:com.1}) ainsi que la définition des états de Fock (\ref{chap:eq.vide.fock}) impliquent (cf. Annexe \ref{annex:PH}) :
 \begin{eqnarray}\label{eq.chap.1.cinietique.4}
 \operator{K}\ket{ \{k_a\}} =  \int_0^L d^N z \, \operator{\mathcal{K}}_N \, \varphi_{\{k_a\}}(\{z_a\} ) \operator{\Psi}^\dag(z_1) \cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}\, , \quad \mbox{avec} \quad \operator{\mathcal{K}}_N = -\sum_{i=1}^N \frac{\hbar^2\operator{\partial}_{z_i}^2}{2m}, 
 \end{eqnarray}
@@ -467,7 +467,7 @@ Lorsqu'on applique ces opérateurs à l’état \(\ket{\{k_a\}}\), on obtient (c
     leftmargin=2pt,
     rightmargin=2pt
 	]
-\subparagraph{On s'avance sur le chapitre (\ref{chap:relaxation}).} , en voulant généraliser avec $\operator{f} = \operator{p}^q$ où $q$ est un entier. Soit dans la base \(\{\ket{k}\}\) : \(\operator{F} = \hbar^q \sum_k k^q \operator{b}_k^\dagger \operator{b}_k^{} \) et en l'appliquant à \(\ket{\{k_a\}}\) :
+\subparagraph{On s'avance sur le chapitre (\ref{chap:relaxation}).} , en voulant généraliser avec $\operator{f} = \operator{p}^q$ où $q$ est un entier. Soit dans la base \(\{\ket{k_a}\}\) : \(\operator{F} = \hbar^q \sum_k k^q \operator{b}_k^\dagger \operator{b}_k^{} \) et en l'appliquant à \(\ket{\{k_a\}}\) :
 On peut généraliser cette construction en considérant des opérateurs à une particule de la forme $\operator{f} = \operator{p}^q$, où $q$ est entier. Dans la base impulsion \(\{\ket{k}\}\), l’opérateur à $N$ corps associé s’écrit : \(\operator{F} = \hbar^q \sum_k k^q \operator{b}_k^\dagger \operator{b}_k^{} \) et son action sur un état de Fock libre est immédiatement 
 \begin{eqnarray}\label{chap.1:eq.rapel.opp.1.second.3}
 	 \operator{F} \ket{\{k_a\}} = \hbar^q \left( \sum_{i = 1}^N k_i^q \right) \ket{\{k_a\}},
@@ -480,22 +480,42 @@ et son action sur $\ket{\{k_a\}}$ se traduit par :\\
 \(
 	\operator{F}\ket{ \{k_a\}} =  \int_0^L d^N z \, \operator{\mathcal{F}}_N \, \varphi_{\{k_a\}}(\{z_a\} ) \operator{\Psi}^\dag(z_1) \cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}\, 
 \) \mbox{avec} 
-\(\operator{\mathcal{F}}_N = \hbar^q \sum_{i=1}^N (\operator{\partial}_{z_i})^q.
+\(\operator{\mathcal{F}}_N = (-1)^q\hbar^q \sum_{i=1}^N (\operator{\partial}_{z_i})^q.
 \)
 
 \medskip
 
 
 
-\textbf{Remarque :} 
+%\textbf{Remarque :} 
+%
+%Cette construction n’est valable que pour un gaz \textbf{de particules libres, sans interaction}.  
+%En présence d’un Hamiltonien avec interaction (par exemple dans le modèle de  \gls{LL} Sec \ref{chap1:sssec:LL}), les états propres ne sont plus des produits d’ondes planes $\ket{\{k_a\}}$, et l’opérateur énergie cinétique $\operator{K}$ n’est plus diagonalisé dans cette base. Ce sont alors les états de Bethe qui diagonalise l’Hamiltonien complet (cinétique + interaction).
+%
+%\medskip
+%
+%Pour $q \ge 2$, si l’on ajoute une interaction locale (comme dans le modèle de Lieb–Liniger), l’opérateur $\operator{F}$ à une particule n’est plus suffisant pour définir une charge conservée : il faut inclure des termes à deux corps (ou davantage) pour assurer la commutation avec l’Hamiltonien.  
+%On passe ainsi progressivement des observables simples $\operator{Q}$ et $\operator{P}$, liées à des symétries fondamentales, aux \textbf{charges conservées d’intégrabilité} à plusieurs corps, qui sont précisément celles qui caractérisent les états de Bethe.
 
-Cette construction n’est valable que pour un gaz \textbf{de particules libres, sans interaction}.  
-En présence d’un Hamiltonien avec interaction (par exemple dans le modèle de  \gls{LL} Sec \ref{chap1:sssec:LL}), les états propres ne sont plus des produits d’ondes planes $\ket{\{k_a\}}$, et l’opérateur énergie cinétique $\operator{K}$ n’est plus diagonalisé dans cette base. Ce sont alors les états de Bethe qui diagonalise l’Hamiltonien complet (cinétique + interaction).
+%On remarque que l’opérateur $\operator{K}$ (énergie cinétique) ne coïncide avec l’énergie totale que pour un gaz de particules libres, sans interaction ni potentiel externe. Dans ce cas, les états de Fock $\ket{{k_a}}$ sont propres de $\operator{K}$, ainsi que de tous les opérateurs $\operator{F}$ définis pour $q \geq 0$.
+%
+%\medskip
+%
+%Lorsque des interactions entre particules sont introduites, les états libres $\ket{{k_a}}$ ne sont plus propres de l’Hamiltonien complet (cinétique + interaction), ni des opérateurs $\operator{F}$. On introduit alors les états de Bethe $\ket{{\theta_a}}$, qui sont simultanément propres de l’Hamiltonien complet, des opérateurs $\operator{Q}$ et $\operator{P}$, ainsi que de l’ensemble des charges conservées d’ordre supérieur.
+%
+%\medskip
+%
+%Pour rendre compte des interactions, il est nécessaire d’enrichir la construction de $\operator{F}$ en y incluant des contributions à deux corps (et plus généralement à plusieurs corps), ce qui conduit précisément aux charges locales d’intégrabilité.
+
+L’opérateur $\operator{K}$ (énergie cinétique) ne représente l’énergie totale que dans le cas d’un gaz libre, sans interaction ni potentiel externe. Dans ce régime, les états de Fock $\ket{{k_a}}$ sont propres de $\operator{K}$ ainsi que de tous les opérateurs $\operator{F}$ construits pour $q \geq 0$.
 
 \medskip
 
-Pour $q \ge 2$, si l’on ajoute une interaction locale (comme dans le modèle de Lieb–Liniger), l’opérateur $\operator{F}$ à une particule n’est plus suffisant pour définir une charge conservée : il faut inclure des termes à deux corps (ou davantage) pour assurer la commutation avec l’Hamiltonien.  
-On passe ainsi progressivement des observables simples $\operator{Q}$ et $\operator{P}$, liées à des symétries fondamentales, aux \textbf{charges conservées d’intégrabilité} à plusieurs corps, qui sont précisément celles qui caractérisent les états de Bethe.
+Dès que des interactions entre particules sont introduites, ces états libres ne sont plus propres de l’Hamiltonien complet (cinétique + interaction), ni des opérateurs $\operator{F}$. Il faut alors considérer les états de Bethe $\ket{{\theta_a}}$, qui diagonalise l’Hamiltonien complet, mais aussi les charges conservées fondamentales ($\operator{Q}$ et $\operator{P}$) et l’ensemble infini de charges d’ordre supérieur.
+
+\medskip
+
+Dans ce cadre, les opérateurs $\operator{F}$ ne suffisent plus : il est nécessaire d’introduire des contributions à plusieurs corps pour tenir compte des interactions, ce qui conduit naturellement à la hiérarchie des charges locales d’intégrabilité.
 
 \end{mdframed}
 
@@ -562,7 +582,7 @@ soit pour des interactions ponctuelles :
     \operator{\Psi}^\dagger(x) \, \operator{\Psi}^\dagger(x) \, 
     \operator{\Psi}(x) \, \operator{\Psi}(x)  		
 \end{eqnarray}
-et quand on l'applique à l'état $\ket{\{k_a\}}$, les règles de commutations (\ref{chap:1:com.1}) et la définition d'état de Fock (\ref{chap:eq.vide.fock}) impliquent que (cf Annex \ref{annex:N.part})
+et quand on l'applique à l'état $\ket{\{k_a\}}$, les règles de commutations (\ref{chap:1:com.1}) et la définition d'état de Fock (\ref{chap:eq.vide.fock}) impliquent que (cf Annex \ref{annex:PH})
 \begin{eqnarray}\label{chap.1:eq.rapel.opp.2.second.ponctuel.2}
 \operator{V}\ket{\{k_a \}} =  \int d^Nz \, \operator{\mathcal{V}}_N \varphi_{\{k_a\}}( \{z_a\} )\operator{\Psi}^\dag(z_1)\cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset} \, \quad \mbox{avec} \quad  \operator{\mathcal{V}}_N 	= g\sum_{1\leq i < j \leq N } \operator{\delta}(z_i - z_j)	
 \end{eqnarray}
@@ -577,7 +597,7 @@ où \( g \) est la constante de couplage.
 
 
 
-\subsubsection{Expression de l’Hamiltonien de Lieb-Liniger \acrshort{LL}. }\label{chap1:sssec:LL}
+\subsubsection{Expression de l’Hamiltonien de Lieb-Liniger. }\label{chap1:sssec:LL}
 
 À partir d’ici, on fixe $\hbar = m = 1 $. Ainsi, les dimensions (unités) des nombres d’onde $k$ et des vitesses ne sont plus différenciées.
 Dans le formalisme des opérateurs de champs, l’Hamiltonien d’un système soumis à des interactions ponctuelles est la somme de l’énergie cinétique $\operator{K}$ donnée par \eqref{eq.chap.1.cinietique.3}, et du terme d’interaction $\operator{V}$ introduit dans \eqref{chap.1:eq.rapel.opp.2.second.ponctuel.1} :
@@ -705,7 +725,7 @@ Ils constituent donc des \textbf{intégrales du mouvement}. Cette propriété re
 
 
 \paragraph{États propres et valeurs propres.}
-Les états propres $\ket{\{\theta_a\}}$, construits dans le cadre de la seconde quantification à partir de la solution du modèle de Lieb-Liniger, sont simultanément fonctions propres des opérateurs $\operator{Q}$, $\operator{P}$ et $\operator{H}$ :
+Les états propres $\ket{\{\theta_a\}}$, construits dans le cadre de la seconde quantification à partir de la solution du modèle de \gls{LL}, sont simultanément fonctions propres des opérateurs $\operator{Q}$, $\operator{P}$ et $\operator{H}$ :
 \begin{eqnarray}\label{chap1:eq.Q.P.K.theta.1}
 \operator{Q} \ket{\{\theta_a\}} = N \ket{\{\theta_a\}}, \quad
 \operator{P} \ket{\{\theta_a\}} = \left( \sum_{a=1}^N \theta_a \right) \ket{\{\theta_a\}}, \
@@ -1249,7 +1269,7 @@ ce qui correspond au choix symétrique des nombres quantiques pour l’état fon
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.7\textwidth , page = 2 ]{figures/01_LL_BA/Figures.pdf}
+    \includegraphics[width=0.9\textwidth , page = 2 ]{figures/01_LL_BA/Figures.pdf}
     \caption{
     Représentation schématique de la mer de Fermi pour un système de $N$ particules :  
     (a) distribution occupée à l’état fondamental, analogue à une mer de Fermi idéale ;  
@@ -1344,7 +1364,7 @@ ce qui relie \( \rho_s \) à le déplacement collisionel \( \Delta \) définie d
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.7\textwidth , page = 3 ]{figures/01_LL_BA/Figures.pdf}
+    \includegraphics[width=0.9\textwidth , page = 3 ]{figures/01_LL_BA/Figures.pdf}
     \caption{
     Rapiditées dans l’intervalle $[\theta, \theta + \delta\theta]$ s’associent à un ensemble de nombres quantiques fermioniques situés dans $[I, I + \delta I]$. La densité d’états $\rho_s$ se déduit alors de la relation $\delta I \simeq L \rho_s(\theta) \delta \theta $
     }
@@ -1589,7 +1609,7 @@ ce qui n’est autre que la relation constitutive~\eqref{eq:TBA-rhos}.
 
 \section*{Conclusion du chapitre}
 
-Dans ce chapitre, nous avons introduit le modèle de \glsreset{LL}\gls{LL} , qui décrit un gaz de bosons unidimensionnel soumis à une interaction de contact. Dans ce cadre, les grandeurs conservées naturelles ne sont pas seulement le nombre total de particules $\operator{Q}$ et la quantité de mouvement totale $\operator{P}$, mais également l’énergie associée à l’Hamiltonien de \gls{LL} $\operator{H}$, (plutôt qu’à la simple énergie cinétique $\operator{K}$). Ces charges conservées correspondent respectivement aux moments d’ordre $0$, $1$ et $2$ en rapidité. Comme nous le verrons au chapitre suivant, des charges d’ordre supérieur interviennent dans la description des états en équilibre, notamment via l’Ensemble de Gibs Généralisé \gls{GGE}.
+Dans ce chapitre, nous avons introduit le modèle de \glsreset{LL}\gls{LL} , qui décrit un gaz de bosons unidimensionnel soumis à une interaction de contact. Dans ce cadre, les grandeurs conservées naturelles ne sont pas seulement le nombre total de particules $\operator{Q}$ et la quantité de mouvement totale $\operator{P}$, mais également l’énergie associée à l’Hamiltonien de \gls{LL}, $\operator{H}$, (plutôt qu’à la simple énergie cinétique $\operator{K}$). Ces charges conservées correspondent respectivement aux moments d’ordre $0$, $1$ et $2$ en rapidité. Comme nous le verrons au chapitre suivant, des charges d’ordre supérieur interviennent dans la description des états en équilibre, notamment via l’Ensemble de Gibbs Généralisé (\gls{GGE}).
 
 \medskip
 
