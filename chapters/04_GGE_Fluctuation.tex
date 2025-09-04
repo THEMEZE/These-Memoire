@@ -1474,59 +1474,99 @@ Nous testons à présent notre expression des fluctuations dans le cas particuli
 %\)
 %avec \( \beta = 1 / (k_B T) \) et \( \varepsilon(\theta) \) l’énergie (par exemple \( m\theta^2/2 \) pour des particules libres).
 
-\subparagraph{Paramètres fixés.}
-Dans le cas de l’équilibre thermique usuel (ensemble de Gibbs), seules deux charges sont conservées : le {\bf nombre total de particules} \( \operator{\mathcal{Q}}[f_0] \) et l’{\bf énergie totale} \( \operator{\mathcal{Q}}[f_2] \). Cela correspond au choix suivant :
-\begin{align*}
-	f_0(\theta) &= 1, \quad &&\text{(densité de particules)} \\
-	f_2(\theta) &= \frac{1}{2}m \theta^2, \quad &&\text{(densité d’énergie $\varepsilon$)}
-\end{align*}
-les coefficients de Lagrange associés sont :
-\begin{align*}
-	\beta_0 &= -\beta \mu, \quad &&\text{(potentiel chimique)} \\
-	\beta_2 &= \beta, \quad &&\text{(inverse de la température)},
-\end{align*}
-avec $\beta = 1 / ( k_B T )$ et  $k_B$ constante de Boltzmann.
+%\subparagraph{Paramètres fixés.}
+%Dans le cas de l’équilibre thermique usuel (ensemble de Gibbs), seules deux charges sont conservées : le {\bf nombre total de particules} \( \operator{\mathcal{Q}}[f_0] \) et l’{\bf énergie totale} \( \operator{\mathcal{Q}}[f_2] \). Cela correspond au choix suivant :
+%\begin{align*}
+%	f_0(\theta) &= 1, \quad &&\text{(densité de particules)} \\
+%	f_2(\theta) &= \frac{1}{2}m \theta^2, \quad &&\text{(densité d’énergie $\varepsilon$)}
+%\end{align*}
+%les coefficients de Lagrange associés sont :
+%\begin{align*}
+%	\beta_0 &= -\beta \mu, \quad &&\text{(potentiel chimique)} \\
+%	\beta_2 &= \beta, \quad &&\text{(inverse de la température)},
+%\end{align*}
+%avec $\beta = 1 / ( k_B T )$ et  $k_B$ constante de Boltzmann.
+%
+%\medskip
+%
+%\paragraph{Calcul de la matrice hermitienne.}
+%
+%On reprend ici le formalisme de l’équation \eqref{chap4:eq.w_fi}, dans lequel le poids spectral s’écrit comme une combinaison linéaire :
+%\begin{eqnarray}\label{chap4:eq.w.1}
+%	w(\theta) & = & \beta_0 f_0(\theta) + \beta_2 f_2(\theta),
+%\end{eqnarray}
+%où \( f_0(\theta) = 1 \) et $f_2(\theta) = \frac{1}{2}m \theta^2,$ sont les densités locales associées aux charges conservées , fixeé et $\beta_0$ et $\beta_2$ en imposant une température \(T\) et un potentiel chimique \(\mu\).
+%
+%Dans les équations \eqref{chap2:eq:gamma.1} et \eqref{chap2:eq:t.1}, nous avons défini les grandeurs adimensionnées, le {\bf paramètre de Lieb} $\gamma$ et la {\bf température réduite} $t$, telles que :
+%\begin{eqnarray*}
+%	\gamma = \frac{m g}{\hbar^2 n}, \quad t = \frac{\hbar^2}{m \beta g^2}.
+%\end{eqnarray*} 
+%
+%\subparagraph{Paramètres fixes.} 
+%Nous travaillons avec $\hbar = m = k_B = 1$, et nous choisissons $L = 100$ et $g = 1$.
+%
+%\subparagraph{Paramètres variables.}
+%La température $T$ est alors donnée par la température réduite $t$, et la densité linéaire $n$ est inversement proportionnelle au paramètre adimensionné $\gamma$.
 
-\medskip
 
-On reprend ici le formalisme de l’équation \eqref{chap4:eq.w_fi}, dans lequel le poids spectral s’écrit comme une combinaison linéaire :
-\begin{eqnarray}\label{chap4:eq.w.1}
-	w(\theta) & = & \beta_0 f_0(\theta) + \beta_2 f_2(\theta),
-\end{eqnarray}
-où \( f_i(\theta) \) sont les densités locales associées aux charges conservées.
+%\paragraph{Calcul de la matrice hermitienne.}
+%
+%Les densités locales $f_i$ sont fixées. Pour spécifier le {\em poids spectral} $w$, on choisit les coefficients de Lagrange $\beta_0$ et $\beta_2$ en imposant une température \(T\) et un potentiel chimique \(\mu\).
+%
+%\medskip
+%
+%Dans les équations \eqref{chap2:eq:gamma.1} et \eqref{chap2:eq:t.1}, nous avons défini les grandeurs adimensionnées, le {\bf paramètre de Lieb} $\gamma$ et la {\bf température réduite} $t$, telles que :
+%\begin{eqnarray*}
+%	\gamma = \frac{m g}{\hbar^2 n}, \quad t = \frac{\hbar^2}{m \beta g^2}.
+%\end{eqnarray*} 
+
+
+
+%La densité linéaire \( n \) ne paramétrise pas directement le poids spectral $w$ \eqref{chap4:eq.w.1}, mais est liée au potentiel chimique \(\mu\) via :
+%\[
+%	L n = \braket{\operator{\mathcal{Q}}[f_0]}_w.
+%\]
+%C’est ainsi que les simulations numériques seront effectuées en utilisant $\gamma$ et $t$.
+
+%\subparagraph{Paramètres variables.}  
+%Avec ces conventions, la densité linéaire $n$ est reliée directement au paramètre $\gamma$, tandis que la température physique $T$ est déterminée par la température réduite $t$. Ainsi, dans l’équation~\eqref{chap4:eq.w.1}, les fonctions $f_i(\theta)$ sont fixées, et ce sont les coefficients $\beta_i$ qui s’ajustent en fonction des paramètres adimensionnés $\gamma$ et $t$, c’est-à-dire en fonction des conditions thermodynamiques imposées.
 
 
 
 \paragraph{Calcul de la matrice hermitienne.}
 
-Les densités locales $f_i$ sont fixées. Pour spécifier le {\em poids spectral} $w$, on choisit les coefficients de Lagrange $\beta_0$ et $\beta_2$ en imposant une température \(T\) et un potentiel chimique \(\mu\).
+Dans la section~\ref{chap4:sec:TBA}, nous avons présenté les différentes étapes de la résolution numérique de l’équation de \gls*{TBA}.  
+Nous reprenons ici le formalisme de l’équation~\eqref{chap4:eq.w_fi}, dans lequel le poids spectral s’écrit comme une combinaison linéaire :  
+\begin{equation}\label{chap4:eq.w.1}
+	w(\theta) = \beta_0 f_0(\theta) + \beta_2 f_2(\theta),
+\end{equation}
+où $f_0(\theta) = 1$ et $f_2(\theta) = \tfrac{1}{2} m \theta^2$ correspondent aux densités locales associées aux charges conservées.  
+Les coefficients $\beta_0$ et $\beta_2$ sont fixés de manière à imposer une température $T$ et un potentiel chimique $\mu$.  
 
 \medskip
 
-Dans les équations \eqref{chap2:eq:gamma.1} et \eqref{chap2:eq:t.1}, nous avons défini les grandeurs adimensionnées, le {\bf paramètre de Lieb} $\gamma$ et la {\bf température réduite} $t$, telles que :
-\begin{eqnarray*}
-	\gamma = \frac{m g}{\hbar^2 n}, \quad t = \frac{\hbar^2}{m \beta g^2}.
-\end{eqnarray*} 
+Le \textbf{paramètre de Lieb} et la \textbf{température réduite}, définis respectivement en~\eqref{chap2:eq:gamma.1} et~\eqref{chap2:eq:t.1},  
+\begin{equation*}
+	\gamma = \frac{m g}{\hbar^2 n}, 
+	\qquad 
+	t = \frac{\hbar^2}{m \beta g^2},
+\end{equation*}
+permettent également de paramétrer le couple $(T,\mu)$ (voir section~\ref{chap4:sec:TBA}).  
 
-\subparagraph{Paramètres fixes.} 
-Nous travaillons avec $\hbar = m = k_B = 1$, et nous choisissons $L = 100$ et $g = 1$.
-
-\subparagraph{Paramètres variables.}
-La température $T$ est alors donnée par la température réduite $t$, et la densité linéaire $n$ est inversement proportionnelle au paramètre adimensionné $\gamma$.
-
-La densité linéaire \( n \) ne paramétrise pas directement le poids spectral $w$ \eqref{chap4:eq.w.1}, mais est liée au potentiel chimique \(\mu\) via :
-\[
-	L n = \braket{\operator{\mathcal{Q}}[f_0]}_w.
-\]
-C’est ainsi que les simulations numériques seront effectuées en utilisant $\gamma$ et $t$.
+\subparagraph{Paramètres fixes.}  
+Dans toute la suite, nous travaillons avec les conventions $\hbar = m = k_B = 1$, ainsi que $L = 100$ et $g = 1$.  
 
 \medskip
 
-On choisit 
-\begin{eqnarray*}
-	\gamma = 10^{-1.7}, \quad t =  89.125.	
-\end{eqnarray*}
-Ce paramètre est représenté par un {\bf point rouge} dans le diagramme de phase du modèle de \gls{LL}, présenté en figure~\ref{chap:4:fig:diagr}.
+\subparagraph{Choix des paramètres.}  
+Nous considérons le point  
+\begin{equation*}
+	\gamma = 10^{-1.7}, 
+	\qquad 
+	t = 89.125 ,
+\end{equation*}
+qui est représenté par un \textbf{point rouge} dans le diagramme de phase du modèle de \gls{LL}, présenté en figure~\ref{chap:4:fig:diagr}.
+
 
 \medskip
 

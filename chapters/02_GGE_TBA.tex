@@ -742,6 +742,7 @@ Finalement, la moyenne d'une observable dans le \gls{GGE} \eqref{chap.2.moyenne.
 
 %------------------------------------------------------------------
 \paragraph{Interprétation thermodynamique.}
+\label{chap4:sec:TBA}
 
 \begin{itemize}[label = $\bullet$] 
 \item $\mathcal{S}_{YY}[\rho]$ \emph{compte} le logarithme du nombre de
@@ -1036,21 +1037,20 @@ avec $g$ le paramètre d’interaction 1D et $n$ la densité linéique du gaz.
 En fonction de $\gamma$, deux régimes limites apparaissent :
 
 \begin{itemize}[label = $\bullet$]
-    \item \textbf{Régime de Tonks-Girardeau} : ce régime correspond à des interactions fortes, $\gamma \to \infty$ (ou $g \to \infty$, densité faible). Dans ce cas, la distribution de rapidités ressemble à une \emph{mer de Fermi}. Un exemple de ce profil est représenté sur la Fig.~\ref{fig:rapidites}(a).
+    \item \textbf{Régime de Tonks-Girardeau} : ce régime correspond à des interactions fortes, $\gamma \to \infty$ (ou $g \to \infty$, densité faible). Dans ce cas, la distribution de rapidités ressemble à une \emph{mer de Fermi}. %Un exemple de ce profil est représenté sur la Fig.~\ref{fig:rapidites}(a).
 
     \item \textbf{Régime de \gls{qBEC}} : pour $\gamma \ll 1$, les interactions sont faibles et la distribution de rapidités se déforme par rapport à la mer de Fermi. Dans la limite $\gamma \to 0$, la distribution attendue est un demi-cercle :
     \begin{equation}
         \rho(\theta) = \frac{n}{\pi c} \sqrt{1 - \left ( \frac{\theta}{2c} \right )^2}, \qquad c = \sqrt{gn/m}.
     \end{equation}
-    Pour des $\gamma$ petits mais non nuls, la distribution est proche du demi-cercle mais présente une discontinuité aux bords, comme illustré sur la Fig.~\ref{fig:rapidites}(b). 
+    Pour des $\gamma$ petits mais non nuls, la distribution est proche du demi-cercle mais présente une discontinuité aux bords, comme illustré sur la Fig.~\ref{fig:rapidites}. 
 \end{itemize}
 
-Les expériences sur puce atomique du LCF ont permis d’étudier ces régimes. La plupart des résultats présentés dans cette thèse correspondent à $\gamma \sim 0.5 \times 10^{-2}$.
 
 \begin{figure}[h!]
     \centering
-    %\includegraphics[width=0.9\textwidth]{fig_rapidites.pdf} 
-    \caption{Distributions de rapidités pour différents paramètres de Lieb $\gamma$ et différentes températures $T$. (a) Distribution à l’état fondamental dans le régime de Tonks-Girardeau : pour $\gamma$ très grand, la distribution tend vers une mer de Fermi. (b) Distribution dans le régime de faible interaction ($\gamma \ll 1$) : le demi-cercle gris représente la distribution attendue pour $\gamma \to 0$, tandis que le profil bleu correspond à $\gamma$ petit mais non nul, montrant une discontinuité aux extrémités. La distribution jaune illustre l’état excité au-delà de l’état fondamental, avec apparition d’ailes aux extrémités.}
+    \includegraphics[width=1\textwidth , page = 5 ]{figures/02_GGE_TBA/Figures.pdf}
+    \caption{Distributions de rapidités pour différents paramètres de Lieb $\gamma$ et différentes températures $T$.  Distribution dans le régime de faible interaction ($\gamma \ll 1$) : le demi-cercle gris représente la distribution attendue pour $\gamma \to 0$, tandis que le profil bleu correspond à $\gamma$ petit mais non nul, montrant une discontinuité aux extrémités. La distribution jaune illustre l’état excité au-delà de l’état fondamental, avec apparition d’ailes aux extrémités.}
     \label{fig:rapidites}
 \end{figure}
 
@@ -1073,7 +1073,7 @@ avec $\beta = 1 / ( k_B T )$ et  $k_B$ constante de Boltzmann.
 
 \medskip
 
-On reprend ici le formalisme de l’équation \eqref{chap4:eq.w_fi}, dans lequel le poids spectral s’écrit comme une combinaison linéaire :
+Le poids spectral s’écrit comme une combinaison linéaire :
 \begin{eqnarray}\label{chap4:eq.w.1}
 	w(\theta) & = & \beta_0 f_0(\theta) + \beta_2 f_2(\theta),
 \end{eqnarray}
@@ -1092,27 +1092,36 @@ Les densités locales $f_i$ sont fixées. Pour spécifier le {\em poids spectral
 t = \frac{k_B T}{mg^2/\hbar^2}.
 \end{equation}
 
-\subparagraph{Paramètres fixes.} 
-Nous travaillons avec $\hbar = m = k_B = 1$, et nous choisissons $L = 100$ et $g = 1$.
+%\subparagraph{Paramètres fixes.} 
+%Nous travaillons avec $\hbar = m = k_B = 1$, et nous choisissons $L = 100$ et $g = 1$.
 
-\subparagraph{Paramètres variables.}
-La température $T$ est alors donnée par la température réduite $t$, et la densité linéaire $n$ est inversement proportionnelle au paramètre adimensionné $\gamma$.
+%\subparagraph{Paramètres variables.}
+%La température $T$ est alors donnée par la température réduite $t$, et la densité linéaire $n$ est inversement proportionnelle au paramètre adimensionné $\gamma$.
 
 La densité linéaire \( n \) ne paramétrise pas directement le poids spectral $w$ \eqref{chap4:eq.w.1}, mais est liée au potentiel chimique \(\mu\) via :
 \begin{equation}\label{chap2:eq:n.1}
 	L n = \braket{\operator{\mathcal{Q}}[f_0]}_w \, \left ( = \int d\theta  \, \rho_{\mathrm{eq}}(\theta)  \right)  .
 \end{equation}
+
 C’est ainsi que les simulations numériques seront effectuées en utilisant $\gamma$ et $t$.
 
 
+\medskip
+
+Un exemple de ce profil  avec ($\gamma=9.10^{-3}$, $t = 86.5$) est représenté sur la Fig.~\ref{fig:rapidites}
+
+\medskip
 
 
-Pour synthétiser les différents comportements, les régimes principaux peuvent être représentés dans le plan $(\gamma, t)$. Le diagramme de la Fig.~\ref{fig:diagramme} distingue trois zones : gaz de Bose idéal, gaz de Tonks-Girardeau et qBEC. Les courbes qui délimitent ces zones correspondent à des conditions analytiques sur $\gamma$ et $t$, par exemple $\gamma^{3/2} t = 1$, $\gamma^2 t = 1$ et $\gamma t = 1$. Il ne s’agit pas de transitions de phase, mais de cross-over entre régimes asymptotiques. La zone grise indique la gamme de paramètres expérimentaux explorés pendant cette thèse.
+Pour synthétiser les différents comportements, les régimes principaux peuvent être représentés dans le plan $(\gamma, t)$. Le diagramme de la Fig.~\ref{fig:diagramme} distingue trois zones : gaz de Bose idéal, gaz de Tonks-Girardeau et qBEC. Les courbes qui délimitent ces zones correspondent à des conditions analytiques sur $\gamma$ et $t$, par exemple $\gamma^{3/2} t = 1$, $\gamma^2 t = 1$ et $\gamma t = 1$. Il ne s’agit pas de transitions de phase, mais de cross-over entre régimes asymptotiques. Les expériences sur puce atomique du LCF ont permis d’étudier ces régimes. La plupart des résultats présentés dans cette thèse correspondent à $\gamma \sim 0.9 \times 10^{-2}$.La zone grise indique la gamme de paramètres expérimentaux explorés pendant cette thèse.
+
+\medskip
 
 
 \begin{figure}[h!]
     \centering
-    %\includegraphics[width=0.7\textwidth]{fig_diagramme.pdf}
+    \centering
+     \includegraphics[width=1\textwidth , page = 4 ]{figures/02_GGE_TBA/Figures.pdf}
     \caption{Diagramme des régimes principaux du gaz de \gls{LL} : gaz de Bose idéal, Tonks-Girardeau et \gls{qBEC}, en fonction des paramètres adimensionnés $\gamma$ et $t$. Les courbes noires, bleues et orange délimitent les cross-overs entre régimes. La zone grise correspond aux paramètres expérimentaux explorés pendant la thèse. Figure adaptée de \cite{ref_experiment}.}
     \label{fig:diagramme}
 \end{figure}
