@@ -1,0 +1,130 @@
+\chapter{Polarisabilité dynamique et potentiel dipolaire optique}
+\label{annex:dipolaire}
+
+Cette annexe constitue une réécriture et une adaptation pédagogique de l’article \cite{Le_Kien_2013} que j’ai étudié pour la mise en place du piégeage dipolaire.
+
+\medskip
+
+
+Dans l’approximation dipolaire et pour un champ électrique classique quasi-monochromatique
+\begin{eqnarray}
+	\operatorvec{E}_\perp(\operatorvec{r},t) & = &\frac{1}{2}\mathcal{E}\,\operatorvec{u}\,e^{-i\omega t} + \text{c.c.}\label{chap:dipolaire:eq:elec.2}	
+\end{eqnarray}
+
+où $\mathcal{E}$ est l’amplitude complexe et $\operatorvec{u}$ le vecteur de polarisation unitaire.%), l’hamiltonien d’interaction atome-champ s’écrit
+%\[
+%H_{\mathrm{int}} = -\mathbf{d}\cdot\mathbf{E}(t),
+%\]
+%avec $\mathbf{d}$ l’opérateur dipolaire électrique de l’atome. 
+En explicitant l’oscillation temporelle, on a :
+\begin{eqnarray*}
+	V^E & = & -\operatorvec{D}\cdot\operatorvec{E}_\perp = -\frac{1}{2}\mathcal{E}\,\operatorvec{u}\cdot\operatorvec{D}\,e^{-i\omega t} - \frac{1}{2}\mathcal{E}^\ast\,\operatorvec{u}^*\cdot\operatorvec{D}\,e^{+i\omega t}.
+\end{eqnarray*}
+
+Ce terme d’interaction induit, par la théorie des perturbations du second ordre (pour un champ loin de toute résonance atomique), un déplacement de niveau énergétique de l’état non perturbé $|g\rangle$. En notant $\hbar \omega_{\scriptstyle g \rightarrow e} = \hbar \omega_e - \hbar\omega_g$ la différence d’énergie angulaire entre états $|e\rangle$ et $|g\rangle$, on obtient :
+\begin{eqnarray}\label{chap:dipolaire:eq:nrj2.1}
+	\delta E_g  & = &  -\frac{|\mathcal{E}|^2}{4\hbar} \sum_e \Re\left[
+		\frac{|\langle e|\operatorvec{u}\cdot \operatorvec{D}|g\rangle|^2}{\omega_{\scriptstyle g \rightarrow e}-\omega - i\gamma_{\scriptstyle g  e}/2}
+			+
+		\frac{|\langle g|\operatorvec{u}\cdot \operatorvec{D}|e\rangle|^2}{\omega_{\scriptstyle g \rightarrow e}+\omega + i\gamma_{\scriptstyle g  e}/2}
+		\right],
+\end{eqnarray}
+où $\gamma_{\scriptstyle g  e} = \gamma_g + \gamma_e$ est la largeur naturelle de transition. Ce décalage peut être vu comme l’espérance d’un opérateur effectif $V^{EE}$ agissant sur $|g\rangle$. On montre que cet opérateur s’écrit :
+\begin{eqnarray*}
+	V^{EE} & = & \frac{|\mathcal{E}|^2}{4\hbar}\left[
+		(\operatorvec{u}^*\cdot \operatorvec{D})\,\mathcal{R}_+\,(\operatorvec{u}\cdot \operatorvec{D}) + (\operatorvec{u}\cdot \operatorvec{D})\,\mathcal{R}_-\,(\operatorvec{u}^*\cdot \operatorvec{D})
+		\right],
+\end{eqnarray*}
+avec
+\begin{eqnarray*}
+	\mathcal{R}_\pm = \sum_e \Re\left[\frac{1}{\omega_{\scriptstyle g \rightarrow e} \mp \omega \mp i\gamma_{\scriptstyle g  e}/2} \right] |e\rangle\langle e|.
+\end{eqnarray*}
+
+Pour un champ très loin résonant, les parties imaginaires sont négligées, et cela conduit usuellement à écrire le potentiel dipolaire moyen sous la forme scalaire :
+\begin{eqnarray*}
+	U_{\mathrm{dip}} &=& -\frac{1}{4}\alpha(\omega)\vert\mathcal{E}\vert^2,
+\end{eqnarray*}
+où $\alpha(\omega)$ est la polarisabilité dynamique de l’état atomique concerné.
+
+\subsubsection{Polarisabilité scalaire, vectorielle et tensorielle dans les états fins}
+
+Pour un atome de moment cinétique total $J$, le décalage de niveau $V^{EE}$ se décompose en composantes irréductibles suivant les règles du formalisme des tenseurs sphériques. On définit les \emph{polarisabilités dynamiques réduites} $\alpha^{(K)}_{nJ}$ pour $K=0,1,2$ correspondant respectivement aux composantes scalaire, vectorielle et tensorielle.
+
+%%%%%%%%%%\footnote{
+%Nous introduisons ici la notation $\alpha^{(K)}_{nJ}$, correspondant aux **polarisabilités dynamiques réduites** de rang $K = 0, 1, 2$, qui décrivent respectivement les composantes scalaire ($K = 0$), vectorielle ($K = 1$) et tensorielle ($K = 2$) de la polarisation atomique dans un niveau de structure fine $|nJ\rangle$ :
+\begin{eqnarray*}
+	\alpha^{(K)}_{nJ}(\omega) &=& \, (-1)^{K + J + 1} \sqrt{2K + 1} \sum_{n'J'} (-1)^{J'} 
+\begin{Bmatrix}
+1 & K & 1 \\
+J & J' & J
+\end{Bmatrix}
+|\langle n'J' || \operatorvec{D} || nJ \rangle|^2  \mathcal{R}_{nJn'J'}^{(K)}(\omega)\nonumber \\
+\end{eqnarray*}
+
+avec et $\begin{Bmatrix} j_1 & j_2 & j_3 \\ j_4 & j_5 & j_6 \end{Bmatrix}$ sont les symboles de Wigner 6-j. et $C_{nJn'J'K}(\omega)$ un fonction paramétré par les niveaux $\vert n J \rangle$ et $\vert n' J' \rangle$ et de $K$ 
+\begin{eqnarray*}
+	\mathcal{R}_{nJn'J'}^{(K)}(\omega) & = &	 \frac{1}{\hbar} \, \Re \left[ \frac{1}{\omega_{n'J'nJ} - \omega - i\gamma_{n'J'nJ}/2} + \frac{(-1)^K}{\omega_{n'J'nJ} + \omega + i\gamma_{n'J'nJ}/2} \right],
+\end{eqnarray*}
+où $\omega_{n'J'nJ} = \omega_{n'J'} - \omega_{nJ}$ est la différence de fréquences angulaires entre les niveaux $|n'J'\rangle$ et $|nJ\rangle$ , $\gamma_{n'J'nJ} = \gamma_{n'J'} + \gamma_{nJ}$ est la largeur spectrale totale de la transition.
+
+
+
+
+%\begin{align}
+%\alpha^{(K)}_{nJ}(\omega) = &\, (-1)^{K + J + 1} \sqrt{2K + 1} \sum_{n'J'} (-1)^{J'} 
+%\begin{Bmatrix}
+%1 & K & 1 \\
+%J & J' & J
+%\end{Bmatrix}
+%|\langle n'J' || \mathbf{d} || nJ \rangle|^2 \nonumber \\
+%&\times \frac{1}{\hbar} \, \mathrm{Re} \left[ \frac{1}{\omega_{n'J'nJ} - \omega - i\gamma_{n'J'nJ}/2} + \frac{(-1)^K}{\omega_{n'J'nJ} + \omega + i\gamma_{n'J'nJ}/2} \right],
+%\end{align}
+
+%où :
+%- $\omega_{n'J'nJ} = \omega_{n'J'} - \omega_{nJ}$ est la différence de fréquences angulaires entre les niveaux $|n'J'\rangle$ et $|nJ\rangle$,
+%- $\gamma_{n'J'nJ} = \gamma_{n'J'} + \gamma_{nJ}$ est la largeur spectrale totale de la transition,
+%- $\langle n'J' || \mathbf{d} || nJ \rangle$ est l'élément réduit du moment dipolaire électrique,
+%- le symbole $\begin{Bmatrix} \cdots \end{Bmatrix}$ est un **symbole de Wigner 6-j**.
+
+%Les contributions des termes à $\omega - \omega_{n'J'nJ}$ et $\omega + \omega_{n'J'nJ}$ correspondent respectivement aux parties résonantes et anti-résonantes de la réponse atomique.
+
+%Enfin, les notations suivantes sont utilisées :
+%- $\begin{pmatrix} j_1 & j_2 & j \\ m_1 & m_2 & m \end{pmatrix}$ pour les **symboles de Wigner 3-j**,
+%- $\begin{Bmatrix} j_1 & j_2 & j_3 \\ j_4 & j_5 & j_6 \end{Bmatrix}$ pour les **symboles de Wigner 6-j**.
+
+%%%%%%%%%%%%%%%}
+
+L’opérateur $V^{EE}$ prend alors la forme :
+\begin{eqnarray*}
+	V^{EE}_{nJ} &=& -\frac{1}{4}|\mathcal{E}|^2\left[
+		\alpha^s_{nJ}
+		- i\,\alpha^v_{nJ}\,\frac{(\operatorvec{u}^*\times\operatorvec{u})\cdot \operatorvec{J}}{2J}
+	+ \alpha^T_{nJ}\,\frac{3[(\operatorvec{u}^*\!\cdot \operatorvec{J})(\operatorvec{u}\!\cdot\operatorvec{J})+(\operatorvec{u}\!\cdot\operatorvec{J})(\operatorvec{u}^*\!\cdot \operatorvec{J})]-2\operatorvec{J}^2}{2J(2J-1)}
+\right].
+\end{eqnarray*}
+
+Les coefficients $\alpha^s_{nJ}, \alpha^v_{nJ}, \alpha^T_{nJ}$ sont reliés aux polarisabilités réduites par :
+\begin{eqnarray*}
+	\alpha^s_{nJ} ~=~ \frac{1}{\sqrt{3(2J+1)}}\,\alpha^{(0)}_{nJ},\quad 
+	\alpha^v_{nJ} ~=~ -\sqrt{\frac{2J}{(J+1)(2J+1)}}\,\alpha^{(1)}_{nJ},\quad 
+	\alpha^T_{nJ} ~=~ -\sqrt{\frac{2J(2J-1)}{3(J+1)(2J+1)(2J+3)}}\,\alpha^{(2)}_{nJ}.
+\end{eqnarray*}
+
+Dans cette décomposition, la contribution scalaire ($K=0$) est indépendante de l’orientation interne de l’atome, la contribution vectorielle ($K=1$) intervient sous la forme du pseudo-produit $(\operatorvec{u}^*\times\operatorvec{u})\cdot\operatorvec{J}$, et la contribution tensorielle ($K=2$) dépend de la quadratique $(\operatorvec{u}\cdot\operatorvec{J})^2$. Ces différentes composantes se révèlent naturellement lorsque l’on utilise le formalisme des opérateurs tensoriels irréductibles pour décrire le couplage entre le champ et le moment angulaire électronique.
+
+\subsubsection{Interprétation physique}
+
+\begin{itemize}
+\item \textbf{Terme scalaire} :$\alpha^s$ génère un décalage isotrope du niveau atomique qui est indépendant du sous-niveau de $J$ ou $F$. Ce décalage est la composante « classique » de l’effet Stark AC, proportionnelle à l’intensité lumineuse, et n’entraîne pas de structure fine dépendant de la polarisation de la lumière.
+
+\item \textbf{Terme vectoriel (Zeeman optique)} : %$\alpha^v$ correspond à un effet Zeeman fictif, avec un champ magnétique fictif $\operatorvec{B}_{\mathrm{fict}} \propto i(\operatorvec{{E}^*\times \operatorvec{E})$. Ce terme disparaît pour une polarisation linéaire du champ ($\operatorvec{u}$ réel).
+$\alpha^v$ agit comme un champ magnétique fictif (optical Zeeman effect) le long de $\operatorvec{B}_{\rm fict}\propto i(\operatorvec{E}^\ast\times \operatorvec{E})$. En effet, l’opérateur $i(\operatorvec{u}^\ast\times\operatorvec{u})\cdot\operatorvec{J}$ se comporte comme $\operatorvec{J}\cdot \operatorvec{B}_{\rm fict}$. Ainsi la polarisation circulaire du champ ($i[\operatorvec{u}^\ast\times\operatorvec{u}]\neq 0$) donne un décalage dependendant de l’orientation de $\operatorvec{J}$ (analogue à un effet Zeeman), alors que pour une lumière linéaire ($\operatorvec{u}$ réel) ce produit vectoriel s’annule et ce terme vectoriel disparaît. On parle souvent de champ fictif parce que, en convention, le terme vectoriel du Hamiltonien d’interaction s’écrit formellement $\mu_B g_J\,(\operatorvec{J}\cdot\operatorvec{B}_{\rm fict})$
+
+\item \textbf{Terme tensoriel} : %$\alpha^T$ introduit une anisotropie dépendant de l’alignement de $\operatorvec{J}$ avec la polarisation du champ. Il ne contribue que pour $J \geq 1$.
+	$\alpha^T$ introduit une anisotropie du potentiel selon l’orientation du moment angulaire par rapport à la polarisation du champ. Mathématiquement, le facteur $\frac{3[(\operatorvec{u}^*\!\cdot \operatorvec{J})(\operatorvec{u}\!\cdot\operatorvec{J})+(\operatorvec{u}\!\cdot\operatorvec{J})(\operatorvec{u}^*\!\cdot \operatorvec{J})]-2\operatorvec{J}^2}{2J(2J-1)}$ sur la direction de polarisation. Il ne contribue que pour les états de spin total $J\geq 1$, car la symétrie quantique annule le 6-j associé dès que $J=1/2$. Ce terme entraîne par exemple une tension ou une compression différentielle des sous-niveaux magnétiques selon leur moment d’alignement avec le champ (effet d’alignement de type quadrupolaire).
+\end{itemize}
+
+\subsubsection{Cas des atomes alcalins (ex. Rubidium)}
+
+%Pour les atomes alcalins, l’état fondamental $nS_{1/2}$ a $J=1/2$. D’après les formules précédentes, la contribution tensorielle s’annule exactement pour $J=1/2$, et seul le terme scalaire (et éventuellement vectoriel si polarisation elliptique) subsiste.
+Les atomes alcalins (comme le Rb) ont un état fondamental $nS_{1/2}$ de moment total $J=1/2$. D’après les formules ci-dessus, pour $J=1/2$ la composante tensorielle s’annule exactement (le symbole de Wigner 6-j associé est nul). Par conséquent, dans l’état fondamental du rubidium seul le terme scalaire et, en cas de polarisation non linéaire du champ, le terme vectoriel subsistent. Pour un champ linéaire, seul $\alpha^s$ demeure. {\color{red} (à enlever )Quand on intègre l’hyperfine (moment nucléaire $I$ de Rb$^{87}=3/2$), on passe aux états $|F,M_F\rangle$ ($F=1,2$) ; l’opérateur de Stark effectif garde alors la forme analogue en remplaçant $\operatorvec{J}$ par $\operatorvec{F}$, et des contributions fines peuvent apparaître (un terme de type tensoriel « relatif » entre sous-niveaux $F>1/2$). Néanmoins, dans la plupart des traitements d’optique quantique on évoque simplement que pour l’état fondamental $J=1/2$ du rubidium la polarisabilité tensorielle est nulle et que le terme vectoriel ne survient que pour une lumière circulaire. Les équations ci-dessus peuvent être utilisées pour calculer les décalages de Zeeman optiques expérimentaux ou les potentiels de piégeage par champ lumineux (pièges dipolaires). Par exemple, on trouve souvent l’approximation $U_{\rm dip}(r)=-\frac{1}{4}\alpha(\omega)\,|\mathcal{E}(r)|^2$ pour les atomes oscillant lentement, où $\alpha$ est la polarisabilité scalaire effectif (somme des contributions dipolaires). L’analyse plus détaillée avec les termes vectoriels et tensoriels explique des observations telles que les dépendances en polarisation et en niveau hyperfin (par exemple la structure Zeeman optique entre sous-niveaux $F$) dans les expériences sur le rubidium.}

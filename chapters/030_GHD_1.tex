@@ -1,0 +1,710 @@
+\chapter{Dynamique hors-équilibre et hydrodynamique généralisée}
+\label{chap:GHD}
+\minitoc
+
+%\chapter{Hydrodynamique généralisée (GHD)}
+
+\section*{Introduction}
+
+
+\paragraph{De l’état stationnaire à la dynamique}  
+Après avoir étudié les propriétés stationnaires des gaz de bosons unidimensionnels, nous nous tournons désormais vers leur évolution temporelle. Ce chapitre s’appuie sur une approche hydrodynamique adaptée aux systèmes intégrables : la théorie dite d’\gls{GHD}. Celle-ci est largement documentée dans la littérature (voir par exemple \cite{Doyon_GHD_2020,Bouchoule_2022,ESSLER2023127572,kerr2023theory}) et nous en présentons ici les concepts essentiels.
+
+\paragraph{Principe général d’une approche hydrodynamique}  
+De manière générale, l’hydrodynamique vise à décrire la dynamique à grande échelle (\emph{coarse grained dynamics}) d’un système, également appelée « échelle d’Euler ». L’idée consiste à découper l’espace-temps d’un système de taille $L$ en cellules de dimensions $\ell \times \tau$, comme illustré en Fig.~???.  
+La longueur $\ell$ est choisie de sorte que $L \gg \ell \gg \ell_c$, où $\ell_c$ désigne une longueur microscopique caractéristique, par exemple la distance inter-particule. On peut alors considérer que la densité est uniforme à l’intérieur de chaque cellule, ce qui correspond à l’\gls{LDA}.
+
+\paragraph{Choix des échelles spatio-temporelles}  
+Le temps $\tau$ est fixé pour être beaucoup plus grand que le temps caractéristique de relaxation. Ainsi, chaque cellule de l’espace-temps est supposée décrire un état localement relaxé. La notion de relaxation occupe donc une place centrale dans la construction des approches hydrodynamiques.
+
+\paragraph{Particularités pour les systèmes quantiques isolés}  
+Dans le cadre de systèmes quantiques isolés, la relaxation n’est pas un concept trivial, qu’il s’agisse de systèmes chaotiques ou intégrables. La section suivante s’attache à définir plus précisément cette notion, avant de présenter les approches hydrodynamiques adaptées à chaque cas. Pour les systèmes intégrables, une attention particulière est portée à la formulation et aux implications de l’Hydrodynamique Généralisée.
+
+\paragraph{Équations hydrodynamiques de type Euler}  
+Les équations hydrodynamiques de type Euler sont des équations hyperboliques qui décrivent la dynamique émergente des systèmes à plusieurs corps à grandes échelles d’espace et de temps~\cite{ref1}. Elles rendent compte de la propagation de la relaxation locale, c’est-à-dire la séparation entre une dynamique lente, émergente, et la projection rapide des observables locales sur les quantités conservées. En une dimension d’espace, elles prennent la forme locale de conservation
+\begin{equation}\label{chap:GHD:eq.conserv.1}
+	\partial_t q_i + \partial_x j_i = F_i,	
+\end{equation}
+où l’indice $i$ énumère les lois de conservation locales admises, et où $F_i$ représente les contributions provenant de champs de force externes, qui rompent en général la conservation stricte.
+
+\paragraph{Relations constitutives et exemples}  
+Les flux $j_i$ et les termes de force $F_i$ dépendent uniquement des densités conservées $q_i$ (équations d’état), et sont déterminés à partir de considérations thermodynamiques, telles que la maximisation de l’entropie. Les équations d’Euler pour un fluide galiléen, ou encore l’hydrodynamique relativiste, constituent des exemples classiques de ce type d’équations.
+
+\paragraph{Cas intégrable et hydrodynamique généralisée}  
+En dimension un, de nombreux systèmes à plusieurs corps présentent une propriété d’intégrabilité~\cite{ref2,ref3}. Dans ce contexte, il existe une infinité de lois de conservation, et la théorie universelle qui décrit leur hydrodynamique à l’échelle d’Euler est l’Hydrodynamique Généralisée (GHD)~\cite{ref4,ref5}. Cette approche englobe les équations connues pour les bâtons durs~\cite{ref1,ref6} et les gaz de solitons~\cite{ref7,ref8,ref9}, tout en s’appliquant plus largement, aussi bien à des systèmes classiques que quantiques : particules en interaction, chaînes de spins ou théories des champs quantiques (voir~\cite{ref10} pour des revues).
+
+\paragraph{Paramétrisation spectrale et densité conservée}  
+La GHD reformule l’infinité de lois de conservation (éventuellement rompues) en une famille indexée par un paramètre spectral continu $\theta$, plutôt que par un indice discret $i$. On note $\rho(x,\theta,t)$ la densité conservée en espace réel, espace spectral et temps. Le paramètre spectral énumère les objets asymptotiques issus de la théorie de diffusion correspondante (particules, solitons, etc.), incluant leur quantité de mouvement et leurs éventuels degrés internes. Dans de nombreux cas simples, $\theta$ appartient à un sous-ensemble de $\mathbb{R}$, représentant les moments asymptotiques, et les coordonnées $(x,\theta)$ forment un « espace des phases spectral » sur lequel $\rho$ joue le rôle de densité.
+
+\paragraph{Prise en compte des champs de force}  
+L’inclusion de champs de force externes couplés aux densités conservées a été introduite dans~\cite{ref11}, où il est montré que la GHD s’écrit
+\begin{equation}\label{chap:GHD:eq.GHD.1}
+	\partial_t \rho + \partial_x(v^{\text{eff}} \rho) + \partial_\theta(a^{\text{eff}} \rho) = 0.
+\end{equation}
+Ici, $v^{\text{eff}}$ et $a^{\text{eff}}$ sont des fonctionnels appropriés de $\rho(x,\cdot,t)$, et le dernier terme représente la contribution des champs de force. D’autres types de forces ont été étudiés~\cite{Bastianello2019a,Bastianello2019b}, mais ne seront pas considérés ici.
+
+%\section{Formulation hamiltonienne de la GHD}
+%
+%\subsection{Crochet de Poisson fonctionnel}
+%
+%\paragraph{Définition générale}
+%Bonnemain \emph{et al.}~\cite{bonnemain2024hamiltonian} définissent un crochet de Poisson fonctionnel agissant sur les fonctionnelles $F$ et $G$ de la distribution de rapidité, avec interactions :
+%\begin{equation}\label{chap:GHD:eq.chochet.bonnemain.1}
+%	\{F,G\}=\iint dx\,d\theta\;\frac{\nu}{2\pi}\,\left[\partial_x \left ( \frac{\delta F}{\delta \rho(x,\theta)} \right )\,\left(\partial_\theta \left ( \frac{\delta G}{\delta \rho(x,\theta)} \right ) \right)^{\mathrm{dr}}_{[\nu]} -\partial_x \left ( \frac{\delta G}{\delta \rho (x,\theta)} \right ) \,\left( \partial_\theta \left ( \frac{\delta F}{\delta \rho (x,\theta)} \right )\right)^{\mathrm{dr}}_{[\nu]} \right],
+%\end{equation}
+%où $\nu$ est la fonction d’occupation. L'application de l’opérateur de \emph{dressing} dans ce crochet traduit les interactions entre particules.
+%
+%\paragraph{Cas des charges globales}
+%Les charges locales conservées ont été définies en \eqref{chap.2.charge.f.1}.  
+%Avec le même formalisme, les charges globales conservées se définissent comme fonctionnelles linéaires d’une fonction réelle et régulière \( f(x, \theta) \) définie sur \( \mathbb{R}^2 \) :
+%\begin{equation}\label{chap:GHD:eq.charge.global.1}
+%	\mathcal{Q}[f] = \int_{\mathbb{R}^2} dx\, d\theta\, f(x, \theta)\, \rho(x, \theta),
+%\end{equation}
+%qui représente la charge totale associée à une quantité prenant la valeur \( f(x, \theta) \) pour chaque quasi-particule.
+%
+%Dans notre étude de la dynamique, nous n’avons pas besoin de l’information sur le poids spectral.  
+%On notera donc, dans la limite thermodynamique, les moyennes d’opérateurs simplement en retirant leur chapeau :
+%\[
+%\underset{\mathrm{therm}}{\lim} \braket{\mathcal{O}}_{\varrho[w]} \equiv \mathcal{O}.
+%\]
+%Ainsi, dans cette limite, la charge globale \eqref{chap:GHD:eq.charge.global.1} s’écrit directement comme ci-dessus.
+%
+%Le crochet de Poisson \eqref{chap:GHD:eq.chochet.bonnemain.1} appliqué à deux charges globales \( \mathcal{Q}[f] \) et \( \mathcal{Q}[g]\) s’écrit :
+%\begin{equation}\label{chap:GHD:eq.chochet.bonnemain.2}
+%	\{\mathcal{Q}[f], \mathcal{Q}[g]\} = \int_{\mathbb{R}^2} dx\, d\theta \frac{\nu}{2\pi}  \left( \partial_x f  (\partial_\theta g )^{\mathrm{dr}}_{[\nu]}  - \partial_x g (\partial_\theta f)^{\mathrm{dr}}_{[\nu]}  \right).
+%\end{equation}
+%L’application du dressing satisfait la symétrie~\cite{doyon2020lecture} :
+%\begin{equation}\label{chap:GHD:eq.sym.dr.1}
+%	\int_{\mathbb{R}^2}	 dx\, d\theta \, \nu f g^{\mathrm{dr}}_{[\nu]} = \int_{\mathbb{R}^2}	 dx\, d\theta \, \nu f^{\mathrm{dr}}_{[\nu]} g.
+%\end{equation}
+%Par intégration par parties, le crochet \eqref{chap:GHD:eq.chochet.bonnemain.2} devient :
+%\begin{equation}\label{chap:GHD:eq.chochet.bonnemain.3}
+%	\{ \mathcal{Q}[f] , \mathcal{Q}[g]\} = \int_{\mathbb{R}^2} dx\, d\theta \,   f  \left( \partial_\theta \left ( \frac{\nu }{2\pi}  (\partial_x g )^{\mathrm{dr}}_{[\nu]} \right )   - \partial_x  \left ( \frac{\nu}{2\pi}  (\partial_\theta g )^{\mathrm{dr}}_{[\nu]} \right )  \right).
+%\end{equation}
+%
+%\subsection{Crochet avec l’Hamiltonien}
+%
+%\paragraph{Densité hamiltonienne et grandeurs effectives}
+%On note $h(x,\theta)$ la densité associée à la moyenne de l’Hamiltonien :
+%\begin{equation}\label{chap:GHD:eq.ham.1}
+%	H = \mathcal{Q}[h].
+%\end{equation}
+%La fonction d’occupation $\nu$, la vitesse effective $v^{\mathrm{eff}}$ et l’accélération effective $a^{\mathrm{eff}}$ sont définies par :
+%\begin{equation}\label{chap:GHD:eq.nu.v.a.1}
+%	\nu = 2\pi \frac{\rho}{1^{\mathrm{dr}}_{[\nu]}}, \quad  
+%	v^{\mathrm{eff}} = \frac{(\partial_\theta h )^{\mathrm{dr}}_{[\nu]}}{1^{\mathrm{dr}}_{[\nu]}}, \quad  
+%	a^{\mathrm{eff}} = -\frac{(\partial_x h )^{\mathrm{dr}}_{[\nu]}}{1^{\mathrm{dr}}_{[\nu]}},
+%\end{equation}
+%fonctions de $\rho(x,\theta,t)$.
+%
+%Le crochet \eqref{chap:GHD:eq.chochet.bonnemain.3} appliqué à $(f,h)$ devient :
+%\begin{equation}\label{chap:GHD:eq.chochet.bonnemain.4}
+%	\{\mathcal{Q}[f] , \mathcal{Q}[h]\} = -\int_{\mathbb{R}^2} dx\, d\theta \,   f  \left[ \partial_x \left ( \rho  v^{\mathrm{eff}} \right )   +  \partial_\theta   \left ( \rho  a^{\mathrm{eff}} \right )  \right].
+%\end{equation}
+%
+%\paragraph{Forme locale : densités conservées}
+%En choisissant $f(x,\theta) \mapsto \delta(\cdot - x)f(\theta)$ dans \eqref{chap:GHD:eq.charge.global.1}, on obtient la densité conservée :
+%\[
+%q_{[f]}(x) = \mathcal{Q}[(x,\theta) \mapsto \delta(\cdot - x) f(\theta)].
+%\]
+%Appliquée à \eqref{chap:GHD:eq.chochet.bonnemain.4}, cette prescription donne :
+%\begin{equation}\label{chap:GHD:eq.chochet.bonnemain.5}
+%	\{ q_{[f]}(x) , \mathcal{Q}[h]\} = - \partial_x \left ( \int_{\mathbb{R}} d\theta \,   f  \,  \rho  \,  v^{\mathrm{eff}} \right ) + \int_{\mathbb{R}} d\theta \, f' \,    \rho \, a^{\mathrm{eff}}.
+%\end{equation}
+%En utilisant l’équation de Liouville \eqref{chap:GHD:eq.Liouv.1}, on retrouve la forme de convection :
+%\begin{equation}\label{chap:GHD:eq.conserv.2}
+%	\partial_t q_{[f]} + \partial_x j_{[f]} = F_{[f]},
+%\end{equation}
+%avec
+%\begin{equation}\label{chap:GHD:eq.conserv.2.1}
+%	j_{[f]} = \int_{\mathbb{R}} d\theta \,v^{\mathrm{eff}} \, f \, \rho, 
+%	\quad F_{[f]} = \int_{\mathbb{R}} d\theta \,  a^{\mathrm{eff}} \, f' \, \rho.
+%\end{equation}
+%
+%\paragraph{Forme locale : équation sur \texorpdfstring{$\rho$}{rho}}
+%En prenant $\rho(x,\theta) = \mathcal{Q}[\delta(\cdot - x)\delta(\cdot - \theta)]$ et en l’appliquant à \eqref{chap:GHD:eq.chochet.bonnemain.4}, on obtient :
+%\begin{equation}\label{chap:GHD:eq.chochet.bonnemain.6}
+%	\{ \rho ( x , \theta ) , \mathcal{Q}[h]\} = - \partial_x \left (  v^{\mathrm{eff}} \,  \rho   \right ) - \partial_\theta \left (  a^{\mathrm{eff}}  \,  \rho  \right).
+%\end{equation}
+%En appliquant l’équation de Liouville \eqref{chap:GHD:eq.Liouv.1}, on retrouve l’équation GHD :
+%\begin{equation}\label{chap:GHD:eq.conserv.3}
+%	\partial_t \rho + \partial_x(v^{\mathrm{eff}} \rho) + \partial_\theta(a^{\mathrm{eff}} \rho) = 0.
+%\end{equation}
+%
+%---------------------
+\section{Formulation hamiltonienne de la GHD}
+
+\subsection{Crochet de Poisson fonctionnel}
+
+\paragraph{Interprétation et limite non-interactive}  
+À ce niveau de généralité, l'équation de l’Hydrodynamique Généralisée (GHD) \eqref{chap:GHD:eq.GHD.1} peut être interprétée comme la dynamique hydrodynamique d’un fluide bidimensionnel dont la densité est conservée dans l’espace des phases spectral.  
+Les effets d’interaction se traduisent par un couplage non local dans la direction des rapidités $\theta$, reflétant les processus de diffusion élastique entre quasi-particules possédant des paramètres spectraux distincts.
+
+\medskip
+
+Dans le cas limite d’un système \emph{sans interactions}, l’espace spectral coïncide avec l’espace des phases classique, et l’équation de GHD se réduit alors à l’équation de Liouville (ou, de façon équivalente, à l’équation de Boltzmann sans terme de collisions) issue de la théorie cinétique élémentaire.
+
+\medskip
+
+En l’absence de phénomènes dissipatifs, la densité de distribution $\rho$ est conservée le long du flot hamiltonien associé à l’énergie $H$, ce qui s’exprime par
+\begin{equation}\label{chap:GHD:eq.Liouv.1}
+	\frac{d \rho}{dt} 
+	= \frac{\partial \rho}{\partial t } + \{ \rho , H \} = 0,
+\end{equation}
+où $\{\cdot , \cdot\}$ désigne le crochet de Poisson canonique dans l’espace des phases.  
+Dans cette perspective, l’Hydrodynamique Généralisée apparaît comme une extension naturelle de l’équation de Liouville aux systèmes intégrables, incorporant les effets collectifs induits par les interactions tout en préservant une description exacte à grande échelle.
+
+
+\paragraph{Structure hamiltonienne et crochet de Poisson fonctionnel}  
+Bonnemain \emph{et al.} \cite{bonnemain2024hamiltonian} introduisent un crochet de Poisson fonctionnel agissant sur des fonctionnelles $F$ et $G$ de la distribution de rapidité $\rho(x,\theta)$ en présence d’interactions. Celui-ci s’écrit
+\begin{equation}\label{chap:GHD:eq.chochet.bonnemain.1}
+	\{F,G\}
+	=\iint dx\,d\theta\;\frac{\nu}{2\pi}\,
+	\left[
+		\partial_x \left( \frac{\delta F}{\delta \rho(x,\theta)} \right)
+		\left( \partial_\theta \left( \frac{\delta G}{\delta \rho(x,\theta)} \right) \right)^{\mathrm{dr}}_{[\nu]}
+		-
+		\partial_x \left( \frac{\delta G}{\delta \rho(x,\theta)} \right)
+		\left( \partial_\theta \left( \frac{\delta F}{\delta \rho(x,\theta)} \right) \right)^{\mathrm{dr}}_{[\nu]}
+	\right],
+\end{equation}
+où $\nu$ désigne la fonction d’occupation. Dans ce crochet l'application de l’opérateur de \emph{dressing} $(\cdot)^{\mathrm{dr}}_{[\nu]}$ (introduit dans \eqref{eq:dessing})  traduit les interactions entre particules.
+
+%L’opérateur de \emph{dressing} $(\cdot)^{\mathrm{dr}}_{[\nu]}$ agit ici sur les dérivées fonctionnelles dans la variable spectrale $\theta$ ; il encode les effets des interactions à longue portée dans l’espace des rapidités. Cette structure hamiltonienne permet de reformuler la GHD comme une équation de type Liouville sur l’espace fonctionnel des distributions $\rho$, mais avec un crochet de Poisson modifié par le \emph{dressing}, traduisant la nature intégrable et non-locale des interactions.
+
+\medskip
+
+\paragraph{Charges globales conservées}  
+Les charges locales conservées ont été définies dans les équations~\eqref{chap.2.charge.f.1}.  
+Dans le même formalisme, on définit les \emph{charges globales conservées} comme des fonctionnelles linéaires agissant sur une fonction réelle et régulière $f(x,\theta)$ définie sur $\mathbb{R}^2$, selon
+\begin{equation}\label{chap:GHD:eq.charge.global.0}
+	\operator{\mathcal{Q}}[f] 
+	= \int_{\mathbb{R}^2} dx\, d\theta\, f(x, \theta)\, \operator{\rho}(x, \theta),
+\end{equation}
+où $\operator{\rho}(x,\theta)$ est l'opérateur distribution de rapidité.  
+Cette quantité correspond à la charge totale associée à une observable prenant la valeur $f(x,\theta)$ pour chaque quasi-particule.
+
+\medskip
+
+La valeur moyenne $\langle \operator{\mathcal{Q}}[f] \rangle_{\operator{\varrho}[w]}$ a été définie en~\eqref{chap.TBA.moy.dens}.  
+La matrice densité locale $\operator{\varrho}^{(\mathcal{S})}[w]$ a été introduite en~\eqref{chap.2.densite.1}.  
+De manière analogue, la \emph{matrice densité globale} $\operator{\varrho}[w]$ s’écrit
+\begin{equation}\label{chap:GHD:eq.charge.global.2}
+	\operator{\varrho}[w] 
+	= \frac{1}{Z[w]}\, e^{-\operator{\mathcal{Q}}[w]}, 
+	\qquad  
+	Z[w] = \mathrm{Tr} \left[ e^{-\operator{\mathcal{Q}}[w]} \right],
+\end{equation}
+où la charge globale $\operator{\mathcal{Q}}[w]$ est définie par~\eqref{chap:GHD:eq.charge.global.0}, et $w$ désigne le poids spectral.  
+
+%Cette formulation met en évidence le lien entre la description statistique du système et la conservation des charges globales, en généralisant le principe de Gibbs aux systèmes intégrables par l’introduction de l’ensemble d’observables $\operator{\mathcal{Q}}[f]$ sur l’espace spectral.
+
+\medskip
+
+\paragraph{Crochet de Poisson entre charges globales}  
+Dans notre étude de la dynamique, nous n’avons pas besoin de l’information détaillée sur le poids spectral $w$.  
+Nous noterons donc, dans ce chapitre, et dans la limite thermodynamique, les moyennes des opérateurs en supprimant leur chapeau, \emph{i.e.}
+\begin{equation}
+\underset{\mathrm{therm}}{\lim} \, \langle \operator{\mathcal{O}} \rangle_{\varrho[w]} \; \equiv \; \mathcal{O},
+\end{equation}
+de sorte que, dans cette limite, la moyenne de la charge globale s’écrit
+\begin{equation}\label{chap:GHD:eq.charge.global.1}
+	\mathcal{Q}[f] 
+	= \int_{\mathbb{R}^2} dx\, d\theta\, f(x, \theta)\, \rho(x, \theta),
+\end{equation}
+où $f$ est une fonction régulière sur $\mathbb{R}^2$.
+
+\medskip
+
+Le crochet de Poisson (défini en~\eqref{chap:GHD:eq.chochet.bonnemain.1}) entre deux charges $\mathcal{Q}[f]$ et $\mathcal{Q}[g]$ prend la forme
+\begin{equation}\label{chap:GHD:eq.chochet.bonnemain.2}
+	\{\mathcal{Q}[f], \mathcal{Q}[g]\}
+	= \int_{\mathbb{R}^2} dx\, d\theta\, \frac{\nu}{2\pi} 
+	\left[ \partial_x f \, (\partial_\theta g)^{\mathrm{dr}}_{[\nu]} 
+	     - \partial_x g \, (\partial_\theta f)^{\mathrm{dr}}_{[\nu]} \right].
+\end{equation}
+%où $\nu$ est la fonction d’occupation et $(\cdot)^{\mathrm{dr}}_{[\nu]}$ désigne l’application de \emph{dressing} associée à $\nu$.
+
+\medskip
+
+Cette application de \emph{dressing} satisfait la relation de symétrie~\cite{doyon2020lecture} :
+\begin{equation}\label{chap:GHD:eq.sym.dr.1}
+	\int_{\mathbb{R}^2} dx\, d\theta \; \nu \, f \, g^{\mathrm{dr}}_{[\nu]} 
+	= \int_{\mathbb{R}^2} dx\, d\theta \; \nu \, f^{\mathrm{dr}}_{[\nu]} \, g.
+\end{equation}
+
+Pour appliquer la relation de symétrie~\eqref{chap:GHD:eq.sym.dr.1} au crochet~\eqref{chap:GHD:eq.chochet.bonnemain.2}, il est nécessaire de vérifier que les fonctions impliquées satisfont les conditions requises sur leurs types tensoriels.
+\footnote{
+La relation de symétrie~\eqref{chap:GHD:eq.sym.dr.1} est valable lorsque la somme des types tensoriels de $f$ et $g$ est $(1,1)$ dans le sens de~\cite{doyon2020lecture}. Dans ce formalisme, le type $(a,b)$ caractérise la transformation d'un objet vis-à-vis de $x$ (première entrée) et de $\theta$ (seconde entrée). Si $f$ est de type $(p,q)$ et $g$ de type $(r,s)$, alors leur somme est $(p+r,q+s)$. La condition $(1,1)$ garantit que l'intégrande $\nu\, f\, g^{\mathrm{dr}}$ est un scalaire invariant, rendant l'intégrale bien définie. Dans~\eqref{chap:GHD:eq.chochet.bonnemain.2}, $\partial_x f$ est de type $(1,0)$ et $\partial_\theta g$ de type $(0,1)$, ce qui satisfait cette condition et permet l'utilisation de~\eqref{chap:GHD:eq.sym.dr.1}.
+}
+
+En utilisant cette symétrie ainsi qu’une intégration par parties, le crochet~\eqref{chap:GHD:eq.chochet.bonnemain.2} se réécrit
+\begin{equation}\label{chap:GHD:eq.chochet.bonnemain.3}
+	\{\mathcal{Q}[f], \mathcal{Q}[g]\}
+	= \int_{\mathbb{R}^2} dx\, d\theta \; f \,
+	\left[
+		\partial_\theta \left( \frac{\nu}{2\pi} \, (\partial_x g)^{\mathrm{dr}}_{[\nu]} \right)
+		- \partial_x \left( \frac{\nu}{2\pi} \, (\partial_\theta g)^{\mathrm{dr}}_{[\nu]} \right)
+	\right].
+\end{equation}
+
+\medskip
+
+\subsection{Crochet avec l’Hamiltonien}
+
+\paragraph{Densité hamiltonienne et grandeurs effectives} 
+On note $h(x,\theta)$ la densité associée à la moyenne de l’Hamiltonien, telle que
+\begin{equation}\label{chap:GHD:eq.ham.1}
+	H = \mathcal{Q}[h].
+\end{equation}
+
+La fonction d’occupation $\nu$, la vitesse effective $v^{\mathrm{eff}}$ et l’accélération effective $a^{\mathrm{eff}}$ sont définies par
+%\begin{equation}\label{chap:GHD:eq.nu.v.a.1}
+%	\nu = 2\pi \frac{\rho}{1^{\mathrm{dr}}_{[\nu]}}, 
+%	\quad v^{\mathrm{eff}} = \frac{(\partial_\theta h )^{\mathrm{dr}}_{[\nu]}}{1^{\mathrm{dr}}_{[\nu]}}, 
+%	\quad a^{\mathrm{eff}} = -\frac{(\partial_x h )^{\mathrm{dr}}_{[\nu]}}{1^{\mathrm{dr}}_{[\nu]}},
+%\end{equation}
+\begin{equation}\label{chap:GHD:eq.nu.v.a.1}
+	2 \pi \rho =  1^{\mathrm{dr}}_{[\nu]} \, \nu , 
+	\quad 2 \pi \, v^{\mathrm{eff}} \, \rho  =(\partial_\theta h )^{\mathrm{dr}}_{[\nu]} \, \nu , 
+	\quad 2 \pi \, a^{\mathrm{eff}} \, \rho  = -(\partial_x h )^{\mathrm{dr}}_{[\nu]}\, \nu ,
+\end{equation}
+toutes trois étant des fonctions de $\rho(\cdot,\cdot,t)$. Ces quantités interviennent dans les équations de mouvement
+\begin{equation}\label{chap:GHD:eq.nu.v.a.1.1}
+	\dot{x} = v^{\mathrm{eff}}, \qquad \dot{\theta} = a^{\mathrm{eff}},
+\end{equation}
+montrant que les dérivées $\partial_x$ et $\partial_\theta$ présentes dans le crochet de Poisson correspondent respectivement à l'action de l'accélération effective sur $\theta$ et de la vitesse effective sur $x$.
+
+\medskip 
+
+%Avec ces définitions, le crochet~\eqref{chap:GHD:eq.chochet.bonnemain.3} s’écrit
+Le crochet \eqref{chap:GHD:eq.chochet.bonnemain.3} appliqué à $(f,h)$ devient :
+\begin{equation}\label{chap:GHD:eq.chochet.bonnemain.4}
+	\{\mathcal{Q}[f], \mathcal{Q}[h]\} 
+	= - \int_{\mathbb{R}^2} dx\, d\theta \; f \left[ \partial_x \big( \rho \, v^{\mathrm{eff}} \big) 
+	+ \partial_\theta \big( \rho \, a^{\mathrm{eff}} \big) \right].
+\end{equation}
+
+\paragraph{Forme locale : densités conservées .} 
+En choisissant $(x,\theta) \mapsto \delta(\cdot - x)f(\theta)$ dans \eqref{chap:GHD:eq.charge.global.1}, on obtient la moyenne de la densité conservée \ie
+%On remarque que les moyennes des densités conservées $q_{[f]}(x)$ s’obtiennent en appliquant la prescription
+%\[
+%(x,\theta) \mapsto \delta(\cdot - x) \, f(\theta)
+%\]
+%dans~\eqref{chap:GHD:eq.charge.global.1}, \emph{i.e.}
+\begin{equation}
+	q_{[f]}(x) = \mathcal{Q} \big[ (x,\theta) \mapsto \delta(\cdot - x) \, f(\theta) \big].
+\end{equation}
+
+Appliqué à~\eqref{chap:GHD:eq.chochet.bonnemain.4}, on obtient
+\begin{equation}\label{chap:GHD:eq.chochet.bonnemain.5}
+	\{q_{[f]}(x), \mathcal{Q}[h]\} 
+	= - \partial_x \left[ \int_{\mathbb{R}} d\theta \; f \, \rho \, v^{\mathrm{eff}} \right]
+	+ \int_{\mathbb{R}} d\theta \; f' \, \rho \, a^{\mathrm{eff}}.
+\end{equation}
+
+En appliquant l’équation de Liouville~\eqref{chap:GHD:eq.Liouv.1}, on retrouve la forme de convection~\eqref{chap:GHD:eq.conserv.1} :
+\begin{equation}\label{chap:GHD:eq.conserv.2}
+	\partial_t q_{[f]} + \partial_x j_{[f]} = F_{[f]},
+\end{equation}
+où le flux $j_{[f]}$ et le terme de force $F_{[f]}$ sont donnés par
+\begin{equation}\label{chap:GHD:eq.conserv.2.1}
+	j_{[f]} = \int_{\mathbb{R}} d\theta \; v^{\mathrm{eff}} \, f \, \rho,
+	\quad F_{[f]} = \int_{\mathbb{R}} d\theta \; a^{\mathrm{eff}} \, f' \, \rho.
+\end{equation}
+
+\paragraph{Forme locale : équation sur \texorpdfstring{$\rho$}{rho}} 
+De manière analogue, pour la distribution de rapidité à l’équilibre thermodynamique, on note
+\begin{equation}
+	\rho(x,\theta) = \mathcal{Q}\big[ \delta(\cdot - x) \, \delta(\cdot - \theta) \big].
+\end{equation}
+Appliqué à~\eqref{chap:GHD:eq.chochet.bonnemain.4}, on obtient
+\begin{equation}\label{chap:GHD:eq.chochet.bonnemain.6}
+	\{\rho(x,\theta), \mathcal{Q}[h]\} 
+	= - \partial_x \big( v^{\mathrm{eff}} \, \rho \big)
+	  - \partial_\theta \big( a^{\mathrm{eff}} \, \rho \big).
+\end{equation}
+
+En appliquant l’équation de Liouville~\eqref{chap:GHD:eq.Liouv.1}, on retrouve l’équation GHD~\eqref{chap:GHD:eq.GHD.1} :
+\begin{equation}\label{chap:GHD:eq.conserv.3}
+	\partial_t \rho + \partial_x \big( v^{\mathrm{eff}} \rho \big)
+	+ \partial_\theta \big( a^{\mathrm{eff}} \rho \big) = 0.
+\end{equation}
+
+Le résultat remarquable \eqref{chap:GHD:eq.conserv.3} a été obtenu pour la première fois par Bertini et al. (2016) et Castro-Alvaredo et al. (2016). Cette observation clé a déclenché l’ensemble des développements ultérieurs de la dynamique hydrodynamique généralisée (GHD) dans les systèmes quantiques intégrables. Les travaux de Bertini et al. (2016) s’appuient en partie sur ceux de Bonnes et al. (2014), où la formule donnant la vitesse effective \eqref{chap:GHD:eq.nu.v.a.1} était apparue pour la première fois dans le contexte d’un système quantique intégrable.\\
+
+Les équation \eqref{chap:GHD:eq.Liouv.1},  \eqref{chap:GHD:eq.conserv.2} et \eqref{chap:GHD:eq.conserv.3} décrivent la dynamique au régime d’Euler. En dehors de cette approximation, il est nécessaire de prendre en compte des contributions supplémentaires liées aux effets diffusifs \cite{DeNardis2018}.
+
+
+
+
+\section{Cas particuliers et interpretations}
+
+
+\subsection{Cas sans interaction}
+
+En l’absence d’interaction, l’opérateur de \emph{dressing} se réduit à l’identité.  
+Dans ce cas, la fonction d’occupation \eqref{chap:GHD:eq.nu.v.a.1} devient :
+\begin{equation}
+	\nu = 2\pi \rho,
+\end{equation}
+et le crochet \eqref{chap:GHD:eq.chochet.bonnemain.1} se simplifie en :
+\begin{equation}
+	\{F,G\} = \iint dx\,d\theta\;\rho \,\left[\partial_x \!\left( \frac{\delta F}{\delta \rho (x , \theta)} \right)\, \partial_\theta \!\left( \frac{\delta G}{\delta \rho (x , \theta)} \right) - \partial_x \!\left( \frac{\delta G}{\delta \rho (x , \theta)} \right) \, \partial_\theta \!\left( \frac{\delta F}{\delta \rho(x , \theta) } \right) \right].
+\end{equation}
+
+Les flux et termes de force \eqref{chap:GHD:eq.conserv.2.1} s’expriment alors en remplaçant la vitesse effective $v^{\mathrm{eff}}$ et l’accélération effective $a^{\mathrm{eff}}$ (de \eqref{chap:GHD:eq.nu.v.a.1}) par leurs expressions issues de la dynamique hamiltonienne libre :
+\begin{equation}
+	v^{\mathrm{eff}} \to \partial_\theta h, 
+	\quad a^{\mathrm{eff}} \to  -\partial_x h.
+\end{equation}
+
+Dans le cadre de \eqref{chap:GHD:eq.ham.2} \(\partial_\theta h = \theta\) et   \(\partial_x h  = V' \). De plus en ne considérant que les premières charges conservées associées à $f(\theta) = 1$, $\theta$ et $\theta^2/2$ dans \eqref{chap:GHD:eq.conserv.2} et \eqref{chap:GHD:eq.conserv.2.1}, on retrouve les équations d’Euler classiques :
+\begin{eqnarray}\label{chap:3:eq:hydro.1}
+	\left\{
+	\begin{array}{rcl}
+	\partial_t n + \partial_x (n u) &=& 0, \\
+	\partial_t (n u) + \partial_x (n u^2 + \mathcal{P}) &=& -n \, \partial_x V(x), \\
+	\partial_t E + \partial_x (u(E+\mathcal{P})) &=& 0,
+	\end{array}
+	\right .  
+\end{eqnarray}
+avec la densité de particule $n(x, t) = q_{[1]}$, la vitesse moyenne du fluide $u = \frac{q_{[\theta]}}{n}$ , la pression cinétique du fluide $\mathcal{P}(x, t) = \left( q_{[\theta^2]} - \frac{q_{[\theta]}^2}{n} \right)$ , l'énergie totale $E = nu^2/2 + nV + ne$ où $e(x,t)$ est l'énergie interne d'une particule.
+
+
+
+\paragraph{Remarques sur les charges globales}
+En l’absence de potentiel externe ($V = 0$), le système conserve certaines charges globales. Dans un système classique non intégrable, seules ces quelques charges sont conservées. Par exemple dans un système de Gibbs sont conservé , nombre total de particules , quantité de mouvement totale , énergie cinétique totale soit respectivement $Q[1]  =  \int dx \, q[1]$ , $Q[\theta] = \int dx \, q[\theta]$ et $Q\left[\frac{\theta^2}{2}\right] = \int dx \, q\left[\frac{\theta^2}{2}\right] $. 
+%\begin{equation}
+%	Q[1]  &= & \int dx \, q[1] \, \text{(nombre total de particules)},\\ 
+%	Q[\theta] = \int dx \, q[\theta] \, \text{(quantité de mouvement totale)},\\ 
+%	Q\left[\frac{\theta^2}{2}\right] = \int dx \, q\left[\frac{\theta^2}{2}\right] \text{(énergie cinétique totale)}.
+%\end{equation}
+
+\medskip
+
+En revanche, dans un système intégrable, une infinité de charges sont conservées. En particulier, pour tout $\theta \in \mathbb{R}$:
+\(
+\rho(\theta , t ) = Q[\delta(\cdot - \theta)] = \int dx \, \rho(x, \theta, t),
+\)
+et les charges associées à une observable quelconque $f(\theta)$ s’écrivent :
+\(
+Q[f] = \int d\theta \, f(\theta) \, \rho(\theta, t).
+\)
+
+\medskip
+
+Cette structure est l’analogue classique de la description en termes de {\bf distribution de rapidité} dans le cadre intégrable. Elle constitue le point de départ naturel pour développer une description hydrodynamique généralisée (GHD) dans le cas intégrable.
+
+
+\subsection{la vitesse effectif}
+
+En partant de la définition de la vitesse effectif en \eqref{chap:GHD:eq.nu.v.a.1} et en utilisant la définition de l'appliocation \emph{dressing} \eqref{eq:dessing}, il vient que 
+\begin{eqnarray}\label{chap:GHD:veff.1}
+	2 \pi \, v^{\mathrm{eff}} \,   \rho   = \nu  \,  \partial_\theta h   + \nu  \,  \left ( \Delta \star ( \rho \,  v^{\mathrm{eff}} )  \right ) ,
+\end{eqnarray}
+où $\Delta$ désigne le décalage en diffusion défini dans le modèle LL  en Eq.\eqref{eq:I-1-16}
+et en soustraiant $v^{\mathrm{eff}} ( \theta ) \nu (\theta) \left ( \Delta \star  \rho  \right )( \theta )$ des deux cotés et on obtiens 
+
+\begin{eqnarray}\label{chap:GHD:veff.2}
+	v^{\mathrm{eff}} ( \theta )  \left (  2\pi \, \rho ( \theta ) - \nu (\theta) \left ( \Delta \star  \rho  \right )( \theta ) \right )    = \nu( \theta )  \,  \left (  \partial_\theta h ( \theta )  +  \int d \theta' \, \Delta(\theta - \theta') \rho ( \theta') ( v^{\mathrm{eff}} ( \theta' ) - v^{\mathrm{eff}} ( \theta )  )   \right )  ,
+\end{eqnarray}
+
+En partant de la l'écriture de la fonction d'ocumation en \eqref{chap:GHD:eq.nu.v.a.1} et en utilisant la définition de l'appliocation \emph{dressing} \eqref{eq:dessing}, il vient que 
+\begin{eqnarray}\label{chap:GHD:veff.3}
+	2 \pi \rho - \nu \, 	\Delta \star  \rho = \nu, 
+\end{eqnarray}
+On obtient 
+\begin{eqnarray}\label{chap:GHD:veff.4}
+	v^{\mathrm{eff}} ( \theta )      =  \partial_\theta h ( \theta )   +  \int d \theta' \, \Delta(\theta - \theta') \rho ( \theta') ( v^{\mathrm{eff}} ( \theta' ) - v^{\mathrm{eff}} ( \theta )  )   ,
+\end{eqnarray}
+et dans le modèle de Lieb-Liniger $\partial_\theta h ( \theta )   = \theta$.
+Sur le plan physique, le premier terme peut être interprété comme un décalage spatial induit par un processus de diffusion à deux corps. Le second terme quantifie le taux de ces processus de diffusion par unité de temps. L’équation ainsi obtenue correspond à l’équation hydrodynamique généralisée (GHD), formulée pour la première fois en 2016\cite{Bertini2016,CastroAlvaredo2016}.
+
+\medskip
+
+Le résultat remarquable~\eqref{eq:46} a été obtenu pour la première fois par Bertini \emph{et al.}~\cite{Bertini2016} et Castro-Alvaredo \emph{et al.}~\cite{CastroAlvaredo2016}. Cette observation a constitué le point de départ des développements ultérieurs de l’hydrodynamique généralisée (GHD) dans les systèmes quantiques intégrables. Les travaux de Bertini \emph{et al.}~\cite{Bertini2016} s’appuient en partie sur ceux de Bonnes \emph{et al.}~\cite{Bonnes2014}, où la formule de la vitesse effective~\eqref{eq:47} avait été présentée pour la première fois dans le cadre d’un système quantique intégrable.
+
+\medskip
+
+
+Dans le cadre général de l’hydrodynamique généralisée (GHD), l’équation~\eqref{chap:GHD:veff.4} s’interprète comme une extension naturelle du résultat classique obtenu pour le gaz de tiges dures. La distinction essentielle réside dans le fait que le décalage de diffusion \(\Delta(\theta - \theta_0)\) dépend désormais explicitement de la rapidité relative entre les quasi-particules, alors que, dans le cas du gaz de tiges dures, \(\Delta\) est une constante égale à l’opposé du diamètre des particules.
+
+\medskip
+
+
+Sur le plan cinématique, on peut décrire la situation de la manière suivante~: un quasi-particule \emph{traceur} de rapidité \(\theta\) --- c’est-à-dire de moment asymptotique \(\theta\) en l’absence d’interactions --- se déplacerait, dans le vide, à vitesse constante \( \theta \). En présence d’une densité finie \(\rho(\theta_0)\) de quasi-particules de rapidité \(\theta_0\), cette vitesse est modifiée par les processus de diffusion à deux corps.
+
+\medskip
+
+
+Pendant un intervalle de temps infinitésimal \([t,\, t + \delta t]\), le traceur subit en moyenne
+\[
+\delta t \times \left| v^{\mathrm{eff}}(\theta) - v^{\mathrm{eff}}(\theta_0) \right| \, \rho(\theta_0)
+\]
+collisions avec des quasi-particules de rapidité \(\theta_0\). Chaque interaction provoque un décalage spatial \(\Delta(\theta - \theta_0)\) vers l’arrière. L’équation~\eqref{chap:GHD:veff.4} formalise précisément cet effet cumulatif, résultant de l’intégration des contributions de toutes les collisions binaires sur l’espace des rapidités.
+
+Cette analyse microscopique s’étend naturellement aux modèles à \(N\) corps, où les processus de diffusion se combinent et interagissent de manière non triviale, la fonction \(\Delta(\theta - \theta_0)\) encapsulant alors l’intégralité de la structure intégrable du système.
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/03_GHD/trajectoires_hard_rods.png}
+    \caption{Trajectoires des particules d'un gaz de hard rods en 1D. Les lignes noires représentent les particules individuelles, la ligne rouge correspond à la trajectoire effective (vitesse GHD) de la particule suivie, et la ligne orange indique la trajectoire de la particule si elle conservait sa vitesse initiale (bare velocity).}
+    \label{fig:trajectoires_hard_rods}
+\end{figure}
+
+
+\subsection{Modèle de Lieb–Liniger}
+
+Les informations relatives aux interactions entre particules sont contenues dans la définition du crochet de Poisson \eqref{chap:GHD:eq.chochet.bonnemain.1}, associée à l’opérateur de \emph{dressing} spécifique au modèle de Lieb–Liniger, défini en \eqref{eq:dessing}.  
+L’Hamiltonien $H = \mathcal{Q}[h]$ \eqref{chap:GHD:eq.ham.1} s’écrit ici :
+\begin{equation}\label{chap:GHD:eq.ham.2}
+	h(x , \theta ) = \varepsilon(\theta) + V(x),
+\end{equation}
+où l’énergie cinétique est $\varepsilon(\theta) = \theta^2 / 2$ et $V(x)$ représente le potentiel extérieur.
+
+\medskip
+
+Dans ce modèle, la vitesse effective et l’accélération effective de \eqref{chap:GHD:eq.nu.v.a.1} se réécrivent :
+\begin{equation}
+	v^{\mathrm{eff}} = \frac{(\mathrm{id})^{\mathrm{dr}}_{[\nu]}}{1^{\mathrm{dr}}_{[\nu]}}, 
+	\quad a^{\mathrm{eff}} = - V'(x).
+\end{equation}
+
+Avec l'equation \eqref{chap:GHD:veff.4} la vitesse effectiff dans le modèle de \gls{LL} s'écrit 
+\begin{equation}
+	v^{\mathrm{eff}} = \theta +	\int d \theta' \, \Delta(\theta - \theta') \rho ( \theta') ( v^{\mathrm{eff}} ( \theta' ) - v^{\mathrm{eff}} ( \theta )  ) 
+\end{equation}
+
+
+Ainsi, les termes de force dans \eqref{chap:GHD:eq.conserv.2} et \eqref{chap:GHD:eq.conserv.2.1} prennent la forme :
+\begin{equation}
+	F_{[f]} = -V'(x) \int_{\mathbb{R}} d\theta \, f'(\theta) \, \rho(x, \theta).
+\end{equation}
+
+L’équation GHD \eqref{chap:GHD:eq.conserv.3} devient alors :
+\begin{equation}\label{chap:GHD:eq.conserv.3.1}
+	\partial_t \rho + \partial_x\!\left(v^{\mathrm{eff}} \rho\right) - V'(x) \, \partial_\theta \rho = 0.
+\end{equation}
+
+
+\subsection{Diagonalisation et invariants de Riemann dans la GHD spatiale étendue}
+
+En dérivant la définition de l'application \emph{dressing} \eqref{eq:dessing}, on obtient la relation suivante :
+\begin{equation}\label{chap:GHD:d.dressing}
+	\partial_X(f^{\mathrm{dr}}) = \left (\partial_X f \right )^{\mathrm{dr}} + \frac{\Delta}{2\pi} \star ( f^{\mathrm{dr}} \partial_X \nu ), 	
+\end{equation}
+où les variables \(X = t, x, \theta\).
+
+\medskip
+
+En injectant les définitions \eqref{chap:GHD:eq.nu.v.a.1} dans l'équation GHD \eqref{chap:GHD:eq.conserv.3} puis en appliquant les dérivées à l'application \emph{dressing} conformément à \eqref{chap:GHD:d.dressing}, on obtient :  
+\begin{eqnarray}
+	\begin{array}{c}\left ( \left(\partial_t 1 \right)^{\mathrm{dr}} + \left(\partial_x  \partial_\theta h  \right)^{\mathrm{dr}} - \left(\partial_\theta  \partial_x h  \right)^{\mathrm{dr}} \right ) \nu + \left ( 1 + \nu \,  \frac{\Delta}{2 \pi } \star  \right ) \left ( 1^{\mathrm{dr}} \partial_t v +  \left ( \partial_\theta h \right )^{\mathrm{dr}} \partial_x \nu -  \left ( \partial_x h \right )^{\mathrm{dr}} \partial_\theta \nu\right ) = 0  \end{array}. 
+\end{eqnarray}
+Or, on a \(\partial_t 1 = 0\) et \(\partial_x \partial_\theta h = \partial_\theta \partial_x h\). Il en résulte donc l'équation locale de conservation :  
+\begin{equation}\label{chap:GHD:eq.nu.1}
+	\partial_t \nu + v^{\mathrm{eff}}\partial_x \nu
+	+ a^{\mathrm{eff}} \partial_\theta \nu = 0.
+\end{equation}  
+
+\medskip
+
+Dans les systèmes hyperboliques, la \emph{diagonalisation} d'une équation consiste à trouver une transformation des variables qui permet de décomposer le système couplé en un ensemble de modes indépendants, appelés \emph{invariants de Riemann} ou \emph{modes normaux}. 
+
+\medskip
+
+Dans le cadre de la GHD spatiale étendue, l'équation d'évolution de la densité \(\rho(x,\theta,t)\) est couplée de manière non triviale en \((x,\theta)\) par la vitesse effective \(v^{\mathrm{eff}}\) et l'accélération effective \(a^{\mathrm{eff}}\). La fonction d'occupation \(\nu(x,\theta,t)\) est définie par une transformation non locale dite \emph{dressing} qui incorpore les interactions du système.
+
+\medskip
+
+Grâce à cela, on peut affirmer que la fonction $\nu (x , \theta)$  s’interprète comme un continuum d’{\bf invariants de Riemann}, c’est-à-dire des variables normales qui restent constantes le long des caractéristiques du système.
+
+\medskip
+
+Cette diagonalisation est essentielle pour comprendre la structure hamiltonienne du système et simplifier l'analyse de sa dynamique, notamment dans le cadre spatialement étendu avec un dressing dépendant de la position. 
+
+
+
+
+
+%\section{Interpretation}
+
+ 
+
+
+
+
+
+
+%\section{Equation Hydrodynamique Généralisé}
+%
+%\subsection{Description classique sans interaction}
+%Considérons une distribution classique de particules dans l’espace des phases, notée $\varphi(x, p, t)$, représentant la densité de particules autour du point $(x, p)$ à l’instant $t$. En l’absence de phénomènes dissipatifs, cette densité est conservée le long du flot hamiltonien, c’est-à-dire \(
+%\frac{d\varphi}{dt} = \frac{\partial \varphi}{\partial t} + \{ \varphi , H \} = 0,
+%\)
+%où $\{ \cdot , \cdot \}$ désigne le crochet de Poisson canonique :
+%\begin{equation}
+%\{ \varphi , H \} = \frac{\partial \varphi}{\partial x} \frac{\partial H}{\partial p} - \frac{\partial \varphi}{\partial p} \frac{\partial H}{\partial x}.
+%\end{equation}
+%Pour $d \varphi /dt = 0 $ , 
+%\begin{equation}
+%	\frac{\partial \varphi}{\partial t} + \{ \varphi , H \} = 0	
+%\end{equation}
+%
+%
+%Ce résultat exprime que la distribution $\varphi$ est constante le long des trajectoires dans l’espace des phases générées par le hamiltonien $H$. Sous cette hypothèse, on peut réécrire l’équation de conservation sous forme différentielle :
+%
+%\begin{equation}
+%\partial_t \varphi + \partial_x ( \dot{x} \varphi ) + \partial_p ( \dot{p} \varphi ) = 0,
+%\end{equation}
+%
+%où les équations du mouvement hamiltonien sont :
+%\(
+%\dot{x} = \frac{\partial H}{\partial p}, \qquad \dot{p} = -\frac{\partial H}{\partial x}.
+%\)
+%
+%Cette équation prend alors la forme d’une équation de continuité dans l’espace des phases :
+%
+%\begin{equation}
+%\partial_t \varphi + \partial_x j_x + \partial_p j_p = 0,
+%\end{equation}
+%
+%où les densités de courant sont données par :
+%\(
+%j_x = \dot{x} \varphi, \qquad j_p = \dot{p} \varphi.
+%\)
+%
+%\paragraph{Exemple : particules libres dans un potentiel externe}
+%Prenons pour Hamiltonien :
+%
+%\begin{equation}
+%H = \varepsilon(p) + V(x), \qquad \text{où } \varepsilon(p) = \frac{p^2}{2m},
+%\end{equation}
+%
+%correspondant à un système de particules classiques de masse $m$ soumises à un potentiel externe $V(x)$, sans interaction entre particules.
+%
+%L'équation de conservation s’écrit alors :
+%
+%\begin{equation}
+%\partial_t \varphi + v(p) , \partial_x \varphi - \partial_x V(x) , \partial_p \varphi = 0,
+%\end{equation}
+%
+%où $v(p) = \partial_p \varepsilon(p) = p/m$ est la vitesse du flot hamiltonien dans l’espace des phases.
+%
+%\paragraph{Charges locales conservées et équations hydrodynamiques}
+%On définit une observable locale (ou charge locale) $q[f](x, t)$ associée à une fonction test $f(p)$ par :
+%
+%\begin{equation}
+%q[f](x, t) = \frac{1}{m} \int_{\mathbb{R}} dp \, f(p) \, \varphi(x, p, t).
+%\end{equation}
+%
+%Cette quantité représente la moyenne locale de $f(p)$ pondérée par la distribution $\varphi$. En particulier : la densité de particules : $n(x, t) = q[1]$,l’impulsion moyenne locale : $u(x, t) = \frac{q[p]}{n m}$, la pression cinétique : $\mathcal{P}(x, t) = \frac{1}{m} \left( q[p^2] - \frac{q[p]^2}{q[1]} \right)$.
+%
+%Les courants associés à ces charges s’écrivent :
+%\begin{equation}
+%j[f](x, t) = \frac{1}{m} \int dp \, f(p) , \partial_p H(x, p) \, \varphi(x, p, t).
+%\end{equation}
+%
+%En prenant la dérivée temporelle de $q[f]$ et en utilisant l’équation de Liouville, on obtient une équation de conservation de la forme :
+%
+%\begin{equation}
+%\partial_t q[f] + \partial_x j[f] = \frac{1}{m} \int dp \, f(p) , \partial_p \left( \partial_x V(x) \, \varphi \right),
+%\end{equation}
+%
+%qui ne s’annule en général que si $V(x)$ est constant. Toutefois, dans le régime dit hydrodynamique, où $\varphi(x,p,t)$ varie lentement en espace, cette équation devient fermée sur les seules densités $q[f]$, en négligeant les dérivées spatiales d'ordre élevé.
+%
+%Dans ce cadre, et en ne retenant que les premières charges conservées associées à $f(p) = 1$, $p$, $p^2$, on retrouve les équations d’Euler classiques :
+%
+%\begin{eqnarray*}
+%	\partial_t n + \partial_x (n u) &=& 0, \\
+%	\partial_t (m n u) + \partial_x (m n u^2 + \mathcal{P}) &=& -n \, \partial_x V(x), \\
+%	\partial_t \mathcal{E} + \partial_x j[\varepsilon(p)] &=& -\partial_x V(x) \cdot q[p],
+%\end{eqnarray*}
+%
+%où $\mathcal{E} = q[\varepsilon(p)]$ est la densité d'énergie, et $j[\varepsilon(p)]$ le courant d'énergie.
+%
+%\paragraph{Remarques sur les charges globales}
+%En l’absence de potentiel externe ($V = 0$), le système conserve certaines charges globales. Dans un système classique non intégrable, seules ces quelques charges sont conservées. Par exemple dans un système de Gibbs sont conservé
+%\(
+%	Q[1] = \int dx \, q[1] \quad \text{(nombre total de particules)}, 
+%	Q[p] = \int dx \, q[p] \quad \text{(quantité de mouvement totale)}, 
+%	Q\left[\frac{p^2}{2m}\right] = \int dx \, q\left[\frac{p^2}{2m}\right] \text{(énergie cinétique totale)}.
+%\)
+%En revanche, dans un système intégrable, une infinité de charges sont conservées. En particulier, pour tout $p \in \mathbb{R}$:
+%
+%\begin{equation}
+%Q[\delta(\cdot - p)] = \frac{1}{m} \int dx \, \varphi(x, p, t),
+%\end{equation}
+%
+%%et les charges associées à une observable quelconque $f(p)$ s’écrivent :
+%%
+%%\begin{equation}
+%%Q[f] = \int dp , f(p) , \rho(p, t).
+%%\end{equation}
+%%
+%%Cette structure est l’analogue classique de la description en termes de "rapidity distribution function" dans le cadre quantique. Elle constitue le point de départ naturel pour développer une description hydrodynamique généralisée (GHD) dans le cas intégrable.
+%%
+%%
+%
+%\subsection{Description classique avec interactions}
+%
+%%Dans la formulation hamiltonienne de la GHD, le champ dynamique est la densité fluide à deux variables  . 
+%On définit un crochet de Poisson fonctionnel agissant sur les fonctionnelles $F[\rho]$ et $G[\rho]$  de la distribution de rapidité , avec intéraction. Conformément à Bonnemain et al.\cite{bonnemain2024hamiltonian}  :
+%\begin{equation}
+%	\{F,G\}\;=\;\iint dx\,d\theta\;\frac{\nu(\theta)}{2\pi}\,\Bigl[\partial_x\frac{\delta F}{\delta \rho(x,\theta)}\,\left(\partial_\theta \left ( \frac{\delta G}{\delta \rho(x,\theta)} \right ) \right)^{\mathrm{dr}} -\partial_x\frac{\delta G}{\delta \rho (x,\theta)}\,\left( \partial_\theta \left ( \frac{\delta F}{\delta \rho (x,\theta)} \right )\right)^{\mathrm{dr}} \Bigr]\,,	
+%\end{equation}
+%où $\nu$ est la fonction d’occupation.
+%%\cite{bonnemain2024hamiltonian,doyon2020lecture}
+%
+%Pour toute fonction réelle et régulière \( f(x, \theta) \) définie sur \( \mathbb{R}^2 \), on associe le fonctionnel linéaire suivant :
+%\begin{equation}
+%	Q[f] = \int_{\mathbb{R}^2} dx\, d\theta\, f(x, \theta)\, \rho(x, \theta).
+%\end{equation}
+%Il s'agit de la charge totale associée à une quantité prenant la valeur \( f(x, \theta) \) pour chaque quasi-particule.  Le crochet de Poisson entre deux charges \( Q[f] \) et \( Q[g]\) s’écrit :
+%\begin{equation}
+%	\{ Q[f] , Q[g] \} = \int_{\mathbb{R}^2} \frac{dx\, d\theta}{2\pi} \nu  \left( \partial_x f  (\partial_\theta g )^{\mathrm{dr}}  - \partial_x g (\partial_\theta f)^{\mathrm{dr}}  \right),
+%\end{equation}
+%or l'application dressing satisfait la relation de symétrie \cite{doyon2020lecture}:
+%\begin{equation}
+%	\int_{\mathbb{R}^2}	 dx\, d\theta \, \nu f g^{\mathrm{dr}} = \int_{\mathbb{R}^2}	 dx\, d\theta \, \nu f^{\mathrm{dr}} g,
+%\end{equation}
+%soit avec une integration part partie, on réécrit le crochet 
+%\begin{equation}
+%	\{ Q[f] , Q[g]\} = \int_{\mathbb{R}^2} \frac{dx\, d\theta}{2\pi} f  \left( \partial_\theta ( \nu   (\partial_x g )^{\mathrm{dr}} )   - \partial_x ( \nu   (\partial_\theta g )^{\mathrm{dr}} )  \right).
+%\end{equation}
+%
+%La distribution de rapidité $\rho( x , \theta )  = Q[\delta( \cdot - x )\delta( \cdot - \theta  )  ]$ et pour un hamiltinien $H = Q[h]$ avec $h(x , \theta ) = \varepsilon(\theta) + V(x)$ avec $\varepsilon(\theta) = m \theta^2/2$.
+%
+%\begin{equation}
+%	\{ \rho(x, \theta), Q[h] \} + \partial_x (v^{\mathrm{eff}} \rho) + \partial_\theta (a^{\mathrm{eff}} \rho) = 0.
+%\end{equation}
+%
+%Nous avons ici utilisé les identités (2.29), ainsi que la définition de la fonction d’occupation (rappelée pour commodité) :
+%
+%\begin{equation}
+%	v^{\mathrm{eff}} = \frac{\varepsilon'^{\mathrm{dr}}}{1^{\mathrm{dr}}}, 
+%	\quad 
+%	a^{\mathrm{eff}} = -V, 
+%	\quad 
+%	\nu = \frac{\rho}{\rho_s}.
+%\end{equation}
+%
+%Ainsi, en posant \( \partial_t \rho(x, \theta) = \{ \rho(x, \theta), Q[h] \} \), on retrouve bien les équations de la GHD sous forme hamiltonienne étendue à l’espace :
+%
+%\begin{equation}
+%	\partial_t \rho(x, \theta) = -\partial_x (v^{\mathrm{eff}} \rho) - \partial_\theta (a^{\mathrm{eff}} \rho).
+%\end{equation}
+%
+%
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,154 @@
+\chapter{Propriétés des facteurs d'homothétie}\label{annex:homo}
+
+\section{Loi de puissance des facteurs homothétiques}
+
+\begin{Theo}[Loi de puissance]
+Si le facteur
+\(
+f(\lambda)
+\)
+est bien défini indépendamment de \(n>0\) (ce qui est le cas pour les solutions homothétiques),
+alors \(f\) est une loi de puissance.
+\end{Theo}
+
+\begin{proof}
+Posons \(g(n) = \mu'(n)>0\) ou \(<0\) (\ie $\mu$ strictement monotone). La définition de \(f\) équivaut à l’existence d’une fonction
+\(\chi(\lambda)=1/f(\lambda)\) telle que
+\[
+g(\lambda n)=\chi(\lambda)\,g(n)\qquad(\forall\,\lambda,n>0).
+\]
+
+En prenant \(n=1$, on a \(\chi(\lambda)=g(\lambda)/g(1)\). Donc, pour tous \(a,b>0\),
+\[
+\chi(ab)=\frac{g(ab)}{g(1)}=\frac{\chi(a)\,g(b)}{g(1)}=g(a)\,g(b),
+\]
+c’est-à-dire que \(\chi\) est \emph{multiplicative}. Sous une hypothèse physique très faible
+(continuité, mesurabilité ou simple localement bornée), toute fonction multiplicative sur
+\(\mathbb{R}_+^\ast\) est de la forme
+\[
+\chi(\lambda)=\lambda^{\alpha-1}
+\quad\Rightarrow\quad
+f(\lambda)=\lambda^{1-\alpha}.
+\]
+\end{proof}
+
+\section{Équivalence entre $f(\lambda)$ et $\mu(n)$}
+
+\begin{Theo}
+Les expressions
+\[
+f(\lambda) = \lambda^{1-\alpha} \quad \text{et} \quad \mu (n) \propto n^\alpha
+\]
+sont équivalentes.
+\end{Theo}
+
+\begin{proof}
+
+\begin{enumerate}
+	\item 1. Si \(\mu(n)=C\,n^\alpha\) avec \(C\neq0\) :
+
+Alors \(\mu'(n)=C\alpha\,n^{\alpha-1}\). Par conséquent,
+\[
+f(\lambda)=\frac{C\alpha\,n^{\alpha-1}}{C\alpha\,(\lambda n)^{\alpha-1}} = \lambda^{1-\alpha}.
+\]
+
+	\item Réciproque : si \(f(\lambda)=\lambda^{1-\alpha}\) pour tout \(\lambda>0\) et \(n>0\) :
+Posons \(g(n)=\mu'(n)\). L'hypothèse s'écrit
+\[
+\frac{g(n)}{g(\lambda n)}=\lambda^{1-\alpha} \quad \Longleftrightarrow \quad g(\lambda n)=\lambda^{\alpha-1} g(n),
+\]
+pour tout \(n>0\) et tout \(\lambda>0$.
+
+Fixons \(n_0>0\) et définissons \(\varphi(\lambda)\equiv g(\lambda n_0)\). La relation ci-dessus donne
+\[
+\varphi(\lambda)=\lambda^{\alpha-1}\,\varphi(1),
+\]
+donc \(\varphi(\lambda)=C_1 \lambda^{\alpha-1}\) avec \(C_1 = g(n_0)\). En remplaçant \(\lambda=x/n_0\), on obtient pour tout \(x>0\)
+\[
+g(x)=C_1\,x^{\alpha-1}.
+\]
+
+Ainsi, \(g(n)=\mu'(n)=C\,n^{\alpha-1}\) avec \(C\) constant. En intégrant (si \(\alpha\neq 0\)), on a
+\[
+\mu(n) \propto n^\alpha.
+\]
+Pour \(\alpha=0\), \(\mu'(n)=C\,n^{-1}\) et \(\mu(n)=C\ln n+\text{const}\).
+\end{enumerate}
+\end{proof}
+
+\begin{Rema}
+La démonstration utilise la propriété fonctionnelle multiplicative
+\(g(\lambda n)=\lambda^{\alpha-1} g(n)\). Sous une hypothèse faible de continuité (ou dérivabilité) en \(n$, cette équation force la forme de puissance \(g(n)\propto n^{\alpha-1}\). Sans régularité, des solutions pathologiques peuvent exister mais ne sont pas physiquement pertinentes dans le contexte thermodynamique.
+\end{Rema}
+
+
+%\paragraph{Proposition.}
+%Si le facteur
+%\(
+%f(\lambda)
+%\)
+%est bien défini indépendamment de \(n>0\) (ce qui est le cas pour les solutions homothétiques),
+%alors \(f\) est une loi de puissance.
+%
+%\paragraph{Preuve.}
+%Posons \(g(n) = \mu'(n)>0\) ou \(<0\) (\ie $\mu$ strictement monotone). La définition de \(f\) équivaut à l’existence d’une fonction
+%\(\chi(\lambda)=1/f(\lambda)\) telle que
+%\[
+%g(\lambda n)=\chi(\lambda)\,g(n)\qquad(\forall\,\lambda,n>0).
+%\]
+%En prenant \(n=1\), on a \(\chi(\lambda)=g(\lambda)/g(1)\).
+%Donc, pour tous \(a,b>0\),
+%\[
+%\chi(ab)=\frac{g(ab)}{g(1)}=\frac{\chi(a)\,g(b)}{g(1)}=g(a)\,g(b),
+%\]
+%c’est-à-dire que \(\chi\) est \emph{multiplicative}. Sous une hypothèse physique très faible
+%(continuité/mesurabilité ou simple localement bornée), toute fonction multiplicative sur
+%\(\mathbb{R}_+^\ast\) est de la forme
+%\[
+%\chi(\lambda)=\lambda^{\alpha-1}
+%\quad\Rightarrow\quad
+%f(\lambda)=\lambda^{1-\alpha}.
+%\]
+%
+%\qed
+%
+%
+%% --- Démonstration que f(λ)=λ^{1-\alpha} et réciproque ---
+%\paragraph{Proposition.}
+%$f(\lambda) = \lambda^{1-\alpha}$ et $\mu (n) \propto n^\alpha $ sont equivalents.
+%
+%
+%\paragraph{1. Si \(\mu(n)=C\,n^\alpha\) (avec \(C\neq0\)) :}
+%Alors \(\mu'(n)=C\alpha\,n^{\alpha-1}\). Par conséquent
+%\[
+%f(\lambda)=\frac{C\alpha\,n^{\alpha-1}}{C\alpha\,(\lambda n)^{\alpha-1}}
+%=\lambda^{1-\alpha}.
+%\]
+%
+%\paragraph{2. Réciproque : si \(f(\lambda)=\lambda^{1-\alpha}\) pour tout \(\lambda>0\) (et tout \(n>0\)) :}
+%Posons \(g(n)=\mu'(n)\). L'hypothèse s'écrit
+%\[
+%\frac{g(n)}{g(\lambda n)}=\lambda^{1-\alpha}
+%\quad\Longleftrightarrow\quad
+%g(\lambda n)=\lambda^{\alpha-1}\,g(n),
+%\]
+%pour tout \(n>0\) et tout \(\lambda>0\).
+%
+%Fixons \(n_0>0\) et définissons \(\varphi(\lambda)\equiv g(\lambda n_0)\). La relation ci-dessus donne
+%\[
+%\varphi(\lambda)=\lambda^{\alpha-1}\,\varphi(1).
+%\]
+%Autrement dit \(\varphi(\lambda)=C_1\,\lambda^{\alpha-1}\) pour une constante \(C_1=\varphi(1)=g(n_0)\). En remplaçant \(\lambda=x/n_0\) on obtient pour tout \(x>0\)
+%\[
+%g(x)=C_1\,x^{\alpha-1}.
+%\]
+%Ainsi \(g(n)=\mu'(n)=C\,n^{\alpha-1}\) avec \(C\) constant.
+%
+%En intégrant (en supposant \(\alpha\neq 0\)), 
+%\(\mu(n)\propto n^\alpha\). (Pour \(\alpha=0\) on obtient \(\mu'(n)=C\,n^{-1}\) et \(\mu(n)=C\ln n+\text{const}\).)
+%
+%\paragraph{Remarque sur les hypothèses.}
+%La démonstration utilise la propriété fonctionnelle multiplicative
+%\(g(\lambda n)=\lambda^{\alpha-1}g(n)\). Sous une hypothèse faible de continuité (ou dérivabilité) en \(n\) cette équation force la forme de puissance \(g(n)\propto n^{\alpha-1}\). Sans régularité, des solutions pathologiques peuvent exister mais ne sont pas physiquement pertinentes dans le contexte thermodynamique.
+%
+%\qed

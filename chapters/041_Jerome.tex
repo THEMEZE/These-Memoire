@@ -1,0 +1,166 @@
+\chapter{Dérivation alternative des fluctuations de $\rho$}\label{annex:Jerome}
+
+Dans cette annexe, nous proposons une seconde dérivation des fluctuations de la densité de rapidités $\rho$, différente de celle présentée au chapitre~\ref{chap:Fluctu}.  
+Cette approche m’a été suggérée par Jérôme Dubail (\gls{CESQ}). Elle présente l’intérêt de passer directement par les fluctuations du facteur d’occupation $\nu$, et constitue également une bonne occasion de manipuler les dérivées de l’opérateur \emph{d’habillage}.
+
+\section{Réécriture de l’entropie de Yang--Yang}
+
+L’entropie de Yang--Yang s’écrit
+\begin{eqnarray}
+	\mathcal{S}_{YY} 
+	&=& \int d \theta \, \Big( \rho_s \ln \rho_s - \rho \ln \rho - (\rho_s - \rho ) \ln (\rho_s - \rho ) \Big)(\theta).    
+\end{eqnarray}
+
+En introduisant le facteur d’occupation
+\begin{eqnarray}
+	\nu = \frac{\rho}{\rho_s},	
+\end{eqnarray}
+l’intégrande peut se réécrire sous la forme
+\begin{eqnarray}
+	\mathcal{S}_{YY} 
+	&=& \int d\theta \, s(\nu(\theta))\, \rho_s(\theta), 	
+\end{eqnarray}
+où la fonction d’entropie locale est donnée par
+\begin{eqnarray}
+	s(\nu) &=& - \nu \ln \nu - (1 - \nu ) \ln (1 - \nu ).
+\end{eqnarray}
+
+\section{Différentielle de l’action effective}
+
+On définit l’action effective comme
+\begin{eqnarray}
+	\mathcal{S}_{YY} - \mathcal{W},
+\end{eqnarray}
+où $\mathcal{W}$ est l’énergie généralisée,
+\begin{eqnarray}
+	\mathcal{W} &=& \int d\theta \, w(\theta)\, \rho(\theta).		
+\end{eqnarray}
+
+Sa différentielle est donnée par
+\begin{eqnarray}\label{annex.J.1}
+	\delta ( \mathcal{S}_{YY} -  \mathcal{W} ) 
+	&=& \int d \theta \, \Big( \delta \nu \, s'(\nu)\, \rho_s + s(\nu)\, \delta \rho_s - w\, \delta \rho \Big)(\theta).
+\end{eqnarray}
+En remarquant que
+\begin{eqnarray}\label{annex.J.rho}
+	\delta \nu \, \rho_s = \delta \rho - \nu \, \delta \rho_s, 	
+\end{eqnarray}
+on réécrit~\eqref{annex.J.1} sous la forme
+\begin{eqnarray}
+	\delta ( \mathcal{S}_{YY} -  \mathcal{W} ) 
+	&=& \int d \theta \, \Big( \{  s'(\nu) - w\} \delta \rho  
+	+  \{  s(\nu) - \nu \, s'(\nu) \} \delta \rho_s \Big)(\theta). 		
+\end{eqnarray}
+
+On obtient alors la différentielle seconde :
+\begin{eqnarray}
+	\delta^2 ( \mathcal{S}_{YY} -  \mathcal{W} )  
+	&=& \int d \theta \, \Big( \delta \nu \, s''(\nu)\, \delta \rho  
+	- \nu \, \delta \nu \, s''(\nu)\, \delta \rho_s \Big)(\theta).
+\end{eqnarray}
+
+En utilisant~\eqref{annex.J.rho}, on simplifie pour obtenir
+\begin{eqnarray}\label{annex.J.2}
+	\delta^2 ( \mathcal{S}_{YY} -  \mathcal{W} )  
+	&=& \int d \theta \, \big( (\delta \nu )^2 \, s''(\nu)\, \rho_s \big)(\theta),		
+\end{eqnarray}
+avec
+\begin{eqnarray}
+	s''(\nu) &=& - \frac{1}{\nu (1 - \nu)}.	
+\end{eqnarray}
+
+\section{Fluctuations}
+
+\subsection{Fluctuations des facteurs d’occupation}
+
+Les fluctuations du facteur d’occupation s’écrivent
+\begin{eqnarray}
+	\braket{\delta\nu(\theta')  \, \delta\nu(\theta)}_w	
+	&=& - \Bigg[ L \frac{ \delta^2 ( \mathcal{S}_{YY} -  \mathcal{W} )}{\delta \nu \, \delta \nu } \Bigg]^{-1} ( \theta , \theta' ).
+\end{eqnarray}
+En injectant~\eqref{annex.J.2}, il vient
+\begin{eqnarray}
+	\braket{\delta\nu(\theta')  \, \delta\nu(\theta)}_w	
+	&=& -\, s''(\nu(\theta)) \, \rho_s(\theta)\, \delta ( \theta - \theta' ),		
+\end{eqnarray}
+qui est purement diagonale.
+
+\subsection{Opérateur d’habillage}
+
+On rappelle la définition de l’opérateur d’habillage :
+\begin{eqnarray}
+	f^{\mathrm{dr}}_{[\nu]} = f + \frac{\Delta}{2\pi} \star ( \nu \, f^{\mathrm{dr}}_{[\nu]} ).	
+\end{eqnarray}
+En remarquant que 
+\begin{eqnarray}
+	C(\theta , \lambda) = \Bigg[ \frac{\Delta ( \lambda - \cdot ) }{2\pi } \Bigg]^{\mathrm{dr}}_{[\nu]} (\theta), 	
+\end{eqnarray}
+qui est symétrique, on peut réécrire~\cite{Doyon_2017}
+\begin{eqnarray}
+	f^{\mathrm{dr}}_{[\nu]}(\theta) 
+	&=&  \int d\lambda \, f(\lambda) \,  \Big( \delta ( \theta - \lambda ) + \nu(\lambda)\, C(\theta,\lambda) \Big).
+\end{eqnarray}
+
+\subsection{Fluctuations des distributions de rapidité}
+
+On a vu que
+\begin{eqnarray}
+	2\pi \, \rho_s (\theta) 
+	&=& 1^{\mathrm{dr}}_{[\nu]} (\theta) 
+	= \int d \lambda \, \Big( \delta ( \theta - \lambda ) + \nu(\theta)\, C(\theta,\lambda) \Big),
+\end{eqnarray}
+d’où
+\begin{eqnarray}
+	2\pi \, \delta \rho_s (\theta) 
+	&=& \int d \lambda \, C(\theta,\lambda)\, \rho_s(\lambda)\, \delta \nu(\lambda).	
+\end{eqnarray}
+
+Ainsi,
+\begin{eqnarray}
+	\delta \rho (\theta) 
+	&=& \rho_s(\theta) \delta \nu (\theta) + \nu(\theta) \delta \rho_s (\theta) \\
+	&=& \int d \lambda \, \delta ( \theta - \lambda ) \rho_s(\lambda)\, \delta \nu(\lambda)  
+	+ \int d \lambda \, \nu (\theta)\, C(\theta,\lambda)\,\rho_s(\lambda)\, \delta \nu (\lambda),  \\
+	&=& \int d \lambda \, \Big( \delta ( \theta - \lambda ) + \nu (\theta)\, C(\theta,\lambda) \Big) \rho_s(\lambda)\, \delta \nu (\lambda). \label{annex.J.rho.2}
+\end{eqnarray}
+
+En réinjectant~\eqref{annex.J.2} et~\eqref{annex.J.rho.2} dans la définition
+\begin{eqnarray}
+	\braket{\delta\rho(\theta')  \, \delta\rho(\theta)}_w	
+	&=& -  \Bigg[ L \frac{ \delta^2 ( \mathcal{S}_{YY} -  \mathcal{W} )}{\delta \rho \, \delta \rho }\Bigg]^{-1} ( \theta , \theta'),		
+\end{eqnarray}
+on obtient finalement
+\begin{eqnarray}\label{annex.J.3}
+	\braket{\delta\rho(\theta')  \, \delta\rho(\theta)}_w  
+	&=& -\frac{1}{L}  \int d \lambda \, \frac{ \Big( \delta ( \theta - \lambda ) + \nu (\theta)\, C(\theta,\lambda) \Big) \Big( \delta ( \theta' - \lambda ) + \nu (\theta')\, C(\theta',\lambda) \Big)}{s''(\nu(\lambda))} \, \rho_s (\lambda) \\
+	&=& \frac{1}{L}\, \mathcal{D}^{-1}(\theta , \theta') + \frac{1}{L}\, \mathcal{B}(\theta , \theta'),		
+\end{eqnarray}
+où
+\begin{eqnarray}
+	\mathcal{D}^{-1}(\theta , \theta' ) &=& \big( \rho_s(\theta)\, \nu(\theta)\, (1 - \nu(\theta)) \big)\, \delta ( \theta - \theta' ), \\
+	\mathcal{B}(\theta , \theta' ) 
+	&=& \Big[ \nu (\theta')\, \rho_s(\theta)\, \nu(\theta)(1 - \nu(\theta)) 
+	+ \nu (\theta)\, \rho_s(\theta')\, \nu(\theta')(1 - \nu(\theta')) \Big]\, C(\theta,\theta') \\
+	&& + \nu (\theta)\, \nu (\theta') \int d \lambda \, \rho_s(\lambda)\, \nu(\lambda)\,(1 - \nu(\lambda))\, C(\theta,\lambda)\, C(\theta',\lambda).
+\end{eqnarray}
+
+Cette expression coïncide numériquement avec le résultat obtenu en~\eqref{chap:fluctu:eq:fluctuations.10}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,114 @@
+\chapter{Action de $\operator{P}$ et $\operator{H}$ sur $\ket{\{\theta_a\}}$}
+\label{annex:PH}
+
+L'état $\ket{\{\theta_a\}}$ s'écrit :
+\begin{eqnarray}\label{annex.eq.popre.1}
+	\ket{\{ \theta_a \}} & = & \frac{1}{\sqrt{N!}} \int dx_1 \cdots dx_N \varphi_{\{ \theta_a \}} ( \{x_a\}) \operator{\Psi}^\dagger(x_1) \cdots \operator{\Psi}^\dagger(x_N)	 \ket{\emptyset}.
+\end{eqnarray}
+
+\section{Action de $\operator{P}$ sur $\ket{\{\theta_a\}}$}
+
+\subsection{Utilisation de la définition de $\operator{P}$ intégrée par parties }
+
+Cela peut être expliqué en utilisant l'opérateur du moment $\operator{P}$ \eqref{eq.chap.1.Q.P.k.3} comme exemple. Tout d'abord, nous intégrons \eqref{eq.chap.1.Q.P.k.3} par parties pour représenter $\operator{P}$ sous la forme (avec $\hbar = m =1$):
+
+\begin{eqnarray}\label{annex.eq.P.1}
+	\operator{P} & = & i \int \left [ \operator{\partial}_x \operator{\Psi}^\dag(x)\right ] \operator{\Psi}(x) dx 
+\end{eqnarray}
+
+\subsection{Application à l’état à N particules}
+On fais agir $\operator{P}$ de \eqref{annex.eq.P.1} sur l'état $\ket{\{ \theta_a \}}$ de \eqref{annex.eq.popre.1} :   
+\begin{eqnarray}
+	\operator{P}\ket{\{\theta_a\}}  & = & \frac{i}{ \sqrt{N!}} \int dx \int d^N z \, \varphi_{\{ \theta_a \}} ( \{x_a\}) 	\left [\operator{\partial}_x \operator{\Psi}^\dag(x)\right ]  \\ & & \times \sum_{k = 1 }^N \operator{\Psi}^\dag(z_1) \cdots [\operator{\Psi}(x) , \operator{\Psi}^\dag(z_k)] \cdots \operator{\Psi}^\dag(z_N) \vert \emptyset \rangle
+\end{eqnarray}
+
+En utilisant les règles de commutation \eqref{chap:1:com.1} il vient que 
+\begin{eqnarray}
+	\operator{P}\ket{\{\theta_a\}} & = & \frac{i}{ \sqrt{N!}}  \int d^N z 	\, \varphi_{\{ \theta_a \}} ( \{x_a\}) \\ & & \times  \sum_{k = 1 }^N  \operator{\Psi}^\dag(z_1) \cdots \left [\operator{\partial}_{z_k} \operator{\Psi}^\dag(z_k)\right ] \cdots \operator{\Psi}^\dag(z_N) \vert \emptyset \rangle. 
+\end{eqnarray}
+
+Nous intégrons maintenant par parties par rapport à $z_k$ pour obtenir
+\begin{eqnarray}
+	\operator{P}\ket{\{\theta_a\}}& = & \frac{1}{ \sqrt{N!}}  \int d^N z 	 \left \{  -i \sum_{k = 1 }^N  \operator{\partial}_{z_k}\varphi_{\{ \theta_a \}} ( \{x_a\}) \right \}  \times \operator{\Psi}^\dag(z_1) \cdots \operator{\Psi}^\dag(z_N) \vert \emptyset \rangle. 
+\end{eqnarray}
+
+%Ainsi, nous avons prouvé que l'action de l'équation (\ref{eq.1.7}) sur l'équation (\ref{eq.1.9}) est équivalente à l'action de $\operator{\mathcal{P}}_N$ sur \(\chi_N\). La construction de l'Hamiltonien mécanique quantique est assez similaire.
+
+
+\section{Action de $\operator{H}$ sur $\ket{\{\theta_a\}}$}
+
+\subsection{Réecriture de l'hamiltonien}
+
+L'hamiltonien \eqref{chap.1:eq.LL.champ.1} se réécrit avec $\hbar = 2 m =1$ et $c=g/2$ :
+\begin{eqnarray}\label{annex.eq.H.1}
+    \operator{H} & = & \int dx \left [ -\left [\operator{\partial}_x^2 \operator{\Psi}^\dag(x)\right ] \operator{\Psi}(x) + c \operator{\Psi}^\dag (x) \operator{\Psi}^\dag (x) \operator{\Psi} (x) \operator{\Psi} (x) \right ] \label{chap:1:hal.mod.2}.
+\end{eqnarray}
+
+
+\subsection{Application à l’état à N particules}
+
+On fais agir $\operator{H}$ définie en \eqref{annex.eq.H.1} sur l'état $\ket{\{ \theta_a \}}$ de \eqref{annex.eq.popre.1} :
+%\begin{eqnarray}
+    %\operator{H}\vert \psi ( \theta_1 , \cdots , \theta_N ) \rangle & = & \left \{ \begin{array}{l}- \frac{1}{ \sqrt{N!}} \int dx \int d^N z \, \chi_N ( z_1 , \cdots , z_N  ~\vert ~ \theta_1 , \cdots , \theta _N ) \,    \left [\operator{\partial}_x^2 \operator{\Psi}^\dag(x)\right ] \operator{\Psi}(x)\,  \operator{\Psi}^\dag(z_1) \cdots \operator{\Psi}^\dag(z_N) \vert 0 \rangle \\ + \\ \frac{c}{ \sqrt{N!}} \int dx \int d^N z \, \chi_N ( z_1 , \cdots , z_N  ~\vert ~ \theta_1 , \cdots , \theta _N )     \, \operator{\Psi}^\dag(x)\operator{\Psi}^\dag(x) \operator{\Psi}(x)\operator{\Psi}(x)  \operator{\Psi}^\dag(z_1) \cdots \operator{\Psi}^\dag(z_N) \vert 0 \rangle  \end{array}\right.\label{chap:1:hal.mod.3}
+%\end{eqnarray}
+\begin{eqnarray}
+    & & - \frac{1}{ \sqrt{N!}} \int dx \int d^N z \, \varphi_{\{ \theta_a \}} ( \{x_a\}) \,    \left [\operator{\partial}_x^2 \operator{\Psi}^\dag(x)\right ] \operator{\Psi}(x)\,  \operator{\Psi}^\dag(z_1) \cdots \operator{\Psi}^\dag(z_N) \vert \emptyset \rangle \label{chap:1:hal.mod.3.1}\\
+    \operator{H}\ket{\{\theta_a\}} & = & \nonumber \\
+    & & +\frac{c}{ \sqrt{N!}} \int dx \int d^N z \, \varphi_{\{ \theta_a \}} ( \{x_a\})     \, \operator{\Psi}^\dag(x)\operator{\Psi}^\dag(x) \operator{\Psi}(x)\operator{\Psi}(x)  \operator{\Psi}^\dag(z_1) \cdots \operator{\Psi}^\dag(z_N) \vert \emptyset \rangle \label{chap:1:hal.mod.3.1}
+\end{eqnarray}
+
+Les règles de commutations \eqref{chap:1:com.1} impliquent que
+\begin{eqnarray}
+    \left . \begin{array}{rcl}
+        [ \operator{\Psi}(x),  \operator{\Psi}^\dag(z_1)\cdots \operator{\Psi}^\dag(z_N)  ]  &=&  \sum_{i = 0}^{N} \operator{\Psi}^\dag(z_1) \cdots \operator{\delta}(x-z_i) \cdots \operator{\Psi}^\dag(z_N)  \\
+        \left [ \operator{\partial}_x\operator{\Psi}^\dag(x),  \operator{\Psi}^\dag(z) \right ]   & =  & 0
+    \end{array} \right . \label{chap:1:com.2}
+\end{eqnarray}
+
+
+En utilisant ces dernier règles de commutations et la définition d'état de Fock \eqref{chap:eq.vide.fock} , la premiers partie de l'application de l'hamiltonien sur l'état $\ket{\{\theta_a\}}$ , (\ref{chap:1:hal.mod.3.1}) de simplifie en
+\begin{eqnarray}
+     - \frac{1}{ \sqrt{N!}} \int d^N z \, \chi_N ( z_1 , \cdots , z_N  ~\vert ~ \theta_1 , \cdots , \theta _N ) \,    \sum_{i=1}^N  \operator{\Psi}^\dag(z_1) \cdots \left [\operator{\partial}_{z_i}^2 \operator{\Psi}^\dag(z_i)\right ] \cdots\operator{\Psi}^\dag(z_N) \vert 0 \rangle
+\end{eqnarray}
+
+Et en faisant deux integration par partie selon la variable $z_i$ , cette premier partie devient
+\begin{eqnarray}
+     - \frac{1}{ \sqrt{N!}} \int d^N z \, \sum_{i=1}^N \, \operator{\partial}_{z_i}^2\, \varphi_{\{ \theta_a \}} ( \{x_a\})  \,     \operator{\Psi}^\dag(z_1)  \cdots\operator{\Psi}^\dag(z_N) \vert 0 \rangle \label{chap:1:hal.mod.3.1.1}
+\end{eqnarray}
+
+Pour la seconde partie  , en remarquant que les règles de commutations  \eqref{chap:1:com.1} impliquent que
+\begin{eqnarray}
+    [ \operator{\Psi}(x) \operator{\Psi}(x),  \operator{\Psi}^\dag(z) ] & =& 2\operator{\Psi}(x)\operator{\delta}(x - z)\label{chap:1:com.3}
+\end{eqnarray}
+
+et en remplaçant $\operator{\Psi}(x)$ par $\operator{\Psi}(x)\operator{\Psi}(x)$ dans  (\ref{chap:1:com.2}) il vient que
+\begin{eqnarray}
+    [ \operator{\Psi}(x)\operator{\Psi}(x),  \operator{\Psi}^\dag(z_1)\cdots \operator{\Psi}^\dag(z_N)  ]  &=&  2\sum_{i = 0}^{N} \operator{\Psi}^\dag(z_1) \cdots  \operator{\Psi}(x)\operator{\delta}(x-z_i) \cdots \operator{\Psi}^\dag(z_N) \label{chap:1:com.4}
+\end{eqnarray}
+
+et en injectant (\ref{chap:1:com.2}),  (\ref{chap:1:com.4}) devient
+
+\begin{eqnarray}
+    [ \operator{\Psi}(x)\operator{\Psi}(x),  \operator{\Psi}^\dag(z_1)\cdots \operator{\Psi}^\dag(z_N)  ]  &=& \left\{ \begin{array}{l} \displaystyle 2\sum_{i = 0}^{N} \operator{\Psi}^\dag(z_1) \cdots  \operator{\delta}(x-z_i) \cdots \operator{\Psi}^\dag(z_N) \operator{\Psi}(x) \\ + \\ \displaystyle 2\sum_{i = 0}^{N}\sum_{j = i+1}^{N} \operator{\Psi}^\dag(z_1) \cdots\operator{\delta}(x-z_i)\operator{\Psi}^\dag(z_{i+1})\cdots  \operator{\delta}(x-z_j) \cdots \operator{\Psi}^\dag(z_N) \end{array}\right. \label{chap:1:com.5}    .
+\end{eqnarray}
+
+En utilisant la régle de comutation (\ref{chap:1:com.5}) et la définition de l'état de Fock \eqref{chap:eq.vide.fock} , la seconde partie de (\ref{chap:1:hal.mod.3.1}) devient
+
+\begin{eqnarray}
+     \frac{1}{ \sqrt{N!}} \int d^N z \,  \,2    c \,\sum_{1\leq i<j\leq N} \operator{\delta}(z_i - z_j) \, \varphi_{\{ \theta_a \}} ( \{x_a\}) \, \operator{\Psi}^\dag(z_1) \cdots  \cdots\operator{\Psi}^\dag(z_N) \vert \emptyset \rangle \label{chap:1:hal.mod.3.1.2}
+\end{eqnarray}
+
+en utilisant (\ref{chap:1:hal.mod.3.1.1}) et (\ref{chap:1:hal.mod.3.1.2}) , (\ref{chap:1:hal.mod.3.1.1}) devient
+
+\begin{eqnarray}
+    \operator{H}\vert \psi ( \theta_1 , \cdots , \theta_N ) \rangle &= &  \frac{1}{ \sqrt{N!}} \int d^N z \,      \left [ \operator{\mathcal{H}}_N \, \varphi_{\{ \theta_a \}} ( \{x_a\})\,  \right ] \, \operator{\Psi}^\dag(z_1) \cdots  \cdots\operator{\Psi}^\dag(z_N) \vert \emptyset \rangle
+\end{eqnarray}
+avec
+\begin{eqnarray}
+    \operator{\mathcal{H}}_N & = &  - \sum_{i=1}^N \, \operator{\partial}_{z_i}^2 + 2    c \sum_{1\leq i<j\leq N} \operator{\delta}(z_i - z_j)
+\end{eqnarray}
+
+
+
+
+
