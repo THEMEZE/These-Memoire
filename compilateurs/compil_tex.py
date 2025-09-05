@@ -210,6 +210,7 @@ tex_files = [
     #"../These_Memoire_19_07_2025/Figures/Figures.tex",
     "./figures/01_LL_BA/Figures.tex",
     "./figures/02_GGE_TBA/Figures.tex",
+    "./figures/03_GHD/Figures.tex",
     "./figures/04_GGE_Fluctuation/Figures.tex",
     #"./figures/05_Disp_Exp/Figures.tex",
     #"./figures/06_Bipart/Figures.tex",
