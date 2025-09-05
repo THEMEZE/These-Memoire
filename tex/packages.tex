@@ -125,8 +125,7 @@ decorations.pathreplacing}
 
 \usepackage{mathrsfs}
 
-%\usepackage[style=alphabetic,sorting=ynt]{biblatex}
-%\addbibresource{thesis.bib}
+
 
 % -------------------------------------
 % Pour les mini-tables des matières
@@ -136,6 +135,12 @@ decorations.pathreplacing}
 
 \usepackage[acronym]{glossaries}
 \makeglossaries
+
+\usepackage[backend = biber,refsection=chapter]{biblatex}
+%\usepackage[style=alphabetic,sorting=ynt]{biblatex}
+\addbibresource{thesis.bib}
+%\usepackage{chapterbib}
+
 
 %\usepackage[most]{tcolorbox}
 

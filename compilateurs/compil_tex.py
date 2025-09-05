@@ -171,7 +171,7 @@ def compile_latex_index_bibtex(path):
     #compile_indices(path + ".acn")
     compile_acr(path)
     compile_bibtex(path)              # bibtex
-    #compile_biblatex(path)              # biblatex
+    compile_biblatex(path)              # biblatex
     compile_latex(path + ".tex")      # 2e passe LaTeX
     compile_latex(path + ".tex")      # 3e passe LaTeX (pour les refs/bib à jour)
 
