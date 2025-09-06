@@ -45,7 +45,7 @@ Ce chapitre a pour objectif de fournir une présentation synthétique et structu
 Nous présentons d'abord l’architecture complète de l’expérience, depuis la production des atomes jusqu’à leur imagerie, en passant par les étapes de refroidissement, de piégeage magnétique sur puce, de manipulation optique, et de génération de potentiels. Cette description s’accompagne d’une mise en contexte des contributions historiques au dispositif.
 
 \paragraph{Contributions successives et personnelles}  
-Une attention particulière est portée à la répartition chronologique des contributions. Les étapes initiales (source atomique, \gls{PMO}, piège \acrshort{DC} pour \acrlong{DC} en anglais) ont été développées par d’anciens doctorants. La mise en place du piégeage 1D sur puce ainsi que l’utilisation du \gls{DMD} pour la sélection spatiale ont été réalisées au cours de la thèse de Léa Dubois \cite{L.Dubois2024}. Mon travail s’inscrit dans cette continuité et concerne principalement la prise de données, l’analyse de protocoles dynamiques, ainsi que la participation à certaines opérations de maintenance et d’optimisation du système.
+Une attention particulière est portée à la répartition chronologique des contributions. Les étapes initiales (source atomique, \gls{PMO}, piège \acrshort{DC} pour \acrlong{DC} en anglais) ont été développées par d’anciens doctorants. La mise en place du piégeage 1D sur puce ainsi que l’utilisation du \gls{DMD} pour la sélection spatiale ont été réalisées au cours de la thèse de L. Dubois \cite{L.Dubois2024}. Mon travail s’inscrit dans cette continuité et concerne principalement la prise de données, l’analyse de protocoles dynamiques, ainsi que la participation à certaines opérations de maintenance et d’optimisation du système.
 
 \paragraph{Rôle du dispositif dans la thèse}  
 Ce dispositif permet d’explorer des phénomènes hors équilibre dans des gaz quantiques 1D. Il constitue une plateforme particulièrement adaptée à l’étude de protocoles d’expansion, de sondes locales, ou de dynamiques guidées par \gls{GHD}, qui sont au cœur de cette thèse.
@@ -124,7 +124,7 @@ Une présentation plus exhaustive du montage laser et de son système de verroui
 %}
 %Le dispositif expérimental permet de produire des gaz de rubidium ultra-froids, avec pour objectif final l’obtention de gaz unidimensionnels dans le régime quantique dégénéré. La production suit une séquence expérimentale déjà bien établie, initialement développée par d’anciens doctorants (voir par exemple la thèse d’A. Johnson~\cite{Johnson2016}), puis réoptimisée au début de la thèse de Léa-Dubois ~\cite{L.Dubois2024} sous la supervision d’I. Bouchoule.
 
-Le dispositif expérimental permet de produire des gaz ultra-froids de rubidium, en vue d’obtenir des gaz unidimensionnels dans le régime quantique dégénéré. La séquence expérimentale suit un protocole établi, initialement développé par d’anciens doctorants (voir par exemple la thèse d’A. Johnson~\cite{Johnson2016}) et réoptimisé au début de la thèse de Léa. Dubois~\cite{L.Dubois2024} sous la supervision d’I. Bouchoule.
+Le dispositif expérimental permet de produire des gaz ultra-froids de rubidium, en vue d’obtenir des gaz unidimensionnels dans le régime quantique dégénéré. La séquence expérimentale suit un protocole établi, initialement développé par d’anciens doctorants (voir par exemple la thèse d’A. Johnson~\cite{Johnson2016}) et réoptimisé au début de la thèse de L. Dubois~\cite{L.Dubois2024} sous la supervision d’I. Bouchoule.
 
 %\paragraph{Libération des atomes de rubidium}
 %Les atomes de $^{87}$Rb sont libérés à partir d’un \emph{dispenser}, placé directement dans l’enceinte à vide, sur le côté de la monture de la puce atomique. Ce composant, parcouru par un courant de \( 4.5\,\mathrm{A} \) pendant environ \( 5\,\mathrm{s} \), émet un flux d’atomes thermiques dans la chambre à vide.
@@ -578,7 +578,28 @@ Le faisceau façonné par le \gls*{DMD} est projeté dans le plan des atomes à 
 
 \paragraph{Grandissement et champ couvert}
 
-Le montage permet de couvrir une zone de l’ordre de \(600\,\mu\mathrm{m}\) dans le plan des atomes, soit plus que la longueur typique d’un nuage (\(\sim 400\,\mu\mathrm{m}\) pour \(f_{\parallel}=5\,\mathrm{Hz}\)). Le grandissement est déterminé par les focales utilisées : une focale \(f_1 = 750\,\mathrm{mm}\) du côté du \gls*{DMD}, et \(f = 32\,\mathrm{mm}\) pour l’objectif côté atomes, donnant \(G = f/f_1 \approx 0.043\).
+Le montage permet de couvrir une zone de l’ordre de \(600\,\mu\mathrm{m}\) dans le plan des atomes, soit plus que la longueur typique d’un nuage (\(\sim 400\,\mu\mathrm{m}\) pour \(f_{\parallel}=5\,\mathrm{Hz}\)). Le grandissement est déterminé par les focales utilisées : une focale \(f_1 = 750\,\mathrm{mm}\) du côté du \gls*{DMD}, et \(f = 32\,\mathrm{mm}\) pour l’objectif côté atomes, donnant \(G = f/f_1 \approx 0.043\) (Fig ~ \ref{chap:5:fig:Shema_Glob} ).
+
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+			\begin{scope}[shift={(0,0)}]
+				%\begin{scope}[transform canvas={scale=0.6}]
+				\begin{scope}[scale=1]
+					\input{figures/05_Disp_Exp/Shema_Glob}	
+			
+				\end{scope}
+			
+				%\draw[color = red , scale = 0.5 , draw = none  ] (-6 , -1) rectangle (6, 9) ; 
+				%\node[below , shift={(-3cm , 5cm)}] at (0,0) {\fontsize{15pt}{8pt}\selectfont a)};	
+			\end{scope}
+					
+	\end{tikzpicture}
+	\caption{}
+	\label{chap:5:fig:Shema_Glob}
+\end{figure}
+
 
 \paragraph{Visualisation et interface}
 

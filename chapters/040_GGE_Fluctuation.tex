@@ -1314,7 +1314,7 @@ Les equations (\ref{chap:fluctu:eq:hessienne3}) , (\ref{chap:fluctu:eq:hessienne
 Du fait que tous ces fonctions ($\mathcal{H}$ , $\mathcal{D}$ , $\mathcal{V}$ et inverse ) soit symétriques alors l'equation ci-dessus sont tous équivalentes et $\mathcal{B}$ étant donc symétrique .
 Donc en utilisant (\ref{chap:fluctu:eq:reg}) et (\ref{chap:fluctu:eq:irreg.inv}) 
 \begin{eqnarray}
-	\mathcal{B}(\theta , \theta ' )  & = & - (\mathcal{D}^{-1}\cdot\mathcal{V}\cdot (\mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})})^{-1})(\theta , \theta') 	, \label{chap:fluctu:eq:B.1}\\
+	\mathcal{B}(\theta , \theta ' )  & = & - (\mathcal{D}^{-1}\cdot\mathcal{V}\cdot \mathcal{H}^{-1})(\theta , \theta') 	, \label{chap:fluctu:eq:B.1}\\
 	& = & 	 (\rho_{\! s , eq}(\theta) \nu_{\! eq}(\theta) (1 -  \nu_{\! eq}(\theta) )) \times  \notag\\
 	&&  ~~~~~~~~~~~~~\left \{  \frac{\Delta}{2\pi} \star  \left [ \left (  \frac{1}{\rho_{\! s, eq}(\theta)  (1 - \nu_{\! eq}(\theta)  )} +  \frac{1}{\rho_{\! s, eq}(\cdot) (1 - \nu_{\! eq} (\cdot )  )}\right )  \, \mathcal{H}^{-1}( \cdot , \theta ' )   \right. \right .\notag\\
 	 &&  ~~~~~~~~~~~~~~~~~~~~~~~~~\left . \left .   -  \frac{\nu_{\! eq}(\cdot)}{\rho_{\! s, eq}(\cdot) ( 1 - \nu_{\! eq}(\cdot) )}  \, \left ( \frac{\Delta}{2\pi} \star \mathcal{H}^{-1}( \cdot , \theta ' )   \right )  \right ] \right \} (\theta)   \notag,
@@ -1373,7 +1373,16 @@ Ces quantités permettent ensuite de construire :
 	\item la contribution régulière non locale \( \mathcal{V}(\theta, \theta') \), définie par \eqref{chap:fluctu:eq:reg}.
 \end{itemize}
 
-La matrice de fluctuation \( \mathcal{H}(\theta, \theta') \)  , définie par \eqref{chap:fluctu:eq:hessienne3}, est obtenue en combinant ces deux contributions. L’inverse \( \left(L \mathcal{H} \right)^{-1}(\theta, \theta') \) en \eqref{chap:fluctu:eq:fluctuations.10} fournie une partie sans interaction (diagonale) $(L\mathcal{D})^{-1}(\theta, \theta')$ et une partie avec intéraction $\mathcal{B}(\theta, \theta')/L$ avec \eqref{chap:fluctu:eq:B.1}.
+%La matrice de fluctuation \( \mathcal{H}(\theta, \theta') \)  , définie par \eqref{chap:fluctu:eq:hessienne3}, est obtenue en combinant ces deux contributions. L’inverse \( \left(L \mathcal{H} \right)^{-1}(\theta, \theta') \) soit en enverssent directement la matrice \( L \mathcal{H}(\theta, \theta') \)  soit avec en utilisant  \eqref{chap:fluctu:eq:fluctuations.10} c'est a dire en additionnant fournie une partie sans interaction (diagonale) $(L\mathcal{D})^{-1}(\theta, \theta')$ et la partie avec intéraction $\mathcal{B}(\theta, \theta')/L$ avec \eqref{chap:fluctu:eq:B.1}.
+
+\medskip
+
+La matrice de fluctuations \( \mathcal{H}(\theta, \theta') \), définie par \eqref{chap:fluctu:eq:hessienne3}, est obtenue en combinant ces deux contributions. Son inverse \( \big(L \mathcal{H}\big)^{-1}(\theta, \theta') \) s’obtient en inversant directement la matrice \( L \mathcal{H}(\theta, \theta') \).  
+
+\medskip
+
+La partie avec interaction, \( \mathcal{B}(\theta, \theta')/L \) (définie par \eqref{chap:fluctu:eq:B.1}), peut être déterminée de deux façons équivalentes : soit en soustrayant la partie sans interaction (diagonale), \((L\mathcal{D})^{-1}(\theta, \theta')\), de l’inverse \(\big(L \mathcal{H}\big)^{-1}(\theta, \theta')\), soit directement en utilisant \eqref{chap:fluctu:eq:B.1}.
+
 
 
 %\paragraph{Calcul de la matrice hermitienne.}
@@ -1451,12 +1460,15 @@ Afin de tester la validité l’expression \eqref{chap:fluctu:eq:fluctuations.10
     %\includegraphics[width=0.32\textwidth]{chi_thermo_derivative.png}
     %\includegraphics[width=0.32\textwidth]{chi_thermo_difference.png}
     \includegraphics[width=1\textwidth]{figures/04_GGE_Fluctuation/heatmaps_2.png}
-    \caption{Vérification numérique dans le régime thermodynamique. Gauche : $(L\mathcal{H})^{-1}$ par inversion de la courbure. Droite : \(\chi_w\) par dérivée fonctionnelle..}
+    \caption{Vérification numérique dans le régime thermodynamique. Gauche : $(L\mathcal{H})^{-1}$ par inversion de la courbure. Droite : \(\chi_w\) par dérivée fonctionnelle.}
     \label{fig:chi_thermodynamique}
 \end{figure}
 
-\paragraph{Conclusion.} 
-Cette vérification confirme que, dans le régime thermodynamique, la structure variationnelle de l’entropie de Yang–Yang encode entièrement les fluctuations et les réponses spectrales du système. Il s’agit d’un test non trivial du principe de fluctuation–réponse appliqué aux systèmes intégrables.
+\paragraph{Conclusion.}
+
+Nous avons vérifié la formule \eqref{chap:fluctu:eq:fluctuations.10} de deux manières. D’une part, en l’évaluant directement à un {\em poids spectral} $w$ fixé $(L\mathcal{H})^{-1}$; d’autre part, en calculant le différentiel de la distribution de rapidité par rapport au poids spectral \(\chi_w\), c’est-à-dire  en appliquant le principe de fluctuation–réponse. Pour le {\em poids spectral} et les paramètres considérés, les deux approches donnent des résultats numériques concordants, ce qui constitue une validation de la formule \eqref{chap:fluctu:eq:fluctuations.10}.
+ 
+%Cette vérification confirme que, dans le régime thermodynamique, la structure variationnelle de l’entropie de Yang–Yang encode entièrement les fluctuations et les réponses spectrales du système. Il s’agit d’un test non trivial du principe de fluctuation–réponse appliqué aux systèmes intégrables.
 
 \medskip
 
@@ -1807,7 +1819,7 @@ Nous avons d’abord introduit le formalisme général des \gls*{GGE}, dans lequ
 
 \medskip
 
-Nous avons ensuite approfondi l’étude de la limite thermodynamique, où les fluctuations autour de l’état d’équilibre deviennent gaussiennes. Dans cette approximation, les susceptibilités s’expriment comme l’inverse de la courbure fonctionnelle de l’entropie de Yang-Yang, formalisée par l’opérateur hessien $\mathcal{H}^{\mathcal{S}_{YY}}$. Nous avons donné une formulation explicite de cet opérateur, ainsi que de sa matrice inverse.
+Nous avons ensuite approfondi l’étude de la limite thermodynamique, où les fluctuations autour de l’état d’équilibre deviennent gaussiennes. Dans cette approximation, les susceptibilités s’expriment comme l’inverse de la courbure fonctionnelle de l’entropie de Yang-Yang, formalisée par l’opérateur hessien $\mathcal{H}^{(\mathcal{S}_{YY})}$. Nous avons donné une formulation explicite de cet opérateur, ainsi que de sa matrice inverse.
 
 \medskip
 

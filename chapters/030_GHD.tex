@@ -654,11 +654,12 @@ On obtient alors les relations explicites :
     v^{\mathrm{eff}}(\theta_+) &=& \tfrac{3}{4}\theta_+ + \tfrac{1}{4}\theta_-, \label{eq:veff+}\\
     v^{\mathrm{eff}}(\theta_-) &=& \tfrac{3}{4}\theta_- + \tfrac{1}{4}\theta_+. \label{eq:veff-}
 \end{eqnarray}
-En introduisant la densité $n$ \,  ($4\sqrt{gn} = \theta_+ - \theta_-$ ) et la vitesse du fluide $u$ définies plus haut les équations~\eqref{eq:theta+}--\eqref{eq:theta-} se réécrivent sous la forme :  
+En introduisant la densité $n$ (via $4\sqrt{gn} = \theta_+ - \theta_-$) et la vitesse du fluide $u$ définies plus haut, les équations~\eqref{eq:theta+}--\eqref{eq:theta-} se réécrivent sous la forme  
 \begin{eqnarray}
-    \partial_t n + \partial_x \big( u n \big) &=& 0, \label{eq:GHDcontinuite}\\
-    \partial_t u + u \partial_x u &=& - g\, \partial_x n. \label{eq:GHDeuler}
+    \partial_t n + \partial_x \big( n u \big) &=& 0, \label{eq:GHDcontinuite}\\
+    \partial_t (n u) + \partial_x \!\left( n u^2 \right) &=& - g\, n \,\partial_x n. \label{eq:GHDeuler}
 \end{eqnarray}
+Il s’agit exactement des équations de continuité et d’Euler~\eqref{eq:continuite}--\eqref{eq:euler}, mais écrites sans le terme de \emph{pression quantique} ni le potentiel extérieur.
 
 
 \begin{figure}[h!]
@@ -677,20 +678,53 @@ En revanche, si le système initial contient plusieurs mers de Fermi (par exempl
 
 
 
+%\section*{Résumé sur la dynamique hydrodynamique généralisée (GHD)}
+%
+%La dynamique d'un système quantique isolé intégrable présente des propriétés de relaxation spécifiques, que l'on peut résumer ainsi :
+%
+%\begin{itemize}[label = $\star$]
+%    %\item Un système quantique isolé intégrable relaxe vers un état localement stationnaire vis-à-vis des observables locales.  
+%    \item Dans le cas d'un système chaotique (non intégrable), cet état localement relaxé est bien décrit par un ensemble de Gibbs classique, paramétré par la densité locale $n$ et l'énergie par particule $e_{\mathrm{int}}$.
+%    \item Pour un système intégrable, l'état relaxé local est correctement décrit par un \gls*{GGE}, qui est entièrement déterminé par la distribution de rapidités $\rho(\theta)$.
+%    \item Pour un système présentant des variations spatiales lentes à grande échelle, on peut définir une distribution de rapidités résolue spatialement, $\rho(x,\theta)$.
+%    \item L'évolution de $\rho(x,\theta)$ est gouvernée par les \emph{équations} \gls*{GHD}, valables à l'échelle d'Euler. Ces équations décrivent la propagation des quasiparticules et la redistribution locale des charges conservées.
+%    \item Dans la limite de l'état fondamental et pour un paramètre de Lieb $\gamma \to 0$, les équations \gls*{GHD} se réduisent aux équations hydrodynamiques obtenues à partir des équations \gls*{GP} dépendantes du temps, lorsque le terme de pression quantique est négligeable.
+%\end{itemize}
+%
+%Ainsi, la \gls*{GHD} fournit un cadre rigoureux pour décrire la dynamique hors équilibre des systèmes intégrables à grande échelle, reliant la description microscopique des rapidités à des équations hydrodynamiques efficaces.
+
+
 \section*{Résumé sur la dynamique hydrodynamique généralisée (GHD)}
 
-La dynamique d'un système quantique isolé intégrable présente des propriétés de relaxation spécifiques, que l'on peut résumer ainsi :
+La dynamique d’un système quantique isolé intégrable possède des propriétés de relaxation particulières. 
 
-\begin{itemize}[label = $\star$]
-    %\item Un système quantique isolé intégrable relaxe vers un état localement stationnaire vis-à-vis des observables locales.  
-    \item Dans le cas d'un système chaotique (non intégrable), cet état localement relaxé est bien décrit par un ensemble de Gibbs classique, paramétré par la densité locale $\langle \hat{n} \rangle$ et l'énergie par particule $\langle \hat{e} \rangle$.
-    \item Pour un système intégrable, l'état relaxé local est correctement décrit par un \gls*{GGE}, qui est entièrement déterminé par la distribution de rapidités $\rho(\theta)$.
-    \item Pour un système présentant des variations spatiales lentes à grande échelle, on peut définir une distribution de rapidités résolue spatialement, $\rho(x,\theta)$.
-    \item L'évolution de $\rho(x,\theta)$ est gouvernée par les \emph{équations} \gls*{GHD}, valables à l'échelle d'Euler. Ces équations décrivent la propagation des quasiparticules et la redistribution locale des charges conservées.
-    \item Dans la limite de l'état fondamental et pour un paramètre de Lieb-Liniger $\gamma \to 0$, les équations GHD se réduisent aux équations hydrodynamiques obtenues à partir des équations de Gross-Pitaevskii dépendantes du temps, lorsque le terme de pression quantique est négligeable.
-\end{itemize}
+\medskip
 
-Ainsi, la GHD fournit un cadre rigoureux pour décrire la dynamique hors équilibre des systèmes intégrables à grande échelle, reliant la description microscopique des rapidités à des équations hydrodynamiques efficaces.
+Dans un système chaotique (non intégrable), l’état localement relaxé est bien décrit par un ensemble de Gibbs classique, caractérisé uniquement par la densité locale $n$ et l’énergie par particule $e_{\mathrm{int}}$. 
+
+\medskip
+
+En revanche, pour un système intégrable, l’état stationnaire local ne peut pas être capturé par un simple ensemble de Gibbs : il est correctement décrit par un \gls*{GGE}, entièrement déterminé par la distribution de rapidités $\rho(\theta)$. 
+
+\medskip
+ 
+
+Lorsque l’on considère des variations spatiales lentes, cette description s’étend naturellement à une distribution de rapidités dépendant de la position, $\rho(x,\theta)$. 
+
+\medskip
+
+L’évolution de cette fonction est alors gouvernée, à l’échelle d’Euler, par les équations de \gls*{GHD}. 
+Ces équations traduisent la propagation des quasiparticules et la réorganisation locale des charges conservées.  
+
+\medskip
+
+Dans certaines limites particulières, la \gls*{GHD} se connecte aux descriptions hydrodynamiques plus familières. 
+En particulier, dans l’état fondamental et pour un paramètre de Lieb $\gamma \to 0$, les équations de \gls*{GHD} se réduisent à celles de l’hydrodynamique issues de l’équation de Gross–Pitaevskii dépendante du temps, lorsque le terme de pression quantique peut être négligé. 
+
+\medskip 
+
+Ainsi, la \gls*{GHD} fournit un cadre cohérent et rigoureux pour décrire la dynamique hors équilibre des systèmes intégrables, reliant la description microscopique en termes de rapidités aux équations effectives de l’hydrodynamique macroscopique.
+
 
 
 
