@@ -672,7 +672,7 @@ Concrètement, l’expansion longitudinale est réalisée selon la séquence ill
 La mise en œuvre de ce protocole d’expansion longitudinale ne répond donc pas seulement à un besoin technique de mesure, mais s’inscrit dans une stratégie plus générale : relier les prédictions théoriques de la \gls{GHD}.% et des modèles effectifs à des observables accessibles, et sonder directement l’évolution des fluctuations et des corrélations dans un système quantique 1D.
 
 \paragraph{Équations Gross-Pitaevskii dépendantes du temps.}
-Pour un systemps dans les regime \gls{qBEC} ( pour une paramètre de Lieb definie en \ref{chap2:eq:gamma.1} , $\gamma  \ll 1$ et $T \sim 0$), la dynamique du système étudié est décrite par l’équation de \gls{GP} \eqref{chap.1:eq.GP.2} : 
+Pour un systemps dans les regime \gls{qBEC} ( pour une paramètre de Lieb definie en \ref{chap2:eq:gamma.1} , $\gamma  \ll 1$ et $T \sim 0$), la dynamique du système étudié est décrite par l’équation de \gls{GP} \eqref{chap.2:eq.GP.2} : 
 \begin{eqnarray*}
 	i \partial_\tau\phi = \left \{ - \frac{1}{2}\Delta_{\vec{r}} + V(\vec{r}) + g_{\mathrm{3D}} N \vert \phi \vert^2 \right \} \phi,
 \end{eqnarray*}
@@ -715,29 +715,32 @@ En utilisant la transformation de Madelung
 \(
 \psi(x,\tau) = \sqrt{n(x,\tau)} \, e^{i \vartheta(x,\tau)},
 \)
-et en introduisant la vitesse $u = \partial_x \vartheta$, on obtient les équations hydrodynamiques associées :
+et en introduisant la vitesse \(u = \partial_x \vartheta\), on obtient les équations hydrodynamiques associées :
 \begin{eqnarray}\label{chap:5:eq.hydro.1}
 	\left\{
 	\begin{array}{rcl}
 		\partial_\tau n + \partial_x ( n u )	 & = & 0, \\[0.3em]
-		\partial_\tau u + \partial_x \left( \tfrac{u^2}{2} + V_\parallel(x) + \mu(n) + Q(n) \right) & = & 0,
+		\partial_\tau u + \partial_x \left( \frac{u^2}{2} + V_\parallel(x) + \mu(n) + \frac{\mathcal{P}_Q}{n} \right) & = & 0,
 	\end{array} 
 	\right.
 \end{eqnarray}
 où le terme de pression quantique est donné par
 \(
-Q(n) = - \frac{1}{2} \, \frac{\partial_x^2 \sqrt{n}}{\sqrt{n}}.
+\mathcal{P}_Q  = -\frac{1}{2} \, \sqrt{n} \, \partial_x^2 \sqrt{n} .
 \)
-En négligeant le terme de pression quantique $Q(n)$, ces équations sont équivalentes aux deux premières de \eqref{chap:3:eq:hydro.1}, en tenant compte de la relation thermodynamique $dP = n \, d\mu$:
 
+En tenant compte de la relation thermodynamique \(dP = n \, d\mu\), ce sont les mêmes équations que \eqref{eq:continuite} et \eqref{eq:euler2}.
+
+En négligeant le terme de pression quantique \(\mathcal{P}_Q\), on obtient :
 \begin{eqnarray}\label{chap:5:eq.hydro.1.1}
 	\left\{
 	\begin{array}{rcl}
 		\partial_\tau n + \partial_x ( n u )	 & = & 0, \\[0.3em]
-		\partial_\tau u + \partial_x \left( \tfrac{u^2}{2} + V_\parallel(x) + \mu(n) \right) & = & 0,
+		\partial_\tau u + \partial_x \left( \frac{u^2}{2} + V_\parallel(x) + \mu(n) \right) & = & 0,
 	\end{array} 
 	\right.
 \end{eqnarray}
+
 
 \medskip
 
@@ -936,30 +939,59 @@ et l'on considère le cas \(\alpha>0\).
 
 \medskip
 
+%\paragraph{Régime à temps courts (\(\tau \ll 1/\omega_\parallel\)).}  
+%On linéarise autour de l'équilibre \(\lambda=1\) en posant \(\lambda(\tau)=1+\epsilon(\tau)\) avec \(|\epsilon|\ll 1\). L'équation de mouvement devient un oscillateur harmonique forcé :
+%\begin{eqnarray}
+%\ddot \epsilon + (1+\alpha)\,\omega_\parallel^2 \epsilon - \omega_\parallel^2 = 0.
+%\end{eqnarray}
+%Pour les conditions initiales choisies, la solution à petits temps est
+%\begin{eqnarray}
+%\epsilon(\tau) \simeq \frac{1}{2}\,\omega_\parallel^2 \tau^2 \quad\Rightarrow\quad
+%\lambda(\tau) \simeq 1 + \frac{\omega_\parallel^2 \tau^2}{2},
+%\end{eqnarray}
+%indépendamment de l'équation d'état \(\mu(n)\). Ce comportement correspond au profil universel observé à temps courts (Fig.~7.4(a)) pour tous les régimes TF.
+%
+%\paragraph{Régime à temps longs (\(\tau \gg 1/\omega_\parallel\)).}  
+%Lorsque \(\lambda^{-\alpha} \ll 1\), l'équation intégrée conduit à 
+%\begin{eqnarray}
+%\dot\lambda \simeq \sqrt{\frac{2\omega_\parallel^2}{\alpha}} \quad\Rightarrow\quad
+%\lambda(\tau) \simeq \frac{2}{\alpha}\,\omega_\parallel \tau.
+%\end{eqnarray}
+
 \paragraph{Régime à temps courts (\(\tau \ll 1/\omega_\parallel\)).}  
-On linéarise autour de l'équilibre \(\lambda=1\) en posant \(\lambda(\tau)=1+\epsilon(\tau)\) avec \(|\epsilon|\ll 1\). L'équation de mouvement devient un oscillateur harmonique forcé :
+On linéarise l'équation autour de l'équilibre \(\lambda=1\) en posant \(\lambda(\tau)=1+\epsilon(\tau)\) avec \(|\epsilon|\ll 1\). L'équation de mouvement se réduit alors à un oscillateur harmonique forcé :
 \begin{eqnarray}
 \ddot \epsilon + (1+\alpha)\,\omega_\parallel^2 \epsilon - \omega_\parallel^2 = 0.
 \end{eqnarray}
-Pour les conditions initiales choisies, la solution à petits temps est
+Pour les conditions initiales choisies, la solution à petits temps est approximativement
 \begin{eqnarray}
-\epsilon(\tau) \simeq \frac{1}{2}\,\omega_\parallel^2 \tau^2 \quad\Rightarrow\quad
-\lambda(\tau) \simeq 1 + \frac{\omega_\parallel^2 \tau^2}{2},
+\epsilon(\tau) \simeq \frac{1}{2}\,\omega_\parallel^2 \tau^2,
 \end{eqnarray}
-indépendamment de l'équation d'état \(\mu(n)\). Ce comportement correspond au profil universel observé à temps courts (Fig.~7.4(a)) pour tous les régimes TF.
+ce qui conduit à
+\begin{eqnarray}
+\lambda(\tau) \simeq 1 + \frac{\omega_\parallel^2 \tau^2}{2}.
+\end{eqnarray}
+Ce comportement est indépendant de l'équation d'état \(\mu(n)\).% et correspond au profil universel observé à temps courts (Fig.~7.4(a)) pour tous les régimes TF.
 
 \paragraph{Régime à temps longs (\(\tau \gg 1/\omega_\parallel\)).}  
-Pour \(\lambda^{-\alpha}\ll 1\), l'équation intégrée donne
+Lorsque \(\lambda^{-\alpha} \ll 1\), l'intégration de l'équation de mouvement montre que la vitesse \(\dot\lambda\) tend vers \(\sqrt{2\omega_\parallel^2/\alpha}\).  
+En conséquence, à longs temps, l'évolution de \(\lambda(\tau)\) est approximativement linéaire et s'écrit
 \begin{eqnarray}
-\dot\lambda \simeq \sqrt{\frac{2\omega_\parallel^2}{\alpha}} \quad\Rightarrow\quad
-\lambda(\tau) \simeq \frac{2}{\alpha}\,\omega_\parallel \tau.
+\lambda(\tau) \simeq \frac{2}{\alpha}\,\omega_\parallel \, \tau.
 \end{eqnarray}
-En particulier :
-\begin{itemize}[label = $\bullet$]
-\item \gls{TF} 1D (\(\alpha=1\)) : \(\lambda(\tau)\simeq \sqrt{2}\,\omega_\parallel \tau\),  
-\item \gls{TF} 3D (\(\alpha=1/2\)) : \(\lambda(\tau)\simeq 2\,\omega_\parallel \tau\).  
-\end{itemize}
-Ces comportements sont bien observés sur la Fig.~7.4(b) et correspondent à l’expansion asymptotique du gaz.
+
+
+%En particulier :
+%\begin{itemize}[label = $\bullet$]
+%\item \gls{TF} 1D (\(\alpha=1\)) : \(\lambda(\tau)\simeq \sqrt{2}\,\omega_\parallel \tau\),  
+%\item \gls{TF} 3D (\(\alpha=1/2\)) : \(\lambda(\tau)\simeq 2\,\omega_\parallel \tau\).  
+%\end{itemize}
+En particulier, pour le régime \gls{TF} 1D, correspondant à \(\alpha = 1\), on obtient 
+\(\lambda(\tau) \simeq \sqrt{2}\, \omega_\parallel \, \tau\).  
+Pour le régime \gls{TF} 3D, correspondant à \(\alpha = 1/2\), on a 
+\(\lambda(\tau) \simeq 2\, \omega_\parallel \, \tau\).
+
+%Ces comportements sont bien observés sur la Fig.~7.4(b) et correspondent à l’expansion asymptotique du gaz.
 
 
 \paragraph{Le potentiel chimique.}
