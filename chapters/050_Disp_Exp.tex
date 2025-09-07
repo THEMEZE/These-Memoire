@@ -596,7 +596,7 @@ Le montage permet de couvrir une zone de l’ordre de \(600\,\mu\mathrm{m}\) dan
 			\end{scope}
 					
 	\end{tikzpicture}
-	\caption{}
+	\caption{Schéma du montage optique}
 	\label{chap:5:fig:Shema_Glob}
 \end{figure}
 
@@ -787,7 +787,11 @@ avec $n_0$ le profil de densité à $\tau = 0 $ et $\lambda(\tau)$ le facter d'e
 	\end{array} 
 	\right.
 \end{eqnarray}
-(car \(\partial_\tau u=(\ddot\lambda/\lambda-\dot\lambda^2/\lambda^2)x\) et \(v\partial_x v=(\dot\lambda/\lambda)^2 x\), leur somme donne \((\ddot\lambda/\lambda)x\)) et initialement $\mu( n_0 ( x ) ) = \mu( n_0 ( x = 0  ) ) - \frac{1}{2} \omega_\parallel^2 x^2 $.
+(car \(\partial_\tau u=(\ddot\lambda/\lambda-\dot\lambda^2/\lambda^2)x\) et \(v\partial_x v=(\dot\lambda/\lambda)^2 x\), leur somme donne \((\ddot\lambda/\lambda)x\)) et initialement% $\mu( n_0 ( x ) ) = \mu( n_0 ( x = 0  ) ) - \frac{1}{2} \omega_\parallel^2 x^2 $.
+\begin{eqnarray}
+	\mu_0( x ) = \mu_p - \frac{1}{2} \omega_\parallel^2 x^2,	
+\end{eqnarray}
+avec $\mu_0(x) = \mu( n_0 ( x ) )$ et $\mu_p = \mu( n_0 ( x = 0  ) )$.
 
 \bigskip
 
@@ -800,7 +804,7 @@ Intéressons nous maintenant à $\partial_x n$. Comme $n(x)$ vérifie \eqref{cha
 	\partial_x n(x)=\frac{1}{\lambda^2}\,n_0'\!\Big(\frac{x}{\lambda}\Big).	
 \end{eqnarray}
 
-En utilisant q'à l'équilibre \(\mu\big(n_0(y)\big)=\mu_0-\tfrac12 \omega_\parallel^2 y^2\), soit \(\mu'(n_0(y))\,n_0'(y)=-\omega_\parallel^2 y\) soit 
+En utilisant q'à l'équilibre \(\mu\big(n_0(y)\big)=\mu_p-\tfrac12 \omega_\parallel^2 y^2\), soit \(\mu'(n_0(y))\,n_0'(y)=-\omega_\parallel^2 y\) soit 
 \begin{eqnarray}\label{chap:5:eq.hydro.2.3}
 	n_0'(y)=-\frac{\omega_\parallel^2\,y}{\mu'(n_0(y))}.	
 \end{eqnarray}
@@ -1017,7 +1021,7 @@ Pour le régime \gls{TF} 3D, correspondant à \(\alpha = 1/2\), on a
 
 \paragraph{Le potentiel chimique.}
 Dans le régime quasi-1D on utilise l'expression d'interpolation \cite{PhysRevA.68.043610}.
-\begin{eqnarray}
+\begin{eqnarray}\label{chap4:eq.pot.s.1}
 	\mu(n)=\hbar\omega_\perp\Big(\sqrt{1+4\,a_{\mathrm{3D}}\,n}-1\Big),
 \end{eqnarray}
 où \(n\) désigne la densité linéique et \(a_{\mathrm{3D}}\) la longueur de diffusion en trois dimensions, dont la valeur est \(a_{\mathrm{3D}} = 5.3~\mathrm{nm}\). De cette formule on obtient deux limites asymptotiques :
@@ -1034,10 +1038,75 @@ où \(n\) désigne la densité linéique et \(a_{\mathrm{3D}}\) la longueur de d
 		\begin{eqnarray}
 			\mu(n)\simeq 2\hbar\omega_\perp\,a_{\mathrm{3D}}\,n \equiv g\,n,
 		\end{eqnarray}
-	avec \(g=2\hbar\omega_\perp a_{\mathrm{3D}}\). Ici \(\mu\propto n\) (donc \(\alpha=1\)) ; on est proche de l'état fondamental transverse (gaussien).
+	avec \(g=2\hbar\omega_\perp a_{\mathrm{3D}}\). Ici \(\mu\propto n\) (donc \(\alpha=1\)) ; on est proche de l'état fondamental.
 \end{itemize}
 
 Les deux formes ci-dessus sont bien les limites asymptotiques de l'expression d'interpolation donnée plus haut.
+
+\subsubsection{Analyse des données expérimentales}
+
+L'étude de la dynamique du profil de densité a été réalisée sur un nuage atomique initialement à l'équilibre dans un potentiel harmonique de fréquence longitudinale $\omega_\parallel = 2 \pi \times 9.4~\mathrm{Hz}$ et transverse $\omega_\perp =2 \pi \times 2.5~\mathrm{kHz}$.  
+
+Le profil de densité mesuré est représenté en blue sur la Fig.~\ref{fig:profil}(a), tandis que le profil attendu à l'équilibre dans le piège harmonique est tracé en noir pointillé. Ce dernier est obtenu à partir de l'expression \eqref{chap4:eq.pot.s.1} du potentiel chimique :
+\begin{equation}\label{chap:eq:ajust}
+\mu_p - \frac{1}{2} \omega_\parallel^2 x^2
+= \hbar \omega_\perp \left[ \sqrt{ 1 + 4\, n_0(x)\, a_\mathrm{3D}}-1 \right],
+\end{equation}
+avec $\mu_p / \hbar \omega_\perp = 1.4$. L'ajustement est très bon au centre du nuage, mais les données expérimentales présentent des ailes supplémentaires, dues à un effet d'entropie non nulle.  
+
+Après un temps d'expansion longitudinal $\tau$, un facteur d'échelle $\lambda$ est extrait en ajustant les profils expérimentaux avec un profil de la forme \eqref{chap:5:eq.hydro.1.3}.
+
+Les facteurs d'échelle extraits expérimentalement sont montrés sur la Fig.~\ref{fig:profil}(b) et sont en bon accord avec les résultats numériques obtenus en résolvant les équations hydrodynamiques (Eq.~\eqref{chap4:eq.pot.s.1}) avec $\mu_p / \hbar \omega_\perp = 1.40$.
+
+\medskip
+
+L'évolution des profils de densité mesurée expérimentalement est en bon accord avec les simulations numériques réalisées dans le régime cros-over (Fig.~\ref{fig:profil}(b)).
+
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+%			\begin{scope}[shift={(0,0)}]
+%				%\begin{scope}[transform canvas={scale=0.6}]
+%				\begin{scope}[scale=1]
+%					\input{figures/05_Disp_Exp/Shema_Glob}	
+%			
+%				\end{scope}
+%			
+%				%\draw[color = red , scale = 0.5 , draw = none  ] (-6 , -1) rectangle (6, 9) ; 
+%				%\node[below , shift={(-3cm , 5cm)}] at (0,0) {\fontsize{15pt}{8pt}\selectfont a)};	
+%			\end{scope}
+        % Première figure
+        \begin{scope}[shift={(0,0)}]
+        	\node (a) at (0,0) {\includegraphics[width=0.45\textwidth]{./figures/05_Disp_Exp/fit_n_vs_tau.pdf}};
+        	\node[above=-0.2cm of a , shift={(-2 , 0)}] {(a)};	
+        \end{scope}
+
+        
+        
+        % Deuxième figure
+        \begin{scope}[shift={(7,0)}]
+        	\node (b) at (0,0) {\includegraphics[width=0.45\textwidth]{./figures/05_Disp_Exp/fit_lambda_vs_tau.pdf}};
+        	\node[above=-0.2cm of b , shift={(-2 , 0)}] {(b)};
+        	
+        	\draw[thick, color=colorSix, line width = 0.5ex , <-]
+    			(1,1) to[out=180, in=90] (-2,-0.)
+    			node[below, color = colorSix] { \color{\colorSix} \small TF 3D : $\mu_p \gg \hbar \omega_\perp$};	
+    		\draw[thick, color=colorFour, line width = 0.5ex , <-]
+    			(1.9,1) to[out=-90, in=90] (2,-0.5)
+    			node[below, color = colorFour] { \color{\colorFour} \small TF 3D : $\mu_p \gg \hbar \omega_\perp$};	
+        \end{scope}
+
+        
+	\end{tikzpicture}
+	\caption{
+(a) Profil de densité à l'équilibre dans le piège harmonique longitudinal (bleu), ajusté par $n_0(x)$ selon Eq.~\eqref{chap:eq:ajust} (noir pointillé). La courbe rouge montre le profil après une expansion longitudinale $\tau = 25~\mathrm{ms}$, avec un facteur d'échelle $\lambda$ extrait en ajustant le profil par une courbe homothétique à la densité initiale (noir pointillé), cf. Eq.~\eqref{chap:5:eq.hydro.1.3}.  
+(b) Points bleus : facteurs d'échelle $\lambda(\tau)$ extraits expérimentalement. Courbe orange : résultats numériques obtenus en résolvant les équations hydrodynamiques (Eq.~\eqref{chap4:eq.pot.s.1}) avec $\mu_p / \hbar \omega_\perp = 1.4$. Les courbes pointillées montrent les évolutions attendues de $\lambda$ en résolvant Eq.~\eqref{chap:5:eq.hydro.3.4} pour $\alpha = 1$ (TF 1D) et $\alpha = 1/2$ (TF 3D).
+}
+
+	\label{fig:profil}
+\end{figure}
+
 
 
 % --- Table révisée (petites corrections typographiques) ---
@@ -1085,8 +1154,38 @@ Les deux formes ci-dessus sont bien les limites asymptotiques de l'expression d'
 
 \subsubsection{Distribution de rapidités locale dans les gaz 1D}
 
+%\paragraph{Motivation.}  
+%La compréhension des gaz de bosons 1D avec interactions de contact répulsives repose sur la notion de distribution de rapidités \(\rho(\theta)\). Chaque état propre du système peut être paramétré par un ensemble de rapidités \(\{\theta_i\}\) , ou interprété comme les vitesses de quasi-particules à durée de vie infinie. Ici, on utilise la définition pratique issue des expansions 1D : les rapidités correspondent aux vitesses asymptotiques des atomes après une expansion, avec \(x_j \simeq \tau \theta_j\) pour un temps \(\tau\) long \footnote{Dans une article \cite{bezzaz2023rapiditydistributiondefocusingnonlinear} on voit que La limite champ classique du gaz de Lieb Liniger correspond à l’Équation de
+%Schrödinger Non-Linéaire. Dans ce cadre, la théorie de diffusion inverse permet
+%de construire un ensemble de quantités conservées.
+%— Une méthode permettant de faire le lien entre la distribution de rapidité et
+%les quantités conservées issues de la théorie de diffusion inverse est d’utiliser
+%la définition de la distribution de rapidités comme distribution en impulsion
+%asymptotique des atomes après une expansion 1D. On retrouve alors un résultat
+%connu. J'ai bien cette aproche avec l'inverse scatering }. 
+%\begin{eqnarray*}
+%	\tilde{n}(v , \tau ) \underset{\tau \to \infty}{\rightarrow} \Pi (v).
+%\end{eqnarray*}
+%Cette définition est directement applicable à des mesures expérimentales de distribution de rapidités locales car à temps long la distribution spatial devient homotétique à la distribution de vitestes $\tau n (x , \tau ) \underset{\tau \to \infty}{\rightarrow} n (x/\tau , \tau) $ soit 
+%\begin{eqnarray*}
+%	\tau n (x , \tau )	 \underset{\tau \to \infty}{\rightarrow} \Pi (x/\tau).
+%\end{eqnarray*}
+
 \paragraph{Motivation.}  
-La compréhension des gaz de bosons 1D avec interactions de contact répulsives repose sur la notion de distribution de rapidités \(\rho(\theta)\). Chaque état propre du système peut être paramétré par un ensemble de rapidités \(\{\theta_i\}\) (Ansatz de Bethe), ou interprété comme les vitesses de quasi-particules à durée de vie infinie. Ici, on utilise la définition pratique issue des expansions 1D : les rapidités correspondent aux vitesses asymptotiques des atomes après une expansion, avec \(x_j \simeq \tau \theta_j\) pour un temps \(\tau\) long. Cette définition est directement applicable à des mesures expérimentales de distribution de rapidités locales.
+La compréhension des gaz de bosons unidimensionnels avec interactions de contact répulsives repose sur la notion de distribution de rapidités \(\rho(\theta)\). Chaque état propre du système peut être caractérisé par un ensemble de rapidités \(\{\theta_i\}\), interprétées comme les vitesses de quasi-particules à durée de vie infinie.  
+
+Dans le cadre des expansions 1D, une définition pratique consiste à assimiler les rapidités aux vitesses asymptotiques des atomes après une expansion libre, via la relation \(x_j \simeq \tau \theta_j\) pour un temps d’expansion long \(\tau\) \footnote{Dans la limite champ classique, le gaz de Lieb–Liniger est décrit par l’équation de Schrödinger non-linéaire. La théorie de diffusion inverse permet alors de construire un ensemble de quantités conservées. Dans ce cadre, la distribution de rapidités peut être définie comme la distribution en impulsion asymptotique des atomes après une expansion 1D, ce qui établit un lien direct entre rapidités et quantités conservées \cite{bezzaz2023rapiditydistributiondefocusingnonlinear}}.
+.  
+
+Ainsi, la distribution de vitesses mesurée à long temps tend vers la distribution de rapidités \(\Pi(v)\) :  
+\[
+	\tilde{n}(v , \tau ) \underset{\tau \to \infty}{\longrightarrow} \Pi(v).
+\]  
+Cette définition est directement exploitable expérimentalement : à temps long, la distribution spatiale devient homothétique à la distribution de vitesses,  
+\[
+	\tau n(x , \tau ) \underset{\tau \to \infty}{\longrightarrow} \Pi(x/\tau).
+\] 
+
 
 \paragraph{Distribution locale et LDA.}  
 Pour un nuage atomique piégé dans un potentiel longitudinal variant lentement, on peut appliquer la \gls{LDA}. Le gaz est alors vu comme un fluide décomposé en cellules mésoscopiques de densité homogène et relaxée. Dans chaque cellule, l’état d’équilibre est décrit par un \gls{GGE}, ou équivalemment par une distribution de rapidités locale \(\rho(x,\theta)\). Cette description permet d’étudier non seulement l’équilibre, mais aussi la dynamique hors équilibre à grandes échelles spatiales et temporelles, via la théorie \gls{GHD}.
@@ -1094,13 +1193,119 @@ Pour un nuage atomique piégé dans un potentiel longitudinal variant lentement,
 \paragraph{Protocole expérimental.}  
 Pour mesurer \(\rho(x,\theta)\) localement :  
 \begin{enumerate}
-    \item Une zone du nuage atomique de taille \(\ell\) centrée en \(x_0\) est sélectionnée à l’aide du \gls{DMD}. La pression de radiation supprime instantanément les atomes en dehors de la zone, laissant uniquement ceux de la cellule.
-    \item Après la sélection, le confinement longitudinal est relâché, tandis que le confinement transverse reste actif. Les atomes réalisent une expansion 1D pendant un temps \(\tau\), puis le profil de densité est imagé (typiquement pour \(\tau\sim 1\) ms).
+    \item Une zone du nuage atomique de taille \(\ell\) centrée en \(x_0\) est sélectionnée à l’aide du \gls{DMD}. La pression de radiation supprime instantanément les atomes en dehors de la zone, laissant uniquement ceux de la cellule (Fig ~\ref{fig:selection}).
+    \item Après la sélection, le confinement longitudinal est relâché, tandis que le confinement transverse reste actif. Les atomes réalisent une expansion 1D pendant un temps \(\tau\), puis le profil de densité est imagé (typiquement pour \(\tau\sim 60\) ms).
     \item Le protocole est répété pour plusieurs positions \(x_0\), permettant d’obtenir la distribution de rapidités locale sur l’ensemble du nuage.
 \end{enumerate}
 
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		%\begin{scope}[transform canvas={scale=0.6}]
+	
+		\begin{scope}[shift={(0,0)}]
+			
+		
+
+
+        \begin{scope}[shift={(0,0)}, transform canvas={scale=0.5}]
+        	\draw[thick, color = \colorFour , fill = \colorFour,line width = 0.5ex ] (0,0) ellipse [x radius=4cm, y radius=0.2cm];
+        	\draw 
+        		(-5 , 0 ) edge[thick, color=colorOne, line width = 0.5ex , ->] node[pos = 1.0 ,   below , color = \colorOne]{\fontsize{18}{20}\selectfont  $x$}  (5,0)
+        		(0,-1) edge[thick, color=colorOne, line width = 0.5ex , ->] node[pos = 1.0 , left , color = \colorOne]{\fontsize{18}{20}\selectfont  $y$} (0,1)
+        		
+        		(1,-0.3) edge[thick, color=colorThree, line width = 0.4ex ] node[pos = 0.0 , below , color = \colorThree]{\fontsize{18}{20}\selectfont  $x_0$} (1,0.3)
+        		
+        		(-0.5,0) edge[shift = {(1,0.45)} , thick, color=colorThree, line width = 0.4ex , <->] node[pos = 0.5 , above , color = \colorThree]{\fontsize{18}{20}\selectfont  $\ell$} (0.5,0)
+        		
+        		(0,0) edge[shift = {(-3,0.5)} , thick, color=colorOne, line width = 0.4ex , <-] node[shift = {(0,-0.1)} , pos = 1 , above , color = \colorOne]{\fontsize{15}{20}\selectfont  $5\, \mu m $} (0,0.25)
+        		(0,0) edge[shift = {(-3,-0.5)} , thick, color=colorOne, line width = 0.4ex , <-] (0,-0.25)
+        	;
+        	 % Contour
+			\draw[line width=0.4ex, color=colorSix]
+    			(1.5,-0.5) rectangle +(3,1)
+    			(0.5,-0.5) rectangle +(-5,1);
+
+			% Remplissage avec hachures épaisses
+			\fill[pattern={Lines[angle=-45,distance={5pt},line width=0.4ex]}, pattern color=colorSix]
+    			(1.5,-0.5) rectangle +(3,1)
+    			(0.5,-0.5) rectangle +(-5,1);
+    		
+    		\draw[thick, color=colorSix, line width=0.5ex, <-]
+    			(-2,-0.4) to[out=-90, in=0] (-2.4,-1.3)
+   				 node[left, color=colorSix, align=left] 
+    			{\fontsize{12pt}{14pt}\selectfont \bfseries \itshape
+    			faisceau lumineux\\
+    			\bfseries \itshape façonné par le DMD}
+    		;
+    		\draw[thick, color=colorFour, line width=0.5ex, <-]
+    			(-1,-0.0) to[out=-90, in=-180] (1,-1.3)
+   				 node[right, color=colorFour, align=left] 
+    			{\fontsize{12pt}{14pt}\selectfont \bfseries \itshape
+    			nuage atomique}
+    		;	
+        		
+        \end{scope}
+        \draw [color = white] (-3,-1) rectangle +(10,2);
+		\node[shift={(-3 , 1)}] at (0,0) {a)};
+     	\end{scope}
+     	
+     	 % Deuxième figure
+        \begin{scope}[shift={(7,0)}]
+        	\node (b) at (0,0) {\includegraphics[width=0.55\textwidth]{./figures/05_Disp_Exp/profils.pdf}};
+        	\node[above=-0.2cm of b , shift={(-2 , 0)}] {b)};
+        	
+%        	\draw[thick, color=colorSix, line width = 0.5ex , <-]
+%    			(1,1) to[out=180, in=90] (-2,-0.)
+%    			node[below, color = colorSix] { \color{\colorSix} \small TF 3D : $\mu_p \gg \hbar \omega_\perp$};	
+%    		\draw[thick, color=colorFour, line width = 0.5ex , <-]
+%    			(1.9,1) to[out=-90, in=90] (2,-0.5)
+%    			node[below, color = colorFour] { \color{\colorFour} \small TF 3D : $\mu_p \gg \hbar \omega_\perp$};	
+        \end{scope}
+
+        
+	\end{tikzpicture}
+	\caption{(a) Schéma illustrant la sélection d’une région du nuage atomique, ici représentée par un ellipse bleu illuminé par un faisceau modulé à l’aide du DMD.\\
+(b) Exemple de sélections sur un gaz initialement à l’équilibre : superposition du profil de densité initial du nuage (courbe grise) et des profils mesurés après $\tau = 1~\mathrm{ms}$ pour différentes régions de sélection de taille $\ell = 37~\mu\mathrm{m}$ centrées en différentes positions $x_0$ (courbes colorées).
+}
+
+	\label{fig:selection}
+\end{figure}
+
 \paragraph{Mesures à l’équilibre.}  
-Pour un gaz initialement à l’équilibre dans un piège harmonique, le profil de densité de chaque zone sélectionnée est analysé via la thermodynamique Yang-Yang et la \gls{LDA}, donnant température \(T_{\rm YY}\) et potentiel chimique \(\mu_{\rm YY}\). Après un temps d’expansion long, le profil devient homothétique à la distribution de rapidités locale \(\rho(x,\theta)\). La comparaison avec les prédictions numériques montre une bonne cohérence, confirmant que le protocole permet de sonder efficacement \(\rho(x,\theta)\).
+Pour un gaz initialement à l’équilibre dans un piège harmonique, le profil de densité de chaque zone sélectionnée est analysé via \gls{TBA} et la \gls{LDA}, donnant température \(T\) et potentiel chimique \(\mu\). Après un temps d’expansion long, le profil devient homothétique à la distribution de rapidités locale \(\rho(x,\theta)\). La comparaison avec les prédictions numériques montre une bonne cohérence, confirmant que le protocole permet de sonder efficacement \(\rho(x,\theta)\).
+
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		%\begin{scope}[transform canvas={scale=0.6}]
+	
+		\begin{scope}[shift={(0,0)}]
+			
+			\node (a) at (0,0) {\includegraphics[width=0.3\textwidth]{./figures/05_Disp_Exp/image159.png}};
+        	\node[above=-0.2cm of a , shift={(-2 , 0)}] {a)};
+
+
+                
+        %\draw [color = white] (-3,-1) rectangle +(10,2);
+
+     	\end{scope}
+     	
+     	 % Deuxième figure
+        \begin{scope}[shift={(7,0)}]
+        	\node (b) at (0,0) {\includegraphics[width=0.6\textwidth]{./figures/05_Disp_Exp/image212.png}};
+        	\node[above=-0.2cm of b , shift={(-3.2 , -1.3)} , color = white ] {\color{white} b1)};
+        	\node[above=-0.2cm of b , shift={(0.5 , -1.3)} , color = white ] {\color{white} b2)};
+        	
+        \end{scope}
+
+        
+	\end{tikzpicture}
+	\caption{a) Profil de densité d’un nuage atomique initialement à l’équilibre dans un piège harmonique avec $\omega_\perp = 2 \pi \times  2.6~\mathrm{kHz}$ et $\omega_\parallel = 2 \pi \times 5~\mathrm{Hz}$ (zone en jaune). La courbe grise représente le profil parabolique attendu à l’état fondamental dans le régime qBEC, décrit par l’équation d’état $n(x) = [\mu - V_\parallel(x)]/g$. La courbe noire en pointillés correspond à un ajustement des données expérimentales en supposant que le système soit bien décrit par un ensemble thermique (\gls{TBA} (Sec ~)). Cet ajustement permet d’extraire une température $T = 90~\mathrm{nK}$ et un potentiel chimique $\mu/k_B = 49~\mathrm{nK}$.
+	(b1) Profils de densités pour différents centres de sélection x0 représentés sur la Fig.\ref{fig:selection}(b). Les sélections sont de taille $\ell = 37\, \mu m$ et les profils obtenus après un temps d’expansion $\tau =  40 \, ms$. Pour comparer les résultats à une distribution de rapidités, les profils de densités sont multipliés par le rapport $\tau/ \ell$ et sont tracés en fonction de $(x-Je sais pas plaisance, youtubeur informationsx_0)/\tau$ (b2). (b2) Prédiction théorique de la distribution de rapidités spatialement résolue $\rho ( x , \theta)$ à l’équilibre thermique dans un potentiel harmonique longitudinal avec $\omega_\parallel = 2 \pi \times 5~\mathrm{Hz}$. La température $T$ et le potentiel chimique $\mu$ utilisés sont eux obtenus à partir du profil in situ (a).}
+	\label{fig:expansion}
+\end{figure}
 
 \paragraph{Résumé.}  
 — Une sonde locale de distribution de rapidités a été mise en place grâce au \gls{DMD}.  
@@ -1126,7 +1331,7 @@ On considère une sélection initiale homogène de taille $\ell$ centrée en $x_
 	\right .
 \end{eqnarray*}
 Il en résulte que les profils de densité $n(x,\tau)$, exprimés en fonction de $\alpha$, ne dépendent que du rapport $\beta$. 
-Autrement dit, deux sélections de tailles différentes mais telles que $\tau/\ell$ soit constant doivent conduire aux mêmes profils après expansion. Cette invariance a été vérifiée expérimentalement : les profils se superposent de manière remarquable.
+Autrement dit, deux sélections de tailles différentes mais telles que $\tau/\ell$ soit constant doivent conduire aux mêmes profils après expansion. Cette invariance a été vérifiée expérimentalement : les profils se superposent de manière remarquable (Fig ~\ref{fig:scail2} a)) .
 
 \subparagraph{Lien avec les équations de Gross–Pitaevskii}
 Dans le régime \gls{qBEC}, à basse température, la dynamique peut aussi être décrite par les équations hydrodynamiques issues de \gls{GP} (en négligeant la pression quantique) 
@@ -1144,20 +1349,116 @@ Après changement de variables ($\alpha=(x-x_0)/\ell$, $\beta=\tau/\ell$, $\tild
 	\end{array}
 	\right.
 \end{eqnarray*}
-Il en découle que les profils de densité sont universels lorsqu’ils sont exprimés en fonction de $(\alpha,\eta)$. Expérimentalement, ce comportement est bien confirmé : les centres des profils se superposent pour des conditions initiales différentes, et l’accord est même bon sur les bords.
+Il en découle que les profils de densité sont universels lorsqu’ils sont exprimés en fonction de $(\alpha,\eta)$. Expérimentalement, ce comportement est bien confirmé : les centres des profils se superposent pour des conditions initiales différentes, et l’accord est même bon sur les bords (Fig ~\ref{fig:scail2} b)) .
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		%\begin{scope}[transform canvas={scale=0.6}]
+	
+		\begin{scope}[shift={(0,0)}]
+			
+			\node (a) at (0,0) {\includegraphics[width=0.5\textwidth]{./figures/05_Disp_Exp/image246.png}};
+        	\node[above=-0.2cm of a , shift={(-2 , -1)}] {\color{black} a)};
+
+
+                
+        %\draw [color = white] (-3,-1) rectangle +(10,2);
+
+     	\end{scope}
+     	
+     	 % Deuxième figure
+        \begin{scope}[shift={(7,0)}]
+        	\node (b) at (0,0) {\includegraphics[width=0.5\textwidth]{./figures/05_Disp_Exp/image246.png}};
+        	\node[above=-0.2cm of b , shift={(-2 , -1.)} ] {\color{black} b)};
+        	
+        	
+        \end{scope}
+
+        
+	\end{tikzpicture}
+	\caption{(a) Illustration du comportement hydrodynamique prédit par les équations de GHD. Deux profils de densité sont représentés en fonction de $\alpha$ pour un même paramètre $\beta = \tau / \ell = 0.39~\mathrm{ms}/\mu\mathrm{m}$.(b) Analyse du comportement hydrodynamique selon le formalisme GP. Deux profils de densité sont tracés pour un même ratio $\eta = (\tau/\ell)\, g n_0 / m = 2.65$, avec une taille de sélection $\ell = 37~\mu\mathrm{m}$, mais pour des densités initiales $n_0$ différentes. Les sélections ont été réalisées sur plusieurs régions distinctes d’un même nuage.
+	}
+
+	\label{fig:scail2}
+\end{figure}
 
 \subparagraph{Régime asymptotique.}  
-L’expansion des tranches est bien décrite par \gls{GHD}. Les comparaisons entre données expérimentales et simulations \gls{GHD} (avec des distributions thermiques initiales) montrent un bon accord au centre des profils, mais révèlent que le régime asymptotique complet n’est pas atteint dans les temps accessibles expérimentalement. Pour $\tau=50$\,ms, l’écart reste d’environ $12\%$, et une convergence complète nécessiterait des temps irréalistes ($\sim 500$\,ms). L’extraction de la distribution de rapidité à partir des profils reste donc approximative.
+L’expansion des tranches est bien décrite par \gls{GHD}. Les comparaisons entre données expérimentales et simulations \gls{GHD} (avec des distributions thermiques initiales) montrent un bon accord au centre des profils, mais révèlent que le régime asymptotique complet n’est pas atteint dans les temps accessibles expérimentalement. On définie un écart-type $$\sigma(\tau) = \sqrt{ \frac{\int \vert \frac{\tau}{\ell} n_{\mathrm{GHD}}( \frac{x-x_0}\tau) - \rho(\frac{x-x_0}\tau) \vert^2 d \tau }{ \int \vert \rho( \frac{x-x_0}\tau) \vert^2 d \tau} }$$ avec $n_{\mathrm{GHD}}$ les profil tirés des simulations \gls*{GHD}.Pour $\tau=50$\,ms, l’écart-type reste d’environ $12\%$, et une convergence complète nécessiterait des temps irréalistes ($\sim 500$\,ms). L’extraction de la distribution de rapidité à partir des profils reste donc approximative.
 
-\subparagraph{Hypothèse thermique.}  
-Afin de restreindre le nombre de paramètres d’ajustement, on suppose que la distribution de rapidité locale est thermique. Dans ce cas, seule la température $T$ est ajustée, le potentiel chimique étant fixé par l’équation d’état. L’ajustement sur les profils expérimentaux conduit à une température effective $T_{\text{fit}}=230$\,nK, environ 2.5 fois plus grande que celle extraite à l’équilibre. Néanmoins, les distributions de rapidité obtenues restent proches, confirmant que, dans le régime fortement \gls{qBEC}, la dynamique dépend surtout des interactions et peu de la température. L’influence possible d’une faible population transversale excitée a été évaluée et s’est révélée négligeable.
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		%\begin{scope}[transform canvas={scale=0.6}]
+	
+		\begin{scope}[shift={(0,0)}]
+			
+			\node (a) at (0,0) {\includegraphics[width=0.7\textwidth]{./figures/05_Disp_Exp/image255.png}};
+        	\node[above=-0.2cm of a , shift={(-2 , -1)}] {\color{black} a)};
+
+
+                
+        %\draw [color = white] (-3,-1) rectangle +(10,2);
+
+     	\end{scope}
+     	
+     	 % Deuxième figure
+        \begin{scope}[shift={(7,0)}]
+        	\node (b) at (0,0) {\includegraphics[width=0.3\textwidth]{./figures/05_Disp_Exp/image265.png}};
+        	\node[above=-0.2cm of b , shift={(-2 , -1.)} ] {\color{black} b)};
+        	
+        	
+        \end{scope}
+
+        
+	\end{tikzpicture}
+	\caption{(a) La tranche , centrée en $x_0 = 0\,\mu\mathrm{m}$ ,subit une expansion le long de l'axe longitudinalet d'une largeur $\ell = 37\,\mu\mathrm{m}$. Le profil initial du gaz est montré en gris. Les variations de densité pour différents temps d'expansion sont représentées par des courbes colorées. Les lignes pointillées noires indiquent les résultats des simulations GHD pour une distribution de rapidités initialement thermique, paramétrée par la température $T$ et le potentiel chimique $\mu(x_0)  = \mu$, tels qu'ils sont extraits du profil de densité in situ.(b) L'écart-type $\sigma(\tau) = \sqrt{ \int \vert \frac{\tau}{\ell} n _{\mathrm{GHD}}( (x-x_0)/\tau) - \rho( (x-x_0)/\tau) \vert^2 d \tau / \int \vert \rho( (x-x_0)/\tau) \vert^2 d \tau } $ défini par l'équation~(8.8) est calculé entre la distribution de rapidités et les résultats des simulations GHD en fonction du temps d'expansion $\tau$. La ligne verticale noire correspond au temps d'expansion utilisé dans l'expérience.
+}
+
+	\label{fig:GHD1}
+\end{figure}
+
+%\subparagraph{Hypothèse thermique.}  
+%Afin de restreindre le nombre de paramètres d’ajustement, on suppose que la distribution de rapidité locale est thermique. Dans ce cas, seule la température $T$ est ajustée, le potentiel chimique étant fixé par l’équation d’état. L’ajustement sur les profils expérimentaux conduit à une température effective $T_{\text{fit}}=230$\,nK, environ 2.5 fois plus grande que celle extraite à l’équilibre. Néanmoins, les distributions de rapidité obtenues restent proches, confirmant que, dans le régime fortement \gls{qBEC}, la dynamique dépend surtout des interactions et peu de la température. L’influence possible d’une faible population transversale excitée a été évaluée et s’est révélée négligeable.
 
 \subsection*{8.6 Mesure locale de distribution de rapidités hors équilibre}
 
-\paragraph{}  
-Le faisceau de sélection (\gls{DMD}) permet non seulement de sonder la distribution de rapidités locale, mais aussi de créer des situations hors équilibre. Un protocole illustratif consiste à retirer les atomes d’une région centrale de taille $\ell_0 = 70\,\mu$m, puis à laisser le gaz évoluer librement. Après un temps $\tau = 15$\,ms, la distribution de rapidités développe une structure doublement piquée, très différente d’une distribution thermique. Une seconde sélection locale ($\ell=35\,\mu$m) suivie d’une expansion révèle expérimentalement ce profil, en excellent accord avec les simulations GHD.
+\paragraph{Mise en place d’une distribution locale hors équilibre.}  
+Le faisceau de sélection (\gls{DMD}) permet non seulement de sonder la distribution de rapidités locale, mais aussi de créer des situations hors équilibre. Un protocole illustratif consiste à retirer les atomes d’une région centrale de taille $\ell_0 = 70\,\mu$m, puis à laisser le gaz évoluer librement longidutalement (1D). Après un temps $\tau = 15$\,ms, la distribution de rapidités développe une structure doublement piquée, très différente d’une distribution thermique. Une seconde sélection locale ($\ell=35\,\mu$m) suivie d’une expansion révèle expérimentalement ce profil, en excellent accord avec les simulations GHD (Fif ~\ref{fig:GHD2}).
 
-\paragraph{}  
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		%\begin{scope}[transform canvas={scale=0.6}]
+	
+		\begin{scope}[shift={(0,0)}]
+			
+			\node (a) at (0,0) {\includegraphics[width=0.6\textwidth]{./figures/05_Disp_Exp/image295.png}};
+        	\node[above=-0.2cm of a , shift={(-2 , -1)}] {\color{black} a)};
+
+
+                
+        %\draw [color = white] (-3,-1) rectangle +(10,2);
+
+     	\end{scope}
+     	
+     	 % Deuxième figure
+        \begin{scope}[shift={(7,0)}]
+        	\node (b) at (0,0) {\includegraphics[width=0.4\textwidth]{./figures/05_Disp_Exp/image290.png}};
+        	\node[above=-0.2cm of b , shift={(-2 , -1.)} ] {\color{black} b)};
+        	
+        	
+        \end{scope}
+
+        
+	\end{tikzpicture}
+	\caption{Les profils de densité sont montrés à différents stades : à l'équilibre initial (a1), 1\,ms après la première sélection (a2), et 15\,ms après une expansion le long du guide 1D (a3). Les distributions de rapidités résolues spatialement correspondantes sont illustrées dans les panels (a4) à (a6). Les lignes pointillées rouges indiquent la deuxième sélection.  (b)Pour obtenir la distribution locale de rapidités, on trace $\tau\, n(x,\tau)/\ell$ sur une région de largeur $\ell = 36\,\mu\mathrm{m}$ après un temps d'expansion longitudinal $\tau = 50\,\mathrm{ms}$. Le profil présente une double crête et montre un excellent accord avec la prédiction théorique de la distribution de rapidités (courbe violette), y compris les corrections dues à un temps d'expansion fini (courbe noire pointillée).
+}
+
+	\label{fig:GHD2}
+\end{figure}
+
+\paragraph{Analyse des distributions locales hors équilibre}  
 Cette approche démontre l’importance d’une mesure locale : alors que la distribution globale $\int dx\,\rho(x,\theta)$ est conservée, la distribution locale $\rho(x,\theta)$ reflète directement la dynamique hors équilibre. Le dispositif basé sur le \gls{DMD} offre ainsi un outil puissant pour générer et caractériser divers protocoles hors équilibre (cisaillement, jonctions de densité, états stationnaires non thermiques, etc.), ouvrant de nouvelles perspectives pour l’étude des gaz de Bose 1D.
 
 
