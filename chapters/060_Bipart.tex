@@ -109,12 +109,12 @@ Cette étude constitue une illustration directe du problème de Riemann quantiqu
 \paragraph{Contexte expérimental et références}
 Les détails concernant l’imagerie, le piégeage et la sélection spatiale sont présentés de manière approfondie dans le {chapitre~(\ref{chap:disp.exp})}, ainsi que dans la thèse de L. Dubois \cite{L.Dubois2024}. Dans cette sous-section, nous nous limitons aux éléments essentiels à la compréhension du protocole de coupure et de la dynamique qui en résulte.
 
-\begin{figure}[!htb]
-\centering
-\includegraphics[width=0.5\linewidth , page = 2 ]{figures/06_Bipart/Shemas_2.pdf}
-\caption{Schéma synthétique du dispositif expérimental : cycles d’illumination, intensités de courant, géométrie du piège, et évolution du profil longitudinal au cours du protocole de coupure.}
-\label{fig:setup}
-\end{figure}
+%\begin{figure}[!htb]
+%\centering
+%\includegraphics[width=0.5\linewidth , page = 2 ]{figures/06_Bipart/Shemas_2.pdf}
+%\caption{Schéma synthétique du dispositif expérimental : cycles d’illumination, intensités de courant, géométrie du piège, et évolution du profil longitudinal au cours du protocole de coupure.}
+%\label{fig:setup}
+%\end{figure}
 
 %\paragraph{Préparation d’un gaz unidimensionnel de bosons} 
 %Nous utilisons un gaz ultra-froid de $^{87}$Rb, piégé sur une puce atomique dans l’état hyperfin $|F=2,m_F=2\rangle$. Le confinement transverse est assuré par trois microfils parcourus par des courants RF, produisant un piège harmonique de fréquence $\omega_\perp/2\pi = 2{,}56$~kHz. Après évaporation, on obtient un gaz à température $T \approx 100$~nK, dans un régime 1D caractérisé par $\mu, k_B T \ll \hbar \omega_\perp$. 
@@ -136,9 +136,9 @@ La coupure bipartite est ensuite obtenue par illumination sélective d’une ext
 \paragraph{Évolution après coupure}
 Une fois la coupure effectuée, le confinement longitudinal est supprimé tandis que le confinement transverse est maintenu. Le gaz évolue alors librement dans une direction, ce qui est analogue  à  \eqref{chap6:eq.Rieman.1} mais depuis une condition initiale de deux regions homogène (problème de Riemann) \eqref{chap6:eq.Rieman.cond.1} . L’évolution du profil de densité $n(x,t)$ est mesuré par imagerie après différentes durées $t$ d’évolution.
 
-\begin{center}
-	[figure de shemat de coupure en tikz zt au coter deux nuage , un coupé et l'autre non coupé]	
-\end{center}
+%\begin{center}
+%	[figure de shemat de coupure en tikz zt au coter deux nuage , un coupé et l'autre non coupé]	
+%\end{center}
 
 %\begin{figure}[!htb]
 %\centering
@@ -349,7 +349,7 @@ En injectant dans l'equation~\eqref{chap6:eq:lineardensity}, il vient que  :
 
 \medskip
 
-Cette propriété est testée expérimentalement en superposant les profils mesurés à différents temps, après mise à l’échelle selon $\xi = x/t$. La Fig.~\ref{fig:euler}(a) montre les profils normalisés mesurés entre $t = 10$~ms et $t = 18$~ms. L’excellent recouvrement obtenu confirme la validité du régime balistique et la pertinence de la description auto-similaire prédite par la \gls*{GHD}.
+Cette propriété est testée expérimentalement en superposant les profils mesurés à différents temps, après mise à l’échelle selon $\xi = x/t$. La Fig.~\ref{fig:euler} montre les profils normalisés mesurés entre $t = 10$~ms et $t = 18$~ms. L’excellent recouvrement obtenu confirme la validité du régime balistique et la pertinence de la description auto-similaire prédite par la \gls*{GHD}.
 
 \paragraph{Contraintes expérimentales.}
 
@@ -1071,14 +1071,14 @@ Cependant, le profil au bord correspondant à cette température, présenté en 
 Une analyse plus fine du profil expérimental met en évidence, du côté des petites valeurs de $x$ (courbe bleue, Fig.~\ref{fig:simul_expansion}(b)), la présence de défauts absents des prédictions de la \gls*{GHD} à l’échelle d’Euler.  
 Ces écarts pourraient résulter de mécanismes échappant au cadre du modèle, notamment :
 
-\begin{itemize}
+\begin{itemize}[label = $\bullet$]
 \item \textbf{Effets de sélection de tranche} : le faisceau pousseur utilisé pourrait chauffer localement les atomes en bordure, entraînant des distributions de rapidité plus étendues que prévu.
 \item \textbf{Effets diffusifs} : dans les régions de forts gradients, notamment au bord du gaz, des termes de diffusion (omnis présents dans la GHD à l’échelle d’Euler) pourraient devenir significatifs. De telles corrections ont été proposées récemment pour modéliser la GHD au-delà de l’approximation eulérienne.
 \end{itemize}
 
 \medskip
 
-En résumé, bien que la GHD reproduise globalement la forme du profil d’expansion, des écarts importants subsistent. Leur origine semble liée à des effets microscopiques non capturés par la description eulérienne — en particulier la dynamique hors équilibre aux bords — soulignant l’intérêt d’une extension du modèle pour mieux décrire ces régimes.
+En résumé, bien que la GHD reproduise globalement la forme du profil d’expansion, des écarts importants subsistent. Leur origine semble liée à des effets microscopiques non capturés par la description eulérienne ( en particulier la dynamique hors équilibre aux bords ) soulignant l’intérêt d’une extension du modèle pour mieux décrire ces régimes.
 
 
 \begin{figure}[!htb]
@@ -1094,7 +1094,7 @@ En résumé, bien que la GHD reproduise globalement la forme du profil d’expan
     };
     \node[circle, draw=none, above=0cm of pi , shift={( -2.5cm , -0.5cm )}] {(b)};
 \end{tikzpicture}
-\caption{(a) {\it Profil de densité après expansion de la tranche : effets de la largeur finie et du temps d’expansion fini.} Courbe orange : profil obtenu par simulation GHD après expansion pendant $\tau = 30$ ms, avec $T = 560$ nK. Courbe marron : distribution asymptotique $\Pi((x - x_0)/\tau)/\tau$. Courbe pointillée noire : approximation $\ell \rho(x_0, (x - x_0)/\tau)/\tau$ dans le cas d’une tranche étroite. (b) {\it Comparaison aux données expérimentales.} En bleu : profil expérimental après expansion pendant $\tau = 30$ ms. En orange : simulation GHD avec $T = 560$ nK. En magenta : ajustement du profil expérimental donnant $T = 1550$ nK.}
+\caption{(a) {\it Profil de densité après expansion de la tranche : effets de la largeur finie et du temps d’expansion fini.} Courbe rouge : profil obtenu par simulation GHD après expansion pendant $\tau = 30$ ms, avec $T = 560$ nK. Courbe marron : distribution asymptotique $\Pi((x - x_0)/\tau)/\tau$. Courbe pointillée noire : approximation $\ell \rho(x_0, (x - x_0)/\tau)/\tau$ dans le cas d’une tranche étroite. (b) {\it Comparaison aux données expérimentales.} En bleu : profil expérimental après expansion pendant $\tau = 30$ ms. En rouge : simulation GHD avec $T = 560$ nK. En gris : ajustement du profil expérimental donnant $T = 1550$ nK.}
 \label{fig:simul_expansion}
 \end{figure}
 

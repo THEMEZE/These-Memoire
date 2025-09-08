@@ -8,6 +8,8 @@ if [[ "$reponse_compile" == "o" || "$reponse_compile" == "O" ]]; then
     python3 ./compilateurs/compil_tex.py
 fi
 
+python3 ./compilateurs/pdf_decoupe.py
+
 TEXFILE="main"
 OUTDIR="build"
 

@@ -279,7 +279,7 @@ decorations.pathreplacing}
     width=10cm,
     height=6cm
 ]
-\addplot+[smooth, \colorFour , thick] table {../02_GGE_TBA/nu_vs_theta.dat};
+\addplot+[smooth, \colorFour , thick , no marks , line width=0.5ex] table {../02_GGE_TBA/nu_vs_theta.dat};
 \end{axis}
 
 %\draw[line width=1.0ex, color=\colorFour, fill=none]
@@ -298,12 +298,13 @@ decorations.pathreplacing}
     legend style={at={(0.98,0.98)}, anchor=north east, font=\small}
 ]
 
+x
 % rho_s
-\addplot+[smooth,\colorSix, thick] table {../02_GGE_TBA/rho_s_vs_theta.dat};
+\addplot+[smooth, thick, \colorSix, no marks , line width=0.5ex] table {../02_GGE_TBA/rho_s_vs_theta.dat};
 \addlegendentry{$\rho_s(\theta)$}
 
 % rho
-\addplot+[smooth,\colorFour, thick] table {../02_GGE_TBA/rho_vs_theta.dat};
+\addplot+[smooth,\colorFour, no marks , line width=0.5ex] table {../02_GGE_TBA/rho_vs_theta.dat};
 \addlegendentry{$\rho(\theta)$}
 
 \end{axis}
@@ -341,7 +342,7 @@ decorations.pathreplacing}
     ;
     
     
-    \draw[thick, color=\colorThree, fill=\colorThree , opacity = 0.8] (4,3) ellipse [x radius=0.8, y radius=0.3];
+    \draw[thick, color=\colorThree, fill=\colorThree , opacity = 0.8] (2.6,3.) ellipse [x radius=0.8, y radius=0.3];
     
     
     % Axe horizontal (gamma)
@@ -454,7 +455,7 @@ decorations.pathreplacing}
     grid=both,
     width=10cm,
     height=6cm,
-    legend style={at={(0.7,0.1) , opacity = 0.8}, anchor=south east, font=\small}
+    legend style={at={(0.7,0.1)} , opacity = 0.8, anchor=south east, font=\small ,row sep=6pt  }
 ]
 
 
@@ -474,6 +475,10 @@ decorations.pathreplacing}
 
 \end{axis}
 \end{tikzpicture}
+
+
+
+
 
 
 
