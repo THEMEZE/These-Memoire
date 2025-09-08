@@ -174,6 +174,7 @@ def compile_latex_index_bibtex(path):
     compile_biblatex(path)              # biblatex
     compile_latex(path + ".tex")      # 2e passe LaTeX
     compile_latex(path + ".tex")      # 3e passe LaTeX (pour les refs/bib à jour)
+    compile_latex(path + ".tex")      # 3e passe LaTeX (pour les refs/bib à jour)
 
 def clean_auxiliary_files(tex_path):
     tex_path = Path(tex_path)

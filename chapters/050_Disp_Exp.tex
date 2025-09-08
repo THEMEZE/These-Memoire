@@ -164,7 +164,7 @@ Enfin, les atomes sont préparés dans l’état magnétique \( |F=2,\,m_F=2\ran
 			\end{scope}
 					
 	\end{tikzpicture}
-	\caption{Structure hyperfine (transitions D1 et D2) de l’atome de Rubidium $^{87}$Rb. Les longueurs d’onde des différents lasers utilisés dans l’expérience sont représentées en rouge vif (Fig adaptée de \cite{L.Dubois2024})}
+	\caption{Structure hyperfine (transitions D1 et D2) de l’atome de Rubidium $^{87}$Rb. Les longueurs d’onde des différents lasers utilisés dans l’expérience sont représentées en rouge vif }%(Fig adaptée de \cite{L.Dubois2024})}
 	\label{chap:5:fig:hiperfin}
 \end{figure}
 
@@ -209,7 +209,7 @@ Enfin, les atomes sont préparés dans l’état magnétique \( |F=2,\,m_F=2\ran
 			\end{scope}
 					
 	\end{tikzpicture}
-	\caption{a) {\bf Zoom sur la zone d’intérêt}. Les fils {\color{\colorFour}U (bleu)} et {\color{\colorSix} Z (rouge vif)} créent des pièges magnétiques intermédiaires, les trois micro-fils {jaunes} forment le guide longitudinal, et les fils {\color{\colorFive} d/d' (marron)} et {\color{\colorThree} D/D' (gris)} assurent le confinement longitudinal. b) Schéma des différentes couches constituant la puce atomique. (Figs adaptée de \cite{L.Dubois2024})}
+	\caption{a) {\bf Zoom sur la zone d’intérêt}. Les fils {\color{\colorFour}U (bleu)} et {\color{\colorSix} Z (rouge vif)} créent des pièges magnétiques intermédiaires, les trois micro-fils {jaunes} forment le guide longitudinal, et les fils {\color{\colorFive} d/d' (marron)} et {\color{\colorThree} D/D' (gris)} assurent le confinement longitudinal. b) Schéma des différentes couches constituant la puce atomique.}% (Figs adaptée de \cite{L.Dubois2024})}
 	\label{chap:5:fig:puce_zoom_coup}
 \end{figure}
 
@@ -542,7 +542,7 @@ La température du gaz sélectionné est comparée avant et après sélection vi
 
 \paragraph{Sélection locale et mesure de rapidité.}
 
-En sélectionnant une tranche du gaz, on peut ensuite couper le confinement longitudinal et laisser cette tranche s’étendre. Le profil de densité asymptotique obtenu après un long temps d’expansion est proportionnel à la distribution de rapidité locale du gaz initial. Ce protocole permet ainsi une mesure résolue en $x$ de \(n(x,t \to \infty) \sim n(v)\).
+En sélectionnant une tranche du gaz, on peut ensuite couper le confinement longitudinal et laisser cette tranche s’étendre. Le profil de densité asymptotique obtenu après un long temps d’expansion est proportionnel à la distribution de rapidité locale du gaz initial. Ce protocole permet ainsi une mesure résolue en $x$ de \(t\, n(x,t \to \infty) \sim \tilde{n}(v, t \to \infty)\).
 
 \paragraph{Génération d’états hors équilibre}
 
@@ -1308,10 +1308,7 @@ Pour un gaz initialement à l’équilibre dans un piège harmonique, le profil 
 \end{figure}
 
 \paragraph{Résumé.}  
-— Une sonde locale de distribution de rapidités a été mise en place grâce au \gls{DMD}.  
-— Les atomes sélectionnés réalisent une expansion dans le guide 1D.  
-— Après un temps long, le profil de densité reflète la distribution de rapidités locale.  
-— Ce protocole a été appliqué avec succès sur un nuage atomique initialement à l’équilibre.
+Nous avons développé une méthode permettant de sonder localement la distribution de rapidités à l’aide du \gls{DMD}. Les atomes extraits par la sélection sont ensuite laissés en expansion le long du guide unidimensionnel. Après un temps d’évolution suffisamment long, la forme du profil de densité obtenu correspond directement à la distribution de rapidités locale. Ce protocole a été testé avec succès sur un gaz initialement préparé à l’équilibre.
 
 \paragraph{Dynamique.}
 \subparagraph{Motivation.}
@@ -1349,7 +1346,7 @@ Après changement de variables ($\alpha=(x-x_0)/\ell$, $\beta=\tau/\ell$, $\tild
 	\end{array}
 	\right.
 \end{eqnarray*}
-Il en découle que les profils de densité sont universels lorsqu’ils sont exprimés en fonction de $(\alpha,\eta)$. Expérimentalement, ce comportement est bien confirmé : les centres des profils se superposent pour des conditions initiales différentes, et l’accord est même bon sur les bords (Fig ~\ref{fig:scail2} b)) .
+Il en découle que les profils de densité sont universels lorsqu’ils sont exprimés en fonction de $(\alpha,\eta)$. Expérimentalement, ce comportement est bien confirmé : les centres des profils se superposent pour des conditions initiales différentes, et l’accord est même bon sur les bords. %(Fig ~\ref{fig:scail2} b)) .
 
 \begin{figure}[H]
 	\centering
@@ -1367,13 +1364,13 @@ Il en découle que les profils de densité sont universels lorsqu’ils sont exp
 
      	\end{scope}
      	
-     	 % Deuxième figure
-        \begin{scope}[shift={(7,0)}]
-        	\node (b) at (0,0) {\includegraphics[width=0.5\textwidth]{./figures/05_Disp_Exp/image246.png}};
-        	\node[above=-0.2cm of b , shift={(-2 , -1.)} ] {\color{black} b)};
-        	
-        	
-        \end{scope}
+%     	 % Deuxième figure
+%        \begin{scope}[shift={(7,0)}]
+%        	\node (b) at (0,0) {\includegraphics[width=0.5\textwidth]{./figures/05_Disp_Exp/image246.png}};
+%        	\node[above=-0.2cm of b , shift={(-2 , -1.)} ] {\color{black} b)};
+%        	
+%        	
+%        \end{scope}
 
         
 	\end{tikzpicture}
@@ -1384,7 +1381,10 @@ Il en découle que les profils de densité sont universels lorsqu’ils sont exp
 \end{figure}
 
 \subparagraph{Régime asymptotique.}  
-L’expansion des tranches est bien décrite par \gls{GHD}. Les comparaisons entre données expérimentales et simulations \gls{GHD} (avec des distributions thermiques initiales) montrent un bon accord au centre des profils, mais révèlent que le régime asymptotique complet n’est pas atteint dans les temps accessibles expérimentalement. On définie un écart-type $$\sigma(\tau) = \sqrt{ \frac{\int \vert \frac{\tau}{\ell} n_{\mathrm{GHD}}( \frac{x-x_0}\tau) - \rho(\frac{x-x_0}\tau) \vert^2 d \tau }{ \int \vert \rho( \frac{x-x_0}\tau) \vert^2 d \tau} }$$ avec $n_{\mathrm{GHD}}$ les profil tirés des simulations \gls*{GHD}.Pour $\tau=50$\,ms, l’écart-type reste d’environ $12\%$, et une convergence complète nécessiterait des temps irréalistes ($\sim 500$\,ms). L’extraction de la distribution de rapidité à partir des profils reste donc approximative.
+L’expansion des tranches est bien décrite par \gls{GHD}. Les comparaisons entre données expérimentales et simulations \gls{GHD} (avec des distributions thermiques initiales) montrent un bon accord au centre des profils, mais révèlent que le régime asymptotique complet n’est pas atteint dans les temps accessibles expérimentalement. On définie un écart-type 
+\begin{eqnarray}\label{eq.sigma}
+	\sigma(\tau) = \sqrt{ \frac{\int \vert \frac{\tau}{\ell} n_{\mathrm{GHD}}( \frac{x-x_0}\tau) - \rho(\frac{x-x_0}\tau) \vert^2 d \tau }{ \int \vert \rho( \frac{x-x_0}\tau) \vert^2 d \tau} }	
+\end{eqnarray} avec $n_{\mathrm{GHD}}$ les profil tirés des simulations \gls*{GHD}.Pour $\tau=50$\,ms, l’écart-type reste d’environ $12\%$, et une convergence complète nécessiterait des temps irréalistes ($\sim 500$\,ms). L’extraction de la distribution de rapidité à partir des profils reste donc approximative.
 
 \begin{figure}[H]
 	\centering
@@ -1412,7 +1412,7 @@ L’expansion des tranches est bien décrite par \gls{GHD}. Les comparaisons ent
 
         
 	\end{tikzpicture}
-	\caption{(a) La tranche , centrée en $x_0 = 0\,\mu\mathrm{m}$ ,subit une expansion le long de l'axe longitudinalet d'une largeur $\ell = 37\,\mu\mathrm{m}$. Le profil initial du gaz est montré en gris. Les variations de densité pour différents temps d'expansion sont représentées par des courbes colorées. Les lignes pointillées noires indiquent les résultats des simulations GHD pour une distribution de rapidités initialement thermique, paramétrée par la température $T$ et le potentiel chimique $\mu(x_0)  = \mu$, tels qu'ils sont extraits du profil de densité in situ.(b) L'écart-type $\sigma(\tau) = \sqrt{ \int \vert \frac{\tau}{\ell} n _{\mathrm{GHD}}( (x-x_0)/\tau) - \rho( (x-x_0)/\tau) \vert^2 d \tau / \int \vert \rho( (x-x_0)/\tau) \vert^2 d \tau } $ défini par l'équation~(8.8) est calculé entre la distribution de rapidités et les résultats des simulations GHD en fonction du temps d'expansion $\tau$. La ligne verticale noire correspond au temps d'expansion utilisé dans l'expérience.
+	\caption{(a) La tranche , centrée en $x_0 = 0\,\mu\mathrm{m}$ ,subit une expansion le long de l'axe longitudinalet d'une largeur $\ell = 37\,\mu\mathrm{m}$. Le profil initial du gaz est montré en gris. Les variations de densité pour différents temps d'expansion sont représentées par des courbes colorées. Les lignes pointillées noires indiquent les résultats des simulations GHD pour une distribution de rapidités initialement thermique, paramétrée par la température $T$ et le potentiel chimique $\mu(x_0)  = \mu$, tels qu'ils sont extraits du profil de densité in situ.(b) L'écart-type $\sigma(\tau)$ (Eq.~\eqref{eq.sigma})  est calculé entre la distribution de rapidités et les résultats des simulations \gls*{GHD} en fonction du temps d'expansion $\tau$. La ligne verticale noire correspond au temps d'expansion utilisé dans l'expérience.
 }
 
 	\label{fig:GHD1}
@@ -1424,7 +1424,7 @@ L’expansion des tranches est bien décrite par \gls{GHD}. Les comparaisons ent
 \subsection*{8.6 Mesure locale de distribution de rapidités hors équilibre}
 
 \paragraph{Mise en place d’une distribution locale hors équilibre.}  
-Le faisceau de sélection (\gls{DMD}) permet non seulement de sonder la distribution de rapidités locale, mais aussi de créer des situations hors équilibre. Un protocole illustratif consiste à retirer les atomes d’une région centrale de taille $\ell_0 = 70\,\mu$m, puis à laisser le gaz évoluer librement longidutalement (1D). Après un temps $\tau = 15$\,ms, la distribution de rapidités développe une structure doublement piquée, très différente d’une distribution thermique. Une seconde sélection locale ($\ell=35\,\mu$m) suivie d’une expansion révèle expérimentalement ce profil, en excellent accord avec les simulations GHD (Fif ~\ref{fig:GHD2}).
+Le faisceau de sélection (\gls{DMD}) permet non seulement de sonder la distribution de rapidités locale, mais aussi de créer des situations hors équilibre. Un protocole illustratif consiste à retirer les atomes d’une région centrale de taille $\ell_0 = 70\,\mu$m, puis à laisser le gaz évoluer librement longidutalement (1D). Après un temps $\tau = 15$\,ms, la distribution de rapidités développe une structure doublement piquée, très différente d’une distribution thermique. Une seconde sélection locale ($\ell=35\,\mu$m) suivie d’une expansion révèle expérimentalement ce profil, en excellent accord avec les simulations \gls*{GHD} (Fif ~\ref{fig:GHD2}).
 
 \begin{figure}[H]
 	\centering
@@ -1460,6 +1460,21 @@ Le faisceau de sélection (\gls{DMD}) permet non seulement de sonder la distribu
 
 \paragraph{Analyse des distributions locales hors équilibre}  
 Cette approche démontre l’importance d’une mesure locale : alors que la distribution globale $\int dx\,\rho(x,\theta)$ est conservée, la distribution locale $\rho(x,\theta)$ reflète directement la dynamique hors équilibre. Le dispositif basé sur le \gls{DMD} offre ainsi un outil puissant pour générer et caractériser divers protocoles hors équilibre (cisaillement, jonctions de densité, états stationnaires non thermiques, etc.), ouvrant de nouvelles perspectives pour l’étude des gaz de Bose 1D.
+
+
+\section*{Conclusion du chapitre}
+
+Dans ce chapitre, nous avons décrit les principaux dispositifs expérimentaux utilisés dans notre étude. 
+Le système atomique est préparé dans une géométrie unidimensionnelle, avec un confinement longitudinal 
+réalisé par un potentiel de la forme
+\(
+V_{\parallel}(x) = a_0 + a_1 x + a_2 x^2 + a_3 x^3 + a_4 x^4 ,
+\)
+qui permet d’ajuster finement la forme du piège.  
+Par ailleurs, l’utilisation du \gls{DMD} joue un rôle essentiel : cet outil permet non seulement de sélectionner 
+localement une portion du nuage atomique afin de sonder la distribution des rapidités, mais également de générer 
+des dynamiques hors équilibre. Ces protocoles incluent, par exemple, l’analogue de la pendule de Newton, 
+ainsi que la situation présentée dans la dernière section. 
 
 
 %\section{Discussion sur les limites et les perspectives}

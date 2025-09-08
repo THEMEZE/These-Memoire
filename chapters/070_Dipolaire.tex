@@ -28,25 +28,30 @@ Le formalisme utilisé repose sur une description quantique du couplage dipolair
 %
 %\end{figure}
 
-\vspace{1em}
-% INSERTION FIGURE
-\begin{center}
-\textit{[Insérer ici un schéma des niveaux d’énergie du Rubidium (transitions D1 et D2, base fine)]}
-\end{center}
+%\vspace{1em}
+%% INSERTION FIGURE
+%\begin{center}
+%\textit{[Insérer ici un schéma des niveaux d’énergie du Rubidium (transitions D1 et D2, base fine)]}
+%\end{center}
 
 \section{Transformation de jauge et simplification du Hamiltonien}
 
 %(cf. Complément HIII du tome 1 de Cohen-Tannoudji)\\
 
-\subparagraph{Petites réserves et extensions}
+\subparagraph{Remarques préliminaires et extensions}
 
-\begin{itemize}
-    \item Si un \textbf{potentiel externe} $V(x)$ est présent, ou si la translation est brisée (bords durs, conditions aux limites), la quantité de mouvement totale $P$ n’est plus conservée.
-    \item En présence d’un \textbf{champ électromagnétique} (jauge), le moment cinétique devient $\Pi = p - q A$ et l’expression de $P$ change.
-    \item De même, pour des \textbf{potentiels dipolaires} ou à longue portée, la forme des charges conservées peut être modifiée et nécessite de prendre en compte des contributions supplémentaires pour préserver les symétries pertinentes.
+Avant d’appliquer la transformation de jauge et de simplifier le Hamiltonien, il est utile de souligner certains points 
+qui conditionnent la conservation des quantités physiques et la cohérence du formalisme :
+
+\begin{itemize}[label = $\bullet$]
+    \item La conservation de la quantité de mouvement totale $P$ n’est assurée que si le système est parfaitement invariant par translation. En présence d’un \textbf{potentiel externe} $V(x)$, ou lorsque des conditions aux limites (bords durs, pièges) brisent cette symétrie, $\operator{P}$ n’est plus une constante du mouvement.
+    \item Si un \textbf{champ électromagnétique} est appliqué, la jauge introduit le potentiel vecteur $\vec{A}$, et l’élan cinétique devient $\vec{\Pi} = \vec{p} - q \vec{A}$. L’expression de $\vec{P}$ doit alors être redéfinie pour rester cohérente  avec la dynamique.
+    \item Dans le cas de \textbf{potentiels dipolaires} ou d’interactions à longue portée, les charges conservées 
+    peuvent être modifiées. Il est alors nécessaire d’inclure des termes supplémentaires afin de respecter les 
+    symétries fondamentales.
 \end{itemize}
 
-Ces considérations constituent une pré-introduction utile avant d’aborder les systèmes avec interactions complexes et les charges conservées d’ordre supérieur.
+Ces précisions fournissent le cadre conceptuel dans lequel la transformation de jauge garde toute sa cohérence et servent d’introduction naturelle à l’étude des systèmes avec interactions complexes et charges conservées d’ordre supérieur.
 
 \paragraph{Cadre sans potentiel vecteur.}
 
@@ -94,8 +99,12 @@ Cette simplification rend l’analyse théorique plus accessible et facilite l�
 
 \section{Potentiel Dipolaire d'un atome à deux niveaux - généralité}
 
-\subsection{Introduction.}
-Un atome neutre placé dans un champ électrique $\operatorvec{E}_\perp$ développe un moment dipolaire induit $\operatorvec{D}(t)$. Si le champ varie lentement devant la dynamique interne de l’atome, le moment dipolaire reste aligné avec la composante transverse du champ, $\operatorvec{E}_\perp(t)$, et l’énergie potentielle d’interaction s’écrit 
+\subsection*{Introduction.}
+Avant d'effectuer le calcul du potentiel dipolaire, donnons une image classique.
+
+\smallskip
+
+Un atome neutre placé dans un champ électrique $\operatorvec{E}_\perp$ développe un moment dipolaire induit $\operatorvec{D}(t) = \alpha \operatorvec{E}_\perp$. L'énergie potentielle d'interaction, moyennée temporellement sur une période optique, est alors $-\alpha \Vert\operatorvec{E}_\perp\Vert^2/4$ . Si le champ varie lentement devant la dynamique interne de l’atome, le moment dipolaire reste aligné avec la composante transverse du champ, $\operatorvec{E}_\perp(t)$, et l’énergie potentielle d’interaction s’écrit 
 \(
  \operator{H}_{\text{int}}(t) = -\operatorvec{D}(t) \cdot \operatorvec{E}_\perp(t).
 \)
@@ -126,23 +135,23 @@ Dans cette configuration, l’énergie potentielle est minimale là où l’inte
 
 Pour donner une vision simplifiée du phénomène, on considère un atome modélisé par {\bf deux niveaux} : l’état fondamental \(\ket{g}\) d’énergie \(\hbar \omega_g\) et l’état excité \(\ket{e}\) d’énergie \(\hbar \omega_e\), couplés par un champ électrique 
 \(\operatorvec{E}_\perp(\vec{r},t) = \operatorvec{\mathcal{E}}(\operatorvec{r}) \cos(\omega t)\). 
-On suppose que le champ laser est {\bf désacordé par rapport à la résonance}, c’est-à-dire que le désaccord
+On suppose que le champ laser est {\bf désacordé par rapport à la résonance} et que le désaccord
 \(
 \Delta \doteq \omega - \omega_{\scriptscriptstyle g\rightarrow e}
 \)
 (avec la fréquence de transition \(\omega_{\scriptscriptstyle g\rightarrow e} \doteq \omega_e - \omega_g\),
-est {\bf grand devant la fréquence de Rabi}, qui caractérise le couplage dipôle–champ :  
+est {\bf grand devant la fréquence de Rabi}, qui caractérise le couplage dipôle–champ dont l'expression est \cite{CohenTannoudji1988,grimm1999opticaldipoletrapsneutral,Schlosser2001,Darquie2006} :  
 \begin{eqnarray}
 	\Omega(\vec{r}) &=& - {\bra{e} \operatorvec{D} \cdot \operatorvec{\mathcal{E}}(\vec{r}) \ket{g}}/{\hbar} \label{chap7:eq.Omega.1} \\
 	&=& - {\vec{d}_{\scriptscriptstyle g \leftrightarrow e} \cdot \operatorvec{\mathcal{E}}(\operatorvec{r})}/{\hbar}, \label{chap7:eq.Omega.2}
 \end{eqnarray}
 où \(\vec{d}_{\scriptscriptstyle g \leftrightarrow e} = \bra{e} \hat{\vec{D}} \ket{g}\) est l’élément de matrice dipolaire réel entre les niveaux \(\ket{g}\) et \(\ket{e}\).
 
-\vspace{1em}
-% INSERTION FIGURE
-\begin{center}
-\textit{[Insérer ici un schéma des niveaux d’énergie du Rubidium (transitions D1 et D2, base fine)]}
-\end{center}
+%\vspace{1em}
+%% INSERTION FIGURE
+%\begin{center}
+%\textit{[Insérer ici un schéma des niveaux d’énergie du Rubidium (transitions D1 et D2, base fine)]}
+%\end{center}
 
 \subsection{Interprétation du traitement du second ordre : transition virtuelle et origine du potentiel dipolaire (AC-Stark)}
 
@@ -153,7 +162,7 @@ l’excitation réelle de l’atome devient négligeable.
 Le paramètre \(\Gamma\) désigne la \emph{largeur naturelle} de la transition \(\ket{e} \rightarrow \ket{g}\), 
 c’est-à-dire le taux d’émission spontanée d’un photon par un atome excité. 
 Il est relié à la durée de vie \(\tau\) de l’état \(\ket{e}\) par \(\Gamma = 1/\tau\). 
-Dans le cas d’une transition dipolaire électrique de type S–P, il peut être calculé à partir de l’électrodynamique quantique selon la formule :
+Dans le cas d’une transition dipolaire électrique de type S–P, il peut être calculé à partir de l’électrodynamique quantique selon la formule \cite{grimm1999opticaldipoletrapsneutral} :
 \begin{equation}
 	\Gamma = \frac{\omega_{\scriptscriptstyle g\rightarrow e}^3}{3 \pi \varepsilon_0 \hbar c^3} 
 	| \vec{d}_{\scriptscriptstyle g \leftrightarrow e} |^2, \label{chap7:eq.Gamma.1}
@@ -219,8 +228,8 @@ Ainsi, non seulement \( \delta E_g^{(1)}(t) \sim \cos(\omega t) \) est une oscil
 Par conséquent, il n’y a \textbf{aucun décalage d’énergie net à l’ordre 1} : c’est uniquement à l’ordre 2 que l’interaction induit un potentiel stationnaire, correspondant au déplacement AC-Stark.
 
 
-\item \textbf{Ordre 2} — transitions virtuelles :  
-À l’ordre 2 de la théorie des perturbations indépendantes du temps, la correction d’énergie associée à l’état fondamental \(\ket{g}\) s’écrit
+\item \textbf{Ordre 2} — transitions virtuelles :  nous verrons dans la section \ref{sec.7.3.1} que l'effet du potentiel à l'ordre 2 est
+%À l’ordre 2 de la théorie des perturbations indépendantes du temps, la correction d’énergie associée à l’état fondamental \(\ket{g}\) s’écrit
 
 \begin{equation}
 \delta E_g^{(2)} =  
@@ -294,7 +303,8 @@ Ce potentiel permet de décrire le confinement des atomes dans des régions où 
 Les expressions~\eqref{chap7:eq.dip.1} et \eqref{chap7:eq.dip.2}  pour le potentiel dipolaire est obtenue sous les hypothèses suivantes, qui assurent la validité du modèle à deux niveaux et du traitement perturbatif :
 
 \begin{itemize}[label = $\bullet$]
-  \item \textbf{Réduction à un sous-espace résonant} : le champ est quasi-résonant avec une seule transition atomique, ce qui suppose que le désaccord est faible devant les fréquences optiques impliquées, i.e. $|\Delta| \ll \omega, \omega_{\scriptstyle g \rightarrow e}$. Cela permet de restreindre le système à deux niveaux et d’ignorer les autres transitions dipolaires.
+  %\item \textbf{Réduction à un sous-espace résonant} : le champ est quasi-résonant avec une seule transition atomique, ce qui suppose que le désaccord est faible devant les fréquences optiques impliquées, i.e. $|\Delta| \ll \omega, \omega_{\scriptstyle g \rightarrow e}$. Cela permet de restreindre le système à deux niveaux et d’ignorer les autres transitions dipolaires.
+  \item \textbf{Approximation du sous-espace résonant} : le champ est quasi-résonant avec une seule transition atomique, ce qui implique que le désaccord $\Delta$ reste petit par rapport à l’écart énergétique entre l’état excité considéré et les autres états excités de l’atome. Cette condition permet de réduire le système à un modèle à deux niveaux et de négliger les autres transitions dipolaires.
   
   \item \textbf{Régime de grand désaccord en fréquence (large détuning)} : lorsque $|\Delta| \gg \Gamma$, c’est-à-dire lorsque le désaccord est grand devant la largeur naturelle de la transition, les excitations réelles vers l’état excité sont fortement supprimées. L’interaction lumière-matière peut alors être traitée en perturbation du second ordre : l’atome reste majoritairement dans son état fondamental, et l’effet du champ lumineux se manifeste sous la forme d’un potentiel effectif induit par des couplages virtuels.
   
@@ -399,7 +409,7 @@ Cependant, d’un point de vue pratique, l’augmentation de l’intensité \(I\
 
 \section{Piégeage dipolaire d’un atome à plusieurs niveaux}
 
-\subsection{Atomes multiniveaux et origine du potentiel dipolaire dans le formalisme quantique}
+\subsection{Atomes multiniveaux et origine du potentiel dipolaire dans le formalisme quantique}\label{sec.7.3.1}
 
 Le modèle à deux niveaux est suffisant pour introduire le concept de piégeage dipolaire, mais il reste limité pour décrire les détails réels d'un atome comme le \({}^{87}\mathrm{Rb}\), qui possède une structure hyperfine et fine complexe. Dans ce contexte, le potentiel dipolaire dépend du sous-niveau quantique occupé par l’atome, et le traitement doit être généralisé.
 
@@ -407,7 +417,7 @@ Le modèle à deux niveaux est suffisant pour introduire le concept de piégeage
 
 \paragraph{Quantification de champ laser.}
 
-Considérons un atome immobile possédant un état fondamental \( \ket{g} \) et une série d’états excités \( \ket{e_i} \), d’énergies respectives \( \hbar\omega_g \) et \( \hbar\omega_{e_i} \). Le champ laser \eqref{chap7:eq.elec.clas.1} est quantifié dans un volume \( V \), polarisé selon \( \vec{u} \),  et d'expression \cite{??}
+Considérons un atome immobile possédant un état fondamental \( \ket{g} \) et une série d’états excités \( \ket{e_i} \), d’énergies respectives \( \hbar\omega_g \) et \( \hbar\omega_{e_i} \). Le champ laser \eqref{chap7:eq.elec.clas.1} est quantifié dans un volume \( V \), polarisé selon \( \vec{u} \),  et d'expression \cite{CohenTannoudji1988}
 %\begin{eqnarray}
 %	\operatorvec{E}_\perp(t) = \operator{\mathcal{E}} \vec{u} \cos(\omega t) \quad \longrightarrow \quad \operator{E}_\perp = \sqrt{\frac{\hbar \omega}{2\varepsilon_0 V}} \, \vec{u} \, (\operator{a} + \operator{a}^\dagger),	
 %\end{eqnarray}
@@ -518,7 +528,7 @@ Les autres transitions, fortement hors résonance, sont négligées dans l’app
 
 \medskip
 
-\paragraph{Annulation de la correction d’énergie au premier ordre.}
+\paragraph{Annulation de la correction d’énergie au premier ordre. \cite{Le_Kien_2013,grimm1999opticaldipoletrapsneutral} }
 
 \begin{itemize}[label = $\bullet$] 
 	\item \textbf{Ordre 1 — pas de correction diagonale :}\\ 
@@ -564,7 +574,7 @@ Les autres transitions, fortement hors résonance, sont négligées dans l’app
 	Le champ étant loin de la résonance avec les états \( \ket{e_i} \), 
 	on applique la théorie des perturbations indépendantes du temps au second ordre. 
 	L’interaction induit un décalage de l’énergie de l’état \( \ket{g} \) donné par :
-	\begin{eqnarray}
+	\begin{eqnarray}\label{eq.7.34}
 		\delta E_g^{(2)} 
 		= \sum_{e_i} \left (  
 		\frac{|\bra{e_i, N-1} \operator{H}_{\mathrm{int}} \ket{g, N}|^2}{E_{g,N} - E_{e_i, N-1}} 
@@ -576,6 +586,8 @@ Les autres transitions, fortement hors résonance, sont négligées dans l’app
 
 \medskip
 
+
+{\color{blue}
 \paragraph{Approximation séculaire et sélection des transitions pertinentes.}
 
 Dans le cadre du piégeage dipolaire, nous faisons l’hypothèse que le champ laser est \textbf{quasi-résonant} avec un \textbf{nombre restreint de transitions atomiques}. Autrement dit, la fréquence du laser \( \omega \) est suffisamment proche de certaines transitions \( \omega_{\scriptscriptstyle g \rightarrow e_i} = \omega_{e_i} - \omega_g  \) de l’atome, de sorte que le désaccord \( \Delta_i = \omega - \omega_{g \rightarrow e_i} \) est \textbf{petit devant les fréquences optiques} elles-mêmes :
@@ -602,7 +614,29 @@ soit
 	{\hbar \left( \omega - \omega_{\scriptscriptstyle g \rightarrow e_i} \right)} .
 \end{eqnarray}
 
+
+
+\paragraph{Approximation pour un couplage quasi-résonant.}
+
+Dans le cadre du piégeage dipolaire, nous considérons que le champ laser est quasi-résonant avec une seule transition atomique. 
+Autrement dit, le désaccord \(\Delta = \omega - \omega_{g \rightarrow e}\) reste petit devant la fréquence de la transition atomique :
+\(
+|\Delta| \ll \omega_{g \rightarrow e}.
+\)
+
+Dans ce régime, le deuxième terme du membre de droite des équations \eqref{eq.7.34} devient négligeable, et le potentiel dipolaire se simplifie alors en :
+\begin{eqnarray*}\label{eq:potentiel_dipolaire_simplifie}
+\delta E_g^{(2)} \simeq \sum_{e_i} \frac{\left| \bra{e,\,N-1} \operator{H}_{\mathrm{int}} \ket{g,\,N} \right|^2}
+{\hbar \Delta} .
+\end{eqnarray*}
+
+Cette approximation consiste à ne considérer que la transition \(\ket{g,\,N} \rightarrow \ket{e,\,N-1}\), 
+c’est-à-dire les processus dans lesquels un seul photon est échangé entre l’atome et le champ laser.
+
+
 \medskip
+}
+
 
 \subsubsection*{Expression des éléments de matrice dans l’interaction atome-champ cohérent}
 
@@ -810,7 +844,7 @@ Cette analyse met en évidence le rôle de la polarisation du champ lumineux dan
 
 \subparagraph{Valeur de l’élément de matrice réduit.}
 
-L'expression~\eqref{eq:WignerEckart} reste valable pour les éléments de matrice réduits~\cite{CCT_QO}. Dans le cas du rubidium 87, on peut ainsi déterminer numériquement la valeur de l’élément $\bra{L'}\!\|\operatorvec{D}\|\!\ket{L}$, noté $d_{\scriptstyle 5S \leftrightarrow 5P}$, à partir des données spectroscopiques expérimentales (fréquence de transition, largeur naturelle, etc.).
+L'expression~\eqref{eq:WignerEckart} reste valable pour les éléments de matrice réduits~\cite{CCT_QO}. Dans le cas du rubidium 87, on peut ainsi déterminer numériquement la valeur de l’élément $\bra{L'}\!\|\operatorvec{D}\|\!\ket{L}$, noté $d_{\scriptstyle 5S \leftrightarrow 5P}$, à partir des données spectroscopiques expérimentales (fréquence de transition, largeur naturelle, etc.) \cite{Steck2002}.
 \begin{eqnarray}
 d_{\scriptstyle 5S \leftrightarrow 5P} &\approx& 2{,}5 \times 10^{-29}~\mathrm{C \cdot m}.
 \end{eqnarray}
@@ -950,7 +984,7 @@ Potentiel dipolaire s'écrit :
 \end{eqnarray*}
 
 Ainsi finalement 
-\begin{eqnarray}
+\begin{eqnarray}\label{eq.7.47}
 	U_{\mathrm{dip}}(\operatorvec{r}) &=& \frac{\hbar \, \Gamma^2}{8 I_{\mathrm{sat}}} \left( \frac{ 1}{ 3 \Delta_1} + \frac{2 }{ 3 \Delta_2}  \right ) I(\operatorvec{r}) ,	
 \end{eqnarray}
 
@@ -961,7 +995,7 @@ Le même hamiltonien d’interaction qui génère le potentiel dipolaire est aus
 
 Dans le cas d’un champ à polarisation linéaire et avec un grand désaccord par rapport aux transitions D1 et D2, le {\bf taux d’émission spontanée} est donné par :
 
-\begin{eqnarray}
+\begin{eqnarray}\label{eq.7.48}
 \Gamma_{\mathrm{sc}}(\vec{r}) & = & \frac{\Gamma^3}{8 I_{\mathrm{sat}}} \left( \frac{1}{3 \Delta_1^2} + \frac{2}{3 \Delta_2^2} \right) I(\vec{r}) .
 \label{eq:scattering_rate}
 \end{eqnarray}
@@ -997,9 +1031,9 @@ Notre objectif est de réaliser un piégeage dipolaire optique pour des atomes d
 
 \end{figure}
 
-\begin{center}
-\textit{[Insérer ici un schéma des faisceaux bleus repoussant les atomes dans une boîte au centre]}
-\end{center}
+%\begin{center}
+%\textit{[Insérer ici un schéma des faisceaux bleus repoussant les atomes dans une boîte au centre]}
+%\end{center}
 
 \vspace{1em}
 
@@ -1010,25 +1044,39 @@ Dans cette configuration, les faisceaux lasers génèrent un potentiel optique c
 Deux critères fondamentaux guident notre choix de laser :
 \begin{itemize}[label = $\bullet$]
 	\item Le {\bf potentiel dipolaire} au niveau des atomes, $U_{dip}(0)$, doit être supérieur à une valeur minimale $U_{dip}^{(min)}$, fixée à :
-		\begin{equation}
+		\begin{equation}\label{eq:7.49}
 			U_{dip}(0)  \geq U_{dip}^{(min)} = k_B \times 1 \mu K.	
 		\end{equation}
 		Cette valeur garantit une barrière suffisante pour confiner les atomes contre leur agitation thermique résiduelle ou leur expansion quantique.
 	\item Le {\bf taux de diffusion spontané}  au point $x^\ast$ défini par $U_{dip}(x^\ast) = U_{dip}(0)/2$ doit rester inférieur à une valeur seuil pour limiter l’échauffement et les pertes :
-		\begin{equation}
-			\Gamma_{sp}(x^\ast) \leq 2\pi \times 1~s^{-1}.	
+		\begin{equation}\label{eq:7.50}
+			\Gamma_{sp}(x^\ast) \leq \Gamma_{sp}^{(max)} = 2\pi \times 1~s^{-1}.	
 		\end{equation}
 		Ce critère conduit, en utilisant le fait que le potentiel $U_{dip}^{(min)}(\vec{r})$ et le taux de diffusion spontanée $\Gamma_{sp}(\vec{r})$ soit proportionnele à l’intensité $I(\vec{r})$ , à la borne stricte suivante :
-		\begin{equation}
-			\Gamma_{sp}(0) \leq \Gamma_{sp}^{(max)} = 2\pi \times 2~s^{-1}.	
+		\begin{equation}\label{eq:7.51}
+			\Gamma_{sp}(0) \leq  2\pi \times 2~s^{-1}.	
 		\end{equation}
 \end{itemize}
 
 \subsubsection*{Figure de mérite : ratio potentiel / diffusion}
 
-Le compromis entre profondeur de piège et diffusion est quantifié par la figure de mérite suivante :
+Les conditions des Eqs.~\eqref{eq:7.49} et \eqref{eq:7.50} impliquent que, pour un point particulier \(\vec{r}^*\), le rapport entre la profondeur du piège et la diffusion photonique satisfait
+\[
+\frac{U_{\rm dip}(\vec{r}^*)}{\hbar \Gamma_{\rm sc}(\vec{r}^*)} > \frac{2\,U_{\rm dip}^{(min)}}{\hbar \Gamma_{\rm sc}^{(max)}} .
+\]
+En utilisant les Eqs.~\eqref{eq.7.47} et \eqref{eq.7.48}, cette condition se réécrit explicitement sous la forme
+%\begin{equation}
+%\frac{U_{\rm dip}(\vec{r}^*)}{\hbar \Gamma_{\rm sc}(\vec{r}^*)} 
+%= \frac{1}{\Gamma} \cdot 
+%\frac{\left( \frac{1}{3\Delta_1} + \frac{2}{3\Delta_2} \right)}
+%     {\left( \frac{1}{3\Delta_1^2} + \frac{2}{3\Delta_2^2} \right)}
+%> \frac{2\,U_{\rm dip}^{(min)}}{\hbar \Gamma_{\rm sc}^{(max)}}.
+%\end{equation}
+%
+%
+%Le compromis entre profondeur de piège et diffusion est quantifié par la figure de mérite suivante :
 \begin{equation}
-\frac{U_{dip}(\vec{r})}{\hbar \Gamma_{sc}(\vec{r})} = \frac{1}{\Gamma} \cdot \frac{ \left( \frac{1}{3\Delta_1} + \frac{2}{3\Delta_2} \right)}{\left( \frac{1}{3\Delta_1^2} + \frac{2}{3\Delta_2^2} \right)} \geq \frac{U_{dip}^{(min)}}{\hbar \Gamma_{sc}^{(max)}}
+\frac{U_{dip}(\vec{r}^*)}{\hbar \Gamma_{sc}(\vec{r}^*)} = \frac{1}{\Gamma} \cdot \frac{ \left( \frac{1}{3\Delta_1} + \frac{2}{3\Delta_2} \right)}{\left( \frac{1}{3\Delta_1^2} + \frac{2}{3\Delta_2^2} \right)} \geq \frac{2 U_{dip}^{(min)}}{\hbar \Gamma_{sc}^{(max)}}
 \end{equation}
 
 Un calcul numérique montre que, sous ces contraintes, il est nécessaire de sélectionner des lasers dont la longueur d’onde est inférieure à une valeur maximale 
@@ -1055,11 +1103,12 @@ Un calcul numérique montre que, sous ces contraintes, il est nécessaire de sé
 
 %Dans notre cadre d’un piégeage \textbf{blue-detuned}, les atomes sont confinés dans la région \textbf{centrale de faible intensité}, située entre deux faisceaux focalisés. Le piégeage repose donc sur la présence de \textbf{parois optiques abruptes} générées par les faisceaux blue-detuned. Cela impose que chaque faisceau présente un fort gradient d’intensité, ce qui nécessite un waist petit.
 
-Le faisceau utilisé est gaussien. On rappelle que le \textit{waist} $w_0$ désigne le rayon minimal du faisceau, défini comme la distance radiale $r$ pour laquelle l’intensité transverse chute à $1/e^2$ de sa valeur au centre du faisceau, et ce à la position où le faisceau est le plus focalisé. Typiquement, nous utilisons ici des faisceaux avec un waist de l’ordre de $w_0 \sim 1~\mu\text{m}$.  
+Le faisceau utilisé est gaussien. On rappelle que le \textit{waist} $w_0$ désigne le rayon du faisceau, défini comme la distance radiale $r$ pour laquelle l’intensité transverse chute à $1/e^2$ de sa valeur au centre du faisceau, et ce à la position où le faisceau est le plus focalisé. Typiquement, nous utilisons ici des faisceaux avec un waist de l’ordre de $w_0 \sim 1~\mu\text{m}$.  
 
 \medskip
 
-Dans le cadre d’un piégeage \textbf{blue-detuned}, les atomes sont confinés dans une région \textbf{centrale de faible intensité}, située entre deux faisceaux focalisés. Le piégeage repose alors sur la formation de \textbf{parois optiques abruptes}, engendrées par les gradients d’intensité des faisceaux. Pour obtenir un gradient suffisamment marqué, il est nécessaire que chaque faisceau possède un \textbf{waist étroit}.
+Dans le cadre d’un piégeage avec un laser désaccordé vers le
+bleu, les atomes sont confinés dans une région \textbf{centrale de faible intensité}, située entre deux faisceaux focalisés. Le piégeage repose alors sur la formation de \textbf{parois optiques abruptes}, engendrées par les gradients d’intensité des faisceaux. Pour obtenir un gradient suffisamment marqué, il est nécessaire que chaque faisceau possède un \textbf{waist étroit}.
 
 %Pour créer une boîte optique efficace, il faut que :
 %\begin{itemize}
@@ -1082,19 +1131,40 @@ L’intensité maximale atteinte au centre du faisceau est donnée par :
 \end{eqnarray}
 avec $P$ la puissance incidente. Cette expression relie directement la puissance requise aux contraintes de piégeage, et sera utilisée pour définir les bornes admissibles sur $P(\lambda)$ pour une longueur d’onde donnée.
 
-En reportant cette intensité dans les expressions standards du potentiel et de la diffusion, on obtient les bornes admissibles pour la puissance :
-\begin{eqnarray}
-	 \underbrace{U_{dip}^{(min)} \cdot  \frac{\pi w_0^2}{2} \frac{8 I_{sat}}{\Gamma^2} \cdot \left( \frac{ 1}{ 3 \Delta_1} + \frac{2 }{ 3 \Delta_2}  \right )^{-1} }_{P^{(min)}(\lambda)}  \leq P(\lambda) \leq \underbrace{ \Gamma_{sc}^{(max)} \cdot \frac{\pi w_0^2}{2} \frac{8 I_{sat}}{\Gamma^3} \cdot \left( \frac{ 1}{ 3 \Delta_1^2} + \frac{2 }{ 3 \Delta_2^2}  \right )^{-1}}_{ P^{(max)}(\lambda)} 
-\end{eqnarray}
+%En reportant cette intensité dans les expressions standards du potentiel et de la diffusion, on obtient les bornes admissibles pour la puissance :
+%\begin{eqnarray}
+%	 \underbrace{U_{dip}^{(min)} \cdot  \frac{\pi w_0^2}{2} \frac{8 I_{sat}}{\Gamma^2} \cdot \left( \frac{ 1}{ 3 \Delta_1} + \frac{2 }{ 3 \Delta_2}  \right )^{-1} }_{P^{(min)}(\lambda)}  \leq P(\lambda) \leq \underbrace{ \Gamma_{sc}^{(max)} \cdot \frac{\pi w_0^2}{2} \frac{8 I_{sat}}{\Gamma^3} \cdot \left( \frac{ 1}{ 3 \Delta_1^2} + \frac{2 }{ 3 \Delta_2^2}  \right )^{-1}}_{ P^{(max)}(\lambda)} 
+%\end{eqnarray}
 
-\begin{center}
-\textit{[Insérer ici une figure avec les courbes $P^{(min)}(\lambda)$ et $P^{(max)}(\lambda)$, et la zone autorisée]}
-\end{center}
+Les conditions des Eqs.~\eqref{eq:7.49} et \eqref{eq:7.50} impliquent alors, en utilisant les expressions \eqref{eq:7.47} et \eqref{eq:7.48} pour le potentiel dipolaire et le taux de diffusion de photons, que la puissance laser doit satisfaire
+\begin{equation}
+	P_{\rm min}(\lambda) \le P(\lambda) \le P_{\rm max}(\lambda),
+\end{equation}
+avec
+\begin{align*}
+P_{\rm min}(\lambda) &= U_{\rm dip}^{(min)} \cdot \frac{\pi w_0^2}{2} \frac{8 I_{\rm sat}}{\Gamma^2} 
+\left( \frac{1}{3 \Delta_1} + \frac{2}{3 \Delta_2} \right)^{-1}, \\
+P_{\rm max}(\lambda) &= \Gamma_{\rm sc}^{(max)} \cdot \frac{\pi w_0^2}{2} \frac{8 I_{\rm sat}}{\Gamma^3} 
+\left( \frac{1}{3 \Delta_1^2} + \frac{2}{3 \Delta_2^2} \right)^{-1}.
+\end{align*}
+
+\medskip
+
+La région vérifiant le critère ci-dessous est représentée sur la figure~\eqref{fig:7.6}, dans un diagramme (\(\lambda, P\)) où \(\lambda\) est la longueur d'onde du laser.  
+
+\medskip
+
+Le seuil inférieur \(P_{\rm min}(\lambda)\) est extrêmement faible et n’a pratiquement aucune influence sur le choix expérimental de la puissance laser, contrairement à \(P_{\rm max}(\lambda)\) qui fixe la limite supérieure imposée par la diffusion photonique.
+
+%\begin{center}
+%\textit{[Insérer ici une figure avec les courbes $P^{(min)}(\lambda)$ et $P^{(max)}(\lambda)$, et la zone autorisée]}
+%\end{center}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\linewidth]{figures/07_Dipolaire/puissance_vs_lambda_log.png}
     \caption{Puissance requise en fonction de la longueur d'onde pour $w_0 = 1 \, \mu m$ }
+    \label{fig:7.6}
 \end{figure}
 
 L’intersection de ces courbes définit une {\bf zone de faisabilité expérimentale} dans l’espace $(\lambda, P)$. Le croisement des courbes fournit la longueur d’onde maximale admissible :
@@ -1113,7 +1183,7 @@ Un premier filtrage des sources laser admissibles impose que la longueur d’ond
 
 \subsubsection*{Prise en compte des pertes optiques}
 
-L’ensemble des éléments optiques traversés par le faisceau — incluant la sortie de fibre, les lentilles de collimation et de focalisation, les miroirs de redirection, les diaphragmes, ainsi que le diviseur de faisceau — induit des pertes cumulées non négligeables. Une estimation réaliste, fondée sur les caractéristiques typiques des composants et l'expérience de montage, indique que les pertes globales s’élèvent à environ $60$ à $75\%$.
+L’ensemble des éléments optiques traversés par le faisceau — incluant la sortie de fibre, les lentilles de collimation et de focalisation, les miroirs de redirection, les trou de filtrages, ainsi que le diviseur de faisceau — induit des pertes cumulées non négligeables. Une estimation réaliste, fondée sur les caractéristiques typiques des composants et l'expérience de montage, indique que les pertes globales s’élèvent à environ $60$ à $75\%$.
 
 Ces pertes doivent être prises en compte dès le dimensionnement initial du système laser, afin de garantir que la puissance effectivement disponible au niveau des atomes soit suffisante pour atteindre les profondeurs de piège souhaitées. En pratique, on modélise cette efficacité par un facteur global $\eta$, défini comme :
 \begin{eqnarray*}
@@ -1148,7 +1218,7 @@ Ce coefficient sera utilisé dans la suite pour évaluer les puissances minimale
 
 \subsubsection*{Sources laser utilisées et pureté spatiale}
 
-Trois sources laser ont été sélectionnées pour la réalisation de la boîte optique blue-detuned destinée au piégeage dipolaire du Rubidium-87, dont deux répondent aux conditions de puissance admissibles $P^{(min)}(\lambda)$ et $P^{(max)}(\lambda)$.
+Trois sources laser ont été identifiées pour la réalisation de la boîte optique blue-detuned destinée au piégeage dipolaire du Rubidium-87, dont deux répondent aux conditions de puissance admissibles $P^{(min)}(\lambda)$ et $P^{(max)}(\lambda)$.
 
 \begin{itemize}[label = $\bullet$]
     \item \textbf{DFB} à $\lambda = 772.5~\text{nm}$, puissance $P = 75~\text{mW}$.
@@ -1158,9 +1228,9 @@ Trois sources laser ont été sélectionnées pour la réalisation de la boîte 
 
 \medskip
 
-Le laser DFB (Distributed Feedback) intègre un réseau de Bragg directement dans la région active, ce qui permet un couplage efficace entre la rétroaction optique et le gain, assurant une émission monomode stable tant sur le plan spectral que spatial. Cette architecture confère au DFB une excellente stabilité et une robustesse appréciées en physique atomique.
+Le laser \gls*{DFB} (Distributed Feedback) intègre un réseau de Bragg directement dans la région active, ce qui permet un couplage efficace entre la rétroaction optique et le gain, assurant une émission monomode stable tant sur le plan spectral que spatial. Cette architecture confère au DFB une excellente stabilité et une robustesse appréciées en physique atomique.
 
-Le laser DBR (Distributed Bragg Reflector), quant à lui, dispose d’un réseau de Bragg séparé de la région active. Cette configuration offre une plus grande flexibilité dans le réglage de la longueur d’onde, mais entraîne généralement une stabilité spectrale un peu moindre par rapport aux lasers DFB.
+Le laser \gls*{DBR} (Distributed Bragg Reflector), quant à lui, dispose d’un réseau de Bragg séparé de la région active. Cette configuration offre une plus grande flexibilité dans le réglage de la longueur d’onde, mais entraîne généralement une stabilité spectrale un peu moindre par rapport aux lasers DFB.
 
 \medskip
 
@@ -1181,8 +1251,7 @@ Avec un waist de $w_0 = 1~\mu\text{m}$, les puissances minimales requises pour s
 On souhaite choisir une source laser adaptée à différents projets. 
 Notamment, on peut n’utiliser qu’un seul faisceau focalisé sur les atomes, et avec un acousto-optique dessiner un potentiel sur le plan focal des atomes. 
 L’avantage par rapport à la double barrière expliquée plus haut est qu’ici un seul faisceau suffit. 
-Il faut cependant que l’acousto-optique dessine plus rapidement que le temps de relaxation des atomes. 
-Ce projet est mené par Florence Nogrette. 
+Il faut cependant que le modulateur acousto-optique \gls{AOM} puisse modifier l’intensité et la position du faisceau plus rapidement que le temps de réaction du mouvement du centre de masse des atomes. Ce projet est mené par Florence Nogrette.
 
 \medskip
 
@@ -1219,13 +1288,13 @@ Afin d’assurer un potentiel dipolaire plus propre, avec le moins de diffusion 
 
 \medskip
 
-Ce constat a motivé l’ajout d’un amplificateur optique (TA — \emph{Tapered Amplifier}) en sortie du laser à $770.5~\text{nm}$, afin de compenser la puissance limitée et de garantir des conditions de piégeage satisfaisantes malgré les pertes optiques du système.
+Ce constat a motivé l’ajout d’un amplificateur optique (\gls{TA} — \emph{Tapered Amplifier}) en sortie du laser à $770.5~\text{nm}$, afin de compenser la puissance limitée et de garantir des conditions de piégeage satisfaisantes malgré les pertes optiques du système.
 
 
 
-\begin{center}
-\textit{[Photos laser à $770.5~\text{nm}$ ]}
-\end{center}
+%\begin{center}
+%\textit{[Photos laser à $770.5~\text{nm}$ ]}
+%\end{center}
 
 
 \subsection{Amplification par Tapered Amplifier (TA)}
@@ -1245,9 +1314,14 @@ Ce constat a motivé l’ajout d’un amplificateur optique (TA — \emph{Tapere
 
 \subsubsection*{Principe et motivation}
 
-Afin de compenser le déficit de puissance du laser DBR à $770.5~\text{nm}$ — notamment dans le scénario initialement envisagé avec un waist focalisé important — un amplificateur optique de type \textit{Tapered Amplifier} (TA) a été ajouté en aval de la source laser.
+Afin de compenser le déficit de puissance du laser \gls{DBR} à $770.5~\text{nm}$ — notamment dans le scénario initialement envisagé avec un waist focalisé important — un amplificateur optique de type \gls{TA} a été ajouté en aval de la source laser.
 
-Un TA est un semi-conducteur optique amplificateur non résonant, composé d'une région d'entrée étroite (guidée) et d'une région de sortie évasée (tapered), permettant d'amplifier efficacement un faisceau monomode tout en conservant un profil spatial de bonne qualité. Contrairement aux lasers, le TA n'oscille pas par lui-même : il agit uniquement sur un signal incident (seed). Il peut amplifier des puissances faibles (quelques mW) en entrée jusqu’à plusieurs centaines de mW, voire au-delà, en sortie.
+\medskip
+
+%Un \gls{TA} est un semi-conducteur optique amplificateur non résonant, composé d'une région d'entrée étroite (guidée) et d'une région de sortie évasée (tapered), permettant d'amplifier efficacement un faisceau monomode tout en conservant un profil spatial de bonne qualité. Contrairement aux lasers, le \gls*{TA} n'oscille pas par lui-même : il agit uniquement sur un signal incident (seed). Il peut amplifier des puissances faibles (quelques mW) en entrée jusqu’à plusieurs centaines de mW, voire au-delà, en sortie.
+
+Un \gls{TA} est un semi-conducteur optique amplificateur non résonant, composé d'une région d'entrée étroite (guidée) et d'une région de sortie évasée (tapered), permettant d'amplifier efficacement un faisceau monomode tout en conservant un profil spatial de bonne qualité. Contrairement aux lasers, le \gls*{TA} n'oscille pas par lui-même : il agit uniquement sur une source laser fournie en entrée. Il peut amplifier des puissances faibles, de l'ordre de 20~mW, jusqu’à plusieurs centaines de mW, voire au-delà, en sortie.
+
 
 Ce dispositif est particulièrement adapté aux expériences de piégeage optique, où une puissance laser relativement élevée est nécessaire tout en maintenant une bonne qualité spatiale.
 
@@ -1255,12 +1329,18 @@ Ce dispositif est particulièrement adapté aux expériences de piégeage optiqu
 
 L'utilisation d’un TA s’accompagne de plusieurs contraintes expérimentales importantes :
 
+%\begin{itemize}[label=$\bullet$]
+%    \item \textbf{Sensibilité aux rétro-réflexions :} la puce du TA ne supporte pas les retours optiques parasites, qui peuvent entraîner des instabilités, des dégradations de performance, voire endommager le composant. Un \textbf{isolateur optique} est donc placé en sortie pour bloquer tout retour de lumière vers le \gls{TA}.
+%    
+%    \item \textbf{Sensibilité à l’alignement :} une injection efficace du faisceau dans la zone guidée d’entrée du \gls{TA} requiert un alignement très précis. Celui-ci est réalisé à l’aide de deux miroirs montés sur des supports à réglage fin, offrant 4 degrés de liberté (translations X–Y, inclinaisons $\theta_x$, $\theta_y$).
+%    
+%    \item \textbf{Émission multi-modes en sortie :} malgré une injection monomode, la sortie du TA présente parfois plusieurs lobes d’intensité dus à la géométrie évasée. Un trou de filtrage ou une \textbf{trou de filtrage} de $50~\mu$m (à ajuster selon le profil observé) est donc utilisé pour filtrer spatialement le mode fondamental TEM$_{00}$.
+%\end{itemize}
+
 \begin{itemize}[label=$\bullet$]
-    \item \textbf{Sensibilité aux rétro-réflexions :} la puce du TA ne supporte pas les retours optiques parasites, qui peuvent entraîner des instabilités, des dégradations de performance, voire endommager le composant. Un \textbf{isolateur optique} est donc placé en sortie pour bloquer tout retour de lumière vers le TA.
+    \item \textbf{Sensibilité aux rétro-réflexions :} la puce du \gls{TA} ne supporte pas les retours optiques parasites, qui peuvent entraîner des instabilités, des dégradations de performance, voire endommager le composant. Un \textbf{isolateur optique} est donc placé en sortie pour bloquer tout retour de lumière vers le \gls{TA}.
     
-    \item \textbf{Sensibilité à l’alignement :} une injection efficace du faisceau dans la zone guidée d’entrée du TA requiert un alignement très précis. Celui-ci est réalisé à l’aide de deux miroirs montés sur des supports à réglage fin, offrant 4 degrés de liberté (translations X–Y, inclinaisons $\theta_x$, $\theta_y$).
-    
-    \item \textbf{Émission multi-modes en sortie :} malgré une injection monomode, la sortie du TA présente parfois plusieurs lobes d’intensité dus à la géométrie évasée. Un diaphragme ou une \textbf{pinhole} de $50~\mu$m (à ajuster selon le profil observé) est donc utilisé pour filtrer spatialement le mode fondamental TEM$_{00}$.
+    \item \textbf{Mode spatial en sortie :} la sortie du \gls{TA} reste monomode, mais le profil spatial est fortement déformé et s’éloigne d’un mode TEM$_{00}$ parfait. Un trou de filtrage ou une \textbf{trou de filtrage} de $50~\mu$m (à ajuster selon le profil observé) peut être utilisé pour filtrer et améliorer la qualité spatiale du faisceau.
 \end{itemize}
 
 \subsubsection*{Mise en œuvre expérimentale}
@@ -1268,42 +1348,64 @@ L'utilisation d’un TA s’accompagne de plusieurs contraintes expérimentales 
 Le schéma global de l’amplification est présenté sur la figure~\ref{fig:TA_setup} .
 
 \begin{itemize}[label=$\triangleright$]
-    \item \textbf{Laser seed :} le laser DBR à $770.5~\text{nm}$ est stabilisé en température et en courant à l’aide du contrôleur Thorlabs ITC-510, et injecté dans le TA à l’aide d’une optique de couplage sur table optique.
+    \item \textbf{Laser utilisé pour injecter le TA :} le laser DBR à $770.5~\text{nm}$ est stabilisé en température et en courant à l’aide du contrôleur Thorlabs ITC-510, et injecté dans le \gls*{TA} à l’aide d’une optique de couplage sur table optique.
     
     \item \textbf{Boîtier de protection et régulation thermique :} le TA est installé dans un boîtier métallique maison, conçu pour assurer à la fois une protection mécanique et une stabilité thermique. Ce boîtier intègre un module Peltier et une thermistance pour la régulation active de la température, pilotés par un contrôleur thermique (Arrow OEM). L’ensemble est alimenté par une alimentation dédiée (Delta Electronics), garantissant un fonctionnement stable du système de refroidissement. Cette stabilisation thermique est cruciale pour limiter les dérives du TA et préserver la qualité spatiale du faisceau amplifié.
 
-    \item \textbf{Filtrage spatial :} un diaphragme (pinhole) placé dans le plan de Fourier d’un système en configuration télescopique, positionné en sortie de l’amplificateur TA, permet de sélectionner efficacement le mode spatial fondamental.
+    \item \textbf{Filtrage spatial :} un trou de filtrage (trou de filtrage) placé dans le plan de Fourier d’un système en configuration télescopique, positionné en sortie de l’amplificateur \gls{TA}, permet de sélectionner efficacement le mode spatial fondamental.
 
-    \item \textbf{Isolateur optique :} un isolateur optique est placé immédiatement après le TA pour éviter tout retour de lumière vers la puce.
+    \item \textbf{Isolateur optique :} un isolateur optique est placé immédiatement après le \gls*{TA} pour éviter tout retour de lumière vers la puce.
 
-    \item \textbf{Modulation de puissance :} un modulateur acousto-optique (AOM) est inséré juste avant la fibre optique, permettant de couper la lumière à la demande (switch rapide) ou de moduler dynamiquement l’intensité laser. Cela permet un contrôle fin de l’illumination au niveau des atomes.
+    \item \textbf{Modulation de puissance :} un modulateur acousto-optique \gls{AOM} est inséré juste avant la fibre optique, permettant de couper la lumière à la demande (switch rapide) ou de moduler dynamiquement l’intensité laser. Cela permet un contrôle fin de l’illumination au niveau des atomes.
     
-    \item \textbf{Mesure de puissance :} une photodiode ou un power meter placé après l’AOM permet de calibrer précisément la puissance en fonction du courant injecté dans le TA, et de corriger les effets d’instabilité si besoin.
+    \item \textbf{Mesure de puissance :} une photodiode ou un puissance-mètre placé après l’AOM permet de mesurer précisément la puissance en fonction du courant injecté dans le \gls{TA}, et de corriger les effets d’instabilité si nécessaire.
+
 \end{itemize}
 
 \subsubsection*{Caractérisation et performance}
 
-La diode laser et le Tapered Amplifier (TA) sont asservis à une température stable de $25^\circ$C. Une courbe de puissance de sortie du TA en fonction du courant injecté a été mesurée (voir figure~\ref{fig:Puissance_TA}), avec la diode laser fonctionnant à $25^\circ$C et délivrant une puissance maximale d’environ $31.2\,\text{mW}$, tandis que le TA est testé jusqu’à un courant d’injection de $2.5\,\text{A}$.
+La diode laser et le \gls{TA} sont asservis à une température stable afin d’éviter toute fluctuation susceptible d’affecter leur fonctionnement. Une courbe de puissance de sortie du \gls{TA} en fonction du courant injecté a été mesurée (voir figure~\ref{fig:Puissance_TA}), avec la diode laser fournissant une puissance maximale d’environ $31.2\,\text{mW}$ et le TA testé jusqu’à un courant d’injection de $2.5\,\text{A}$.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\linewidth]{figures/07_Dipolaire/Puissance_TA.png}
-    \caption{Puissance de sortie du Tapered Amplifier (TA) en fonction du courant d’injection, pour une puissance d’entrée provenant de la diode laser fixée à 25 mW.}
+    \caption{Puissance de sortie du \gls*{TA} en fonction du courant d’injection, pour une puissance d’entrée provenant de la diode laser fixée à 25 mW.}
     \label{fig:Puissance_TA}
 \end{figure}
 
 Afin d’éviter une dégradation prématurée des composants, il a été choisi de ne pas les faire fonctionner à leurs limites maximales. La diode laser est ainsi réglée pour fournir une puissance d’environ $25\,\text{mW}$ (courant $I_{\text{diode}} = 150.6\,\text{mA}$) et le TA est exploité avec un courant d’environ $1.5\,\text{A}$. Cette configuration assure un bon compromis entre puissance de sortie et longévité des dispositifs, tout en garantissant une amplification stable et un profil spatial préservé.
 
-Pour un courant d’injection de $1.5\,\text{A}$ dans le TA, la puissance mesurée en sortie, après passage dans le modulateur acousto-optique (AOM), atteint environ $62\,\text{mW}$. 
 
-L’AOM génère plusieurs ordres de diffraction : le mode zéro (non diffracté), les modes $\pm 1$, etc. Afin d’optimiser le transfert d’énergie dans un mode diffracté souhaité (par exemple le premier ordre $\pm 1$), le cristal AOM a été ajusté finement en rotation. Ce réglage permet de maximiser la puissance dans ce mode non nul.
+\medskip
+
+Pour un courant d’injection de $1.5\,\text{A}$ dans le TA, la puissance mesurée en sortie, après passage dans le modulateur acousto-optique \gls{AOM}, atteint environ $62\,\text{mW}$. 
+
+\medskip
+
+L’\gls*{AOM} génère plusieurs ordres de diffraction : le mode zéro (non diffracté), les modes $\pm 1$, etc. Afin d’optimiser le transfert d’énergie dans un mode diffracté souhaité (par exemple le premier ordre $\pm 1$), le cristal AOM a été ajusté finement en rotation. Ce réglage permet de maximiser la puissance dans ce mode non nul.
+
+\medskip
 
 Le faisceau correspondant à ce mode diffracté, qui concentre la majorité de la puissance utile, est ensuite injecté dans une fibre monomode à maintien de polarisation. 
 
-Ainsi, l’AOM est configuré de manière à transférer efficacement la puissance vers le mode diffracté utile, avec une puissance d’environ $62\,\text{mW}$ disponible à l'entée de la fibre, garantissant une qualité spatiale et une polarisation stables pour l’expérience.
+\medskip
 
+Ainsi, l’\gls*{AOM} est configuré de manière à transférer efficacement la puissance vers le mode diffracté utile, avec une puissance d’environ $62\,\text{mW}$ disponible à l'entée de la fibre, garantissant une qualité spatiale et une polarisation stables pour l’expérience.
+
+\medskip
 
 Le système ainsi mis en place permet d’obtenir, de manière stable, une puissance suffisante en sortie pour alimenter la fibre de piégeage, même en tenant compte des pertes optiques du système.
+
+
+\section*{Résumé du chapitre}
+
+Dans ce chapitre, nous avons présenté les dispositifs expérimentaux permettant de réaliser et de contrôler des gaz atomiques confinés en une dimension. Le potentiel dipolaire offert par la puce atomique permet déjà de créer des profils de densité variés, jusqu'à un potentiel quartique en ordre 4. 
+L’introduction du \gls{DMD} offre une flexibilité supplémentaire : il permet de sélectionner des régions du nuage atomique et de générer des découpes locales, ouvrant ainsi la voie à des préparations plus complexes.
+
+\medskip
+
+En combinant le potentiel de la puce et le \gls*{DMD}, il est possible de préparer des nuages atomiques homogènes sur des zones plus étendues que celles limitées par le potentiel quartique de la puce seule. Cependant, pour générer des potentiels encore plus exotiques et modulables, l’utilisation d’un \gls{TA} est nécessaire. Après optimisation, nous avons injecté environ 62~mW dans la fibre conduisant vers le DMD. Cette configuration est satisfaisante pour le projet en cours, mais elle révèle certaines limitations du \gls{TA} utilisé : le profil spatial du faisceau s’écarte significativement d’un mode TEM$_{00}$, ce qui explique la faible puissance réellement injectée. Pour atteindre des performances supérieures et exploiter pleinement la flexibilité du DMD, il serait nécessaire de remplacer le \gls{TA} actuel par un modèle offrant un profil spatial plus adapté.
+
 
 
 

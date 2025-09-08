@@ -17,7 +17,7 @@ mkdir -p "$OUTDIR"
 
 #latexmk -pdf -output-directory="$OUTDIR" "$TEXFILE.tex"
 
-latexmk -pdf -output-directory="$OUTDIR" "$TEXFILE.tex" > /dev/null 2>&1
+#latexmk -pdf -output-directory="$OUTDIR" "$TEXFILE.tex" > /dev/null 2>&1
 
 if [ $? -eq 0 ]; then
     echo "✅ Compilation réussie. PDF généré dans $OUTDIR/$TEXFILE.pdf"
