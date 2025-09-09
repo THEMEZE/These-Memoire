@@ -103,6 +103,7 @@ def compile_acr(idx_path):
         return
     cwd = idx_path.parent
     filename = idx_path.name
+    filename = idx_path
     try:
         subprocess.run(
             ["makeglossaries", filename],
@@ -111,9 +112,37 @@ def compile_acr(idx_path):
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL
         )
-        print(f"✅ Index généré : {filename}")
+        print(f"✅ Acr généré : {filename}")
     except subprocess.CalledProcessError:
-        print(f"❌ Erreur makeindex : {filename}")
+        print(f"❌ Erreur Acr : {filename}")
+        
+def compile_acr(tex_path):
+    """
+    Compile les acronymes/glossaires d'un fichier .tex donné.
+    """
+    tex_path = Path(tex_path)
+    #if not tex_path.exists():
+    #    print(f"⚠️ Fichier introuvable : {tex_path.name}, acronymes ignorés.")
+     #   return
+
+    cwd = tex_path.parent
+    stem = tex_path.stem  # nom du fichier sans extension
+    #p = Path("./main.tex")
+    #print(p.exists())  # doit retourner True
+    #print(p.stem)      # doit retourner "main"
+
+    try:
+        subprocess.run(
+            ["makeglossaries", stem],
+            cwd=cwd,
+            check=True,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL
+        )
+        print(f"✅ Acronymes/glossaires générés pour : {stem}")
+    except subprocess.CalledProcessError:
+        print(f"❌ Erreur lors de la génération des acronymes : {stem}")
+
 
 
 def compile_bibtex(tex_stem):
@@ -167,9 +196,10 @@ def compile_biblatex(tex_file, show_output=False):
 
 def compile_latex_index_bibtex(path):
     compile_latex(path + ".tex")      # 1ère passe LaTeX
-    compile_index(path + ".idx")      # makeindex
+    #compile_index(path + ".idx")      # makeindex
     #compile_indices(path + ".acn")
     compile_acr(path)
+    #compile_acr("main")
     #compile_bibtex(path)              # bibtex
     compile_biblatex(path)              # biblatex
     compile_latex(path + ".tex")      # 2e passe LaTeX
@@ -210,7 +240,7 @@ tex_files = [
     #"/Users/themezeguillaume/Desktop/interface_web_launcher/sites/Scroll_Web/quantum-mechanics-thesis-main/These_Memoire_19_07_2025/BiPart/Figures/Shemas_2.tex",
     #"../These_Memoire_19_07_2025/Figures/Figures.tex",
     #"./figures/01_LL_BA/Figures.tex",
-    "./figures/02_GGE_TBA/Figures.tex",
+    #"./figures/02_GGE_TBA/Figures.tex",
     #"./figures/03_GHD/Figures.tex",
     #"./figures/04_GGE_Fluctuation/Figures.tex",
     #"./figures/05_Disp_Exp/Figures.tex",
@@ -219,7 +249,7 @@ tex_files = [
     #"./figures/06_Bipart/Shema.tex",
     #"./figures/06_Bipart/Shemas_2.tex",
     #"./figures/07_Dipolaire/Figures.tex",
-    "./official_template_phd_universite-paris_saclay_2/Modele_These_UParisSaclay_2022.tex",
+    #"./official_template_phd_universite-paris_saclay_2/Modele_These_UParisSaclay_2022.tex",
     # Ajoute ici les .tex à compiler seuls
 ]
 
