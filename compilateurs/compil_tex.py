@@ -170,7 +170,7 @@ def compile_latex_index_bibtex(path):
     compile_index(path + ".idx")      # makeindex
     #compile_indices(path + ".acn")
     compile_acr(path)
-    compile_bibtex(path)              # bibtex
+    #compile_bibtex(path)              # bibtex
     compile_biblatex(path)              # biblatex
     compile_latex(path + ".tex")      # 2e passe LaTeX
     compile_latex(path + ".tex")      # 3e passe LaTeX (pour les refs/bib à jour)
@@ -219,6 +219,7 @@ tex_files = [
     #"./figures/06_Bipart/Shema.tex",
     #"./figures/06_Bipart/Shemas_2.tex",
     #"./figures/07_Dipolaire/Figures.tex",
+    "./official_template_phd_universite-paris_saclay_2/Modele_These_UParisSaclay_2022.tex",
     # Ajoute ici les .tex à compiler seuls
 ]
 
