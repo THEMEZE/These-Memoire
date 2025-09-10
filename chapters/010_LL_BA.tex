@@ -24,11 +24,11 @@
 
 \section*{Introduction}
 
-Ce chapitre est consacré à la présentation progressive du modèle de \gls{LL} et de l’Ansatz de Bethe (en anglais \gls{BA}), outils centraux pour la description d’un gaz de bosons unidimensionnel en interaction via un potentiel de type delta. L’objectif est d’accompagner rigoureusement le lecteur depuis la formulation quantique du système jusqu’aux solutions exactes obtenues par l’approche de Bethe.
+Ce chapitre est consacré à la présentation progressive du modèle de \acrfull{LL} et de l’Ansatz de Bethe (en anglais \gls{BA}), outils centraux pour la description d’un gaz de bosons unidimensionnel en interaction via un potentiel de type delta. L’objectif est d’accompagner rigoureusement le lecteur depuis la formulation quantique du système jusqu’aux solutions exactes obtenues par l’approche de Bethe.
 
 \medskip
 
-Nous commençons, pour des raisons pédagogiques, par le cas le plus simple : une particule libre, sans interaction, dans un espace unidimensionnel avec conditions aux bords périodiques. Cette première étape permet d’introduire naturellement les fonctions d’onde à une particule, leur évolution sous l’action du Hamiltonien libre, ainsi que la quantification résultant des conditions de périodicité — autrement dit, la version élémentaire des équations de Bethe.
+Nous commençons, pour des raisons pédagogiques, par le cas le plus simple : une particule libre, sans interaction, dans un espace unidimensionnel avec des conditions aux bords périodiques. Cette première étape permet d’introduire naturellement les fonctions d’onde à une particule, leur évolution sous l’action du Hamiltonien libre, ainsi que la quantification résultant des conditions de périodicité — autrement dit, la version élémentaire des équations de Bethe.
 
 \medskip
 
@@ -36,7 +36,7 @@ Nous passons ensuite à la formulation du problème en champ quantique, en expri
 
 \medskip
 
-Une fois ce cadre posé, nous généralisons le raisonnement au cas de \(N\) particules pour introduire le modèle complet de Lieb-Liniger. Nous présentons alors l’Ansatz de Bethe dans sa forme générale, qui fournit les états propres de l’Hamiltonien. Ce formalisme permet d’accéder explicitement au spectre du système, ainsi qu’à diverses quantités physiques telles que l’impulsion totale et le nombre de particules.
+Une fois ce cadre posé, nous généralisons le raisonnement au cas de \(N\) particules pour introduire le modèle complet de \acrlong{LL}. Nous présentons alors l’Ansatz de Bethe dans sa forme générale, qui fournit les états propres de l’Hamiltonien. Ce formalisme permet d’accéder explicitement au spectre du système, ainsi qu’à diverses quantités physiques telles que l’impulsion totale et le nombre de particules.
 
 \medskip
 
@@ -151,7 +151,7 @@ Il y a deux base de vecteur propre particulier :
 		\varphi_\pm  & = & \displaystyle \frac{1}{\sqrt{L}} e^{\pm ikx} 
 	\end{eqnarray}
 	Ces derniers de plus d'être états propres de l’opérateur énergie $\operator{\mathcal{H}}$, sont des états propres de l’opérateur impulsion $\operator{p}$, avec valeurs propres opposées $\pm \hbar k$.
-	\item {\bf Base symétrique / antisymétrique :} En appliquant la matrice de passage unitaire  $\frac{1}{\sqrt{2}}\left (\begin{matrix}1 & 1 \\ -i & + i\end{matrix}\right)$ à la base $\{ \varphi_+ , \varphi_- \}$ , on passer dans las base    
+	\item {\bf Base symétrique / antisymétrique :} En appliquant la matrice de passage unitaire  $\frac{1}{\sqrt{2}}\left (\begin{matrix}1 & 1 \\ -i & + i\end{matrix}\right)$ à la base $\{ \varphi_+ , \varphi_- \}$ , on passer dans la base    
 %	\begin{eqnarray}
 %		\left \{ \begin{array}{rcllll} \varphi_k  &= & \displaystyle\frac{1}{\sqrt{2L}}(e^{+ikx} + e^{-ikx})  & = & \displaystyle \sqrt{\frac{2}{L}} \cos (kx)  & \mbox{type Neumann  : $\varphi_k'(0) = \varphi_k'(L) = 0 $ } \\ \varphi_{\overline{k}}  & = & \displaystyle\frac{1}{\sqrt{2L}i}(e^{+ikx} - e^{-ikx}) & = & \displaystyle \sqrt{\frac{2}{L}} \sin (kx)  & \mbox{type Dirichlet : $\varphi_{\overline{k}}(0) = \varphi_{\overline{k}}(L) = 0 $}\end{array} \right.
 %	\end{eqnarray}
@@ -684,7 +684,7 @@ Ainsi, l’appellation « équation de Schrödinger non linéaire » n’est per
 La conservation des opérateurs nombre total de particules $\operator{Q}$ et quantité totale de mouvement $\operator{P}$ dépend uniquement des \textbf{symétries} de l’interaction, et non de sa force :  
 
 \begin{itemize}[label = $\bullet$]
-    \item Une interaction \textbf{locale et à deux corps} de type $g \, \operator{\Psi}^\dagger \operator{\Psi}^\dagger \operator{\Psi} \operator{\Psi}$ (cas du modèle de Lieb--Liniger) est invariante par $U(1)$ et par translation. Ainsi, $\operator{Q}$ et $\operator{P}$ sont conservés.  
+    \item Une interaction \textbf{locale et à deux corps} de type $g \, \operator{\Psi}^\dagger \operator{\Psi}^\dagger \operator{\Psi} \operator{\Psi}$ (cas du modèle de \gls{LL}) est invariante par $U(1)$ et par translation. Ainsi, $\operator{Q}$ et $\operator{P}$ sont conservés.  
 
     \item Une interaction \textbf{à longue portée mais translationalement invariante} (par exemple un potentiel dipolaire uniforme, ou un potentiel $V(x-y)$ dépendant seulement de la distance relative) conserve encore $\operator{P}$, et si elle respecte la symétrie $U(1)$, alors $\operator{Q}$ reste aussi conservé.  
 
@@ -734,7 +734,7 @@ Les états propres $\ket{\{\theta_a\}}$, construits dans le cadre de la seconde 
 
 \paragraph*{Conclusion.}
 
-La première quantification constitue la base indispensable pour comprendre le comportement quantique d’un nombre fixé de particules. La seconde quantification en est une extension naturelle, nécessaire pour décrire des systèmes plus complexes où le nombre de particules peut varier. Elle repose sur la quantification des champs et l’introduction d’opérateurs de création et d’annihilation, ouvrant ainsi la voie à la physique quantique des champs et à de nombreuses applications modernes.
+La première quantification constitue la base indispensable pour comprendre le comportement quantique d’un nombre fixe de particules. La seconde quantification en est une extension naturelle, nécessaire pour décrire des systèmes plus complexes où le nombre de particules peut varier. Elle repose sur la quantification des champs et l’introduction d’opérateurs de création et d’annihilation, ouvrant ainsi la voie à la physique quantique des champs et à de nombreuses applications modernes.
 
 \medskip
 
@@ -861,7 +861,7 @@ L’Hamiltonien du centre de masse, \(-\frac{1}{4} \partial_Z^2\), décrit une p
 \(
 \overline{\theta} = \frac{\theta_1 + \theta_2}{2},
 \)
-jouant ici un rôle analogue à celui d’un pseudo-moment associé dans le référentielle de laboratoire.
+jouant ici un rôle analogue à celui d’un pseudo-moment associé dans le référentiel de laboratoire.
 Le Hamiltonien relatif, \(\operator{\mathcal{H}}_{\text{rel}}\), correspond quant à lui à une particule de masse réduite \(\tilde{m} = \frac{1}{2}\) soumise à un potentiel delta centré en \(Y = 0\). Son équation propre s’écrit :
 \begin{eqnarray}\label{chap:1:hal.mod.2.part.5}
 	- \partial_Y^2 \, \tilde{\varphi}(Y) + g \, \delta(Y) \, \tilde{\varphi}(Y) = \tilde{\varepsilon} \, \tilde{\varphi}(Y),
@@ -870,13 +870,13 @@ où \(\tilde{\varepsilon}\) désigne l’énergie associée au mouvement relatif
 %%%%%%%%%%%%%%
 
 \paragraph{Forme symétrique de la fonction d'onde pour bosons.}
-Dans le référentiel du centre de masse. Le système est le même que que celuis d'un particules de masse $\tilde{m}= \frac{1}{2}$.
+Dans le référentiel du centre de masse. Le système est le même que celui d'une particule de masse $\tilde{m}= \frac{1}{2}$.
 Le système étant composé de particules bosoniques, on cherche une solution symétrique que l’on écrit sous la forme  :
 \begin{eqnarray}
 	\tilde{\varphi}(Y) ~=~a~e^{i\frac{1}{2} \tilde{\theta} \vert Y \vert } + b~e^{-i\frac{1}{2} \tilde{\theta}\vert Y \vert } ~\propto~  \sin\left( \frac{1}{2} (\tilde{\theta} |Y| + \Phi ) \right). \label{eq:ansatz.boson}
 \end{eqnarray}
 Le paramètre \( \tilde{\theta} = \theta_1 - \theta_2 \) joue ici un rôle analogue à celui d’un pseudo-moment associé à la coordonnée relative,
-est  la phase s'écrit
+et  la phase s'écrit
 \begin{eqnarray}
 	\Phi(\tilde{\theta}) &=& 2 \arctan\left (\frac{1}{i} \frac{a+b}{a-b}\right),	\label{chap:1:dif.mod.2.part.1} 
 \end{eqnarray}
@@ -1099,7 +1099,11 @@ On peut vérifier les identités utiles suivantes :
 \end{eqnarray*}
 ce qui est en accord avec les masses associées : masse totale \(\overline{m} = 2\), masse réduite \(\tilde{m} = \frac{1}{2}\).
 
-Cela nous motive à multiplier l’ansatz dans le référentiel du centre de masse (équation~\eqref{eq:ansatz.boson}) par un facteur de phase globale \(\exp(2iZ\overline{\theta})\) pour revenir à la représentation dans le laboratoire. On obtient alors l’expression de la fonction d’onde :
+\medskip
+
+
+%Cela nous motive à multiplier l’ansatz dans le référentiel du centre de masse (Eq~\eqref{eq:ansatz.boson}) par un facteur de phase globale \(\exp(2iZ\overline{\theta})\) pour revenir à la représentation dans le laboratoire. On obtient alors l’expression de la fonction d’onde :
+Pour revenir à la représentation observée dans le laboratoire, il est nécessaire de multiplier l’ansatz dans le référentiel du centre de masse (Eq.~\eqref{eq:ansatz.boson}) par un facteur de phase globale \(\exp(2iZ\overline{\theta})\). On obtient alors l’expression de la fonction d’onde :
 \begin{eqnarray}\label{eq:I-1-10}
 	\varphi_{\{\theta_1 , \theta_2\}}(z_1 , z_2) & \propto &  \left \{ \begin{array} { c cl} ( \theta_2 - \theta_1 - ig) e^{ i z_1 \theta_1 + iz_2 \theta_2 } - ( \theta_1 - \theta_2 - ig) e^{ i z_1 \theta_2 + iz_2 \theta_1} & \mbox{si} & z_1 < z_2 \\ (z_1 \leftrightarrow z_2) & \mbox{si} & z_1 > z_2 \end{array} \right.
 \end{eqnarray}
@@ -1125,7 +1129,7 @@ Le rapport de leurs amplitudes définit la {\bf phase de diffusion} $\Phi$ et  {
 
 Cette phase caractérise entièrement le processus de diffusion dans le modèle de \gls{LL} à deux particules.
 
-\paragraph{Conditions périodiques et équations de Bethe pour deux bosons {\color{red}(à révoir)}.}
+\paragraph{Conditions périodiques et équations de Bethe pour deux bosons.}
 
 Dans ce paragraphe, on écrit la fonction d’onde obtenue en \eqref{eq:I-1-10} sous la forme
 \begin{eqnarray}\label{eq:I-1-10-1}
@@ -1183,7 +1187,7 @@ En prenant le logarithme, elles se réécrivent sous la forme usuelle :
 \end{equation}
 où $I_{1},I_{2}\in\mathbb{Z} + \tfrac{1}{2}$ sont des nombres demi-entiers. 
 
-\subparagraph{Périodicité sur $z_{1}$.}  Le raisonnement symétrique conduit exactement aux mêmes égalités \eqref{eq:PC2} et \eqref{eq:Bethe2}.  Ces équations  constituent la quantification complète du gaz de Lieb–Liniger à deux bosons sur un cercle de longueur $L$ et seront le point de départ pour l’étude de l’état fondamental et des excitations.
+\subparagraph{Périodicité sur $z_{1}$.}  Le raisonnement symétrique conduit exactement aux mêmes égalités \eqref{eq:PC2} et \eqref{eq:Bethe2}.  Ces équations  constituent la quantification complète du gaz de \acrlong{LL} à deux bosons sur un cercle de longueur $L$ et seront le point de départ pour l’étude de l’état fondamental et des excitations.
 
 \medskip
 
@@ -1200,7 +1204,7 @@ En comparaison avec le cas d’une seule particule (où la condition aux bords p
 
 \subsubsection{Interprétation physique pour deux particules et rôle de la rapidité}
 
-Pour bien comprendre le sens physique des équations de Bethe~\eqref{eq:Bethe2}, nous avons commencer par le cas de deux particules. Dans ce cadre, les particules interagissent lorsqu'elles se croisent, et à chaque interaction elles acquièrent une {\bf phase de diffusion} $\Phi$. L’état propre du système est obtenu en imposant que l’onde multi-corps soit périodique sur un cercle de longueur $L$ : chaque particule effectue une rotation complète, accumule une phase cinématique $e^{i\theta L}$ liée à son mouvement libre, ainsi que des contributions de phase dues aux diffusions avec l’autre particule. Cela donne lieu à une quantification des {\bf pseudo-impulsions} $\theta$ via l’équation de Bethe.
+Pour bien comprendre le sens physique des équations de Bethe~\eqref{eq:Bethe2}, nous avons commencé par le cas de deux particules. Dans ce cadre, les particules interagissent lorsqu'elles se croisent, et à chaque interaction elles acquièrent une {\bf phase de diffusion} $\Phi$. L’état propre du système est obtenu en imposant que l’onde multi-corps soit périodique sur un cercle de longueur $L$ : chaque particule effectue une rotation complète, accumule une phase cinématique $e^{i\theta L}$ liée à son mouvement libre, ainsi que des contributions de phase dues aux diffusions avec l’autre particule. Cela donne lieu à une quantification des {\bf pseudo-impulsions} $\theta$ via l’équation de Bethe.
 
 \medskip
 
@@ -1210,6 +1214,8 @@ Pour décrire ces {\bf excitations} , ces {\bf quasi-particules}, on introduit l
 
 On peut interpréter chaque $\theta$ comme la {\bf vitesse d’une quasi-particule} : une entité collective qui se comporte comme une particule libre, mais qui tient compte des effets des interactions avec les autres. Contrairement à une particule élémentaire, une {\bf quasi-particule} est une excitation émergente du système à plusieurs corps : elle résume de façon efficace le comportement collectif d’une particule « habillée » par son environnement d’interactions. Cette notion est centrale en physique des systèmes quantiques à N corps, où les excitations ne sont plus des particules indépendantes, mais des objets collectifs.
 
+\medskip
+
 Ainsi, dans l’image de Bethe, les états propres sont des configurations stables de $N$ quasi-particules de rapidités $\theta_1,\dots,\theta_N$, dont les valeurs sont quantifiées par les conditions d’interférence imposées par les équations de Bethe.
 
 
@@ -1218,7 +1224,7 @@ Ainsi, dans l’image de Bethe, les états propres sont des configurations stabl
 
 \subsection{Fonction d’onde dans le secteur ordonné et représentation de Gaudin}
 
-Sans en donner ici la démonstration, donnons une forme généralisée de la fonction propre à $N$ particules [cf. équation \eqref{chap.1:eq.rapel.fonction.propre.N}], qui prolonge naturellement l’expression obtenue pour le cas à deux corps [cf. équation \eqref{eq:I-1-10}].
+Sans en faire ici la démonstration, donnons une forme généralisée de la fonction propre à $N$ particules [cf. équation \eqref{chap.1:eq.rapel.fonction.propre.N}], qui prolonge naturellement l’expression obtenue pour le cas à deux corps [cf. équation \eqref{eq:I-1-10}].
 Dans le domaine $z_1 < z_2 < \cdots < z_N$, la fonction d’onde pour un état de Bethe à $N$ particules s’écrit  \cite{Korepin_1997,Gaudin_2014,LL_1963_1,Franchini_2016,Wouters2015}) :
 \begin{eqnarray}
 	\varphi_{\{\theta_a\}} ( z_1 < \cdots < z_N ) & = &  \frac{1}{\sqrt{N!}}\langle \emptyset \vert \operator{\Psi} ( z_1 ) \cdots \operator{\Psi} (z_N ) \vert \{ \theta_a \} \rangle \notag\\
@@ -1243,7 +1249,7 @@ Cette condition doit être satisfaite pour chaque particule. Or, déplacer la $j
 
 \subsubsection{Équations de Bethe exponentielles}
 
-En imposant les conditions de périodicité sur la fonction d’onde de type Bethe~\eqref{eq:I-2-17}, on généralise l'éqution\eqref{eq:PC2} pour $N$ particules. On obtient que chaque moment $\theta_a$ doit satisfaire l’équation :
+En imposant les conditions de périodicité sur la fonction d’onde de type Bethe~\eqref{eq:I-2-17}, on généralise l'équation\eqref{eq:PC2} pour $N$ particules. On obtient que chaque moment $\theta_a$ doit satisfaire l’équation :
 \begin{equation}
 	e^{i \theta_a L} \prod_{b \ne a} S(\theta_a - \theta_b) = (-1)^{N-1}, \quad a = 1, \dots, N,
 	\label{eq:bethe_exp}
@@ -1609,15 +1615,15 @@ ce qui n’est autre que la relation constitutive~\eqref{eq:TBA-rhos}.
 
 \section*{Conclusion du chapitre}
 
-Dans ce chapitre, nous avons introduit le modèle de \glsreset{LL}\gls{LL} , qui décrit un gaz de bosons unidimensionnel soumis à une interaction de contact. Dans ce cadre, les grandeurs conservées naturelles ne sont pas seulement le nombre total de particules $\operator{Q}$ et la quantité de mouvement totale $\operator{P}$, mais également l’énergie associée à l’Hamiltonien de \gls{LL}, $\operator{H}$, (plutôt qu’à la simple énergie cinétique $\operator{K}$). Ces charges conservées correspondent respectivement aux moments d’ordre $0$, $1$ et $2$ en rapidité. Comme nous le verrons au chapitre suivant, des charges d’ordre supérieur interviennent dans la description des états en équilibre, notamment via l’Ensemble de Gibbs Généralisé (\gls{GGE}).
+Dans ce chapitre, nous avons introduit le modèle de \acrfull{LL} , qui décrit un gaz de bosons unidimensionnel soumis à une interaction de contact. Dans ce cadre, les grandeurs conservées naturelles ne sont pas seulement le nombre total de particules $\operator{Q}$ et la quantité de mouvement totale $\operator{P}$, mais également l’énergie associée à l’Hamiltonien de \gls{LL}, $\operator{H}$, (plutôt qu’à la simple énergie cinétique $\operator{K}$). Ces charges conservées correspondent respectivement aux moments d’ordre $0$, $1$ et $2$ en rapidité. Comme nous le verrons au chapitre suivant, des charges d’ordre supérieur interviennent dans la description des états en équilibre, notamment via le \gls{GGE}.
 
 \medskip
 
-L’imposition de conditions aux bords périodiques conduit naturellement aux équations de \glsreset{BA}\gls{BA} \eqref{chap:1:eq:EBA}. Dans la limite thermodynamique, celles-ci se condensent en une équation intégrale reliant la densité d’états $\rho_s(\theta)$, la densité de particules occupées $\rho(\theta)$, la densité de trous $\rho_h(\theta)$, ainsi que la fonction d’occupation $\nu(\theta)$. Le \glsentrylong{BA} établit ainsi le lien fondamental entre ces différentes grandeurs et constitue la base de la description thermodynamique du modèle \eqref{eq:TBA-rhos-2}.
+L’imposition de conditions aux bords périodiques conduit naturellement aux équations de \acrfull{BA} \eqref{chap:1:eq:EBA}. Dans la limite thermodynamique, celles-ci se condensent en une équation intégrale reliant la densité d’états $\rho_s(\theta)$, la densité de particules occupées $\rho(\theta)$, la densité de trous $\rho_h(\theta)$, ainsi que la fonction d’occupation $\nu(\theta)$. Le \glsentrylong{BA} établit ainsi le lien fondamental entre ces différentes grandeurs et constitue la base de la description thermodynamique du modèle \eqref{eq:TBA-rhos-2}.
 
 \medskip
 
-Le chapitre suivant sera consacré à l’introduction du \gls{GGE} et à l’écriture explicite de le \gls{TBA}, qui fournit un cadre puissant pour décrire les propriétés thermodynamiques et hors équilibre des systèmes intégrables.
+Le chapitre suivant sera consacré à l’introduction du \gls{GGE} et à l’écriture explicite du formalisme de Bethe Ansatz thermodynamique  (\acrshort{TBA}), qui fournit un cadre puissant pour décrire les propriétés thermodynamiques et hors équilibre des systèmes intégrables.
 
 
 

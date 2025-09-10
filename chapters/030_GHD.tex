@@ -64,14 +64,28 @@ Dans l'\gls{LDA}, nous pouvons revoir les charges définis dans le chapitre pré
     rightmargin=2pt
 	]
 \paragraph{Charges globales conservées}  
-Les charges locales conservées ont été définies dans les équations~\eqref{chap.2.charge.f.1}.  
-Dans le même formalisme, on définit les \emph{charges globales conservées} comme des fonctionnelles linéaires agissant sur une fonction réelle et régulière $f(x,\theta)$ définie sur $\mathbb{R}^2$, selon
+%Les charges locales conservées ont été définies dans les équations~\eqref{chap.2.charge.f.1}.  
+%Dans le même formalisme, on définit les \emph{charges globales conservées} comme des fonctionnelles linéaires agissant sur une fonction réelle et régulière $f(x,\theta)$ définie sur $\mathbb{R}^2$, selon
+%\begin{equation}\label{chap:GHD:eq.charge.global.0}
+%	\operator{\mathcal{Q}}[f] 
+%	= \int_{\mathbb{R}^2} dx\, d\theta\, f(x, \theta)\, \operator{\rho}(x, \theta),
+%\end{equation}
+%où $\operator{\rho}(x,\theta)$ est l'opérateur distribution de rapidité.  
+%Cette quantité correspond à la charge totale associée à une observable prenant la valeur $f(x,\theta)$ pour chaque quasi-particule.
+
+Les charges locales conservées ont été définies dans les équations~\eqref{chap.2.charge.f.1}.  Dans le même formalisme, on définit les \emph{charges globales conservées} comme des fonctionnelles linéaires agissant sur une fonction réelle et régulière $f(x,\theta)$ définie sur $\mathbb{R}^2$, selon
 \begin{equation}\label{chap:GHD:eq.charge.global.0}
 	\operator{\mathcal{Q}}[f] 
 	= \int_{\mathbb{R}^2} dx\, d\theta\, f(x, \theta)\, \operator{\rho}(x, \theta),
 \end{equation}
 où $\operator{\rho}(x,\theta)$ est l'opérateur distribution de rapidité.  
-Cette quantité correspond à la charge totale associée à une observable prenant la valeur $f(x,\theta)$ pour chaque quasi-particule.
+Cette quantité correspond à la charge totale associée à une observable prenant la valeur $f(x,\theta)$ pour chaque quasi-particule.  
+
+\medskip
+
+\noindent\textbf{Remarque~:} pour que $\operator{\mathcal{Q}}[f]$ soit strictement conservée dans le temps, la fonction $f$ doit être indépendante de $x$, c’est-à-dire $f(x,\theta) = f(\theta)$. %Dans ce cas, l’opérateur associé agit sur un état à une particule comme $\hat{\mathcal{Q}}[f]\,|\theta\rangle = f(\theta)\,|\theta\rangle$. Pour un gaz de solitons (KdV, NLS, Boussinesq…), $\hat{\mathcal{Q}}[f]$ représente l’une des quantités conservées (masse, impulsion, énergie...) du modèle microscopique, et $f(\theta)$ correspond à la contribution d’une solution individuelle de paramètre $\theta$ à cette quantité.
+Si $f$ dépend de $x$, $\operator{\mathcal{Q}}[f]$ n’est pas nécessairement conservée au cours de l’évolution du système. En revanche, si $f$ dépend uniquement de $\theta$ , alors $\operator{\mathcal{Q}}[f]$ correspond à une véritable charge conservée. Dans le cadre de ce chapitre, la dépendance en $x$ est introduite pour faciliter certaines dérivations et l’étude des profils locaux, mais la conservation stricte n’est garantie que pour les fonctions $f(\theta)$ indépendantes de $x$.
+
 
 \medskip
 
@@ -125,9 +139,9 @@ Dans la suite, nous détaillons la construction de ces équations pour le modèl
 \section{Manipulation de l’opération d’\emph{habillage}}
 
 Un point technique central de la \gls{GHD} est la dérivation de la vitesse effective et de l’accélération effective qui apparaissent dans l’équation~\eqref{chap:GHD:eq.GHD.1}.  
-Ces quantités ont été calculées pour la première fois par Bertini \emph{et al.} (2016) et Castro-Alvaredo \emph{et al.} (2016).  
+Ces quantités ont été calculées pour la première fois par Bertini \emph{et al.} (2016) \cite{Bertini2016} et Castro-Alvaredo \emph{et al.} (2016) \cite{CastroAlvaredo2016}.  
 Cette observation clé a déclenché l’ensemble des développements ultérieurs de la dynamique hydrodynamique généralisée dans les systèmes quantiques intégrables.  
-Les travaux de Bertini \emph{et al.} s’appuient en partie sur ceux de Bonnes \emph{et al.} (2014), où la formule de la vitesse effective (voir Eq.~\eqref{chap:GHD:eq.nu.v.a.1}) était apparue pour la première fois dans le contexte d’un système intégrable quantique.
+Les travaux de Bertini \emph{et al.} s’appuient en partie sur ceux de Bonnes \emph{et al.} (2014) \cite{Bonnes2014}, où la formule de la vitesse effective (voir Eq.~\eqref{chap:GHD:eq.nu.v.a.1}) était apparue pour la première fois dans le contexte d’un système intégrable quantique.
 
 \medskip
 
@@ -188,7 +202,8 @@ Pendant un intervalle de temps infinitésimal \([t,\, t + \delta t]\), le traceu
 \[
 \delta t \times \left| v^{\mathrm{eff}}(\theta) - v^{\mathrm{eff}}(\theta_0) \right| \, \rho(\theta_0)
 \]
-collisions avec des quasi-particules de rapidité \(\theta_0\). Chaque interaction provoque un décalage spatial \(\Delta(\theta - \theta_0)\) vers l’arrière (Figs \ref{fig:collision_shift} et \ref{fig:trajectoires_hard_rods}). L’équation~\eqref{chap:GHD:veff.4} formalise précisément cet effet cumulatif, résultant de l’intégration des contributions de toutes les collisions binaires sur l’espace des rapidités.
+collisions avec des quasi-particules de rapidité \(\theta_0\). Chaque interaction provoque un décalage spatial \(\Delta(\theta - \theta_0)\) vers l’arrière (Figs \ref{fig:collision_shift} et \ref{fig:trajectoires_hard_rods}). L’équation~\eqref{chap:GHD:veff.4} formalise précisément cet effet cumulatif, résultant de l’intégration des contributions de toutes les collisions binaires sur l’espace des rapidités. La Fig.~\ref{fig:trajectoires_hard_rods} illustre les trajectoires d’un gaz de hard rods en 1D \cite{Percus1976,Boldrighini1983} , avec diamètre \(-\Delta\). Les trajectoires effectives sont calculées via la vitesse GHD, et le graphique a été généré en Python.
+
 
 \medskip
 
@@ -198,13 +213,17 @@ Cette analyse microscopique s’étend naturellement aux modèles à \(N\) corps
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.8\textwidth]{figures/03_GHD/trajectoires_hard_rods.png}
-    \caption{Trajectoires des particules d'un gaz de hard rods en 1D. Les lignes noires représentent les particules individuelles, la ligne rouge correspond à la trajectoire effective (vitesse GHD) de la particule suivie, et la ligne orange indique la trajectoire de la particule si elle conservait sa vitesse initiale (bare velocity).}
+    \caption{%Trajectoires des particules d'un gaz de hard rods en 1D. Les lignes noires représentent les particules individuelles, la ligne rouge correspond à la trajectoire effective (vitesse GHD) de la particule suivie, et la ligne orange indique la trajectoire de la particule si elle conservait sa vitesse initiale (bare velocity).
+    Trajectoires des particules d'un gaz de hard rods en 1D. Les lignes noires représentent les particules individuelles, la ligne rouge la trajectoire effective (vitesse GHD) de la particule suivie, et la ligne orange la trajectoire si la particule conservait sa vitesse initiale (bare velocity). Le graphique a été généré en Python.
+    }
     \label{fig:trajectoires_hard_rods}
 \end{figure}
 
 \subsection{Diagonalisation et invariants de Riemann dans la GHD spatiale étendue}
 
-Nous nous restreignons au modèle de \gls{LL}.
+%Nous nous restreignons au modèle de \gls{LL}.
+
+%\medskip
 
 En dérivant la définition de l'opération d’\emph{habillage} \eqref{eq:dressing}, on obtient la relation suivante :
 \begin{equation}\label{chap:GHD:d.dressing.0}
@@ -354,10 +373,14 @@ Cette application de \emph{dressing} satisfait la relation de symétrie~\cite{do
 	= \int_{\mathbb{R}^2} dx\, d\theta \; \nu \, f^{\mathrm{dr}}_{[\nu]} \, g.
 \end{equation}
 
-Pour appliquer la relation de symétrie~\eqref{chap:GHD:eq.sym.dr.1} au crochet~\eqref{chap:GHD:eq.chochet.bonnemain.2}, il est nécessaire de vérifier que les fonctions impliquées satisfont les conditions requises sur leurs types tensoriels.
-\footnote{
-La relation de symétrie~\eqref{chap:GHD:eq.sym.dr.1} est valable lorsque la somme des types tensoriels de $f$ et $g$ est $(1,1)$ dans le sens de~\cite{doyon2020lecture}. Dans ce formalisme, le type $(a,b)$ caractérise la transformation d'un objet vis-à-vis de $x$ (première entrée) et de $\theta$ (seconde entrée). Si $f$ est de type $(p,q)$ et $g$ de type $(r,s)$, alors leur somme est $(p+r,q+s)$. La condition $(1,1)$ garantit que l'intégrande $\nu\, f\, g^{\mathrm{dr}}$ est un scalaire invariant, rendant l'intégrale bien définie. Dans~\eqref{chap:GHD:eq.chochet.bonnemain.2}, $\partial_x f$ est de type $(1,0)$ et $\partial_\theta g$ de type $(0,1)$, ce qui satisfait cette condition et permet l'utilisation de~\eqref{chap:GHD:eq.sym.dr.1}.
-}
+%Pour appliquer la relation de symétrie~\eqref{chap:GHD:eq.sym.dr.1} au crochet~\eqref{chap:GHD:eq.chochet.bonnemain.2}, il est nécessaire de vérifier que les fonctions impliquées satisfont les conditions requises sur leurs types tensoriels.
+%\footnote{
+%La relation de symétrie~\eqref{chap:GHD:eq.sym.dr.1} est valable lorsque la somme des types tensoriels de $f$ et $g$ est $(1,1)$ dans le sens de~\cite{doyon2020lecture}. Dans ce formalisme, le type $(a,b)$ caractérise la transformation d'un objet vis-à-vis de $x$ (première entrée) et de $\theta$ (seconde entrée). Si $f$ est de type $(p,q)$ et $g$ de type $(r,s)$, alors leur somme est $(p+r,q+s)$. La condition $(1,1)$ garantit que l'intégrande $\nu\, f\, g^{\mathrm{dr}}$ est un scalaire invariant, rendant l'intégrale bien définie. Dans~\eqref{chap:GHD:eq.chochet.bonnemain.2}, $\partial_x f$ est de type $(1,0)$ et $\partial_\theta g$ de type $(0,1)$, ce qui satisfait cette condition et permet l'utilisation de~\eqref{chap:GHD:eq.sym.dr.1}.
+%}
+
+Pour appliquer la relation de symétrie~\eqref{chap:GHD:eq.sym.dr.1} au crochet~\eqref{chap:GHD:eq.chochet.bonnemain.2}, il suffit de considérer que les fonctions impliquées $f$ et $g$ sont des fonctions scalaires régulières sur $(x,\theta)$. Dans ce cas, la relation de symétrie reste pleinement valide et l’intégrale est bien définie.
+
+\footnote{La relation de symétrie~\eqref{chap:GHD:eq.sym.dr.1} est générale, et le formalisme des types tensoriels introduit dans~\cite{doyon2020lecture} sert à traiter des objets plus complexes (tenseurs dépendant de $x$ et $\theta$). Pour des fonctions scalaires comme ici, aucune condition supplémentaire n’est nécessaire.}
 
 En utilisant cette symétrie ainsi qu’une intégration par parties, le crochet~\eqref{chap:GHD:eq.chochet.bonnemain.2} se réécrit
 \begin{equation}\label{chap:GHD:eq.chochet.bonnemain.3}
@@ -496,10 +519,15 @@ et \eqref{chap:GHD:eq.nu.1} devient :
 
 
 
-\subsection{Cas sans interaction}
+%\subsection{Cas sans interaction}
+%
+%\paragraph{Hypothèse ``sans interactions'' : $^{\rm dr}=\mathrm{Id}$.}
+%Si l’opérateur d’habillage est l’identité (\emph{no dressing}), les crochet \eqref{chap:GHD:eq.chochet.bonnemain.1} et \eqref{chap:GHD:eq.chochet.bonnemain.4} se simplifient en :
 
-\paragraph{Hypothèse ``sans interactions'' : $^{\rm dr}=\mathrm{Id}$.}
-Si l’opérateur d’habillage est l’identité (\emph{no dressing}), les crochet \eqref{chap:GHD:eq.chochet.bonnemain.1} et \eqref{chap:GHD:eq.chochet.bonnemain.4} se simplifient en :
+\subsection{Cas ``no dressing''}
+
+\paragraph{Hypothèse ``opérateur d’habillage identité'' : $^{\rm dr}=\mathrm{Id}$.}  
+Si l’opérateur d’habillage correspond à l’identité (\emph{no dressing}), les crochets \eqref{chap:GHD:eq.chochet.bonnemain.1} et \eqref{chap:GHD:eq.chochet.bonnemain.4} se simplifient en :
 \begin{eqnarray}
 	\{F,G\} & = &  \iint dx\,d\theta\;\rho \,\left[\partial_x \!\left( \frac{\delta F}{\delta \rho (x , \theta)} \right)\, \partial_\theta \!\left( \frac{\delta G}{\delta \rho (x , \theta)} \right) - \partial_x \!\left( \frac{\delta G}{\delta \rho (x , \theta)} \right) \, \partial_\theta \!\left( \frac{\delta F}{\delta \rho(x , \theta) } \right) \right],\\
 	\{\mathcal{Q}[f], \mathcal{Q}[h]\} &=& - \int_{\mathbb{R}^2} dx\, d\theta \; f \left[ \partial_x \big( \rho \, v^{\mathrm{eff}} \big) 
@@ -563,15 +591,15 @@ En particulier, pour décrire la dynamique à l’échelle d’Euler, il devient
 
 
 
-\section{Limite Gross--Pitaevskii}
+\section{Régime de quasi-condensation et limite Gross--Pitaevskii}
 
 
-Dans cette section, nous considérons un système décrit par le modèle \gls*{LL} ,sans potentiel extérieur,  dans le régime (\gls{qBEC}), correspondant à la limite $\mathfrak{t} \to 0$ et $\gamma \to 0$.  Dans ces conditions, la dynamique du gaz peut être décrite par les équations hydrodynamiques issues de l’équation de \gls{GP}. L’objectif est de montrer que les équations de \gls{GHD} reproduisent, dans certaines situations, les équations hydrodynamiques dérivées de \gls*{GP}.
+Dans cette section, nous considérons un système décrit par le modèle \gls*{LL} ,sans potentiel extérieur,  dans le régime (\gls{qBEC}), correspondant à la limite $\mathfrak{t} \to 0$ et $\gamma \to 0$ (paramètres déninie en \eqref{chap2:eq:t.1} et \eqref{chap2:eq:gamma.1} ) .  Dans ces conditions, la dynamique du gaz peut être décrite par les équations hydrodynamiques issues de l’équation de \gls{GP}. L’objectif est de montrer que les équations de \gls{GHD} reproduisent, dans certaines situations, les équations hydrodynamiques dérivées de \gls*{GP}.
 
 
-\paragraph{Équations de Gross--Pitaevskii dépendantes du temps.}  
-Dans le régime \gls*{qBEC}, la dynamique d’un gaz décrit par le modèle \gls*{LL} à l’état fondamental peut être décrite par l’équation de \gls*{GP} dépendante du temps.
-
+\subsection{Évolution temporelle selon l’équation de Gross--Pitaevskii}
+ 
+Dans le régime \gls{qBEC}, la dynamique d’un gaz unidimensionnel décrit par le modèle \gls*{LL} à l’état fondamental peut être décrite par l’équation \gls*{GP} dépendante du temps.
 On a vu l'équation \gls*{GP} dépendante du temps dans \eqref{chap.1:eq.GP.2}, avec $\hbar = m = 1$. Pour généraliser et pour l'utiliser dans un autre chapitre, écrivons-la avec un potentiel externe :
 \begin{eqnarray}\label{chap.2:eq.GP.2}
 	i \partial_t \psi = \left( - \frac{1}{2} \partial_x^2 + V + g \vert \psi \vert^2 \right) \psi .
@@ -582,7 +610,7 @@ En utilisant la représentation de Madelung $\psi(x,t) = \sqrt{n(x,t)}\, e^{i\th
     \partial_t n + \partial_x \big( n u \big) &=& 0, \label{eq:continuite}\\
     \partial_t (n u) + \partial_x \left( n u^2 + \mathcal{P} + \tilde{\mathcal{P}}_Q \right) &=& - n \partial_x V , \label{eq:euler}
 \end{eqnarray}
-où la vitesse du fluide, la pression et un terme de \emph{pression quantique} sont définis par
+où la vitesse du fluide, la \emph{pression classique} et un terme de \emph{pression quantique} sont définis par
 \begin{equation}\label{eq:vitesse}
     u = \partial_x \theta, \quad 
     \mathcal{P} = \frac{1}{2} g n^2 , \quad 
@@ -599,17 +627,43 @@ où l'on nomme dans la littérature la \emph{pression quantique} :
 \end{eqnarray}
 
 \medskip
-Nous continuons avec \eqref{eq:continuite} et \eqref{eq:euler} sans potentiel externe $V$. 
+%Nous continuons avec \eqref{eq:continuite} et \eqref{eq:euler} sans potentiel externe $V$.
+Dans la suite nous nous intéressons à la dynamique en l'absence de potentiel exterieur $V$.
+  
+
+%\medskip
+%Dans la limite dite de \gls{TF} 1D, les fluctuations de densité sont faibles et le terme de \emph{pression quantique} peut être négligé \cite{PhysRevA.58.2385}. On retrouve alors la relation d’état 
+%\(
+%   \mu = g n
+%\)
+%liée à l’équilibre statique du système.
 
 \medskip
-Dans la limite dite de \gls{TF} 1D, les fluctuations de densité sont faibles et le terme de \emph{pression quantique} peut être négligé \cite{PhysRevA.58.2385}. On retrouve alors la relation d’état 
+Dans la limite dite de \gls{TF} 1D, les fluctuations de densité sont faibles et le terme de \emph{pression quantique} peut être négligé \cite{PhysRevA.58.2385}.  Le terme de pression se réduit alors à la pression classique 
 \(
-   \mu = g n
+    \mathcal{P} = \frac{1}{2} g n^2.
 \)
-liée à l’équilibre statique du système.
- 
+En utilisant la relation de Gibbs-Duhem 
+\(
+    \frac{d\mathcal{P}}{d\mu} = n,
+\)
+on obtient l’équation d’état classique du gaz \gls{qBEC} : 
+\begin{equation}
+    \mu = g n.
+\end{equation}
 
-\paragraph{Description par les équations GHD.}  
+Les équations de Madelung (\eqref{eq:continuite} \eqref{eq:euler}), se réduisent à  :
+\begin{eqnarray}
+    \partial_t n + \partial_x \big( n u \big) &=& 0, \label{eq:continuite3}\\
+    \partial_t (n u) + \partial_x \left( n u^2 + \mathcal{P} \right) &=& 0 \label{eq:euler3}.
+\end{eqnarray}
+
+\subsection{Description par les équations Hydrodynamique Généralisé} 
+ 
+Dans la suite nous allons montrer que les eq. \eqref{eq:continuite3} et \eqref{eq:euler3} peuvent être retrouvées à partir des équations \gls{GHD}.
+
+\medskip
+
 À $\mathfrak{t}=0$, le facteur d’occupation $\nu(x,\theta,0)$ ne peut prendre que deux valeurs :  il vaut $1$ si $\theta$ appartient à l’intervalle $[\theta_-(x,0),\, \theta_+(x,0)]$, et $0$ sinon.  Comme $\nu$ satisfait l’équation de transport \eqref{chap:GHD:eq.nu.1.1}, sa valeur est conservée le long des caractéristiques. \\ 
 
 Ainsi, la distribution prend la forme d’une \emph{mer de Fermi}, délimitée par deux bords $\theta_\pm(x,t)$ :  
@@ -627,44 +681,86 @@ L’évolution temporelle des bords est donnée par deux équations de type tran
     \partial_t \theta_-(x,t) + v^{\mathrm{eff}}(\theta_-) \, \partial_x \theta_-(x,t) &=& 0. \label{eq:theta-}
 \end{eqnarray}
 
-\subparagraph{Vitesse efficace aux bords de la mer de Fermi : Dans la limite $\gamma \to 0$}  
-, la distribution de rapidité est centré en 
+%\subparagraph{Vitesse efficace aux bords de la mer de Fermi.}  
+%La vitesse du fluide au point $x$ n'est rien d'autre que 
+%\begin{equation}
+%	u = \frac{\theta_- + \theta_+}2.
+%\end{equation}
+%Dans la limite $\gamma \to 0$, la distribution de rapidité est de la forme d'un demi-cercle \cite{LL_1963_1}\( \rho (\theta) = \sqrt{-(\theta - \theta_-)(\theta - \theta_+)} n /(2\pi c^2) \) avec la vitesse du son 
+%\begin{equation}
+%	c=\sqrt{gn},	
+%\end{equation}, la largeur de la mer de fermi ($\theta_+-\theta_-$ ) est reliée à la densité par la relation $n = \int d\theta \rho(\theta)$, donne  :
+%\begin{equation}
+%	1 =  \left ( \frac{\theta_+ - \theta_-}{4 c}  \right )^2. 	
+%\end{equation}
+
+\subsection{Connexion hydrodynamique : de la GHD à l’équation de Gross--Pitaevskii}
+
+\paragraph{Vitesse efficace aux bords de la mer de Fermi.}  
+La vitesse du fluide au point $x$ s'écrit simplement :
 \begin{equation}
-	u = \frac{\theta_- + \theta_+}2	,
+	u = \frac{\theta_- + \theta_+}{2}.
 \end{equation}
-et est de la forme d'un demi-cercle \( \rho (\theta) = \sqrt{-(\theta - \theta_-)(\theta - \theta_+)} n /(2\pi c^2) \) avec la vitesse du son 
+
+Dans la limite $\gamma \to 0$, la distribution de rapidité prend la forme d’un demi-cercle \cite{LL_1963_1} :
 \begin{equation}
-	c=\sqrt{gn},	
+	\rho(\theta) = \frac{n}{2 \pi c^2} \sqrt{-(\theta - \theta_-)(\theta - \theta_+)} ,
 \end{equation}
-et la densité linéaire $n = \int d\theta \rho(\theta)$, donne  :
+avec la vitesse du son
 \begin{equation}
-	1 =  \left ( \frac{\theta_+ - \theta_-}{4 c}  \right )^2. 	
+	c = \sqrt{g n}.
+\end{equation}
+
+La largeur de la mer de Fermi, $\theta_+ - \theta_-$, est reliée à la densité par 
+\begin{equation}
+	n = \int_{\theta_-}^{\theta_+} d\theta \, \rho(\theta),
+\end{equation}
+ce qui donne après intégration :
+\begin{equation}
+	\theta_+ - \theta_- = 4 c.
 \end{equation}
 
 
-Considérons le cas où le centre de masse est nul, $\theta_+ = -\theta_-$. De manière générale, les bords se propagent à la vitesse du son $\pm c $.  
-Or, pour $\gamma \to 0$ et $\mathfrak{t} \to 0$, les bords de Fermi se trouvent en $\theta_\pm = \pm 2c$~\cite{LL_1963_1}. On en déduit alors
+
+%Considérons le cas où le centre de masse est nul, $\theta_+ = -\theta_-$. De manière générale, les bords se propagent à la vitesse du son $\pm c $.  
+%Or, pour $\gamma \to 0$ et $\mathfrak{t} \to 0$, les bords de Fermi se trouvent en $\theta_\pm = \pm 2c$~\cite{LL_1963_1}. On en déduit alors
+%\begin{equation}
+%    v^{\mathrm{eff}}(\theta_\pm) = \tfrac{1}{2}\theta_\pm .
+%\end{equation}
+%
+%Si le centre de masse est non nul (i.e. $\theta_+ \neq -\theta_-$), la vitesse effective se décompose comme une translation de la vitesse du barycentre $u$, décalée de $\pm c$ avec $c = (\theta_+ - \theta_-)/4$.  
+%On obtient alors les relations explicites :
+%\begin{eqnarray}
+%    v^{\mathrm{eff}}(\theta_+) &=& \tfrac{3}{4}\theta_+ + \tfrac{1}{4}\theta_-, \label{eq:veff+}\\
+%    v^{\mathrm{eff}}(\theta_-) &=& \tfrac{3}{4}\theta_- + \tfrac{1}{4}\theta_+. \label{eq:veff-}
+%\end{eqnarray}
+
+Considérons d’abord le cas où le centre de masse de la mer de Fermi est nul, c’est-à-dire $\theta_+ = -\theta_-$. Les bords se déplacent alors à la vitesse du son $\pm c$. Pour $\gamma \to 0$ et $\mathfrak{t} \to 0$, les bords se situent en $\theta_\pm = \pm 2c$~\cite{LL_1963_1}, et la vitesse effective s’écrit simplement :
 \begin{equation}
-    v^{\mathrm{eff}}(\theta_\pm) = \tfrac{1}{2}\theta_\pm .
+v^{\mathrm{eff}}(\theta_\pm) = \frac{1}{2}\theta_\pm.
 \end{equation}
 
-Si le centre de masse est non nul (i.e. $\theta_+ \neq -\theta_-$), la vitesse effective se décompose comme une translation de la vitesse du barycentre $u$, décalée de $\pm c$ avec $c = (\theta_+ - \theta_-)/4$.  
-On obtient alors les relations explicites :
+Si le centre de masse n’est pas nul ($\theta_+ \neq -\theta_-$), la vitesse effective peut être décomposée en une translation correspondant à la vitesse du barycentre $u$, à laquelle s’ajoute un décalage de $\pm c$ lié à l’écart des bords. On obtient alors les expressions explicites :
 \begin{eqnarray}
     v^{\mathrm{eff}}(\theta_+) &=& \tfrac{3}{4}\theta_+ + \tfrac{1}{4}\theta_-, \label{eq:veff+}\\
     v^{\mathrm{eff}}(\theta_-) &=& \tfrac{3}{4}\theta_- + \tfrac{1}{4}\theta_+. \label{eq:veff-}
 \end{eqnarray}
+
+Autrement dit, une petite déformation localisée aux extrémités de la mer de Fermi se propage à la vitesse du son par rapport au centre de masse du système, ce qui correspond à la valeur de $v^{\mathrm{eff}}$ aux bords.
+
+
+\paragraph{Forme hydrodynamique des équations de Gross–Pitaevskii.}
 En introduisant la densité $n$ (via $4\sqrt{gn} = \theta_+ - \theta_-$) et la vitesse du fluide $u$ définies plus haut, les équations~\eqref{eq:theta+}--\eqref{eq:theta-} se réécrivent sous la forme  
 \begin{eqnarray}
     \partial_t n + \partial_x \big( n u \big) &=& 0, \label{eq:GHDcontinuite}\\
     \partial_t (n u) + \partial_x \!\left( n u^2 \right) &=& - g\, n \,\partial_x n. \label{eq:GHDeuler}
 \end{eqnarray}
-Il s’agit exactement des équations de continuité et d’Euler~\eqref{eq:continuite}--\eqref{eq:euler}, mais écrites sans le terme de \emph{pression quantique} ni le potentiel extérieur.
+Il s’agit exactement des équations de continuité et d’Euler~\eqref{eq:continuite3}--\eqref{eq:euler3}, mais écrites sans le terme de \emph{pression quantique} ni le potentiel extérieur.
 
 
 \begin{figure}[h!]
     \centering
-     \includegraphics[width=0.6\textwidth , page = 1 ]{figures/03_GHD/Figures.pdf}
+     \includegraphics[width=0.6\textwidth , page = 2 ]{figures/03_GHD/Figures.pdf}
     \caption{Schéma de l’évolution du facteur d’occupation $\nu(x,\theta,t)$ dans la limite $\gamma \to 0$.  Initialement rectangulaire et homogène, la distribution forme une mer de Fermi délimitée par $\theta_\pm(x,t)$ : rouge $\nu=1$, blue $\nu=0$.}
     \label{fig:GP}
 \end{figure}
@@ -672,7 +768,7 @@ Il s’agit exactement des équations de continuité et d’Euler~\eqref{eq:cont
 
 
 \paragraph{Correspondance avec les équations GP.}  
-Les équations~\eqref{eq:GHDcontinuite}--\eqref{eq:GHDeuler} correspondent exactement aux équations hydrodynamiques~\eqref{eq:continuite}--\eqref{eq:euler}, obtenues à partir de \gls*{GP} lorsque le terme de pression quantique est négligé.  
+Les équations~\eqref{eq:GHDcontinuite}--\eqref{eq:GHDeuler} correspondent exactement aux équations hydrodynamiques~\eqref{eq:continuite3}--\eqref{eq:euler3}, obtenues à partir de \gls*{GP} lorsque le terme de pression quantique est négligé.  
 La correspondance est donc valable pour une configuration initiale correspondant à une seule mer de Fermi.  
 En revanche, si le système initial contient plusieurs mers de Fermi (par exemple deux pics de densité séparés), cette équivalence avec les équations \gls*{GP} n’est plus vérifiée.  
 
@@ -700,7 +796,8 @@ La dynamique d’un système quantique isolé intégrable possède des propriét
 
 \medskip
 
-Dans un système chaotique (non intégrable), l’état localement relaxé est bien décrit par un ensemble de Gibbs classique, caractérisé uniquement par la densité locale $n$ et l’énergie par particule $e_{\mathrm{int}}$. 
+%Dans un système chaotique (non intégrable), l’état localement relaxé est bien décrit par un ensemble de Gibbs classique, caractérisé uniquement par la densité locale $n$ et l’énergie par particule $e_{\mathrm{int}}$. 
+Dans un système chaotique (non intégrable), l’état localement relaxé est bien décrit par un ensemble de Gibbs classique, caractérisé par les trois quantités locales conservées : la densité de particules $n$,la quantité de mouvement par unité de longueur $p$ et l’énergie par unité de longueur $e_{mathrm{int}}$.
 
 \medskip
 

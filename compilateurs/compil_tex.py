@@ -241,7 +241,7 @@ tex_files = [
     #"../These_Memoire_19_07_2025/Figures/Figures.tex",
     #"./figures/01_LL_BA/Figures.tex",
     #"./figures/02_GGE_TBA/Figures.tex",
-    #"./figures/03_GHD/Figures.tex",
+    "./figures/03_GHD/Figures.tex",
     #"./figures/04_GGE_Fluctuation/Figures.tex",
     #"./figures/05_Disp_Exp/Figures.tex",
     #"./figures/05_Disp_Exp/Figures_2.tex",
@@ -249,7 +249,7 @@ tex_files = [
     #"./figures/06_Bipart/Shema.tex",
     #"./figures/06_Bipart/Shemas_2.tex",
     #"./figures/07_Dipolaire/Figures.tex",
-    #"./official_template_phd_universite-paris_saclay_2/Modele_These_UParisSaclay_2022.tex",
+    #"./figures/official_template_phd_universite-paris_saclay_2/Modele_These_UParisSaclay_2022.tex",
     # Ajoute ici les .tex à compiler seuls
 ]
 
