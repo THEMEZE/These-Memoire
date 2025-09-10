@@ -10,23 +10,34 @@
 \printglossary[type=\acronymtype,title=Liste des acronymes]
 
 \frontmatter
+\setcounter{tocdepth}{2}
 \tableofcontents
 \mainmatter
 
 \input{chapters/000_intro}
-\printbibliography[heading=bibliography,title={Bibliographie du l'Introduction}]
+%\printbibliography[heading=bibliography,title={Bibliographie du l'Introduction}]
+%\printbibliography[heading=subsubbibliography,title={Bibliographie du l'Introduction}]
+%\printbibliography[title={Bibliographie du l'Introduction}]
+
+%\section*{Bibliographie de l'Introduction}
+%\printbibliography[heading=none]
+%\printbibliography[
+%  heading=bibsectionnonum,
+%  title={Bibliographie de l'Introduction}
+%]
 
 \input{chapters/010_LL_BA}
 %\printbibliography[heading=bibintoc,title={Bibliographie du chapitre}]
-\printbibliography[heading=bibliography, title={Bibliographie du chapitre}]
+%\printbibliography[heading=subsubbibliography, title={Bibliographie du chapitre}]
+%\printbibliography[title={Bibliographie du chapitre}]
 
 \input{chapters/020_GGE_TBA}
 %\printbibliography[heading=bibintoc,title={Bibliographie du chapitre}]
-\printbibliography[heading=bibliography,title={Bibliographie du chapitre}]
+%\printbibliography[heading=subsubbibliography,title={Bibliographie du chapitre}]
 
 \input{chapters/030_GHD}
 %\printbibliography[heading=bibintoc,title={Bibliographie du chapitre}]
-\printbibliography[heading=bibliography,title={Bibliographie du chapitre}]
+%\printbibliography[heading=subsubbibliography,title={Bibliographie du chapitre}]
 
 %\input{chapters/030_GHD_1}
 %\input{chapters/030_GHD_Isa}
@@ -34,19 +45,19 @@
 
 \input{chapters/040_GGE_Fluctuation}
 %\printbibliography[heading=bibintoc,title={Bibliographie du chapitre}]
-\printbibliography[heading=bibliography,title={Bibliographie du chapitre}]
+%\printbibliography[heading=subsubbibliography,title={Bibliographie du chapitre}]
 
 \input{chapters/050_Disp_Exp}
 %\printbibliography[heading=bibintoc,title={Bibliographie du chapitre}]
-\printbibliography[heading=bibliography,title={Bibliographie du chapitre}]
+%\printbibliography[heading=subsubbibliography,title={Bibliographie du chapitre}]
 
 \input{chapters/060_Bipart}
 %\printbibliography[heading=bibintoc,title={Bibliographie du chapitre}]
-\printbibliography[heading=bibliography,title={Bibliographie du chapitre}]
+%\printbibliography[heading=subsubbibliography,title={Bibliographie du chapitre}]
 
 \input{chapters/070_Dipolaire}
 %\printbibliography[heading=bibintoc,title={Bibliographie du chapitre}]
-\printbibliography[heading=bibliography,title={Bibliographie du chapitre}]
+%\printbibliography[heading=subsubbibliography,title={Bibliographie du chapitre}]
 
 \input{chapters/080_conclusion}
 \appendix
@@ -55,21 +66,22 @@
 \input{chapters/031_Euler}
 %\input{chapters/032_Dressing}
 \input{chapters/041_Jerome}
-\printbibliography[heading=bibliography,title={Bibliographie de l'annex}]
+%\printbibliography[heading=subsubbibliography,title={Bibliographie de l'annex}]
 
 \input{chapters/051_scaling}
 %
 %
 \input{chapters/071_Starck}
-\printbibliography[heading=bibliography,title={Bibliographie de l'annex}]
+%\printbibliography[heading=subsubbibliography,title={Bibliographie de l'annex}]
 
 \input{chapters/072_no_tensor}
 
 
 %\bibliographystyle{abbrv}
 %\bibliography{thesis}
-
 %\printbibliography
+\printbibliography[title={Bibliographie}]
+
 
 
 

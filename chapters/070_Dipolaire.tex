@@ -587,32 +587,32 @@ Les autres transitions, fortement hors résonance, sont négligées dans l’app
 \medskip
 
 
-{\color{blue}
-\paragraph{Approximation séculaire et sélection des transitions pertinentes.}
-
-Dans le cadre du piégeage dipolaire, nous faisons l’hypothèse que le champ laser est \textbf{quasi-résonant} avec un \textbf{nombre restreint de transitions atomiques}. Autrement dit, la fréquence du laser \( \omega \) est suffisamment proche de certaines transitions \( \omega_{\scriptscriptstyle g \rightarrow e_i} = \omega_{e_i} - \omega_g  \) de l’atome, de sorte que le désaccord \( \Delta_i = \omega - \omega_{g \rightarrow e_i} \) est \textbf{petit devant les fréquences optiques} elles-mêmes :
-\(
-|\Delta_i| \ll \omega_L, \omega_{\scriptscriptstyle g \rightarrow e_i}.
-\)
-et 
-\(
-|\Delta_i|\gg \Gamma,\,\Omega .
-\)
-Cette hypothèse permet de simplifier l’analyse perturbative de l’interaction atome-laser : dans la somme intervenant dans la correction d’énergie au second ordre,seuls les \textbf{termes proches de la résonance} (i.e., pour lesquels \( E_g \simeq E_i \pm \hbar \omega \)) contribuent significativement à la somme. En effet, pour ces termes, le dénominateur devient \textbf{petit}, ce qui rend leur contribution \textbf{dominante}. Les autres transitions, très éloignées en énergie, ont des dénominateurs très grands, et leur influence devient négligeable. Cette \textbf{troncature de la somme perturbative} constitue l’\textbf{approximation séculaire}.
-
-\medskip
-
-Dans ce régime, l’interaction dipolaire sélectionne efficacement les couplages entre les états atomiques et photoniques \textbf{ayant une différence d’un seul photon} :
-\begin{eqnarray}
-\ket{g,\,N} \;\xleftrightarrow{\quad \operator{H}_{\text{int}}\quad }\; \ket{e_i,\,N-1},
-\end{eqnarray}
-soit 
-\begin{eqnarray}\label{chap:dipolaire:eq:nrj2.1}
-	\delta E_g^{(2)} 
-	\simeq \sum_{e_i} 
-	\frac{\left| \bra{e_i,\,N-1} \operator{H}_{\mathrm{int}} \ket{g,\,N} \right|^2}
-	{\hbar \left( \omega - \omega_{\scriptscriptstyle g \rightarrow e_i} \right)} .
-\end{eqnarray}
+%{\color{blue}
+%\paragraph{Approximation séculaire et sélection des transitions pertinentes.}
+%
+%Dans le cadre du piégeage dipolaire, nous faisons l’hypothèse que le champ laser est \textbf{quasi-résonant} avec un \textbf{nombre restreint de transitions atomiques}. Autrement dit, la fréquence du laser \( \omega \) est suffisamment proche de certaines transitions \( \omega_{\scriptscriptstyle g \rightarrow e_i} = \omega_{e_i} - \omega_g  \) de l’atome, de sorte que le désaccord \( \Delta_i = \omega - \omega_{g \rightarrow e_i} \) est \textbf{petit devant les fréquences optiques} elles-mêmes :
+%\(
+%|\Delta_i| \ll \omega_L, \omega_{\scriptscriptstyle g \rightarrow e_i}.
+%\)
+%et 
+%\(
+%|\Delta_i|\gg \Gamma,\,\Omega .
+%\)
+%Cette hypothèse permet de simplifier l’analyse perturbative de l’interaction atome-laser : dans la somme intervenant dans la correction d’énergie au second ordre,seuls les \textbf{termes proches de la résonance} (i.e., pour lesquels \( E_g \simeq E_i \pm \hbar \omega \)) contribuent significativement à la somme. En effet, pour ces termes, le dénominateur devient \textbf{petit}, ce qui rend leur contribution \textbf{dominante}. Les autres transitions, très éloignées en énergie, ont des dénominateurs très grands, et leur influence devient négligeable. Cette \textbf{troncature de la somme perturbative} constitue l’\textbf{approximation séculaire}.
+%
+%\medskip
+%
+%Dans ce régime, l’interaction dipolaire sélectionne efficacement les couplages entre les états atomiques et photoniques \textbf{ayant une différence d’un seul photon} :
+%\begin{eqnarray}
+%\ket{g,\,N} \;\xleftrightarrow{\quad \operator{H}_{\text{int}}\quad }\; \ket{e_i,\,N-1},
+%\end{eqnarray}
+%soit 
+%\begin{eqnarray}\label{chap:dipolaire:eq:nrj2.1}
+%	\delta E_g^{(2)} 
+%	\simeq \sum_{e_i} 
+%	\frac{\left| \bra{e_i,\,N-1} \operator{H}_{\mathrm{int}} \ket{g,\,N} \right|^2}
+%	{\hbar \left( \omega - \omega_{\scriptscriptstyle g \rightarrow e_i} \right)} .
+%\end{eqnarray}
 
 
 
@@ -625,17 +625,17 @@ Autrement dit, le désaccord \(\Delta = \omega - \omega_{g \rightarrow e}\) rest
 \)
 
 Dans ce régime, le deuxième terme du membre de droite des équations \eqref{eq.7.34} devient négligeable, et le potentiel dipolaire se simplifie alors en :
-\begin{eqnarray*}\label{eq:potentiel_dipolaire_simplifie}
+\begin{eqnarray}\label{eq:potentiel_dipolaire_simplifie}
 \delta E_g^{(2)} \simeq \sum_{e_i} \frac{\left| \bra{e,\,N-1} \operator{H}_{\mathrm{int}} \ket{g,\,N} \right|^2}
 {\hbar \Delta} .
-\end{eqnarray*}
+\end{eqnarray}
 
 Cette approximation consiste à ne considérer que la transition \(\ket{g,\,N} \rightarrow \ket{e,\,N-1}\), 
 c’est-à-dire les processus dans lesquels un seul photon est échangé entre l’atome et le champ laser.
 
 
 \medskip
-}
+%}
 
 
 \subsubsection*{Expression des éléments de matrice dans l’interaction atome-champ cohérent}

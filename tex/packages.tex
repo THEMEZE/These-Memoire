@@ -141,12 +141,55 @@ decorations.pathreplacing}
 %\usepackage[style=alphabetic,sorting=ynt]{biblatex}
 %\addbibresource{thesis.bib}
 
-\usepackage[
-  backend=biber,
-  refsection=chapter,
-  style=alphabetic,
-  sorting=ynt
-]{biblatex}
+%\usepackage[
+%  backend=biber,
+%  refsection=chapter,
+%  style=alphabetic,
+%  sorting=nyt
+%]{biblatex}
+%\addbibresource{thesis.bib}
+
+%\defbibheading{subsubbibliography}[\refname]{%
+%  \subsubsection*{#1}%
+%  \markboth{#1}{#1}%
+%}
+
+%\usepackage[backend=biber,
+%	refsection=chapter,
+%    sorting=nyt,        % ordre: name, year, title
+%    %style=ext-authoryear, % style de base extensible
+%    style=alphabetic,
+%    maxbibnames=1,     % montrer tous les auteurs
+%    giveninits=false,   % pas d'initiales, prénoms complets
+%    dashed=false        % répéter auteurs même s'ils se répètent
+%]{biblatex}
+
+%\renewcommand*{\bibfont}{\small} % police plus petite pour biblio
+%\setlength\bibitemsep{1em}       % espace entre entrées
+%
+%% Format des noms en petites majuscules
+%\DeclareNameAlias{sortname}{family-given}
+%%\DeclareNameFormat{labelname}{%
+%%  \mkbibbold{\textsc{#1}}%
+%%  \ifblank{#3}{}{ \textsc{#3}}%
+%%  \ifblank{#5}{}{ \textsc{#5}}}
+%
+%% Supprimer les guillemets autour des titres
+%\DeclareFieldFormat{title}{#1}
+%
+%% Afficher DOI et arXiv à la fin
+%\DeclareFieldFormat{doi}{DOI:\href{https://doi.org/#1}{#1}}
+%\DeclareFieldFormat{arxiv}{arXiv:#1}
+%\AtEveryBibitem{%
+%  \ifboolexpr{ test {\iffieldundef{doi}} }{}{\printfield{doi}\space}%
+%  \ifboolexpr{ test {\iffieldundef{eprint}} }{}{\printfield{arxiv}}%
+%}
+%
+%\defbibheading{bibsectionnonum}[\refname]{%
+%  \section*{#1}%
+%}
+
+\usepackage[backend=biber,style=alphabetic,sorting=ynt]{biblatex}
 \addbibresource{thesis.bib}
 
 \usepackage{minitoc}

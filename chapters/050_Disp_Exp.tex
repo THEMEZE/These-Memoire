@@ -302,7 +302,7 @@ En revanche, peu avant la fin de la thèse de L. Dubois et au début de ma trois
 
 \medskip
 
-Cette opération a mobilisé plusieurs personnes du laboratoire et de ses partenaires : Sophie Bouchoule (\gls{C2N}) et  Anne-Lise Coutrot (\gls{LCF}) ont participé à la manipulation et à la pose de la puce, tandis que j’ai pu assister à l’étuvage de l’enceinte à vide avec Florence Nogrette (\gls{LCF}). Après cette intervention, j’ai suivi avec I. Bouchoule le réajustement progressif de la séquence de refroidissement : alignement des faisceaux, réglages de la mélasse, optimisation du chargement dans le piège \gls{DC}, puis dans le guide.
+Cette opération a mobilisé plusieurs personnes du laboratoire et de ses partenaires : Sophie Bouchoule (\gls{C2N}) et  Anne-Lise Coutrot (\gls{LCF}) ont participé à la manipulation et à la pose de la puce, tandis que j’ai pu assister à l’étuvage de l’enceinte à vide avec Florence Nogrette (\gls{LCF}). Après cette intervention, j’ai suivi avec I. Bouchoule le réajustement progressif de la séquence de refroidissement : alignement des faisceaux, réglages de la mélasse, optimisation du chargement dans le piège (\gls{DC}), puis dans le guide.
 
 \medskip
 
@@ -450,10 +450,10 @@ L’outil de sélection spatiale a été conçu pour permettre une action locale
 
 \paragraph{Intérêt pour les protocoles hors équilibre}
 
-Ce dispositif permet ainsi de générer des protocoles analogues à des configurations classiques comme le pendule de Newton, ou de sonder directement la dynamique d’un gaz de \gls{LL} dans des conditions contrôlées. Il constitue une brique essentielle pour les expériences de dynamique et de transport quantique.
+Ce dispositif permet ainsi de générer des protocoles analogues à des configurations classiques comme le pendule de Newton, ou de sonder directement la dynamique d’un gaz de \acrlong{LL} dans des conditions contrôlées. Il constitue une brique essentielle pour les expériences de dynamique et de transport quantique.
 
 
-\subsection{Mise en place technique (initiée par Léa Dubois)}
+\subsection{Mise en place technique}
 
 %{\color{blue}
 %\begin{itemize}
@@ -483,7 +483,7 @@ ce qui permet de préserver ou d’éjecter les atomes selon leur position longi
 
 \paragraph{Utilisation du DMD.}
 
-Pour générer ce profil, un \gls{DMD} (Digital Micromirror Device) est utilisé. Il s’agit d’une matrice de \(1024 \times 768\) micro-miroirs de $14 \, \mu m$ de coté et  orientables individuellement (±12°). En inclinant ces miroirs, on contrôle localement la réflexion de la lumière. L’image du \gls*{DMD} est projetée directement sur le plan des atomes, en imagerie directe.
+Pour générer ce profil, un \gls{DMD} (\acrlong{DMD}) est utilisé. Il s’agit d’une matrice de \(1024 \times 768\) micro-miroirs de $14 \, \mu m$ de coté et  orientables individuellement (±12°). En inclinant ces miroirs, on contrôle localement la réflexion de la lumière. L’image du \gls*{DMD} est projetée directement sur le plan des atomes, en imagerie directe.
 
 \paragraph{Avantages du DMD.}
 
@@ -499,7 +499,7 @@ Un atome illuminé par un faisceau proche de la résonance peut être expulsé d
 
 \paragraph{Modèle de diffusion et estimation du seuil}
 
-Le taux de diffusion de photons est modélisé à l’aide d’un taux \(\Gamma_{\mathrm{sc}}\), dépendant de l’intensité \(I\), de l’intensité de saturation \(I_{\mathrm{sat}}\), d’un paramètre \(\alpha\) (lié à la polarisation et au champ magnétique) et du désaccord \(\delta\). À résonance, et pour un temps d’illumination \(\tau_p\), on peut estimer le nombre total de photons diffusés par atome par \(N_{\mathrm{sc}} = \tau_p \Gamma_{\mathrm{sc}}\).
+Le taux de diffusion de photons est modélisé à l’aide d’un taux \(\Gamma_{\mathrm{sc}}\), dépendant de l’intensité \(I\), de l’intensité de saturation \(I_{\mathrm{sat}}\), d’un paramètre \(\alpha\) (lié à la polarisation et au champ magnétique) et du désaccord. À résonance, et pour un temps d’illumination \(\tau_p\), on peut estimer le nombre total de photons diffusés par atome par \(N_{\mathrm{sc}} = \tau_p \Gamma_{\mathrm{sc}}\).
 
 \paragraph{Mesures expérimentales de la puissance nécessaire}
 
@@ -542,7 +542,7 @@ La température du gaz sélectionné est comparée avant et après sélection vi
 
 \paragraph{Sélection locale et mesure de rapidité.}
 
-En sélectionnant une tranche du gaz, on peut ensuite couper le confinement longitudinal et laisser cette tranche s’étendre. Le profil de densité asymptotique obtenu après un long temps d’expansion est proportionnel à la distribution de rapidité locale du gaz initial. Ce protocole permet ainsi une mesure résolue en $x$ de \(t\, n(x,t \to \infty) \sim \tilde{n}(v, t \to \infty)\).
+En sélectionnant une tranche du gaz, on peut ensuite couper le confinement longitudinal et laisser cette tranche s’étendre. Le profil de densité asymptotique obtenu après un long temps d’expansion est proportionnel à la distribution de rapidité locale du gaz initial. Ce protocole permet ainsi une mesure résolue en $x$ de \(t\, n(x,t \to \infty) \sim \tilde{n}(x/t, t \to \infty)\).
 
 \paragraph{Génération d’états hors équilibre}
 
@@ -578,7 +578,7 @@ Le faisceau façonné par le \gls*{DMD} est projeté dans le plan des atomes à 
 
 \paragraph{Grandissement et champ couvert}
 
-Le montage permet de couvrir une zone de l’ordre de \(600\,\mu\mathrm{m}\) dans le plan des atomes, soit plus que la longueur typique d’un nuage (\(\sim 400\,\mu\mathrm{m}\) pour \(f_{\parallel}=5\,\mathrm{Hz}\)). Le grandissement est déterminé par les focales utilisées : une focale \(f_1 = 750\,\mathrm{mm}\) du côté du \gls*{DMD}, et \(f = 32\,\mathrm{mm}\) pour l’objectif côté atomes, donnant \(G = f/f_1 \approx 0.043\) (Fig ~ \ref{chap:5:fig:Shema_Glob} ).
+Le montage permet de couvrir une zone de l’ordre de \(600\,\mu\mathrm{m}\) dans le plan des atomes, soit plus que la longueur typique d’un nuage (\(\sim 400\,\mu\mathrm{m}\) pour \(\omega_{\parallel}= 2 \pi \times 5\,\mathrm{Hz}\)). Le grandissement est déterminé par les focales utilisées : une focale \(f_{\mathrm{DMD}} = 750\,\mathrm{mm}\) du côté du \gls*{DMD}, et \(f_{\mathrm{at}} = 32\,\mathrm{mm}\) pour l’objectif côté atomes, donnant \(G = f_{\mathrm{at}}/f_{\mathrm{DMD}} \approx 0.043\) (Fig ~ \ref{chap:5:fig:Shema_Glob} ).
 
 
 \begin{figure}[H]
@@ -660,7 +660,7 @@ La combinaison de l’imagerie in situ et après temps de vol, ainsi qu’une ca
 
 
 \section{Expériences et protocoles étudiés}
-Cette section peut être la plus personnelle, en précisant ton rôle à chaque fois.
+%Cette section peut être la plus personnelle, en précisant ton rôle à chaque fois.
 \subsection{Expansion longitudinale}
 %\begin{itemize}
 %    \item Protocole d’expansion (libération longitudinale, maintien du confinement transverse).
@@ -678,11 +678,11 @@ Une partie essentielle de mon travail de thèse a consisté à sonder la distrib
 Au-delà de son intérêt pratique, l’expansion longitudinale offre une fenêtre sur la physique des gaz bosoniques 1D. Elle permet d’étudier comment un système initialement confiné évolue vers un état dilué, révélant à la fois l’impact du régime transverse (\gls{TF} 3D vs (\gls{TF}) 1D).% et l’influence des fluctuations de phase. Dans le régime TF 1D, ces fluctuations deviennent dominantes et se traduisent par des ondulations de densité mesurables. Leur analyse expérimentale, via le spectre de puissance, fournit un accès direct aux corrélations de phase et à la thermodynamique effective du gaz.
 
 \paragraph{Protocole expérimental.}
-Concrètement, l’expansion longitudinale est réalisée selon la séquence illustrée en Fig.~??? :
+Concrètement, l’expansion longitudinale est réalisée selon la séquence :
 \begin{itemize}[label = $\bullet$]
-  \item Le nuage est initialement piégé dans un potentiel magnétique caractérisé par une fréquence longitudinale $f_{\parallel} = 5.0$ ou $9.4\,\mathrm{Hz}$ selon les jeux de données, et une fréquence transverse $f_{\perp} = 2.56\,\mathrm{kHz}$.
-  \item À $t=0$, le confinement longitudinal est éteint en annulant les courants $I_D=I_{D'}=0$. La coupure est réalisée sur un temps fini $t_{\parallel} = 70\,\mu\mathrm{s} \ll 1/f_{\parallel}$, ce qui évite un pic de courant parasite.% tout en préservant la dynamique du gaz.
-  \item Le nuage se dilate librement dans la direction longitudinale pendant une durée $\tau$. Ensuite, le confinement transverse est relâché en annulant $I_{\perp}$, avec un temps de coupure $t_{\perp} = 5\,\mu\mathrm{s} \ll 1/f_{\perp}$.
+  \item Le nuage est initialement piégé dans un potentiel magnétique caractérisé par une fréquence longitudinale $\omega_{\parallel} = 2 \pi \times  5.0$ ou $2 \pi \times  9.4\,\mathrm{Hz}$ selon les jeux de données, et une fréquence transverse $\omega_{\perp} = 2 \pi \times  2.56\,\mathrm{kHz}$.
+  \item À $t=0$, le confinement longitudinal est éteint en annulant les courants $I_D=I_{D'}=0$. La coupure est réalisée sur un temps fini $t_{\parallel} = 70\,\mu\mathrm{s} \ll 2 \pi /\omega_{\parallel}$, ce qui évite un pic de courant parasite.% tout en préservant la dynamique du gaz.
+  \item Le nuage se dilate librement dans la direction longitudinale pendant une durée $\tau$. Ensuite, le confinement transverse est relâché en annulant $I_{\perp}$, avec un temps de coupure $t_{\perp} = 5\,\mu\mathrm{s} \ll 2 \pi /\omega_{\perp}$.
   \item Une image par absorption est enfin prise après un temps de vol $t_v$. Pour l’étude des profils de densité, on utilise typiquement $t_v = 1\,\mathrm{ms}$.
 \end{itemize}
 
@@ -750,6 +750,9 @@ où le terme de pression quantique est donné par
 \mathcal{P}_Q  = -\frac{1}{2} \, \sqrt{n} \, \partial_x^2 \sqrt{n} .
 \)
 
+\medskip
+
+
 En tenant compte de la relation thermodynamique \(dP = n \, d\mu\), ce sont les mêmes équations que \eqref{eq:continuite} et \eqref{eq:euler2}.
 
 En négligeant le terme de pression quantique \(\mathcal{P}_Q\), on obtient :
@@ -766,9 +769,9 @@ En négligeant le terme de pression quantique \(\mathcal{P}_Q\), on obtient :
 \medskip
 
 Pour notre protocole, pour $\tau < 0$ le système est à l’équilibre, avec la condition
-\(
-\mu(n) + V_\parallel(x) = \mu\bigl(n(x=0)\bigr).
-\)
+\begin{eqnarray}
+	\mu(n) + V_\parallel(x) = \mu\bigl(n(x=0)\bigr).
+\end{eqnarray}
 Pour $\tau \geq 0$, le potentiel longitudinal est éteint : $V_\parallel(x) = 0$.
 
 \medskip
@@ -1247,13 +1250,13 @@ Pour mesurer \(\rho(x,\theta)\) localement :
         		
         \end{scope}
         \draw [color = white] (-3,-1) rectangle +(10,2);
-		\node[shift={(-3 , 1)}] at (0,0) {a)};
+		\node[shift={(-3 , 1)}] at (0,0) {\fontsize{12pt}{14pt}\selectfont \bfseries a)};
      	\end{scope}
      	
      	 % Deuxième figure
         \begin{scope}[shift={(7,0)}]
         	\node (b) at (0,0) {\includegraphics[width=0.55\textwidth]{./figures/05_Disp_Exp/profils.pdf}};
-        	\node[above=-0.2cm of b , shift={(-2 , 0)}] {b)};
+        	\node[above=-0.2cm of b , shift={(-2.5 , -1)}] {\fontsize{12pt}{14pt}\selectfont \bfseries b)};
         	
 %        	\draw[thick, color=colorSix, line width = 0.5ex , <-]
 %    			(1,1) to[out=180, in=90] (-2,-0.)
@@ -1284,7 +1287,7 @@ Pour un gaz initialement à l’équilibre dans un piège harmonique, le profil 
 		\begin{scope}[shift={(0,0)}]
 			
 			\node (a) at (0,0) {\includegraphics[width=0.3\textwidth]{./figures/05_Disp_Exp/image159.png}};
-        	\node[above=-0.2cm of a , shift={(-2 , 0)}] {a)};
+        	\node[above=-0.2cm of a , shift={(-2 , 0)}] {\fontsize{12pt}{14pt}\selectfont \bfseries a)};
 
 
                 
@@ -1295,15 +1298,15 @@ Pour un gaz initialement à l’équilibre dans un piège harmonique, le profil 
      	 % Deuxième figure
         \begin{scope}[shift={(7,0)}]
         	\node (b) at (0,0) {\includegraphics[width=0.6\textwidth]{./figures/05_Disp_Exp/image212.png}};
-        	\node[above=-0.2cm of b , shift={(-3.2 , -1.3)} , color = white ] {\color{white} b1)};
-        	\node[above=-0.2cm of b , shift={(0.5 , -1.3)} , color = white ] {\color{white} b2)};
+        	\node[above=-0.2cm of b , shift={(-3.2 , -1.3)} , color = white ] {\fontsize{12pt}{14pt}\selectfont \bfseries \color{white} b1)};
+        	\node[above=-0.2cm of b , shift={(0.5 , -1.3)} , color = white ] {\fontsize{12pt}{14pt}\selectfont \bfseries \color{white} b2)};
         	
         \end{scope}
 
         
 	\end{tikzpicture}
-	\caption{a) Profil de densité d’un nuage atomique initialement à l’équilibre dans un piège harmonique avec $\omega_\perp = 2 \pi \times  2.6~\mathrm{kHz}$ et $\omega_\parallel = 2 \pi \times 5~\mathrm{Hz}$ (zone en jaune). La courbe grise représente le profil parabolique attendu à l’état fondamental dans le régime qBEC, décrit par l’équation d’état $n(x) = [\mu - V_\parallel(x)]/g$. La courbe noire en pointillés correspond à un ajustement des données expérimentales en supposant que le système soit bien décrit par un ensemble thermique (\gls{TBA} (Sec ~ \ref{chap4:sec:TBA})). Cet ajustement permet d’extraire une température $T = 90~\mathrm{nK}$ et un potentiel chimique $\mu/k_B = 49~\mathrm{nK}$.
-	(b1) Profils de densités pour différents centres de sélection x0 représentés sur la Fig.\ref{fig:selection}(b). Les sélections sont de taille $\ell = 37\, \mu m$ et les profils obtenus après un temps d’expansion $\tau =  40 \, ms$. Pour comparer les résultats à une distribution de rapidités, les profils de densités sont multipliés par le rapport $\tau/ \ell$ et sont tracés en fonction de $(x-x_0)/\tau$ (b2). (b2) Prédiction théorique de la distribution de rapidités spatialement résolue $\rho ( x , \theta)$ à l’équilibre thermique dans un potentiel harmonique longitudinal avec $\omega_\parallel = 2 \pi \times 5~\mathrm{Hz}$. La température $T$ et le potentiel chimique $\mu$ utilisés sont eux obtenus à partir du profil in situ (a).}
+	\caption{a) Profil de densité d’un nuage atomique initialement à l’équilibre dans un piège harmonique avec $\omega_\perp = 2 \pi \times  2.6~\mathrm{kHz}$ et $\omega_\parallel = 2 \pi \times 5~\mathrm{Hz}$ (jaune). La courbe grise représente le profil parabolique attendu à l’état fondamental dans le régime \gls{qBEC}, décrit par l’équation d’état $n(x) = [\mu - V_\parallel(x)]/g$. La courbe noire en pointillés correspond à un ajustement des données expérimentales en supposant que le système soit bien décrit par un ensemble thermique (\gls{TBA} (Sec. \ref{chap4:sec:TBA})). Cet ajustement permet d’extraire une température $T = 90~\mathrm{nK}$ et un potentiel chimique $\mu/k_B = 49~\mathrm{nK}$.
+	(b1) Profils de densités pour différents centres de sélection $x_0$ représentés sur la Fig.\ref{fig:selection}(b). Les sélections sont de taille $\ell = 37\, \mu m$ et les profils obtenus après un temps d’expansion $\tau =  40 \, ms$. Pour comparer les résultats à une distribution de rapidités, les profils de densités sont multipliés par le rapport $\tau/ \ell$ et sont tracés en fonction de $(x-x_0)/\tau$ (b2). (b2) Prédiction théorique de la distribution de rapidités spatialement résolue $\rho ( x , \theta)$ à l’équilibre thermique dans un potentiel harmonique longitudinal avec $\omega_\parallel = 2 \pi \times 5~\mathrm{Hz}$. La température $T$ et le potentiel chimique $\mu$ utilisés sont eux obtenus à partir du profil in situ (a).}
 	\label{fig:expansion}
 \end{figure}
 
@@ -1356,7 +1359,7 @@ Il en découle que les profils de densité sont universels lorsqu’ils sont exp
 		\begin{scope}[shift={(0,0)}]
 			
 			\node (a) at (0,0) {\includegraphics[width=0.5\textwidth]{./figures/05_Disp_Exp/image246.png}};
-        	\node[above=-0.2cm of a , shift={(-2 , -1)}] {\color{black} a)};
+        	\node[above=-0.2cm of a , shift={(-2 , -1)}] {\fontsize{12pt}{14pt}\selectfont \bfseries \color{black} a)};
 
 
                 
@@ -1394,7 +1397,7 @@ L’expansion des tranches est bien décrite par \gls{GHD}. Les comparaisons ent
 		\begin{scope}[shift={(0,0)}]
 			
 			\node (a) at (0,0) {\includegraphics[width=0.7\textwidth]{./figures/05_Disp_Exp/image255.png}};
-        	\node[above=-0.2cm of a , shift={(-2 , -1)}] {\color{black} a)};
+        	\node[above=-0.2cm of a , shift={(-3.2 , -1.8)}] {\fontsize{12pt}{14pt}\selectfont \bfseries \color{black} a)};
 
 
                 
@@ -1403,9 +1406,9 @@ L’expansion des tranches est bien décrite par \gls{GHD}. Les comparaisons ent
      	\end{scope}
      	
      	 % Deuxième figure
-        \begin{scope}[shift={(7,0)}]
+        \begin{scope}[shift={(4,2)}]
         	\node (b) at (0,0) {\includegraphics[width=0.3\textwidth]{./figures/05_Disp_Exp/image265.png}};
-        	\node[above=-0.2cm of b , shift={(-2 , -1.)} ] {\color{black} b)};
+        	\node[above=-0.2cm of b , shift={(1.2 , -0.7)} ] {\fontsize{12pt}{14pt}\selectfont \bfseries \color{colorOne} b)};
         	
         	
         \end{scope}
@@ -1424,7 +1427,7 @@ L’expansion des tranches est bien décrite par \gls{GHD}. Les comparaisons ent
 \subsection*{8.6 Mesure locale de distribution de rapidités hors équilibre}
 
 \paragraph{Mise en place d’une distribution locale hors équilibre.}  
-Le faisceau de sélection (\gls{DMD}) permet non seulement de sonder la distribution de rapidités locale, mais aussi de créer des situations hors équilibre. Un protocole illustratif consiste à retirer les atomes d’une région centrale de taille $\ell_0 = 70\,\mu$m, puis à laisser le gaz évoluer librement longidutalement (1D). Après un temps $\tau = 15$\,ms, la distribution de rapidités développe une structure doublement piquée, très différente d’une distribution thermique. Une seconde sélection locale ($\ell=35\,\mu$m) suivie d’une expansion révèle expérimentalement ce profil, en excellent accord avec les simulations \gls*{GHD} (Fif ~\ref{fig:GHD2}).
+Le faisceau pousseur (\gls{DMD}) permet non seulement de sonder la distribution de rapidités locale, mais aussi de créer des situations hors équilibre. Un protocole illustratif consiste à retirer les atomes d’une région centrale de taille $\ell_0 = 70\,\mu$m, puis à laisser le gaz évoluer librement longidutalement (1D). Après un temps $\tau = 15$\,ms, la distribution de rapidités développe une structure doublement piquée, très différente d’une distribution thermique. Une seconde sélection locale ($\ell=35\,\mu$m) suivie d’une expansion révèle expérimentalement ce profil, en excellent accord avec les simulations \gls*{GHD} (Fif ~\ref{fig:GHD2}).
 
 \begin{figure}[H]
 	\centering
@@ -1434,7 +1437,14 @@ Le faisceau de sélection (\gls{DMD}) permet non seulement de sonder la distribu
 		\begin{scope}[shift={(0,0)}]
 			
 			\node (a) at (0,0) {\includegraphics[width=0.6\textwidth]{./figures/05_Disp_Exp/image295.png}};
-        	\node[above=-0.2cm of a , shift={(-2 , -1)}] {\color{black} a)};
+        	
+        	\node[above=-0.2cm of a , shift={(-3.7 , -0.7)}] {\fontsize{6pt}{14pt}\selectfont \bfseries \color{colorOne} a1)};
+        	\node[above=-0.2cm of a , shift={(-0.9 , -0.7)}] {\fontsize{6pt}{14pt}\selectfont \bfseries \color{colorOne} a2)};
+        	\node[above=-0.2cm of a , shift={(1.8 , -0.7)}] {\fontsize{6pt}{14pt}\selectfont \bfseries \color{colorOne} a3)};
+        	
+        	\node[above=-0.2cm of a , shift={(-3.7 , -1.7)}] {\fontsize{6pt}{14pt}\selectfont \bfseries \color{colorTwo} a4)};
+        	\node[above=-0.2cm of a , shift={(-0.9 , -1.7)}] {\fontsize{6pt}{14pt}\selectfont \bfseries \color{colorTwo} a5)};
+        	\node[above=-0.2cm of a , shift={(1.8 , -1.7)}] {\fontsize{6pt}{14pt}\selectfont \bfseries \color{colorTwo} a6)};
 
 
                 
@@ -1445,7 +1455,7 @@ Le faisceau de sélection (\gls{DMD}) permet non seulement de sonder la distribu
      	 % Deuxième figure
         \begin{scope}[shift={(7,0)}]
         	\node (b) at (0,0) {\includegraphics[width=0.4\textwidth]{./figures/05_Disp_Exp/image290.png}};
-        	\node[above=-0.2cm of b , shift={(-2 , -1.)} ] {\color{black} b)};
+        	\node[above=-0.2cm of b , shift={(-2.2 , -0.8)} ] {\fontsize{12pt}{14pt}\selectfont \bfseries \color{black} b)};
         	
         	
         \end{scope}

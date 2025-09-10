@@ -202,6 +202,7 @@ def compile_latex_index_bibtex(path):
     #compile_acr("main")
     #compile_bibtex(path)              # bibtex
     compile_biblatex(path)              # biblatex
+    compile_biblatex(path)              # biblatex
     compile_latex(path + ".tex")      # 2e passe LaTeX
     compile_latex(path + ".tex")      # 3e passe LaTeX (pour les refs/bib à jour)
     compile_latex(path + ".tex")      # 3e passe LaTeX (pour les refs/bib à jour)
@@ -239,17 +240,17 @@ tex_files = [
     #"/Users/themezeguillaume/Desktop/interface_web_launcher/sites/Scroll_Web/quantum-mechanics-thesis-main/These_Memoire_19_07_2025/BiPart/Figures/Shema.tex",
     #"/Users/themezeguillaume/Desktop/interface_web_launcher/sites/Scroll_Web/quantum-mechanics-thesis-main/These_Memoire_19_07_2025/BiPart/Figures/Shemas_2.tex",
     #"../These_Memoire_19_07_2025/Figures/Figures.tex",
-    #"./figures/01_LL_BA/Figures.tex",
-    #"./figures/02_GGE_TBA/Figures.tex",
+    "./figures/01_LL_BA/Figures.tex",
+    "./figures/02_GGE_TBA/Figures.tex",
     "./figures/03_GHD/Figures.tex",
-    #"./figures/04_GGE_Fluctuation/Figures.tex",
+    "./figures/04_GGE_Fluctuation/Figures.tex",
     #"./figures/05_Disp_Exp/Figures.tex",
     #"./figures/05_Disp_Exp/Figures_2.tex",
-    #"./figures/06_Bipart/Figures.tex",
-    #"./figures/06_Bipart/Shema.tex",
+    "./figures/06_Bipart/Figures.tex",
+    "./figures/06_Bipart/Shema.tex",
     #"./figures/06_Bipart/Shemas_2.tex",
-    #"./figures/07_Dipolaire/Figures.tex",
-    #"./figures/official_template_phd_universite-paris_saclay_2/Modele_These_UParisSaclay_2022.tex",
+    "./figures/07_Dipolaire/Figures.tex",
+    "./figures/official_template_phd_universite-paris_saclay_2/Modele_These_UParisSaclay_2022.tex",
     # Ajoute ici les .tex à compiler seuls
 ]
 
@@ -268,9 +269,9 @@ if __name__ == "__main__":
     flag = True
     while flag :
         try:
-            for tex_file in tex_files:
-                compile_latex(tex_file)
-                clean_auxiliary_files(tex_file)
+            #for tex_file in tex_files:
+                #compile_latex(tex_file)
+                #clean_auxiliary_files(tex_file)
             for tex_idx_bib_file in tex_idx_bib_files:
                 compile_latex_index_bibtex(tex_idx_bib_file)
                 clean_auxiliary_files(tex_idx_bib_file + ".tex")

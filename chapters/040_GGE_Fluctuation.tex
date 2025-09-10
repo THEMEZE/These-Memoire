@@ -409,7 +409,8 @@ et on fixe les paramètres physiques du système : \( N = 7 \) particules,\( L =
 \medskip
 
 \subparagraph{Initialisation : état fondamental.}
-\begin{enumerate}
+
+\begin{enumerate}%[label = $\bullet$]
     \item On commence par proposer une configuration d'entier de Bethe  \( \{I_a\} \) correspondant à l’état fondamental. Celle-ci est donnée par l'équation ~\eqref{chap:4:eq:EBA.1}.
 
     \item On résout ensuite les équations de Bethe \eqref{chap:4:eq:EBA} associées afin d'obtenir l’ensemble des rapidités \( \{ \theta_a \} \).
@@ -419,7 +420,7 @@ et on fixe les paramètres physiques du système : \( N = 7 \) particules,\( L =
 \end{enumerate}
 
 \subparagraph{À chaque étape du Monte Carlo :}
-\begin{enumerate}
+\begin{enumerate}%[label = $\bullet$]
     \item Une nouvelle configuration \( \{I_a'\} \) est proposée en faisant varier chaque entier \( I_a \) aléatoirement de \(\pm 1\), c’est-à-dire en posant 
 		\( I_a' = I_a \pm 1 \), le signe étant choisi au hasard.
     	\begin{itemize}[label = $\bullet$]
@@ -795,13 +796,33 @@ où \(\rho_s(\theta)\) désigne la {\em densité d’états} liée à \(\rho\) p
 
 La quantité $\langle\operator{\mathcal{O}}\rangle_{[\rho]}$ désigne la valeur propre de l’observable associée aux états caractérisés par la distribution de rapidité $\rho$.
 
+
+
+
+\end{mdframed}
+
 \medskip
 
-À l’équilibre thermodynamique, la distribution $\rho_{\mathrm{eq}}(\theta)$ satisfait l’équation \eqref{chap.2:eq.rho.eq.1}, et coïncide avec la moyenne de l’opérateur de densité de rapidité :
+\begin{mdframed}[
+	linewidth=0.5pt, 
+	backgroundcolor=gray!5, 
+	roundcorner=50pt,	
+	innerleftmargin=5pt,
+    innerrightmargin=5pt,
+    innertopmargin=-10pt,
+    innerbottommargin=2pt,
+    leftmargin=2pt,
+    rightmargin=2pt
+]
+\paragraph{Rappel : Condition variationnelle du GGE.}
+
+
+À l’équilibre thermodynamique; dans la limite $L \to \infty$, la distribution $\rho_{\mathrm{eq}}(\theta)$ satisfait l’équation \eqref{chap.2:eq.rho.eq.1}, et coïncide alors avec la moyenne de l’opérateur de densité de rapidité :
 \begin{eqnarray}
-	 \rho_{\mathrm{eq}} =  \braket{ \operator{\rho}(\theta) }_w	
+	 \rho_{\mathrm{eq}}(\theta) =  \braket{ \operator{\rho}(\theta) }_w,
 \end{eqnarray}
 représentant ainsi la densité continue de quasi-particules dans l’état stationnaire d’équilibre.
+
 
 \medskip
 
@@ -812,6 +833,71 @@ Comme nous l’avons vu (au chapitre~(\ref{chap:relaxation})), la condition d’
 \end{eqnarray}
 
 \end{mdframed}
+
+%\begin{mdframed}[
+%	linewidth=0.5pt, 
+%	backgroundcolor=gray!5, 
+%	roundcorner=50pt,	
+%	innerleftmargin=5pt,
+%    innerrightmargin=5pt,
+%    innertopmargin=-10pt,
+%    innerbottommargin=2pt,
+%    leftmargin=2pt,
+%    rightmargin=2pt
+%]
+%\paragraph{Rappel : Approche thermodynamique (Yang–Yang et énergie généralisée).}
+%
+%Dans l’approximation thermodynamique, le système est décrit en termes de grandeurs macroscopiques, notamment par la distribution de rapidité $\rho(\theta)$.  
+%Dans l’équation \eqref{chap:TBA:eq:ensemble_average}, la moyenne d’un observable s’écrit, dans la limite thermodynamique :
+%\begin{eqnarray}
+%	\langle \operator{\mathcal{O}} \rangle_{w} & = & 
+%	\frac{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])} \, 
+%	\langle\operator{\mathcal{O}}\rangle_{[\rho]}}
+%	{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{\mathrm{YY}}[\rho] - \mathcal{W}[\rho])}}. 
+%	\label{chap:Fluc:eq:ensemble_average}
+%\end{eqnarray}
+%où $\mathcal{S}_{\mathrm{YY}}$ est l’entropie de Yang–Yang et $\mathcal{W}$ l’énergie généralisée :
+%\begin{eqnarray}
+%	\mathcal{S}_{YY}[\rho] & = & \int d \theta  
+%	\big[ \rho_s\ln \rho_s - \rho \ln \rho - ( \rho_s - \rho ) \ln ( \rho_s - \rho ) \big] (\theta), 
+%	\label{chap.4.entropi.int}\\
+%	\mathcal{W}[\rho] & = & \int   w(\theta) \rho(\theta) \, d \theta, 
+%	\label{chap.4.W.int}		
+%\end{eqnarray}
+%avec $\rho_s(\theta)$ la densité d’états reliée à $\rho$ par les équations de Bethe \eqref{eq:TBA-rhos} :
+%\begin{eqnarray}
+%	2\pi \rho_s = 1 + \Delta \star \rho.	
+%\end{eqnarray}
+%\end{mdframed}
+%
+%\begin{mdframed}[
+%	linewidth=0.5pt, 
+%	backgroundcolor=gray!5, 
+%	roundcorner=50pt,	
+%	innerleftmargin=5pt,
+%    innerrightmargin=5pt,
+%    innertopmargin=-10pt,
+%    innerbottommargin=2pt,
+%    leftmargin=2pt,
+%    rightmargin=2pt
+%]
+%\paragraph{Rappel : Condition variationnelle du GGE.}
+%
+%À l’équilibre thermodynamique, la distribution $\rho_{\mathrm{eq}}(\theta)$ coïncide avec la moyenne de l’opérateur de densité de rapidité :
+%\begin{eqnarray}
+%	 \rho_{\mathrm{eq}} =  \braket{ \operator{\rho}(\theta) }_w.	
+%\end{eqnarray}
+%
+%Dans le cadre du GGE continu, l’état macroscopique est entièrement déterminé par une densité spectrale $\rho(\theta)$ qui maximise l’entropie de Yang–Yang, $\mathcal{S}_{\mathrm{YY}}[\rho]$, sous contrainte des charges généralisées. Le poids spectral $w(\theta)$ est alors fixé.  
+%
+%La condition d’équilibre peut s’écrire sous forme variationnelle :
+%\begin{eqnarray}
+%	\left. \frac{\delta \mathcal{S}_{\mathrm{YY}}[\rho]}{\delta \rho(\theta)} \right|_{\rho = \rho_{\mathrm{eq}}} 
+%	= w(\theta).
+%	\label{chap:Fluc:eq:stationnarite-3}
+%\end{eqnarray}
+%\end{mdframed}
+%
 
 
 \medskip
@@ -1424,11 +1510,11 @@ et on fixe les paramètres physiques du système : \( L = 10 \) , et \( g = 1 \)
 
 %En ne fixant pas $N$, la contribution du nombre de particule dans $w$ n'est pas fixées contrairement pour les simulations de la partie Monte-Carlos fais dans la section prècedent.
 
-\meaning
+\medskip
 
 Le nombre de particule $N$, est fixés par ces paramètres contrairement pour les simulations de la partie Monte-Carlos fais dans la section prècedent.
 
-\meaning
+\medskip
 
 On fais ce calcules numérique avec $\varepsilon = 10^{-10}$ suffisamment petit pour que l'approximation \eqref{cahp4:eq.sus.e.1} soit vérifiée.
 

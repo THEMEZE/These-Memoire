@@ -14,7 +14,7 @@ Si l’opérateur d’habillage est l’identité (\emph{no dressing}),
 v^{\rm eff}(\theta)\ \to\ \partial_\theta h(x,\theta),
 \qquad a^{\rm eff}(\theta)\ \to\ -\partial_x h(x,\theta),
 \]
-où $h(x,\theta)$ est l’hamiltonien \emph{nu} (par exemple $h=\epsilon(\theta)+V(x)$).
+où $h(x,\theta)$ est l’hamiltonien \emph{nu} (par exemple $h=\varepsilon(\theta)+V(x)$).
 L’équation \eqref{eq:GHD-base} devient alors une équation de transport collisionless (type Vlasov) :
 \begin{equation}\label{eq:transport-libre}
   \partial_t \rho + \partial_x\!\big( \partial_\theta h\ \rho \big)
@@ -33,7 +33,7 @@ En multipliant \eqref{eq:transport-libre} par $f(\theta)$ et en intégrant en $\
   \;=\; - \int d\theta\, f'(\theta)\, \partial_x h\, \rho
   \;=\; -\,\partial_x V(x)\, \int d\theta\, f'(\theta)\, \rho,
 \end{equation}
-où la dernière égalité vaut si $h(\theta,x)=\epsilon(\theta)+V(x)$.
+où la dernière égalité vaut si $h(\theta,x)=\varepsilon(\theta)+V(x)$.
 
 \paragraph{Trois premiers moments (``masse'', ``momentum'', ``énergie'').}
 En choisissant $f(\theta)=1,\ \theta,\ \theta^2/2$, on obtient respectivement :
@@ -91,7 +91,7 @@ On peut identifier la pression cinétique comme
 En remplaçant ces expressions dans \eqref{eq:euler-1}--\eqref{eq:euler-3}, on obtient les équations d'Euler fermées :
 \begin{align*}
 &\partial_t n + \partial_x(n u) = 0, \\
-&\partial_t (n u) + \partial_x(n u^2/2 + \mathcal{P}) = -\,n\,\partial_x V, \\
+&\partial_t (n u) + \partial_x(n u^2 + \mathcal{P}) = -\,n\,\partial_x V, \\
 &\partial_t E + \partial_x\big(u(E+\mathcal{P})\big) = 0,
 \end{align*}
 avec $E = \tfrac12 n u^2 + n V + n e_{\rm int}$ et $e_{\rm int}$ l'énergie interne par particule liée à $T_{\rm loc}$.
