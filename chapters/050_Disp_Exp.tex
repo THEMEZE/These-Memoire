@@ -137,7 +137,7 @@ Les atomes thermiques sont ralentis et confinés dans un piège magnéto-optique
 
 
 \paragraph{Rapprochement vers la puce}
-Le nuage est rapproché de la surface de la puce en transférant le champ quadrupolaire des bobines vers un champ homogène produit par ces bobines, combiné au champ généré par le fil en forme de U de la puce (fil bleu, Fig.~\ref{fig:puce}). Le courant dans ce fil est ajusté lentement de \(3.6\,\mathrm{A}\) à \(1.5\,\mathrm{A}\), ce qui positionne le nuage à quelques centaines de micromètres de la surface.
+Le nuage est rapproché de la surface de la puce en transférant le champ quadrupolaire des bobines vers un champ homogène produit par ces bobines, combiné au champ généré par le fil en forme de U de la puce (fil bleu, Fig.~\ref{chap:5:fig:puce_zoom_coup}). Le courant dans ce fil est ajusté lentement de \(3.6\,\mathrm{A}\) à \(1.5\,\mathrm{A}\), ce qui positionne le nuage à quelques centaines de micromètres de la surface.
 
 \paragraph{Mélasse optique}
 Après la capture dans le \gls{PMO}, une étape de mélasse optique est appliquée pour refroidir davantage le nuage atomique, au-delà de la limite de Doppler. La mélasse optique repose sur l’utilisation de faisceaux laser légèrement désaccordés en fréquence par rapport à la résonance de la transition atomique utilisée pour le refroidissement et polarisés de manière appropriée, qui interagissent avec les atomes selon le mécanisme de refroidissement sub-Doppler.
@@ -1427,7 +1427,7 @@ L’expansion des tranches est bien décrite par \gls{GHD}. Les comparaisons ent
 \subsection*{8.6 Mesure locale de distribution de rapidités hors équilibre}
 
 \paragraph{Mise en place d’une distribution locale hors équilibre.}  
-Le faisceau pousseur (\gls{DMD}) permet non seulement de sonder la distribution de rapidités locale, mais aussi de créer des situations hors équilibre. Un protocole illustratif consiste à retirer les atomes d’une région centrale de taille $\ell_0 = 70\,\mu$m, puis à laisser le gaz évoluer librement longidutalement (1D). Après un temps $\tau = 15$\,ms, la distribution de rapidités développe une structure doublement piquée, très différente d’une distribution thermique. Une seconde sélection locale ($\ell=35\,\mu$m) suivie d’une expansion révèle expérimentalement ce profil, en excellent accord avec les simulations \gls*{GHD} (Fif ~\ref{fig:GHD2}).
+Le faisceau pousseur (\gls{DMD}) permet non seulement de sonder la distribution de rapidités locale, mais aussi de créer des situations hors équilibre. Un protocole illustratif consiste à retirer les atomes d’une région centrale de taille $\ell_0 = 70\,\mu$m, puis à laisser le gaz évoluer librement longidutalement (1D). Après un temps $\tau = 15$\,ms, la distribution de rapidités développe une structure doublement piquée, très différente d’une distribution thermique. Une seconde sélection locale ($\ell=35\,\mu$m) suivie d’une expansion révèle expérimentalement ce profil, en excellent accord avec les simulations \gls*{GHD} (Fig ~\ref{fig:GHD2}).
 
 \begin{figure}[H]
 	\centering
@@ -1462,21 +1462,19 @@ Le faisceau pousseur (\gls{DMD}) permet non seulement de sonder la distribution 
 
         
 	\end{tikzpicture}
-	\caption{Les profils de densité sont montrés à différents stades : à l'équilibre initial (a1), 1\,ms après la première sélection (a2), et 15\,ms après une expansion le long du guide 1D (a3). Les distributions de rapidités résolues spatialement correspondantes sont illustrées dans les panels (a4) à (a6). Les lignes pointillées rouges indiquent la deuxième sélection.  (b)Pour obtenir la distribution locale de rapidités, on trace $\tau\, n(x,\tau)/\ell$ sur une région de largeur $\ell = 36\,\mu\mathrm{m}$ après un temps d'expansion longitudinal $\tau = 50\,\mathrm{ms}$. Le profil présente une double crête et montre un excellent accord avec la prédiction théorique de la distribution de rapidités (courbe violette), y compris les corrections dues à un temps d'expansion fini (courbe noire pointillée).
+	\caption{Les profils de densité sont montrés à différents stades : à l'équilibre initial (a1), 1\,ms après la première sélection (a2), et 15\,ms après une expansion le long du guide 1D (a3). Les distributions de rapidités résolues spatialement correspondantes sont illustrées dans les panels (a4) à (a6). Les lignes pointillées rouges indiquent la deuxième sélection.  (b) Pour obtenir la distribution locale de rapidités, on trace $\tau\, n(x,\tau)/\ell$ sur une région de largeur $\ell = 36\,\mu\mathrm{m}$ après un temps d'expansion longitudinal $\tau = 50\,\mathrm{ms}$. Le profil présente une double crête et montre un excellent accord avec la prédiction théorique de la distribution de rapidités (courbe violette), y compris les corrections dues à un temps d'expansion fini (courbe noire pointillée).
 }
 
 	\label{fig:GHD2}
 \end{figure}
 
 \paragraph{Analyse des distributions locales hors équilibre}  
-Cette approche démontre l’importance d’une mesure locale : alors que la distribution globale $\int dx\,\rho(x,\theta)$ est conservée, la distribution locale $\rho(x,\theta)$ reflète directement la dynamique hors équilibre. Le dispositif basé sur le \gls{DMD} offre ainsi un outil puissant pour générer et caractériser divers protocoles hors équilibre (cisaillement, jonctions de densité, états stationnaires non thermiques, etc.), ouvrant de nouvelles perspectives pour l’étude des gaz de Bose 1D. Pour une présentation plus détaillée de ces résultats, le lecteur pourra se référer à notre article~\cite{L.Dubois2024}.
+Cette approche démontre l’importance d’une mesure locale : alors que la distribution globale $\int dx\,\rho(x,\theta)$ est conservée, la distribution locale $\rho(x,\theta)$ reflète directement la dynamique hors équilibre. Le dispositif basé sur le \gls{DMD} offre ainsi un outil puissant pour générer et caractériser divers protocoles hors équilibre (cisaillement, jonctions de densité, états stationnaires non thermiques, etc.), ouvrant de nouvelles perspectives pour l’étude des gaz de Bose 1D. Pour une présentation plus détaillée de ces résultats, le lecteur pourra se référer à notre article~\cite{PhysRevLett.133.113402}.
 
 
-\section*{Conclusion du chapitre}
+\section*{Résumé du chapitre}
 
-Dans ce chapitre, nous avons décrit les principaux dispositifs expérimentaux utilisés dans notre étude. 
-Le système atomique est préparé dans une géométrie unidimensionnelle, avec un confinement longitudinal 
-réalisé par un potentiel de la forme
+Dans ce chapitre, nous avons décrit les principaux dispositifs expérimentaux utilisés dans notre étude. Le système atomique est préparé dans une géométrie unidimensionnelle, avec un confinement longitudinal réalisé par un potentiel de la forme
 \(
 V_{\parallel}(x) = a_0 + a_1 x + a_2 x^2 + a_3 x^3 + a_4 x^4 ,
 \)

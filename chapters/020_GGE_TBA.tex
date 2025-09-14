@@ -1,4 +1,4 @@
-\chapter{Relaxation et Équilibre dans les Systèmes Quantiques Intégrables : Une Approche par la Thermodynamique de Bethe}\label{chap:relaxation}
+\chapter{Relaxation et Équilibre dans les Systèmes Quantiques Intégrables : de l’Ensemble de Gibbs Généralisé à la Thermodynamique de Bethe}\label{chap:relaxation}
 \minitoc
 
 %------------------------------------------------------------------
@@ -21,7 +21,7 @@ La relaxation vers un état stationnaire n’est donc pas décrite par l’ensem
 \medskip
 
 Ce chapitre est consacré à la mise en place rigoureuse de cette notion.  
-Dans une première section, nous revenons brièvement sur la notion d’opérateurs à un corps exprimés en puissances de l’impulsion $\operator{p}$ pour une particule, introduite au chapitre précédent (\ref{chap:LL-BA}).  
+Dans une première section, nous revenons brièvement sur la notion d’opérateurs à un corps exprimés en puissances de l’impulsion $\operator{p}$ pour une particule, introduite au chapitre précédent (Chap.\ref{chap:LL-BA}).  
 Ce cadre permet de construire une hiérarchie naturelle de charges conservées, au-delà du simple nombre de particules, de la quantité totale de mouvement ou de l’énergie totale.  
 Ces charges supplémentaires permettent alors de définir les moyennes d'observables dans un état stationnaire hors d'équilibre.
 
@@ -64,7 +64,7 @@ L’état propre correspondant est noté $\ket{\{ \theta_a \}}\;=\;\ket{\{\theta
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{mdframed}[
 	linewidth=0.5pt, 
-	backgroundcolor=gray!5, 
+	backgroundcolor=linkcolor!5, 
 	roundcorner=50pt,	
 	innerleftmargin=5pt,
     innerrightmargin=5pt,
@@ -153,12 +153,25 @@ En résumé, le \gls{GGE} généralise les ensembles canoniques standard : au li
 
 \medskip
 
+\begin{mdframed}[
+	linewidth=0.5pt, 
+	backgroundcolor=linkcolor!5, 
+	roundcorner=50pt,	
+	innerleftmargin=5pt,
+    innerrightmargin=5pt,
+    innertopmargin=-10pt,
+    innerbottommargin=2pt,
+    leftmargin=2pt,
+    rightmargin=2pt
+	]
 \paragraph{Rappel sur le modèle de \gls{LL} et distribution de rapidités.}
 Comme rappelé au chapitre précédent, {\bf le modèle de  \gls{LL}} (gaz bosonique 1D à interactions de contact) est un exemple paradigmatique d’un système intégrable \cite{Nardis_2016}. Ses états propres sont caractérisés par un ensemble de $N$  rapidités $\{ \theta_a \}$ , qui jouent le rôle de quasi-momenta ({\bf Bethe ansatz}). Dans ce contexte, l’état macroscopique du gaz après relaxation unitaire est entièrement déterminé par la {\bf distribution des rapidités}. Formellement, on définit $\rho(\theta)$ la distribution intensive des rapidités telle que $\rho(\theta) d \theta$ donne le nombre de particules par unité de longueur ayant une rapidité dans la cellule $[\theta , \theta + d \theta ] $.
 
 \medskip
 
 Cette {\bf  distribution de rapidités } est d’autant plus pertinente qu’elle est {\em accessible expérimentalement}. En effet, lorsque le gaz bosonique 1D est libéré et que l'on laisse s'étaler longitudinalement, la distribution asymptotique des vitesses des atomes coïncide avec la distribution initiale des rapidités \cite{Nardis_2017} . %Autrement dit, la GGE prédit un profil de vitesses observables en laboratoire. Léa Dubois souligne dans sa thèse que " la distribution de rapidités est la distribution asymptotique des vitesses des atomes après une expansion dans le guide 1D ", et qu’elle peut être extraite par l’hydrodynamique généralisée \cite{Nardis_2017}. \\
+
+\end{mdframed}
 
 \medskip
 
@@ -398,7 +411,7 @@ y compris les charges conservées elles‑mêmes.
 
 %Nous avons vu que, dans un système intégrable, la description correcte de l’équilibre stationnaire requiert l’introduction d’une \emph{famille infinie de charges conservées}, comprenant à la fois des charges strictement locales et des charges quasi‑locales.
 
-Nous avons vu que, dans un système intégrable, la description correcte de l’équilibre stationnaire ne peut se limiter aux seules constantes de mouvement usuelles, telles que l’énergie ou l’impulsion. Elle requiert l’introduction d’une \emph{famille infinie de charges conservées}, qui forment la structure intégrable du modèle. Ces charges comprennent à la fois des charges strictement locales, construites comme des intégrales de densités dépendant d’un nombre fini de sites ou de points de l’espace, et des charges dites quasi-locales, dont la densité est faiblement non locale mais reste suffisamment bien définie pour jouer un rôle physique. L’ensemble de ces charges contraint fortement la dynamique et empêche la thermalisation au sens usuel (c’est-à-dire vers l’ensemble canonique ou microcanonique). La relaxation vers l’équilibre se fait alors vers un état stationnaire généralisé, décrit par l’\emph{ensemble de Gibbs généralisé} (\gls{GGE}), où chaque charge conservée intervient avec son propre multiplicateur de Lagrange.
+Nous avons vu que, dans un système intégrable, la description correcte de l’équilibre stationnaire ne peut se limiter aux seules constantes de mouvement usuelles, telles que l’énergie ou l’impulsion. Elle requiert l’introduction d’une \emph{famille infinie de charges conservées}, qui forment la structure intégrable du modèle. Ces charges comprennent à la fois des charges strictement locales, construites comme des intégrales de densités dépendant d’un nombre fini de sites ou de points de l’espace, et des charges dites quasi-locales, dont la densité est faiblement non locale mais reste suffisamment bien définie pour jouer un rôle physique. L’ensemble de ces charges contraint fortement la dynamique et empêche la thermalisation au sens usuel (c’est-à-dire vers l’ensemble canonique ou microcanonique). La relaxation vers l’équilibre se fait alors vers un état stationnaire généralisé, décrit par le \gls{GGE}, où chaque charge conservée intervient avec son propre multiplicateur de Lagrange.
 
 \medskip
 
@@ -518,7 +531,7 @@ Cette reformulation est particulièrement puissante car elle permet de décrire 
 
 \medskip
 
-Les travaux pionniers de \textsc{Yang \& Yang} (1969) ont fourni la justification de cette approche. Leur méthode repose sur l’analyse statistique des états propres partageant la même distribution $\rho(\theta)$, montrant ainsi comment la structure microscopique des états peut se traduire en une description thermodynamique complète.
+Les travaux pionniers de \textsc{Yang \& Yang} (1969) \cite{YangYang_1969} ont fourni la justification de cette approche. Leur méthode repose sur l’analyse statistique des états propres partageant la même distribution $\rho(\theta)$, montrant ainsi comment la structure microscopique des états peut se traduire en une description thermodynamique complète.
 
 % : combien d’états microscopiquement distincts correspondent à ce même « macro‑état » ?
 
@@ -797,11 +810,11 @@ Cette approximation correspond à une méthode de \textit{selle statique}, où l
 
 \begin{mdframed}[
 	linewidth=0.5pt, 
-	backgroundcolor=gray!5, 
+	backgroundcolor=linkcolor!5, 
 	roundcorner=50pt,	
 	innerleftmargin=5pt,
     innerrightmargin=5pt,
-    innertopmargin=5pt,
+    innertopmargin=-10pt,
     innerbottommargin=2pt,
     leftmargin=2pt,
     rightmargin=2pt
@@ -1001,12 +1014,12 @@ Ainsi en fixant le poids spectral $w(\theta)$, l’algorithme fournit la pseudo-
 \end{figure}
 
 
-\medskip
-\subparagraph{À l'équilibre thermique.} 
-Si on se place à l’équilibre grand canonique, caractérisé par la température \( T \) et le potentiel chimique \( \mu \).  Dans ce cadre, le poids spectral vaut
-\begin{equation}
-  w(\theta)=\beta\bigl[\varepsilon(\theta)-\mu\bigr],\qquad\beta=\tfrac1T\; (k_B = 1 ),\quad\varepsilon(\theta)=\tfrac{\theta^{2}}{2}\;(m=1).\label{eq:TBA:w:canonical}
-\end{equation}
+%\medskip
+%\subparagraph{À l'équilibre thermique.} 
+%Si on se place à l’équilibre grand canonique, caractérisé par la température \( T \) et le potentiel chimique \( \mu \).  Dans ce cadre, le poids spectral vaut
+%\begin{equation}
+%  w(\theta)=\beta\bigl[\varepsilon(\theta)-\mu\bigr],\qquad\beta=\tfrac1T\; (k_B = 1 ),\quad\varepsilon(\theta)=\tfrac{\theta^{2}}{2}\;(m=1).\label{eq:TBA:w:canonical}
+%\end{equation}
 %En injectant \eqref{eq:TBA:w:canonical} dans l’équation intégrale pour lapseudo-énergie \eqref{chap:TBA:eq:e}, on obtient l’équation non linéaire :
 %\begin{eqnarray*}
 %	\epsilon & = & \beta(\varepsilon - \mu)  -  \frac{\Delta}{2\pi} \star \ln \left( 1 + e^{-\epsilon} \right) ,\label{eq:num:TBA}
@@ -1084,6 +1097,7 @@ où \( f_i(\theta) \) sont les densités locales associées aux charges conserv�
 
 
 %\paragraph{Calcul de la matrice hermitienne.}
+\medskip
 
 Les densités locales $f_i$ sont fixées. Pour spécifier le {\em poids spectral} $w$, on choisit les coefficients de Lagrange $\beta_0$ et $\beta_2$ en imposant une température \(T\) et un potentiel chimique \(\mu\).
 
@@ -1115,7 +1129,7 @@ Un exemple de ce profil  avec ($\gamma=9.10^{-3}$, $\mathfrak{t} = 86.5$) est re
 \medskip
 
 
-Pour synthétiser les différents comportements, les régimes principaux peuvent être représentés dans le plan $(\gamma, \mathfrak{t})$. Le diagramme de la Fig.~\ref{fig:diagramme} distingue trois zones : gaz de Bose idéal, gaz de Tonks-Girardeau et qBEC. Les courbes qui délimitent ces zones correspondent à des conditions analytiques sur $\gamma$ et $\mathfrak{t}$, par exemple $\gamma^{3/2} \mathfrak{t} = 1$, $\gamma^2 \mathfrak{t} = 1$ et $\gamma \mathfrak{t} = 1$. Il ne s’agit pas de transitions de phase, mais de cross-over entre régimes asymptotiques. Les expériences sur puce atomique du LCF ont permis d’étudier ces régimes. La plupart des résultats présentés dans cette thèse correspondent à $\gamma \sim 0.9 \times 10^{-2}$.La zone grise indique la gamme de paramètres expérimentaux explorés pendant cette thèse.
+Pour synthétiser les différents comportements, les régimes principaux peuvent être représentés dans le plan $(\gamma, \mathfrak{t})$. Le diagramme de la Fig.~\ref{fig:diagramme} distingue trois zones : gaz de Bose idéal, gaz de Tonks-Girardeau et qBEC. Les courbes qui délimitent ces zones correspondent à des conditions analytiques sur $\gamma$ et $\mathfrak{t}$, par exemple $\gamma^{3/2} \mathfrak{t} = 1$, $\gamma^2 \mathfrak{t} = 1$ et $\gamma \mathfrak{t} = 1$. Il ne s’agit pas de transitions de phase, mais de cross-over entre régimes asymptotiques. Les expériences sur puce atomique du \gls{LCF} ont permis d’étudier ces régimes. La plupart des résultats présentés dans cette thèse correspondent à $\gamma \sim 0.9 \times 10^{-2}$. La zone grise indique la gamme de paramètres expérimentaux explorés pendant cette thèse.
 
 \medskip
 
@@ -1124,7 +1138,7 @@ Pour synthétiser les différents comportements, les régimes principaux peuvent
     \centering
     \centering
      \includegraphics[width=0.9\textwidth , page = 4 ]{figures/02_GGE_TBA/Figures.pdf}
-    \caption{Diagramme des régimes principaux du gaz de \gls{LL} : gaz de Bose idéal, Tonks-Girardeau et \gls{qBEC}, en fonction des paramètres adimensionnés $\gamma$ et $\mathfrak{t}$. Les courbes noires, bleues et orange délimitent les cross-overs entre régimes. La zone grise correspond aux paramètres expérimentaux explorés pendant la thèse. Figure adaptée de \cite{ref_experiment}.}
+    \caption{Diagramme des régimes principaux du gaz de \acrlong{LL} : gaz de Bose idéal, Tonks-Girardeau et \gls{qBEC}, en fonction des paramètres adimensionnés $\gamma$ et $\mathfrak{t}$. Les courbes noires, bleues et orange délimitent les cross-overs entre régimes. La zone grise correspond aux paramètres expérimentaux explorés pendant la thèse. Figure adaptée de \cite{Bouchoule2011}.}
     \label{fig:diagramme}
 \end{figure}
 

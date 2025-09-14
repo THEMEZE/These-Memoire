@@ -171,6 +171,7 @@ innertopmargin=\topskip,
 %  {\theparagraph}{1em}{}
 
 % Définition des couleurs avec les codes HTML
+\definecolor{Prune}{RGB}{99,0,60} % l14-33 :
 \definecolor{colorOne}{HTML}{443E46}
 \definecolor{colorTwo}{HTML}{F6DEB8}
 \definecolor{colorThree}{HTML}{908CA4}
@@ -191,7 +192,8 @@ innertopmargin=\topskip,
 \makeindex[name=pers, title=Index des noms propres, intoc=true]
 
 %%% ===== Couleur des liens =====
-\definecolor{linkcolor}{RGB}{0,0,180}
+%\definecolor{linkcolor}{RGB}{0,0,180}
+\definecolor{linkcolor}{RGB}{99,0,60} % l14-33 :
 \PassOptionsToPackage{
     colorlinks=true,
     linkcolor=linkcolor,
@@ -210,12 +212,12 @@ innertopmargin=\topskip,
 }
 
 %%% ===== Style des titres (colorés) =====
-\titleformat{\chapter}[display]{\normalfont\sffamily\huge\bfseries\color{colorSix}}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
-\titleformat{\section}{\normalfont\color{colorSix!90!colorFour}\Large\bfseries}{\thesection}{1em}{}
-\titleformat{\subsection}{\normalfont\color{colorSix!70!colorFour}\large\bfseries}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}{\normalfont\color{colorSix!50!colorFour}\normalsize\bfseries}{\thesubsubsection}{1em}{}
-\titleformat{\paragraph}[runin]{\normalfont\color{colorSix!30!colorFour}\bfseries}{\theparagraph}{1em}{}
-\titleformat{\subparagraph}[runin]{\normalfont\color{colorSix!10!colorFour}\itshape}{\thesubparagraph}{1em}{}
+\titleformat{\chapter}[display]{\normalfont\sffamily\huge\bfseries\color{linkcolor}}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titleformat{\section}{\normalfont\color{linkcolor!90!colorFour}\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\color{linkcolor!70!colorFour}\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont\color{linkcolor!50!colorFour}\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}[runin]{\normalfont\color{linkcolor!30!colorFour}\bfseries}{\theparagraph}{1em}{}
+\titleformat{\subparagraph}[runin]{\normalfont\color{linkcolor!10!colorFour}\itshape}{\thesubparagraph}{1em}{}
 
 %%% ===== Couleurs de la table des matières =====
 \renewcommand{\cftsecfont}{\color{linkcolor!90!black}}

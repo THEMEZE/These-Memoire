@@ -269,9 +269,9 @@ if __name__ == "__main__":
     flag = True
     while flag :
         try:
-            #for tex_file in tex_files:
-                #compile_latex(tex_file)
-                #clean_auxiliary_files(tex_file)
+            for tex_file in tex_files:
+                compile_latex(tex_file)
+                clean_auxiliary_files(tex_file)
             for tex_idx_bib_file in tex_idx_bib_files:
                 compile_latex_index_bibtex(tex_idx_bib_file)
                 clean_auxiliary_files(tex_idx_bib_file + ".tex")
