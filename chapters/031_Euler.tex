@@ -69,32 +69,77 @@ La véritable différence entre hydrodynamique classique et GHD complète résid
 \emph{dressing} : dès que $^{\rm dr}\neq \mathrm{Id}$,
 les vitesses et charges deviennent \emph{effectives} et la dynamique s’écarte des lois d’Euler classiques.
 
+%
+%\begin{mdframed}[linewidth=0.5pt, backgroundcolor=gray!5, roundcorner=8pt, innerleftmargin=6pt, innerrightmargin=6pt]
+%\paragraph{Encadré : fermeture et équations d'Euler fermées.}
+%Pour obtenir un système d'équations d'Euler \emph{fermées} à partir de la hiérarchie \eqref{eq:euler-1}--\eqref{eq:euler-3}, il faut fournir une \emph{relation de fermeture} (ou \emph{équation d'état}) reliant les moments d'ordre supérieur aux variables hydrodynamiques de base $(n,u)$.
+%
+%Un choix simple et classique est l'hypothèse d'une distribution locale de Maxwell–Boltzmann (ou locale thermale) :
+%\[
+%\rho(x,\theta,t) \;=\; n(x,t)\,\frac{1}{\sqrt{2\pi T_{\rm loc}(x,t)}}\,
+%\exp\!\Big(-\frac{(\theta-u(x,t))^2}{2T_{\rm loc}(x,t)}\Big),
+%\]
+%où $T_{\rm loc}(x,t)$ est la température locale (en unités appropriées). Sous cette hypothèse on calcule directement les moments :
+%\[
+%q_{[\theta]} = n u,\qquad
+%q_{[\theta^2]} = n\big(u^2 + T_{\rm loc}\big).
+%\]
+%On peut identifier la pression cinétique comme
+%\[
+%\mathcal{P} = q_{[\theta^2]} - \frac{q_{[\theta]}^2}{n} = n\,T_{\rm loc}.
+%\]
+%En remplaçant ces expressions dans \eqref{eq:euler-1}--\eqref{eq:euler-3}, on obtient les équations d'Euler fermées :
+%\begin{align*}
+%&\partial_t n + \partial_x(n u) = 0, \\
+%&\partial_t (n u) + \partial_x(n u^2 + \mathcal{P}) = -\,n\,\partial_x V, \\
+%&\partial_t E + \partial_x\big(u(E+\mathcal{P})\big) = 0,
+%\end{align*}
+%avec $E = \tfrac12 n u^2 + n V + n e_{\rm int}$ et $e_{\rm int}$ l'énergie interne par particule liée à $T_{\rm loc}$.
+%
+%\medskip
+%
+%\noindent\textbf{Forme vectorielle compacte.} En posant l'état vectoriel $U=(n,\; n u,\; E)^\top$ et le flux $F(U)=(n u,\; n u^2 + \mathcal{P},\; u(E+\mathcal{P}))^\top$, les équations s'écrivent
+%\[
+%\partial_t U + \partial_x F(U) = S(U),
+%\]
+%où la source $S(U)$ regroupe les termes dus au potentiel externe, par exemple $S(U)=(0,\,-n\partial_x V,\,0)^\top$.
+%
+%\medskip
+%
+%\noindent\textbf{Remarque importante.} Dans la GHD complète, la distribution $\rho(x,\theta,t)$ n'est en général pas une Maxwellienne locale : les effets d'interaction et le \emph{dressing} modifient les relations entre moments. Par conséquent, la \emph{fermeture} dans GHD ne résulte pas automatiquement d'une hypothèse simple de type Maxwell–Boltzmann ; elle requiert soit une approximation adéquate (ex. développement en moments, hypothèse d'équation d'état empirique) soit la prise en compte explicite du dressing et des vitesses/charges effectives.
+%\end{mdframed}
 
 \begin{mdframed}[linewidth=0.5pt, backgroundcolor=gray!5, roundcorner=8pt, innerleftmargin=6pt, innerrightmargin=6pt]
 \paragraph{Encadré : fermeture et équations d'Euler fermées.}
 Pour obtenir un système d'équations d'Euler \emph{fermées} à partir de la hiérarchie \eqref{eq:euler-1}--\eqref{eq:euler-3}, il faut fournir une \emph{relation de fermeture} (ou \emph{équation d'état}) reliant les moments d'ordre supérieur aux variables hydrodynamiques de base $(n,u)$.
 
-Un choix simple et classique est l'hypothèse d'une distribution locale de Maxwell–Boltzmann (ou locale thermale) :
+Un choix simple et classique, valable pour une cinétique collisionless de type Vlasov (système \emph{classique}), est d'hypothétiser une \emph{distribution locale thermique} (Maxwellienne) :
 \[
 \rho(x,\theta,t) \;=\; n(x,t)\,\frac{1}{\sqrt{2\pi T_{\rm loc}(x,t)}}\,
 \exp\!\Big(-\frac{(\theta-u(x,t))^2}{2T_{\rm loc}(x,t)}\Big),
 \]
-où $T_{\rm loc}(x,t)$ est la température locale (en unités appropriées). Sous cette hypothèse on calcule directement les moments :
+où $T_{\rm loc}(x,t)$ est la température locale (unités choisies telles que $k_B=1$). Sous cette hypothèse on obtient les moments
 \[
 q_{[\theta]} = n u,\qquad
 q_{[\theta^2]} = n\big(u^2 + T_{\rm loc}\big).
 \]
-On peut identifier la pression cinétique comme
+On définit alors la pression cinétique comme la partie convective soustraite au second moment :
 \[
-\mathcal{P} = q_{[\theta^2]} - \frac{q_{[\theta]}^2}{n} = n\,T_{\rm loc}.
+\mathcal{P} \;=\; q_{[\theta^2]} - \frac{q_{[\theta]}^2}{n} \;=\; n\,T_{\rm loc}.
 \]
-En remplaçant ces expressions dans \eqref{eq:euler-1}--\eqref{eq:euler-3}, on obtient les équations d'Euler fermées :
+Dans le cas d'un gaz classique 1D idéal la contribution interne par particule vaut $e_{\rm int} = \tfrac{1}{2}T_{\rm loc}$ (pour $k_B=1$).
+
+En remplaçant ces expressions dans \eqref{eq:euler-1}--\eqref{eq:euler-3} on obtient des équations d'Euler \emph{fermées} avec les sources dues au potentiel externe :
 \begin{align*}
 &\partial_t n + \partial_x(n u) = 0, \\
 &\partial_t (n u) + \partial_x(n u^2 + \mathcal{P}) = -\,n\,\partial_x V, \\
-&\partial_t E + \partial_x\big(u(E+\mathcal{P})\big) = 0,
+&\partial_t E + \partial_x\big(u(E+\mathcal{P})\big) = -\,n u\,\partial_x V,
 \end{align*}
-avec $E = \tfrac12 n u^2 + n V + n e_{\rm int}$ et $e_{\rm int}$ l'énergie interne par particule liée à $T_{\rm loc}$.
+où l'énergie volumique totale s'écrit
+\[
+E(x,t) \;=\; \tfrac12 n u^2 \;+\; n V \;+\; n e_{\rm int},
+\]
+et le terme $-n u\,\partial_x V$ à droite de l'équation d'énergie représente le travail du champ externe (force × vitesse).
 
 \medskip
 
@@ -102,9 +147,14 @@ avec $E = \tfrac12 n u^2 + n V + n e_{\rm int}$ et $e_{\rm int}$ l'énergie inte
 \[
 \partial_t U + \partial_x F(U) = S(U),
 \]
-où la source $S(U)$ regroupe les termes dus au potentiel externe, par exemple $S(U)=(0,\,-n\partial_x V,\,0)^\top$.
+où la source $S(U)$ regroupe les termes dus au potentiel externe, par exemple
+\[
+S(U) = \big(0,\,-n\partial_x V,\,-n u\,\partial_x V\big)^\top .
+\]
 
 \medskip
 
-\noindent\textbf{Remarque importante.} Dans la GHD complète, la distribution $\rho(x,\theta,t)$ n'est en général pas une Maxwellienne locale : les effets d'interaction et le \emph{dressing} modifient les relations entre moments. Par conséquent, la \emph{fermeture} dans GHD ne résulte pas automatiquement d'une hypothèse simple de type Maxwell–Boltzmann ; elle requiert soit une approximation adéquate (ex. développement en moments, hypothèse d'équation d'état empirique) soit la prise en compte explicite du dressing et des vitesses/charges effectives.
+\noindent\textbf{Remarque importante.} L'hypothèse d'une Maxwellienne locale est une approximation \emph{classique} de fermeture : elle est justifiée pour des gaz classiques proches d'un équilibre local. Pour des gaz quantiques (par exemple le modèle de Lieb–Liniger), la distribution locale d'équilibre n'est pas une Maxwell–Boltzmann mais plutôt un état thermique quantique (Gibbs) ou, dans le cas d'un système intégrable, un état \emph{GGE} local ; de plus les effets d'interaction et le \emph{dressing} modifient les relations entre moments.  
+Par conséquent, dans le contexte de la GHD complète, la fermeture ne résulte pas automatiquement d'une hypothèse simple de type Maxwell–Boltzmann : il faut soit adopter une hypothèse adaptée (p.ex. fermeture empirique, développement en moments), soit utiliser le formalisme du dressing/du TBA pour exprimer exactement les relations entre moments et vitesses effectives.
 \end{mdframed}
+
