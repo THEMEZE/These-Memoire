@@ -883,7 +883,7 @@ Enfin, en fixant \(n_0 = 56~\mu\mathrm{m}^{-1}\), nous ajustons la température 
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=\textwidth , page = 5 ]{figures/06_Bipart/Shema.pdf}
+	\includegraphics[width=1.1\textwidth , page = 5 ]{figures/06_Bipart/Shema.pdf}
 	\caption{
 (a) À l'instant $t = 0^+$, immédiatement après le « quench bipartite » en $x = 0$, le facteur d'occupation est donné par $\nu(x, \theta ; t = 0^+) = \nu_0(\theta)$ pour $x > 0$ et est nul pour $x < 0$. Le bord initial représenté en tirets par l'ensemble des points $(x_b(t = 0^+) = 0,\ \theta)$.
 (b) Densité spatiale linéique $n(x)$ : en pointillés, $n(x; t = 0^-) = \int \rho(x, \theta; t = 0^-) \, \mathrm{d}\theta = n_0 = 56~\mu\mathrm{m}^{-1}$ juste avant le quench ; en ligne pleine, $n(x; t = 0^+) = n_0$ pour $x > 0$ et $0$ pour $x < 0$.
@@ -919,7 +919,7 @@ La vitesse efficace dépend désormais explicitement du temps $\tau$ et de la po
 \begin{equation}
 	v^{\mathrm{eff}}_{[\nu(x(\tau),\cdot)]}(\theta),
 \end{equation}
-Pour résoudre numériquement \eqref{eq:traj_lagr_1} on est ici obligé d'induire des pas de temps $d\tau$ : 
+Pour résoudre numériquement \eqref{chap6:eq:traj_lagr_1} on est ici obligé d'induire des pas de temps $d\tau$ : 
 \begin{equation}\label{chap6:eq.etalement.1}
 	x(\tau +d\tau ) = x(\tau ) + v^{\mathrm{eff}}_{[\nu(x(\tau),\cdot)]} (\theta)d \tau.
 \end{equation}
@@ -1045,7 +1045,7 @@ Dans un premier temps, la tranche est extraite du bord du système, tel qu’il 
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=\textwidth , page = 6 ]{figures/06_Bipart/Shema.pdf}
+	\includegraphics[width=1.1\textwidth , page = 6 ]{figures/06_Bipart/Shema.pdf}
 	\caption{
 (a) À l'instant $\tau = 0^+$, immédiatement après la sélection de la tranche centrée en $x = x_0$ et de largeur $\ell$, la distribution de rapidité localement résolue est donnée par $\rho(x,\theta ; \tau = 0^+) = \nu(x, \theta ; t = 18~\mathrm{ms}) \, \rho_s(x,\theta ; t = 18~\mathrm{ms})$ pour $\vert x - x_0 \vert < \ell/2$, et est nulle pour $\vert x - x_0 \vert > \ell/2$. Le bord gauche immédiatement après la sélection est représenté en pointillés par l’ensemble des points $(x_g(\tau = 0^+),\ \theta_g)$, et le bord droit en tiret-point par l’ensemble des points $(x_d( \tau = 0^+),\ \theta_d)$. Le bord complet est donc la concaténation de ces deux ensembles. 
 (b) Densité linéique spatiale $\tilde{n}(x)$ : en pointillés, $n(x; t = 18~\mathrm{ms})$ juste avant la sélection ; en ligne pleine, $\tilde{n}(x; \tau = 0^+)$, égal à $n(x; t = 18~\mathrm{ms})$ pour $\vert x - x_0 \vert < \ell/2$ et nul ailleurs. 
