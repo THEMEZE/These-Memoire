@@ -68,7 +68,7 @@ Les règles de commutations \eqref{chap:1:com.1} impliquent que
 
 En utilisant ces dernier règles de commutations et la définition d'état de Fock \eqref{chap:eq.vide.fock} , la premiers partie de l'application de l'hamiltonien sur l'état $\ket{\{\theta_a\}}$ , (\ref{chap:1:hal.mod.3.1}) de simplifie en
 \begin{eqnarray}
-     - \frac{1}{ \sqrt{N!}} \int d^N z \, \chi_N ( z_1 , \cdots , z_N  ~\vert ~ \theta_1 , \cdots , \theta _N ) \,    \sum_{i=1}^N  \operator{\Psi}^\dag(z_1) \cdots \left [\operator{\partial}_{z_i}^2 \operator{\Psi}^\dag(z_i)\right ] \cdots\operator{\Psi}^\dag(z_N) \vert 0 \rangle
+     - \frac{1}{ \sqrt{N!}} \int d^N z \, \varphi_{\{ \theta_a \}} ( \{x_a\}) \,    \sum_{i=1}^N  \operator{\Psi}^\dag(z_1) \cdots \left [\operator{\partial}_{z_i}^2 \operator{\Psi}^\dag(z_i)\right ] \cdots\operator{\Psi}^\dag(z_N) \vert 0 \rangle
 \end{eqnarray}
 
 Et en faisant deux integration par partie selon la variable $z_i$ , cette premier partie devient
@@ -101,7 +101,7 @@ En utilisant la régle de comutation (\ref{chap:1:com.5}) et la définition de l
 en utilisant (\ref{chap:1:hal.mod.3.1.1}) et (\ref{chap:1:hal.mod.3.1.2}) , (\ref{chap:1:hal.mod.3.1.1}) devient
 
 \begin{eqnarray}
-    \operator{H}\vert \psi ( \theta_1 , \cdots , \theta_N ) \rangle &= &  \frac{1}{ \sqrt{N!}} \int d^N z \,      \left [ \operator{\mathcal{H}}_N \, \varphi_{\{ \theta_a \}} ( \{x_a\})\,  \right ] \, \operator{\Psi}^\dag(z_1) \cdots  \cdots\operator{\Psi}^\dag(z_N) \vert \emptyset \rangle
+    \operator{H}\ket{\{\theta_a\}} &= &  \frac{1}{ \sqrt{N!}} \int d^N z \,      \left [ \operator{\mathcal{H}}_N \, \varphi_{\{ \theta_a \}} ( \{x_a\})\,  \right ] \, \operator{\Psi}^\dag(z_1) \cdots  \cdots\operator{\Psi}^\dag(z_N) \vert \emptyset \rangle
 \end{eqnarray}
 avec
 \begin{eqnarray}

@@ -40,14 +40,14 @@ En choisissant $f(\theta)=1,\ \theta,\ \theta^2/2$, on obtient respectivement :
 \begin{align}
   &\text{(Continuité)}
   && \partial_t n + \partial_x (n u) = 0,
-  && n := q_{[1]},\quad n u := j_{[1]}, \label{eq:euler-1}\\[2pt]
+  && n \equiv q_{[1]},\quad n u \equiv j_{[1]}, \label{eq:euler-1}\\[2pt]
   &\text{(Quantité de mouvement)}
   && \partial_t (n u) + \partial_x \big( q_{[\theta^2]} \big) = -\,n\,\partial_x V,
-  && q_{[\theta^2]} := \int d\theta\, \theta^2 \rho, \label{eq:euler-2}\\[2pt]
+  && q_{[\theta^2]} = \int d\theta\, \theta^2 \rho, \label{eq:euler-2}\\[2pt]
   &\text{(Énergie cinétique)}
   && \partial_t q_{[\theta^2/2]} + \partial_x \big( j_{[\theta^2/2]} \big)
      = -\,(\partial_x V)\, q_{[\theta]},
-  && j_{[\theta^2/2]} := \int d\theta\, \tfrac{\theta^2}{2}\, \partial_\theta h\, \rho. \label{eq:euler-3}
+  && j_{[\theta^2/2]} = \int d\theta\, \tfrac{\theta^2}{2}\, \partial_\theta h\, \rho. \label{eq:euler-3}
 \end{align}
 \emph{Remarque :} pour $h=\tfrac{\theta^2}{2}+V(x)$, on a $\partial_\theta h=\theta$, d’où
 $j_{[\theta^2/2]}=\int d\theta\, \tfrac{\theta^2}{2}\, \theta\, \rho$.
@@ -109,7 +109,17 @@ les vitesses et charges deviennent \emph{effectives} et la dynamique s’écarte
 %\noindent\textbf{Remarque importante.} Dans la GHD complète, la distribution $\rho(x,\theta,t)$ n'est en général pas une Maxwellienne locale : les effets d'interaction et le \emph{dressing} modifient les relations entre moments. Par conséquent, la \emph{fermeture} dans GHD ne résulte pas automatiquement d'une hypothèse simple de type Maxwell–Boltzmann ; elle requiert soit une approximation adéquate (ex. développement en moments, hypothèse d'équation d'état empirique) soit la prise en compte explicite du dressing et des vitesses/charges effectives.
 %\end{mdframed}
 
-\begin{mdframed}[linewidth=0.5pt, backgroundcolor=gray!5, roundcorner=8pt, innerleftmargin=6pt, innerrightmargin=6pt]
+\begin{mdframed}[
+	linewidth=0.5pt, 
+	backgroundcolor=gray!5, 
+	roundcorner=50pt,	
+	innerleftmargin=5pt,
+    innerrightmargin=5pt,
+    innertopmargin=-10pt,
+    innerbottommargin=2pt,
+    leftmargin=2pt,
+    rightmargin=2pt
+	]
 \paragraph{Encadré : fermeture et équations d'Euler fermées.}
 Pour obtenir un système d'équations d'Euler \emph{fermées} à partir de la hiérarchie \eqref{eq:euler-1}--\eqref{eq:euler-3}, il faut fournir une \emph{relation de fermeture} (ou \emph{équation d'état}) reliant les moments d'ordre supérieur aux variables hydrodynamiques de base $(n,u)$.
 
