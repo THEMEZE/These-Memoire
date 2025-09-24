@@ -914,8 +914,9 @@ $D_1 : 795~nm$}};
     shape=rectangle, fill=none,
     line width=0.2ex , rounded corners=0.0ex , color = colorOne , left color=colorOne, right color=colorOne , middle color=colorTwo , shading angle=90,
     path picture={
-      \fill[pattern=horizontal lines,
-  		pattern color=colorOne] 
+      \fill[%pattern=horizontal lines,
+  		%pattern color=colorOne
+  		] 
         ([shift={(0.1,0.1)}]path picture bounding box.south west)
         rectangle ([shift={(-0.1,-0.1)}]path picture bounding box.north east);
     }
