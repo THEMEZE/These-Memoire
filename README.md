@@ -141,7 +141,7 @@ git push
 
 # Sauvegarde type Time Machine en bash
 
-Ce script lance une sauvegarde incrémentale avec `rsync` :
+Ce script lance une sauvegarde incrémentale avec `rsync` (`./compilateurs/backup_these.sh`)  :
 
 ```bash
 #!/bin/bash

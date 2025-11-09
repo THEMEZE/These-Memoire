@@ -36,6 +36,6 @@ fi
 # Demander si on veut faire un git push
 read -p "Backup ? (o/n) " reponse_Backup
 if [[ "$reponse_Backup" == "o" || "$reponse_Backup" == "O" ]]; then
-    bash ./compilateurs/backup.sh
+    bash ./compilateurs/backup_these.sh
 fi
 
