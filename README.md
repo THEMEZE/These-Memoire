@@ -29,6 +29,8 @@ Ce dépôt contient l'ensemble des fichiers LaTeX nécessaires à la compilation
         * `packages.tex` — Chargement des packages
     * `build/` — Fichiers générés automatiquement à la compilation
         * À **ignorer** via `.gitignore`
+    * `.vscode`/
+        * `settings.json`   ← ⚙️ LTEX
 
 ## ⚙️ Compilation Manuscrit
 
