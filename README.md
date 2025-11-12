@@ -1,4 +1,4 @@
-# 📚 Manuscrit de thèse – [Étude de la dynamique hors-équilibre d'un gaz de boson unidimentionnel]lllllll
+# 📚 Manuscrit de thèse – [Étude de la dynamique hors-équilibre d'un gaz de boson unidimentionnel]lll
 
 Ce dépôt contient l'ensemble des fichiers LaTeX nécessaires à la compilation du manuscrit de thèse de doctorat.
 
