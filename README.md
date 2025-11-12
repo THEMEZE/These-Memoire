@@ -139,6 +139,50 @@ git commit -m "Mise à jour"
 git push
 ```
 
+```bash
+#!/bin/zsh
+
+# === Configuration ===
+THRESHOLD=50M  # fichiers plus gros que 50MB
+LOGFILE="git_lfs_add.log"
+
+# Installer LFS si pas déjà fait
+git lfs install
+
+# Trouver tous les fichiers >50MB
+echo "Recherche des fichiers > $THRESHOLD..." | tee -a $LOGFILE
+find . -type f -size +$THRESHOLD | while read f; do
+    echo "Ajout à Git LFS : $f" | tee -a $LOGFILE
+    git lfs track "$f"
+    git add "$f"
+done
+
+# Ajouter le fichier .gitattributes créé/modifié par LFS
+git add .gitattributes
+
+# Commit
+git commit -m "Ajout automatique des fichiers > $THRESHOLD dans Git LFS"
+
+# Push
+git push
+```
+
+```bash
+THRESHOLD=50M
+LOGFILE="git_lfs_add.log"
+git lfs install
+echo "Recherche des fichiers > $THRESHOLD..." | tee -a $LOGFILE
+find . -type f -size +$THRESHOLD | while read f; do
+    echo "Ajout à Git LFS : $f" | tee -a $LOGFILE
+    git lfs track "$f"
+    git add "$f"
+done
+git add .gitattributes
+git commit -m "Ajout automatique des fichiers > $THRESHOLD dans Git LFS"
+git push
+```
+
+
 # Sauvegarde type Time Machine en bash
 
 Ce script lance une sauvegarde incrémentale avec `rsync` (`./compilateurs/backup_these.sh`)  :

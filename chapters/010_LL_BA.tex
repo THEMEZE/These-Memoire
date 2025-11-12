@@ -28,11 +28,11 @@ Ce chapitre est consacré à la présentation progressive du modèle de \acrfull
 
 \medskip
 
-Nous commençons, pour des raisons pédagogiques, par le cas le plus simple : une particule libre, sans interaction, dans un espace unidimensionnel avec des conditions aux bords périodiques. Cette première étape permet d’introduire naturellement les fonctions d’onde à une particule, leur évolution sous l’action du Hamiltonien libre, ainsi que la quantification résultant des conditions de périodicité — autrement dit, la version élémentaire des équations de Bethe.
+Nous commençons, pour des raisons pédagogiques, par le cas le plus simple : une particule libre, sans interaction, dans un espace unidimensionnel avec des conditions aux bords périodiques. Cette première étape permet d’introduire naturellement les fonctions d’onde à une particule, leur évolution sous l’action d'Hamiltonien libre, ainsi que la quantification résultant des conditions de périodicité — autrement dit, la version élémentaire des équations de Bethe.
 
 \medskip
 
-Nous passons ensuite à la formulation du problème en champ quantique, en exprimant le Hamiltonien en termes d’opérateurs de création et d’annihilation dans la représentation positionnelle : il s’agit du passage à la seconde quantification. Cette étape permet de formaliser clairement les termes à un corps et à deux corps dans l’Hamiltonien, et d’établir les notations qui seront utilisées tout au long du chapitre.
+Nous passons ensuite à la formulation du problème en champ quantique, en exprimant l'Hamiltonien en termes d’opérateurs de création et d’annihilation dans la représentation positionnelle : il s’agit du passage à la seconde quantification. Cette étape permet de formaliser clairement les termes à un corps et à deux corps dans l’Hamiltonien, et d’établir les notations qui seront utilisées tout au long du chapitre.
 
 \medskip
 
@@ -59,7 +59,7 @@ Enfin, nous introduisons la notion de \emph{distribution de rapidité}, concept 
 
 \paragraph{Introduction.}
 
-La mécanique quantique se développe historiquement en deux grandes étapes : la \emph{première quantification}, aussi appelée quantification canonique, et la \emph{seconde quantification}. Comprendre ces deux cadres est essentiel pour aborder les systèmes quantiques complexes, en particulier ceux où le nombre de particules peut varier.
+La mécanique quantique se développe historiquement en deux grandes étapes : la \emph{première quantification}, aussi appelée quantification canonique et la \emph{seconde quantification}. Comprendre ces deux cadres est essentiel pour aborder les systèmes quantiques complexes, en particulier ceux où le nombre de particules peut varier.
 
 %La mécanique quantique s’est historiquement développée en deux étapes : la \emph{première quantification}, aussi appelée quantification canonique, puis la \emph{seconde quantification}. Comprendre ces deux cadres est essentiel pour aborder les systèmes à nombre de particules variable.
 
@@ -97,7 +97,7 @@ avec $\operator{\mathcal{H}}$ l’opérateur hamiltonien.
 	\begin{eqnarray}
 		\operator{\mathcal{H}} = -\frac{\hbar^2}{2m} \partial_x^2.\label{chap.1.rapel.libre.1}
 	\end{eqnarray}
-	Les états propres stationnaires de \eqref{chap.1.rapel.2} dépendant du temps sont de la forme $\psi_k(x,t) = \varphi_k(x)\,e^{-i\varepsilon(k)t/\hbar}$ où $\varphi_k(x)$ est une fonction propre de l’hamiltonien,  soit de  l’équation stationnaire  $\operator{\mathcal{H}} \, \varphi_k = \varepsilon(k)\varphi_k$ \ie pour une particule libre:
+	Les états propres stationnaires de \eqref{chap.1.rapel.2} dépendant du temps sont de la forme $\psi_k(x,t) = \varphi_k(x)\,e^{-i\varepsilon(k)t/\hbar}$ où $\varphi_k(x)$ est une fonction propre de l’hamiltonien,  soit de  l’équation stationnaire  $\operator{\mathcal{H}} \, \varphi_k = \varepsilon(k)\varphi_k$ \ie pour une particule libre :
 	\begin{eqnarray}
 		\frac{\hbar^2}{2m} \partial_x^2 \varphi_k = \varepsilon(k) \varphi_k,\label{chap.1.rapel.libre.2}
 	\end{eqnarray}
@@ -109,16 +109,16 @@ avec $\operator{\mathcal{H}}$ l’opérateur hamiltonien.
 	\begin{eqnarray}
 		\varphi_k(x) = a e^{-i k x} + b e^{i k x},~~ \mbox{avec}\quad  (a,b) \in \mathbb{C}^2\label{chap.1.rapel.libre.4}.
 	\end{eqnarray}
-\subparagraph{Périodisité.}
+\subparagraph{Périodicité.}
 	Si la particule est confinée dans une boîte de longueur $L$ avec des conditions aux limites périodiques (ie $\varphi_k(x+L) = \varphi_k(x)$), alors le spectre de $k$ est quantifié : 
 	\begin{eqnarray}
-		e^{kL}= 1 \quad\mbox{ou encore} kL \in 2\pi\mathbb{Z}\label{chap.1.rapel.libre.5}.
+		e^{ikL}= 1 \quad\mbox{ou encore} kL \in 2\pi\mathbb{Z}\label{chap.1.rapel.libre.5}.
 	\end{eqnarray}
 	Le problème est équivalent à celui d’une particule libre sur un cercle de périmètre $L$.\\
 	
 	\medskip
 	
-	La particule est délocalisée sur tout l’espace (le cercle), sans structure particulière \ie le solutions \eqref{chap.1.rapel.libre.4} correspondent à des {\bf états non liés} (ou états de diffusion).
+	La particule est délocalisée sur tout l’espace (le cercle), sans structure particulière \ie les solutions \eqref{chap.1.rapel.libre.4} correspondent à des {\bf états non liés} (ou états de diffusion).
 
 %On résume :
 %\begin{eqnarray}
@@ -129,19 +129,19 @@ avec $\operator{\mathcal{H}}$ l’opérateur hamiltonien.
 \medskip
 
 Pour $k \neq 0 $ (respectivement pour $k = 0$), la fonction propre $\varphi_k(x)$ de l’équation \eqref{chap.1.rapel.libre.4} appartient à un sous-espace propre associé à $k$ de dimension 2 (respectivement de dimension 1) engendré par $x \mapsto e^{-ikx}$ et $x \mapsto e^{ikx}$ (respectivement par $x \mapsto 1$).
-L’espace engendré par l’ensemble des sous-espaces propres forme un {\bf espace de Hilbert} , muni du {\bf produit scalaire} défini par :
+L’espace engendré par l’ensemble des sous-espaces propres forme un {\bf espace de Hilbert}, muni du {\bf produit scalaire} défini par :
 \begin{eqnarray}
 	( \varphi_{k'} , \varphi_{k} ) = \int_0^L \varphi_{k'}^\ast(x) \varphi_{k}(x) \, dx .\label{chap.1.rapel.libre.6}
 \end{eqnarray}
 Les sous-espaces propres sont orthogonaux entre eux \ie en utilisant les conséquences de la condition de périodicité \eqref{chap.1.rapel.libre.5}, $( \varphi_{k'} , \varphi_{k} ) = 0$ pour $\vert k' \vert \neq \vert k \vert  $ . 
-Pour chaque sous-espace propre on impose que les états propres forment une base orthonormale \ie en utilisant \eqref{chap.1.rapel.libre.5}, les fonctions propres $\varphi_{k}$ écrit sous la forme \eqref{chap.1.rapel.libre.4}, sont orthogonaux avec $\varphi_{\overline{k}} \colon x \mapsto \pm ( b^\ast e^{-ikx} - a^\ast e^{ikx} )$  soit $(\varphi_{\overline{k}} , \varphi_{k} ) = 0$, et on impose que  $ \vert a \vert^2 + \vert b \vert^2 = L^{-1}$ pour assuré la normalité  de $\varphi_{k}$  et de $\varphi_{\overline{k}}$ soit  $( \varphi_{k} , \varphi_{k} ) = (\varphi_{\overline{k}} , \varphi_{\overline{k}})   = 1$. 
+Pour chaque sous-espace propre on impose que les états propres forment une base orthonormale \ie en utilisant \eqref{chap.1.rapel.libre.5}, les fonctions propres $\varphi_{k}$ écrites sous la forme \eqref{chap.1.rapel.libre.4}, sont orthogonales avec $\varphi_{\overline{k}} \colon x \mapsto \pm ( b^\ast e^{-ikx} - a^\ast e^{ikx} )$  soit $(\varphi_{\overline{k}} , \varphi_{k} ) = 0$, et on impose que  $ \vert a \vert^2 + \vert b \vert^2 = L^{-1}$ pour assurer la normalité  de $\varphi_{k}$  et de $\varphi_{\overline{k}}$ soit  $( \varphi_{k} , \varphi_{k} ) = (\varphi_{\overline{k}} , \varphi_{\overline{k}})   = 1$. 
 
 \medskip
 
 Les solutions générales de l’équation de Schrödinger s’écrivent alors comme une superposition d’états propres  $\psi = c_0 \psi_0 +  \sum_{\vert k \vert > 0 } (c_k \psi_k  + c_{\overline{k}} \psi_{\overline{k}}) $. 
 
 \medskip
-Il y a deux base de vecteur propre particulier : 
+Il y a deux bases de vecteur propre particulier : 
 \begin{enumerate}[label=\roman*)]
 	\item {\bf Base de chiralité / impulsion :}
 %	\begin{eqnarray}
@@ -301,14 +301,14 @@ avec $\operator{S}_N $  le groupe symétrique d'ordre $N$ mais aussi :
 
 
 
-\subsubsection{Operateur. }
+\subsubsection{Opérateur. }
 
 
 \paragraph{Opérateur à un corps.}
 
-\subparagraph{Dans la base discrètes des modes \( \{ \ket{k} \} \).}
+\subparagraph{Dans la base discrète des modes \( \{ \ket{k} \} \).}
 
-Soit \( \operator{f} \) un opérateur à une particule, dont les éléments de matrice dans une base orthonormée \( \{ \ket{k} \} \) sont donnés par \( f_{\lambda\nu} = \langle \lambda \vert \operator{f} \vert \nu \rangle \). Un opérateur symétrique à \( N \) particules correspondant à la somme des actions de \( \operator{f} \) sur chacune des particules s’écrit en première configuration  :
+Soit \( \operator{f} \) un opérateur à une particule, dont les éléments de matrice dans une base orthonormée \( \{ \ket{k} \} \) sont donnés par \( f_{\lambda\nu} = \langle \lambda \vert \operator{f} \vert \nu \rangle \). Un opérateur symétrique à \( N \) particules correspondant à la somme des actions de \( \operator{f} \) sur chacune des particules s’écrit :
 \(
 	\operator{F} = \sum_{i=1}^N \operator{f}^{(i)},
 \)
@@ -328,7 +328,7 @@ On en déduit que l’opérateur à un corps \( \operator{F} \) peut se réécri
 	\operator{F} = \sum_{\lambda, \nu} \bra{\lambda} \operator{f} \ket{\nu} \operator{a}^\dagger_\lambda \operator{a}_\nu^{}.
 \end{eqnarray}
 
-L'opérateur $\operator{a}^\dagger_\lambda \operator{a}_\nu^{}$ fais la transition d'une particule de l'état $\nu$ à vers l'état $\lambda$. Si $\lambda = \nu$ cette opérateur est l'opérateur nombre de particule dans le mode $\lambda$.
+L'opérateur $\operator{a}^\dagger_\lambda \operator{a}_\nu^{}$ fait la transition d'une particule de l'état $\nu$ à vers l'état $\lambda$. Si $\lambda = \nu$ cet opérateur est l'opérateur nombre de particules dans le mode $\lambda$.
 
 \begin{mdframed}[
 	linewidth=0.5pt, 
@@ -404,7 +404,7 @@ Reprenons l’exemple de l’énergie cinétique totale avec
 \) 
 En injectant 
 \(
-	\bra{x} \operator{f} \ket{x'} = - \frac{\hbar^2}{2m} \partial_{y}^2 \delta ( y - x )
+	\bra{x} \operator{f} \ket{y} = - \frac{\hbar^2}{2m} \partial_{y}^2 \delta ( y - x )
 \) 
 dans \eqref{chap.1:eq.rapel.opp.1.second.2}, on réécrit l’opérateur énergie cinétique total $\operator{K}$ de l’équation \eqref{eq.chap.1.cinietique.1} :
 \begin{eqnarray}
@@ -511,7 +511,7 @@ L’opérateur $\operator{K}$ (énergie cinétique) ne représente l’énergie 
 
 \medskip
 
-Dès que des interactions entre particules sont introduites, ces états libres ne sont plus propres de l’Hamiltonien complet (cinétique + interaction), ni des opérateurs $\operator{F}$. Il faut alors considérer les états de Bethe $\ket{{\theta_a}}$, qui diagonalise l’Hamiltonien complet, mais aussi les charges conservées fondamentales ($\operator{Q}$ et $\operator{P}$) et l’ensemble infini de charges d’ordre supérieur.
+Dès que des interactions entre particules sont introduites, ces états libres ne sont plus propres de l’Hamiltonien complet (cinétique + interaction), ni des opérateurs $\operator{F}$. Il faut alors considérer les états de Bethe $\ket{{\theta_a}}$, qui diagonalisent l’Hamiltonien complet, mais aussi les charges conservées fondamentales ($\operator{Q}$ et $\operator{P}$) et l’ensemble infini de charges d’ordre supérieur.
 
 \medskip
 
@@ -530,7 +530,7 @@ Nous considérons à présent les termes d’interaction impliquant deux particu
     \operator{V} = \sum_{j < i} \operator{v}^{(i, j)} = \frac{1}{2} \sum_{i, j \ne i} \operator{v}^{(i, j)}
     \label{eq:V2corps}.
 \)
-avec $\operator{v}^{(i, j)}$ désigne l’interaction à deux corps entre les $i^\text{e}$ et $j^\text{e}$ particules , exprimés dans la base à deux états :
+où $\operator{v}^{(i, j)}$ désigne l’interaction à deux corps entre les $i^\text{e}$ et $j^\text{e}$ particules , exprimés dans la base à deux états :
 \(
 	\operator{v}^{(i, j)} = \sum_{\alpha,\beta,\delta,\gamma} \ket{i : \alpha; j : \beta }v_{\alpha \beta \gamma \delta} \bra{ i : \gamma; j : \delta }.
     %v_{\alpha \beta \gamma \delta} = \bra{ i : \alpha; j : \beta } \operator{v}^{(i,j)} \ket{ i : \gamma; j : \delta }.
@@ -546,7 +546,7 @@ Cette forme est particulièrement utile pour le traitement des interactions dans
 
 \subparagraph{Dans la base continue des positions \( \{ \ket{x} \} \).}
 
-En injectant les relation des changement de base d'état
+En injectant les relations des changements de base d'état
 \eqref{chap.1:eq.rapel.etat.prim.1} et de champ \eqref{chap.1:eq.rapel.etat.second.1}, dans \eqref{chap.1:eq.rapel.opp.2.prim.1} on obtient :
 \begin{equation}
     \operator{V} = \frac{1}{2} \iiiint_0^L dx_1^{} \, dx_2^{} \, dx_1' \, dx_2' \; 
@@ -582,7 +582,7 @@ soit pour des interactions ponctuelles :
     \operator{\Psi}^\dagger(x) \, \operator{\Psi}^\dagger(x) \, 
     \operator{\Psi}(x) \, \operator{\Psi}(x)  		
 \end{eqnarray}
-et quand on l'applique à l'état $\ket{\{k_a\}}$, les règles de commutations (\ref{chap:1:com.1}) et la définition d'état de Fock (\ref{chap:eq.vide.fock}) impliquent que (cf Annex \ref{annex:PH})
+et quand on l'applique à l'état $\ket{\{k_a\}}$, les règles de commutations (\ref{chap:1:com.1}) et la définition d'état de Fock (\ref{chap:eq.vide.fock}) impliquent que (cf Annexe \ref{annex:PH})
 \begin{eqnarray}\label{chap.1:eq.rapel.opp.2.second.ponctuel.2}
 \operator{V}\ket{\{k_a \}} =  \int d^Nz \, \operator{\mathcal{V}}_N \varphi_{\{k_a\}}( \{z_a\} )\operator{\Psi}^\dag(z_1)\cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset} \, \quad \mbox{avec} \quad  \operator{\mathcal{V}}_N 	= g\sum_{1\leq i < j \leq N } \operator{\delta}(z_i - z_j)	
 \end{eqnarray}
@@ -870,7 +870,7 @@ où \(\tilde{\varepsilon}\) désigne l’énergie associée au mouvement relatif
 %%%%%%%%%%%%%%
 
 \paragraph{Forme symétrique de la fonction d'onde pour bosons.}
-Dans le référentiel du centre de masse. Le système est le même que celui d'une particule de masse $\tilde{m}= \frac{1}{2}$.
+Dans le référentiel du centre de masse, le système est le même que celui d'une particule de masse $\tilde{m}= \frac{1}{2}$.
 Le système étant composé de particules bosoniques, on cherche une solution symétrique que l’on écrit sous la forme  :
 \begin{eqnarray}
 	\tilde{\varphi}(Y) ~=~a~e^{i\frac{1}{2} \tilde{\theta} \vert Y \vert } + b~e^{-i\frac{1}{2} \tilde{\theta}\vert Y \vert } ~\propto~  \sin\left( \frac{1}{2} (\tilde{\theta} |Y| + \Phi ) \right). \label{eq:ansatz.boson}
@@ -1326,7 +1326,7 @@ où \( n \) désigne la densité linéique de particules.
 
 Considérons désormais le système à température nulle. L’état fondamental dans le secteur à nombre de particules fixé correspond à la configuration d’énergie minimale parmi les solutions des équations de Bethe \eqref{chap:1:eq:EBA}.
 
-Dans la limite thermodynamique $(\underset{\text{\tiny therm}}{\lim} \equiv \underset{\underset{ N/L = \mathrm{cnst}}{L \to \infty}}{\lim} )$ , les valeurs de \( \theta_a \) deviennent quasi-continues, avec un espacement \( \theta_{a+1} - \theta_a = \mathcal{O}(1/L) \), et se condensent dans un intervalle symétrique autour de zéro $[-\theta_{\mbox{\tiny max}} , \theta_{\mbox{\tiny max}} ]$ . En supposant l'ordre \( I_a \geq I_b  \) implique \(\theta_a \geq \theta_b \), cet intervalle constitue ce qu'on appelle la {\em mer de Dirac} (ou sphère de Fermi en dimension un).
+Dans la limite thermodynamique $(\underset{\mathrm{\tiny therm}}{\lim} \equiv \underset{\underset{ N/L = \mathrm{cnst}}{L,N \to \infty,\infty}}{\lim} )$ , les valeurs de \( \theta_a \) deviennent quasi-continues, avec un espacement \( \theta_{a+1} - \theta_a = \mathcal{O}(1/L) \), et se condensent dans un intervalle symétrique autour de zéro $[-\theta_{\mbox{\tiny max}} , \theta_{\mbox{\tiny max}} ]$ . En supposant l'ordre \( I_a \geq I_b  \) implique \(\theta_a \geq \theta_b \), cet intervalle constitue ce qu'on appelle la {\em mer de Fermi} (ou sphère de Fermi en dimension un).
 
 \medskip
 
@@ -1340,13 +1340,13 @@ Autrement dit, dans un petit intervalle $\delta \theta $, le nombre total de par
 \begin{eqnarray}\label{chap.1:eq.dN.1}
 	\delta N (\theta ) & = & L \rho (\theta) \delta \theta 	
 \end{eqnarray}
-Avec les rapidité $\theta_a$ ordonnées \ie $\theta_1 < \theta_1 < \cdots < \theta_N$. Pour des intervalle $[\theta_a , \theta_a + \delta \theta_a]$ assez petit $\delta \theta_a = \theta_{a+1} - \theta_a$, est correspond à $\delta N (\theta_a) = 1 $ quasi-particule (car une seule particule occupe l’intervalle entre deux rapidités consécutives). Dans la limite thermodynamique la dernier équation \eqref{chap.1:eq.dN.1} se réécrit comme :
+Avec les rapiditées $\theta_a$ ordonnées \ie $\theta_1 < \theta_1 < \cdots < \theta_N$. Pour des intervalles $[\theta_a , \theta_a + \delta \theta_a]$ assez petits $\delta \theta_a = \theta_{a+1} - \theta_a$, est correspond à $\delta N (\theta_a) = 1 $ quasi-particule (car une seule particule occupe l’intervalle entre deux rapidités consécutives). Dans la limite thermodynamique la dernière équation \eqref{chap.1:eq.dN.1} se réécrit comme :
 \begin{eqnarray}
-	\rho(\theta_a) & = & \underset{\text{\tiny therm}}{\lim} \frac{1}{L} \cdot \frac{1}{\theta_{a+1} - \theta_a} > 0.
+	\rho(\theta_a) & = & \underset{\mathrm{\tiny therm}}{\lim} \frac{1}{L} \cdot \frac{1}{\theta_{a+1} - \theta_a} > 0.
 \end{eqnarray}
 On peut aussi écrire la distribution de rapidité sous la forme :
 \begin{eqnarray}\label{chap.1:eq.rho.111111}
-	\rho(\theta) & = & \frac{1}{L} \sum_{a = 1}^N \delta ( \theta - \theta_a ) .	
+	\rho(\theta) & = & \underset{\mathrm{\tiny therm}}{\lim} \frac{1}{L} \sum_{a = 1}^N \delta ( \theta - \theta_a ) .	
 \end{eqnarray}
 
 \medskip
@@ -1357,7 +1357,7 @@ Intéressons-nous maintenant à la {\bf densité d’états}  \( \rho_s(\theta) 
 \begin{eqnarray}
 	 \rho_s(\theta_a) &\doteq & \frac{1}{L} \lim_{\text{\tiny therm}} \frac{|I_{a+1} - I_a|}{|\theta_{a+1} - \theta_a|},
 \end{eqnarray}
-soit en notant la fonction \( I(\theta_a) = I_a \), le passage discret-continue permet d'écrire :
+soit en notant la fonction \( I(\theta_a) = I_a \), le passage discret-continu permet d'écrire :
 \begin{eqnarray}
 	2\pi \rho_s(\theta_a) &=&  \frac{2\pi}{L} \frac{\partial I}{\partial \theta}(\theta_a).
 \end{eqnarray}
@@ -1365,7 +1365,7 @@ L’application des équations de Bethe sous forme logarithmique \eqref{chap:1:e
 \begin{eqnarray}\label{chap1:eq:rho.s.1}
 	2\pi \rho_s(\theta_a) = 1 + \frac{1}{L} \sum_{b = 1}^N \Delta(\theta_a - \theta_b),
 \end{eqnarray}
-ce qui relie \( \rho_s \) à le déplacement collisionel \( \Delta \) définie dans l'équation  \eqref{eq:I-1-16}.
+ce qui relie \( \rho_s \) au déplacement collisionel \( \Delta \) défini dans l'équation  \eqref{eq:I-1-16}.
 
 
 \begin{figure}[h]
@@ -1410,9 +1410,9 @@ et, comme \( \rho = \rho_s \), à l'état fondamental, on obtient l’équation 
 À partir de l’état fondamental dans le régime d’interaction forte, les excitations élémentaires du modèle de \gls{LL} ont été classifiées par Lieb en deux types distincts~\cite{LL_1963_2}. Ces excitations peuvent être comprises comme des perturbations de la mer de Fermi formée par les quasi-particules.
 
 \begin{itemize}[label = $\bullet$]
-    \item \textbf{Excitations de type I :} Il s’agit remplacer une quasi-particule avec un nombre fermionique au bord de Fermi $I_{N}$ (ou $I_{-N}$) par une quasi-particule avec un nombre fermionique $I'> I_N$ (resp.$I' <I_{-N}$), c’est-à-dire au-delà du bord de la mer de Fermi (voir Fig \ref{fig:fermi_excitations}(b)). Ces excitations sont analogues à des excitations de particules libres et, dans la limite des faibles interactions ($g \to 0$), leur relation de dispersion reproduit celle prédite par la théorie de Bogoliubov .
+    \item \textbf{Excitations de type I :} Il s'agit de remplacer une quasi-particule avec un nombre fermionique au bord de Fermi $I_{N}$ (ou $I_{-N}$) par une quasi-particule avec un nombre fermionique $I'> I_N$ (resp.$I' <I_{-N}$), c’est-à-dire au-delà du bord de la mer de Fermi (voir Fig \ref{fig:fermi_excitations}(b)). Ces excitations sont analogues à des excitations de particules libres et, dans la limite des faibles interactions ($g \to 0$), leur relation de dispersion reproduit celle prédite par la théorie de Bogoliubov .
 
-    \item \textbf{Excitations de type II :} Ces excitations sont de type particule-trou. Elles sont obtenues en remplaçant une quasi-particule de la mer de Fermi avec une nombre fermionique $I_a$ (\ie, en créant un trou dans l’état fondamental) et de le remplacer par une quasi-particule avec $I' = I_{N+1} = N/2$ ou $I' = I_{N-1} = -N/2$ et en réarrangeant les autres nombres fermionique (voir Fig \ref{fig:fermi_excitations}(c) ). Cela correspond à une excitation interne du Fermi pseudo-mer, avec conservation du nombre de particules. Pour de petits $I'$, la dispersion est linéaire, correspondant à des modes phononiques. Dans la limite d’interaction faible \( g \to 0 \), ces excitations peuvent être interprétées comme des solitons sombres~\cite{Ishikawa1980SolitonsIA,Karpiuk_2015}.
+    \item \textbf{Excitations de type II :} Ces excitations sont de type particule-trou. Elles sont obtenues en remplaçant une quasi-particule de la mer de Fermi avec une nombre fermionique $I_a$ (\ie, en créant un trou dans l’état fondamental) et de le remplacer par une quasi-particule avec $I' = I_{N+1} = N/2$ ou $I' = I_{N-1} = -N/2$ et en réarrangeant les autres nombres fermionique (voir Fig \ref{fig:fermi_excitations}(c) ). Cela correspond à une excitation interne  pseudo-mer de Fermi, avec conservation du nombre de particules. Pour de petits $I'$, la dispersion est linéaire, correspondant à des modes phononiques. Dans la limite d’interaction faible \( g \to 0 \), ces excitations peuvent être interprétées comme des solitons sombres~\cite{Ishikawa1980SolitonsIA,Karpiuk_2015}.
 \end{itemize}
 
 Ces deux types d’excitations définissent ensemble le spectre complet du modèle de Lieb-Liniger et permettent d’accéder aux propriétés dynamiques du système, telles que les fonctions de réponse ou la structure du spectre d’énergie.

@@ -23,7 +23,7 @@ La relaxation vers un état stationnaire n’est donc pas décrite par l’ensem
 Ce chapitre est consacré à la mise en place rigoureuse de cette notion.  
 Dans une première section, nous revenons brièvement sur la notion d’opérateurs à un corps exprimés en puissances de l’impulsion $\operator{p}$ pour une particule, introduite au chapitre précédent (Chap.\ref{chap:LL-BA}).  
 Ce cadre permet de construire une hiérarchie naturelle de charges conservées, au-delà du simple nombre de particules, de la quantité totale de mouvement ou de l’énergie totale.  
-Ces charges supplémentaires permettent alors de définir les moyennes d'observables dans un état stationnaire hors d'équilibre.
+Ces charges supplémentaires permettent alors de définir les moyennes d’observables dans un état stationnaire hors d’équilibre.
 
 \medskip
 
@@ -74,7 +74,7 @@ L’état propre correspondant est noté $\ket{\{ \theta_a \}}\;=\;\ket{\{\theta
     rightmargin=2pt
 	]
 \paragraph{Rappel : Observables diagonales dans la base des états propres.}
-Dans le chapitre précédent (\ref{chap:LL-BA}), on a vu que l'état $\ket{\{ \theta_a \}}$ associé à cette configuration est une état propre des observables nombre d'atome, quantité de mouvement  et  énergie totale \eqref{chap1:eq.Q.P.K.theta.1}. Ces observables sont diagonales dans la base des états propres :
+Dans le chapitre précédent (\ref{chap:LL-BA}), on a vu que l'état $\ket{\{ \theta_a \}}$ associé à cette configuration est un état propre des observables nombre d'atome, quantité de mouvement  et  énergie totale \eqref{chap1:eq.Q.P.K.theta.1}. Ces observables sont diagonales dans la base des états propres :
 \begin{eqnarray}
 	\operator{Q}  =  \sum_{ \{\theta_a\} } \left ( \sum_{a = 1}^{N}  1 \right )  \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \}\vert, \, 
 	\operator{P}  =  \sum_{\{ \theta_a\}}\left( \sum_{a = 1}^{N}  \theta_a \right )   \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \}\vert,\,\operator{H}  =  \sum_{\{ \theta_a\}}\left ( \sum_{a = 1}^{N} \frac{\theta_a^2}{2} \right )   \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \}\vert.\label{chap.2.gge.1}		
@@ -140,7 +140,7 @@ où $\beta_i \in \mathbb{R}$ sont les multiplicateurs de Lagrange (ou « tempér
 \begin{eqnarray}
 	Z^{(\mathcal{S})} = \bm{\mathrm{Tr}}\left [\exp \left( - \sum_i \beta_i \operator{Q}_i^{(\mathcal{S})} \right ) \right ]  \label{chap.TBA.op.Z.S}	
 \end{eqnarray}
- assure la normalisation. L’{\bf état \gls{GGE}} ainsi défini est le seul permettant de prédire de manière cohérente les observables locales de $\mathcal{S}$ à long temps \cite{Nardis_2016}. Autrement dit, l’équilibre local après quench est un état stationnaire faisant perdurer la mémoire de chaque charge conservée, ce qui conduit à un nombre minfini de paramètres $\beta_i$ thermodynamiques (une « température » par charge) \cite{Nardis_2017}.
+ assure la normalisation. L’{\bf état \gls{GGE}} ainsi défini est le seul permettant de prédire de manière cohérente les observables locales de $\mathcal{S}$ à long temps \cite{Nardis_2016}. Autrement dit, l’équilibre local après quench est un état stationnaire faisant perdurer la mémoire de chaque charge conservée, ce qui conduit à un nombre infini de paramètres $\beta_i$ thermodynamiques (une « température » par charge) \cite{Nardis_2017}.
  
  \medskip
 
@@ -149,7 +149,7 @@ Les multiplicateurs de Lagranges $\beta_i$ apparaissent naturellement lors de la
 
 \medskip
 
-En résumé, le \gls{GGE} généralise les ensembles canoniques standard : au lieu de retenir uniquement l’énergie, on impose la conservation de l’ensemble complet $\{\operator{Q}_i \}$. Cette construction rend compte du fait que, dans un système intégrable, les observables locals convergent vers les valeurs moyennes calculées par $\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}$ , et non vers celles d’un Gibbs thermique ordinaire \cite{Nardis_2016,rigol2007relaxation}. On comprend ainsi pourquoi la {\em thermalisation habituelle} (canonique ou microcanonique) échoue : seul l’ensemble de Gibbs généralisé peut intégrer toutes les contraintes locales.
+En résumé, le \gls{GGE} généralise les ensembles canoniques standard : au lieu de retenir uniquement l’énergie, on impose la conservation de l’ensemble complet $\{\operator{Q}_i \}$. Cette construction rend compte du fait que, dans un système intégrable, les observables locaux convergent vers les valeurs moyennes calculées par $\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}$, et non vers celles d’un Gibbs thermique ordinaire \cite{Nardis_2016,rigol2007relaxation}. On comprend ainsi pourquoi la {\em thermalisation habituelle} (canonique ou micro-canonique) échoue : seul l’ensemble de Gibbs généralisé peut intégrer toutes les contraintes locales.
 
 \medskip
 
@@ -165,11 +165,11 @@ En résumé, le \gls{GGE} généralise les ensembles canoniques standard : au li
     rightmargin=2pt
 	]
 \paragraph{Rappel sur le modèle de \gls{LL} et distribution de rapidités.}
-Comme rappelé au chapitre précédent, {\bf le modèle de  \gls{LL}} (gaz bosonique 1D à interactions de contact) est un exemple paradigmatique d’un système intégrable \cite{Nardis_2016}. Ses états propres sont caractérisés par un ensemble de $N$  rapidités $\{ \theta_a \}$ , qui jouent le rôle de quasi-momenta ({\bf Bethe ansatz}). Dans ce contexte, l’état macroscopique du gaz après relaxation unitaire est entièrement déterminé par la {\bf distribution des rapidités}. Formellement, on définit $\rho(\theta)$ la distribution intensive des rapidités telle que $\rho(\theta) d \theta$ donne le nombre de particules par unité de longueur ayant une rapidité dans la cellule $[\theta , \theta + d \theta ] $.
+Comme rappelé au chapitre précédent, {\bf le modèle de  \gls{LL}} (gaz bosonique 1D à interactions de contact) est un exemple paradigmatique d’un système intégrable \cite{Nardis_2016}. Ses états propres sont caractérisés par un ensemble de $N$  rapidités $\{ \theta_a \}$, qui jouent le rôle de quasi-moments ({\bf Bethe ansatz}). Dans ce contexte, l’état macroscopique du gaz après relaxation unitaire est entièrement déterminé par la {\bf distribution des rapidités}. Formellement, on définit $\rho(\theta)$ la distribution intensive des rapidités telle que $\rho(\theta) d \theta$ donne le nombre de particules par unité de longueur ayant une rapidité dans la cellule $[\theta , \theta + d \theta ] $.
 
 \medskip
 
-Cette {\bf  distribution de rapidités } est d’autant plus pertinente qu’elle est {\em accessible expérimentalement}. En effet, lorsque le gaz bosonique 1D est libéré et que l'on laisse s'étaler longitudinalement, la distribution asymptotique des vitesses des atomes coïncide avec la distribution initiale des rapidités \cite{Nardis_2017} . %Autrement dit, la GGE prédit un profil de vitesses observables en laboratoire. Léa Dubois souligne dans sa thèse que " la distribution de rapidités est la distribution asymptotique des vitesses des atomes après une expansion dans le guide 1D ", et qu’elle peut être extraite par l’hydrodynamique généralisée \cite{Nardis_2017}. \\
+Cette {\bf  distribution de rapidités } est d’autant plus pertinente qu’elle est {\em accessible expérimentalement}. En effet, lorsque le gaz bosonique 1D est libéré et que l'on laisse s'étaler longitudinalement, la distribution asymptotique des vitesses des atomes coïncide avec la distribution initiale des rapidités \cite{Nardis_2017}. %Autrement dit, la GGE prédit un profil de vitesses observables en laboratoire. Léa Dubois souligne dans sa thèse que " la distribution de rapidités est la distribution asymptotique des vitesses des atomes après une expansion dans le guide 1D ", et qu’elle peut être extraite par l’hydrodynamique généralisée \cite{Nardis_2017}. \\
 
 \end{mdframed}
 
@@ -178,14 +178,14 @@ Cette {\bf  distribution de rapidités } est d’autant plus pertinente qu’ell
 Dans le \gls{GGE}, cette distribution macroscopique $\rho(\theta)$ est fixée par l’ensemble des charges conservées. Par exemple, on ajuste les $\beta_i$ de sorte que les valeurs moyennes $\langle \operator{Q}_i \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}$ correspondent aux valeurs initiales. Ce processus détermine donc la fonction $\rho(\theta)$ décrivant l’état d’équilibre local. Les observables locaux du gaz (densité, corrélations, etc.) en découlent alors via les équations de Bethe ansatz. 
 
 
-\subsection{Moyenne dans l'Équilibre de Gibs Généralisé}
+\subsection{Moyenne dans l'Équilibre de Gibbs Généralisé}
 
 \paragraph{Convention pour les moyennes d'observables.}
 Dans la suite du chapitre, nous noterons la moyenne d’une observable $\operator{\mathcal{O}}$ dans un état décrit par une matrice densité (ici noté) $\operator{\rho}$ par :
 \begin{eqnarray}\label{chap.TBA.moy.dens}	
 	\braket{\operator{\mathcal{O}}}_{\operator{\rho}} \doteq \bm{\mathrm{Tr}}[\operator{\rho} \, \operator{\mathcal{O}}],
 \end{eqnarray}
-En particulier, si la matrice densité est un projecteur, comme $\ket{\{\theta_a \}}\!\bra{\{\theta_a \}}$, \[\bm{\mathrm{Tr}}[\ket{\{\theta_a \}}\!\bra{\{\theta_a \}} \operator{\mathcal{O}}] =  \bra{\{\theta_a \}}\operator{\mathcal{O}}\ket{\{\theta_a \}}\]. dans ce cas on notera la moyenne :
+En particulier, si la matrice densité est un projecteur, comme $\ket{\{\theta_a \}}\!\bra{\{\theta_a \}}$, \[\bm{\mathrm{Tr}}[\ket{\{\theta_a \}}\!\bra{\{\theta_a \}} \operator{\mathcal{O}}] =  \bra{\{\theta_a \}}\operator{\mathcal{O}}\ket{\{\theta_a \}}.\] dans ce cas on notera la moyenne :
 \begin{eqnarray}\label{chap.TBA.moy.dens.pur}
 	\braket{\operator{\mathcal{O}}}_{\{\theta_a \}} = \bra{\{\theta_a \}} \operator{\mathcal{O}} \ket{\{\theta_a \}},
 \end{eqnarray}
@@ -193,7 +193,7 @@ où l’on note simplement l’ensemble des rapidité ${\theta_a}$ pour désigne
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Charges conservées locales diagonales dans la base des états propres.}
-Les charges conservées locales $\operator{Q}_i^{(\mathcal{S})}$ est diagonale dans la base des  états propres $\ket{ \{ \theta_a \}}$ , avec pour valeurs propres $\langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\{\theta_a \}} $ 	 :
+Les charges conservées locales $\operator{Q}_i^{(\mathcal{S})}$ sont diagonales dans la base des  états propres $\ket{ \{ \theta_a \}}$ , avec pour valeurs propres $\langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\{\theta_a \}} $ 	 :
 %\begin{eqnarray}
 %	\operator{Q}_i^{(\mathcal{S})} & = & \sum_{ \{\theta_a\} } \langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\{\theta_a \}}  \ket{\{\theta_a \}}\!\bra{\{\theta_a \}}.		
 %\end{eqnarray}
@@ -210,8 +210,8 @@ On peut alors définir la probabilité d’occurrence d’un état $\ket{\{ \the
 \end{eqnarray}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
-\paragraph{Moyenne d’un charges conservées locales et dérivées de $Z^{(\mathcal{S})}$.} Les charges locales $\operator{Q}_i^{(\mathcal{S})}$ sont diagonale dans la bases \( \{ \ket{\{\theta_a \}} \}  \) [cf eq~ ~\eqref{chap.TBA.Qi.diag}]. 
-On peut donc  écrire la moyenne d’une observable comme une somme pondérée par cette probabilité [cf eqs ~\eqref{chap.TBA.P.1}-\eqref{chap.TBA.P.2}] , ou encore comme une dérivée de la fonction de partition définie dans l'équation \eqref{chap.TBA.op.Z.S} :
+\paragraph{Moyenne des charges conservées locales et dérivées de $Z^{(\mathcal{S})}$.} Les charges locales $\operator{Q}_i^{(\mathcal{S})}$ sont diagonales dans la base \( \{ \ket{\{\theta_a \}} \}  \) [cf eq~ ~\eqref{chap.TBA.Qi.diag}]. 
+On peut donc  écrire la moyenne d’une observable comme une somme pondérée par cette probabilité [cf eqs ~\eqref{chap.TBA.P.1}-\eqref{chap.TBA.P.2}], ou encore comme une dérivée de la fonction de partition définie dans l'équation \eqref{chap.TBA.op.Z.S} :
 \begin{eqnarray}
 	\langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} &= & \sum_{\{ \theta_a\}} \langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\{\theta_a \}} \mathbb{P}^{(\mathcal{S})}_{\{ \theta_a \}} \label{chap.TBA.moy.1}\\
 	 & = &  -\left. \frac{1}{Z^{(\mathcal{S})}} \frac{\partial Z^{(\mathcal{S})}}{\partial \beta_i} \right )_{\beta_{j \neq i }}	 \label{chap.TBA.moy.2}
@@ -228,7 +228,7 @@ Le premier et second moments permettent d’accéder à la variance
 \begin{eqnarray}
 	 \left \langle \left (\operator{Q}_i^{(\mathcal{S})} - \langle\operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} \right )^2  \right \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} = \langle(\operator{Q}_i^{(\mathcal{S})})^2 \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  -  \langle\operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}^2	
 \end{eqnarray}
-de le charge locale $\operator{Q}_i^{(\mathcal{S})}$, en injectant \eqref{chap.TBA.moy.2} et \eqref{chap.TBA.mom.1} et en utilisant $\frac{1}{f} \partial_x^2 f - ( \frac{1}{f} \partial_x f ) = \partial_x^2 \ln f  $:
+de la charge locale $\operator{Q}_i^{(\mathcal{S})}$, en injectant \eqref{chap.TBA.moy.2} et \eqref{chap.TBA.mom.1} et en utilisant $\frac{1}{f} \partial_x^2 f - ( \frac{1}{f} \partial_x f ) = \partial_x^2 \ln f $ :
 \begin{eqnarray}
 	\left \langle \left (\operator{Q}_i^{(\mathcal{S})} - \langle\operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} \right )^2  \right \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  &=&	  \left . \frac{\partial^2 \ln Z^{(\mathcal{S})}  }{{\partial \beta_i}^2 }  \right )_{\beta_{j\neq i}},\\
 	& = &  - \left . 	\frac{\partial \langle\operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} }{\partial \beta_i } \right )_{\beta_{j\neq i}}.	
@@ -240,7 +240,9 @@ de le charge locale $\operator{Q}_i^{(\mathcal{S})}$, en injectant \eqref{chap.T
 Dans le cas particulier de l’équilibre thermique standard (c’est-à-dire l’équilibre statistique de Gibbs), le système est décrit par une seule contrainte d’énergie (ou par les contraintes d’énergie et de nombre de particules, dans le cas grand canonique). Les multiplicateurs de Lagrange associés aux charges conservées s’identifient alors à des grandeurs thermodynamiques classiques.
 
 \begin{itemize}[label=$\bullet$]
-	\item Si la seule charge conservée est le nombre de particules $\operator{Q}_0^{(\mathcal{S})} = \operator{Q}$, le multiplicateur associé est $\beta_0 = -\beta \mu$, où $\mu$ est le potentiel chimique et $\beta = (k_BT)^{-1}$ l’inverse de la température (avec $k_B = 1$).
+	\item Si la seule charge conservée est le nombre de particules $\operator{Q}_0^{(\mathcal{S})} \equiv \operator{Q}$, le multiplicateur associé est $\beta_0 \equiv -\beta \mu$, où $\mu$ est le potentiel chimique et $\beta \equiv (k_BT)^{-1}$ ( l’inverse de la température, avec la constante de Boltzmann $k_B = 1$).
+
+	\item Si la seule charge conservée est le nombre de particules, noté $\operator{Q}_0^{(\mathcal{S})} \equiv \operator{Q}$, alors le multiplicateur associé est $\beta_0 \equiv -\beta \mu$, où $\mu$ désigne le potentiel chimique et $\beta \equiv (k_B T)^{-1}$ l’inverse de la température (avec $k_B$ la constante de Boltzmann, que l’on prendra égale à 1).
 	
 	\item Si la charge conservée est $\operator{Q}_2^{(\mathcal{S})}-\mu\operator{Q}_0^{(\mathcal{S})}  = \operator{H} - \mu \operator{Q} $ (ensemble grand canonique), alors le multiplicateur est simplement $ \beta$.
 \end{itemize}
