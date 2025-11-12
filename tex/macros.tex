@@ -240,14 +240,17 @@ innertopmargin=\topskip,
 \newdateformat{mydate}{\THEDAY~\monthname[\THEMONTH]~\THEYEAR}
 \newdateformat{mydatetime}{\THEDAY~\monthname[\THEMONTH]~\THEYEAR~à~\currenttime}
 
-%\DTMsetstyle{french} % ou autre style
+\DTMsetstyle{french} % ou autre style
 %\DTMsetup{showtimezone=false}
 
-%\fancyfoot[L]{Thèse}
+\fancyfoot[L]{Thèse}
 %\fancyfoot[R]{Paris, \mydatetime\today{} -- Période 2022--2025}
 %\fancyfoot[R]{Paris, \DTMnow -- Période 2022--2025}
 %\fancyfoot[R]{Paris,  Période 2022--2025}
 %\fancyfoot[R]{Paris, le \DTMdate\today{} à \DTMcurrenttime -- Période 2022--2025}
+%\fancyfoot[R]{Paris, le \DTMdisplaydate{\the\year}{\the\month}{\the\day}{-} à \DTMcurrenttime -- Période 2022--2025}
+\fancyfoot[R]{Paris, le \today{} à \DTMcurrenttime -- Période 2022--2025}
+
 \renewcommand{\footrulewidth}{.4pt}
 
 % Supprimer les numéros sur la première page de chaque chapitre
