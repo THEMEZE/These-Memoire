@@ -214,12 +214,12 @@ On peut alors définir la probabilité d’occurrence d’un état $\ket{\{ \the
 On peut donc  écrire la moyenne d’une observable comme une somme pondérée par cette probabilité [cf eqs ~\eqref{chap.TBA.P.1}-\eqref{chap.TBA.P.2}], ou encore comme une dérivée de la fonction de partition définie dans l'équation \eqref{chap.TBA.op.Z.S} :
 \begin{eqnarray}
 	\langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} &= & \sum_{\{ \theta_a\}} \langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\{\theta_a \}} \mathbb{P}^{(\mathcal{S})}_{\{ \theta_a \}} \label{chap.TBA.moy.1}\\
-	 & = &  -\left. \frac{1}{Z^{(\mathcal{S})}} \frac{\partial Z^{(\mathcal{S})}}{\partial \beta_i} \right )_{\beta_{j \neq i }}	 \label{chap.TBA.moy.2}
+	 & = &  -\left. \frac{1}{Z^{(\mathcal{S})}_{\mathrm{GGE}}} \frac{\partial Z^{(\mathcal{S})}_{\mathrm{GGE}}}{\partial \beta_i} \right )_{\beta_{j \neq i }}	 \label{chap.TBA.moy.2}
 \end{eqnarray}
 
 Par le même raisonnement le {\bf moment non centré} s'écrit :
 \begin{eqnarray}
-	\braket{ \operator{Q}_{i_1}^{(\mathcal{S})} \, \operator{Q}_{i_2}^{(\mathcal{S})} \cdots \operator{Q}_{i_q}^{(\mathcal{S})} }_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} &= &  (-1)^q \frac{1}{Z^{(\mathcal{S})}} \left.\frac{\partial}{\partial \beta_{i_1}} \right )_{\beta_{j \neq i_1 }} \left.\frac{\partial}{\partial \beta_{i_2}} \right )_{\beta_{j \neq i_2 }} \cdots \left.\frac{\partial}{\partial \beta_{i_q}} \right )_{\beta_{j \neq i_q }} Z^{(\mathcal{S})} \label{chap.TBA.mom.1}.	
+	\braket{ \operator{Q}_{i_1}^{(\mathcal{S})} \, \operator{Q}_{i_2}^{(\mathcal{S})} \cdots \operator{Q}_{i_q}^{(\mathcal{S})} }_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} &= &  (-1)^q \frac{1}{Z^{(\mathcal{S})}_{\mathrm{GGE}}} \left.\frac{\partial}{\partial \beta_{i_1}} \right )_{\beta_{j \neq i_1 }} \left.\frac{\partial}{\partial \beta_{i_2}} \right )_{\beta_{j \neq i_2 }} \cdots \left.\frac{\partial}{\partial \beta_{i_q}} \right )_{\beta_{j \neq i_q }} Z^{(\mathcal{S})}_{\mathrm{GGE}} \label{chap.TBA.mom.1}.	
 \end{eqnarray}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -230,7 +230,7 @@ Le premier et second moments permettent d’accéder à la variance
 \end{eqnarray}
 de la charge locale $\operator{Q}_i^{(\mathcal{S})}$, en injectant \eqref{chap.TBA.moy.2} et \eqref{chap.TBA.mom.1} et en utilisant $\frac{1}{f} \partial_x^2 f - ( \frac{1}{f} \partial_x f ) = \partial_x^2 \ln f $ :
 \begin{eqnarray}
-	\left \langle \left (\operator{Q}_i^{(\mathcal{S})} - \langle\operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} \right )^2  \right \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  &=&	  \left . \frac{\partial^2 \ln Z^{(\mathcal{S})}  }{{\partial \beta_i}^2 }  \right )_{\beta_{j\neq i}},\\
+	\left \langle \left (\operator{Q}_i^{(\mathcal{S})} - \langle\operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} \right )^2  \right \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  &=&	  \left . \frac{\partial^2 \ln Z^{(\mathcal{S})}_{\mathrm{GGE}}  }{{\partial \beta_i}^2 }  \right )_{\beta_{j\neq i}},\\
 	& = &  - \left . 	\frac{\partial \langle\operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} }{\partial \beta_i } \right )_{\beta_{j\neq i}}.	
 \end{eqnarray}
 
@@ -248,21 +248,21 @@ Dans le cas particulier de l’équilibre thermique standard (c’est-à-dire l�
 
 Dans le cadre de l’équilibre thermique, 
 \begin{eqnarray}
-	\operator{\rho}^{(\mathcal{S})}_{\mathrm{GE}} = \frac{1}{Z^{(\mathcal{S})}}\exp \left ( - \beta (\operator{H}^{(\mathcal{S})} - \mu \operator{Q}^{(\mathcal{S})} ) \right), \quad \operator{Q}_i^{(\mathcal{S})} = \int_\mathcal{S} dx \, \operator{q}_i(x), \label{chap.TBA.op.rho.S.GE}	
+	\operator{\rho}^{(\mathcal{S})}_{\mathrm{GE}} = \frac{1}{\Xi^{(\mathcal{S})}_{\mathrm{GE}} }\exp \left \{ - \beta \left (\operator{H}^{(\mathcal{S})} - \mu \operator{Q}^{(\mathcal{S})} \right \} \right), \quad \operator{Q}^{(\mathcal{S})} = \int_\mathcal{S} dx \, \operator{q}(x), \quad \operator{H}^{(\mathcal{S})} = \int_\mathcal{S} dx \, \operator{h}(x).  \label{chap.TBA.op.rho.S.GE}	
 \end{eqnarray}
 La fonction de partition 
 \begin{eqnarray}
-	Z^{(\mathcal{S})} = \bm{\mathrm{Tr}}\left [\exp \left( - \sum_i \beta_i \operator{Q}_i^{(\mathcal{S})} \right ) \right ]  \label{chap.TBA.op.Z.S.GE}	
+	\Xi^{(\mathcal{S})}_{\mathrm{GE}} = \bm{\mathrm{Tr}}\left [ \exp \left \{ - \beta \left (\operator{H}^{(\mathcal{S})} - \mu \operator{Q}^{(\mathcal{S})} \right \} \right) \right ]  \label{chap.TBA.op.Z.S.GE}	
 \end{eqnarray}
 
-les moyennes et les fluctuations thermodynamiques usuelles s’expriment naturellement comme dérivées du logarithme de la fonction de partition $Z^{(\mathcal{S})}$ :
+les moyennes et les fluctuations thermodynamiques usuelles s’expriment naturellement comme dérivées du logarithme de la fonction de partition $\Xi^{(\mathcal{S})}_{\mathrm{GE}}$ :
 \begin{eqnarray}
-	\langle \operator{Q} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  = \left .\frac{1}{\beta} \frac{ \partial \ln Z^{(\mathcal{S})}}{\partial \mu } \right )_{\beta},  & &  \left . \frac{1}{\beta} \frac{ \partial \langle \operator{Q} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}}{\partial \mu } \right )_{\beta} =  \left . \frac{1}{\beta^2} \frac{ \partial^2 \ln Z^{(\mathcal{S})}}{{\partial \mu}^2 } \right )_{\beta} \\
-	\langle \operator{H} - \mu\operator{Q}  \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  = -\left . \frac{ \partial \ln Z^{(\mathcal{S})}}{\partial \beta } \right )_{\mu} ,  & & -\left .  \frac{ \partial \langle \operator{H} - \mu\operator{Q} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}}{\partial \beta } \right )_{\mu } = \left .  \frac{ \partial^2 \ln Z^{(\mathcal{S})}}{{\partial \beta}^2 } \right )_{\mu}   .		
+	\langle \operator{Q} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  = \left .\frac{1}{\beta} \frac{ \partial \ln \Xi^{(\mathcal{S})}_{\mathrm{GE}} }{\partial \mu } \right )_{\beta},  & &  \left . \frac{1}{\beta} \frac{ \partial \langle \operator{Q} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}}{\partial \mu } \right )_{\beta} =  \left . \frac{1}{\beta^2} \frac{ \partial^2 \ln \Xi^{(\mathcal{S})}_{\mathrm{GE}} }{{\partial \mu}^2 } \right )_{\beta} \\
+	\langle \operator{H} - \mu\operator{Q}  \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  = -\left . \frac{ \partial \ln \Xi^{(\mathcal{S})}_{\mathrm{GE}} }}{\partial \beta } \right )_{\mu} ,  & & -\left .  \frac{ \partial \langle \operator{H} - \mu\operator{Q} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}}{\partial \beta } \right )_{\mu } = \left .  \frac{ \partial^2 \ln \Xi^{(\mathcal{S})}_{\mathrm{GE}} }{{\partial \beta}^2 } \right )_{\mu}   .		
 \end{eqnarray}
 En combinant ces relations, on peut également exprimer l’énergie moyenne et ses fluctuations comme :
 \begin{eqnarray}
-	\langle \operator{H} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  = \left [ \left .\frac{\mu}{\beta} \frac{ \partial}{\partial \mu } \right )_{T} -\left . \frac{ \partial }{\partial \beta } \right )_{\mu}   \right ]\ln Z^{(\mathcal{S})},  \quad  -\left .  \frac{ \partial \langle \operator{H} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}}{\partial \beta } \right )_{-\mu \beta } = \left [ \left .\frac{\mu}{\beta} \frac{ \partial}{\partial \mu } \right )_{T} -\left . \frac{ \partial }{\partial \beta } \right )_{\mu}  \right ]^2\ln Z^{(\mathcal{S})}.		
+	\langle \operator{H} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  = \left [ \left .\frac{\mu}{\beta} \frac{ \partial}{\partial \mu } \right )_{T} -\left . \frac{ \partial }{\partial \beta } \right )_{\mu}   \right ]\ln \Xi^{(\mathcal{S})}_{\mathrm{GE}} ,  \quad  -\left .  \frac{ \partial \langle \operator{H} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}}{\partial \beta } \right )_{-\mu \beta } = \left [ \left .\frac{\mu}{\beta} \frac{ \partial}{\partial \mu } \right )_{T} -\left . \frac{ \partial }{\partial \beta } \right )_{\mu}  \right ]^2\ln \Xi^{(\mathcal{S})}_{\mathrm{GE}} .		
 \end{eqnarray}
 
 %%%%%%%%%%%%%
