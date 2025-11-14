@@ -237,7 +237,31 @@ de la charge locale $\operator{Q}_i^{(\mathcal{S})}$, en injectant \eqref{chap.T
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Cas particulier de l’équilibre thermique.}
 
-Dans le cas particulier de l’équilibre thermique standard (c’est-à-dire l’équilibre statistique de Gibbs), le système est décrit par une seule contrainte d’énergie (ou par les contraintes d’énergie et de nombre de particules, dans le cas grand canonique). Les multiplicateurs de Lagrange associés aux charges conservées s’identifient alors à des grandeurs thermodynamiques classiques.
+%Dans le cas particulier de l’équilibre thermique standard (c’est-à-dire l’équilibre statistique de Gibbs), le système est décrit par une seule contrainte d’énergie (ou par les contraintes d’énergie et de nombre de particules, dans le cas grand canonique). Les multiplicateurs de Lagrange associés aux charges conservées s’identifient alors à des grandeurs thermodynamiques classiques.
+
+%(Dans le cadre général,) L’état d’équilibre (ou stationnaire) d’un système intégrable est entièrement caractérisé le modèle statistique du \gls{GGE}; et donc est entièrement caractérisé par l’ensemble de ses charges conservées $\operator{Q}_i^{(\mathcal{S})}$ et par les multiplicateurs de Lagrange qui leur sont associés $\beta_i$ .
+
+%\smallskip
+
+%Ce qui nous est plus familier c'est l'étude de l'état d'équilibre une systeme chaotique dit équilibre thermique standard. Ce systeme est décrit par, une retrictions du modele statisitriqu \gls{GGE} : le modèle statistique de Gibbs, que pour lequel seules les charges d’énergie (et éventuellement de nombre de particules) sont conservées. Les multiplicateurs de Lagrange associés aux charges conservées s’identifient alors à des grandeurs thermodynamiques classiques.
+
+%Dans le cas particulier le plus familier est celui de l’équilibre thermique standard, pour lequel seules les charges d’énergie (et éventuellement de nombre de particules) sont conservées. Les multiplicateurs du GGE se réduisent alors aux grandeurs thermodynamiques usuelles.
+
+
+Avant relaxation, un sous-système est décrit par une infinité de données initiales, par exemple les positions et les impulsions microscopiques $\{ \operator{x}_i , \operator{p}_i \}$ de toutes les particules.
+
+\smallskip
+%Après relaxation, si le sous-systeme est {bf integrable}, cette infinité de quantitée initiales ont converger vers une infinité de charges conservées $\operator{Q}_i^{(\mathcal{S})}$, chacune contraignant la relaxation du sous-systeme integrable . L'état stationnaire (ou "d'équilibre") est alors entièrement déterminé par l'ensemble de ces charges et par leurs multiplicateurs de Lagrange associés $\beta_i$: c'est le modèle statistique du \gls{GGE}, indispensable pour capturer correctement la dynamique d'un système intégrable.
+
+Après relaxation, si le sous-système est {\bf intégrable}, cette infinité de données initiales se projette sur une infinité de charges conservées $\operator{Q}_i^{(\mathcal{S})}$, qui contraignent complètement la dynamique de relaxation. L’état stationnaire (ou “d’équilibre”) est alors entièrement déterminé par l’ensemble de ces charges et par leurs multiplicateurs de Lagrange associés $\beta_i$ : c’est le modèle statistique du \gls{GGE}, indispensable pour décrire correctement l’état stationnaire d’un système intégrable.
+
+\smallskip
+
+%À l’inverse, ce qui nous est plus familier dans les sous-systèmes {\bf chaotiques} est l’apparition de l’équilibre thermique standard. Dans ce cas, la dynamique interne du système “efface” presque toute l’information initiale (\ie après relaxation l'infinité de quantitée d'écrivant le systéme initiale avant relaxation ont convergent vers une nombre finie de quantités): seules un nombre très réduit de quantités conservées subsistent, typiquement l’énergie (et éventuellement le nombre de particules). Le modèle statistique approprié n’est alors pas le \gls{GGE}, mais simplement le modèle de Gibbs, caractérisé par un petit nombre de multiplicateurs de Lagrange : la température (et éventuellement le potentiel chimique).
+
+%L’état stationnaire ("d'équilibre") d’un système intégrable, après relaxation, infinité de quantitée qui décrivaient le systeme initiales  cune infinité de charges conservées $\operator{Q}_i^{(\mathcal{S})}$, et chacune d’elles contraint son évolution. L’état d’équilibre est alors entièrement déterminé par l’ensemble de ces charges et par leurs multiplicateurs de Lagrange associés $\beta_i$: c’est le modèle statistique du \gls{GGE}, indispensable pour capturer correctement la dynamique d’un système intégrable.
+
+À l’inverse, dans les sous-systèmes {\bf chaotiques}, ce qui émerge après relaxation est l’équilibre thermique standard. Dans ce cas, la dynamique chaotique “efface” presque toute l’information initiale : l’infinité de données microscopiques avant relaxation converge vers un nombre fini de quantités pertinentes, typiquement l’énergie (et éventuellement le nombre de particules). Le modèle statistique approprié n’est alors pas le \gls{GGE}, mais simplement le modèle de Gibbs (l'Ensemble de Gibbs \gls{GE}), caractérisé par un petit nombre de multiplicateurs de Lagrange : la température (et éventuellement le potentiel chimique).
 
 \begin{itemize}[label=$\bullet$]
 	%\item Si la seule charge conservée est le nombre de particules $\operator{Q}_0^{(\mathcal{S})} \equiv \operator{Q}$, le multiplicateur associé est $\beta_0 \equiv -\beta \mu$, où $\mu$ est le potentiel chimique et $\beta \equiv (k_BT)^{-1}$ ( l’inverse de la température, avec la constante de Boltzmann $k_B = 1$).
@@ -246,16 +270,16 @@ Dans le cas particulier de l’équilibre thermique standard (c’est-à-dire l�
 	\item Si la charge conservée est $\operator{Q}_2^{(\mathcal{S})}-\mu\operator{Q}_0^{(\mathcal{S})}  = \operator{H}^{(\mathcal{S})} - \mu \operator{Q}^{(\mathcal{S})} $ (ensemble grand canonique), alors le multiplicateur est simplement $ \beta$.
 \end{itemize}
 
-Dans le cadre de l’équilibre thermique, 
+Dans ce cas particulier, la matrice densité locale \eqref{chap.TBA.op.rho.S} se réduit à celle de l’{\bf ensemble grand canonique de Gibbs} :
 \begin{eqnarray}
-	\operator{\rho}^{(\mathcal{S})}_{\mathrm{GE}} = \frac{1}{\Xi^{(\mathcal{S})}_{\mathrm{GE}} }\exp \left \{ - \beta \left (\operator{H}^{(\mathcal{S})} - \mu \operator{Q}^{(\mathcal{S})} \right \} \right), \quad \operator{Q}^{(\mathcal{S})} = \int_\mathcal{S} dx \, \operator{q}(x), \quad \operator{H}^{(\mathcal{S})} = \int_\mathcal{S} dx \, \operator{h}(x).  \label{chap.TBA.op.rho.S.GE}	
+	\operator{\rho}^{(\mathcal{S})}_{\mathrm{GE}} = \frac{1}{\Xi^{(\mathcal{S})}_{\mathrm{GE}} }\exp \left \{ - \beta \left (\operator{H}^{(\mathcal{S})} - \mu \operator{Q}^{(\mathcal{S})} \right \} \right), \quad \operator{Q}^{(\mathcal{S})} = \int_\mathcal{S} dx \, \operator{q}(x), \quad \operator{H}^{(\mathcal{S})} = \int_\mathcal{S} dx \, \operator{h}(x),  \label{chap.TBA.op.rho.S.GE}	
 \end{eqnarray}
-La fonction de partition 
+Avec la fonction de partition 
 \begin{eqnarray}
-	\Xi^{(\mathcal{S})}_{\mathrm{GE}} = \bm{\mathrm{Tr}}\left [ \exp \left \{ - \beta \left (\operator{H}^{(\mathcal{S})} - \mu \operator{Q}^{(\mathcal{S})} \right \} \right) \right ]  \label{chap.TBA.op.Z.S.GE}	
+	\Xi^{(\mathcal{S})}_{\mathrm{GE}} = \bm{\mathrm{Tr}}\left [ \exp \left \{ - \beta \left (\operator{H}^{(\mathcal{S})} - \mu \operator{Q}^{(\mathcal{S})} \right \} \right) \right ].  \label{chap.TBA.op.Z.S.GE}	
 \end{eqnarray}
 
-les moyennes et les fluctuations thermodynamiques usuelles s’expriment naturellement comme dérivées du logarithme de la fonction de partition $\Xi^{(\mathcal{S})}_{\mathrm{GE}}$ :
+Les moyennes et les fluctuations thermodynamiques usuelles s’expriment naturellement comme dérivées du logarithme de la fonction de partition $\Xi^{(\mathcal{S})}_{\mathrm{GE}}$ :
 \begin{eqnarray}
 	\langle \operator{Q}^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GE}}}  = \left .\frac{1}{\beta} \frac{ \partial \ln \Xi^{(\mathcal{S})}_{\mathrm{GE}} }{\partial \mu } \right )_{\beta},  & &  \left . \frac{1}{\beta} \frac{ \partial \langle \operator{Q}^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GE}}}}{\partial \mu } \right )_{\beta} =  \left . \frac{1}{\beta^2} \frac{ \partial^2 \ln \Xi^{(\mathcal{S})}_{\mathrm{GE}} }{{\partial \mu}^2 } \right )_{\beta} \\
 	\langle \operator{H}^{(\mathcal{S})} - \mu\operator{Q}^{(\mathcal{S})}  \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GE}}}  = -\left . \frac{ \partial \ln \Xi^{(\mathcal{S})}_{\mathrm{GE}} }{\partial \beta } \right )_{\mu} ,  & & -\left .  \frac{ \partial \langle \operator{H}^{(\mathcal{S})} - \mu\operator{Q}^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GE}}}}{\partial \beta } \right )_{\mu } = \left .  \frac{ \partial^2 \ln \Xi^{(\mathcal{S})}_{\mathrm{GE}} }{{\partial \beta}^2 } \right )_{\mu}   .		
