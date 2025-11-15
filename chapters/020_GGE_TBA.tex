@@ -231,11 +231,11 @@ Le premier et second moments permettent d’accéder à la variance
 de la charge locale $\operator{Q}_i^{(\mathcal{S})}$, en injectant \eqref{chap.TBA.moy.2} et \eqref{chap.TBA.mom.1} et en utilisant $\frac{1}{f} \partial_x^2 f - ( \frac{1}{f} \partial_x f ) = \partial_x^2 \ln f $ :
 \begin{eqnarray}
 	\left \langle \left (\operator{Q}_i^{(\mathcal{S})} - \langle\operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} \right )^2  \right \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  &=&	  \left . \frac{\partial^2 \ln Z^{(\mathcal{S})}_{\mathrm{GGE}}  }{{\partial \beta_i}^2 }  \right )_{\beta_{j\neq i}},\\
-	& = &  - \left . 	\frac{\partial \langle\operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} }{\partial \beta_i } \right )_{\beta_{j\neq i}}.	
+	& = &  - \left . 	\frac{\partial \langle\operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} }{\partial \beta_i } \right )_{\beta_{j\neq i}}.\label{chap.TBA.mom.222}	
 \end{eqnarray}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\paragraph{Cas particulier de l’équilibre thermique.}
+\paragraph{Relaxation dans les systèmes intégrables et chaotiques}
 
 %Dans le cas particulier de l’équilibre thermique standard (c’est-à-dire l’équilibre statistique de Gibbs), le système est décrit par une seule contrainte d’énergie (ou par les contraintes d’énergie et de nombre de particules, dans le cas grand canonique). Les multiplicateurs de Lagrange associés aux charges conservées s’identifient alors à des grandeurs thermodynamiques classiques.
 
@@ -248,43 +248,56 @@ de la charge locale $\operator{Q}_i^{(\mathcal{S})}$, en injectant \eqref{chap.T
 %Dans le cas particulier le plus familier est celui de l’équilibre thermique standard, pour lequel seules les charges d’énergie (et éventuellement de nombre de particules) sont conservées. Les multiplicateurs du GGE se réduisent alors aux grandeurs thermodynamiques usuelles.
 
 
-Avant relaxation, un sous-système est décrit par une infinité de données initiales, par exemple les positions et les impulsions microscopiques $\{ \operator{x}_i , \operator{p}_i \}$ de toutes les particules.
+%Avant relaxation, un sous-système est décrit par une infinité de données initiales\footnote{En réalité c'est dans la limite thermodunamique ($N\to \infty$) qu'il faud une infinié de données, sinon il faut $(2N)^d$ avec $d$ la dimension du systeme , ici $d=1$}, par exemple les positions et les impulsions microscopiques $\{ \operator{x}_i , \operator{p}_i \}$ de toutes les particules.
 
-\smallskip
+%Avant relaxation, un sous-système est décrit par une infinité de données initiales\footnote{En réalité, c’est seulement dans la limite thermodynamique ($N \to \infty$) qu’un nombre infini de données est requis. Pour un système fini contenant $N$ particules, il suffit d’en spécifier $(2N)^d$, où $d$ est la dimension de l’espace ; ici $d = 1$. Dans cette section, je m'avence une peut quant j'écrit "infinité".}, par exemple les positions et les impulsions microscopiques ${x_i,, p_i}$ de toutes les particules.
+
 %Après relaxation, si le sous-systeme est {bf integrable}, cette infinité de quantitée initiales ont converger vers une infinité de charges conservées $\operator{Q}_i^{(\mathcal{S})}$, chacune contraignant la relaxation du sous-systeme integrable . L'état stationnaire (ou "d'équilibre") est alors entièrement déterminé par l'ensemble de ces charges et par leurs multiplicateurs de Lagrange associés $\beta_i$: c'est le modèle statistique du \gls{GGE}, indispensable pour capturer correctement la dynamique d'un système intégrable.
 
-Après relaxation, si le sous-système est {\bf intégrable}, cette infinité de données initiales se projette sur une infinité de charges conservées $\operator{Q}_i^{(\mathcal{S})}$, qui contraignent complètement la dynamique de relaxation. L’état stationnaire (ou “d’équilibre”) est alors entièrement déterminé par l’ensemble de ces charges et par leurs multiplicateurs de Lagrange associés $\beta_i$ : c’est le modèle statistique du \gls{GGE}, indispensable pour décrire correctement l’état stationnaire d’un système intégrable.
-
-\smallskip
 
 %À l’inverse, ce qui nous est plus familier dans les sous-systèmes {\bf chaotiques} est l’apparition de l’équilibre thermique standard. Dans ce cas, la dynamique interne du système “efface” presque toute l’information initiale (\ie après relaxation l'infinité de quantitée d'écrivant le systéme initiale avant relaxation ont convergent vers une nombre finie de quantités): seules un nombre très réduit de quantités conservées subsistent, typiquement l’énergie (et éventuellement le nombre de particules). Le modèle statistique approprié n’est alors pas le \gls{GGE}, mais simplement le modèle de Gibbs, caractérisé par un petit nombre de multiplicateurs de Lagrange : la température (et éventuellement le potentiel chimique).
 
 %L’état stationnaire ("d'équilibre") d’un système intégrable, après relaxation, infinité de quantitée qui décrivaient le systeme initiales  cune infinité de charges conservées $\operator{Q}_i^{(\mathcal{S})}$, et chacune d’elles contraint son évolution. L’état d’équilibre est alors entièrement déterminé par l’ensemble de ces charges et par leurs multiplicateurs de Lagrange associés $\beta_i$: c’est le modèle statistique du \gls{GGE}, indispensable pour capturer correctement la dynamique d’un système intégrable.
 
-À l’inverse, dans les sous-systèmes {\bf chaotiques}, ce qui émerge après relaxation est l’équilibre thermique standard. Dans ce cas, la dynamique chaotique “efface” presque toute l’information initiale : l’infinité de données microscopiques avant relaxation converge vers un nombre fini de quantités pertinentes, typiquement l’énergie (et éventuellement le nombre de particules). Le modèle statistique approprié n’est alors pas le \gls{GGE}, mais simplement le modèle de Gibbs (l'Ensemble de Gibbs \gls{GE}), caractérisé par un petit nombre de multiplicateurs de Lagrange : la température (et éventuellement le potentiel chimique).
+Avant relaxation, un sous-système est décrit par une infinité de données initiales\footnote{En réalité, c’est seulement dans la limite thermodynamique ($N \to \infty$) qu’un nombre infini de données est requis. Pour un système fini contenant $N$ particules, il suffit d’en spécifier $(2N)^d$, où $d$ est la dimension de l’espace ; ici $d = 1$. Dans cette section, je m’avance un peu lorsque j’emploie le terme « infinité ».}, par exemple les positions et les impulsions microscopiques $\{ \operator{x}_i , \operator{p}_i \}$ de toutes les particules.
+
+
+\smallskip
+
+Après relaxation, si le sous-système est {\bf intégrable}, cette infinité de données initiales se projette sur une infinité de charges conservées $\operator{Q}_i^{(\mathcal{S})}$, qui contraignent complètement la dynamique de relaxation. L’état stationnaire (ou “d’équilibre”) est alors entièrement déterminé par l’ensemble de ces charges et par leurs multiplicateurs de Lagrange associés $\beta_i$ : c’est le modèle statistique du \gls{GGE}, indispensable pour décrire correctement l’état stationnaire d’un système intégrable.
+
+\smallskip
+
+
+À l’inverse, dans les sous-systèmes {\bf chaotiques}, ce qui émerge après relaxation est l’équilibre thermique standard. Dans ce cas, la dynamique chaotique “efface” presque toute l’information initiale : l’infinité de données microscopiques avant relaxation converge vers un nombre fini de quantités pertinentes, typiquement l’énergie (et éventuellement le nombre de particules). Le modèle statistique approprié n’est alors pas le \gls{GGE}, mais simplement le modèle de Gibbs [l'Ensemble de Gibbs (en anglais \gls{GE})], caractérisé par un petit nombre de multiplicateurs de Lagrange : la température (et éventuellement le potentiel chimique).
 
 \begin{itemize}[label=$\bullet$]
 	%\item Si la seule charge conservée est le nombre de particules $\operator{Q}_0^{(\mathcal{S})} \equiv \operator{Q}$, le multiplicateur associé est $\beta_0 \equiv -\beta \mu$, où $\mu$ est le potentiel chimique et $\beta \equiv (k_BT)^{-1}$ ( l’inverse de la température, avec la constante de Boltzmann $k_B = 1$).
 	\item Si la seule charge conservée est le nombre de particules, noté $\operator{Q}_0^{(\mathcal{S})} \equiv \operator{Q}^{(\mathcal{S})}$, alors le multiplicateur associé est $\beta_0 \equiv -\beta \mu$, où $\mu$ désigne le potentiel chimique et $\beta \equiv (k_B T)^{-1}$ l’inverse de la température (avec $k_B$ la constante de Boltzmann, que l’on prendra égale à 1).
 	
-	\item Si la charge conservée est $\operator{Q}_2^{(\mathcal{S})}-\mu\operator{Q}_0^{(\mathcal{S})}  = \operator{H}^{(\mathcal{S})} - \mu \operator{Q}^{(\mathcal{S})} $ (ensemble grand canonique), alors le multiplicateur est simplement $ \beta$.
+	\item Si la charge conservée est $\operator{Q}_2^{(\mathcal{S})}-\mu\operator{Q}_0^{(\mathcal{S})}  \equiv \operator{H}^{(\mathcal{S})} - \mu \operator{Q}^{(\mathcal{S})} $ (ensemble grand-canonique), alors le multiplicateur est simplement $ \beta$.
 \end{itemize}
 
-Dans ce cas particulier, la matrice densité locale \eqref{chap.TBA.op.rho.S} se réduit à celle de l’{\bf ensemble grand canonique de Gibbs} :
+Dans ce dernier cas particulier, la matrice densité locale \eqref{chap.TBA.op.rho.S} se réduit à celle de l’{\bf ensemble grand-canonique de Gibbs} :
 \begin{eqnarray}
-	\operator{\rho}^{(\mathcal{S})}_{\mathrm{GE}} = \frac{1}{\Xi^{(\mathcal{S})}_{\mathrm{GE}} }\exp \left \{ - \beta \left (\operator{H}^{(\mathcal{S})} - \mu \operator{Q}^{(\mathcal{S})} \right \} \right), \quad \operator{Q}^{(\mathcal{S})} = \int_\mathcal{S} dx \, \operator{q}(x), \quad \operator{H}^{(\mathcal{S})} = \int_\mathcal{S} dx \, \operator{h}(x),  \label{chap.TBA.op.rho.S.GE}	
+	\operator{\rho}^{(\mathcal{S})}_{\mathrm{GE}} = \frac{1}{\Xi^{(\mathcal{S})}_{\mathrm{GE}} }\exp \left \{ - \beta \left (\operator{H}^{(\mathcal{S})} - \mu \operator{Q}^{(\mathcal{S})} \right \} \right), \quad \operator{Q}^{(\mathcal{S})} = \int_\mathcal{S} dx \, \operator{q}(x), \quad \operator{H}^{(\mathcal{S})} = \int_\mathcal{S} dx \, \operator{h}(x).  \label{chap.TBA.op.rho.S.GE}	
 \end{eqnarray}
-Avec la fonction de partition 
+La fonction de partition grand-canonique associée est
 \begin{eqnarray}
 	\Xi^{(\mathcal{S})}_{\mathrm{GE}} = \bm{\mathrm{Tr}}\left [ \exp \left \{ - \beta \left (\operator{H}^{(\mathcal{S})} - \mu \operator{Q}^{(\mathcal{S})} \right \} \right) \right ].  \label{chap.TBA.op.Z.S.GE}	
 \end{eqnarray}
 
-Les moyennes et les fluctuations thermodynamiques usuelles s’expriment naturellement comme dérivées du logarithme de la fonction de partition $\Xi^{(\mathcal{S})}_{\mathrm{GE}}$ :
+Les moyennes et les fluctuations thermodynamiques usuelles s’expriment naturellement comme dérivées du logarithme de la fonction de partition grand-canonique $\Xi^{(\mathcal{S})}_{\mathrm{GE}}$ :
 \begin{eqnarray}
 	\langle \operator{Q}^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GE}}}  = \left .\frac{1}{\beta} \frac{ \partial \ln \Xi^{(\mathcal{S})}_{\mathrm{GE}} }{\partial \mu } \right )_{\beta},  & &  \left . \frac{1}{\beta} \frac{ \partial \langle \operator{Q}^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GE}}}}{\partial \mu } \right )_{\beta} =  \left . \frac{1}{\beta^2} \frac{ \partial^2 \ln \Xi^{(\mathcal{S})}_{\mathrm{GE}} }{{\partial \mu}^2 } \right )_{\beta} \\
 	\langle \operator{H}^{(\mathcal{S})} - \mu\operator{Q}^{(\mathcal{S})}  \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GE}}}  = -\left . \frac{ \partial \ln \Xi^{(\mathcal{S})}_{\mathrm{GE}} }{\partial \beta } \right )_{\mu} ,  & & -\left .  \frac{ \partial \langle \operator{H}^{(\mathcal{S})} - \mu\operator{Q}^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GE}}}}{\partial \beta } \right )_{\mu } = \left .  \frac{ \partial^2 \ln \Xi^{(\mathcal{S})}_{\mathrm{GE}} }{{\partial \beta}^2 } \right )_{\mu}   .		
 \end{eqnarray}
-En combinant ces relations, on peut également exprimer l’énergie moyenne et ses fluctuations comme :
+Les mêmes que dans \eqref{chap.TBA.moy.2} et \eqref{chap.TBA.mom.222}. 
+
+\smallskip
+
+%En combinant ces relations, on peut également exprimer l’énergie moyenne et ses fluctuations comme :
+En combinant les dérivées précédentes, on reconnait l’énergie moyenne et ses fluctuations :
 \begin{eqnarray}
 	\langle \operator{H}^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GE}}}  = \left [ \left .\frac{\mu}{\beta} \frac{ \partial}{\partial \mu } \right )_{T} -\left . \frac{ \partial }{\partial \beta } \right )_{\mu}   \right ]\ln \Xi^{(\mathcal{S})}_{\mathrm{GE}} ,  \quad  -\left .  \frac{ \partial \langle \operator{H}^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GE}}}}{\partial \beta } \right )_{-\mu \beta } = \left [ \left .\frac{\mu}{\beta} \frac{ \partial}{\partial \mu } \right )_{T} -\left . \frac{ \partial }{\partial \beta } \right )_{\mu}  \right ]^2\ln \Xi^{(\mathcal{S})}_{\mathrm{GE}} .		
 \end{eqnarray}
@@ -305,10 +318,10 @@ En combinant ces relations, on peut également exprimer l’énergie moyenne et 
 %Dans le cas thermique, les valeurs moyennes des observables classiques telles que le nombre de particules et l'énergie peuvent s'exprimer comme des sommes de puissances des rapidités :
 Dans un système à $N$ particules caractérisé par des rapidités $\{ \theta_a \}_{a = 1}^N$, les charges conservées classiques — telles que le nombre de particules, l’impulsion ou l’énergie — s’écrivent comme des sommes de puissances des rapidités :
 \(
-	\langle \operator{Q} \rangle_{\{ \theta_a\} } \propto \sum_{a = 1}^N \theta_a^0 , \,  \langle \operator{P} \rangle_{\{ \theta_a\} } \propto \sum_{a = 1}^N \theta_a^1  ,\,  \mbox{et} \, \langle \operator{H} \rangle_{\{ \theta_a\} } \propto \sum_{a = 1}^N \theta_a^2 .	
+	\langle \operator{Q}^{(\mathcal{S})}  \rangle_{\{ \theta_a\} } \propto \sum_{a = 1}^N \theta_a^0 , \,  \langle \operator{P}^{(\mathcal{S})}  \rangle_{\{ \theta_a\} } \propto \sum_{a = 1}^N \theta_a^1  ,\,  \mbox{et} \, \langle \operator{H}^{(\mathcal{S})}  \rangle_{\{ \theta_a\} } \propto \sum_{a = 1}^N \theta_a^2 .	
 \)
 (cf. équations \eqref{chap.2.gge.1})
-Dans ce paragraphe précédent, nous avons sous-entendu — sans l’expliciter — qu’il est montré que l’ensemble des charges locales conservées forme une famille donnée par :
+Dans le paragraphe précédent, nous avons sous-entendu — sans l’expliciter — qu’il est montré que l’ensemble des charges locales conservées forme une famille donnée par :
 \begin{eqnarray}
 	\operator{Q}_i^{(\mathcal{S})} \ket{\{\theta_a\} } & \propto & \sum_a \theta_a^i \ket{\{\theta_a\} }.
 \end{eqnarray}
@@ -327,15 +340,15 @@ Ces charges agissent donc de manière diagonale sur les états de Bethe, avec de
 \(
   f:\mathbb R\!\to\!\mathbb R
 \)
-on associe un opérateur-charge loclal :
+on associe un opérateur-charge local :
 \begin{eqnarray}\label{chap.2.charge.f.1}
 	\operator{\mathcal{Q}}^{(\mathcal{S})}[f] & = &  L^{(\mathcal{S})} \int d\theta \, f(\theta) \operator{\rho}^{(\mathcal{S})}(\theta).	
 \end{eqnarray}
-où $ L^{(\mathcal{S})}$ est la taille du support $\mathcal{S}$ et  $\operator{\rho}^{(\mathcal{S})}(\theta)$ agit sur une état de Bethe comme 
+où $ L^{(\mathcal{S})}$ est la taille du support $\mathcal{S}$ et  $\operator{\rho}^{(\mathcal{S})}(\theta)$ agit sur un état de Bethe comme 
 \begin{eqnarray}\label{chap.2.rho.1}
 	 \operator{\rho}^{(\mathcal{S})}(\theta) \ket{ \{ \theta_a \} } &=& \frac{1}{L^{(\mathcal{S})}} \sum_{a = 1 }^N  \delta ( \theta - \theta_a ) \ket{ \{ \theta_a \} }.	
 \end{eqnarray}
-De sorte que $\operator{\mathcal{Q}}^{(\mathcal{S})}[f]$ agit sur une état de Bethe comme
+De sorte que $\operator{\mathcal{Q}}^{(\mathcal{S})}[f]$ agit sur un état de Bethe comme
 \begin{eqnarray}\label{chap.2.charge.1}
 	\operator{\mathcal{Q}}^{(\mathcal{S})}[f]\,\ket{\{\theta_a\} } =  \sum_{a=1}^{N}f(\theta_a)\,\ket{\{\theta_a\} } \quad \mbox{de sorte que} \quad \braket{\operator{\mathcal{Q}}^{(\mathcal{S})}[f]}_{\{\theta_a\}} = \sum_{a=1}^N f(\theta_a)
 \end{eqnarray}
@@ -372,7 +385,7 @@ est une observable locale.
 
 
 
-\paragraph{Charges conservées généralisée.\label{sec:charges-gen}}
+\paragraph{Charges conservées généralisées.\label{sec:charges-gen}}
 Les fonction $f_i$ étant fixées, on note la fonction régulière
 \(
   w:\mathbb R\!\to\!\mathbb R
@@ -393,7 +406,7 @@ Dans le cas des modèles intégrables traités par le Bethe Ansatz, il est toute
 \begin{eqnarray}\label{chap.2.densite.1}
 	\operator{\varrho}^{(\mathcal{S})}[w]  =  \frac{e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}}{Z^{(\mathcal{S})}[w]}, \, \mbox{avec} \quad e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}  = 	\sum_{\{\theta_a \}} e^{- \sum_{a = 1}^N w(\theta_a) } \vert \{ \theta_a\} \rangle \langle  \{ \theta_a\}  \vert, 
 \end{eqnarray}	
-et la fonction de partition \eqref{chap.TBA.op.Z.S} s'écrit $Z^{(\mathcal{S})}[w]\doteq \bm{\mathrm{Tr}}\left [ e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}\right ] $ vaux :
+et la fonction de partition \eqref{chap.TBA.op.Z.S} s'écrit $Z^{(\mathcal{S})}[w]\doteq \bm{\mathrm{Tr}}\left [ e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}\right ] $ et vaux :
 \begin{eqnarray}
 	Z^{(\mathcal{S})}[w]   =  \sum_{\{\theta_a \}} e^{-\sum_{a = 1}^N w(\theta_a)},\label{chap.TBA.op.Z.S.1}.	
 \end{eqnarray}
@@ -487,7 +500,7 @@ Dans la suite de ce chapitre, nous omettrons l’exposant $(\mathcal{S})$.
 
 \medskip
 
-Dans la base des états de Bethe \( \{ \ket{\{ \theta_a \}} \} \), l’opérateur \( \hat{\rho}(\theta) \) défini en \eqref{chap.2.rho.1} est diagonal, et ses valeurs propres correspondent aux {\bf distributions de rapidité} associées à chaque état de Bethe.
+Dans la base des états de Bethe \( \{ \ket{\{ \theta_a \}} \} \), l’opérateur \( \operator{\rho}(\theta) \) défini en \eqref{chap.2.rho.1} est diagonal, et ses valeurs propres correspondent aux {\bf distributions de rapidité} associées à chaque état de Bethe.
 
 \vspace{0.5em}
 \medskip
@@ -509,14 +522,14 @@ Dans un ensemble général (GGE), la valeur moyenne de l’observable \eqref{cha
 \begin{eqnarray}\label{chap.2.moyenne.2}
 	\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}} \rangle_{\operator{\varrho}[w]} & =  & \frac{  \displaystyle \sum_{\rho }  \langle \operator{\mathcal{O}}\rangle_{[\rho]} \Omega[\rho] e^{- \sum_{a = 1}^N  w(\theta_a)    }}{ \displaystyle \sum_{\rho}   \Omega[\rho]\,e^{- \sum_{a = 1}^N  w(\theta_a) } } ,
 \end{eqnarray}
-où $\sum_{\rho }$ est une somme sus tous les distribution de rapidité $\rho$ et 
+où $\sum_{\rho }$ est une somme sur tous les distributions de rapidité $\rho$ et 
 où $\Omega[\rho]$ désigne le nombre de micro-états compatibles avec la distribution de rapidité $\rho$.
 
 %où $\# \mbox{micro-états.}$ est les nombre de micro état associée àa la distribution de rapidité $\rho$.
 %Avant de se plonger sur $\# \mbox{micro-états.}$, regardons le changement des équation de Bethes. 
 
 \medskip
-Pour établir la fonction $\Omega[\rho]$, reppelons-nons de la transformation des équations de Bethe dans dans la limite thermodynamique, hors état fondamentale \eqref{eq:TBA-nu} et \eqref{eq:TBA-rhos-2}.
+Pour établir la fonction $\Omega[\rho]$, rappelons-nous de la transformation des équations de Bethe dans la limite thermodynamique, hors état fondamental \eqref{eq:TBA-nu} et \eqref{eq:TBA-rhos-2}.
 \begin{equation}
 	\nu = \frac{\rho}{\rho_s} \, , \qquad 2\pi \rho_s = 1^{\mathrm{dr}}_{[\nu]} 
 \label{chap.2:eq:TBA-rhos}
@@ -525,7 +538,7 @@ où $f^{\mathrm{dr}}_{[\nu]}$ est définie en \eqref{eq:dressing}.
 
 \medskip
 
-Cette formalisation constitue la brique de base de la \textbf{hydrodynamique généralisée} et, dans la section suivante, permet de définir rigoureusement l’\textbf{entropie de Yang–Yang}, indispensable pour décrire la relaxation hors d’équilibre des systèmes intégrables.
+Cette formalisation constitue la brique de base de l'\textbf{hydrodynamique généralisée} et, dans la section suivante, permet de définir rigoureusement l’\textbf{entropie de Yang–Yang}, indispensable pour décrire la relaxation hors d’équilibre des systèmes intégrables.
 
 %\vspace{1ex}
 %La formalisation ci‑dessus fournit la brique de base pour la
@@ -641,14 +654,14 @@ composé avec la fonction logarithmique, on obtient :
 	&  \underset{n \to \infty}{\sim} & n \ln n  
 \end{eqnarray}
 	
-$\Omega(\theta)$ est jamais null donc on peut approximer, pour de grandes valeurs de $L$ : 
+$\Omega(\theta)$ n'est jamais nul donc on peut approximer, pour de grandes valeurs de $L$ : 
 \begin{eqnarray}
     \ln \Omega(\theta) & \underset{\underset{\rho (\theta )\leq  \rho_s (\theta )}{L\rho \delta \theta  \to \infty}}{\sim}   & L [ \rho_s\ln \rho_s - \rho \ln \rho - (\rho_s - \rho ) \ln ( \rho_s - \rho) ] (\theta )\delta \theta .
 \end{eqnarray}
 
 Cette expression donne la contribution  à l’{\bf entropie}  associée à la cellule autour de $\theta_a$ de taille $\delta \theta$.
 
-\paragraph{Entropie de Yang-Yang : définition .}
+\paragraph{Entropie de Yang-Yang : définition.}
 %L'entropie totale du macro-état $\rho(\theta)$, notée $\mathcal{S}_{YY}[\rho]$, est obtenue en sommant sur toutes les tranches. Pour alléger la notation, nous écrivons cette somme comme :
 %Le nombre total de micro-états est le produit de toutes ces configurations pour toutes les cellules de rapidité $[\theta, \theta + \delta \theta]$. %En prenant le logarithme et en remplaçant la somme par une intégrale sur $ \theta$, nous obtenons l'entropie de Yang-Yang :
 
@@ -808,8 +821,8 @@ Leur différence
 	(\mathcal{S}_{YY}-\mathcal{W})[\rho]	
 \end{eqnarray}
 joue donc le rôle d’une \emph{fonction thermodynamique effective}
-(analogue à une entropie libre).  
-L’exposant $e^{L(\mathcal{S}_{YY}-\mathcal{W})[\rho]}$ fixe la \textbf{probabilité relative} d’un macro-état $\rho(\theta)$ dans le GGE : le terme entropique favorise les états, tandis que le terme énergétique pénalise les configurations coûteuses — d’où la compétition caractéristique del’équilibre statistique.
+(analogue à une énergie libre).  
+L’exposant $e^{L(\mathcal{S}_{YY}-\mathcal{W})[\rho]}$ fixe la \textbf{probabilité relative} d’un macro-état $\rho(\theta)$ dans le \gls{GGE} : le terme entropique favorise les états, tandis que le terme énergétique pénalise les configurations coûteuses — d’où la compétition caractéristique de l’équilibre statistique.
 
 
 
@@ -965,12 +978,12 @@ l’équation intégrale canonique de la thermodynamique de Bethe :
 Les relations \eqref{chap:TBA:eq:nu}–\eqref{chap:TBA:eq:e} déterminent de façon univoque la distribution de rapidité d’équilibre \(\rho_{\!eq}\) à partir du poids spectral \(w\), caractéristique du \gls{GGE}.
 
 \medskip
-Ainsi, la méthode du point selle relie \emph{explicitement} le {\em poids spectral}, $w$  (caractéristique du GGE) au \emph{macro-état le plus probable}, $\rho_{eq}$ , et permet d’évaluer les observables par la formule d’ensemble \eqref{chap:TBA:eq:ensemble_average:approx}.
+Ainsi, la méthode du point selle relie \emph{explicitement} le {\em poids spectral}, $w$  (caractéristique du \gls{GGE}) au \emph{macro-état le plus probable}, $\rho_{eq}$ , et permet d’évaluer les observables par la formule d’ensemble \eqref{chap:TBA:eq:ensemble_average:approx}.
 
 
 \paragraph{Résolution numérique de l’équation TBA.}\label{para-algho-TBA}
 
-Prenons un poids spectrale quelconque, par exemple : 
+Prenons un {\em poids spectral} quelconque, par exemple : 
 \begin{equation}
   w(\theta)= \frac{1}{2}\theta^2 .\label{eq:TBA:w:quadra}
 \end{equation} 
@@ -982,7 +995,7 @@ inférieure à 1, garantissant la convergence de l’itération de Picard.
 \medskip
 \subparagraph{Algorithme d’itération.}  
 La structure contractante de l’équation garantit l’absence de cycles ou de points fixes multiples, assurant la convergence de l’itération vers l’unique solution admissible.
-L’équation \eqref{eq:num:TBA} est non linéaire ; pour la résoudre numériquement, on utilise une méthode itérative de type Picard. On initialise
+L’équation \eqref{chap:TBA:eq:e} est non-linéaire ; pour la résoudre numériquement, on utilise une méthode itérative de type Picard. On initialise
 \(
   \epsilon_0 = w ,
 \)
