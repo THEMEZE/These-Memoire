@@ -60,4 +60,23 @@
 \setcounter{secnumdepth}{3}  % numérotation jusqu’aux subsubsections
 \setcounter{tocdepth}{2}     % affichage de la ToC jusqu’aux subsections
 
+\defbibheading{subsubbibliography}[\refname]{%
+  \subsubsection*{#1}%
+}
+
+% Heading pour la biblio de l'introduction
+\defbibheading{subbibliographyintro}{%
+  \subsection*{Bibliographie de l'Introduction}%
+}
+
+% Heading pour la biblio par chapitre
+\defbibheading{subbibliography}{%
+  \subsection*{Bibliographie du chapitre}%
+}
+
+% Heading pour la biblio des annexes
+\defbibheading{annexbibliography}{%
+  \subsection*{Bibliographie de l’annexe}%
+}
+
 

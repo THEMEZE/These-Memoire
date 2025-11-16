@@ -6,107 +6,111 @@
     },
     "Blanc": {
         "page": 2,
-        "pages": "2-2",
-        "nb_pages": 1
+        "pages": "{2,4}",
+        "nb_pages": 2,
+        "page_list": [
+            2,
+            4
+        ]
     },
     "Acronymes": {
         "page": 3,
-        "pages": "3-4",
-        "nb_pages": 2
-    },
-    "Sommaire": {
-        "page": 5,
-        "pages": "5-6",
-        "nb_pages": 2
+        "pages": "3-3",
+        "nb_pages": 1
     },
     "Introduction": {
-        "page": 7,
-        "pages": "7-8",
-        "nb_pages": 2
+        "page": 5,
+        "pages": "5-7",
+        "nb_pages": 3
+    },
+    "Sommaire": {
+        "page": 8,
+        "pages": "8-10",
+        "nb_pages": 3
     },
     "1. Modèle de Lieb-Liniger et approche Bethe Ansatz": {
-        "page": 9,
-        "pages": "9-28",
-        "nb_pages": 20
+        "page": 11,
+        "pages": "11-32",
+        "nb_pages": 22
     },
     "2. Relaxation et Équilibre dans les Systèmes Quantiques Intégrables : Une Approche par la Thermodynamique de Bethe": {
-        "page": 29,
-        "pages": "29-44",
+        "page": 33,
+        "pages": "33-48",
         "nb_pages": 16
     },
     "3. Dynamique hors-équilibre et hydrodynamique généralisée": {
-        "page": 45,
-        "pages": "45-58",
+        "page": 49,
+        "pages": "49-62",
         "nb_pages": 14
     },
-    "4. Fluctuation de la distribution de rapidité dans des états d'équilibre": {
-        "page": 59,
-        "pages": "59-78",
+    "4. Fluctuations de la distribution de rapidités dans les états stationnaires du modèle de Lieb–Liniger homogène": {
+        "page": 63,
+        "pages": "63-82",
         "nb_pages": 20
     },
     "5. Dispositif expérimental": {
-        "page": 79,
-        "pages": "79-100",
-        "nb_pages": 22
+        "page": 83,
+        "pages": "83-106",
+        "nb_pages": 24
     },
     "6. Étude du protocole de bi-partition : Mesure de distribution de rapidités locales rho(x,θ) pour des systèmes hors équilibre": {
-        "page": 101,
-        "pages": "101-116",
-        "nb_pages": 16
+        "page": 107,
+        "pages": "107-124",
+        "nb_pages": 18
     },
     "7. Mise en place d'un confinement longitudinal dipolaire": {
-        "page": 117,
-        "pages": "117-138",
+        "page": 125,
+        "pages": "125-146",
         "nb_pages": 22
     },
     "Conclusion": {
-        "page": 139,
-        "pages": "139-140",
+        "page": 147,
+        "pages": "147-148",
         "nb_pages": 2
     },
     "Annex A - Action de P et H sur l'état de Bethe": {
-        "page": 141,
-        "pages": "141-144",
+        "page": 149,
+        "pages": "149-152",
         "nb_pages": 4
     },
     "Annex B - Réduction GHD vers transport d’Euler": {
-        "page": 145,
-        "pages": "145-148",
+        "page": 153,
+        "pages": "153-156",
         "nb_pages": 4
     },
     "Annex C - Dérivation alternative des fluctuations de rho": {
-        "page": 149,
-        "pages": "149-150",
-        "nb_pages": 2
-    },
-    "Annex D - Propriétés des facteurs d'homothétie": {
-        "page": 151,
-        "pages": "151-154",
+        "page": 157,
+        "pages": "157-160",
         "nb_pages": 4
     },
+    "Annex D - Propriétés des facteurs d'homothétie": {
+        "page": 161,
+        "pages": "161-162",
+        "nb_pages": 2
+    },
     "Annex E - Polarisabilité dynamique et potentiel dipolaire optique": {
-        "page": 155,
-        "pages": "155-158",
+        "page": 163,
+        "pages": "163-166",
         "nb_pages": 4
     },
     "Annex F - Moment tensoriel J=1/2": {
-        "page": 159,
-        "pages": "159-160",
+        "page": 167,
+        "pages": "167-168",
         "nb_pages": 2
     },
     "Bibliographie": {
-        "page": 161,
-        "pages": "161-166",
-        "nb_pages": 6
+        "page": 169,
+        "pages": "169-176",
+        "nb_pages": 8
     },
     "Résumé": {
-        "page": 167,
-        "pages": "167-167",
+        "page": 177,
+        "pages": "177-177",
         "nb_pages": 1
     },
     "Blanc_final": {
-        "page": 168,
-        "pages": "168-168",
+        "page": 178,
+        "pages": "178-178",
         "nb_pages": 1
     }
 }

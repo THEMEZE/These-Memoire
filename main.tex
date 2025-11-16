@@ -4,19 +4,19 @@
 
 \includepdf[pages=1]{./figures/official_template_phd_universite-paris_saclay_2/Modele_These_UParisSaclay_2022.pdf}
 
-
-
 \printglossary[type=\acronymtype,title=Liste des acronymes]
 
 \frontmatter
 
-\tableofcontents
-\mainmatter
-
+\begin{refsection}
 \input{chapters/000_intro}
 %\printbibliography[heading=bibliography,title={Bibliographie du l'Introduction}]
+%\printbibliography[heading=subbibliography,title={Bibliographie du l'Introduction}]
 %\printbibliography[heading=subsubbibliography,title={Bibliographie du l'Introduction}]
 %\printbibliography[title={Bibliographie du l'Introduction}]
+%\printbibliography[heading=subbibliography, section=\therefsection]
+\printbibliography[heading=subbibliographyintro,title={Bibliographie de l'introduction}]
+\end{refsection}
 
 %\section*{Bibliographie de l'Introduction}
 %\printbibliography[heading=none]
@@ -25,61 +25,124 @@
 %  title={Bibliographie de l'Introduction}
 %]
 
+\tableofcontents
+\mainmatter
+
+\begin{refsection}
 \input{chapters/010_LL_BA}
 %\printbibliography[heading=bibintoc,title={Bibliographie du chapitre}]
+%\printbibliography[heading=subbibliography, title={Bibliographie du chapitre}]
 %\printbibliography[heading=subsubbibliography, title={Bibliographie du chapitre}]
 %\printbibliography[title={Bibliographie du chapitre}]
+%\printbibliography[heading=subbibliography, section=\therefsection]
+\printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+\end{refsection}
 
+\begin{refsection}
 \input{chapters/020_GGE_TBA}
 %\printbibliography[heading=bibintoc,title={Bibliographie du chapitre}]
+%\printbibliography[heading=subbibliography, title={Bibliographie du chapitre}]
 %\printbibliography[heading=subsubbibliography,title={Bibliographie du chapitre}]
+%\printbibliography[heading=subbibliography, section=\therefsection]
+\printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+\end{refsection}
 
+
+\begin{refsection}
 \input{chapters/030_GHD}
 %\printbibliography[heading=bibintoc,title={Bibliographie du chapitre}]
+%\printbibliography[heading=subbibliography, title={Bibliographie du chapitre}]
 %\printbibliography[heading=subsubbibliography,title={Bibliographie du chapitre}]
+%\printbibliography[heading=subbibliography, section=\therefsection]
+\printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+\end{refsection}
 
 %\input{chapters/030_GHD_1}
 %\input{chapters/030_GHD_Isa}
 %\input{chapters/97_GHD}
 
+\begin{refsection}
 \input{chapters/040_GGE_Fluctuation}
 %\printbibliography[heading=bibintoc,title={Bibliographie du chapitre}]
+%\printbibliography[heading=subbibliography, title={Bibliographie du chapitre}]
 %\printbibliography[heading=subsubbibliography,title={Bibliographie du chapitre}]
+%\printbibliography[heading=subbibliography, section=\therefsection]
+\printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+\end{refsection}
 
+\begin{refsection}
 \input{chapters/050_Disp_Exp}
 %\printbibliography[heading=bibintoc,title={Bibliographie du chapitre}]
+%\printbibliography[heading=subbibliography, title={Bibliographie du chapitre}]
 %\printbibliography[heading=subsubbibliography,title={Bibliographie du chapitre}]
+%\printbibliography[heading=subbibliography, section=\therefsection]
+\printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+\end{refsection}
 
+\begin{refsection}
 \input{chapters/060_Bipart}
 %\printbibliography[heading=bibintoc,title={Bibliographie du chapitre}]
+%\printbibliography[heading=subbibliography, title={Bibliographie du chapitre}]
 %\printbibliography[heading=subsubbibliography,title={Bibliographie du chapitre}]
+%\printbibliography[heading=subbibliography, section=\therefsection]
+\printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+\end{refsection}
 
+\begin{refsection}
 \input{chapters/070_Dipolaire}
 %\printbibliography[heading=bibintoc,title={Bibliographie du chapitre}]
+%\printbibliography[heading=subbibliography, title={Bibliographie du chapitre}]
 %\printbibliography[heading=subsubbibliography,title={Bibliographie du chapitre}]
+%\printbibliography[heading=subbibliography, section=\therefsection]
+\printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+\end{refsection}
 
 \input{chapters/080_conclusion}
+
+
+
 \appendix
 %\input{chapters/99_annexes}
 \input{chapters/011_PH}
 \input{chapters/031_Euler}
 %\input{chapters/032_Dressing}
+
+\begin{refsection}
 \input{chapters/041_Jerome}
+%\printbibliography[heading=bibliography,title={Bibliographie de l'annex}]
+%\printbibliography[heading=subbibliography,title={Bibliographie de l'annex}]
 %\printbibliography[heading=subsubbibliography,title={Bibliographie de l'annex}]
+%\printbibliography[heading=annexbibliography,section=\therefsection]
+\printbibliography[heading=annexbibliography,title={Bibliographie de l'annexe}]
+\end{refsection}
+
 
 \input{chapters/051_scaling}
 %
 %
+
+\begin{refsection}
 \input{chapters/071_Starck}
+%\printbibliography[heading=bibliography,title={Bibliographie de l'annex}]
+%\printbibliography[heading=subbibliography,title={Bibliographie de l'annex}]
 %\printbibliography[heading=subsubbibliography,title={Bibliographie de l'annex}]
+%\printbibliography[heading=annexbibliography,section=\therefsection]
+\printbibliography[heading=annexbibliography,title={Bibliographie de l'annexe}]
+\end{refsection}
+
 
 \input{chapters/072_no_tensor}
 
 
+\cleardoublepage
 %\bibliographystyle{abbrv}
 %\bibliography{thesis}
 %\printbibliography
-\printbibliography[title={Bibliographie}]
+% Bibliographie générale
+\nocite{*}
+\printbibliography[title={Bibliographie générale}]
+%\printbibliography[title={Bibliographie générale}, resetnumbers=false, notcategory=cited]
+
 
 % Fin de ton manuscrit
 \cleardoublepage

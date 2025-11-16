@@ -193,8 +193,17 @@ decorations.pathreplacing}
 %            citecolor=blue,
 %            urlcolor=blue]{hyperref}
 %            
-\usepackage[backend=biber,style=alphabetic,sorting=ynt]{biblatex}
+% \usepackage[backend=biber,style=alphabetic,sorting=ynt]{biblatex}
+% \addbibresource{thesis.bib}
+
+\usepackage[backend=biber,
+            style=alphabetic,
+            sorting=ynt,
+            %refsection=chapter,   % ← BIBLIO PAR CHAPITRE
+            ]{biblatex}
+
 \addbibresource{thesis.bib}
+
 
 \usepackage{minitoc}
 \setcounter{minitocdepth}{2} % profondeur affichée
@@ -207,10 +216,7 @@ decorations.pathreplacing}
 
 
 %\usepackage{chapterbib}
-
-
-
-%\usepackage[most]{tcolorbox}
+\usepackage[most]{tcolorbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\usepackage[utf8]{inputenc}
