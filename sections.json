@@ -36,77 +36,77 @@
     },
     "3. Dynamique hors-équilibre et hydrodynamique généralisée": {
         "page": 45,
-        "pages": "45-56",
-        "nb_pages": 12
+        "pages": "45-58",
+        "nb_pages": 14
     },
     "4. Fluctuation de la distribution de rapidité dans des états d'équilibre": {
-        "page": 57,
-        "pages": "57-76",
+        "page": 59,
+        "pages": "59-78",
         "nb_pages": 20
     },
     "5. Dispositif expérimental": {
-        "page": 77,
-        "pages": "77-98",
+        "page": 79,
+        "pages": "79-100",
         "nb_pages": 22
     },
     "6. Étude du protocole de bi-partition : Mesure de distribution de rapidités locales rho(x,θ) pour des systèmes hors équilibre": {
-        "page": 99,
-        "pages": "99-114",
+        "page": 101,
+        "pages": "101-116",
         "nb_pages": 16
     },
     "7. Mise en place d'un confinement longitudinal dipolaire": {
-        "page": 115,
-        "pages": "115-136",
+        "page": 117,
+        "pages": "117-138",
         "nb_pages": 22
     },
     "Conclusion": {
-        "page": 137,
-        "pages": "137-138",
+        "page": 139,
+        "pages": "139-140",
         "nb_pages": 2
     },
     "Annex A - Action de P et H sur l'état de Bethe": {
-        "page": 139,
-        "pages": "139-142",
+        "page": 141,
+        "pages": "141-144",
         "nb_pages": 4
     },
     "Annex B - Réduction GHD vers transport d’Euler": {
-        "page": 143,
-        "pages": "143-146",
+        "page": 145,
+        "pages": "145-148",
         "nb_pages": 4
     },
     "Annex C - Dérivation alternative des fluctuations de rho": {
-        "page": 147,
-        "pages": "147-150",
-        "nb_pages": 4
+        "page": 149,
+        "pages": "149-150",
+        "nb_pages": 2
     },
     "Annex D - Propriétés des facteurs d'homothétie": {
         "page": 151,
-        "pages": "151-152",
-        "nb_pages": 2
+        "pages": "151-154",
+        "nb_pages": 4
     },
     "Annex E - Polarisabilité dynamique et potentiel dipolaire optique": {
-        "page": 153,
-        "pages": "153-156",
+        "page": 155,
+        "pages": "155-158",
         "nb_pages": 4
     },
     "Annex F - Moment tensoriel J=1/2": {
-        "page": 157,
-        "pages": "157-158",
+        "page": 159,
+        "pages": "159-160",
         "nb_pages": 2
     },
     "Bibliographie": {
-        "page": 159,
-        "pages": "159-164",
+        "page": 161,
+        "pages": "161-166",
         "nb_pages": 6
     },
     "Résumé": {
-        "page": 165,
-        "pages": "165-165",
+        "page": 167,
+        "pages": "167-167",
         "nb_pages": 1
     },
     "Blanc_final": {
-        "page": 166,
-        "pages": "166-166",
+        "page": 168,
+        "pages": "168-168",
         "nb_pages": 1
     }
 }

@@ -32,7 +32,7 @@ Ces charges supplémentaires permettent alors de définir les moyennes d’obser
 
 %Dans la section suivante, nous poserons les bases nécessaires à la description quantitative de ces états stationnaires dans le cadre du formalisme de Bethe Ansatz thermodunamique la \glsreset{TBA}\gls{TBA}), introduite initialement par Yang et Yang \cite{YangYang_1969} pour étendre le Bethe Ansatz au régime thermodynamique au-delà de l’état fondamental.
 Dans la section suivante, nous poserons les bases nécessaires à la description quantitative de ces états stationnaires dans le cadre du formalisme du Bethe Ansatz thermodynamique (\glsreset{TBA}\gls{TBA}), introduit initialement par Yang et Yang \cite{YangYang_1969} afin d’étendre le Bethe Ansatz au régime thermodynamique, au‑delà de l’état fondamental.
- Nous considérerons un régime macroscopique à température finie (ou, plus précisément, à entropie de Yang–Yang finie), correspondant à des états hautement excités du spectre mais toujours décrits exactement grâce à l’intégrabilité du modèle.
+ Nous considérerons un régime macroscopique à température finie (ou, plus précisément, à entropie de Yang–Yang finie), correspondant à des états hautement excités du spectre, mais toujours décrits exactement grâce à l’intégrabilité du modèle.
 
 %Ce chapitre dans une première section nous introduit l'{\bf Ensemble Thermodynamique Généralisé}. Pour la fluidité nous commençons par revenir la notion d'opérateur à un corps en puissance de quantitté de pouvement pour une particule $\operateur{p}$ , introduite dans le chapitre precedent (\ref{chap:LL-BA}) dans l'equation \eqref{chap.1:eq.rapel.opp.1.second.3}. Ce qui permet de se dire que l'on peut écrire d'autre charge que les nombre totale de particule, la quantitié totale de mouvement ou autre que l'énerge cinétique totale d'écrit en puissence avec des puissance de $\operator{p}$. Cest chardhe introduite nous pouvent definir les moyenne des observable. 
 %Sans la section suivente nous  poserons les fondations nécessaires à la description de ces états stationnaires dans le cadre de la \textbf{thermodynamique de Bethe} (TBA), qui généralise l’analyse au-delà de l’état fondamental.  
@@ -122,7 +122,7 @@ avec $ \sum_{\{ \theta_a\}}$ une somme sur tous les états de Bethe.\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Contexte et GGE dans les systèmes intégrables.}
 
-Dans un système quantique {\bf intégrable}, il existe une infinité de charges conservées locales $\operator{Q}_i$ commutant entre elles et avec l’Hamiltonien $\operator{H}$  \cite{rigol2007relaxation, rigol2007}. Concrètement, chaque charge se présente sous la forme $\operator{Q}_i = \int dx \,\operator{q}_i(x)$, où $\operator{q}_i(x)$ est une densité d’observable locale à support borné. L’intégrabilité implique une caractérisation complète des états propres par un ensemble de paramètres (rapidités $\{\theta_j\}$ dans le modèle de Lieb-Liniger) \cite{Nardis_2016}. En particulier, contrairement aux systèmes génériques, un système intégrable ne thermalise pas au sens canonique classique, car la présence de toutes ces contraintes empêche l’oubli des conditions initiales. Les points clés sont alors :
+Dans un système quantique {\bf intégrable}, il existe une infinité de charges conservées locales $\operator{Q}_i$ commutant entre elles et avec l’Hamiltonien $\operator{H}$  \cite{rigol2007relaxation, rigol2007}. Concrètement, chaque charge se présente sous la forme $\operator{Q}_i = \int dx \,\operator{q}_i(x)$, où $\operator{q}_i(x)$ est une densité d’observable locale à support borné \footnote{Dans le chapitre suivant \ref{chap:GHD}, nous développerons davantage $\operator{q}_i(x)$ à l’échelle mésoscopique et en hydrodynamique. Dans ce chapitre, nous nous limitons à la thermodynamique, mais je le mentionne ici pour introduire le formalisme.} . L’intégrabilité implique une caractérisation complète des états propres par un ensemble de paramètres (rapidités $\{\theta_j\}$ dans le modèle de \gls{LL}) \cite{Nardis_2016}. En particulier, contrairement aux systèmes génériques, un système intégrable ne thermalise pas au sens canonique classique, car la présence de toutes ces contraintes empêche l’oubli des conditions initiales. Les points clés sont alors :
 
 \begin{itemize}[label = $\bullet$]
 	\item {\bf Charges conservées} : infinité de locales $\operator{Q}_i$ satisfaisant et $[\operator{Q}_i , \operator{H} ] = 0$ et $[\operator{Q}_i , \operator{Q}_j ] = 0$.
@@ -132,7 +132,11 @@ Dans un système quantique {\bf intégrable}, il existe une infinité de charges
 
 \medskip
 
-Pour décrire cet état, on introduit le \gls{GGE} \cite{rigol2007relaxation}, ont montré qu’une « extension naturelle de l’ensemble de Gibbs aux systèmes intégrables » prédit correctement les valeurs moyennes des observables après relaxation .  Formellement, pour une région finie du système $\mathcal{S} \subset \mathbb{R}$, on définit la matrice densité locale :
+Pour décrire cet état, on introduit le \gls{GGE} \cite{rigol2007relaxation}, ont montré qu’une « extension naturelle de l’ensemble de Gibbs aux systèmes intégrables » prédit correctement les valeurs moyennes des observables après relaxation.  
+
+\smallskip
+
+Formellement, pour une région finie du système $\mathcal{S} \subset \mathbb{R}$, \ie un sous-système,  on définit la matrice densité locale :
 \begin{eqnarray}
 	\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}} = \frac{1}{Z^{(\mathcal{S})}_{\mathrm{GGE}}}\exp \left ( - \sum_i \beta_i \operator{Q}_i^{(\mathcal{S})} \right), \quad \operator{Q}_i^{(\mathcal{S})} = \int_\mathcal{S} dx \, \operator{q}_i(x), \label{chap.TBA.op.rho.S}	
 \end{eqnarray}
@@ -280,8 +284,12 @@ Après relaxation, si le sous-système est {\bf intégrable}, cette infinité de
 
 Dans ce dernier cas particulier, la matrice densité locale \eqref{chap.TBA.op.rho.S} se réduit à celle de l’{\bf ensemble grand-canonique de Gibbs} :
 \begin{eqnarray}
-	\operator{\rho}^{(\mathcal{S})}_{\mathrm{GE}} = \frac{1}{\Xi^{(\mathcal{S})}_{\mathrm{GE}} }\exp \left \{ - \beta \left (\operator{H}^{(\mathcal{S})} - \mu \operator{Q}^{(\mathcal{S})} \right \} \right), \quad \operator{Q}^{(\mathcal{S})} = \int_\mathcal{S} dx \, \operator{q}(x), \quad \operator{H}^{(\mathcal{S})} = \int_\mathcal{S} dx \, \operator{h}(x).  \label{chap.TBA.op.rho.S.GE}	
+	\operator{\rho}^{(\mathcal{S})}_{\mathrm{GE}} = \frac{1}{\Xi^{(\mathcal{S})}_{\mathrm{GE}} }\exp \left \{ - \beta \left (\operator{H}^{(\mathcal{S})} - \mu \operator{Q}^{(\mathcal{S})} \right \} \right), \quad \operator{Q}^{(\mathcal{S})} = \int_\mathcal{S} dx \, \operator{q}(x), \quad \operator{H}^{(\mathcal{S})} = \int_\mathcal{S} dx \, \operator{h}(x),  \label{chap.TBA.op.rho.S.GE}	
 \end{eqnarray}
+avec $\operator{q}(x)$ et $\operator{h}(x)$ les densités locales de nombre de particules et d’énergie, respectivement.
+
+\smallskip
+
 La fonction de partition grand-canonique associée est
 \begin{eqnarray}
 	\Xi^{(\mathcal{S})}_{\mathrm{GE}} = \bm{\mathrm{Tr}}\left [ \exp \left \{ - \beta \left (\operator{H}^{(\mathcal{S})} - \mu \operator{Q}^{(\mathcal{S})} \right \} \right) \right ].  \label{chap.TBA.op.Z.S.GE}	

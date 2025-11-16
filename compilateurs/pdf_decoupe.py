@@ -220,21 +220,21 @@ parts = {
     "Introduction": {"page": 7, "pages": "", "nb_pages": ""},
     "1. Modèle de Lieb-Liniger et approche Bethe Ansatz": {"page": 9, "pages": "", "nb_pages": ""},
     "2. Relaxation et Équilibre dans les Systèmes Quantiques Intégrables : Une Approche par la Thermodynamique de Bethe": {"page": 29, "pages": "", "nb_pages": ""},
-    "3. Dynamique hors-équilibre et hydrodynamique généralisée": {"page": 45, "pages": "", "nb_pages": ""},
-    "4. Fluctuation de la distribution de rapidité dans des états d'équilibre": {"page": 57, "pages": "", "nb_pages": ""},
-    "5. Dispositif expérimental": {"page": 77, "pages": "", "nb_pages": ""},
-    "6. Étude du protocole de bi-partition : Mesure de distribution de rapidités locales rho(x,θ) pour des systèmes hors équilibre": {"page": 99, "pages": "", "nb_pages": ""},
-    "7. Mise en place d'un confinement longitudinal dipolaire": {"page": 115, "pages": "", "nb_pages": ""},
-    "Conclusion": {"page": 137, "pages": "", "nb_pages": ""},
-    "Annex A - Action de P et H sur l'état de Bethe": {"page": 139, "pages": "", "nb_pages": ""},
-    "Annex B - Réduction GHD vers transport d’Euler": {"page": 143, "pages": "", "nb_pages": ""},
-    "Annex C - Dérivation alternative des fluctuations de rho": {"page": 147, "pages": "", "nb_pages": ""},
-    "Annex D - Propriétés des facteurs d'homothétie": {"page": 151, "pages": "", "nb_pages": ""},
-    "Annex E - Polarisabilité dynamique et potentiel dipolaire optique": {"page": 153, "pages": "", "nb_pages": ""},
-    "Annex F - Moment tensoriel J=1/2": {"page": 157, "pages": "", "nb_pages": ""},
-    "Bibliographie": {"page": 159, "pages": "", "nb_pages": ""},
-    "Résumé": {"page": 165, "pages": "", "nb_pages": ""},
-    "Blanc_final": {"page" : 166 , "pages" : "" , "nb_pages" : ""},
+    "3. Dynamique hors-équilibre et hydrodynamique généralisée": {"page": 45, "pages": "", "nb_pages": 14},
+    "4. Fluctuation de la distribution de rapidité dans des états d'équilibre": {"page": "", "pages": "", "nb_pages": 20},
+    "5. Dispositif expérimental": {"page": "", "pages": "", "nb_pages": 22},
+    "6. Étude du protocole de bi-partition : Mesure de distribution de rapidités locales rho(x,θ) pour des systèmes hors équilibre": {"page": "", "pages": "", "nb_pages": 16},
+    "7. Mise en place d'un confinement longitudinal dipolaire": {"page": "", "pages": "", "nb_pages": 22},
+    "Conclusion": {"page": "", "pages": "", "nb_pages": 2},
+    "Annex A - Action de P et H sur l'état de Bethe": {"page": "", "pages": "", "nb_pages": 4},
+    "Annex B - Réduction GHD vers transport d’Euler": {"page": "", "pages": "", "nb_pages": 4},
+    "Annex C - Dérivation alternative des fluctuations de rho": {"page": "", "pages": "", "nb_pages": 2},
+    "Annex D - Propriétés des facteurs d'homothétie": {"page": "", "pages": "", "nb_pages": 4},
+    "Annex E - Polarisabilité dynamique et potentiel dipolaire optique": {"page": "", "pages": "", "nb_pages": 4},
+    "Annex F - Moment tensoriel J=1/2": {"page": "", "pages": "", "nb_pages": 2},
+    "Bibliographie": {"page": "", "pages": "", "nb_pages": 6},
+    "Résumé": {"page": "", "pages": "", "nb_pages": 1},
+    "Blanc_final": {"page" : "" , "pages" : "" , "nb_pages" : 1},
 }
 
 # ========== Correction automatique des clés erronées ==========
@@ -265,8 +265,8 @@ for i, title in enumerate(titles):
     nb = entry["nb_pages"]
 
     # Validation : page must be int
-    if not isinstance(page, int):
-        raise ValueError(f"Erreur : section « {title} » a un 'page' invalide : {page}")
+    if not isinstance(page, int) and not isinstance(pages, str) and not isinstance(nb, int) :
+        raise ValueError(f"Erreur : section « {title} » a un 'page' invalide : {page} , 'pages' invalide : {pages} , 'nb_pages' invalide : {nb} ")
 
     # --- Case 1 : pages="x-y" ---
     if isinstance(pages, str) and re.match(r"^\d+-\d+$", pages):
@@ -276,6 +276,9 @@ for i, title in enumerate(titles):
 
     # --- Case 2 : pages empty but nb_pages known ---
     elif pages == "" and isinstance(nb, int) and nb > 0:
+        if not isinstance(page, int) :
+            entry["page"] = parts[titles[i-1]]["page"] + parts[titles[i-1]]["nb_pages"] 
+            page = entry["page"]
         start = page
         end = page + nb - 1
         entry["pages"] = f"{start}-{end}"
