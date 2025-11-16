@@ -1,12 +1,18 @@
-\chapter{Fluctuation de la distribution de rapidité dans des état d'équilibre}
+\chapter{Fluctuations de la distribution de rapidités dans les états stationnaires du modèle de Lieb–Liniger homogène}
 \label{chap:Fluctu} 
 \minitoc
 
 \section*{Introduction}
 
 \paragraph{Pourquoi étudier les fluctuations ?}
+On considère un sous-système quantique intégrable, préparé dans un état initial loin de l’équilibre, qui évolue sous l’action de son hamiltonien intégrable du modèle de \gls{LL}. 
+Après une période de relaxation, le système atteint un état stationnaire décrit par une distribution de rapidité moyenne \( \rho_{\mathrm{eq}}(\theta) \).
 
-L’hypothèse selon laquelle, après relaxation, le système est décrit par un \textit{Generalized Gibbs Ensemble} (\gls{GGE}) constitue un fondement majeur de notre compréhension des dynamiques hors équilibre dans les systèmes intégrables. Cette hypothèse, bien que robuste théoriquement, appelle à être testée expérimentalement.
+\smallskip
+
+L’hypothèse selon laquelle, après relaxation, le sous-système est décrit par un \textit{Generalized Gibbs Ensemble} (\gls{GGE}) constitue un fondement majeur de notre compréhension des dynamiques hors équilibre dans les systèmes intégrables. Cette hypothèse, bien que robuste théoriquement, appelle à être testée expérimentalement.
+
+\smallskip
 
 Toutefois, la seule connaissance de la distribution de rapidité moyenne \( \rho_{\mathrm{eq}} \) ne permet pas, à elle seule, de confirmer la validité du GGE. En effet, plusieurs ensembles statistiques peuvent mener à une même valeur moyenne de \( \rho(\theta) \). Pour lever cette ambiguïté, il est nécessaire d’étudier les \textbf{fluctuations} autour de la distribution typique, notées \( \delta \rho \), définies par :
 \(
@@ -29,7 +35,7 @@ Ainsi, en mesurant les corrélations dynamiques du gaz — accessibles expérime
 
 \medskip
 
-Concrètement, cela consiste à analyser la dispersion des  rapidités sur plusieurs répétitions expérimentales d’un même quench. Si la \gls*{GGE} décrit correctement l’état stationnaire, la variance et les corrélations des fluctuations de \( \rho(\theta) \) devraient être en accord avec les prédictions du formalisme fluctuationnel issu de l’entropie \( \operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}} \), cf.~\eqref{chap.TBA.op.rho.S}.
+Concrètement, cela consiste à analyser la dispersion des  rapidités sur plusieurs répétitions expérimentales d’un même quench. Si la \gls*{GGE} décrit correctement l’état stationnaire, la variance et les corrélations des fluctuations de \( \rho(\theta) \) devraient être en accord avec les prédictions du formalisme fluctuationnel issu de on définit la matrice densité \( \operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}} \), cf.~\eqref{chap.TBA.op.rho.S}.
 
 \medskip
 
@@ -43,7 +49,7 @@ La relation fluctuation–réponse dans les gaz bosoniques unidimensionnels a é
 %}
 
 \medskip
-En résumé, l’étude des fluctuations de la distribution de rapidités fournit un test clé de la validité du GGE pour modéliser les résultats expérimentaux dans le modèle de \gls*{LL}~\cite{DeNardis2017}.
+En résumé, l’étude des fluctuations de la distribution de rapidités fournit un test clé de la validité du GGE pour modéliser les résultats expérimentaux dans le modèle de \gls{LL}~\cite{DeNardis2017}.
 
 \medskip
 Ce chapitre est consacré à cette extension, qui permettra :
@@ -117,18 +123,19 @@ Nous commencerons par rappeler le formalisme variationnel, puis nous dériverons
     rightmargin=2pt
 	]
 \paragraph{Rappel : Formulation fonctionnelle des moments et cumulants des charges.}
-Considérons un système unidimensionnel de taille finie $L$. 
-Dans le chapitre~(\ref{chap:relaxation}), aux équations~\eqref{chap.2.charge.f.1} et \eqref{chap.2.rho.1}, nous avons introduit l’opérateur de charge généralisée $\operator{\mathcal{Q}}[f]$, défini à partir d'une fonction test $f \colon \mathbb{R} \to \mathbb{R}$ et de l'opérateur densité de rapidité  $\operator{\rho}(\theta)$ , selon la relation intégrale :
+Considérons un sous-système unidimensionnel de taille finie $L^{(\mathcal{S})}$. 
+Dans le chapitre~(\ref{chap:relaxation}), aux équations~\eqref{chap.2.charge.f.1} et \eqref{chap.2.rho.1}, nous avons introduit l’opérateur de charge généralisée $\operator{\mathcal{Q}}^{(\mathcal{S})}[f]$, défini à partir d'une fonction test $f \colon \mathbb{R} \to \mathbb{R}$ et de l'opérateur densité de rapidité  $\operator{\rho}^{(\mathcal{S})}(\theta)$ , selon la relation intégrale :
 \begin{eqnarray}\label{chap4:eq.charge.q.1}
-	\operator{\mathcal{Q}}[f] = L\int d\theta f(\theta) \operator{\rho}(\theta),\quad \text{où $\operator{\rho}(\theta)$ agit comme } \quad \operator{\rho}(\theta) \ket{ \{ \theta_a \} } = \frac{1}{L} \sum \delta ( \theta - \theta_a ) \ket{ \{ \theta_a \} }
+	\operator{\mathcal{Q}}^{(\mathcal{S})}[f] = L^{(\mathcal{S})}\int d\theta f(\theta) \operator{\rho}^{(\mathcal{S})}(\theta),\quad \text{où $\operator{\rho}(\theta)$ agit comme } \quad \operator{\rho}^{(\mathcal{S})}(\theta) \ket{ \{ \theta_a \} } = \frac{1}{L^{(\mathcal{S})}} \sum \delta ( \theta - \theta_a ) \ket{ \{ \theta_a \} }
 \end{eqnarray}
 
 \paragraph{États d'équilibre généralisés et poids spectral.}
-Dans un système intégrable, on a vus dans l'équation ~\eqref{chap.2.densite.1} qu'un état d’équilibre est décrit par une matrice densité de la forme :
+Dans un sous-système intégrable, on a vu dans l'équation ~\eqref{chap.2.densite.1} qu'un état d’équilibre est décrit par une matrice densité de la forme :
 \begin{eqnarray}
 	\operator{\varrho}^{(\mathcal{S})}[w] \doteq  \frac{1}{Z^{(\mathcal{S})}[w]}\, e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]},\quad \text{avec} \quad Z^{(\mathcal{S})}[w] \doteq \mathrm{Tr}\left(e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}\right),
 \end{eqnarray}
-associée à $w$, où \( w(\theta) \) est {\bf poids spectral} (ou {\bf potentiel spectral}), et   \( \operator{\mathcal{Q}}^{(\mathcal{S})}[w] \) est une {\bf charge généralisée} associé à ce poids.
+où l'opérateur {\bf charge généralisée} \(\operator{\mathcal{Q}}^{(\mathcal{S})}[w]\) est défini à partir du {\bf poids spectral} \( w(\theta) \) par l’équation \eqref{chap4:eq.charge.q.1}.
+%associée à $w$, où \( w(\theta) \) est {\bf poids spectral} (ou {\bf potentiel spectral}), et   \( \operator{\mathcal{Q}}^{(\mathcal{S})}[w] \) est une {\bf charge généralisée} associé à ce poids.
 \end{mdframed}
 
 \medskip
@@ -156,11 +163,13 @@ Nous avons introduit dans l'équation \eqref{chap2:eq.diff.q.1},  la {\bf dériv
 \end{eqnarray}
 \end{mdframed}
 
-À partir de la définition précédente \eqref{chap4:eq.diff.q.1} , il est clair que $\dfonc{f} F[g]$ est, en ce qui concerne sa dépendance en $f$, un fonctionnel linéaire :
+%À partir de la définition précédente \eqref{chap4:eq.diff.q.1} , il est clair que $\dfonc{f} F[g]$, en ce qui concerne sa dépendance en $f$, est une fonctionnelle linéaire :
+À partir de la définition précédente \eqref{chap4:eq.diff.q.1}, il est clair que
+$\displaystyle \dfonc{f} F[g]$, considérée comme fonctionnelle de $f$, est linéaire. En effet,
 \begin{eqnarray}\label{chap4:eq.diff.lin.q.1}
 	\dfonc{c_1f_1 + c_2 f_2}F[g] = c_1 \dfonc{f_1}F[g] + c_2 \dfonc{f_2}F[g],
 \end{eqnarray}
-avec $c_1$ et $c_2$ des réelles et $f_1$ et $f_2$ des fonctions de $\mathbb{R}$ dans $\mathbb{R}$.\\
+avec $c_1$ et $c_2$ des réels et $f_1$ et $f_2$ des fonctions de $\mathbb{R}$ dans $\mathbb{R}$.\\
 
 La linéarité de $\operator{\mathcal{Q}}[g]$ implique que sa différentielle fonctionnelle dans la direction $f$ :
 \begin{eqnarray}
@@ -178,7 +187,7 @@ Dans la suite, pour alléger les notations, nous noterons les moyennes $\braket{
 \medskip
 
 \paragraph{Moments non centrés.}
-À l’aide de cette notation, on a définie les {\bf moments non centrés} d’ordre $q$ des charges sous la forme :
+À l’aide de cette notation, on a défini les {\bf moments non centrés} d’ordre $q$ des charges sous la forme :
 \begin{eqnarray}\label{chap4:eq.moment.charge.q.1}
 	\braket{\operator{\mathcal{Q}}[f_1] \,  \operator{\mathcal{Q}}[f_2] \cdots \operator{\mathcal{Q}}[f_q]}_w  & = & (-1)^q \frac{1}{Z[w]}\dfonc{f_1} \dfonc{f_2} \cdots \dfonc{f_q}\,  Z[w], 	
 \end{eqnarray}
@@ -782,7 +791,7 @@ Physiquement, \(\alpha < 1\) reflète le fait que pour un nombre limité de conf
 	]
 \paragraph{Rappel : Approche thermodynamique (Yang–Yang et énergie généralisée).}
 
-Dans l’approximation thermodynamique, le système est décrit en termes de grandeurs macroscopiques, notamment par la distribution de rapidité $\rho(\theta)$.  
+Dans l’approximation thermodynamique, le sous-système est décrit en termes de grandeurs macroscopiques, notamment par la distribution de rapidité $\rho(\theta)$.  
 Dans l’équation \eqref{chap:TBA:eq:ensemble_average}, nous avons vu que, dans la limite thermodynamique, la moyenne d’un observable s’écrit :
 \begin{eqnarray}
 	\langle \operator{\mathcal{O}} \rangle_{w} & = & \frac{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])} \, \langle\operator{\mathcal{O}}\rangle_{[\rho]}}{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{\mathrm{YY}}[\rho] - \mathcal{W}[\rho])}}. \label{chap:Fluc:eq:ensemble_average}
@@ -1448,7 +1457,7 @@ Dans cette sous-section, nous proposons de tester l’expression \eqref{chap:flu
 
 %On considère un gaz de bosons unidimensionnels intégrables, décrit par l’équation de Bethe, dans un état d’équilibre généralisé déterminé par une {\em taille du système} \(L\), une intensité d'interaction \(g\)   un {\em poids spectral} \( w(\theta) \) fixé . À partir de ces paramètres , on résout numériquement les {\em équations TBA} \eqref{chap:TBA:eq:e} pour déterminer les quantités thermodynamiques d'équilibre : la {\em distribution de rapidité}  \( \rho_{\mathrm{eq}}(\theta) \), la {\em densité d'états} \( \rho_{s,\mathrm{eq}}(\theta) \), et la {\em fonction d'occupation} \( \nu_{\! \mathrm{eq}}(\theta) = \rho_{\! \mathrm{eq}}(\theta) / \rho_{\! s,\mathrm{eq}}(\theta) \). Avec ces paramètres et quantités thermodynamiques nous avons $ \mathcal{D}(\theta , \theta')$ (et son inverse $ \mathcal{D}^{-1}(\theta , \theta')$) définie en \eqref{chap:fluctu:eq:irreg_0} (resp. \eqref{chap:fluctu:eq:irreg.inv})  et puis  $ \mathcal{V}(\theta , \theta')$ avec \eqref{chap:fluctu:eq:reg} et donc $ \mathcal{H}(\theta , \theta')$ avec  \eqref{chap:fluctu:eq:hessienne3} est donc la partie irrégulière (diagonale) et réguilère de   \(\left( L \mathcal{H} \right)^{-1} (\theta, \theta')\) avec \eqref{chap:fluctu:eq:fluctuations.10} 
 
-On considère un gaz de bosons unidimensionnels intégrable, décrit par l'équation de Bethe, dans un état d'équilibre généralisé caractérisé par la {\em taille du système} \(L\), l'{\em intensité d'interaction} \(g\), et un {\em poids spectral} fixé \(w(\theta)\).
+On considère un gaz de bosons unidimensionnels intégrable, décrit par l'équation de Bethe, dans un état d'équilibre généralisé caractérisé par la {\em taille du sous-système} \(L\), l'{\em intensité d'interaction} \(g\), et un {\em poids spectral} fixé \(w(\theta)\).
 
 À partir de ces paramètres, on résout numériquement les {\em équations} \gls{TBA} (cf \eqref{chap:TBA:eq:e}), ce qui permet d'obtenir les grandeurs thermodynamiques d'équilibre :
 \begin{itemize}[label = $\bullet$]
@@ -1511,7 +1520,7 @@ On fixe {\em un poids spectral} , par exemple quadratique
 \begin{eqnarray}
 	w(\theta) = \tfrac{1}{2} \theta^2,
 \end{eqnarray}
-et on fixe les paramètres physiques du système : \( L = 10 \) , et \( g = 1 \).
+et on fixe les paramètres physiques du sous-système : \( L = 10 \) , et \( g = 1 \).
 
 %En ne fixant pas $N$, la contribution du nombre de particule dans $w$ n'est pas fixées contrairement pour les simulations de la partie Monte-Carlos fais dans la section prècedent.
 
@@ -1572,7 +1581,7 @@ Dans un second temps, il est naturel de vouloir tester ce principe pour différe
 
 \subsubsection{Vériﬁcation numérique thermique :  énergie et nombre de particules}
 
-Nous testons à présent notre expression des fluctuations dans le cas particulier de l'équilibre thermique. Le système est supposé en contact avec un bain à température \( T \) et potentiel chimique \( \mu \). 
+Nous testons à présent notre expression des fluctuations dans le cas particulier de l'équilibre thermique. Le sous-système est supposé en contact avec un bain à température \( T \) et potentiel chimique \( \mu \). 
 %Le poids spectral prend alors la forme canonique :
 %\(
 %w(\theta) = \beta \varepsilon(\theta) - \beta \mu,
@@ -1706,7 +1715,7 @@ Pour chaque régime simulé (correspondant aux {\bf points bleus} et {\bf rouges
 
 \medskip
 
-Ces résultats sont représentés par des {\bf points orange} dans la figure~\ref{chap:4:fig.fluctu.A_com}, illustrant l’évolution des fluctuations en fonction du régime thermodynamique du système.
+Ces résultats sont représentés par des {\bf points orange} dans la figure~\ref{chap:4:fig.fluctu.A_com}, illustrant l’évolution des fluctuations en fonction du régime thermodynamique du sous-système.
 
 
 \paragraph{Susecptibilité des observables thermodynamiques.}

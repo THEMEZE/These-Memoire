@@ -221,7 +221,7 @@ parts = {
     "1. Modèle de Lieb-Liniger et approche Bethe Ansatz": {"page": 9, "pages": "", "nb_pages": ""},
     "2. Relaxation et Équilibre dans les Systèmes Quantiques Intégrables : Une Approche par la Thermodynamique de Bethe": {"page": 29, "pages": "", "nb_pages": ""},
     "3. Dynamique hors-équilibre et hydrodynamique généralisée": {"page": 45, "pages": "", "nb_pages": 14},
-    "4. Fluctuation de la distribution de rapidité dans des états d'équilibre": {"page": "", "pages": "", "nb_pages": 20},
+    "4. Fluctuations de la distribution de rapidités dans les états stationnaires du modèle de Lieb–Liniger homogène": {"page": "", "pages": "", "nb_pages": 20},
     "5. Dispositif expérimental": {"page": "", "pages": "", "nb_pages": 22},
     "6. Étude du protocole de bi-partition : Mesure de distribution de rapidités locales rho(x,θ) pour des systèmes hors équilibre": {"page": "", "pages": "", "nb_pages": 16},
     "7. Mise en place d'un confinement longitudinal dipolaire": {"page": "", "pages": "", "nb_pages": 22},
