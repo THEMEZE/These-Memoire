@@ -47,5 +47,29 @@
         "*.tex": "latex"
     },
     "editor.wordWrap": "on",
-    "editor.spellCheck": true
+    "editor.spellCheck": true,
+    "languagetool-linter.enabled": true,
+    "languagetool-linter.serviceType": "external",
+    "languagetool-linter.external.url": "http://localhost:8081",
+    "languagetool-linter.ignoreExtensions": [
+        ".tex",
+        ".bib",
+        ".cls",
+        ".sty"
+    ],
+    "languagetool-linter.run": "onSave",
+    "latex-workshop.latex.autoBuild.run": "onFileChange",
+    "latex-workshop.latex.clean.enabled": true,
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof"
+    ],
+    // "files.trimTrailingWhitespace": true, // supprime les espaces à la fin des lignes
+    // "files.insertFinalNewline": true, // ajoute un saut de ligne final
+    // "editor.renderWhitespace": "all", // voir les espaces invisibles
+    // "editor.formatOnSave": true // reformate automatiquement à la sauvegarde
 }
