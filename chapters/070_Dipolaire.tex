@@ -6,7 +6,14 @@
 
 \section*{Introduction}
 
+Dans le chapitre précédent \ref{chap:bipartite}, notre objectif était de préparer un système aussi homogène que possible sur une large région spatiale. Pour cela, nous avions recours à un potentiel longitudinal quartique, qui permettait d’obtenir un gaz quasi-homogène tout en conservant une occupation suffisante. Toutefois, dans la perspective d’améliorer encore cette homogénéité et d’optimiser la mesure des fluctuations présentée au chapitre \ref{chap:Fluctu}, il devient nécessaire de disposer d’un contrôle plus flexible et plus local du paysage de potentiel. C’est dans ce cadre que nous introduisons ici une implémentation d’un potentiel dipolaire repoussoir, capable de créer des barrières nettes et ajustables. Couplé à un \gls{DMD} et à un \gls{AOM}, ce schéma ouvre la possibilité de générer des géométries de piégeage plus sophistiquées et adaptées à la préparation d’états quasi-uniformes ou à l’ingénierie de potentiels plus exotiques.
+
+\smallskip
+
 Dans cette section, nous présentons l’implémentation expérimentale et théorique d’un piégeage dipolaire dans le bleu, permettant de confiner des atomes de rubidium froids à l’aide de deux barrières de potentiel. Contrairement au cas plus standard du piégeage rouge, où les atomes sont attirés vers les maxima d’intensité, un piégeage dans le bleu ($\Delta > 0$) repousse les atomes vers les minima d’intensité lumineuse, créant ainsi des barrières efficaces.
+
+\smallskip
+
 
 Le formalisme utilisé repose sur une description quantique du couplage dipolaire entre un champ laser classique quasi-monochromatique et un atome à deux niveaux. Nous déduisons l’Hamiltonien effectif en seconde quantification sans faire appel à des transformations de jauge. L’objectif est d’obtenir une expression exploitable pour le potentiel optique ressenti par les atomes dans le régime de grand désaccord.
 
@@ -63,15 +70,15 @@ Soit une particule de masse $m$ couplée à un champ électromagnétique. Dans u
 
 \paragraph{Hamiltonien simplifié.}
 
-Dans une autre jauge $\mathcal{J}'$, le potentiel s’écrit $A'^\mu = \{ \Phi'/c,\, \operatorvec{A}' \}$ avec $ A'_\mu = A_\mu - \partial_\mu \chi$, où $\chi$ est une fonction scalaire dépendant de l’espace et du temps. Un argument rapide pour garantir que cette transformation conserve les équations de Maxwell est que le tenseur électromagnétique
+Dans une autre jauge $\mathcal{J}'$, le potentiel s’écrit $A'^\mu = \{ \Phi'/c,\, \operatorvec{A}' \}$ avec $ A'_\mu = A_\mu - \partial_\mu \chi$, où $\chi$ est une fonction scalaire dépendant de l’espace et du temps. Un argument rapide pour garantir que cette transformation conserve les équations de Maxwell et que le tenseur électromagnétique
 \(
 F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu
 \)
-est invariant par changement de jauge. Dans cette nouvelle jauge , la dérivé corariante s'écrit $\mathcal{D}_\mu' = \partial_\mu + \frac{iq}{\hbar} A_\mu' = \{ \mathcal{D}_t' \equiv \partial_t + \frac{iq}{\hbar} ( \Phi - \partial_t \chi )   , \operatorvec{\mathcal{D}}' \equiv \operatorvec{\nabla} - \frac{iq}{\hbar} (\operatorvec{A} + \operatorvec{\nabla}\chi)\} $, l’équation de Schrödinger s'écrit
+est invariant par changement de jauge. Dans cette nouvelle jauge, la dérivée covariante s'écrit $\mathcal{D}_\mu' = \partial_\mu + \frac{iq}{\hbar} A_\mu' = \{ \mathcal{D}_t' \equiv \partial_t + \frac{iq}{\hbar} ( \Phi - \partial_t \chi )   , \operatorvec{\mathcal{D}}' \equiv \operatorvec{\nabla} - \frac{iq}{\hbar} (\operatorvec{A} + \operatorvec{\nabla}\chi)\} $, l’équation de Schrödinger s'écrit
 \begin{eqnarray}
 	i\hbar \mathcal{D}_t' \vert \psi' \rangle = \frac{1}{2m} \left( \frac{\hbar}{i} \operatorvec{\mathcal{D}}' \right)^2 \vert \psi' \rangle, & soit &  i\hbar \partial_t \vert \psi' \rangle = H_{\mathcal{J}'} \vert \psi' \rangle , ~\mbox{avec}~	H_{\mathcal{J}'} = -q\partial_t \chi + \tilde{H}_{\mathcal{J}},% \frac{1}{2m} (\operatorvec{P} - q \operatorvec{A})^2 + q\Phi
 \end{eqnarray}
-avec $\vert \psi'\rangle = \operator{T}_\chi(t) \vert \psi\rangle$, $\operator{T}_\chi(t) \equiv \exp\left( \frac{iq}{\hbar} \chi(\operatorvec{R}, t) \right)$ et $\tilde{H}_{\mathcal{J}} = \operator{T}_\chi H_{\mathcal{J}}\operator{T}_\chi^\dag = \frac{1}{2m} ( \operatorvec{P} - q  ( \operatorvec{A} + \operatorvec{\nabla}\chi  )  )^2 + q \Phi $. Je choisie $\chi = - \operatorvec{R}\cdot\operatorvec{A}$ (\ie $\mathcal{J}' \equiv (\operatorvec{A})$). $\operator{T}_\chi(t)$ devient un operateur translation de $iq \operatorvec{A}$ dans l’espace des impultion , et l'opérateur champs électrique transverse étant $\operatorvec{E}_\perp = - \partial_t \operatorvec{A}$. L'Hamiltonien $H_{\mathcal{J}'}$ devient :
+avec $\vert \psi'\rangle = \operator{T}_\chi(t) \vert \psi\rangle$, $\operator{T}_\chi(t) \equiv \exp\left( \frac{iq}{\hbar} \chi(\operatorvec{R}, t) \right)$ et $\tilde{H}_{\mathcal{J}} = \operator{T}_\chi H_{\mathcal{J}}\operator{T}_\chi^\dag = \frac{1}{2m} ( \operatorvec{P} - q  ( \operatorvec{A} + \operatorvec{\nabla}\chi  )  )^2 + q \Phi $. J'ai choisie $\chi = - \operatorvec{R}\cdot\operatorvec{A}$ (\ie $\mathcal{J}' \equiv (\operatorvec{A})$). $\operator{T}_\chi(t)$ devient un opérateur translation de $iq \operatorvec{A}$ dans l’espace des impulsions, et l'opérateur champ électrique transverse étant $\operatorvec{E}_\perp = - \partial_t \operatorvec{A}$. L'Hamiltonien $H_{\mathcal{J}'}$ devient :
 \begin{eqnarray}
 	\operator{H}_{\mathcal{J}'} & = & 	\tilde{\operator{H}}_{\mathcal{J}}	+ \operator{H}_{\text{int}},
 \end{eqnarray}
@@ -89,7 +96,7 @@ où \(\operatorvec{D}\) est l’opérateur de moment dipolaire électrique, déf
 \paragraph{Conclusion – Simplification par transformation de jauge}
 \bigskip
 %\begin{tcolorbox}[colback=gray!10, colframe=black, title=Conclusion]
-La transformation de jauge que nous avons appliquée permet de travailler dans un cadre où le{\bf  potentiel vecteur} est nul. Dans cette jauge particulière, le Hamiltonien du système est considérablement simplifié, car le couplage au champ électromagnétique ne se fait plus par le terme de couplage minimal \((\operatorvec{P} - q \operatorvec{A})^2\), mais uniquement à travers un {\bf potentiel scalaire effectif}.
+La transformation de jauge que nous avons appliquée permet de travailler dans un cadre avec lequel le{ \bf  potentiel vecteur} est nul. Dans cette jauge particulière, l'Hamiltonien du système est considérablement simplifié, car le couplage au champ électromagnétique ne se fait plus par le terme de couplage minimal \((\operatorvec{P} - q \operatorvec{A})^2\), mais uniquement à travers un {\bf potentiel scalaire effectif}.
 
 Cette simplification rend l’analyse théorique plus accessible et facilite l’interprétation physique du rôle du champ électromagnétique, en le ramenant à une simple modulation de l’énergie potentielle.
 %\end{tcolorbox}
@@ -104,7 +111,7 @@ Avant d'effectuer le calcul du potentiel dipolaire, donnons une image classique.
 
 \smallskip
 
-Un atome neutre placé dans un champ électrique $\operatorvec{E}_\perp$ développe un moment dipolaire induit $\operatorvec{D}(t) = \alpha \operatorvec{E}_\perp$. L'énergie potentielle d'interaction, moyennée temporellement sur une période optique, est alors $-\alpha \Vert\operatorvec{E}_\perp\Vert^2/4$ . Si le champ varie lentement devant la dynamique interne de l’atome, le moment dipolaire reste aligné avec la composante transverse du champ, $\operatorvec{E}_\perp(t)$, et l’énergie potentielle d’interaction s’écrit 
+Un atome neutre placé dans un champ électrique $\operatorvec{E}_\perp$ développe un moment dipolaire induit $\operatorvec{D}(t) = \alpha \operatorvec{E}_\perp$. L'énergie potentielle d'interaction, moyennée temporellement sur une période optique, est alors $-\alpha \Vert\operatorvec{E}_\perp\Vert^2/2$ . Si le champ varie lentement devant la dynamique interne de l’atome, le moment dipolaire reste aligné avec la composante transverse du champ, $\operatorvec{E}_\perp(t)$, et l’énergie potentielle d’interaction s’écrit 
 \(
  \operator{H}_{\text{int}}(t) = -\operatorvec{D}(t) \cdot \operatorvec{E}_\perp(t).
 \)
@@ -135,11 +142,11 @@ Dans cette configuration, l’énergie potentielle est minimale là où l’inte
 
 Pour donner une vision simplifiée du phénomène, on considère un atome modélisé par {\bf deux niveaux} : l’état fondamental \(\ket{g}\) d’énergie \(\hbar \omega_g\) et l’état excité \(\ket{e}\) d’énergie \(\hbar \omega_e\), couplés par un champ électrique 
 \(\operatorvec{E}_\perp(\vec{r},t) = \operatorvec{\mathcal{E}}(\operatorvec{r}) \cos(\omega t)\). 
-On suppose que le champ laser est {\bf désacordé par rapport à la résonance} et que le désaccord
+On suppose que le champ laser est {\bf désaccordé par rapport à la résonance} et que le désaccord
 \(
 \Delta \doteq \omega - \omega_{\scriptscriptstyle g\rightarrow e}
 \)
-(avec la fréquence de transition \(\omega_{\scriptscriptstyle g\rightarrow e} \doteq \omega_e - \omega_g\),
+(avec la fréquence de transition \(\omega_{\scriptscriptstyle g\rightarrow e} \doteq \omega_e - \omega_g\)),
 est {\bf grand devant la fréquence de Rabi}, qui caractérise le couplage dipôle–champ dont l'expression est \cite{CohenTannoudji1988, grimm1999opticaldipoletrapsneutral, Schlosser2001, Darquie2006} :  
 \begin{eqnarray}
 	\Omega(\vec{r}) &=& - {\bra{e} \operatorvec{D} \cdot \operatorvec{\mathcal{E}}(\vec{r}) \ket{g}}/{\hbar} \label{chap7:eq.Omega.1} \\
@@ -300,7 +307,9 @@ Ce potentiel permet de décrire le confinement des atomes dans des régions où 
 
 \subparagraph{Conditions de validité.}
 
-Les expressions~\eqref{chap7:eq.dip.1} et \eqref{chap7:eq.dip.2}  pour le potentiel dipolaire est obtenue sous les hypothèses suivantes, qui assurent la validité du modèle à deux niveaux et du traitement perturbatif :
+Les expressions~\eqref{chap7:eq.dip.1} et \eqref{chap7:eq.dip.2}  pour le potentiel dipolaire sont obtenues sous les hypothèses suivantes, qui assurent la validité du modèle à deux niveaux et du traitement perturbatif :
+
+\smallskip
 
 \begin{itemize}[label = $\bullet$]
   %\item \textbf{Réduction à un sous-espace résonant} : le champ est quasi-résonant avec une seule transition atomique, ce qui suppose que le désaccord est faible devant les fréquences optiques impliquées, i.e. $|\Delta| \ll \omega, \omega_{\scriptstyle g \rightarrow e}$. Cela permet de restreindre le système à deux niveaux et d’ignorer les autres transitions dipolaires.
@@ -444,15 +453,17 @@ ce qui justifie l’usage des amplitudes de champ classiques dans le calcul de l
 \medskip
 
 \paragraph{Hamiltonien total.}
-L’hamiltonien total du système « atome + champ » s’écrit alors \cite{CohenTannoudji1988} :
+Pour décrire complètement l'interaction entre l'atome et le champ laser, il est utile de présenter l'Hamiltonien total du système, qui se compose de trois parties principales correspondant à l'atome, au champ et à leur interaction~\cite{CohenTannoudji1988} :
 \begin{eqnarray}
-\operator{H} = \operator{H}_{\mathrm{at}} + \operator{H}_{\mathrm{L}} + \operator{H}_{\mathrm{int}},	
+\operator{H} = \operator{H}_{\mathrm{at}} + \operator{H}_{\mathrm{L}} + \operator{H}_{\mathrm{int}}.	
 \end{eqnarray}
-avec 
-dans le formalisme {\bf atome + champ quantifié}, aussi appelé {\bf formalisme de l’atome habillé} , avec :
+Nous travaillons ici dans le formalisme {\bf atome + champ quantifié}. Ce formalisme est aussi appelé {\bf formalisme de l’atome habillé}. Ainsi :
+
+\smallskip
+
 \begin{itemize}[label = $\bullet$]
-	\item \(\operator{H}_{\mathrm{at}} = \sum_{e_i} \hbar \omega_{\scriptscriptstyle g \rightarrow e_i } \ket{e_i}\bra{e_i} \), l’hamiltonien de l’atome. Il décrit les états propres internes (typiquement les niveaux électroniques) sans interaction avec le champ. Ici, chaque état excité $\ket{e_i}$ est associé à une énergie $\hbar \omega_i$;
-	\item \(\operator{H}_{\mathrm{L}} = \hbar \omega \left(\operator{a}^\dagger \operator{a} + \frac{1}{2}\right)\), l’hamiltonien du {\bf champ électromagnétique quantifié} dans un mode unique (celui du laser). Il est représenté comme un oscillateur harmonique quantique avec énergie $ \hbar \omega $  par photon, et opérateurs \( \operator{a} \) , \( \operator{a}^\dagger \) de création/annihilation de photons. Le terme $\tfrac12 \hbar \omega$ est l’énergie du vide (qui peut être ignorée dans la plupart des cas);
+	\item \(\operator{H}_{\mathrm{at}} = \sum_{e_i} \hbar \omega_{\scriptscriptstyle g \rightarrow e_i } \ket{e_i}\bra{e_i} \), l’Hamiltonien de l’atome. Il décrit les états propres internes (typiquement les niveaux électroniques) sans interaction avec le champ. Ici, chaque état excité $\ket{e_i}$ est associé à une énergie $\hbar \omega_i$;
+	\item \(\operator{H}_{\mathrm{L}} = \hbar \omega \left(\operator{a}^\dagger \operator{a} + \frac{1}{2}\right)\), l’Hamiltonien du {\bf champ électromagnétique quantifié} dans un mode unique (celui du laser). Il est représenté comme un oscillateur harmonique quantique avec énergie $ \hbar \omega $  par photon, et opérateurs \( \operator{a} \) , \( \operator{a}^\dagger \) de création/annihilation de photons. Le terme $\tfrac12 \hbar \omega$ est l’énergie du vide (qui peut être ignorée dans la plupart des cas);
 	\item $\operator{H}_{\mathrm{int}} = - \operatorvec{D} \cdot \operatorvec{E}_\perp$, l’interaction \textbf{dipolaire quantifiée} entre l’atome et le champ électrique transverse $\operatorvec{E}_\perp$ \eqref{chap7:eq.elec.quat.1} s’écrit :
 		\begin{eqnarray}
 			\operator{H}_{\mathrm{int}} 
@@ -751,9 +762,11 @@ Cette structure matricielle du potentiel dipolaire joue un rôle central dans la
 
 \subsection{Régime de désaccord très important}
 
-Dans ce chapitre, nous ne considérons le régime de désaccord très important que dans le but de calculer les éléments de matrice du moment dipolaire $\operatorvec{D}$. En effet, pour un laser fortement détuné par rapport aux transitions électroniques ($|\Delta| \gg \Delta_{\rm fs}, \Delta_{\rm hfs}$), le champ lumineux ne peut plus distinguer les différents niveaux excités liés aux sous-niveaux $J$ ou $F$ (par exemple les niveaux $5P_{1/2}$ et $5P_{3/2}$ pour le rubidium). 
+Dans ce chapitre, nous ne considérons le régime de désaccord très important que dans le but de calculer les éléments de matrice du moment dipolaire $\operatorvec{D}$. En effet, pour un laser fortement désaccordé par rapport aux transitions électroniques ($|\Delta| \gg \Delta_{\rm fs}, \Delta_{\rm hfs}$, où typiquement pour le rubidium $\Delta_{\rm fs} \sim 7\,\mathrm{THz}$ et $\Delta_{\rm hfs} \sim 6.8\,\mathrm{GHz}$), le champ lumineux ne peut plus distinguer les différents niveaux excités liés aux sous-niveaux $J$ ou $F$ (par exemple les niveaux $5P_{1/2}$ et $5P_{3/2}$ pour le rubidium).
 
-Dans ce régime, les niveaux excités peuvent être traités uniquement en termes de moment angulaire orbital $L$ et de sa projection $m_L$, car le moment dipolaire $\operatorvec{D}$ ne dépend pas du spin de l’électron. Les éléments de matrice $\bra{e}\operatorvec{D}\ket{g}$ se calculent donc simplement en utilisant les états orbitalaux, ce qui permet de négliger les détails de la structure fine ou hyperfine dans cette approximation.
+\smallskip
+
+Dans ce régime, les niveaux excités peuvent être traités uniquement en termes de moment angulaire orbital $L$ et de sa projection $m_L$, car le moment dipolaire $\operatorvec{D}$ ne dépend pas du spin de l’électron. Les éléments de matrice $\bra{e}\operatorvec{D}\ket{g}$ se calculent donc simplement en utilisant les états orbitaux, ce qui permet de négliger, dans cette approximation, les détails de la structure fine ou hyperfine .
 
 
 % INSERTION FIGURE L=0 , L = 1  niveaux 
@@ -776,9 +789,9 @@ Dans ce régime, les niveaux excités peuvent être traités uniquement en terme
 
 \vspace{1em}
 % INSERTION FIGURE
-\begin{center}
-\textit{[Insérer ici un schéma de transition entre niveaux $m_L$ avec $q = 0$]}
-\end{center}
+% \begin{center}
+% \textit{[Insérer ici un schéma de transition entre niveaux $m_L$ avec $q = 0$]}
+% \end{center}
 
 \paragraph{Décalage d’énergie au second ordre.}
 On considère des états électroniques notés $\ket{g} = \ket{nL}$ et $\ket{e} = \ket{n'L'}$. Dans le régime de désaccord important, l’effet de la lumière sur ces états peut être traité par la théorie des perturbations indépendantes du temps au second ordre. Cette perturbation implique le carré de l’opérateur dipolaire et donne naissance au potentiel dipolaire. On note que l’interaction ne couple que les sous-niveaux orbitaux via des règles de sélection simples sur $L$ et $m_L$.
@@ -858,7 +871,7 @@ Cette valeur est essentielle pour quantifier les amplitudes de transition, les f
 
 Le moment angulaire électronique total $J$ résulte du couplage entre le moment angulaire orbital total $L$ et le moment angulaire de spin $S$ des électrons, selon la relation $J = L + S$. Dans le cas des atomes alcalins, on ne considère que l’électron de valence, pour lequel le spin est fixé à $S = 1/2$.
 
-Lorsque le désaccord du faisceau laser devient comparable à la séparation entre les doublets de structure fine, il est nécessaire de prendre en compte le couplage spin-orbite. Celui-ci donne lieu à une levée de dégénérescence des niveaux d’énergie, conduisant à ce que l’on appelle la structure fine de l’atome. Dans ce régime, les états propres du système s’écrivent dans la base couplée $|L, S; J, m_J\rangle$, où $m_J$ est la projection de $J$ sur l’axe de quantification. Ces niveaux sont représentés sur la figure~1.2.
+Lorsque le désaccord du faisceau laser devient comparable à la séparation entre les doublets de structure fine, il est nécessaire de prendre en compte le couplage spin-orbite. Celui-ci donne lieu à une levée de dégénérescence des niveaux d’énergie, conduisant à ce que l’on appelle la structure fine de l’atome. Dans ce régime, les états propres du système s’écrivent dans la base couplée $|L, S; J, m_J\rangle$, où $m_J$ est la projection de $J$ sur l’axe de quantification. Ces niveaux sont représentés sur la figure~\ref{fig:structure_fine_rubidium}.
 
 
 % INSERTION FIGURE D1 D2  niveaux 
@@ -876,13 +889,14 @@ Lorsque le désaccord du faisceau laser devient comparable à la séparation ent
 %    	\node[circle, draw=none, above=0cm of pi , shift={( -2.5cm , -0.5cm )}] 	{(b)};
 \end{tikzpicture}
 \caption{Structure fine (niveaux $\ket{J, m_J}$) de l’atome de rubidium.}
+\label{fig:structure_fine_rubidium}
 
 \end{figure}
 \vspace{1em}
 % INSERTION FIGURE
-\begin{center}
-\textit{[Insérer ici un schéma de transition ]}
-\end{center}
+% \begin{center}
+% \textit{[Insérer ici un schéma de transition ]}
+% \end{center}
 
 \subparagraph{Décalage d’énergie au second ordre.}
 
@@ -893,7 +907,7 @@ En notant $\hbar\omega_{\scriptscriptstyle \tiny 5S_{1/2} \rightarrow 5P_{J'}} =
 	\label{chap:dipolaire:eq:nrj2.3}
 \end{eqnarray}
 
-Ce décalage est purement scalaire dans le cas d’un champ à polarisation linéaire, car les contributions vectorielles (champ fictif) disparaissent lorsque $\operatorvec{u}$ est réel. De plus, le terme tensoriel est nul dans l’état fondamental $5S_{1/2}$ du rubidium 87, qui a $J = \tfrac{1}{2}$.
+Ce décalage est purement scalaire dans le cas d’un champ à polarisation linéaire, car les contributions vectorielles (champ fictif) disparaissent lorsque $\operatorvec{u}$ est réel. De plus, le terme tensoriel est nul dans l’état fondamental $5S_{1/2}$ du rubidium 87, qui à $J = \tfrac{1}{2}$.
 
 
 
@@ -937,23 +951,22 @@ Considérons l’état fondamental $\ket{5\,^2S_{1/2},\,m_J = \pm \tfrac12}$, qu
 
 Dans le but de faciliter les calculs, nous projetons cet état dans la base découplée $\ket{L,\,m_L;\,S,\,m_S}$. Étant donné que $L = 0$ pour l’état $S$, on a $m_L = 0$ nécessairement. L’état se réécrit donc simplement :
 \begin{eqnarray*}
-	\ket{ 5{~}^2S_{1/2} , m_J = \pm \tfrac12  } & = & \ket{  m_L = 0  , m_S= \pm \tfrac12  }  	
+	\ket{ 5{~}^2S_{1/2} , m_J = \pm \tfrac12  } & = & \ket{  m_L = 0  , m_S = \pm \tfrac12}  	
 \end{eqnarray*}
 
 
 Plusieurs notations sont utilisées afin de s’adapter aux préférences des lecteurs et de lever toute ambiguïté.
 On remarque ici que, dans le cas $L = 0$, l’état couplé coïncide avec l’état découplé, car le moment orbital ne contribue pas à la somme vectorielle du moment angulaire total.\\
 
-Continions avec les états exités $\ket{5\,^2P_{1/2},\,m_J'}$, que l’on peut écrire de manière équivalente comme :
+Continuons avec les états excités $\ket{5\,^2P_{1/2},\,m_J'}$, que l’on peut écrire de manière équivalente comme :
 \begin{eqnarray*}
 	\ket{ 5{~}^2P_{J'} , m_J'  } ~\equiv~ \ket{ 5P , J'  , m_J' }  ~\equiv~ \ket{n=5 ; L'=1 , S'=\tfrac12 ;  J'  , m_J'  }.
 \end{eqnarray*}
 
 Pour rappel, les opérateurs de montée/descente agissant sur les états propres du moment angulaire vérifient la relation générale :
 \begin{eqnarray}
-	\operator{A}_\pm \vert n , A , m	_A \rangle & = & \hbar \sqrt{A(A+1) - m_A(m_A\pm 1 ) } \vert n , A , m	_A \pm 1  \rangle
+	\operator{A}_\pm \vert n , A , m	_A \rangle & = & \hbar \sqrt{A(A+1) - m_A(m_A\pm 1 ) } \vert n , A , m	_A \pm 1  \rangle,
 \end{eqnarray}
-
 où l'opérateur $\operator{A} \in \{ \operator{S} , \operator{L} , \operator{J} , \cdots \}$.
 
 Donc 
@@ -1045,7 +1058,7 @@ Dans cette configuration, les faisceaux lasers génèrent un potentiel optique c
 Deux critères fondamentaux guident notre choix de laser :
 \begin{itemize}[label = $\bullet$]
 	\item Le {\bf potentiel dipolaire} au niveau des atomes, $U_{dip}(0)$, doit être supérieur à une valeur minimale $U_{dip}^{(min)}$, fixée à :
-		\begin{equation}\label{eq:7.49}
+		\begin{equation}\label{eq:7.50}
 			U_{dip}(0)  \geq U_{dip}^{(min)} = k_B \times 1 \mu K.	
 		\end{equation}
 		Cette valeur garantit une barrière suffisante pour confiner les atomes contre leur agitation thermique résiduelle ou leur expansion quantique.
@@ -1053,7 +1066,7 @@ Deux critères fondamentaux guident notre choix de laser :
 		\begin{equation}\label{eq:7.50}
 			\Gamma_{sp}(x^\ast) \leq \Gamma_{sp}^{(max)} = 2\pi \times 1~s^{-1}.	
 		\end{equation}
-		Ce critère conduit, en utilisant le fait que le potentiel $U_{dip}^{(min)}(\vec{r})$ et le taux de diffusion spontanée $\Gamma_{sp}(\vec{r})$ soit proportionnele à l’intensité $I(\vec{r})$ , à la borne stricte suivante :
+		Ce critère conduit, en utilisant le fait que le potentiel $U_{dip}^{(min)}(\vec{r})$ et le taux de diffusion spontanée $\Gamma_{sp}(\vec{r})$ soit proportionnelle à l’intensité $I(\vec{r})$, à la borne stricte suivante :
 		\begin{equation}\label{eq:7.51}
 			\Gamma_{sp}(0) \leq  2\pi \times 2~s^{-1}.	
 		\end{equation}
@@ -1137,7 +1150,7 @@ avec $P$ la puissance incidente. Cette expression relie directement la puissance
 %	 \underbrace{U_{dip}^{(min)} \cdot  \frac{\pi w_0^2}{2} \frac{8 I_{sat}}{\Gamma^2} \cdot \left( \frac{ 1}{ 3 \Delta_1} + \frac{2 }{ 3 \Delta_2}  \right )^{-1} }_{P^{(min)}(\lambda)}  \leq P(\lambda) \leq \underbrace{ \Gamma_{sc}^{(max)} \cdot \frac{\pi w_0^2}{2} \frac{8 I_{sat}}{\Gamma^3} \cdot \left( \frac{ 1}{ 3 \Delta_1^2} + \frac{2 }{ 3 \Delta_2^2}  \right )^{-1}}_{ P^{(max)}(\lambda)} 
 %\end{eqnarray}
 
-Les conditions des Eqs.~\eqref{eq:7.49} et \eqref{eq:7.50} impliquent alors, en utilisant les expressions \eqref{eq:7.47} et \eqref{eq:7.48} pour le potentiel dipolaire et le taux de diffusion de photons, que la puissance laser doit satisfaire
+Les conditions des Eqs.~\eqref{eq:7.49} et \eqref{eq:7.50} impliquent alors, en utilisant les expressions \eqref{eq:7.46} et \eqref{eq:7.47} pour le potentiel dipolaire et le taux de diffusion de photons, que la puissance laser doit satisfaire
 \begin{equation}
 	P_{\rm min}(\lambda) \le P(\lambda) \le P_{\rm max}(\lambda),
 \end{equation}
@@ -1151,7 +1164,7 @@ P_{\rm max}(\lambda) &= \Gamma_{\rm sc}^{(max)} \cdot \pi w_0^2 \frac{8 I_{\rm s
 
 \medskip
 
-La région vérifiant le critère ci-dessous est représentée sur la figure~\eqref{fig:7.6}, dans un diagramme (\(\lambda, P\)) où \(\lambda\) est la longueur d'onde du laser.  
+La région vérifiant le critère ci-dessus est représentée sur la figure~\eqref{fig:7.6}, dans un diagramme (\(\lambda, P\)) où \(\lambda\) est la longueur d'onde du laser.  
 
 \medskip
 
