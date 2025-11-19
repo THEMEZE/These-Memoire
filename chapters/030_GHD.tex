@@ -273,7 +273,7 @@ On obtient
 
 \medskip
 
-Dans le cadre général du \gls{GHD}, l’équation~\eqref{chap:GHD:veff.4} s’interprète comme une extension naturelle du résultat classique obtenu pour le gaz de bares dures. La distinction essentielle réside dans le fait que le décalage de diffusion \(\Delta(\theta - \theta_0)\) dépend désormais explicitement de la rapidité relative entre les quasi-particules, alors que, dans le cas du gaz de tiges dures, \(\Delta\) est une constante égale à l’opposé du diamètre des particules.
+Dans le cadre général du \gls{GHD}, l’équation~\eqref{chap:GHD:veff.4} s’interprète comme une extension naturelle du résultat classique obtenu pour le gaz de barres dures \cite{Percus1976,Boldrighini1983}. La distinction essentielle réside dans le fait que le décalage de diffusion \(\Delta(\theta - \theta_0)\) dépend désormais explicitement de la rapidité relative entre les quasi-particules, alors que, dans le cas du gaz de tiges dures, \(\Delta\) est une constante égale à l’opposé du diamètre des particules.
 
 \medskip
 
@@ -287,7 +287,7 @@ Pendant un intervalle de temps infinitésimal \([t,\, t + \delta t]\), le traceu
 \[
 \delta t \times \left| v^{\mathrm{eff}}(\theta) - v^{\mathrm{eff}}(\theta_0) \right| \, \rho(\theta_0)
 \]
-collisions avec des quasi-particules de rapidité \(\theta_0\). Chaque interaction provoque un décalage spatial \(\Delta(\theta - \theta_0)\) vers l’arrière (Figs \ref{fig:collision_shift} et \ref{fig:trajectoires_hard_rods}). L’équation~\eqref{chap:GHD:veff.4} formalise précisément cet effet cumulatif, résultant de l’intégration des contributions de toutes les collisions binaires sur l’espace des rapidités. La Fig.~\ref{fig:trajectoires_hard_rods} illustre les trajectoires d’un gaz de bares dures en 1D \cite{Percus1976,Boldrighini1983} , avec diamètre \(-\Delta\). Les trajectoires effectives sont calculées via la vitesse GHD, et le graphique a été généré en Python.
+collisions avec des quasi-particules de rapidité \(\theta_0\). Chaque interaction provoque un décalage spatial \(\Delta(\theta - \theta_0)\) vers l’arrière (Figs \ref{fig:collision_shift} et \ref{fig:trajectoires_hard_rods}). L’équation~\eqref{chap:GHD:veff.4} formalise précisément cet effet cumulatif, résultant de l’intégration des contributions de toutes les collisions binaires sur l’espace des rapidités. La Fig.~\ref{fig:trajectoires_hard_rods} illustre les trajectoires d’un gaz de barres dures en 1D \cite{Percus1976,Boldrighini1983}, avec diamètre \(-\Delta\). Les trajectoires effectives sont calculées via la vitesse GHD, et le graphique a été généré en Python.
 
 
 \medskip
@@ -341,9 +341,9 @@ donc en injectant dans \eqref{chap:GHD:d.dressing.0.0} il vient que
 	= \left(\partial_X f \right)^{\mathrm{dr}}_{[\nu]} 
 	+ \Theta \!\left( f^{\mathrm{dr}}_{[\nu]} \,\partial_X \nu \right), 	
 \end{equation}
-où \(X \in \{t, x, \theta\}\) et où nous avons introduit l’opérateur \(\Theta\) linéaire construit à partir de \(\big(1-\tfrac{\Delta}{2\pi}\star\nu\cdot\big)^{-1}\) et de convolutions par \(\tfrac{\Delta}{2\pi}\) \ie
+où \(X \in \{t, x, \theta\}\) et où nous avons introduit l’opérateur \(\Theta\) linéaire construit à partir de \(\big(1-\tfrac{\Delta}{2\pi}\star\nu\bullet\big)^{-1}\) et de convolutions par \(\tfrac{\Delta}{2\pi}\) \ie
 \begin{equation}
-	\Theta \equiv \left( 1 - \frac{\Delta}{2\pi}\star\nu \, \cdot \right)^{-1} 
+	\Theta \equiv \left( 1 - \frac{\Delta}{2\pi}\star\nu \, \bullet \right)^{-1} 
 	\, \frac{\Delta}{2\pi}\star
 \end{equation}
 
@@ -369,7 +369,7 @@ Puisque \(\partial_t1=0\) et \(\partial_x\partial_\theta h=\partial_\theta\parti
 - (\partial_x h)^{\mathrm{dr}}_{[\nu]}\,\partial_\theta\nu \Big) = 0.
 \]
 
-Sous l'hypothèse standard d'inversibilité des opérateurs de dressing (i.e.\ \(\hat O=1-\tfrac{\Delta}{2\pi}\star\nu\cdot\) est inversible et \(\Theta\) n'a pas de noyau pathologique), on en déduit l'annulation du membre intérieur. En divisant par \(1^{\mathrm{dr}}_{[\nu]}\) on obtient l'équation de transport locale
+Sous l'hypothèse standard d'inversibilité des opérateurs de dressing (\ie\ \(\hat O=1-\tfrac{\Delta}{2\pi}\star\nu\bullet\)~ est inversible et \(\Theta\) n'a pas de noyau pathologique), on en déduit l'annulation du membre intérieur. En divisant par \(1^{\mathrm{dr}}_{[\nu]}\) on obtient l'équation de transport locale
 \begin{equation}\label{chap:GHD:eq.nu.1}
 	\partial_t\nu + v^{\mathrm{eff}}\partial_x\nu + a^{\mathrm{eff}}\partial_\theta\nu = 0,
 \end{equation}
@@ -417,7 +417,7 @@ En l’absence de phénomènes dissipersives, la densité de distribution $\rho$
 	\frac{d \rho}{dt} 
 	= \frac{\partial \rho}{\partial t } + \{ \rho , H \} = 0,
 \end{equation}
-où $\{\cdot , \cdot\}$ désigne le crochet de Poisson canonique dans l’espace des phases.  
+où $\{\bullet, \bullet\}$ désigne le crochet de Poisson canonique dans l’espace des phases.  
 Dans cette perspective, \gls{GHD} apparaît comme une extension naturelle de l’équation de Liouville aux systèmes intégrables, incorporant les effets collectifs induits par les interactions tout en préservant une description exacte à grande échelle.
 
 

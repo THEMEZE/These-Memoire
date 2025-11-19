@@ -367,7 +367,7 @@
     path picture={
       % Bande colorée
       \draw[thick, line width=0.2ex,
-        color=colorGold, left color=colorGold, right color=white, shading angle=90]
+        color=colorPrune, left color=colorPrune, right color=white, shading angle=90]
         ([shift={(-0.,-0.7)}]path picture bounding box.center)
         rectangle (0.1,0.7);
       % Hachures à 45° (pas de ligne vide ni de \par)
@@ -382,12 +382,12 @@
         \def\traity{0.05}
         \def\alpha{12}
         \foreach \t in \listetrais {
-		\draw[shift={(1,\t)}, rotate=12, color=colorGold, line width=0.5pt] 
+		\draw[shift={(1,\t)}, rotate=12, color=colorPrune, line width=0.5pt] 
           ({0.18 - \traity*sin(\alpha)},{\t- \traity*cos(\alpha)}) -- ({0.18 + \traity*sin(\alpha)},{\t+ \traity*cos(\alpha)});
 		}
 		\def\listetrais{-0.2,-0.1,...,0}
 		\foreach \t in \listetrais {
-		\draw[shift={(1,\t)}, rotate=12, color=colorGold, line width=0.5pt] 
+		\draw[shift={(1,\t)}, rotate=12, color=colorPrune, line width=0.5pt] 
           ({0.18 - \traity*sin(-\alpha)},{\t- \traity*cos(-\alpha)}) -- ({0.18 + \traity*sin(-\alpha)},{\t+ \traity*cos(-\alpha)});
 		}
       \endscope

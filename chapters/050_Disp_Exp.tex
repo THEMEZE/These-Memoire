@@ -586,7 +586,7 @@ Le montage permet de couvrir une zone de l’ordre de \(600\,\mu\mathrm{m}\) dan
 	\begin{tikzpicture}
 			\begin{scope}[shift={(0,0)}]
 				%\begin{scope}[transform canvas={scale=0.6}]
-				\begin{scope}[scale=1.2]
+				\begin{scope}[scale=1.0]
 					\input{figures/05_Disp_Exp/Shema_Glob}	
 			
 				\end{scope}
@@ -675,7 +675,7 @@ La combinaison de l’imagerie in situ et après temps de vol, ainsi qu’une ca
 Une partie essentielle de mon travail de thèse a consisté à sonder la distribution de rapidités résolue spatialement, ce qui constitue une information clé pour comprendre la dynamique hors équilibre d’un gaz quantique unidimensionnel. Pour accéder à cette observable, il est nécessaire de réaliser un protocole qui relie la distribution de rapidités à des profils de densité mesurables expérimentalement. %L’expansion longitudinale dans le guide 1D s’impose alors comme un outil naturel : en laissant le nuage se dilater librement dans la direction longitudinale, on convertit en partie l’information contenue dans les phases et les excitations collectives du système en une dynamique de densité directement accessible par imagerie. Ce protocole permet ainsi de comparer les prédictions issues des équations effectives, comme l’équation de Gross–Pitaevskii dans différents régimes de confinement, avec des mesures expérimentales résolues spatialement.
 
 \paragraph{Considérations physiques.}
-Au-delà de son intérêt pratique, l’expansion longitudinale offre une fenêtre sur la physique des gaz bosoniques 1D. Elle permet d’étudier comment un système initialement confiné évolue vers un état dilué, révélant à la fois l’impact du régime transverse (\gls{TF} 3D vs (\gls{TF}) 1D).% et l’influence des fluctuations de phase. Dans le régime TF 1D, ces fluctuations deviennent dominantes et se traduisent par des ondulations de densité mesurables. Leur analyse expérimentale, via le spectre de puissance, fournit un accès direct aux corrélations de phase et à la thermodynamique effective du gaz.
+Au-delà de son intérêt pratique, l’expansion longitudinale offre une fenêtre sur la physique des gaz bosoniques 1D. Elle permet d’étudier comment un système initialement confiné évolue vers un état dilué, révélant à la fois l’impact du régime transverse (\gls{TF} 3D vs \gls{TF} 1D).% et l’influence des fluctuations de phase. Dans le régime TF 1D, ces fluctuations deviennent dominantes et se traduisent par des ondulations de densité mesurables. Leur analyse expérimentale, via le spectre de puissance, fournit un accès direct aux corrélations de phase et à la thermodynamique effective du gaz.
 
 \paragraph{Protocole expérimental.}
 Concrètement, l’expansion longitudinale est réalisée selon la séquence :
@@ -1358,8 +1358,19 @@ Il en découle que les profils de densité sont universels lorsqu’ils sont exp
 	
 		\begin{scope}[shift={(0,0)}]
 			
-			\node (a) at (0,0) {\includegraphics[width=0.5\textwidth]{./figures/05_Disp_Exp/image246.png}};
+			\node (a) at (0,0) {\includegraphics[width=0.5\textwidth]{./figures/05_Disp_Exp/scaling_1.pdf}};
         	\node[above=-0.2cm of a , shift={(-2 , -1)}] {\fontsize{12pt}{14pt}\selectfont \bfseries \color{black} a)};
+
+
+                
+        %\draw [color = white] (-3,-1) rectangle +(10,2);
+
+     	\end{scope}
+
+		\begin{scope}[shift={(8,0)}]
+			
+			\node (a) at (0,0) {\includegraphics[width=0.5\textwidth]{./figures/05_Disp_Exp/scaling_2.pdf}};
+        	\node[above=-0.2cm of a , shift={(-2 , -1)}] {\fontsize{12pt}{14pt}\selectfont \bfseries \color{black} b)};
 
 
                 
@@ -1388,6 +1399,10 @@ L’expansion des tranches est bien décrite par \gls{GHD}. Les comparaisons ent
 \begin{eqnarray}\label{eq.sigma}
 	\sigma(\tau) = \sqrt{ \frac{\int \vert \frac{\tau}{\ell} n_{\mathrm{GHD}}( \frac{x-x_0}\tau) - \rho(\frac{x-x_0}\tau) \vert^2 d \tau }{ \int \vert \rho( \frac{x-x_0}\tau) \vert^2 d \tau} }	
 \end{eqnarray} avec $n_{\mathrm{GHD}}$ les profils tirés des simulations \gls*{GHD}. Pour $\tau=50$\,ms, l’écart-type reste d’environ $12\%$, et une convergence complète nécessiterait des temps irréalistes ($\sim 500$\,ms). L’extraction de la distribution de rapidité à partir des profils reste donc approximative.
+
+\smallskip
+
+Dans la Fig ~\ref{fig:GHD1} a), on compare les profils expérimentaux obtenus après une expansion de différentes durées à ceux issus des simulations \gls*{GHD} pour une distribution thermique initiale. L’écart-type $\sigma(\tau)$ (Eq.~\eqref{eq.sigma}) est tracé en fonction du temps d’expansion dans la Fig ~\ref{fig:GHD1} b). On constate que le régime asymptotique n’est pas encore atteint pour le temps d’expansion utilisé expérimentalement ($\tau = 40$\,ms). Et il faudrait des temps d’expansion bien plus longs pour que l’écart-type diminue significativement.
 
 \begin{figure}[H]
 	\centering
