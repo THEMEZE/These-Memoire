@@ -1,75 +1,71 @@
 {
-    // =====================
-    // 🧠 Code Spell Checker
-    // =====================
-    "cSpell.language": "fr,en",
-    "cSpell.enabled": true,
-    "cSpell.ignorePaths": [
-        "build/**", // Ignore les fichiers compilés
-        "*.bib", // Ignore la bibliographie
-        "*.aux",
-        "*.log",
-        "*.out"
-    ],
-    "cSpell.words": [
-        "Lieb",
-        "Liniger",
-        "Bethe",
-        "GHD",
-        "rho",
-        "dipolaire",
-        "hydrodynamique",
-        "quantiques"
-    ],
-    // =====================
-    // 📝 LTEX / LanguageTool
-    // =====================
-    "ltex.enabled": true,
-    "ltex.language": "fr",
-    "ltex.latex.commands": {
-        "\\cite": "ignore",
-        "\\ref": "ignore",
-        "\\eqref": "ignore",
-        "\\textcite": "ignore"
-    },
-    "ltex.diagnosticSeverity": "information",
-    "ltex.additionalRules.enablePickyRules": true,
-    "ltex.latex.environments.ignored": [
-        "equation",
-        "align",
-        "tikzpicture",
-        "table"
-    ],
-    // =====================
-    // 📄 Améliorations LaTeX
-    // =====================
-    "files.associations": {
-        "*.tex": "latex"
-    },
-    "editor.wordWrap": "on",
-    "editor.spellCheck": true,
-    "languagetool-linter.enabled": true,
-    "languagetool-linter.serviceType": "external",
-    "languagetool-linter.external.url": "http://localhost:8081",
-    "languagetool-linter.ignoreExtensions": [
-        ".tex",
-        ".bib",
-        ".cls",
-        ".sty"
-    ],
-    "languagetool-linter.run": "onSave",
-    "latex-workshop.latex.autoBuild.run": "onFileChange",
-    "latex-workshop.latex.clean.enabled": true,
-    "latex-workshop.latex.clean.fileTypes": [
-        "*.aux",
-        "*.bbl",
-        "*.blg",
-        "*.idx",
-        "*.ind",
-        "*.lof"
-    ],
-    // "files.trimTrailingWhitespace": true, // supprime les espaces à la fin des lignes
-    // "files.insertFinalNewline": true, // ajoute un saut de ligne final
-    // "editor.renderWhitespace": "all", // voir les espaces invisibles
-    // "editor.formatOnSave": true // reformate automatiquement à la sauvegarde
+  // =====================
+  // 🧠 Code Spell Checker
+  // =====================
+  "cSpell.language": "fr,en",
+  "cSpell.enabled": true,
+  "cSpell.ignorePaths": [
+    "build/**", // Ignore les fichiers compilés
+    "*.bib", // Ignore la bibliographie
+    "*.aux",
+    "*.log",
+    "*.out"
+  ],
+  "cSpell.words": [
+    "Lieb",
+    "Liniger",
+    "Bethe",
+    "GHD",
+    "rho",
+    "dipolaire",
+    "hydrodynamique",
+    "quantiques"
+  ],
+  // =====================
+  // 📝 LTEX / LanguageTool
+  // =====================
+  "ltex.enabled": true,
+  "ltex.language": "fr",
+  "ltex.latex.commands": {
+    "\\cite": "ignore",
+    "\\ref": "ignore",
+    "\\eqref": "ignore",
+    "\\textcite": "ignore"
+  },
+  "ltex.diagnosticSeverity": "information",
+  "ltex.additionalRules.enablePickyRules": true,
+  "ltex.latex.environments.ignored": [
+    "equation",
+    "align",
+    "tikzpicture",
+    "table"
+  ],
+  // =====================
+  // 📄 Améliorations LaTeX
+  // =====================
+  "files.associations": {
+    "*.tex": "latex"
+  },
+  "editor.wordWrap": "on",
+  "editor.spellCheck": true,
+  "languagetool-linter.enabled": true,
+  "languagetool-linter.serviceType": "external",
+  "languagetool-linter.external.url": "http://localhost:8081",
+  "languagetool-linter.ignoreExtensions": [".tex", ".bib", ".cls", ".sty"],
+  "languagetool-linter.run": "onSave",
+  "latex-workshop.latex.autoBuild.run": "onFileChange",
+  "latex-workshop.latex.clean.enabled": true,
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.bbl",
+    "*.blg",
+    "*.idx",
+    "*.ind",
+    "*.lof"
+  ],
+  "liveServer.settings.multiRootWorkspaceName": "These_Memoire"
+  // "files.trimTrailingWhitespace": true, // supprime les espaces à la fin des lignes
+  // "files.insertFinalNewline": true, // ajoute un saut de ligne final
+  // "editor.renderWhitespace": "all", // voir les espaces invisibles
+  // "editor.formatOnSave": true // reformate automatiquement à la sauvegarde
 }

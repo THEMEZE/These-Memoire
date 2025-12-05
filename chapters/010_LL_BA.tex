@@ -31,22 +31,29 @@ Ce chapitre est consacré à la présentation progressive du modèle de \acrfull
 Nous commençons, pour des raisons pédagogiques, par le cas le plus simple : une particule libre, sans interaction, dans un espace unidimensionnel avec des conditions aux bords périodiques. Cette première étape permet d’introduire naturellement les fonctions d’onde à une particule, leur évolution sous l’action d'Hamiltonien libre, ainsi que la quantification résultant des conditions de périodicité — autrement dit, la version élémentaire des équations de Bethe.
 
 \medskip
+Nous poursuivons en formulant le problème dans le cadre de la théorie quantique des champs, en exprimant l’Hamiltonien à l’aide des opérateurs de création et d’annihilation dans la représentation positionnelle : c’est le passage à la seconde quantification. Cette étape clarifie la distinction entre les termes à un corps et à deux corps dans l’Hamiltonien, et établit les notations qui seront utilisées tout au long du chapitre.
 
-Nous passons ensuite à la formulation du problème en champ quantique, en exprimant l'Hamiltonien en termes d’opérateurs de création et d’annihilation dans la représentation positionnelle : il s’agit du passage à la seconde quantification. Cette étape permet de formaliser clairement les termes à un corps et à deux corps dans l’Hamiltonien, et d’établir les notations qui seront utilisées tout au long du chapitre.
+
+%Nous passons ensuite à la formulation du problème en champ quantique, en exprimant l'Hamiltonien en termes d’opérateurs de création et d’annihilation dans la représentation positionnelle : il s’agit du passage à la seconde quantification. Cette étape permet de formaliser clairement les termes à un corps et à deux corps dans l’Hamiltonien, et d’établir les notations qui seront utilisées tout au long du chapitre.
 
 \medskip
-
 Une fois ce cadre posé, nous généralisons le raisonnement au cas de \(N\) particules pour introduire le modèle complet de \acrlong{LL}. Nous présentons alors l’Ansatz de Bethe dans sa forme générale, qui fournit les états propres de l’Hamiltonien. Ce formalisme permet d’accéder explicitement au spectre du système, ainsi qu’à diverses quantités physiques telles que l’impulsion totale et le nombre de particules.
 
-\medskip
-
-Nous traitons d'abord le cas à seulement deux particules, cette fois en tenant compte de l’interaction locale. L’analyse de ce système met en lumière les effets de l’interaction ponctuelle sur la régularité de la fonction d’onde et les conditions de raccord, ainsi que sur les modifications des équations de Bethe. Ce cas constitue une étape clé vers la généralisation à \(N\) particules.
+%Une fois ce cadre posé, nous généralisons le raisonnement au cas de \(N\) particules pour introduire le modèle complet de \acrlong{LL}. Nous présentons alors l’Ansatz de Bethe dans sa forme générale, qui fournit les états propres de l’Hamiltonien. Ce formalisme permet d’accéder explicitement au spectre du système, ainsi qu’à diverses quantités physiques telles que l’impulsion totale et le nombre de particules.
 
 \medskip
+Nous abordons ensuite le cas de deux particules, cette fois en présence d’une interaction locale. L’analyse de ce système met en lumière les effets de l’interaction ponctuelle sur la régularité de la fonction d’onde et les conditions de raccord, ainsi que sur les modifications des équations de Bethe. Ce cas constitue une étape clé vers la généralisation à \(N\) particules.
 
-La fonction d’onde est ensuite étendue au cas général de \(N\) particules, ce qui nous permet de dériver les équations de Bethe pour un système entièrement interactif. Ces équations encapsulent toute l’information sur les états propres du système.
+%Nous traitons d'abord le cas à seulement deux particules, cette fois en tenant compte de l’interaction locale. L’analyse de ce système met en lumière les effets de l’interaction ponctuelle sur la régularité de la fonction d’onde et les conditions de raccord, ainsi que sur les modifications des équations de Bethe. Ce cas constitue une étape clé vers la généralisation à \(N\) particules.
 
 \medskip
+
+Le cadre est ensuite étendu au cas général de \(N\) particules, permettant ainsi de dériver les équations de Bethe pour un système interactif. Ces équations encapsulent toute l’information sur les états propres du système.
+
+%La fonction d’onde est ensuite étendue au cas général de \(N\) particules, ce qui nous permet de dériver les équations de Bethe pour un système entièrement interactif. Ces équations encapsulent toute l’information sur les états propres du système.
+
+\medskip
+
 
 Enfin, nous introduisons la notion de \emph{distribution de rapidité}, concept fondamental pour la description des états dans la limite thermodynamique. Elle permet non seulement de caractériser les états d’énergie minimale (états fondamentaux), mais aussi d’analyser des configurations excitées au-delà de l’état fondamental. Ce formalisme constituera le socle des développements ultérieurs sur les propriétés thermodynamiques et dynamiques des gaz bosoniques intégrables.
 
@@ -98,26 +105,29 @@ avec $\operator{\mathcal{H}}$ l’opérateur hamiltonien.
 	\end{eqnarray}
 	Les états propres stationnaires de \eqref{chap.1.rapel.2} dépendant du temps sont de la forme $\psi_k(x,t) = \varphi_k(x)\,e^{-i\varepsilon(k)t/\hbar}$ où $\varphi_k(x)$ est une fonction propre de l’hamiltonien,  soit de  l’équation stationnaire  $\operator{\mathcal{H}} \, \varphi_k = \varepsilon(k)\varphi_k$ \ie pour une particule libre :
 	\begin{eqnarray}
-		\frac{\hbar^2}{2m} \partial_x^2 \varphi_k = \varepsilon(k) \varphi_k,\label{chap.1.rapel.libre.2}
+		- \frac{\hbar^2}{2m} \partial_x^2 \varphi_k = \varepsilon(k) \varphi_k,\label{chap.1.rapel.libre.2}
 	\end{eqnarray}
 	avec $\varepsilon(k)$ l’énergie associée à une onde plane de nombre d’onde $k$
 	\begin{eqnarray}
 		\varepsilon(k) = \frac{\hbar^2 k^2 }{2 m}\label{chap.1.rapel.libre.3}.
 	\end{eqnarray}
-	Les fonctions propres spatiales $\varphi_k(x)$ de l’hamiltonien libre s’écrivent comme des combinaisons linéaires d’ondes planes  
+	Les fonctions propres spatiales $f_k(x)$ de l’hamiltonien libre s’écrivent comme des combinaisons linéaires d’ondes planes  
 	\begin{eqnarray}
-		\varphi_k(x) = a e^{-i k x} + b e^{i k x},~~ \mbox{avec}\quad  (a,b) \in \mathbb{C}^2\label{chap.1.rapel.libre.4}.
+		f_k(x) = a e^{-i k x} + b e^{i k x},~~ \mbox{avec}\quad  (a,b) \in \mathbb{C}^2\label{chap.1.rapel.libre.4}.
 	\end{eqnarray}
 \subparagraph{Périodicité.}
-	Si la particule est confinée dans une boîte de longueur $L$ avec des conditions aux limites périodiques (ie $\varphi_k(x+L) = \varphi_k(x)$), alors le spectre de $k$ est quantifié : 
+	Si la particule est confinée dans une boîte de longueur $L$ avec des conditions aux limites périodiques (ie $f_k(x+L) = f_k(x)$), alors le spectre de $k$ est quantifié : 
 	\begin{eqnarray}
 		e^{ikL}= 1 \quad\mbox{ou encore} kL \in 2\pi\mathbb{Z}\label{chap.1.rapel.libre.5}.
 	\end{eqnarray}
 	Le problème est équivalent à celui d’une particule libre sur un cercle de périmètre $L$.\\
 	
-	\medskip
+	\smallskip
 	
 	La particule est délocalisée sur tout l’espace (le cercle), sans structure particulière \ie les solutions \eqref{chap.1.rapel.libre.4} correspondent à des {\bf états non liés} (ou états de diffusion).
+
+	Les solutions \eqref{chap.1.rapel.libre.4} avec la condition de périodicité \eqref{chap.1.rapel.libre.5} décrivent une particule libre se propageant sur un cercle, sans potentiel externe.
+
 
 %On résume :
 %\begin{eqnarray}
@@ -127,13 +137,13 @@ avec $\operator{\mathcal{H}}$ l’opérateur hamiltonien.
 
 \medskip
 
-Pour $k \neq 0 $ (respectivement pour $k = 0$), la fonction propre $\varphi_k(x)$ de l’équation \eqref{chap.1.rapel.libre.4} appartient à un sous-espace propre associé à $k$ de dimension 2 (respectivement de dimension 1) engendré par $x \mapsto e^{-ikx}$ et $x \mapsto e^{ikx}$ (respectivement par $x \mapsto 1$).
+Pour $k \neq 0 $ (respectivement pour $k = 0$), la fonction propre $f_k(x)$ de l’équation \eqref{chap.1.rapel.libre.4} appartient à un sous-espace propre associé à $k$ de dimension 2 (respectivement de dimension 1) engendré par $x \mapsto e^{-ikx}$ et $x \mapsto e^{ikx}$ (respectivement par $x \mapsto 1$).
 L’espace engendré par l’ensemble des sous-espaces propres forme un {\bf espace de Hilbert}, muni du {\bf produit scalaire} défini par :
 \begin{eqnarray}
-	( \varphi_{k'} , \varphi_{k} ) = \int_0^L \varphi_{k'}^\ast(x) \varphi_{k}(x) \, dx .\label{chap.1.rapel.libre.6}
+	( f_{k'} , f_{k} ) = \int_0^L f_{k'}^\ast(x) f_{k}(x) \, dx .\label{chap.1.rapel.libre.6}
 \end{eqnarray}
-Les sous-espaces propres sont orthogonaux entre eux \ie en utilisant les conséquences de la condition de périodicité \eqref{chap.1.rapel.libre.5}, $( \varphi_{k'} , \varphi_{k} ) = 0$ pour $\vert k' \vert \neq \vert k \vert  $ . 
-Pour chaque sous-espace propre on impose que les états propres forment une base orthonormale \ie en utilisant \eqref{chap.1.rapel.libre.5}, les fonctions propres $\varphi_{k}$ écrites sous la forme \eqref{chap.1.rapel.libre.4}, sont orthogonales avec $\varphi_{\overline{k}} \colon x \mapsto \pm ( b^\ast e^{-ikx} - a^\ast e^{ikx} )$  soit $(\varphi_{\overline{k}} , \varphi_{k} ) = 0$, et on impose que  $ \vert a \vert^2 + \vert b \vert^2 = L^{-1}$ pour assurer la normalité  de $\varphi_{k}$  et de $\varphi_{\overline{k}}$ soit  $( \varphi_{k} , \varphi_{k} ) = (\varphi_{\overline{k}} , \varphi_{\overline{k}})   = 1$. 
+Les sous-espaces propres sont orthogonaux entre eux \ie en utilisant les conséquences de la condition de périodicité \eqref{chap.1.rapel.libre.5}, $( f_{k'} , f_{k} ) = 0$ pour $\vert k' \vert \neq \vert k \vert  $ . 
+Pour chaque sous-espace propre on impose que les états propres forment une base orthonormale \ie en utilisant \eqref{chap.1.rapel.libre.5}, les fonctions propres $f_{k}$ écrites sous la forme \eqref{chap.1.rapel.libre.4}, sont orthogonales avec $\overline{f}_{k} \colon x \mapsto \pm ( b^\ast e^{-ikx} - a^\ast e^{ikx} )$  soit $(\overline{f}_{k} , \varphi_{k} ) = 0$, et on impose que  $ \vert a \vert^2 + \vert b \vert^2 = L^{-1}$ pour assurer la normalité  de $\varphi_{k}$  et de $\varphi_{\overline{k}}$ soit  $( f_{k} , f_{k} ) = (\overline{f}_{k} , \overline{f}_{k})   = 1$. 
 
 \medskip
 
@@ -147,10 +157,10 @@ Il y a deux bases de vecteur propre particulier :
 %		\left \{ \begin{array}{rcll} \varphi_+  & = & \displaystyle \frac{1}{\sqrt{L}} e^{+ikx} & \mbox{: état avec impulsion $+\hbar k $ } \\ \varphi_-  & = & \displaystyle \frac{1}{\sqrt{L}}e^{-ikx} & \mbox{: état avec impulsion $-\hbar k $ }\end{array}\right.
 %	\end{eqnarray}
 	\begin{eqnarray}\label{chap.1.rapel.libre.7}
-		\varphi_\pm  & = & \displaystyle \frac{1}{\sqrt{L}} e^{\pm ikx} 
+		\varphi_{\pm k}   & = & \displaystyle \frac{1}{\sqrt{L}} e^{\pm ikx} 
 	\end{eqnarray}
-	Ces derniers de plus d'être états propres de l’opérateur énergie $\operator{\mathcal{H}}$, sont des états propres de l’opérateur impulsion $\operator{p}$, avec valeurs propres opposées $\pm \hbar k$.
-	\item {\bf Base symétrique / antisymétrique :} En appliquant la matrice de passage unitaire  $\frac{1}{\sqrt{2}}\left (\begin{matrix}1 & 1 \\ -i & + i\end{matrix}\right)$ à la base $\{ \varphi_+ , \varphi_- \}$ , on passer dans la base    
+	Ces derniers en plus d'être états propres de l’opérateur énergie $\operator{\mathcal{H}}$, sont des états propres de l’opérateur impulsion $\operator{p}$, avec valeurs propres opposées $\pm \hbar k$.
+	\item {\bf Base symétrique / antisymétrique :} En appliquant la matrice de passage unitaire  $\frac{1}{\sqrt{2}}\left (\begin{matrix}1 & 1 \\ -i & + i\end{matrix}\right)$ à la base $\{ \varphi_{+k} , \varphi_{-k} \}$, on passe dans la base    
 %	\begin{eqnarray}
 %		\left \{ \begin{array}{rcllll} \varphi_k  &= & \displaystyle\frac{1}{\sqrt{2L}}(e^{+ikx} + e^{-ikx})  & = & \displaystyle \sqrt{\frac{2}{L}} \cos (kx)  & \mbox{type Neumann  : $\varphi_k'(0) = \varphi_k'(L) = 0 $ } \\ \varphi_{\overline{k}}  & = & \displaystyle\frac{1}{\sqrt{2L}i}(e^{+ikx} - e^{-ikx}) & = & \displaystyle \sqrt{\frac{2}{L}} \sin (kx)  & \mbox{type Dirichlet : $\varphi_{\overline{k}}(0) = \varphi_{\overline{k}}(L) = 0 $}\end{array} \right.
 %	\end{eqnarray}
@@ -162,7 +172,11 @@ Il y a deux bases de vecteur propre particulier :
 
 \medskip
 
-Cette condition d’orthonormalité est imposée afin de garantir l’indépendance linéaire des états quantiques, et d'assurer que toute fonction d’onde de l’espace de Hilbert puisse être développée de manière unique sur cette base. 
+Cette base est particulièrement utile lorsque des potentiels symétriques sont ajoutés à l’Hamiltonien, car les fonctions paires et impaires restent séparées sous l’action de tels potentiels.
+
+\smallskip
+
+Cette condition d’orthonormalitée est imposée afin de garantir l’indépendance linéaire des états quantiques, et d'assurer que toute fonction d’onde de l’espace de Hilbert puisse être développée de manière unique sur cette base. 
 
 
 \medskip
@@ -193,7 +207,7 @@ où $\ket{x}$ est normé (\ie $\braket{x'\vert x} = \delta ( x' - x ) $ avec $\d
 La base $\{\ket{x}\}$ étant continue, et les états $\{\ket{k}\}$ quantifiés (par exemple dans une boîte de taille finie avec conditions aux limites périodiques), les relations de changement de base s’écrivent :
 \begin{eqnarray}\label{chap.1:eq.rapel.etat.prim.1}
 	\ket{k} = \int_0^L dx \, \varphi_k(x) \ket{x}, \qquad   
-	\ket{x} = \sum_k \varphi_k^\ast(x) \ket{k},
+	\ket{x} = \sum_{L k \in 2 \pi \mathbb{Z}}  \varphi_k^\ast(x) \ket{k},
 \end{eqnarray}
 avec $\varphi_k^\ast(x) = \langle k \vert x \rangle$. L’état $\ket{x}$ est relié aux états $\ket{k}$ par une transformation de Fourier discrète. Ces formules montrent que les états $\ket{k}$ sont les composantes de Fourier de l’état $\ket{x}$.
 \end{mdframed}
