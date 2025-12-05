@@ -28,7 +28,7 @@ Ce chapitre est consacré à la présentation progressive du modèle de \acrfull
 
 \medskip
 
-Nous commençons, pour des raisons pédagogiques, par le cas le plus simple : une particule libre, sans interaction, dans un espace unidimensionnel avec des conditions aux bords périodiques. Cette première étape permet d’introduire naturellement les fonctions d’onde à une particule, leur évolution sous l’action d'Hamiltonien libre, ainsi que la quantification résultant des conditions de périodicité — autrement dit, la version élémentaire des équations de Bethe.
+Nous commençons, pour des raisons pédagogiques, par le cas le plus simple : une particule libre, sans interaction, dans un espace unidimensionnel avec des conditions aux bords périodiques. Cette première étape permet d’introduire naturellement les fonctions d’onde à une particule, leur évolution sous l’action d'Hamiltonien libre, ainsi que la quantification résultant des conditions de périodicité — autrement dit, la version élémentaire des équations de \gls{BA}.
 
 \medskip
 Nous poursuivons en formulant le problème dans le cadre de la théorie quantique des champs, en exprimant l’Hamiltonien à l’aide des opérateurs de création et d’annihilation dans la représentation positionnelle : c’est le passage à la seconde quantification. Cette étape clarifie la distinction entre les termes à un corps et à deux corps dans l’Hamiltonien, et établit les notations qui seront utilisées tout au long du chapitre.
@@ -42,13 +42,13 @@ Une fois ce cadre posé, nous généralisons le raisonnement au cas de \(N\) par
 %Une fois ce cadre posé, nous généralisons le raisonnement au cas de \(N\) particules pour introduire le modèle complet de \acrlong{LL}. Nous présentons alors l’Ansatz de Bethe dans sa forme générale, qui fournit les états propres de l’Hamiltonien. Ce formalisme permet d’accéder explicitement au spectre du système, ainsi qu’à diverses quantités physiques telles que l’impulsion totale et le nombre de particules.
 
 \medskip
-Nous abordons ensuite le cas de deux particules, cette fois en présence d’une interaction locale. L’analyse de ce système met en lumière les effets de l’interaction ponctuelle sur la régularité de la fonction d’onde et les conditions de raccord, ainsi que sur les modifications des équations de Bethe. Ce cas constitue une étape clé vers la généralisation à \(N\) particules.
+Nous abordons ensuite le cas de deux particules, cette fois en présence d’une interaction locale. L’analyse de ce système met en lumière les effets de l’interaction ponctuelle sur la régularité de la fonction d’onde et les conditions de raccord, ainsi que sur les modifications des équations de \gls{BA}. Ce cas constitue une étape clé vers la généralisation à \(N\) particules.
 
 %Nous traitons d'abord le cas à seulement deux particules, cette fois en tenant compte de l’interaction locale. L’analyse de ce système met en lumière les effets de l’interaction ponctuelle sur la régularité de la fonction d’onde et les conditions de raccord, ainsi que sur les modifications des équations de Bethe. Ce cas constitue une étape clé vers la généralisation à \(N\) particules.
 
 \medskip
 
-Le cadre est ensuite étendu au cas général de \(N\) particules, permettant ainsi de dériver les équations de Bethe pour un système interactif. Ces équations encapsulent toute l’information sur les états propres du système.
+Le cadre est ensuite étendu au cas général de \(N\) particules, permettant ainsi de dériver les équations de \gls{BA} pour un système interactif. Ces équations encapsulent toute l’information sur les états propres du système.
 
 %La fonction d’onde est ensuite étendue au cas général de \(N\) particules, ce qui nous permet de dériver les équations de Bethe pour un système entièrement interactif. Ces équations encapsulent toute l’information sur les états propres du système.
 
@@ -142,12 +142,12 @@ L’espace engendré par l’ensemble des sous-espaces propres forme un {\bf esp
 \begin{eqnarray}
 	( f_{k'} , f_{k} ) = \int_0^L f_{k'}^\ast(x) f_{k}(x) \, dx .\label{chap.1.rapel.libre.6}
 \end{eqnarray}
-Les sous-espaces propres sont orthogonaux entre eux \ie en utilisant les conséquences de la condition de périodicité \eqref{chap.1.rapel.libre.5}, $( f_{k'} , f_{k} ) = 0$ pour $\vert k' \vert \neq \vert k \vert  $ . 
-Pour chaque sous-espace propre on impose que les états propres forment une base orthonormale \ie en utilisant \eqref{chap.1.rapel.libre.5}, les fonctions propres $f_{k}$ écrites sous la forme \eqref{chap.1.rapel.libre.4}, sont orthogonales avec $\overline{f}_{k} \colon x \mapsto \pm ( b^\ast e^{-ikx} - a^\ast e^{ikx} )$  soit $(\overline{f}_{k} , \varphi_{k} ) = 0$, et on impose que  $ \vert a \vert^2 + \vert b \vert^2 = L^{-1}$ pour assurer la normalité  de $\varphi_{k}$  et de $\varphi_{\overline{k}}$ soit  $( f_{k} , f_{k} ) = (\overline{f}_{k} , \overline{f}_{k})   = 1$. 
+Les sous-espaces propres sont orthogonaux entre eux \ie en utilisant les conséquences de la condition de périodicité \eqref{chap.1.rapel.libre.5}, $( f_{k'} , f_{k} ) = 0$ pour $\vert k' \vert \neq \vert k \vert $. 
+Pour chaque sous-espace propre, on impose que les états propres forment une base orthonormale \ie en utilisant \eqref{chap.1.rapel.libre.5}, les fonctions propres $f_{k}$ écrites sous la forme \eqref{chap.1.rapel.libre.4}, sont orthogonales avec $\overline{f}_{k} \colon x \mapsto \pm ( b^\ast e^{-ikx} - a^\ast e^{ikx} )$  soit $(\overline{f}_{k} , f_{k} ) = 0$, et on impose que  $ \vert a \vert^2 + \vert b \vert^2 = L^{-1}$ pour assurer la normalité  de $f_{k}$  et de $f_{\overline{k}}$ soit  $( f_{k} , f_{k} ) = (\overline{f}_{k} , \overline{f}_{k})   = 1$. 
 
 \medskip
 
-Les solutions générales de l’équation de Schrödinger s’écrivent alors comme une superposition d’états propres  $\psi = c_0 \psi_0 +  \sum_{\vert k \vert > 0 } (c_k \psi_k  + c_{\overline{k}} \psi_{\overline{k}}) $. 
+Les solutions générales de l’équation de Schrödinger s’écrivent alors comme une superposition d’états propres  $\psi = c_0 \psi_0 +  \sum_{\vert k \vert > 0 } (c_k \psi_k  + \overline{c}_{k} \overline{\psi}_{k}) $. 
 
 \medskip
 Il y a deux bases de vecteur propre particulier : 
@@ -233,6 +233,7 @@ Dans ce formalisme, l’espace des états est une {\bf somme directe d’espaces
 	\forall k \in \mathbb{R}\colon \qquad \operator{a}_k \ket{\emptyset} = 0 ,\quad  \langle \emptyset \vert \emptyset \rangle = 1. \label{chap:eq.vide.fock.k}
 \end{eqnarray}
 Le symbole \( \operator{a}_\lambda \) représente ici de manière générique soit l’opérateur \( \operator{b}_\lambda \) pour les bosons, soit \( \operator{c}_\lambda \) pour les fermions, et satisfait respectivement les relations de commutation (pour les bosons) ou d’anticommutation (pour les fermions). Dans ce qui suit, nous nous restreignons au cas bosonique.
+%Le symbole \( \operator{a}_\lambda \) représente ici de manière générique soit l’opérateur \( \operator{b}_\lambda \) pour les bosons, soit \( \operator{c}_\lambda \) pour les fermions, et satisfait respectivement les relations de commutation (pour les bosons) ou d’anticommutation (pour les fermions). Dans ce qui suit, nous nous restreignons au cas bosonique.
 
 \subparagraph{Relations de commutation bosoniques.} Les relations de commutation fondamentales pour les bosons sont :
 \begin{eqnarray}
@@ -307,7 +308,7 @@ où on note \( \{k_a\} \equiv \{k_1, \dots, k_N\} \) et \( \{x_a\} \equiv \{x_1,
 \(
 	\varphi_{\{k_a\}} ( \{x_a\} ) = \frac{1}{\sqrt{N!}} \sum_{\sigma \in \operator{S}_N } \prod_{i=1}^N \varphi_{k_{\sigma(i)}}(x_i),
 \) 
-avec $\operator{S}_N $  le groupe symétrique d'ordre $N$ mais aussi :
+avec $\operator{S}_N $  le groupe symétrique d'ordre $N$, ou encore, de manière équivalente :
 \begin{eqnarray}\label{chap.1:eq.rapel.fonction.propre.N}
 	\varphi_{\{k_a\}} (\{x_a\}) = \frac{1}{\sqrt{N!}} \bra{\emptyset} \operator{\Psi}(x_1) \cdots \operator{\Psi}(x_N) \ket{\{k_a\}}.
 \end{eqnarray}
@@ -341,7 +342,7 @@ On en déduit que l’opérateur à un corps \( \operator{F} \) peut se réécri
 	\operator{F} = \sum_{\lambda, \nu} \bra{\lambda} \operator{f} \ket{\nu} \operator{a}^\dagger_\lambda \operator{a}_\nu^{}.
 \end{eqnarray}
 
-L'opérateur $\operator{a}^\dagger_\lambda \operator{a}_\nu^{}$ fait la transition d'une particule de l'état $\nu$ à vers l'état $\lambda$. Si $\lambda = \nu$ cet opérateur est l'opérateur nombre de particules dans le mode $\lambda$.
+L'opérateur $\operator{a}^\dagger_\lambda \operator{a}_\nu^{}$ fait la transition d'une particule de l'état $\nu$ à l'état $\lambda$. Si $\lambda = \nu$ cet opérateur est l'opérateur nombre de particules dans le mode $\lambda$.
 
 \begin{mdframed}[
 	linewidth=0.5pt, 
@@ -455,7 +456,7 @@ En seconde quantification, ces opérateurs s'écrivent dans la base \( \{ \ket{k
 \end{equation}
 Lorsqu’on les applique à un état de Fock à $N$ particules \(\ket{\{k_a\}}\), on obtient :
 \begin{eqnarray}\label{eq.chap.1.Q.P.k.2}
-	\operator{Q} \ket{\{k_a\}} = \left( \sum_{i = 1}^N 1 \right) \ket{\{k_a\}},\quad \operator{P} \ket{\{k_a\}} = \hbar \left( \sum_{i = 1}^N k \right) \ket{\{k_a\}}.
+	\operator{Q} \ket{\{k_a\}} = \left( \sum_{i = 1}^N 1 \right) \ket{\{k_a\}},\quad \operator{P} \ket{\{k_a\}} = \hbar \left( \sum_{i = 1}^N k_i \right) \ket{\{k_a\}}.
 \end{eqnarray}
 Dans la base position \( \{ \ket{x} \} \), les opérateurs s’écrivent : 
 \begin{eqnarray}\label{eq.chap.1.Q.P.k.3}
@@ -644,11 +645,11 @@ Ainsi, la notation $\ket{\{\theta_a \}}$  est choisie pour rappeler que :
 
 En utilisant les équations \eqref{eq.chap.1.cinietique.4} et \eqref{chap.1:eq.rapel.opp.2.second.ponctuel.2}, on obtient : 
 \begin{eqnarray}\label{chap.1:eq.LL.champ.2}
-	\operator{H}\ket{\{\theta_a\}} =  \int d^Nz \, \operator{\mathcal{H}}_N \varphi_{\{\theta_a\}}(\{z_a\})\operator{\Psi}(z_1)\cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}, 
+	\operator{H}\ket{\{\theta_a\}} =  \int d^Nz \, \operator{\mathcal{H}}_N \varphi_{\{\theta_a\}}(\{z_a\})\operator{\Psi}^\dag(z_1)\cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}, 
 \end{eqnarray}
-avec $\{\theta_a\} \equiv \{ \theta_1 , \cdots , \theta_N \} $ et .
+avec $\{\theta_a\} \equiv \{ \theta_1 , \cdots , \theta_N \} $ et
 \begin{eqnarray}\label{chap.1:eq.LL.eta.1}
-\operator{\mathcal{H}}_N  =  \operator{\mathcal{K}}_N  +  \operator{\mathcal{V}}_N \, \quad \mbox{où on rappelle} \quad \operator{\mathcal{K}}_N = -\frac{1}2\sum_{i=1}^N \partial_{z_i} , \,  \mbox{et} \, 	\operator{\mathcal{V}}_N = g\sum_{1\leq i < j \leq N } \operator{\delta}(z_i - z_j)	. 
+\operator{\mathcal{H}}_N  =  \operator{\mathcal{K}}_N  +  \operator{\mathcal{V}}_N \, \quad \mbox{où on rappelle} \quad \operator{\mathcal{K}}_N = -\frac{1}2\sum_{i=1}^N \partial_{z_i}^2 , \,  \mbox{et} \, 	\operator{\mathcal{V}}_N = g\sum_{1\leq i < j \leq N } \operator{\delta}(z_i - z_j)	. 
 \end{eqnarray}
 
 %\(
@@ -731,8 +732,13 @@ Ils constituent donc des \textbf{intégrales du mouvement}. Cette propriété re
     leftmargin=2pt,
     rightmargin=2pt
 	]	
-	Nous verrons au chapitre~\ref{chap:relaxation} que, dans les systèmes intégrables comme le modèle de \gls{LL}, cette situation s’étend à une {\bf \em infinité d’intégrales du mouvement}. 
-	Cette richesse supplémentaire de conservation conduit naturellement à l’introduction de l’ensemble de Gibbs généralisé, appelé en anglais \gls{GGE}.
+	%Nous verrons au chapitre~\ref{chap:relaxation} que, dans les systèmes intégrables comme le modèle de \gls{LL}, cette situation s’étend à une {\bf \em infinité d’intégrales du mouvement}. 
+	%Cette richesse supplémentaire de conservation a des conséquences profondes sur la dynamique hors d’équilibre, en particulier sur la relaxation vers des états stationnaires.
+	%Cette richesse supplémentaire de conservation conduit naturellement à l’introduction de l’ensemble de Gibbs généralisé, appelé en anglais \gls{GGE}.
+
+	Nous verrons au chapitre~\ref{chap:relaxation} que, dans les systèmes intégrables tels que le modèle de \gls{LL}, cette situation se généralise à l’existence d’une {\bf\em infinité d’intégrales du mouvement}.
+	Cette richesse supplémentaire de quantités conservées a des conséquences profondes sur la dynamique hors d’équilibre, notamment sur les mécanismes de relaxation vers des états stationnaires.
+	Elle mène naturellement à l’introduction de l’ensemble de Gibbs généralisé, ou \acrshort{GGE} (\acrlong{GGE}).
 
 \end{mdframed}
 
@@ -747,7 +753,7 @@ Les états propres $\ket{\{\theta_a\}}$, construits dans le cadre de la seconde 
 
 \paragraph*{Conclusion.}
 
-La première quantification constitue la base indispensable pour comprendre le comportement quantique d’un nombre fixe de particules. La seconde quantification en est une extension naturelle, nécessaire pour décrire des systèmes plus complexes où le nombre de particules peut varier. Elle repose sur la quantification des champs et l’introduction d’opérateurs de création et d’annihilation, ouvrant ainsi la voie à la physique quantique des champs et à de nombreuses applications modernes.
+La première quantification constitue la base indispensable pour comprendre le comportement quantique d’un nombre fixe de particules. La seconde quantification en est une extension naturelle, nécessaire pour décrire des systèmes plus complexes où le nombre de particules peut varier. Elle repose sur la quantification des champs et l’introduction d’opérateurs de création et d’annihilation, ouvrant ainsi la voie à la physique quantique des champs et à de nombreuses applications modernes, telles que la physique des gaz quantiques ultrafroids, l’électrodynamique quantique (\gls{QED}), la physique des solides via le formalisme des quasi-particules (phonons, polarons, excitons), la théorie de la supraconductivité (décrite par le modèle de \gls{BCS}), ou encore les techniques de calcul utilisées dans les collisions de particules en physique des hautes énergies.
 
 \medskip
 
@@ -755,15 +761,15 @@ Les opérateurs $\operator{Q}$, $\operator{P}$ \eqref{eq.chap.1.Q.P.k.3} et $\op
 
 \medskip
 
-En passant par la seconde quantification, nous avons pu relier l’Hamiltonien à une particule $\operator{\mathcal{H}}_1$ \eqref{chap.1.rapel.libre.1} à un Hamiltonien à $N$ particules $\operator{\mathcal{H}}_N$ \eqref{chap.1:eq.LL.eta.1} dans le modèle de \acrlong{LL} (système avec interactions ponctuelles). Les états $\varphi_{\{ \theta_a \}}$ sont des états propres du nombre total de particules $\operator{\mathcal{N}}_N$ \eqref{eq.chap.1.Q.1}, de la quantité de mouvement totale $\operator{\mathcal{P}}_N$ \eqref{eq.chap.1.P.1} et de l’hamiltonien $\operator{\mathcal{H}}_N$.
+En passant par la seconde quantification, nous avons pu relier l’Hamiltonien à une particule $\operator{\mathcal{H}}_1$ \eqref{chap.1.rapel.libre.1} à un Hamiltonien à $N$ particules $\operator{\mathcal{H}}_N$ \eqref{chap.1:eq.LL.eta.1} dans le modèle de \gls{LL} (système avec interactions ponctuelles). Les états $\varphi_{\{ \theta_a \}}$ sont des états propres du nombre total de particules $\operator{\mathcal{N}}_N$ \eqref{eq.chap.1.Q.1}, de la quantité de mouvement totale $\operator{\mathcal{P}}_N$ \eqref{eq.chap.1.P.1} et de l’hamiltonien $\operator{\mathcal{H}}_N$.
 
 \medskip
 
-Dans le cas d’un système à une particule, les états de la forme \eqref{chap.1.rapel.libre.7} sont déjà propres de $\operator{\mathcal{N}}_1$, $\operator{\mathcal{P}}_1$ et $\operator{\mathcal{H}}_1$ (cf. \eqref{chap.1.rapel.libre.2}). Mais quelle est leur forme pour $N$ particules ? Et comment généraliser les conditions périodiques \eqref{chap.1.rapel.libre.5}, valables pour une particule, à un système à $N$ particules ?\\
+Dans le cas d’un système à une particule, les états de la forme \eqref{chap.1.rapel.libre.7} sont déjà des états propres de $\operator{\mathcal{N}}_1$, $\operator{\mathcal{P}}_1$ et $\operator{\mathcal{H}}_1$ (cf. \eqref{chap.1.rapel.libre.2}). Mais quelle est leur forme pour $N$ particules ? Et comment généraliser les conditions périodiques \eqref{chap.1.rapel.libre.5}, valables pour une particule, à un système à $N$ particules ?\\
 
 \medskip
 
-Nous allons étudier le cas de $N=2$ corps, afin de simplifier l’analyse tout en capturant les premiers effets non triviaux des interactions. Cela permettra de comprendre plus facilement les implications physiques des interactions ponctuelles, en particulier leur influence sur la structure des états propres, les conditions de continuité des fonctions d’onde, ainsi que les relations de dispersion modifiées. Ce cas servira de base pour introduire les concepts clés de la résolution exacte par la méthode de Bethe ansatz, avant de les généraliser au cas $N$-corps.
+Nous allons étudier le cas de $N=2$ corps, afin de simplifier l’analyse tout en capturant les premiers effets non triviaux des interactions. Cela permettra de comprendre plus facilement les implications physiques des interactions ponctuelles, en particulier leur influence sur la structure des états propres, les conditions de continuité des fonctions d’onde, ainsi que les relations de dispersion modifiées. Ce cas servira de base pour introduire les concepts clés de la résolution exacte par la méthode de \acrfull{BA}, avant de les généraliser au cas à $N$-corps.
 
  
 
@@ -874,25 +880,28 @@ L’Hamiltonien du centre de masse, \(-\frac{1}{4} \partial_Z^2\), décrit une p
 \(
 \overline{\theta} = \frac{\theta_1 + \theta_2}{2},
 \)
-jouant ici un rôle analogue à celui d’un pseudo-moment associé dans le référentiel de laboratoire.
-Le Hamiltonien relatif, \(\operator{\mathcal{H}}_{\text{rel}}\), correspond quant à lui à une particule de masse réduite \(\tilde{m} = \frac{1}{2}\) soumise à un potentiel delta centré en \(Y = 0\). Son équation propre s’écrit :
+jouant ici un rôle analogue à celui d’un pseudo-moment associé dans le référentiel du laboratoire.
+L'Hamiltonien relatif, \(\operator{\mathcal{H}}_{\text{rel}}\), correspond quant à lui à une particule de masse réduite \(\tilde{m} = \frac{1}{2}\) soumise à un potentiel delta centré en \(Y = 0\). %Son équation propre s’écrit :
+Son état propre \(\tilde{\varphi}(Y)\) satisfait l’équation de Schrödinger suivante :
 \begin{eqnarray}\label{chap:1:hal.mod.2.part.5}
 	- \partial_Y^2 \, \tilde{\varphi}(Y) + g \, \delta(Y) \, \tilde{\varphi}(Y) = \tilde{\varepsilon} \, \tilde{\varphi}(Y),
 \end{eqnarray}
 où \(\tilde{\varepsilon}\) désigne l’énergie associée au mouvement relatif.
 %%%%%%%%%%%%%%
 
-\paragraph{Forme symétrique de la fonction d'onde pour bosons.}
+\paragraph{Forme symétrique de la fonction d'onde pour des bosons.}
 Dans le référentiel du centre de masse, le système est le même que celui d'une particule de masse $\tilde{m}= \frac{1}{2}$.
-Le système étant composé de particules bosoniques, on cherche une solution symétrique que l’on écrit sous la forme  :
+Le système étant composé de particules bosoniques, on cherche une solution symétrique que l’on écrit sous la forme \eqref{chap.1.rapel.libre.4} :
 \begin{eqnarray}
 	\tilde{\varphi}(Y) ~=~a~e^{i\frac{1}{2} \tilde{\theta} \vert Y \vert } + b~e^{-i\frac{1}{2} \tilde{\theta}\vert Y \vert } ~\propto~  \sin\left( \frac{1}{2} (\tilde{\theta} |Y| + \Phi ) \right). \label{eq:ansatz.boson}
 \end{eqnarray}
 Le paramètre \( \tilde{\theta} = \theta_1 - \theta_2 \) joue ici un rôle analogue à celui d’un pseudo-moment associé à la coordonnée relative,
-et  la phase s'écrit
+%et  la phase s'écrit (avec la définition usuelle de l’arctangente complexe,) 
+et la phase \(\Phi\) s'écrit (avec la définition usuelle de l’arctangente complexe, ) 
 \begin{eqnarray}
 	\Phi(\tilde{\theta}) &=& 2 \arctan\left (\frac{1}{i} \frac{a+b}{a-b}\right),	\label{chap:1:dif.mod.2.part.1} 
 \end{eqnarray}
+%(avec la définition usuelle de l’arctangente complexe,) de sorte que l’on puisse réécrire l’ansatz~\eqref{eq:ansatz.boson} sous la forme trigonométrique symétrique.
 car \( a\exp(ix)+b\exp(-ix) = 2\sqrt{ab}\sin\left(x+\arctan\left(-i\, \frac{a+b}{a-b}\right)\right) \). Pour $\tilde{\theta}<0$, les termes exponentiels \( \exp(i\tilde{\theta} \vert Y \vert/2 ) \) et \( \exp(-i\tilde{\theta} \vert Y \vert/2 ) \) correspondent aux paires de particules entrantes et sortantes d’un processus de diffusion à deux corps.
 
 En réinjectant l’ansatz~\eqref{eq:ansatz.boson} dans l’équation relative
@@ -908,12 +917,17 @@ La masse réduite vaut ici \(\tilde{m}= \frac{1}{2}\) et le paramètre
    \label{eq:energie_relative}
 \end{equation}
 
-Cette énergie gouverne la décroissance exponentielle de la fonction
-d’onde dans la coordonnée relative : plus \(\tilde{\theta}\) est grand,
-plus l’état est localisé autour de \(Y=0\), signe d’une interaction
-attractive plus forte entre les deux bosons.
 
-La fonction d’onde relative présente des oscillations de fréquence \(\tilde{\theta}/2\), et son énergie croît avec \(\tilde{\theta}^2\). Cette solution correspond à un état de diffusion à deux corps en interaction ponctuelle. En revanche, une décroissance exponentielle autour de $Y=0$ n’apparaît que dans le cas d’un couplage attractif ($g<0$), où des états liés peuvent se former.\\
+%Dans le cas d'un couplage attractif ($g<0$) ,  cette énergie gouverne la décroissance exponentielle de la fonction d’onde dans la coordonnée relative : plus \(\tilde{\theta}\) est grand, plus l’état est localisé autour de \(Y=0\), signe d’une interaction attractive plus forte entre les deux bosons.
+
+%La fonction d’onde relative présente des oscillations de fréquence \(\tilde{\theta}/2\), et son énergie croît avec \(\tilde{\theta}^2\). Cette solution correspond à un état de diffusion à deux corps en interaction ponctuelle. En revanche, une décroissance exponentielle autour de $Y=0$ n’apparaît que dans le cas d’un couplage attractif ($g<0$), où des états liés peuvent se former.\\
+
+Dans le cas d’un couplage attractif ($g<0$), cette énergie détermine la décroissance exponentielle de la fonction d’onde le long de la coordonnée relative : plus \(\tilde{\theta}\) est grand, plus l’état est localisé autour de \(Y=0\), témoignant d’une interaction attractive plus forte entre les deux bosons.
+
+La fonction d’onde relative présente des oscillations de fréquence \(\tilde{\theta}/2\), et son énergie croît proportionnellement à \(\tilde{\theta}^2\). Cette solution correspond à un état de diffusion à deux corps avec interaction ponctuelle. En revanche, une décroissance exponentielle autour de \(Y=0\) n’apparaît que pour un couplage attractif ($g<0$), condition nécessaire à la formation d’états liés.
+
+
+
 
 
 L’énergie totale se décompose enfin en la somme du mouvement du centre
@@ -1001,19 +1015,19 @@ Cette expression, unitaire et analytique, caractérise entièrement la diffusion
 %
 %L’idée est de construire un paquet d’ondes incident à partir de deux ondes planes proches, de moments $\tilde{\theta}/2$ et $\tilde{\theta}/2 + \delta \tilde{\theta}$ :
 
-Wigner (1955) \cite{Wigner_1955}, à la suite d’Eisenbud (1948) \cite{Eisenbud:1948paa}, a mis en évidence un lien entre la {\bf phase de diffusion} et un {\em décalage temporel}, interprétation qui peut être éclairée dans une perspective semi-classique. L’idée de Wigner repose sur l’analyse d’un paquet d’ondes incident, constitué de la superposition de deux ondes planes de moments voisins, $\tilde{\theta}/2$ et $\tilde{\theta}/2 + \delta \tilde{\theta}$ :
+Wigner (1955) \cite{Wigner_1955}, à la suite d’Eisenbud (1948) \cite{Eisenbud:1948paa}, a mis en évidence un lien entre la {\bf phase de diffusion} et un {\em décalage temporel}, interprétation qui peut être éclairée dans une perspective semi-classique. L’idée de Wigner repose sur l’analyse d’un paquet d’ondes incident, constitué de la superposition de deux ondes planes de moments voisins, $\tilde{\theta}/2$ et $\tilde{\theta}/2 + \delta \tilde{\theta}$:
 \begin{eqnarray}
 	\tilde{\varphi}_{\text{inc}}(Y) & \propto & e^{i\frac{1}{2}\tilde{\theta} \vert Y\vert} + e^{i\frac{1}{2}\left(\tilde{\theta} + 2\delta \tilde{\theta} \right) \vert Y\vert}.
 \end{eqnarray}
 Cette superposition évolue dans le temps comme :
 \begin{eqnarray}
-\tilde{\varphi}_{\text{inc}}(Y, t) &\propto &  e^{i\left( \frac{1}{2} \tilde{\theta}\vert Y\vert - t\,\tilde{\varepsilon}(\tilde{\theta}) \right)} + e^{i\left( \frac{1}{2}\left(  \tilde{\theta} + 2\delta \tilde{\theta} \right) \vert Y\vert - t\,\tilde{\varepsilon}(\tilde{\theta} + 2\delta \tilde{\theta}) \right)}.
+\tilde{\psi}_{\text{inc}}(Y, t) &\propto &  e^{i\left( \frac{1}{2} \tilde{\theta}\vert Y\vert - t\,\tilde{\varepsilon}(\tilde{\theta}) \right)} + e^{i\left( \frac{1}{2}\left(  \tilde{\theta} + 2\delta \tilde{\theta} \right) \vert Y\vert - t\,\tilde{\varepsilon}(\tilde{\theta} + 2\delta \tilde{\theta}) \right)}.
 \end{eqnarray}
 %où l'on a utilisé l'expression de l'énergie réduite : $\tilde{\varepsilon}(\tilde{\theta}) = \tilde{\theta}^2 / 4$.
 Le centre de ce 'paquet d'ondes' se situe à la position où les phases des deux termes coïncident, c'est-à-dire au point où $\vert Y\vert\delta \tilde{\theta}  - t[\tilde{\varepsilon}(\tilde{\theta} + 2\delta \tilde{\theta} ) - \tilde{\varepsilon}(\tilde{\theta})] = 0$, ce qui donne $\vert Y\vert \simeq \tilde{\theta} t$ avec la vitesse réduite $\tilde{\theta} = 2 \tilde{\varepsilon}'(\tilde{\theta}) $. %Ainsi, il s'agit effectivement d'un 'paquet d'ondes' se déplaçant à la vitesse $\theta$. Ensuite, considérons deux particules entrantes dans un état tel que le centre de masse $Z = (z_1 + z_2)/2$ ait une impulsion $\theta_1 - \theta_2$, tandis que la coordonnée relative $Y = z_1 - z_2$ se trouve dans un 'paquet d'ondes' se déplaçant à la vitesse $ (\theta_1 - \theta_2)/2$,
 Selon les équations (\ref{eq:ansatz.boson}) et (\ref{chap:1:dif.mod.2.part.3}), l'état sortant de la diffusion correspondant serait :
 \begin{eqnarray}
-	\tilde{\varphi}_{outc} ( Y, t ) & \propto & -e^{i\Phi(\tilde{\theta})}e^{-i\frac{1}{2}\tilde{\theta} \vert Y\vert} - e^{i\Phi(\tilde{\theta} + 2 \delta \tilde{\theta} )}e^{-i\frac{1}{2}\left(\tilde{\theta} + 2\delta \tilde{\theta} \right) \vert Y\vert}. %\tag{2}
+	\tilde{\psi}_{outc} ( Y, t ) & \propto & -e^{i\Phi(\tilde{\theta})}e^{-i\frac{1}{2}\tilde{\theta} \vert Y\vert}\, e^{-i \tilde{\varepsilon}(\tilde{\theta})t} - e^{i\Phi(\tilde{\theta} + 2 \delta \tilde{\theta} )}e^{-i\frac{1}{2}\left(\tilde{\theta} + 2\delta \tilde{\theta} \right) \vert Y\vert} , e^{-i \tilde{\varepsilon}(\tilde{\theta} + 2 \delta \tilde{\theta}  )t}. %\tag{2}
 \end{eqnarray}
 En répétant l'argument précédent de la stationnarité de phase, on trouve que la coordonnée relative est à la position $\vert Y \vert  \simeq \tilde{\theta} t - 2\Phi'( \tilde{\theta})$ au moment $t$. %Étant donné que le centre de masse n'est pas affecté par la collision et se déplace à la vitesse de groupe $\tilde{\theta} =(\theta_1 + \theta_2)/2$, nous constatons que la position des deux particules semiclassiques après la collision sera
 \begin{eqnarray}
@@ -1021,7 +1035,7 @@ En répétant l'argument précédent de la stationnarité de phase, on trouve qu
 \end{eqnarray}
 où le {\bf déplacement collisionnel} $\Delta (\theta)$ est donné par la dérivée de la {\em phase de diffusion},
 \begin{eqnarray}\label{eq:I-1-16}
-	\Delta ( \theta ) & \doteq & \frac{ d \Phi }{ d \theta } ( \theta )= \frac{ 2 g }{ g^2 + \theta^2} . 	
+	\Delta ( \theta ) & \doteq & \frac{ d \Phi }{ d \theta } ( \theta )= \frac{ 2 g }{g^2 + \theta^2} . 	
 \end{eqnarray}
 
 
@@ -1077,7 +1091,8 @@ En revenant aux coordonnées du laboratoire, la fonction d’onde à deux corps 
 	= \langle \emptyset \vert \operator{\Psi} (z_1)\operator{\Psi} (z_2) \vert \{\theta_1, \theta_2\} \rangle/\sqrt{2},
 \)
 dans le cas \(z_1 < z_2\), c’est-à-dire pour une séparation relative \(Y = z_1 - z_2 < 0\) (on pourra symétriser ultérieurement).  
-Dans le référentiel du laboratoire, le centre de masse évolue selon
+Dans ce cadre, le mouvement du centre de masse est indépendant de la collision, et se déplace à la vitesse de groupe
+%Dans le référentiel du laboratoire, le centre de masse évolue selon
 \(
 	Z = \frac{z_1 + z_2}{2} = \overline{\theta}\,t.
 \)
@@ -1133,7 +1148,7 @@ Pour revenir à la représentation observée dans le laboratoire, il est nécess
 Pour \(\theta_1 > \theta_2\), les deux termes exponentiels 
 \(e^{i z_1 \theta_1 + i z_2 \theta_2}\) et \(e^{i z_1 \theta_2 + i z_2 \theta_1}\)
 correspondent respectivement aux ondes entrantes et sortantes dans le canal de diffusion à deux corps \cite{Bouchoule_2022}.  
-Le rapport de leurs amplitudes définit la {\bf phase de diffusion} $\Phi$ et  {\bf matrice diffusion} $S$  à deux corps \eqref{chap:1:dif.mod.2.part.3} , reste inchangé mais voici une autre écriture :
+Le rapport de leurs amplitudes définit la {\bf phase de diffusion} $\Phi$ et la  {\bf matrice diffusion} $S$  à deux corps \eqref{chap:1:dif.mod.2.part.3}, reste inchangée, mais en voici une autre écriture :
 
 \begin{equation}\label{chap:1:dif.mod.2.part.4}
 	S(\theta_1- \theta_2)  
@@ -1186,7 +1201,7 @@ $e^{i\theta_{2}z_{1}}$ indépendamment dans~\eqref{eq:I-1-10-2} , on obtient
 	\,
 	e^{i\theta_{1}L}\;b = a,
 \)
-c’est‑à‑dire en utilisant \eqref{eq:I-1-10-3}, les \textbf{équations de Bethe à deux particules} :
+c’est‑à‑dire en utilisant \eqref{eq:I-1-10-3}, les \textbf{équations de \gls{BA} à deux particules} :
 \begin{eqnarray}\label{eq:PC2}
 	e^{i\theta_{1}L}\,e^{i\Phi(\theta_{1}-\theta_{2})} = -1,
 	\qquad
@@ -1206,7 +1221,7 @@ où $I_{1},I_{2}\in\mathbb{Z} + \tfrac{1}{2}$ sont des nombres demi-entiers.
 
 %Au debut du chapitre on a mis en équation les confition au bord pertiodique pour une une particule qui est bien connue pour maintent en comparant avec les equation de Bethe à deux particule \eqref{eq:PC2} et \eqref{eq:Bethe2} pour voir metre en evidende que la fonction $\Phi$ définie en \eqref{chap:1:dif.mod.2.part.2} encode les interaction 
 
-En comparaison avec le cas d’une seule particule (où la condition aux bords périodiques impose simplement $\theta L = 2\pi n$ ~\eqref{chap.1.rapel.libre.5}), on voit que les équations de Bethe à deux particules \eqref{eq:PC2}--\eqref{eq:Bethe2} incorporent la fonction $\Phi$, qui encode explicitement l’\textbf{interaction entre particules}.
+En comparaison avec le cas d’une seule particule (où la condition aux bords périodiques impose simplement $\theta L = 2\pi n$ ~\eqref{chap.1.rapel.libre.5}), on voit que les équations de \gls{BA} à deux particules \eqref{eq:PC2}--\eqref{eq:Bethe2} incorporent la fonction $\Phi$, qui encode explicitement l’\textbf{interaction entre particules}.
 
 \begin{figure}[H]
 	\centering
@@ -1217,11 +1232,11 @@ En comparaison avec le cas d’une seule particule (où la condition aux bords p
 
 \subsubsection{Interprétation physique pour deux particules et rôle de la rapidité}
 
-Pour bien comprendre le sens physique des équations de Bethe~\eqref{eq:Bethe2}, nous avons commencé par le cas de deux particules. Dans ce cadre, les particules interagissent lorsqu'elles se croisent, et à chaque interaction elles acquièrent une {\bf phase de diffusion} $\Phi$. L’état propre du système est obtenu en imposant que l’onde multi-corps soit périodique sur un cercle de longueur $L$ : chaque particule effectue une rotation complète, accumule une phase cinématique $e^{i\theta L}$ liée à son mouvement libre, ainsi que des contributions de phase dues aux diffusions avec l’autre particule. Cela donne lieu à une quantification des {\bf pseudo-impulsions} $\theta$ via l’équation de Bethe.
+Pour bien comprendre le sens physique des équations de \gls{BA}~\eqref{eq:Bethe2}, nous avons commencé par le cas de deux particules. Dans ce cadre, les particules interagissent lorsqu'elles se croisent, et à chaque interaction elles acquièrent une {\bf phase de diffusion} $\Phi$. L’état propre du système est obtenu en imposant que l’onde multi-corps soit périodique sur un cercle de longueur $L$ : chaque particule effectue une rotation complète, accumule une phase cinématique $e^{i\theta L}$ liée à son mouvement libre, ainsi que des contributions de phase dues aux diffusions avec l’autre particule. Cela donne lieu à une quantification des {\bf pseudo-impulsions} $\theta$ via l’équation de \gls{BA}.
 
 \medskip
 
-Pour décrire ces {\bf excitations} , ces {\bf quasi-particules}, on introduit le paramètre $\theta$ appelé {\bf rapidité}. Ce terme vient de la théorie relativiste \cite{ZAMOLODCHIKOV1979253,Babelon2003}, mais reste pertinent même dans des modèles non relativistes, comme ici. La rapidité est choisie comme {\bf paramètre spectral naturel} : elle étiquette les états propres, linéarise les relations de dispersion dans certains régimes, et elle simplifie considérablement les équations de Bethe.
+Pour décrire ces {\bf excitations} , ces {\bf quasi-particules}, on introduit le paramètre $\theta$ appelé {\bf rapidité}. Ce terme vient de la théorie relativiste \cite{ZAMOLODCHIKOV1979253,Babelon2003}, mais reste pertinent même dans des modèles non relativistes, comme ici. La rapidité est choisie comme {\bf paramètre spectral naturel} : elle étiquette les états propres, linéarise les relations de dispersion dans certains régimes, et elle simplifie considérablement les équations de \gls{BA}.
 
 \medskip
 
@@ -1229,7 +1244,8 @@ On peut interpréter chaque $\theta$ comme la {\bf vitesse d’une quasi-particu
 
 \medskip
 
-Ainsi, dans l’image de Bethe, les états propres sont des configurations stables de $N$ quasi-particules de rapidités $\theta_1,\dots,\theta_N$, dont les valeurs sont quantifiées par les conditions d’interférence imposées par les équations de Bethe.
+Ainsi , dans le cas à deux corps, les équations de \gls{BA} quantifient les valeurs possibles des rapidités $\theta_1$ et $\theta_2$ en fonction de la taille du système $L$ et de l’interaction entre particules via la phase de diffusion $\Phi(\theta_1 - \theta_2)$. Chaque solution $(\theta_1, \theta_2)$ correspond à un état propre du système, où les deux quasi-particules se propagent avec des vitesses $\theta_1$ et $\theta_2$, tout en incorporant les effets d’interaction.
+Dans l’image de Bethe, les états propres sont des configurations stables de $N$ quasi-particules de rapidités $\theta_1,\dots,\theta_N$, dont les valeurs sont quantifiées par les conditions d’interactions imposées par les équations de \gls{BA}.
 
 
 
@@ -1304,8 +1320,8 @@ ce qui correspond au choix symétrique des nombres quantiques pour l’état fon
 
 \medskip
 
-Tous les nombres $I_a$ sont distincts. Cette propriété établit un lien direct avec un gaz de \textbf{fermions libres} en une dimension : bien que les particules du modèle de Lieb–Liniger soient bosoniques, la structure des équations de Bethe impose une exclusion effective au niveau des nombres quantiques. Pour cette raison, on parle de \textbf{nombres quantiques fermioniques}.  
-L’équation de Bethe \eqref{chap:1:eq:EBA} définit ainsi une bijection entre une configuration de rapidité $\{ \theta_a \}$ (\gls{BA}) et un ensemble de nombres quantiques $\{ I_a \}$ (\gls{FBA}) \cite{Girardeau_1960}.
+Tous les nombres $I_a$ sont distincts. Cette propriété établit un lien direct avec un gaz de \textbf{fermions libres} en une dimension : bien que les particules du modèle de \gls{LL} soient bosoniques, la structure des équations de \gls{BA} impose une exclusion effective au niveau des nombres quantiques. Pour cette raison, on parle de \textbf{nombres quantiques fermioniques}.  
+L’équation de \gls{BA} \eqref{chap:1:eq:EBA} définit ainsi une bijection entre une configuration de rapidité $\{ \theta_a \}$ (\gls{BA}) et un ensemble de nombres quantiques $\{ I_a \}$ (\gls{FBA}) \cite{Girardeau_1960}.
 
 
 \medskip
@@ -1322,9 +1338,10 @@ L’interprétation est alors la suivante : les solutions de Bethe ${ \theta_a }
 
 \subsubsection{Interprétation physique}
 
-Les équations de Bethe~\eqref{chap:1:eq:EBA} représentent une {\em quantification des pseudo‑impulsions $\theta_a$} des particules en interaction, résultant d’un {\em interféromètre multi‑corps sur le cercle} : chaque particule accumule une phase $e^{i \theta_a L}$ due au mouvement libre, ainsi que des phases de diffusion lorsqu’elle croise les autres.
+Les équations de \gls{BA}~\eqref{chap:1:eq:EBA} représentent une {\em quantification des pseudo‑impulsions $\theta_a$} des particules en interaction, résultant d’un {\em interféromètre multi‑corps sur le cercle} : chaque particule accumule une phase $e^{i \theta_a L}$ due au mouvement libre, ainsi que des phases de diffusion lorsqu’elle croise les autres.
 
-Ce système d'équations détermine les états propres du système de \gls{LL}  en volume fini, et joue un rôle fondamental dans la description exacte de ses propriétés thermodynamiques et dynamiques.
+Ce système d’équations non linéaires couple toutes les rapidités $\theta_a$ entre elles via la fonction de phase de diffusion $\Phi(\theta_a - \theta_b)$, qui encode les interactions à deux corps. La résolution de ces équations permet de déterminer les valeurs permises des rapidités $\theta_a$, et donc les états propres du système.
+Ce système d'équations détermine les états propres du système de \acrlong{LL}  en volume fini, et joue un rôle fondamental dans la description exacte de ses propriétés thermodynamiques et dynamiques.
 
 
 \subsection{Thermodynamique du gaz de Lieb–Liniger à l'état fondamental}
@@ -1337,15 +1354,15 @@ où \( n \) désigne la densité linéique de particules.
 
 \medskip
 
-Considérons désormais le système à température nulle. L’état fondamental dans le secteur à nombre de particules fixé correspond à la configuration d’énergie minimale parmi les solutions des équations de Bethe \eqref{chap:1:eq:EBA}.
+Considérons désormais le système à température nulle. L’état fondamental dans le secteur à nombre de particules fixé correspond à la configuration d’énergie minimale parmi les solutions des équations de \gls{BA} \eqref{chap:1:eq:EBA}.
 
-Dans la limite thermodynamique $(\underset{\mathrm{\tiny therm}}{\lim} \equiv \underset{\underset{ N/L = \mathrm{cnst}}{L,N \to \infty,\infty}}{\lim} )$ , les valeurs de \( \theta_a \) deviennent quasi-continues, avec un espacement \( \theta_{a+1} - \theta_a = \mathcal{O}(1/L) \), et se condensent dans un intervalle symétrique autour de zéro $[-\theta_{\mbox{\tiny max}} , \theta_{\mbox{\tiny max}} ]$ . En supposant l'ordre \( I_a \geq I_b  \) implique \(\theta_a \geq \theta_b \), cet intervalle constitue ce qu'on appelle la {\em mer de Fermi} (ou sphère de Fermi en dimension un).
+Dans la limite thermodynamique $(\underset{\mathrm{\tiny therm}}{\lim} \equiv \underset{\underset{ N/L = \mathrm{cnst}}{L,N \to \infty,\infty}}{\lim} )$ , les valeurs de \( \theta_a \) deviennent quasi-continues, avec un espacement \( \theta_{a+1} - \theta_a = \mathcal{O}(1/L) \), et se condensent dans un intervalle symétrique autour de zéro $[-\theta_{\mbox{\tiny max}} , \theta_{\mbox{\tiny max}} ]$. En supposant que l'ordre \( I_a \geq I_b  \) implique que \(\theta_a \geq \theta_b \), cet intervalle constitue ce qu'on appelle la {\em mer de Fermi} (ou sphère de Fermi en dimension un).
 
 \medskip
 
 \paragraph{Distribution de rapidité $\rho(\theta)$.}
 
-Nous introduisons la {\bf distribution de rapidité macroscopique} par unité de longueur, notée \( \rho(\theta) \), et définie par
+Nous introduisons la {\bf distribution de rapidité macroscopique} par unité de longueur, notée \( \rho(\theta) \), définie par
 \begin{eqnarray}
 	L \rho(\theta) \delta \theta & \doteq & \mbox{nombre de quasi-particules ayant une rapidité dans } [\theta , \theta + \delta \theta].	
 \end{eqnarray}
@@ -1353,14 +1370,15 @@ Autrement dit, dans un petit intervalle $\delta \theta $, le nombre total de par
 \begin{eqnarray}\label{chap.1:eq.dN.1}
 	\delta N (\theta ) & = & L \rho (\theta) \delta \theta 	
 \end{eqnarray}
-Avec les rapiditées $\theta_a$ ordonnées \ie $\theta_1 < \theta_1 < \cdots < \theta_N$. Pour des intervalles $[\theta_a , \theta_a + \delta \theta_a]$ assez petits $\delta \theta_a = \theta_{a+1} - \theta_a$, est correspond à $\delta N (\theta_a) = 1 $ quasi-particule (car une seule particule occupe l’intervalle entre deux rapidités consécutives). Dans la limite thermodynamique la dernière équation \eqref{chap.1:eq.dN.1} se réécrit comme :
+Avec les rapiditées $\theta_a$ ordonnées \ie $\theta_1 < \theta_1 < \cdots < \theta_N$. Pour des intervalles $[\theta_a , \theta_a + \delta \theta_a]$ assez petits $\delta \theta_a = \theta_{a+1} - \theta_a$, ce qui correspond à $\delta N (\theta_a) = 1 $ quasi-particule (car une seule particule occupe l’intervalle entre deux rapidités consécutives). Dans la limite thermodynamique la dernière équation \eqref{chap.1:eq.dN.1} se réécrit comme :
 \begin{eqnarray}
 	\rho(\theta_a) & = & \underset{\mathrm{\tiny therm}}{\lim} \frac{1}{L} \cdot \frac{1}{\theta_{a+1} - \theta_a} > 0.
 \end{eqnarray}
 On peut aussi écrire la distribution de rapidité sous la forme :
 \begin{eqnarray}\label{chap.1:eq.rho.111111}
-	\rho(\theta) & = & \underset{\mathrm{\tiny therm}}{\lim} \frac{1}{L} \sum_{a = 1}^N \delta ( \theta - \theta_a ) .	
+	\rho(\theta) & = & \underset{\mathrm{\tiny therm}}{\lim} \frac{1}{L} \sum_{a = 1}^N \delta ( \theta - \theta_a ),	
 \end{eqnarray}
+où $\delta(\cdot)$ est la distribution delta de Dirac.
 
 \medskip
 
@@ -1374,7 +1392,7 @@ soit en notant la fonction \( I(\theta_a) = I_a \), le passage discret-continu p
 \begin{eqnarray}
 	2\pi \rho_s(\theta_a) &=&  \frac{2\pi}{L} \frac{\partial I}{\partial \theta}(\theta_a).
 \end{eqnarray}
-L’application des équations de Bethe sous forme logarithmique \eqref{chap:1:eq:EBA} conduit alors à
+L’application des équations de \gls{BA} sous forme logarithmique \eqref{chap:1:eq:EBA} conduit alors à
 \begin{eqnarray}\label{chap1:eq:rho.s.1}
 	2\pi \rho_s(\theta_a) = 1 + \frac{1}{L} \sum_{b = 1}^N \Delta(\theta_a - \theta_b),
 \end{eqnarray}
@@ -1385,8 +1403,7 @@ ce qui relie \( \rho_s \) au déplacement collisionel \( \Delta \) défini dans 
     \centering
     \includegraphics[width=1.1\textwidth , page = 3 ]{figures/01_LL_BA/Figures.pdf}
     \caption{
-	Illustration de la relation entre la densité d’états $\rho_s(\theta)$ et les nombres quantiques fermioniques $I_a$.
-    Rapiditées dans l’intervalle $[\theta, \theta + \delta\theta]$ s’associent à un ensemble de nombres quantiques fermioniques situés dans $[I, I + \delta I]$. La densité d’états $\rho_s$ se déduit alors de la relation $\delta I \simeq L \rho_s(\theta) \delta \theta $
+	Illustration de la relation entre la densité d’états $\rho_s(\theta)$ et les nombres quantiques fermioniques $I_a$. Les rapiditées dans l’intervalle $[\theta, \theta + \delta\theta]$ s’associent à un ensemble de nombres quantiques fermioniques situés dans $[I, I + \delta I]$. La densité d’états $\rho_s$ se déduit alors de la relation $\delta I \simeq L \rho_s(\theta) \delta \theta $
     }
     \label{fig:rho_s.I}
 \end{figure}
@@ -1405,7 +1422,7 @@ La quantité \( L \rho(\theta) d\theta \) représente le nombre de rapidités da
 \(
 	N = L \int_{-\theta_{\mbox{\tiny max}}}^{+\theta_{\mbox{\tiny max}}} \rho(\theta)\, d\theta
 \)
-donne le nombre total de particules dans le système. Le passage de la somme discrète à l'intégrale dans le second membre de l'équation de Bethe s'effectue en utilisant la correspondance:
+donne le nombre total de particules dans le système. Le passage de la somme discrète à l'intégrale dans le second membre de l'équation de \gls{BA} s'effectue en utilisant la correspondance:
 \begin{eqnarray}
 	\frac{1}{L} \sum_{b = 1}^N \Delta(\theta_a - \theta_b) \underset{\text{\tiny therm}}{\longrightarrow }\int_{-\theta_{\mbox{\tiny max}}}^{+\theta_{\mbox{\tiny max}}} \Delta(\theta_a - \theta)\, \rho(\theta)\, d\theta.
 \end{eqnarray}
@@ -1413,7 +1430,7 @@ Ainsi, l'équation pour la densité d'états \eqref{chap1:eq:rho.s.1} devient (F
 \begin{eqnarray}\label{chap.1.rho.s.2}
 	2\pi \rho_s(\theta) = 1 + \int_{-\theta_{\mbox{\tiny max}}}^{+\theta_{\mbox{\tiny max}}} \Delta(\theta - \theta')\, \rho(\theta')\, d\theta',
 \end{eqnarray}
-et, comme \( \rho = \rho_s \), à l'état fondamental, on obtient l’équation linéaire intégrale satisfaite par la distribution de rapidités :
+et, comme \( \rho = \rho_s \) dans  l'état fondamental, on obtient l’équation linéaire intégrale satisfaite par la distribution de rapidités dans cet état :
 \begin{eqnarray}\label{chap.1.rho.3}
 	\rho(\theta) - \int_{-\theta_{\mbox{\tiny max}}}^{+\theta_{\mbox{\tiny max}}} \frac{\Delta(\theta - \theta')}{2\pi} \rho(\theta')\, d\theta' = \frac{1}{2\pi}.
 \end{eqnarray}
@@ -1424,12 +1441,12 @@ et, comme \( \rho = \rho_s \), à l'état fondamental, on obtient l’équation 
 À partir de l’état fondamental dans le régime d’interaction forte, les excitations élémentaires du modèle de \gls{LL} ont été classifiées par Lieb en deux types distincts~\cite{LL_1963_2}. Ces excitations peuvent être comprises comme des perturbations de la mer de Fermi formée par les quasi-particules.
 
 \begin{itemize}[label = $\bullet$]
-    \item \textbf{Excitations de type I :} Il s'agit de remplacer une quasi-particule avec un nombre fermionique au bord de Fermi $I_{N}$ (ou $I_{-N}$) par une quasi-particule avec un nombre fermionique $I'> I_N$ (resp.$I' <I_{-N}$), c’est-à-dire au-delà du bord de la mer de Fermi (voir Fig \ref{fig:fermi_excitations}(b)). Ces excitations sont analogues à des excitations de particules libres et, dans la limite des faibles interactions ($g \to 0$), leur relation de dispersion reproduit celle prédite par la théorie de Bogoliubov .
+    \item \textbf{Excitations de type I :} Il s'agit de remplacer une quasi-particule avec un nombre fermionique au bord de Fermi $I_{N}$ (ou $I_{-N}$) par une quasi-particule avec un nombre fermionique $I'> I_N$ (resp.$I' <I_{-N}$), c’est-à-dire au-delà du bord de la mer de Fermi (voir Fig \ref{fig:fermi_excitations}(b)). Ces excitations sont analogues à des excitations de particules libres et, dans la limite des faibles interactions ($g \to 0$), leur relation de dispersion reproduite celle prédite par la théorie de Bogoliubov.
 
-    \item \textbf{Excitations de type II :} Ces excitations sont de type particule-trou. Elles sont obtenues en remplaçant une quasi-particule de la mer de Fermi avec une nombre fermionique $I_a$ (\ie, en créant un trou dans l’état fondamental) et de le remplacer par une quasi-particule avec $I' = I_{N+1} = N/2$ ou $I' = I_{N-1} = -N/2$ et en réarrangeant les autres nombres fermionique (voir Fig \ref{fig:fermi_excitations}(c) ). Cela correspond à une excitation interne  pseudo-mer de Fermi, avec conservation du nombre de particules. Pour de petits $I'$, la dispersion est linéaire, correspondant à des modes phononiques. Dans la limite d’interaction faible \( g \to 0 \), ces excitations peuvent être interprétées comme des solitons sombres~\cite{Ishikawa1980SolitonsIA,Karpiuk_2015}.
+    \item \textbf{Excitations de type II :} Ces excitations sont de type particule-trou. Elles sont obtenues en remplaçant une quasi-particule de la mer de Fermi avec un nombre fermionique $I_a$ (\ie, en créant un trou dans l’état fondamental) et de le remplacer par une quasi-particule avec $I' = I_{N+1} = N/2$ ou $I' = I_{N-1} = -N/2$ et en réarrangeant les autres nombres fermionique (voir Fig \ref{fig:fermi_excitations}(c)). Cela correspond à une excitation interne  pseudo-mer de Fermi, avec conservation du nombre de particules. Pour de petits $I'$, la dispersion est linéaire, correspondant à des modes phononiques. Dans la limite d’interaction faible \( g \to 0 \), ces excitations peuvent être interprétées comme des solitons sombres~\cite{Ishikawa1980SolitonsIA,Karpiuk_2015}.
 \end{itemize}
 
-Ces deux types d’excitations définissent ensemble le spectre complet du modèle de Lieb-Liniger et permettent d’accéder aux propriétés dynamiques du système, telles que les fonctions de réponse ou la structure du spectre d’énergie.
+Ces deux types d’excitations définissent ensemble le spectre complet du modèle de \gls{LL} et permettent d’accéder aux propriétés dynamiques du système, telles que les fonctions de réponse ou la structure du spectre d’énergie.
 
 \paragraph{Équation de Bethe continue.}
 
@@ -1629,7 +1646,7 @@ ce qui n’est autre que la relation~\eqref{eq:TBA-rhos}.
 
 \section*{Conclusion du chapitre}
 
-Dans ce chapitre, nous avons introduit le modèle de \acrfull{LL} , qui décrit un gaz de bosons unidimensionnel soumis à une interaction de contact. Dans ce cadre, les grandeurs conservées naturelles ne sont pas seulement le nombre total de particules $\operator{Q}$ et la quantité de mouvement totale $\operator{P}$, mais également l’énergie associée à l’Hamiltonien \gls{LL}, $\operator{H}$, (plutôt qu’à la simple énergie cinétique $\operator{K}$). Ces charges conservées correspondent respectivement aux moments d’ordre $0$, $1$ et $2$ en rapidité. Comme nous le verrons au chapitre suivant, des charges d’ordre supérieur interviennent dans la description des états en équilibre, notamment via le \gls{GGE}.
+Dans ce chapitre, nous avons introduit le modèle de \acrfull{LL}, qui décrit un gaz de bosons unidimensionnel soumis à une interaction de contact. Dans ce cadre, les grandeurs conservées naturelles ne sont pas seulement le nombre total de particules $\operator{Q}$ et la quantité de mouvement totale $\operator{P}$, mais également l’énergie associée à l’Hamiltonien \gls{LL}, $\operator{H}$, (plutôt qu’à la simple énergie cinétique $\operator{K}$). Ces charges conservées correspondent respectivement aux moments d’ordre $0$, $1$ et $2$ en rapidité. Comme nous le verrons au chapitre suivant, des charges d’ordre supérieur interviennent dans la description des états en équilibre, notamment via l'Ensemble de Gibbs Généralisé (\gls{GGE}).
 
 \medskip
 
@@ -1637,6 +1654,6 @@ L’imposition de conditions aux bords périodiques conduit naturellement aux é
 
 \medskip
 
-Le chapitre suivant sera consacré à l’introduction du \gls{GGE} et à l’écriture explicite du formalisme de Bethe Ansatz thermodynamique  (\acrshort{TBA}), qui fournit un cadre puissant pour décrire les propriétés thermodynamiques et hors équilibre des systèmes intégrables.
+Le chapitre suivant sera consacré à l’introduction du \gls{GGE} et à l’écriture explicite du formalisme de Bethe Ansatz thermodynamique  (\acrfull{TBA}), qui fournit un cadre puissant pour décrire les propriétés thermodynamiques et hors équilibre des systèmes intégrables.
 
 
