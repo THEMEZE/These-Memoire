@@ -31,12 +31,12 @@ Ces charges supplémentaires permettent alors de définir les moyennes d’obser
 %Nous considérons un régime thermodynamique macroscopique à température finie (ou plus précisément à entropie de Yang–Yang finie), correspondant à des états hautement excités du spectre mais encore décrits exactement par le formalisme intégrable.
 
 %Dans la section suivante, nous poserons les bases nécessaires à la description quantitative de ces états stationnaires dans le cadre du formalisme de Bethe Ansatz thermodunamique la \glsreset{TBA}\gls{TBA}), introduite initialement par Yang et Yang \cite{YangYang_1969} pour étendre le Bethe Ansatz au régime thermodynamique au-delà de l’état fondamental.
-Dans la section suivante, nous poserons les bases nécessaires à la description quantitative de ces états stationnaires dans le cadre du formalisme du Bethe Ansatz thermodynamique (\glsreset{TBA}\gls{TBA}), introduit initialement par Yang et Yang \cite{YangYang_1969} afin d’étendre le Bethe Ansatz au régime thermodynamique, au‑delà de l’état fondamental.
+Dans la section suivante, nous poserons les bases nécessaires à la description quantitative de ces états stationnaires dans le cadre du formalisme du Bethe Ansatz thermodynamique (\glsreset{TBA}\gls{TBA}), introduit initialement par Yang et Yang \cite{YangYang_1969} afin d’étendre le \gls{BA} au régime thermodynamique, au‑delà de l’état fondamental.
  Nous considérerons un régime macroscopique à température finie (ou, plus précisément, à entropie de Yang–Yang finie), correspondant à des états hautement excités du spectre, mais toujours décrits exactement grâce à l’intégrabilité du modèle.
 
 %Ce chapitre dans une première section nous introduit l'{\bf Ensemble Thermodynamique Généralisé}. Pour la fluidité nous commençons par revenir la notion d'opérateur à un corps en puissance de quantitté de pouvement pour une particule $\operateur{p}$ , introduite dans le chapitre precedent (\ref{chap:LL-BA}) dans l'equation \eqref{chap.1:eq.rapel.opp.1.second.3}. Ce qui permet de se dire que l'on peut écrire d'autre charge que les nombre totale de particule, la quantitié totale de mouvement ou autre que l'énerge cinétique totale d'écrit en puissence avec des puissance de $\operator{p}$. Cest chardhe introduite nous pouvent definir les moyenne des observable. 
 %Sans la section suivente nous  poserons les fondations nécessaires à la description de ces états stationnaires dans le cadre de la \textbf{thermodynamique de Bethe} (TBA), qui généralise l’analyse au-delà de l’état fondamental.  
-%Nous considérons ici un régime macroscopique à température (ou entropie de Yang-Yang) finie, correspondant à des états hautement excités du spectre, mais toujours décrits dans le formalisme intégrable exact.
+%Nous considérons ici un régime macroscopique à température (ou entropie de \gls{YY}) finie, correspondant à des états hautement excités du spectre, mais toujours décrits dans le formalisme intégrable exact.
 
 %Notre point de départ est la relation constitutive entre la \emph{densité de quasi-particules} (ou \emph{rapidités}) $\rho(\theta)$ et la \emph{densité d’états} disponibles $\rho_s(\theta)$, qui encode le spectre accessible en présence d’interactions.  
 %Nous introduisons ensuite une opération clé de la TBA, appelée \emph{habillage} (\emph{dressing}), qui intervient systématiquement dans le calcul des observables physiques et permet de prendre en compte de manière non perturbative les effets des interactions.  
@@ -57,7 +57,7 @@ Dans la section suivante, nous poserons les bases nécessaires à la description
 \subsection{Introduction à l'Équilibre de Gibbs Généralisé}
 
 
-\paragraph{Configuration des états.}\label{sec:config-etats}.
+\paragraph{Configuration des états.}\label{sec:config-etats}
 On désigne par $\boldsymbol{\{ \theta_a \}}\equiv \{ \theta_1 , \cdots , \theta_{N} \}$ la \emph{configuration de rapidités} caractérisant un état propre à $N\!\equiv\!N(\{ \theta_a \})$ particules – le nombre de particules n’est donc pas fixé \emph{a priori} mais dépend de la configuration.  
 L’état propre correspondant est noté $\ket{\{ \theta_a \}}\;=\;\ket{\{\theta_1,\dots,\theta_N \}}$.
 
@@ -74,7 +74,7 @@ L’état propre correspondant est noté $\ket{\{ \theta_a \}}\;=\;\ket{\{\theta
     rightmargin=2pt
 	]
 \paragraph{Rappel : Observables diagonales dans la base des états propres.}
-Dans le chapitre précédent (\ref{chap:LL-BA}), on a vu que l'état $\ket{\{ \theta_a \}}$ associé à cette configuration est un état propre des observables nombre d'atome, quantité de mouvement  et  énergie totale \eqref{chap1:eq.Q.P.K.theta.1}. Ces observables sont diagonales dans la base des états propres :
+Dans le chapitre précédent (\ref{chap:LL-BA}), on a vu que l'état $\ket{\{ \theta_a \}}$ associé à cette configuration est un état propre des observables nombres d'atome, quantité de mouvement  et  énergie totale \eqref{chap1:eq.Q.P.K.theta.1}. Ces observables sont diagonales dans la base des états propres :
 \begin{eqnarray}
 	\operator{Q}  =  \sum_{ \{\theta_a\} } \left ( \sum_{a = 1}^{N}  1 \right )  \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \}\vert, \, 
 	\operator{P}  =  \sum_{\{ \theta_a\}}\left( \sum_{a = 1}^{N}  \theta_a \right )   \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \}\vert,\,\operator{H}  =  \sum_{\{ \theta_a\}}\left ( \sum_{a = 1}^{N} \frac{\theta_a^2}{2} \right )   \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \}\vert.\label{chap.2.gge.1}		
@@ -120,19 +120,38 @@ avec $ \sum_{\{ \theta_a\}}$ une somme sur tous les états de Bethe.\\
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\paragraph{Contexte et GGE dans les systèmes intégrables.}
+%\paragraph{Contexte et GGE dans les systèmes intégrables.}
 
-Dans un système quantique {\bf intégrable}, il existe une infinité de charges conservées locales $\operator{Q}_i$ commutant entre elles et avec l’Hamiltonien $\operator{H}$  \cite{rigol2007relaxation, rigol2007}. Concrètement, chaque charge se présente sous la forme $\operator{Q}_i = \int dx \,\operator{q}_i(x)$, où $\operator{q}_i(x)$ est une densité d’observable locale à support borné \footnote{Dans le chapitre suivant \ref{chap:GHD}, nous développerons davantage $\operator{q}_i(x)$ à l’échelle mésoscopique et en hydrodynamique. Dans ce chapitre, nous nous limitons à la thermodynamique, mais je le mentionne ici pour introduire le formalisme.} . L’intégrabilité implique une caractérisation complète des états propres par un ensemble de paramètres (rapidités $\{\theta_j\}$ dans le modèle de \gls{LL}) \cite{Nardis_2016}. En particulier, contrairement aux systèmes génériques, un système intégrable ne thermalise pas au sens canonique classique, car la présence de toutes ces contraintes empêche l’oubli des conditions initiales. Les points clés sont alors :
+%Dans un système quantique {\bf intégrable}, il existe une infinité de charges conservées locales $\operator{Q}_i$ commutant entre elles et avec l’Hamiltonien $\operator{H}$  \cite{rigol2007relaxation, rigol2007}. Concrètement, chaque charge se présente sous la forme $\operator{Q}_i = \int dx \,\operator{q}_i(x)$, où $\operator{q}_i(x)$ est une densité d’observable locale à support borné \footnote{Dans le chapitre suivant \ref{chap:GHD}, nous développerons davantage $\operator{q}_i(x)$ à l’échelle mésoscopique et en hydrodynamique. Dans ce chapitre, nous nous limitons à la thermodynamique, mais je le mentionne ici pour introduire le formalisme.} . L’intégrabilité implique une caractérisation complète des états propres par un ensemble de paramètres (rapidités $\{\theta_j\}$ dans le modèle de \gls{LL}) \cite{Nardis_2016}. 
 
+%En particulier, contrairement aux systèmes génériques, un système intégrable ne thermalise pas au sens canonique classique, car la présence de toutes ces contraintes empêche l’oubli des conditions initiales. Les points clés sont alors :
+
+\paragraph{Contexte et \gls{GGE} dans les systèmes intégrables.}
+
+Dans un système quantique {\bf intégrable}, il existe une infinité de charges conservées locales $\operator{Q}_i$ qui commutent entre elles ainsi qu’avec l’Hamiltonien $\operator{H}$~\cite{rigol2007relaxation, rigol2007}. Plus précisément, chaque charge peut s’écrire sous la forme $\operator{Q}_i = \int dx\, \operator{q}_i(x)$, où $\operator{q}_i(x)$ désigne une densité locale à support borné\footnote{Dans le chapitre suivant ~\ref{chap:GHD}, nous reviendrons sur la structure de $\operator{q}_i(x)$ à l’échelle mésoscopique et dans un cadre hydrodynamique. Dans le présent chapitre, nous nous limitons à la description thermodynamique, mais il est utile d’introduire dès maintenant cette notation afin de préparer le formalisme.}. L’intégrabilité assure alors une description complète des états propres à partir d’un ensemble de paramètres continus, les rapidités $\{\theta_j\}$ dans le modèle de \gls{LL}~\cite{Nardis_2016}.
+
+\subparagraph{Relaxation non canonique et \gls{GGE}.}
+
+Un point essentiel est que, contrairement à un système quantique générique, un système intégrable ne thermalise pas au sens usuel du terme. En effet, la présence d’un nombre infini de contraintes de conservation empêche l’effacement complet des conditions initiales : la dynamique hors équilibre demeure fortement contrainte, même à très long temps. Cette propriété modifie profondément les mécanismes de relaxation et appelle une description statistique adaptée. Les éléments clés sont alors les suivants :
+
+
+% \begin{itemize}[label = $\bullet$]
+% 	\item {\bf Charges conservées} : infinité de locales $\operator{Q}_i$ satisfaisant $[\operator{Q}_i , \operator{H} ] = 0$ et $[\operator{Q}_i , \operator{Q}_j ] = 0$.
+% 	\item {\bf Densités locales} : chaque $\operator{Q}_i$ s’écrit $\operator{Q}_i = \int_\mathbb{R} dx \, \operator{q}_i(x)$ avec $\operator{q}_i(x)$ à support fini (\ie  $\operator{q}_i(x)$ est nulle pour pour $x$ en dehors d'une certain suport $\mathcal{S}$ de $\mathbb{R}$ ( \ie $x \in \mathbb{R} \backslash \mathcal{S}$ avec $\subset \mathbb{R}$  ). 
+% 	\item {\bf Relaxation non canonique} : après un {\em quench} (changement brutal de paramètre), le système évolue vers un état stationnaire qui n’est pas décrit par l’ensemble canonique habituel.
+% \end{itemize}
 \begin{itemize}[label = $\bullet$]
-	\item {\bf Charges conservées} : infinité de locales $\operator{Q}_i$ satisfaisant et $[\operator{Q}_i , \operator{H} ] = 0$ et $[\operator{Q}_i , \operator{Q}_j ] = 0$.
-	\item {\bf Densités locales} : chaque $\operator{Q}_i$ s’écrit $\operator{Q}_i = \int_\mathbb{R} dx \, \operator{q}_i(x)$ avec $\operator{q}_i(x)$ à support fini.
-	\item {\bf Relaxation non canonique} : après un {\em quench} (changement brutal de paramètre), le système évolue vers un état stationnaire qui n’est pas décrit par l’ensemble canonique habituel.
+    \item {\bf Charges conservées} : existence d’une infinité de charges locales $\operator{Q}_i$ satisfaisant $[\operator{Q}_i , \operator{H}] = 0$ et $[\operator{Q}_i , \operator{Q}_j] = 0$.
+    
+    \item {\bf Densités locales} : chaque charge s’écrit sous la forme $\operator{Q}_i = \int_{\mathbb{R}} dx\, \operator{q}_i(x)$, où $\operator{q}_i(x)$ est une densité locale à support fini (\ie{} il existe un ensemble borné $\mathcal{S} \subset \mathbb{R}$ tel que $\operator{q}_i(x)=0$ pour tout $x \notin \mathcal{S}$).
+    
+    \item {\bf Relaxation non canonique} : après un {\em quench} (variation brutale d’un paramètre), le système évolue vers un état stationnaire qui n’est pas décrit par l’ensemble canonique standard.
 \end{itemize}
+
 
 \medskip
 
-Pour décrire cet état, on introduit le \gls{GGE} \cite{rigol2007relaxation}, ont montré qu’une « extension naturelle de l’ensemble de Gibbs aux systèmes intégrables » prédit correctement les valeurs moyennes des observables après relaxation.  
+Pour décrire cet état, on introduit le \gls{GGE} \cite{rigol2007relaxation}, où il est montré qu’une « extension naturelle de l’ensemble de Gibbs aux systèmes intégrables » prédit correctement les valeurs moyennes des observables après relaxation.  
 
 \smallskip
 
@@ -149,11 +168,11 @@ où $\beta_i \in \mathbb{R}$ sont les multiplicateurs de Lagrange (ou « tempér
  \medskip
 
  \subparagraph{Interprétation des multiplicateurs de Lagrange.}
-Les multiplicateurs de Lagranges $\beta_i$ apparaissent naturellement lors de la maximisation de l'entropie sous contraintes, par exemple dans le formalisme du \gls{GGE}, oû il imposent la conservation des valeurs moyennes des charges $\langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} = \bm{\mathrm{Tr}}[\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}} \operator{Q}_i^{(\mathcal{S})}]   $.
+Les multiplicateurs de Lagrange $\beta_i$ apparaissent naturellement lors de la maximisation de l'entropie sous contraintes, par exemple dans le formalisme du \gls{GGE}, où ils imposent la conservation des valeurs moyennes des charges $\langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} = \bm{\mathrm{Tr}}[\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}} \operator{Q}_i^{(\mathcal{S})}]   $.
 
 \medskip
 
-En résumé, le \gls{GGE} généralise les ensembles canoniques standard : au lieu de retenir uniquement l’énergie, on impose la conservation de l’ensemble complet $\{\operator{Q}_i \}$. Cette construction rend compte du fait que, dans un système intégrable, les observables locaux convergent vers les valeurs moyennes calculées par $\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}$, et non vers celles d’un Gibbs thermique ordinaire \cite{Nardis_2016,rigol2007relaxation}. On comprend ainsi pourquoi la {\em thermalisation habituelle} (canonique ou micro-canonique) échoue : seul l’ensemble de Gibbs généralisé peut intégrer toutes les contraintes locales.
+En résumé, le \gls{GGE} généralise les ensembles canoniques standard : au lieu de retenir uniquement l’énergie, on impose la conservation de l’ensemble complet $\{\operator{Q}_i \}$. Cette construction rend compte du fait que, dans un système intégrable, les observables locaux convergent vers les valeurs moyennes calculées par $\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}$, et non vers celles d’un ensemble de Gibbs (gls{GE}) thermique ordinaire \cite{Nardis_2016,rigol2007relaxation}. On comprend ainsi pourquoi la {\em thermalisation habituelle} (canonique ou micro-canonique) échoue : seul le \gls{GGE} peut intégrer toutes les contraintes locales.
 
 \medskip
 
@@ -169,17 +188,53 @@ En résumé, le \gls{GGE} généralise les ensembles canoniques standard : au li
     rightmargin=2pt
 	]
 \paragraph{Rappel sur le modèle de \gls{LL} et distribution de rapidités.}
-Comme rappelé au chapitre précédent, {\bf le modèle de  \gls{LL}} (gaz bosonique 1D à interactions de contact) est un exemple paradigmatique d’un système intégrable \cite{Nardis_2016}. Ses états propres sont caractérisés par un ensemble de $N$  rapidités $\{ \theta_a \}$, qui jouent le rôle de quasi-moments ({\bf Bethe ansatz}). Dans ce contexte, l’état macroscopique du gaz après relaxation unitaire est entièrement déterminé par la {\bf distribution des rapidités}. Formellement, on définit $\rho(\theta)$ la distribution intensive des rapidités telle que $\rho(\theta) d \theta$ donne le nombre de particules par unité de longueur ayant une rapidité dans la cellule $[\theta , \theta + d \theta ] $.
+Comme rappelé au chapitre précédent, {\bf le modèle de  \gls{LL}} (gaz bosonique 1D à interactions de contact) est un exemple paradigmatique d’un système intégrable \cite{Nardis_2016}. Ses états propres sont caractérisés par un ensemble de $N$  rapidités $\{ \theta_a \}$, qui jouent le rôle de quasi-moments ({\bf \gls{BA}}). Dans ce contexte, l’état macroscopique du gaz après relaxation unitaire est entièrement déterminé par la {\bf distribution des rapidités}. Formellement, on définit $\rho(\theta)$ la distribution intensive des rapidités telle que $\rho(\theta) d \theta$ donne le nombre de particules par unité de longueur ayant une rapidité dans la cellule $[\theta , \theta + d \theta ] $.
 
 \medskip
 
-Cette {\bf  distribution de rapidités } est d’autant plus pertinente qu’elle est {\em accessible expérimentalement}. En effet, lorsque le gaz bosonique 1D est libéré et que l'on laisse s'étaler longitudinalement, la distribution asymptotique des vitesses des atomes coïncide avec la distribution initiale des rapidités \cite{Nardis_2017}. %Autrement dit, la GGE prédit un profil de vitesses observables en laboratoire. Léa Dubois souligne dans sa thèse que " la distribution de rapidités est la distribution asymptotique des vitesses des atomes après une expansion dans le guide 1D ", et qu’elle peut être extraite par l’hydrodynamique généralisée \cite{Nardis_2017}. \\
+Cette {\bf distribution de rapidités} $\rho(\theta)$ est une fonction macroscopique caractérisant l’état d’équilibre local du gaz après relaxation. Elle est particulièrement pertinente car elle encode l’ensemble des observables locales du système, telles que la densité, l’énergie ou encore les fonctions de corrélation. En effet, dans le cadre de la \gls{TBA} (section suivante), toutes les grandeurs physiques peuvent s’exprimer en fonction de $\rho(\theta)$ et de la densité d’états associée $\rho_s(\theta)$.
+
+% \smallskip
+
+% Attention les rapiditées sont homagène  à des vitesse mais ce ne sont pas les vitesste des particule mais le vitesses dans quasi-particule. En particulier la distribution de vitesse des particules n'est pas la distrubuttion des de rapidités. Mais pas dans la situation suivante.
+
+% \smallskip
+
+% Si un prépare une systéme quantique de bosons 1D décrit pas le modèle de \gls{LL} dans un état initial hors d'équilibre. Ce systéme est d'écrit par un certaint état quantique. Puis on le le laisse évoluier de manier unidimantionnelle. Au début d'une évolution unidimensionnel , les quasi-particules sont proches et interagissent. Ce qui ce manifester du fais que leurs vitesses changes. Mais apres une longs temps les posont sont assez elongnet entre eux pours ne plus interagier. Dans cette limite les vitesse des bosonss sint assymptotique au vitesses rapidité. 
+
+% \smallskip
+
+% Donc un aspect remarquable est que cette distribution est également {\em accessible expérimentalement}. Lorsqu’un gaz bosonique unidimensionnel est libéré et s’étend longitudinalement, la distribution asymptotique des vitesses des atomes coïncide avec la distribution initiale des rapidités~\cite{Nardis_2017,bezzaz2023rapiditydistributiondefocusingnonlinear}. 
+
+\smallskip
+
+Il est important de souligner que les rapidités, bien qu’homogènes à des vitesses, ne coïncident pas avec les vitesses instantanées des particules : elles paramètrent les vitesses des quasi-particules du modèle intégrable. En général, la distribution des vitesses réelles des atomes n’est donc pas identique à la distribution de rapidités.
+
+\smallskip
+
+Cependant, une situation particulière permet d’établir un lien direct entre les deux. Considérons un gaz de bosons unidimensionnel décrit par le modèle de \gls{LL}, préparé dans un état initial hors d’équilibre, puis laissé évoluer de manière strictement unidimensionnelle. Au début de l’évolution, les bosons restent proches les unes des autres et interagissent, ce qui se manifeste par des vitesses qui évoluent au cours du temps. En revanche, après un temps suffisamment long, le nuage s’est suffisamment dilaté pour que les atomes soient mutuellement distants et que les interactions deviennent négligeables. Dans cette limite dite {\em asymptotique}, les vitesses réelles des particules coïncident avec les rapidités des quasi-particules.
+
+\smallskip
+
+Ainsi, un aspect remarquable est que la distribution de rapidités est {\em accessible expérimentalement}. Lorsqu’un gaz bosonique unidimensionnel est libéré et s’étend longitudinalement, la distribution asymptotique des vitesses observées en expansion correspond directement à la distribution initiale des rapidités~\cite{Nardis_2017,bezzaz2023rapiditydistributiondefocusingnonlinear}.
+
+ 
+%Autrement dit, la distribution de rapidités possède une interprétation directe en termes de vitesses mesurables en laboratoire. Comme le souligne Léa Dubois dans sa thèse, «\,la distribution de rapidités est la distribution asymptotique des vitesses des atomes après une expansion dans le guide 1D\,», et elle peut être extraite à l’aide de l’hydrodynamique généralisée~\cite{Nardis_2017,bezzaz2023rapiditydistributiondefocusingnonlinear}. %Autrement dit, la GGE prédit un profil de vitesses observables en laboratoire. Léa Dubois souligne dans sa thèse que " la distribution de rapidités est la distribution asymptotique des vitesses des atomes après une expansion dans le guide 1D ", et qu’elle peut être extraite par l’hydrodynamique généralisée \cite{Nardis_2017}. \\
+%Cette {\bf  distribution de rapidités } est d’autant plus pertinente qu’elle est {\em accessible expérimentalement}. En effet, lorsque le gaz bosonique 1D est libéré et que l'on laisse s'étaler longitudinalement, la distribution asymptotique des vitesses des atomes coïncide avec la distribution initiale des rapidités \cite{Nardis_2017,bezzaz2023rapiditydistributiondefocusingnonlinear}. %Autrement dit, la GGE prédit un profil de vitesses observables en laboratoire. Léa Dubois souligne dans sa thèse que " la distribution de rapidités est la distribution asymptotique des vitesses des atomes après une expansion dans le guide 1D ", et qu’elle peut être extraite par l’hydrodynamique généralisée \cite{Nardis_2017}. \\
 
 \end{mdframed}
 
 \medskip
 
-Dans le \gls{GGE}, cette distribution macroscopique $\rho(\theta)$ est fixée par l’ensemble des charges conservées. Par exemple, on ajuste les $\beta_i$ de sorte que les valeurs moyennes $\langle \operator{Q}_i \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}$ correspondent aux valeurs initiales. Ce processus détermine donc la fonction $\rho(\theta)$ décrivant l’état d’équilibre local. Les observables locaux du gaz (densité, corrélations, etc.) en découlent alors via les équations de Bethe ansatz. 
+Dans le \gls{GGE}, cette distribution macroscopique $\rho(\theta)$ est fixée par l’ensemble des charges conservées. Par exemple, on ajuste les $\beta_i$ de sorte que les valeurs moyennes $\langle \operator{Q}_i \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}$ correspondent aux valeurs initiales. Ce processus détermine donc la fonction $\rho(\theta)$ décrivant l’état d’équilibre local. 
+
+% Les observables locaux du gaz (densité, corrélations, etc.) en découlent alors via les équations de \gls{BA}. 
+
+% Les observables locales du gaz (densité, énergie, fonctions de corrélation, etc.) s’en déduisent alors directement à partir des équations de \gls{BA}.
+
+
+Les observables locales du gaz (densité, énergie, fonctions de corrélation, etc.) s’en déduisent alors directement à partir des équations de \gls{BA}. 
+
 
 
 \subsection{Moyenne dans l'Équilibre de Gibbs Généralisé}
@@ -206,7 +261,10 @@ Les charges conservées locales $\operator{Q}_i^{(\mathcal{S})}$ sont diagonales
 \end{eqnarray}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Probabilité d’un état à rapidités fixées.}
-On peut alors définir la probabilité d’occurrence d’un état $\ket{\{ \theta_a \} }$ comme la moyenne de la matrice densité locale $\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}$ définie dans \eqref{chap.TBA.op.rho.S}:
+%On peut alors définir la probabilité d’occurrence d’un état $\ket{\{ \theta_a \} }$ comme la moyenne de la matrice densité locale $\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}$ définie dans \eqref{chap.TBA.op.rho.S}:
+
+On peut ainsi définir la probabilité d’occurrence d’un état propre caractérisé par un ensemble de rapidités $\ket{\{\theta_a\}}$ dans le \gls{GGE}. Celle-ci est donnée par la moyenne de la matrice densité locale $\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}$ définie en \eqref{chap.TBA.op.rho.S} :
+
 \begin{eqnarray}
 	\mathbb{P}^{(\mathcal{S})}_{\{ \theta_a \}}  & \equiv &  \langle \operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}} \rangle_{\{\theta_a \}}, \label{chap.TBA.P.1}\\
 	& = & 
@@ -215,7 +273,7 @@ On peut alors définir la probabilité d’occurrence d’un état $\ket{\{ \the
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Moyenne des charges conservées locales et dérivées de $Z^{(\mathcal{S})}_{\mathrm{GGE}}$.} Les charges locales $\operator{Q}_i^{(\mathcal{S})}$ sont diagonales dans la base \( \{ \ket{\{\theta_a \}} \}  \) [cf eq~ ~\eqref{chap.TBA.Qi.diag}]. 
-On peut donc  écrire la moyenne d’une observable comme une somme pondérée par cette probabilité [cf eqs ~\eqref{chap.TBA.P.1}-\eqref{chap.TBA.P.2}], ou encore comme une dérivée de la fonction de partition définie dans l'équation \eqref{chap.TBA.op.Z.S} :
+On peut donc  écrire la moyenne d’une observable comme une somme pondérée par la probabilité ci-dessus [cf eqs ~\eqref{chap.TBA.P.1}-\eqref{chap.TBA.P.2}], ou encore comme une dérivée de la fonction de partition définie dans l'équation \eqref{chap.TBA.op.Z.S} :
 \begin{eqnarray}
 	\langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} &= & \sum_{\{ \theta_a\}} \langle \operator{Q}_i^{(\mathcal{S})} \rangle_{\{\theta_a \}} \mathbb{P}^{(\mathcal{S})}_{\{ \theta_a \}} \label{chap.TBA.moy.1}\\
 	 & = &  -\left. \frac{1}{Z^{(\mathcal{S})}_{\mathrm{GGE}}} \frac{\partial Z^{(\mathcal{S})}_{\mathrm{GGE}}}{\partial \beta_i} \right )_{\beta_{j \neq i }}	 \label{chap.TBA.moy.2}
@@ -228,11 +286,11 @@ Par le même raisonnement le {\bf moment non centré} s'écrit :
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Moments d’ordre supérieur et fluctuations.} On s'avance sur le chapitre (\ref{chap:Fluctu}).
-Le premier et second moments permettent d’accéder à la variance 
+Le premier et le second moment permettent d’accéder à la variance 
 \begin{eqnarray}
 	 \left \langle \left (\operator{Q}_i^{(\mathcal{S})} - \langle\operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} \right )^2  \right \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} = \langle(\operator{Q}_i^{(\mathcal{S})})^2 \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  -  \langle\operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}^2	
 \end{eqnarray}
-de la charge locale $\operator{Q}_i^{(\mathcal{S})}$, en injectant \eqref{chap.TBA.moy.2} et \eqref{chap.TBA.mom.1} et en utilisant $\frac{1}{f} \partial_x^2 f - ( \frac{1}{f} \partial_x f ) = \partial_x^2 \ln f $ :
+de la charge locale $\operator{Q}_i^{(\mathcal{S})}$, en injectant \eqref{chap.TBA.moy.2} et \eqref{chap.TBA.mom.1} et en utilisant $\frac{1}{f} \partial_x^2 f - ( \frac{1}{f} \partial_x f )^2 = \partial_x^2 \ln f $ :
 \begin{eqnarray}
 	\left \langle \left (\operator{Q}_i^{(\mathcal{S})} - \langle\operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} \right )^2  \right \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  &=&	  \left . \frac{\partial^2 \ln Z^{(\mathcal{S})}_{\mathrm{GGE}}  }{{\partial \beta_i}^2 }  \right )_{\beta_{j\neq i}},\\
 	& = &  - \left . 	\frac{\partial \langle\operator{Q}_i^{(\mathcal{S})} \rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} }{\partial \beta_i } \right )_{\beta_{j\neq i}}.\label{chap.TBA.mom.222}	
@@ -329,7 +387,7 @@ Dans un système à $N$ particules caractérisé par des rapidités $\{ \theta_a
 	\langle \operator{Q}^{(\mathcal{S})}  \rangle_{\{ \theta_a\} } \propto \sum_{a = 1}^N \theta_a^0 , \,  \langle \operator{P}^{(\mathcal{S})}  \rangle_{\{ \theta_a\} } \propto \sum_{a = 1}^N \theta_a^1  ,\,  \mbox{et} \, \langle \operator{H}^{(\mathcal{S})}  \rangle_{\{ \theta_a\} } \propto \sum_{a = 1}^N \theta_a^2 .	
 \)
 (cf. équations \eqref{chap.2.gge.1})
-Dans le paragraphe précédent, nous avons sous-entendu — sans l’expliciter — qu’il est montré que l’ensemble des charges locales conservées forme une famille donnée par :
+Dans le paragraphe précédent, nous avons sous-entendu — sans l’expliciter — que l’ensemble des charges locales conservées forme une famille donnée par :
 \begin{eqnarray}
 	\operator{Q}_i^{(\mathcal{S})} \ket{\{\theta_a\} } & \propto & \sum_a \theta_a^i \ket{\{\theta_a\} }.
 \end{eqnarray}
@@ -348,7 +406,7 @@ Ces charges agissent donc de manière diagonale sur les états de Bethe, avec de
 \(
   f:\mathbb R\!\to\!\mathbb R
 \)
-on associe un opérateur-charge local :
+on associe un {\bf opérateur-charge local}  $\operator{\mathcal{Q}}^{(\mathcal{S})}[f]$ défini par :
 \begin{eqnarray}\label{chap.2.charge.f.1}
 	\operator{\mathcal{Q}}^{(\mathcal{S})}[f] & = &  L^{(\mathcal{S})} \int d\theta \, f(\theta) \operator{\rho}^{(\mathcal{S})}(\theta).	
 \end{eqnarray}
@@ -358,7 +416,7 @@ où $ L^{(\mathcal{S})}$ est la taille du support $\mathcal{S}$ et  $\operator{\
 \end{eqnarray}
 De sorte que $\operator{\mathcal{Q}}^{(\mathcal{S})}[f]$ agit sur un état de Bethe comme
 \begin{eqnarray}\label{chap.2.charge.1}
-	\operator{\mathcal{Q}}^{(\mathcal{S})}[f]\,\ket{\{\theta_a\} } =  \sum_{a=1}^{N}f(\theta_a)\,\ket{\{\theta_a\} } \quad \mbox{de sorte que} \quad \braket{\operator{\mathcal{Q}}^{(\mathcal{S})}[f]}_{\{\theta_a\}} = \sum_{a=1}^N f(\theta_a)
+	\operator{\mathcal{Q}}^{(\mathcal{S})}[f]\,\ket{\{\theta_a\} } =  \sum_{a=1}^{N}f(\theta_a)\,\ket{\{\theta_a\} } \quad \mbox{d'où'} \quad \braket{\operator{\mathcal{Q}}^{(\mathcal{S})}[f]}_{\{\theta_a\}} = \sum_{a=1}^N f(\theta_a)
 \end{eqnarray}
 Les choix particuliers
 \(
@@ -372,12 +430,26 @@ et
 \(
   f_2(\theta)=\theta^{2}/2
 \)
-redonnent respectivement l'opérateur nombre \(\operator{Q}=\operator{Q}_0^{(\mathcal{S})} = \operator{\mathcal{Q}}^{(\mathcal{S})}[1]\) , impulsion \(\operator{P}=\operator{Q}_1^{(\mathcal{S})} = \operator{\mathcal{Q}}^{(\mathcal{S})}[\theta]\) et énergie
-\(\operator{H}=\operator{Q}_2^{(\mathcal{S})} = \operator{\mathcal{Q}}^{(\mathcal{S})}[\theta^2/2]\). Et dans le cadre des (\gls{GGE}), pour tous les ordres $i$ on note :
+redonnent respectivement l'opérateur nombre de particules \(\operator{Q}=\operator{Q}_0^{(\mathcal{S})} = \operator{\mathcal{Q}}^{(\mathcal{S})}[1]\) , impulsion \(\operator{P}=\operator{Q}_1^{(\mathcal{S})} = \operator{\mathcal{Q}}^{(\mathcal{S})}[\theta]\) et énergie \(\operator{H}=\operator{Q}_2^{(\mathcal{S})} = \operator{\mathcal{Q}}^{(\mathcal{S})}[\theta^2/2]\). Et dans le cadre des (\gls{GGE}), pour tous les ordres $i$ on note :
 \begin{eqnarray}\label{chap.2.charge.ordre.i.1}
-	\operator{Q}^{(\mathcal{S})}_i = \operator{\mathcal{Q}}^{(\mathcal{S})}[f_i]	, \quad \mbox{de sorte que} \quad \braket{\operator{Q}^{(\mathcal{S})}_i}_{\{\theta_a\}} = \sum_{a=1}^N f_i(\theta_a)  
+	\operator{Q}^{(\mathcal{S})}_i = \operator{\mathcal{Q}}^{(\mathcal{S})}[f_i]	, \quad \mbox{de sorte que} \quad \braket{\operator{Q}^{(\mathcal{S})}_i}_{\{\theta_a\}} = \sum_{a=1}^N f_i(\theta_a). 
 \end{eqnarray}
-avec les densités spectrales $f_i(\theta) \propto \theta^i$ . 
+%avec les densités spectrales $f_i(\theta) \propto \theta^i$. 
+Les fonctions \(f_i(\theta)\) sont appelées {\em fonctions spectrales de charge} : elles représentent les contributions individuelles (ou « charges élémentaires ») d’une quasi-particule de rapidité \(\theta\) à la charge d’ordre \(i\).  
+Autrement dit, chaque quasi-particule contribue à la valeur totale de la charge \(Q_i\) selon le poids donné par \(f_i(\theta)\).  
+
+\smallskip
+
+Dans le modèle de \gls{LL}, ces fonctions sont des polynômes en \(\theta\), typiquement de la forme
+\begin{eqnarray}\label{chap.2.charge.ordre.i.1.111111}
+	f_i(\theta) & \propto & \theta^i,
+\end{eqnarray}
+ce qui généralise les trois premières charges usuelles : nombre de particules (\(i=0\)), impulsion (\(i=1\)) et énergie (\(i=2\)).
+
+\smallskip
+
+Cette terminologie est la plus couramment utilisée dans la littérature sur les systèmes intégrables et le cadre de la \gls{GGE}, et elle permet de relier directement les charges macroscopiques aux quasi-particules.
+
 
 \medskip
 
@@ -385,7 +457,7 @@ Ces charges conservées peuvent s’écrire sous la forme fonctionnelle
 \(
   \operator{\mathcal{Q}}^{(\mathcal{S})}[f]=\int_0^{L}\!dx\;\operator{q}^{(\mathcal{S})}_{[f]}(x).
 \)
-où la densité associée
+Où la densité associée
 \(
 \operator{q}^{(\mathcal{S})}_{[f]}
 \)
@@ -394,7 +466,7 @@ est une observable locale.
 
 
 \paragraph{Charges conservées généralisées.\label{sec:charges-gen}}
-Les fonction $f_i$ étant fixées, on note la fonction régulière
+La fonctions spectrales de charge $f_i$ étant fixées, on note la fonction régulière
 \(
   w:\mathbb R\!\to\!\mathbb R
 \)
@@ -402,7 +474,8 @@ Les fonction $f_i$ étant fixées, on note la fonction régulière
 \begin{eqnarray}
 	w = \sum_i \beta_i f_i \label{chap.2.w.1},	
 \end{eqnarray}
-on associe un opérateur-charge généralisé $\operator{\mathcal{Q}}^{(\mathcal{S})}[w]$ :
+où les coefficients $\beta_i$ sont les multiplicateurs de Lagrange associés aux charges conservées $\operator{Q}_i^{(\mathcal{S})}$ dans le \gls{GGE} [cf. équation \eqref{chap.TBA.op.rho.S}].
+À cette fonction $w(\theta)$, on associe un opérateur-charge généralisé $\operator{\mathcal{Q}}^{(\mathcal{S})}[w]$ :
 \begin{eqnarray}\label{chap.2.charge.gen.1}
 	\operator{\mathcal{Q}}^{(\mathcal{S})}[w]\,\ket{\{\theta_a\} } =  \sum_{a=1}^{N}w(\theta_a)\,\ket{\{\theta_a\} } \quad \mbox{de sorte que} \quad \braket{\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}_{\{\theta_a\}} = \sum_{i} \beta_i  \braket{\operator{Q}^{(\mathcal{S})}_i}_{\{\theta_a\}}
 \end{eqnarray}
@@ -410,14 +483,20 @@ on associe un opérateur-charge généralisé $\operator{\mathcal{Q}}^{(\mathcal
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Expression de la matrice densité généralisée.}
 %Avec la définition du \emph{poids spectral} \eqref{chap.2.w.1}, la matrice densité  \eqref{chap.TBA.op.rho.S} $\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}$	s’écrit sous la forme :
-Dans le cas des modèles intégrables traités par le Bethe Ansatz, il est toutefois plus pratique de réécrire cette matrice densité  $\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}$ de \eqref{chap.TBA.op.rho.S} en termes du \emph{poids spectral} $w(\theta)$ introduit en \eqref{chap.2.w.1}. On obtient alors :
+Dans le cas des modèles intégrables traités par le \gls{BA} il est toutefois plus pratique de réécrire cette matrice densité  $\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}$ de \eqref{chap.TBA.op.rho.S} en termes du \emph{poids spectral} $w(\theta)$ introduit en \eqref{chap.2.w.1}. On obtient alors :
 \begin{eqnarray}\label{chap.2.densite.1}
 	\operator{\varrho}^{(\mathcal{S})}[w]  =  \frac{e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}}{Z^{(\mathcal{S})}[w]}, \, \mbox{avec} \quad e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}  = 	\sum_{\{\theta_a \}} e^{- \sum_{a = 1}^N w(\theta_a) } \vert \{ \theta_a\} \rangle \langle  \{ \theta_a\}  \vert, 
 \end{eqnarray}	
-et la fonction de partition \eqref{chap.TBA.op.Z.S} s'écrit $Z^{(\mathcal{S})}[w]\doteq \bm{\mathrm{Tr}}\left [ e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}\right ] $ et vaux :
+où la fonction de partition \eqref{chap.TBA.op.Z.S} définie par $Z^{(\mathcal{S})}[w]\doteq \bm{\mathrm{Tr}}\left [ e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}\right ] $ s'écrit 
 \begin{eqnarray}
-	Z^{(\mathcal{S})}[w]   =  \sum_{\{\theta_a \}} e^{-\sum_{a = 1}^N w(\theta_a)},\label{chap.TBA.op.Z.S.1}.	
+	Z^{(\mathcal{S})}[w]   =  \sum_{\{\theta_a \}} e^{-\sum_{a = 1}^N w(\theta_a)},\label{chap.TBA.op.Z.S.1},	
 \end{eqnarray}
+et assure la normalisation $\bm{\mathrm{Tr}} \left [ \operator{\varrho}^{(\mathcal{S})}[w] \right ] = 1$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% où la fonction de partition \eqref{chap.TBA.op.Z.S} s'écrit $Z^{(\mathcal{S})}[w]\doteq \bm{\mathrm{Tr}}\left [ e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}\right ] $ et vaut :
+% \begin{eqnarray}
+% 	Z^{(\mathcal{S})}[w]   =  \sum_{\{\theta_a \}} e^{-\sum_{a = 1}^N w(\theta_a)},\label{chap.TBA.op.Z.S.1}.	
+% \end{eqnarray}
 %devient un Generalized Gibbs Ensemble (\gls{GGE}), $\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}$ (de l'équation \eqref{chap.TBA.op.rho.S})	 dès lors que $w(\theta) = \sum_i \beta_i f_i(\theta)$ (de l'équation \eqref{chap.2.w.1}) où $f_i$ sont les densités spectrales associées aux charges locales conservées (de l'équation \eqref{chap.2.charge.ordre.i.1}).
 
 
@@ -430,8 +509,13 @@ Dans ce formalisme, la probabilité d’occuper l’état $\ket{\{\theta \}}$ \e
 	\mathbb{P}^{(\mathcal{S})}_{\{ \theta_a \}} & = &  Z^{(\mathcal{S})}[w]^{-1}e^{-\sum_{a = 1}^N w(\theta_a)}\label{chap.TBA.P.w.2}. 		
 \end{eqnarray}
 %Cela montre que le poids statistique d’une configuration factorise naturellement sur les pseudo-moments, avec un poids spectrale / energie génralisé $w(\theta)$ attribué à chaque particule.
-On voit ainsi que le poids statistique factorise naturellement sur les
-pseudo‑moments, chaque particule étant pondérée par $w(\theta_a)$.
+%On voit ainsi que le poids statistique factorise naturellement sur les pseudo‑moments, chaque particule étant pondérée par $w(\theta_a)$.
+%Ainsi, le poids statistique d’un état se factorise naturellement sur les quasi-particules, chaque contribution individuelle étant donnée par \(e^{-w(\theta_a)}\). Autrement dit, \(w(\theta)\) joue le rôle d’une énergie généralisée assignée à chaque quasi-particule du \gls{GGE}.
+
+Ainsi, le poids statistique d’un état se factorise sur les pseudo-moments : chaque quasi-particule de rapidité \(\theta_a\) contribue indépendamment au poids total avec un facteur \(e^{-w(\theta_a)}\). Autrement dit, \(w(\theta)\) joue le rôle d’une énergie généralisée assignée à chaque quasi-particule du \gls{GGE}.
+\footnote{Ici, le terme « pseudo-moment » désigne la rapidité \(\theta_a\), qui joue le rôle d’une quantité conservée individuelle dans le système intégrable.}
+
+
 
 %avec 
 %\begin{eqnarray}
@@ -466,31 +550,66 @@ y compris les charges conservées elles‑mêmes.
 
 %Nous avons vu que, dans un système intégrable, la description correcte de l’équilibre stationnaire requiert l’introduction d’une \emph{famille infinie de charges conservées}, comprenant à la fois des charges strictement locales et des charges quasi‑locales.
 
-Nous avons vu que, dans un système intégrable, la description correcte de l’équilibre stationnaire ne peut se limiter aux seules constantes de mouvement usuelles, telles que l’énergie ou l’impulsion. Elle requiert l’introduction d’une \emph{famille infinie de charges conservées}, qui forment la structure intégrable du modèle. Ces charges comprennent à la fois des charges strictement locales, construites comme des intégrales de densités dépendant d’un nombre fini de sites ou de points de l’espace, et des charges dites quasi-locales, dont la densité est faiblement non locale mais reste suffisamment bien définie pour jouer un rôle physique. L’ensemble de ces charges contraint fortement la dynamique et empêche la thermalisation au sens usuel (c’est-à-dire vers l’ensemble canonique ou microcanonique). La relaxation vers l’équilibre se fait alors vers un état stationnaire généralisé, décrit par le \gls{GGE}, où chaque charge conservée intervient avec son propre multiplicateur de Lagrange.
+%Nous avons vu que, dans un système intégrable, la description correcte de l’équilibre stationnaire ne peut se limiter aux seules constantes de mouvement usuelles, telles que l’énergie ou l’impulsion. Elle requiert l’introduction d’une \emph{famille infinie de charges conservées}, qui forment la structure intégrable du modèle. Ces charges comprennent à la fois des charges strictement locales, construites comme des intégrales de densités dépendant d’un nombre fini de sites ou de points de l’espace, et des charges dites quasi-locales, dont la densité est faiblement non locale mais reste suffisamment bien définie pour jouer un rôle physique. L’ensemble de ces charges contraint fortement la dynamique et empêche la thermalisation au sens usuel (c’est-à-dire vers l’ensemble canonique ou microcanonique). La relaxation vers l’équilibre se fait alors vers un état stationnaire généralisé, décrit par le \gls{GGE}, où chaque charge conservée intervient avec son propre multiplicateur de Lagrange.
+
+Nous avons vu que, dans un système intégrable, la description correcte de l’équilibre stationnaire ne peut se limiter aux seules constantes de mouvement usuelles d’un système isolé, telles que l’énergie ou l’impulsion. Elle requiert l’introduction d’une \emph{famille infinie de charges conservées}, qui forment la structure intégrable du modèle. 
+
+Ces charges comprennent à la fois : 
+\begin{enumerate}[label=$\roman*$]
+    \item des charges strictement locales, construites comme des intégrales de densités dépendant d’un nombre fini de sites ou de points de l’espace ; 
+    \item et des charges dites \emph{quasi-locales}, dont la densité n’est pas strictement locale mais décroit suffisamment rapidement à distance pour que l’intégrale totale soit bien définie et que la charge conserve un sens physique. Autrement dit, une charge quasi-locale agit essentiellement sur un voisinage restreint, mais présente de faibles contributions non nulles à des points éloignés.
+\end{enumerate}
+
+L’ensemble de ces charges contraint fortement la dynamique et empêche la thermalisation au sens usuel (c’est-à-dire vers l’ensemble canonique ou microcanonique). La relaxation vers l’équilibre se fait alors vers un état stationnaire généralisé, décrit par le \gls{GGE}, où chaque charge conservée intervient avec son propre multiplicateur de Lagrange.
+
 
 \medskip
 
-Toutes ces charges se réunissent dans l’opérateur fonctionnel
+% Toutes ces charges se réunissent dans l’opérateur fonctionnel
+% \(
+% \operator{\mathcal{Q}}^{(\mathcal{S})}[w]
+% \)
+% , défini par un \emph{poids spectral}  $w(\theta)$ (cf. équations~\eqref{chap.2.charge.1}).
+% Cette construction conduit naturellement à la matrice densité généralisée
+% \(
+% \operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}  \propto  e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}
+% \) 
+% (cf. équations~\eqref{chap.2.densite.1}), et à la moyenne d’un opérateur local $\operator{\mathcal{O}}$ donnée par
+% \(
+% \langle \operator{\mathcal{O}}\rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  =  \displaystyle  \text{Tr} (\operator{\mathcal{O}}\operator{\varrho}^{(\mathcal{S})}[w])
+% \)
+% (cf. équations~\eqref{chap.2.moyenne.1}).
+% La connaissance de $w(\theta)$ suffit donc pour prédire les valeurs moyennes de toutes les observables, y compris celles des charges elles‑mêmes ; c’est le cœur du \gls{GGE}.
+
+Toutes ces charges se combinent dans un unique opérateur fonctionnel 
 \(
 \operator{\mathcal{Q}}^{(\mathcal{S})}[w]
-\)
-, défini par un \emph{poids spectral}  $w(\theta)$ (cf. équations~\eqref{chap.2.charge.1}).
-Cette construction conduit naturellement à la matrice densité généralisée
+\),
+qui dépend d’un \emph{poids spectral} \(w(\theta)\) (cf. équations~\eqref{chap.2.charge.1}) et encode l’ensemble des contributions de toutes les charges conservées. 
+Cette construction permet de définir la matrice densité généralisée
 \(
-\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}  \propto  e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]}
+\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}} \propto e^{-\operator{\mathcal{Q}}^{(\mathcal{S})}[w]} ,
 \) 
-(cf. équations~\eqref{chap.2.densite.1}), et à la moyenne d’un opérateur local $\operator{\mathcal{O}}$ donnée par
+et la moyenne de tout opérateur local \(\operator{\mathcal{O}}\) s’écrit
 \(
-\langle \operator{\mathcal{O}}\rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}}  =  \displaystyle  \text{Tr} (\operator{\mathcal{O}}\operator{\varrho}^{(\mathcal{S})}[w])
-\)
-(cf. équations~\eqref{chap.2.moyenne.1}).
-La connaissance de $w(\theta)$ suffit donc pour prédire les valeurs moyennes de toutes les observables, y compris celles des charges elles‑mêmes ; c’est le cœur du \gls{GGE} .
+\langle \operator{\mathcal{O}}\rangle_{\operator{\rho}^{(\mathcal{S})}_{\mathrm{GGE}}} = \mathrm{Tr}(\operator{\mathcal{O}} \operator{\rho}^{(\mathcal{S})}[w]).
+\) 
+Ainsi, la connaissance de \(w(\theta)\) suffit pour prédire les valeurs moyennes de toutes les observables, y compris celles des charges elles-mêmes, ce qui constitue le cœur du \gls{GGE}.
+
 
 \medskip
 
-Cette base est désormais posée : dans la section suivante, nous passerons à la  \gls{TBA}.
-Nous verrons comment, dans la limite thermodynamique, les sommes sur les configurations de rapidités se transforment en intégrales sur des fonctions continues, comment apparaît l’entropie de Yang–Yang, et comment les moyennes de l’ensemble généralisé se réexpriment à l’aide de ces densités macroscopiques.
-C’est ce formalisme qui permettra d’analyser finement la relaxation post‑quench et de relier microscopie intégrable et hydrodynamique généralisée.
+%Cette base est désormais posée : dans la section suivante, nous passerons à la  \gls{TBA}.
+%Nous verrons comment, dans la limite thermodynamique, les sommes sur les configurations de rapidités se transforment en intégrales sur des fonctions continues, comment apparaît l’entropie de \gls{YY}, et comment les moyennes sous le \gls{GGE} se réexpriment à l’aide de ces densités macroscopiques.
+%C’est ce formalisme qui permettra d’analyser finement la relaxation post‑quench et de relier microscopie intégrable et hydrodynamique généralisée.
+
+Cette base étant désormais posée, nous passerons dans la section suivante à la \gls{TBA}. 
+Nous verrons comment, dans la limite thermodynamique, les sommes sur les configurations de rapidités se transforment en intégrales sur des fonctions continues, comment apparaît l’entropie de \gls{YY}, et comment les moyennes sous le \gls{GGE} se réexpriment à l’aide de ces densités macroscopiques.
+
+\smallskip
+
+Ce formalisme permettra d’analyser finement la relaxation post-quench, en reliant la description microscopique du système intégrable — c’est-à-dire en termes de quasi-particules et de leurs états propres — à la description macroscopique hydrodynamique généralisée.
+
 
 
 
@@ -503,7 +622,10 @@ C’est ce formalisme qui permettra d’analyser finement la relaxation post‑q
 
 \paragraph{Observables locales dans la limite thermodynamique.}
 %Lorsque l'observable $\operator{\mathcal{O}}$ est suffisamment local, on croit que la valeur d'attente $\langle  \{ \theta_a\}  \vert   \mathcal{O} \vert \{ \theta_a\} \rangle$ ne dépend pas de l'état microscopique spécifique du système, de sorte qu'elle devient une fonctionnelle de $\Pi$ dans la limite thermodynamique.
-Dans la suite de ce chapitre, nous omettrons l’exposant $(\mathcal{S})$.
+%Dans la suite de ce chapitre, nous omettrons l’exposant $(\mathcal{S})$.
+Dans la suite de ce chapitre, nous omettrons l’exposant $(\mathcal{S})$ afin d’alléger les notations et de rendre le texte plus lisible. 
+Il ne faut cependant pas oublier que toutes ces quantités restent définies sur un support borné \(\mathcal{S} \subset \mathbb{R}\), et que cette restriction garde tout son sens physique.
+
 \vspace{0.2em}
 
 \medskip
@@ -518,26 +640,33 @@ Dans la limite thermodynamique, différentes configurations microscopiques \( \{
 \vspace{0.5em}
 \medskip
 
-Si l’observable $\mathcal{O}$ est suffisamment locale, sa valeur d’attente dans un état propre ne dépend pas des détails microscopiques, mais uniquement de la distribution de rapidité. On écrit alors :
+% Si l’observable $\mathcal{O}$ est suffisamment locale, sa valeur d’attente dans un état propre ne dépend pas des détails microscopiques, mais uniquement de la distribution de rapidité. On écrit alors :
+% \begin{eqnarray}
+% 	\underset{\mbox{\tiny therm.}}{\lim} \braket{  \operator{\mathcal{O}} }_{\{ \theta_a\}}  & = & \langle \operator{\mathcal{O}}\rangle_{[\rho]},
+% \end{eqnarray}
+% où $\underset{\mbox{\tiny therm.}}{\lim}$ est la limite thermodynamique ($N,L \to \infty$ avec $N/L \to $ const) et où \( \langle \mathcal{O} \rangle_{[\rho]} \) désigne la valeur d’attente de \( \mathcal{O} \) dans un état macroscopique caractérisé par la distribution de rapidité \( \rho(\theta) \).
+
+Si l’observable \(\mathcal{O}\) est suffisamment locale — c’est-à-dire si son support spatial reste petit devant l’échelle macroscopique du système —, sa valeur d’attente dans un état propre ne dépend pas des détails microscopiques, mais uniquement de la distribution de rapidité. On écrit alors :
 \begin{eqnarray}
-	\underset{\mbox{\tiny therm.}}{\lim} \braket{  \operator{\mathcal{O}} }_{\{ \theta_a\}}  & = & \langle \operator{\mathcal{O}}\rangle_{[\rho]},
+    \underset{\mbox{\tiny therm.}}{\lim} \braket{  \operator{\mathcal{O}} }_{\{ \theta_a\}}  & = & \langle \operator{\mathcal{O}}\rangle_{[\rho]},
 \end{eqnarray}
-où $\underset{\mbox{\tiny therm.}}{\lim}$ est la limite thermodynamique ($N,L \to \infty$ avec $N/L \to $ const) et où \( \langle \mathcal{O} \rangle_{[\rho]} \) désigne la valeur d’attente de \( \mathcal{O} \) dans un état macroscopique caractérisé par la distribution de rapidité \( \rho(\theta) \).
+où \(\underset{\mbox{\tiny therm.}}{\lim}\) est la limite thermodynamique ($N,L \to \infty$ avec $N/L$ constant) et où \( \langle \mathcal{O} \rangle_{[\rho]} \) désigne la valeur d’attente de \( \mathcal{O} \) dans un état macroscopique caractérisé par la distribution de rapidité \( \rho(\theta) \).
+
 
 
 \medskip
-Dans un ensemble général (GGE), la valeur moyenne de l’observable \eqref{chap.2.moyenne.1} devient alors :		
+Dans un \gls{GGE}, la valeur moyenne de l’observable \eqref{chap.2.moyenne.1} devient alors :		
 \begin{eqnarray}\label{chap.2.moyenne.2}
 	\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}} \rangle_{\operator{\varrho}[w]} & =  & \frac{  \displaystyle \sum_{\rho }  \langle \operator{\mathcal{O}}\rangle_{[\rho]} \Omega[\rho] e^{- \sum_{a = 1}^N  w(\theta_a)    }}{ \displaystyle \sum_{\rho}   \Omega[\rho]\,e^{- \sum_{a = 1}^N  w(\theta_a) } } ,
 \end{eqnarray}
-où $\sum_{\rho }$ est une somme sur tous les distributions de rapidité $\rho$ et 
-où $\Omega[\rho]$ désigne le nombre de micro-états compatibles avec la distribution de rapidité $\rho$.
+où $\sum_{\rho }$ est une somme sur toutes les distributions de rapidité $\rho$ et où $\Omega[\rho]$ désigne le nombre de micro-états compatibles avec la distribution de rapidité $\rho$.
 
 %où $\# \mbox{micro-états.}$ est les nombre de micro état associée àa la distribution de rapidité $\rho$.
 %Avant de se plonger sur $\# \mbox{micro-états.}$, regardons le changement des équation de Bethes. 
 
 \medskip
-Pour établir la fonction $\Omega[\rho]$, rappelons-nous de la transformation des équations de Bethe dans la limite thermodynamique, hors état fondamental \eqref{eq:TBA-nu} et \eqref{eq:TBA-rhos-2}.
+
+Pour établir la fonction $\Omega[\rho]$, rappelons-nous de la transformation des équations de \gls{BA} dans la limite thermodynamique, non nécessairement à l'état fondamental, \eqref{eq:TBA-nu} et \eqref{eq:TBA-rhos-2}.
 \begin{equation}
 	\nu = \frac{\rho}{\rho_s} \, , \qquad 2\pi \rho_s = 1^{\mathrm{dr}}_{[\nu]} 
 \label{chap.2:eq:TBA-rhos}
@@ -546,19 +675,19 @@ où $f^{\mathrm{dr}}_{[\nu]}$ est définie en \eqref{eq:dressing}.
 
 \medskip
 
-Cette formalisation constitue la brique de base de l'\textbf{hydrodynamique généralisée} et, dans la section suivante, permet de définir rigoureusement l’\textbf{entropie de Yang–Yang}, indispensable pour décrire la relaxation hors d’équilibre des systèmes intégrables.
+Cette formalisation constitue la brique de base de l'\textbf{hydrodynamique généralisée} et, dans la section suivante, permet de définir rigoureusement l’\textbf{entropie de \gls{YY}}, indispensable pour décrire la relaxation hors d’équilibre des systèmes intégrables.
 
 %\vspace{1ex}
 %La formalisation ci‑dessus fournit la brique de base pour la
 %\textbf{hydrodynamique généralisée} et, dans la section suivante, pour la
-%définition précise de l’\textbf{entropie de Yang-Yang}
+%définition précise de l’\textbf{entropie de \gls{YY}}
 %assurant la relaxation des systèmes intégrables hors‑équilibre.
 
 %\input{TBA/HE/T/main}
 
 
 
-\subsection{Statistique des macro-états : entropie de Yang-Yang}
+\subsection{Statistique des macro-états : entropie de \gls{YY}}
 
 %\paragraph{Macro-états et entropie dans la TBA.}
 
@@ -568,21 +697,38 @@ Cette formalisation constitue la brique de base de l'\textbf{hydrodynamique gén
 %{\bf quelle est la distribution de rapidité d’un système à l'équilibre thermique à température finie ?}. 
 %La question a été répondue dans les travaux pionniers de Yang et Yang (1969), que nous allons maintenant examiner brièvement. Pour répondre à cette question, nous devons comprendre la {\bf structure statistique des états propres} associés à une même distribution $\rho(\theta)$.
 
+% \paragraph{Motivation.}
+
+% Dans la limite thermodynamique, une observable locale dans un \gls{GGE} dépend uniquement d’un objet continu : le \textbf{poids spectral} $w(\theta)$, c’est-à-dire la « température généralisée » assignée à chaque quasi‑particule.
+ 
+
+% \medskip
+
+% Le \textbf{poids spectral} $w(\theta)$ est en correspondance bijective avec la \textbf{distribution de rapidité à l’équilibre} :
+% \begin{eqnarray}\label{chap.2:eq.rho.eq.1}
+% 	\rho_{\mathrm{eq}}(\theta)\;\doteq\;\braket{\operator{\rho}(\theta)}_{\operator{\varrho}[w]}	,  
+% \end{eqnarray}
+
+% \medskip
+
+% Cette reformulation est particulièrement puissante car elle permet de décrire les propriétés locales du système sans se référer aux détails d’un état propre individuel.
+
 \paragraph{Motivation.}
 
-Dans la limite thermodynamique, une observable locale dans un \gls{GGE} dépend uniquement d’un objet continu : le \textbf{poids spectral} $w(\theta)$, c’est-à-dire la « température généralisée » assignée à chaque quasi‑particule.
- 
+Dans la limite thermodynamique, une observable locale dans un \gls{GGE} dépend uniquement d’un objet continu : le \textbf{poids spectral} $w(\theta)$. 
+Ce dernier joue un rôle analogue à une « température généralisée » : il définit le facteur statistique associé à chaque quasi-particule de rapidité $\theta$ et correspond au multiplicateur de Lagrange généralisé qui contrôle sa contribution à l’équilibre.
 
 \medskip
 
 Le \textbf{poids spectral} $w(\theta)$ est en correspondance bijective avec la \textbf{distribution de rapidité à l’équilibre} :
 \begin{eqnarray}\label{chap.2:eq.rho.eq.1}
-	\rho_{\mathrm{eq}}(\theta)\;\doteq\;\braket{\operator{\rho}(\theta)}_{\operator{\varrho}[w]}	,  
+	\rho_{\mathrm{eq}}(\theta)\;\doteq\;\braket{\operator{\rho}(\theta)}_{\operator{\varrho}[w]}	.  
 \end{eqnarray}
 
 \medskip
 
-Cette reformulation est particulièrement puissante car elle permet de décrire les propriétés locales du système sans se référer aux détails d’un état propre individuel.
+Cette reformulation est particulièrement puissante, car elle permet de décrire toutes les propriétés locales du système à l’équilibre à partir de $w(\theta)$ ou de $\rho_{\mathrm{eq}}(\theta)$, sans référence explicite aux détails d’un état propre individuel.
+
 
 \medskip
 
@@ -600,12 +746,12 @@ La question thermodynamique devient alors : {\bf Combien de micro-états microsc
 
 \medskip
 
-Plus précisément, dans l’expression de moyenne des operateurs locaux \eqref{chap.2.moyenne.2}, apparaît le facteur
+Plus précisément, dans l’expression de moyenne des opérateurs locaux \eqref{chap.2.moyenne.2}, apparaît le facteur
 \(
 \Omega[\rho]
 \),
 qui compte ces états propres.  
-La détermination de $\Omega[\rho]$ (ou équivalemment de l’entropie de Yang–Yang $\mathcal{S}_{YY}[\rho]$ car 
+La détermination de $\Omega[\rho]$ (ou équivalemment de l’entropie de \acrfull{YY} $\mathcal{S}_{YY}[\rho]$, car 
 \(
 \Omega[\rho] = e^{L\mathcal{S}_{YY}[\rho]}
 \)
@@ -613,7 +759,7 @@ avec $L$ la taille du système
 ) est donc la clé pour relier \emph{(i)} le poids spectral $w(\theta)$ imposé dans le GGE et \emph{(ii)} la distribution de rapidité moyenne $\rho_{\mathrm{eq}}(\theta)$ observée à l’équilibre.
 
 \paragraph{Dénombrement local des configurations microcanoniques.}
-Pour répondre à cette question, on subdivise l’axe des rapidités en petites tranches ou cellules de largeur $\delta \theta$, chacune centrée en un point $\theta_a$. Dans une tranche $[\theta_a, \theta_a + \delta\theta]$, on suppose que la densité $\rho(\theta)$ est à peu près constante. Le nombre de quasi-particules dans cette tranche est alors approximativement :
+Pour répondre à cette question, on subdivise l’axe des rapidités en petites tranches ou cellules de largeur $\delta \theta$, chacune centrée en un point $\theta_a$. Dans une tranche $[\theta_a, \theta_a + \delta\theta]$, on suppose que la densité $\rho(\theta)$ est constante. Le nombre de quasi-particules dans cette tranche est alors :
 \begin{eqnarray*}
 	N_a = L\rho(\theta_a) \delta \theta,
 \end{eqnarray*}
@@ -623,7 +769,7 @@ et le nombre total d'états disponibles (\ie, le nombre d’états possibles si 
 \end{eqnarray*}
 %La densité de niveaux $\rho_s(\theta)$ tient compte du fait que les moments sont quantifiés de manière discrète, en raison des équations de Bethe (voir équation (??)).
 
-Les particules occupent ces niveaux de manière analogue à des fermions libres (principe d’exclusion de Pauli), le nombre de manières différentes de choisir $N_a$ niveaux parmi $M_a$  (Fig~\ref{chap2:fig:discr}	) est donné par :
+Les particules occupent ces niveaux de manière analogue à des fermions libres (principe d’exclusion de Pauli), le nombre de manières différentes de choisir $N_a$ niveaux parmi $M_a$  (Fig~\ref{chap2:fig:discr}) est donné par :
 	
 	
 	\begin{figure}[H]
@@ -662,21 +808,22 @@ composé avec la fonction logarithmique, on obtient :
 	&  \underset{n \to \infty}{\sim} & n \ln n  
 \end{eqnarray}
 	
-$\Omega(\theta)$ n'est jamais nul donc on peut approximer, pour de grandes valeurs de $L$ : 
+$\Omega(\theta)$ n'est donc jamais nul pour $\rho(\theta) \leq \rho_s(\theta)$ et on peut approximer, pour de grandes valeurs de $L$ :
+%$\Omega(\theta)$ n'est jamais nul donc on peut approximer, pour de grandes valeurs de $L$ : 
 \begin{eqnarray}
     \ln \Omega(\theta) & \underset{\underset{\rho (\theta )\leq  \rho_s (\theta )}{L\rho \delta \theta  \to \infty}}{\sim}   & L [ \rho_s\ln \rho_s - \rho \ln \rho - (\rho_s - \rho ) \ln ( \rho_s - \rho) ] (\theta )\delta \theta .
 \end{eqnarray}
 
 Cette expression donne la contribution  à l’{\bf entropie}  associée à la cellule autour de $\theta_a$ de taille $\delta \theta$.
 
-\paragraph{Entropie de Yang-Yang : définition.}
+\paragraph{Entropie de \gls{YY} : définition.}
 %L'entropie totale du macro-état $\rho(\theta)$, notée $\mathcal{S}_{YY}[\rho]$, est obtenue en sommant sur toutes les tranches. Pour alléger la notation, nous écrivons cette somme comme :
-%Le nombre total de micro-états est le produit de toutes ces configurations pour toutes les cellules de rapidité $[\theta, \theta + \delta \theta]$. %En prenant le logarithme et en remplaçant la somme par une intégrale sur $ \theta$, nous obtenons l'entropie de Yang-Yang :
+%Le nombre total de micro-états est le produit de toutes ces configurations pour toutes les cellules de rapidité $[\theta, \theta + \delta \theta]$. %En prenant le logarithme et en remplaçant la somme par une intégrale sur $ \theta$, nous obtenons l'entropie de \gls{YY} :
 
 %L'entropie totale du macro-état $\rho(\theta)$, notée $\mathcal{S}_{YY}[\rho]$, est obtenue en sommant sur toutes les tranches. Pour alléger la notation, nous écrivons cette somme comme :
 %Le nombre total de micro-états compatibles avec une distribution macroscopique $\rho(\theta)$ est donné par le produit des nombres de configurations pour chaque cellule de rapidité $[\theta, \theta + \delta \theta]$.
 
-%En prenant la sum le logarithme des $\Omega(\theta)$ , on obtient l'entropie totale de Yang-Yang. Pour alléger la notation, cette somme sur les tranches est notée :
+%En prenant la sum le logarithme des $\Omega(\theta)$ , on obtient l'entropie totale de \gls{YY}. Pour alléger la notation, cette somme sur les tranches est notée :
 
 Le nombre total de micro-états compatibles avec une distribution macroscopique donnée $\rho(\theta)$ est obtenu en prenant le produit des nombres de configurations pour chaque cellule de rapidité $[\theta_a, \theta_a + \delta \theta]$ : $ \Omega(\theta_a)$ .
 En prenant le logarithme de ce produit, on accède à l'entropie totale. Pour alléger la notation, cette somme sur les cellules est notée
@@ -704,7 +851,7 @@ où l’on définit l’\textbf{entropie de Yang–Yang} par unité de longueur,
 \paragraph{Énergie généralisée par unité de longueur : définition.}
 
 L’\textbf{énergie généralisée} associée à une distribution de rapidité $\rho(\theta)$ et à un poids spectral $w(\theta)$ est définie comme la somme des poids assignés à chaque quasi-particule. 
-Dans la limite thermodynamique, en supposant que $w(\theta)$ varie lentement sur chaque tranche $[\theta_a, \theta_a + \delta\theta]$ ,  cette somme soit l’\textbf{énergie généralisée par unité de longueur} $\mathcal{W}$ se se définit par :
+Dans la limite thermodynamique, en supposant que $w(\theta)$ varie lentement sur chaque tranche $[\theta_a, \theta_a + \delta\theta]$ ,  cette somme soit l’\textbf{énergie généralisée par unité de longueur} $\mathcal{W}$ se définit par :
 \begin{eqnarray}
 	\mathcal{W}(\{\theta_a\}) \doteq  \frac{1}{L} \sum_{a = 1}^N w(\theta_a) 
 	 \underset{\mbox{\tiny therm .}}{\sim}  \mathcal{W}[\rho]  \doteq  \sum_a^{\theta\text{-cellules}} w(\theta_a) \rho(\theta_a)\, \delta\theta. 
@@ -723,7 +870,7 @@ Dans un ensemble général (GGE), la valeur moyenne de l’observable \eqref{cha
 \begin{eqnarray}\label{chap.2.moyenne.3}
 	\underset{\mbox{\tiny therm.}}{\lim} \langle \operator{\mathcal{O}} \rangle_{\operator{\varrho}[w]} &  \approx &  ~ \frac{  \displaystyle \sum_{\rho }  \langle \operator{\mathcal{O}}\rangle_{[\rho]}  e^{L(\mathcal{S}_{YY}[\rho] -  \mathcal{W}[\rho]) }}{ \displaystyle \sum_{\rho } e^{L(\mathcal{S}_{YY}[\rho] -  \mathcal{W}[\rho]) } },
 \end{eqnarray}
-où la somme $\sum\rho$ porte sur toutes les distributions possibles de rapidité $\rho$
+où la somme $\sum\rho$ porte sur toutes les distributions possibles de rapidité $\rho$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Passage à la limite continue.}
@@ -732,7 +879,7 @@ En faisant tendre $\delta\theta \to 0$, les sommes deviennent des intégrales
 %\(
 %\sum_a^{\theta-\mbox{\tiny tranches}}\delta \theta   \underset{\delta \theta \to 0 }{\rightarrow}  \int d \theta ,	
 %\)
-et l'entropie de Yang-Yang ainsi que l’énergie généralisée par unité de longueur prennent la forme :
+et l'entropie de \gls{YY} ainsi que l’énergie généralisée par unité de longueur prennent la forme :
 \begin{eqnarray}
 	\mathcal{S}_{YY}[\rho] & = & \int d \theta  \, [ \rho_s\ln \rho_s - \rho \ln \rho - ( \rho_s - \rho ) \ln ( \rho_s - \rho ) ] (\theta) , \label{chap.2.entropi.int}\\
 	\mathcal{W}[\rho] & = & \int   w(\theta) \rho(\theta) \, d \theta \label{chap.2.W.int}		
@@ -746,7 +893,7 @@ Dans la limite thermodynamique $L \to \infty$, la somme sur les distributions de
 \(
 \sum_{\rho } \sim \int \mathcal{D} \rho .
 \)
-Cette correspondance repose sur l’idée que les macro-états admissibles deviennent denses dans l’espace fonctionnel, et que le poids statistique associé à chaque configuration est donné par l’entropie de Yang–Yang.
+Cette correspondance repose sur l’idée que les macro-états admissibles deviennent denses dans l’espace fonctionnel, et que le poids statistique associé à chaque configuration est donné par l’entropie de \gls{YY}.
 La mesure fonctionnelle $\mathcal{D}\rho$ parcourt l’espace des densités
 $\rho(\theta)$ continues, \emph{chaque configuration étant pondérée par le
 facteur exponentiel}
@@ -828,8 +975,7 @@ Leur différence
 \begin{eqnarray}
 	(\mathcal{S}_{YY}-\mathcal{W})[\rho]	
 \end{eqnarray}
-joue donc le rôle d’une \emph{fonction thermodynamique effective}
-(analogue à une énergie libre).  
+joue donc le rôle d’une \emph{fonction thermodynamique effective} (analogue à une énergie libre).  
 L’exposant $e^{L(\mathcal{S}_{YY}-\mathcal{W})[\rho]}$ fixe la \textbf{probabilité relative} d’un macro-état $\rho(\theta)$ dans le \gls{GGE} : le terme entropique favorise les états, tandis que le terme énergétique pénalise les configurations coûteuses — d’où la compétition caractéristique de l’équilibre statistique.
 
 
@@ -878,7 +1024,7 @@ Cette approximation correspond à une méthode de \textit{selle statique}, où l
 
 Dans le cadre des systèmes continus, les observables physiques dépendent souvent d'un champ $\phi(x)$, et sont représentées par des \emph{fonctionnelles}, notées $F[\phi]$. Afin d'étudier la sensibilité de ces fonctionnelles à une variation infinitésimale du champ, on introduit la notion de \textbf{dérivée fonctionnelle}, définie par analogie avec la dérivée directionnelle en espace vectoriel de dimension finie.
 
-Considérons une variation infinitésimale du champ de la forme $\phi(x) \mapsto \phi(x) + \epsilon \lambda(x)$, où $\lambda(x)$ est une fonction test lisse de support compact. La variation induite sur la fonctionnelle est donnée par :
+Considérons une variation infinitésimale du champ de la forme $\phi(x) \mapsto \phi(x) + \epsilon \lambda(x)$, où $\lambda(x)$ est une fonction test lisse à support compact. La variation induite sur la fonctionnelle est donnée par :
 
 \begin{equation}\label{chap2:eq.diff.q.1}
 	\dfonc{\lambda} F[\phi] \equiv \lim_{\epsilon \to 0} \frac{F[\phi + \epsilon \lambda] - F[\phi]}{\epsilon}
@@ -926,7 +1072,7 @@ Cette construction générale sera utilisée dans la suite pour formuler des con
 \(
 \rho=\rho_{\text{eq}}+\delta\rho
 \)
-et développons $(\mathcal{S}_{YY}-\mathcal{W})[\rho]$ à l’ordre linéaire :
+et développons $(\mathcal{S}_{YY}-\mathcal{W})[\rho]$ à l’ordre premier (linéaire) en $\delta \rho$ autour de la distribution d’équilibre $\rho_{\mathrm{eq}}$ :
 \begin{eqnarray*}
 	\left(  \mathcal{S}_{YY} - \mathcal{W }\right )[\rho] & \approx &\left(  \mathcal{S}_{YY} - \mathcal{W}\right )[ \rho_{\mathrm{eq}}] +  \dfonc{\delta \rho}\left (  \mathcal{S}_{YY} - \mathcal{W}\right )[ \rho_{\mathrm{eq}}]  + \mathcal{O}(\delta \rho^2 ) ,
 	\label{chap:TBA:eq:action}	
@@ -940,8 +1086,8 @@ soit
 	\dfonc{\delta \rho} \mathcal{S}_{YY}[ \rho_{\mathrm{eq}}]  = \dfonc{\delta \rho}\mathcal{W}[ \rho_{\mathrm{eq}}] . \label{chap:TBA:eq:stationnarite}
 \end{equation}
 
-\paragraph{Équation intégrale de la TBA.}
-La condition de stationnarité au point selle \(\rho=\rho_{\mathrm{eq}}\) \eqref{chap:TBA:eq:stationnarite} réécrit de la forme de produit scalaire \eqref{chap2:eq.diff.q.2} implique que pour tous $\theta$ :
+\paragraph{Équation intégrale de la \gls{TBA}.}
+La condition de stationnarité au point selle \(\rho=\rho_{\mathrm{eq}}\) \eqref{chap:TBA:eq:stationnarite} réécrit sous la forme de produit scalaire \eqref{chap2:eq.diff.q.2} implique que pour tous $\theta$ :
 \begin{eqnarray}\label{chap:TBA:eq:stationnarite-2}
 	\frac{\delta\mathcal{S}_{YY}[\rho_{\mathrm{eq}}]}{\delta\rho(\theta)} = \frac{\delta\mathcal{W}[\rho_{\mathrm{eq}}]}{\delta\rho(\theta)},
 \end{eqnarray}
@@ -953,7 +1099,7 @@ Ainsi \eqref{chap:TBA:eq:stationnarite-2} se réécrit en
 \begin{eqnarray}
 	\frac{\delta\mathcal{S}_{YY}[\rho_{\mathrm{eq}}]}{\delta\rho(\theta)} = w(\theta),\label{chap:TBA:eq:stationnarite-3}
 \end{eqnarray}
-En utilisant l’expression explicite de l’entropie de Yang–Yang \eqref{chap.2.entropi.int}, on obtient l’identité fonctionnelle
+En utilisant l’expression explicite de l’entropie de \gls{YY} \eqref{chap.2.entropi.int}, on obtient l’identité fonctionnelle
 \begin{eqnarray}
 	w & = & \ln ( \nu_{\!eq}^{-1}  - 1 ) - \frac{\Delta}{2\pi} \star \ln ( 1 -  \nu_{\!eq}).\label{chap:TBA:eq:w}
 \end{eqnarray}
@@ -986,19 +1132,23 @@ l’équation intégrale canonique de la thermodynamique de Bethe :
 Les relations \eqref{chap:TBA:eq:nu}–\eqref{chap:TBA:eq:e} déterminent de façon univoque la distribution de rapidité d’équilibre \(\rho_{\!eq}\) à partir du poids spectral \(w\), caractéristique du \gls{GGE}.
 
 \medskip
-Ainsi, la méthode du point selle relie \emph{explicitement} le {\em poids spectral}, $w$  (caractéristique du \gls{GGE}) au \emph{macro-état le plus probable}, $\rho_{eq}$ , et permet d’évaluer les observables par la formule d’ensemble \eqref{chap:TBA:eq:ensemble_average:approx}.
+Ainsi, la méthode du point selle relie \emph{explicitement} le {\em poids spectral}, $w$  (caractéristique du \gls{GGE}) au \emph{macro-état le plus probable}, $\rho_{eq}$, et permet d’évaluer les observables par la formule d’ensemble \eqref{chap:TBA:eq:ensemble_average:approx}.
 
 
-\paragraph{Résolution numérique de l’équation TBA.}\label{para-algho-TBA}
+\paragraph{Résolution numérique de l’équation \gls{TBA}.}\label{para-algho-TBA}
 
-Prenons un {\em poids spectral} quelconque, par exemple : 
+Prenons un {\em poids spectral} particulier, par exemple : 
 \begin{equation}
   w(\theta)= \frac{1}{2}\theta^2 .\label{eq:TBA:w:quadra}
 \end{equation} 
-En injectant $w$ dans l’équation intégrale pour la pseudo-énergie \eqref{chap:TBA:eq:e}, on obtient l’équation non linéaire.
-Cette équation définit un opérateur contractant sur l’espace des fonctions
-\( \epsilon(\theta) \) ; son Jacobien a une norme strictement
-inférieure à 1, garantissant la convergence de l’itération de Picard.
+En injectant $w$ dans l’équation intégrale pour la pseudo-énergie \eqref{chap:TBA:eq:e}, on obtient une équation non linéaire.
+Cette équation définit un opérateur contractant sur l’espace des fonctions \( \epsilon(\theta) \) ; son Jacobien a une norme strictement inférieure à 1, garantissant la convergence de l’itération de Picard.
+\footnote{Pour une preuve rigoureuse de cette propriété, voir par exemple \cite{Korepin1997}.
+Cette équation définit un opérateur \(T\) contractant sur l’espace des fonctions \(\epsilon(\theta)\), au sens où il rapproche les fonctions entre elles selon la norme choisie. 
+En conséquence, l’itération de Picard, \(\epsilon_{n+1}(\theta) = T[\epsilon_n](\theta)\), converge vers le point fixe \(\epsilon^*(\theta)\) unique, solution de l’équation. 
+Cette propriété garantit à la fois l’existence et l’unicité de la solution dans le cadre rigoureux de l’analyse fonctionnelle.
+}
+
 
 \medskip
 \subparagraph{Algorithme d’itération.}  
@@ -1015,7 +1165,7 @@ L’itération est poursuivie jusqu’à convergence, que l’on peut tester via
 \(
   \beta \left\| \varepsilon_{n+1} - \varepsilon_n \right\|_\infty < 10^{-12},
 \)
-où \(\|\cdot\|_\infty\) désigne la norme \(L^\infty\) (ou un maximum discret après discrétisation).
+où \(\|\bullet\|_\infty\) désigne la norme \(L^\infty\) (ou un maximum discret après discrétisation).
 
 
 \medskip
@@ -1030,7 +1180,7 @@ On en déduit ensuite la densité d'état à l'équilibre $\rho_{s,eq}$ via le {
 \medskip
 
 
-L’opérateur de dressing \eqref{eq:dressing} étant linéaire, il se résout numériquement sous la forme :
+L’opérateur de dressing \eqref{eq:dressing} étant linéaire, il peut être résolu numériquement sous la forme suivante :
 \begin{eqnarray*}
 	\left\{ \mathrm{id} - \frac{\Delta}{2\pi} \star ( \nu \ast \cdot ) \right\} f^{\mathrm{dr}}_{[\nu]} & = & f,\label{eq:TBA:rho_s:num}
 \end{eqnarray*}
@@ -1107,7 +1257,7 @@ avec $g$ le paramètre d’interaction 1D et $n$ la densité linéique du gaz.
 En fonction de $\gamma$, deux régimes limites apparaissent :
 
 \begin{itemize}[label = $\bullet$]
-    \item \textbf{Régime de Tonks-Girardeau} : ce régime correspond à des interactions fortes, $\gamma \to \infty$ (ou $g \to \infty$, densité faible). Dans ce cas, la distribution de rapidités ressemble à une \emph{mer de Fermi}. %Un exemple de ce profil est représenté sur la Fig.~\ref{fig:rapidites}(a).
+    \item \textbf{Régime de \gls{TG}} : ce régime correspond à des interactions fortes, $\gamma \to \infty$ (ou $g \to \infty$, densité faible). Dans ce cas, la distribution de rapidités ressemble à une \emph{mer de Fermi}. %Un exemple de ce profil est représenté sur la Fig.~\ref{fig:rapidites}(a).
 
     \item \textbf{Régime de \gls{qBEC}} : pour $\gamma \ll 1$, les interactions sont faibles et la distribution de rapidités se déforme par rapport à la mer de Fermi. Dans la limite $\gamma \to 0$, la distribution attendue est un demi-cercle \cite{LL_1963_1} :
     \begin{equation}
@@ -1120,7 +1270,7 @@ En fonction de $\gamma$, deux régimes limites apparaissent :
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\textwidth , page = 5 ]{figures/02_GGE_TBA/Figures.pdf}
-    \caption{Distributions de rapidités pour différents paramètres de Lieb $\gamma$ et différentes températures $T$.  Distribution dans le régime de faible interaction ($\gamma \ll 1$) : le demi-cercle gris représente la distribution attendue pour $\gamma \to 0$, tandis que le profil bleu correspond à $\gamma$ petit mais non nul, montrant une discontinuité aux extrémités. La distribution jaune illustre l’état excité au-delà de l’état fondamental, avec apparition d’ailes aux extrémités.}
+    \caption{Distributions de rapidités pour différents paramètres de Lieb $\gamma$ et différentes températures réduites $\mathfrak{t}$.  Distribution dans le régime de faible interaction ($\gamma \ll 1$): le demi-cercle gris représente la distribution attendue pour $\gamma \to 0$, tandis que le profil bleu correspond à $\gamma$ petit mais non nul, montrant une discontinuité aux extrémités. La distribution en rouge illustre l’état excité au-delà de l’état fondamental, avec apparition d’ailes aux extrémités.}
     \label{fig:rapidites}
 \end{figure}
 
@@ -1129,7 +1279,7 @@ En fonction de $\gamma$, deux régimes limites apparaissent :
 \paragraph{Diagramme des régimes du gaz de Lieb-Liniger.}
 
 \subparagraph{Paramètres fixés.}
-Dans le cas de l’équilibre thermique usuel (ensemble de Gibbs), seules deux charges sont conservées : le {\bf nombre total de particules} \( \operator{\mathcal{Q}}[f_0] \) et l’{\bf énergie totale} \( \operator{\mathcal{Q}}[f_2] \). Cela correspond au choix suivant :
+Dans le cas de l’équilibre thermique usuel (ensemble de Gibbs), seules deux charges sont conservées : le {\bf nombre de particules} \( \operator{\mathcal{Q}}[f_0] \) et l’{\bf énergie} \( \operator{\mathcal{Q}}[f_2] \). Cela correspond au choix suivant :
 \begin{align*}
 	f_0(\theta) &= 1, \quad &&\text{(densité de particules)} \\
 	f_2(\theta) &= \frac{1}{2}m \theta^2, \quad &&\text{(densité d’énergie $\varepsilon$)}
@@ -1147,7 +1297,7 @@ Le poids spectral s’écrit comme une combinaison linéaire :
 \begin{eqnarray}\label{chap4:eq.w.1}
 	w(\theta) & = & \beta_0 f_0(\theta) + \beta_2 f_2(\theta),
 \end{eqnarray}
-où \( f_i(\theta) \) sont les densités locales associées aux charges conservées.
+où les \( f_i(\theta) \) sont les densités locales associées aux charges conservées.
 
 
 
@@ -1184,7 +1334,7 @@ Un exemple de ce profil  avec ($\gamma=9.10^{-3}$, $\mathfrak{t} = 86.5$) est re
 \medskip
 
 
-Pour synthétiser les différents comportements, les régimes principaux peuvent être représentés dans le plan $(\gamma, \mathfrak{t})$. Le diagramme de la Fig.~\ref{fig:diagramme} distingue trois zones : gaz de Bose idéal, gaz de Tonks-Girardeau et qBEC. Les courbes qui délimitent ces zones correspondent à des conditions analytiques sur $\gamma$ et $\mathfrak{t}$, par exemple $\gamma^{3/2} \mathfrak{t} = 1$, $\gamma^2 \mathfrak{t} = 1$ et $\gamma \mathfrak{t} = 1$. Il ne s’agit pas de transitions de phase, mais de cross-over entre régimes asymptotiques. Les expériences sur puce atomique du \gls{LCF} ont permis d’étudier ces régimes. La plupart des résultats présentés dans cette thèse correspondent à $\gamma \sim 0.9 \times 10^{-2}$. La zone grise indique la gamme de paramètres expérimentaux explorés pendant cette thèse.
+Pour synthétiser les différents comportements, les régimes principaux peuvent être représentés dans le plan $(\gamma, \mathfrak{t})$. Le diagramme de la Fig.~\ref{fig:diagramme} distingue trois zones : gaz de Bose idéal, gaz de \gls{TG} et \gls{qBEC}. Les courbes qui délimitent ces zones correspondent à des conditions analytiques sur $\gamma$ et $\mathfrak{t}$, par exemple $\gamma^{3/2} \mathfrak{t} = 1$, $\gamma^2 \mathfrak{t} = 1$ et $\gamma \mathfrak{t} = 1$. Il ne s’agit pas de transitions de phase, mais de cross-over entre régimes asymptotiques. Les expériences sur puce atomique du \gls{LCF} ont permis d’étudier ces régimes. La plupart des résultats présentés dans cette thèse correspondent à $\gamma \sim 0.9 \times 10^{-2}$. La zone grise indique la gamme de paramètres expérimentaux explorés pendant cette thèse.
 
 \medskip
 
@@ -1193,21 +1343,21 @@ Pour synthétiser les différents comportements, les régimes principaux peuvent
     \centering
     \centering
      \includegraphics[width=0.9\textwidth , page = 4 ]{figures/02_GGE_TBA/Figures.pdf}
-    \caption{Diagramme des régimes principaux du gaz de \acrlong{LL} : gaz de Bose idéal, Tonks-Girardeau et \gls{qBEC}, en fonction des paramètres adimensionnés $\gamma$ et $\mathfrak{t}$. Les courbes noires, bleues et orange délimitent les cross-overs entre régimes. La zone grise correspond aux paramètres expérimentaux explorés pendant la thèse. Figure adaptée de \cite{Bouchoule2011}.}
+    \caption{Diagramme des régimes principaux du gaz de \acrlong{LL} : gaz de Bose idéal, \gls{TG} et \gls{qBEC}, en fonction des paramètres adimensionnés $\gamma$ et $\mathfrak{t}$. Les courbes noires, bleues et orange délimitent les cross-overs entre régimes. La zone grise correspond aux paramètres expérimentaux explorés pendant la thèse. Figure adaptée de \cite{Bouchoule2011}.}
     \label{fig:diagramme}
 \end{figure}
 
 \section*{Conclusion du chapitre}
 
-Dans les systèmes intégrables, l’état stationnaire hors équilibre est correctement décrit par un \gls{GGE} basé sur une infinité de charges conservées. Ces charges sont liées aux puissances des rapidités des quasi-particules.  
+Dans les systèmes intégrables, l’état stationnaire hors équilibre est correctement décrit par un \gls{GGE} basé sur une infinité de charges conservées. Ces charges sont liées aux puissances des rapidités des quasi-particules (cf eqs~ \eqref{chap.2.charge.ordre.i.1}  et  \eqref{chap.2.charge.ordre.i.1.111111}).  
 
 \medskip
 
-La description via le \emph{poids spectral} $w(\theta)$ permet de relier ces charges aux distributions de rapidité à l’équilibre. En moyenne, $w(\theta)$ définit à la fois les valeurs moyennes des charges conservées et la distribution de rapidité correspondante. 
+La description via le \emph{poids spectral} $w(\theta)$ permet de relier ces charges aux distributions de rapidité à l’équilibre. En moyenne, $w(\theta)$ définit à la fois les valeurs moyennes des charges conservées et la distribution de rapidité correspondante (cf eq~ \eqref{chap:TBA:eq:w}). 
 
 \medskip 
 
-Dans la limite thermodynamique, $w(\theta)$ sert de donnée d’entrée pour les équations de le \gls{TBA}, qui permettent, par un calcul numérique, de reconstruire la distribution de rapidité à partir de $w(\theta)$.  
+Dans la limite thermodynamique, $w(\theta)$ sert de donnée d’entrée pour les équations de \gls{TBA}, qui permettent, par un calcul numérique, de reconstruire la distribution de rapidité à partir de $w(\theta)$.  
 
 \medskip 
 

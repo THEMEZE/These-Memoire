@@ -1370,7 +1370,9 @@ Autrement dit, dans un petit intervalle $\delta \theta $, le nombre total de par
 \begin{eqnarray}\label{chap.1:eq.dN.1}
 	\delta N (\theta ) & = & L \rho (\theta) \delta \theta 	
 \end{eqnarray}
-Avec les rapiditées $\theta_a$ ordonnées \ie $\theta_1 < \theta_1 < \cdots < \theta_N$. Pour des intervalles $[\theta_a , \theta_a + \delta \theta_a]$ assez petits $\delta \theta_a = \theta_{a+1} - \theta_a$, ce qui correspond à $\delta N (\theta_a) = 1 $ quasi-particule (car une seule particule occupe l’intervalle entre deux rapidités consécutives). Dans la limite thermodynamique la dernière équation \eqref{chap.1:eq.dN.1} se réécrit comme :
+Avec les rapidités $\theta_a$ ordonnées \ie $\theta_1 < \theta_2 < \cdots < \theta_N$. 
+
+Pour des intervalles $[\theta_a , \theta_a + \delta \theta_a]$ assez petits, on a $\delta \theta_a = \theta_{a+1} - \theta_a$. Cela correspond à $\delta N (\theta_a) = 1 $ quasi-particule, car une seule particule occupe l’intervalle entre deux rapidités consécutives. Dans la limite thermodynamique la dernière équation \eqref{chap.1:eq.dN.1} se réécrit comme :
 \begin{eqnarray}
 	\rho(\theta_a) & = & \underset{\mathrm{\tiny therm}}{\lim} \frac{1}{L} \cdot \frac{1}{\theta_{a+1} - \theta_a} > 0.
 \end{eqnarray}
@@ -1403,7 +1405,7 @@ ce qui relie \( \rho_s \) au déplacement collisionel \( \Delta \) défini dans 
     \centering
     \includegraphics[width=1.1\textwidth , page = 3 ]{figures/01_LL_BA/Figures.pdf}
     \caption{
-	Illustration de la relation entre la densité d’états $\rho_s(\theta)$ et les nombres quantiques fermioniques $I_a$. Les rapiditées dans l’intervalle $[\theta, \theta + \delta\theta]$ s’associent à un ensemble de nombres quantiques fermioniques situés dans $[I, I + \delta I]$. La densité d’états $\rho_s$ se déduit alors de la relation $\delta I \simeq L \rho_s(\theta) \delta \theta $
+	Illustration de la relation entre la densité d’états $\rho_s(\theta)$ et les nombres quantiques fermioniques $I_a$. Les rapidités dans l’intervalle $[\theta, \theta + \delta\theta]$ s’associent à un ensemble de nombres quantiques fermioniques situés dans $[I, I + \delta I]$. La densité d’états $\rho_s$ se déduit alors de la relation $\delta I \simeq L \rho_s(\theta) \delta \theta $
     }
     \label{fig:rho_s.I}
 \end{figure}
@@ -1450,16 +1452,22 @@ Ces deux types d’excitations définissent ensemble le spectre complet du modè
 
 \paragraph{Équation de Bethe continue.}
 
-Hors de l’état fondamental, la notion de « mer de Fermi » n’est plus bien définie, et les équations~\eqref{chap.1.rho.2} et \eqref{chap.1.rho.3} ne sont donc plus valides (en particulier, on n’a plus $\rho = \rho_s$).  
-Dans ce cadre, les équations discrètes de Bethe~\eqref{chap.1.rho.s.2} se condensent, à la limite thermodynamique, en une équation intégrale reliant les densités de rapidité :
+Hors de l’état fondamental, la notion de « mer de Fermi » n’est plus bien définie, et les équations~\eqref{chap.1.rho.2} et \eqref{chap.1.rho.3} ne sont donc plus valides (en particulier, on n’a plus $\rho = \rho_s$). 
+
+%Plus généralement, non nécessairement dans l'état fondamantal ( \ie hors et à l'état fondamanttal), les équations de Bethe~\eqref{chap.1.rho.s.2} se condensent, à la limite thermodynamique, en une équation intégrale reliant les densités de rapidité :
+
+\smallskip 
+
+De manière plus générale, que l’on soit ou non dans l’état fondamental (\ie{} aussi bien dans l’état fondamental qu’à l’extérieur de celui-ci), les équations de Bethe~\eqref{chap.1.rho.s.2} se condensent, dans la limite thermodynamique, en une équation intégrale reliant les densités de rapidité :
+
 
 \begin{equation}\label{eq:TBA-rhos}
 	2\pi \rho_s(\theta) \;=\; 1 \;+\; \bigl(\Delta \star \rho\bigr)(\theta),
 \end{equation}
 où le symbole $\star$ désigne la \emph{convolution} :
-\[
-	\bigl[\Delta \star \rho\bigr](\theta) \;=\; \int_{-\infty}^{\infty} d\theta'\, \Delta(\theta - \theta')\, \rho(\theta').
-\]
+\begin{eqnarray*}
+	\bigl[\Delta \star \rho\bigr](\theta) & = &  \int_{-\infty}^{\infty} d\theta'\, \Delta(\theta - \theta')\, \rho(\theta').
+\end{eqnarray*}
 
 On introduit alors la \textbf{densité de trous} $\rho_h(\theta)$ définie par
 \begin{equation}
