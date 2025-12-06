@@ -5,7 +5,8 @@
 \section*{Introduction}
 
 \paragraph{De l’état stationnaire à la dynamique}  
-Après avoir étudié les propriétés stationnaires du gaz de bosons unidimensionnel, nous abordons maintenant sa dynamique hors équilibre. Un outil théorique qui permet de décrire cette évolution macroscopique à grande échelle est {\bf l’Hydrodynamique Généralisée}, en anglais \gls{GHD}. Cette approche, développée au cours des dernières années (voir par exemple~\cite{Doyon_GHD_2020,Bouchoule_2022,ESSLER2023127572,kerr2023theory}), fournit un cadre unifié pour la dynamique des systèmes intégrables.
+Après avoir étudié les propriétés stationnaires du gaz de bosons unidimensionnel, nous abordons maintenant sa dynamique hors équilibre. Un outil théorique qui permet de décrire cette évolution macroscopique à grande échelle\footnote{La notion de « grande échelle » sera précisée dans la section suivante, où nous détaillerons la description hydrodynamique du système.}
+est {\bf l’Hydrodynamique Généralisée}, en anglais \gls{GHD}. Cette approche, développée au cours des dernières années (voir par exemple~\cite{Doyon_GHD_2020,Bouchoule_2022,ESSLER2023127572,kerr2023theory}), fournit un cadre unifié pour la dynamique des systèmes intégrables.
 
 \paragraph{Principe général de l’approche hydrodynamique}  
 %Jusqu'ici , nous avons considéré des systèmes homogènes en équilibre ou relaxés vers un état stationnaire. Nous avons étudier la thermodynamique de Bethe Ansatz (\gls{TBA}) qui permet de caractériser ces états stationnaires par une distribution de rapidité homogène $\rho(\theta)$. Maintenant pour passer la l'hydrodynamique, nous allons étudier des systèmes inhomogènes et hors équilibre. Nous considérerons que le systeme est suffisamment grand pour que des variations spatiales et temporelles puissent apparaître. Et suffisamment lent pour que le système puisse se relaxer localement vers des états quasi-stationnaires. 
@@ -48,12 +49,22 @@ la variable de rapidité $\theta$ caractérise l’état asymptotique des quasi-
 %Dans la \gls{LDA}, nous pouvons revoir les charges définis dans le chapitre précédant.
 
 L’objectif de l’hydrodynamique est de décrire la dynamique macroscopique du système, après un lissage sur des échelles intermédiaires de temps et d’espace. Le système est alors découpé en cellules spatio-temporelles de taille $\ell \times \tau$. 
+\footnote{
+	La variable $\tau$ représente l’échelle de temps caractéristique associée au découpage en cellules spatio-temporelles. Elle doit être suffisamment grande pour que le système puisse se relaxer localement vers un état quasi-stationnaire, mais suffisamment petite devant les temps d’évolution macroscopique pour que les variations globales restent négligeables à l’intérieur de chaque cellule. Autrement dit, on impose une séparation d’échelles temporelles analogue à celle des longueurs :
+\[
+\tau_c \ll \tau \ll t,
+\]
+où $\tau_c$ est le temps microscopique de relaxation locale et $t$ l’échelle de variation globale du système. Cette condition garantit la validité de l’approximation hydrodynamique et permet d’appliquer l’Approximation de Densité Locale (\gls{LDA}) dans chaque cellule.
+}
 
 \smallskip
 
 %Si on suppose que, le système local,  dans chaque cellule, est relaxé et décrit par un état quasi-stationnaire. Cette suposition est appelle l’\textbf{Approximation de Densité Locale} (en anglais \gls{LDA}).
 
-Nous faisons l’hypothèse que, dans chaque cellule, le système atteint localement un état quasi-stationnaire. Cette hypothèse constitue l’\textbf{Approximation de Densité Locale} (en anglais \gls{LDA}).
+%Nous faisons l’hypothèse que, dans chaque cellule, le système atteint localement un état quasi-stationnaire. Cette hypothèse constitue l’\textbf{Approximation de Densité Locale} (en anglais \gls{LDA}).
+
+Nous faisons l’hypothèse que, dans chaque cellule de taille \(\ell\), le système se relaxe localement un état quasi-stationnaire, c’est-à-dire que les observables locales deviennent stables et proches de leur valeur d’équilibre local, même si le système global évolue encore. Cette hypothèse constitue l’\textbf{Approximation de Densité Locale} (en anglais \gls{LDA}).\footnote{Le temps nécessaire pour atteindre cet état quasi-stationnaire dans une cellule est typiquement inférieur à l’échelle de variation macroscopique du système.}
+
 
 
 \medskip
@@ -89,12 +100,10 @@ Les charges locales conservées ont été définies dans les équations~\eqref{c
 	= \int_{\mathbb{R}^2} dx\, d\theta\, f(x, \theta)\, \operator{\rho}(x, \theta ; t).
 \end{equation}
 %où $\operator{\rho}(x,\theta)$ est l'opérateur distribution de rapidité.  
-Cette quantité correspond à la charge totale associée à une observable prenant la valeur $f(x,\theta)$ pour chaque quasi-particule.  
-
-\medskip
-
+Cette quantité correspond à la charge totale associée à une observable prenant la valeur $f(x,\theta)$ pour chaque quasi-particule.\footnote{
 \noindent\textbf{Remarque~:} pour que $\operator{\mathcal{Q}}[f]$ soit strictement conservée dans le temps, la fonction $f$ doit être indépendante de $x$, c’est-à-dire $f(x,\theta) = f(\theta)$. %Dans ce cas, l’opérateur associé agit sur un état à une particule comme $\hat{\mathcal{Q}}[f]\,|\theta\rangle = f(\theta)\,|\theta\rangle$. Pour un gaz de solitons (KdV, NLS, Boussinesq…), $\hat{\mathcal{Q}}[f]$ représente l’une des quantités conservées (masse, impulsion, énergie...) du modèle microscopique, et $f(\theta)$ correspond à la contribution d’une solution individuelle de paramètre $\theta$ à cette quantité.
 Si $f$ dépend de $x$, $\operator{\mathcal{Q}}[f]$ n’est pas nécessairement conservée au cours de l’évolution du système. En revanche, si $f$ dépend uniquement de $\theta$ , alors $\operator{\mathcal{Q}}[f]$ correspond à une véritable charge conservée. Dans le cadre de ce chapitre, la dépendance en $x$ est introduite pour faciliter certaines dérivations et l’étude des profils locaux, mais la conservation stricte n’est garantie que pour les fonctions $f(\theta)$ indépendantes de $x$.
+}
 
 
 \medskip
@@ -204,12 +213,17 @@ La fonction $\rho(x,\theta,t)$ représente alors la densité locale de rapidité
 
 
 \paragraph{Équation de GHD avec force externe}  
-En présence d’un champ de force, l'équation \gls{GHD} prend la forme~\cite{10.21468/SciPostPhys.2.2.014}
+En présence d’un champ de force externe, l'équation \gls{GHD} prend la forme~\cite{10.21468/SciPostPhys.2.2.014}
 \begin{equation}\label{chap:GHD:eq.GHD.1}
 	\partial_t \rho + \partial_x \!\left(v^{\text{eff}} \rho\right) 
 	+ \partial_\theta \!\left(a^{\text{eff}} \rho\right) = 0,
 \end{equation}
-où $v^{\text{eff}}$ et $a^{\text{eff}}$ sont des fonctionnelles déterminées par la structure intégrable du modèle. Le terme en $\partial_\theta$ traduit la déviation des quasi-particules sous l’effet des forces externes appliquées. %D’autres types de forces ont été étudiés~\cite{Bastianello2019a,Bastianello2019b}, mais ne seront pas considérés ici. 
+où $v^{\text{eff}}$ et $a^{\text{eff}}$ sont des fonctionnelles déterminées par la structure intégrable du modèle. Le terme en $\partial_\theta$ traduit la déviation des quasi-particules sous l’effet des forces externes appliquées. 
+\footnote{
+	En présence d'un potentiel externe $V(x)$, le terme $\partial_\theta(a^{\text{eff}}\rho)$ traduit le couplage entre les différentes tranches de rapidité induites par les variations spatiales du potentiel. Plus précisément, $\partial_x$ représente la variation spatiale de la densité dans l'espace physique, tandis que $\partial_\theta$ capture la redistribution des quasi-particules entre différentes rapidités. Pour une quasi-particule à la position $x$ avec une rapidité $\theta$, le terme de dérive $v^{\text{eff}}$ décrit le déplacement spatial effectif résultant des interactions, et le terme d'accélération $a^{\text{eff}} = -V'(x)$ représente la force externe agissant sur la particule.
+	Les équations GHD sans force externe correspondent à la conservation des charges associées à des fonctions $f(\theta)$ dépendant uniquement de la rapidité. En présence d'un potentiel externe $V(x)$, le terme $\partial_\theta(a^{\text{eff}}\rho)$ traduit le couplage entre les différentes tranches de rapidité induites par les variations spatiales du potentiel.
+}
+%D’autres types de forces ont été étudiés~\cite{Bastianello2019a,Bastianello2019b}, mais ne seront pas considérés ici. 
 
 \medskip
 
