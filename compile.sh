@@ -8,7 +8,14 @@ if [[ "$reponse_compile" == "o" || "$reponse_compile" == "O" ]]; then
     python3 ./compilateurs/compil_tex.py
 fi
 
-#python ./compilateurs/pdf_decoupe.py
+# Découpage du PDF en chapitres
+echo "✂️ Découpage du PDF en chapitres..."
+# Demander si on veut découper le PDF en chapitres
+read -p "Souhaites-tu découper le PDF en chapitres ? (o/n) " reponse_dec
+if [[ "$reponse_dec" == "o" || "$reponse_dec" == "O" ]]; then
+    python ./compilateurs/pdf_decoupe.py
+fi
+
 
 TEXFILE="main"
 OUTDIR="build"
