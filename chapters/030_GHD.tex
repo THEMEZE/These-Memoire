@@ -54,7 +54,7 @@ L’objectif de l’hydrodynamique est de décrire la dynamique macroscopique du
 \[
 \tau_c \ll \tau \ll t,
 \]
-où $\tau_c$ est le temps microscopique de relaxation locale et $t$ l’échelle de variation globale du système. Cette condition garantit la validité de l’approximation hydrodynamique et permet d’appliquer l’Approximation de Densité Locale (\gls{LDA}) dans chaque cellule.
+où $\tau_c$ est le temps microscopique de relaxation locale et $t$ l’échelle de variation globale du système. Cette condition garantit la validité de l’approximation hydrodynamique et permet d’appliquer l’Approximation de Densité Locale (\acrshort{LDA}) dans chaque cellule.
 }
 
 \smallskip
@@ -204,7 +204,7 @@ Dans un système intégrable en dimension un, il existe une infinité de quantit
 \paragraph{Paramétrisation spectrale.}  
 Dans le modèle de \gls{LL}, nous avons vu que localement un système relaxé est décrit par une distribution de rapidité homogène $\rho(\theta)$ (voir chapitres précédents).  
 
-Avec l’\gls{LDA}, on considère désormais des situations dans lesquelles le système présente des variations sur des longueurs d’espace beaucoup plus grandes que les échelles microscopiques $l_c$. Dans ce cadre hydrodynamique, la distribution de rapidité dépend donc explicitement de la position et du temps :  
+Avec la \gls{LDA}, on considère désormais des situations dans lesquelles le système présente des variations sur des longueurs d’espace beaucoup plus grandes que les échelles microscopiques $l_c$. Dans ce cadre hydrodynamique, la distribution de rapidité dépend donc explicitement de la position et du temps :  
 \begin{eqnarray*}
 \rho(x,\theta,t) & = & \mathcal{Q}\big[ (x,\theta) \mapsto \delta(\cdot - x) \, \delta(\cdot - \theta) \big].
 \end{eqnarray*}
@@ -277,7 +277,7 @@ En partant de la définition de la vitesse effective en \eqref{chap:GHD:eq.nu.v.
 \begin{eqnarray}\label{chap:GHD:veff.1}
 	2 \pi \, v^{\mathrm{eff}} \,   \rho   = \nu  \,  \partial_\theta h   + \nu  \,  \left ( \Delta \star ( \rho \,  v^{\mathrm{eff}} )  \right ) ,
 \end{eqnarray}
-{\color{blue}
+{%\color{blue}
 où $\Delta$ désigne le {\em déplacement collisionnel} défini dans le modèle \gls{LL} dans l'équation\eqref{eq:I-1-16}.
 En soustrayant $v^{\mathrm{eff}}(\theta)\,\nu(\theta)\,(\Delta\star\rho)(\theta)$ des deux côtés on obtient
 \begin{eqnarray}\label{chap:GHD:veff.2}
@@ -285,11 +285,11 @@ En soustrayant $v^{\mathrm{eff}}(\theta)\,\nu(\theta)\,(\Delta\star\rho)(\theta)
 	= \nu(\theta)\,\Big(\partial_\theta h(\theta)
 	+ \int d\theta'\,\Delta(\theta-\theta')\,\rho(\theta')\,(v^{\mathrm{eff}}(\theta')-v^{\mathrm{eff}}(\theta))\Big).
 \end{eqnarray}
-En utilisant la relation d'\emph{habillage} \eqref{chap:GHD:eq.nu.v.a.1} $2\pi\rho=1^{\mathrm{dr}}_{[\nu]}\,\nu$ et en simplifiant l'expression algébriquement (voir définition \eqref{eq:dressing} et inversion de l'opérateur d'habillage), le facteur à gauche se réduit proportionnellement à $\nu(\theta)$ soit 
+En utilisant la relation d'\emph{habillage} \eqref{chap:GHD:eq.nu.v.a.1} ($2\pi\rho=1^{\mathrm{dr}}_{[\nu]}\,\nu$) et en simplifiant l'expression algébriquement (voir définition \eqref{eq:dressing} et inversion de l'opérateur d'habillage), le facteur à gauche se réduit proportionnellement à $\nu(\theta)$ soit 
 \begin{eqnarray}
 	2 \pi \rho - \nu \Delta \star \rho & = & \nu ,
 \end{eqnarray}
-	ce qui conduit directement, après division par ce facteur non nul, à l'équation intégrale standard pour la vitesse effective :
+	ce qui conduit en injectant dans \eqref{chap:GHD:veff.2}, et après division par le facteur d'occupation $\nu$ non nul, à l'équation intégrale standard pour la vitesse effective :
 \begin{eqnarray}\label{chap:GHD:veff.4}
 	v^{\mathrm{eff}}(\theta)
 	= \partial_\theta h(\theta)
@@ -510,6 +510,18 @@ Dans le cas limite d’un système \emph{sans interactions}, l’espace spectral
 \medskip
 
 En l’absence de phénomènes dissipatives, la densité de distribution $\rho$ est conservée le long du flot hamiltonien associé à l’énergie $H$, ce qui s’exprime par
+\footnote{
+	\textbf{Convention de signe pour l'équation de Liouville et le crochet de Poisson~:}
+	Il existe deux conventions couramment utilisées dans la littérature. 
+	La convention de \textbf{Dirac} (adoptée dans ce chapitre) définit l'équation de Liouville comme
+	\[
+	\frac{d\rho}{dt} = \frac{\partial\rho}{\partial t} + \{\rho, H\} = 0,
+	\]
+	où le crochet de Poisson canonique est $\{A,B\} = \sum_i \left(\frac{\partial A}{\partial q_i}\frac{\partial B}{\partial p_i} - \frac{\partial A}{\partial p_i}\frac{\partial B}{\partial q_i}\right)$.
+	La convention de \textbf{Landau et Lifschitz} utilise une définition opposée du crochet, conduisant à $\frac{d\rho}{dt} = \frac{\partial\rho}{\partial t} - \{\rho, H\} = 0$.
+	Ces deux formulations sont équivalentes mathématiquement, mais diffèrent par le signe du crochet de Poisson. 
+	Dans ce manuscrit, nous suivons la convention de \textbf{Dirac}.
+}
 \begin{equation}\label{chap:GHD:eq.Liouv.1}
 	\frac{d \rho}{dt} 
 	= \frac{\partial \rho}{\partial t } + \{ \rho , H \} = 0,
@@ -652,7 +664,7 @@ Appliqué à~\eqref{chap:GHD:eq.chochet.bonnemain.4}, on obtient
 	+ \int_{\mathbb{R}} d\theta \; f' \, \rho \, a^{\mathrm{eff}}.
 \end{equation}
 
-En appliquant l’équation de Liouville~\eqref{chap:GHD:eq.Liouv.1}, on retrouve la forme de convection~\eqref{chap:GHD:eq.conserv.1} :
+En appliquant l’équation de Liouville~\eqref{chap:GHD:eq.Liouv.1} , on retrouve la forme de convection~\eqref{chap:GHD:eq.conserv.1} :
 \begin{equation}\label{chap:GHD:eq.conserv.2}
 	\partial_t q_{[f]} + \partial_x j_{[f]} = F_{[f]},
 \end{equation}
@@ -674,14 +686,15 @@ Appliqué à~\eqref{chap:GHD:eq.chochet.bonnemain.4}, on obtient
 	  - \partial_\theta \big( a^{\mathrm{eff}} \, \rho \big).
 \end{equation}
 
-En appliquant l’équation de Liouville~\eqref{chap:GHD:eq.Liouv.1}, on retrouve l’équation \gls{GHD}~\eqref{chap:GHD:eq.GHD.1} :
-\begin{equation*}\label{chap:GHD:eq.conserv.3}
-	\partial_t \rho + \partial_x \big( v^{\mathrm{eff}} \rho \big)
-	+ \partial_\theta \big( a^{\mathrm{eff}} \rho \big) = 0.
-\end{equation*}
+% En appliquant l’équation de Liouville~\eqref{chap:GHD:eq.Liouv.1}, on retrouve l’équation \gls{GHD}~\eqref{chap:GHD:eq.GHD.1} :
+% \begin{equation*}\label{chap:GHD:eq.conserv.3}
+% 	\partial_t \rho + \partial_x \big( v^{\mathrm{eff}} \rho \big)
+% 	+ \partial_\theta \big( a^{\mathrm{eff}} \rho \big) = 0.
+% \end{equation*}
 
 {\color{blue}
-En appliquant l’équation de Liouville~\eqref{chap:GHD:eq.Liouv.1}, on retrouve l’équation \gls{GHD}~\eqref{chap:GHD:eq.GHD.1}\footnote{Remarque sur la convention de signe~: nous utilisons ici la convention \(\dfrac{d\rho}{dt}=\partial_t\rho+\{\rho,H\}=0\) (voir \eqref{chap:GHD:eq.Liouv.1}); avec le crochet de Poisson défini en \eqref{chap:GHD:eq.chochet.bonnemain.1} cela conduit précisément au signe présent dans \eqref{chap:GHD:eq.chochet.bonnemain.6}, il n'y a donc pas d'erreur de signe.} :
+En appliquant l’équation de Liouville~\eqref{chap:GHD:eq.Liouv.1} ($\partial_t \rho(x,\theta,t) = \{\rho(x,\theta,t), H\}$), on retrouve l’équation \gls{GHD}~\eqref{chap:GHD:eq.GHD.1}%\footnote{Remarque sur la convention de signe~: nous utilisons ici la convention \(\dfrac{d\rho}{dt}=\partial_t\rho+\{\rho,H\}=0\) (voir \eqref{chap:GHD:eq.Liouv.1}); avec le crochet de Poisson défini en \eqref{chap:GHD:eq.chochet.bonnemain.1} cela conduit précisément au signe présent dans \eqref{chap:GHD:eq.chochet.bonnemain.6}, il n'y a donc pas d'erreur de signe.} 
+:
 \begin{equation*}\label{chap:GHD:eq.conserv.3}
 	\partial_t \rho + \partial_x \big( v^{\mathrm{eff}} \rho \big)
 	+ \partial_\theta \big( a^{\mathrm{eff}} \rho \big) = 0.
@@ -696,7 +709,7 @@ En appliquant l’équation de Liouville~\eqref{chap:GHD:eq.Liouv.1}, on retrouv
 \subsection{Modèle de Lieb–Liniger}
 
 %Les informations relatives aux interactions entre particules sont contenues dans la définition du crochet de Poisson \eqref{chap:GHD:eq.chochet.bonnemain.1}, associée à l’opérateur de \emph{dressing} spécifique au modèle de Lieb–Liniger, défini en \eqref{eq:dessing}.  
-Dans le modèle de \gls{LL}, l’Hamiltonien, $H = \mathcal{Q}[h]$ \eqref{chap:GHD:eq.ham.1} s’écrit ici avec :
+Dans le modèle de \gls{LL}, l’Hamiltonien $H = \mathcal{Q}[h]$ \eqref{chap:GHD:eq.ham.1} s’écrit ici avec :
 \begin{equation}\label{chap:GHD:eq.ham.2}
 	h(x , \theta ) = \varepsilon(\theta) + V(x),
 \end{equation}
@@ -710,7 +723,7 @@ Dans ce modèle, la vitesse effective et l’accélération effective de \eqref{
 	\quad a^{\mathrm{eff}} = - V'(x).
 \end{equation}
 
-Avec l'equation \eqref{chap:GHD:veff.4} la vitesse effectiff dans le modèle de LL s'écrit 
+Avec l'equation \eqref{chap:GHD:veff.4} la vitesse effectif dans le modèle de \gls{LL} vérifie : 
 \begin{equation}
 	v^{\mathrm{eff}} = \theta +	\int d \theta' \, \Delta(\theta - \theta') \rho ( \theta') ( v^{\mathrm{eff}} ( \theta' ) - v^{\mathrm{eff}} ( \theta )  ) 
 \end{equation}
@@ -746,12 +759,13 @@ Si l’opérateur d’habillage correspond à l’identité (\emph{no dressing})
 	\{\mathcal{Q}[f], \mathcal{Q}[h]\} &=& - \int_{\mathbb{R}^2} dx\, d\theta \; f \left[ \partial_x \big( \rho \, v^{\mathrm{eff}} \big) 
 	+ \partial_\theta \big( \rho \, a^{\mathrm{eff}} \big) \right].
 \end{eqnarray}
-Les flux et termes de force \eqref{chap:GHD:eq.conserv.2.1} s’expriment alors en remplaçant la vitesse effective $v^{\mathrm{eff}}$ et l’accélération effective $a^{\mathrm{eff}}$ (de \eqref{chap:GHD:eq.nu.v.a.1}) par leurs expressions issues de la dynamique hamiltonienne \emph{nu} :
+Les flux et termes de force \eqref{chap:GHD:eq.conserv.2.1} s’expriment alors en remplaçant la vitesse effective $v^{\mathrm{eff}}$ et l’accélération effective $a^{\mathrm{eff}}$ (de \eqref{chap:GHD:eq.nu.v.a.1}) par leurs expressions issues de la dynamique hamiltonienne \emph{nue} :
 \begin{equation}
 	\nu = 2\pi \rho, \qquad v^{\rm eff}(\theta)\ \to\ \partial_\theta h(x,\theta), \qquad a^{\rm eff}(\theta)\ \to\ -\partial_x h(x,\theta),
 \end{equation}
 où $h(x,\theta)$ est l’hamiltonien \emph{nu} (par exemple $h=\varepsilon(\theta)+V(x)$). 
-L’équation \eqref{chap:GHD:eq.GHD.1} devient alors une équation de transport collisionless (type Vlasov) :
+Dans la limite sans interactions, l’équation \eqref{chap:GHD:eq.GHD.1} se réduit à une équation de transport sans collisions (de type Vlasov) :
+\footnote{L'équation de Vlasov décrit l'évolution d'une distribution de particules dans l'espace des phases, en tenant compte des interactions entre particules. Elle est souvent utilisée pour modéliser des systèmes de particules dans des contextes où les effets de collision peuvent être négligés, permettant ainsi d'étudier la dynamique des systèmes en équilibre ou quasi-équilibre.}
 \begin{equation}\label{eq:transport-libre}
   \partial_t \rho + \partial_x\!\big( \partial_\theta h\ \rho \big)
   - \partial_\theta\!\big( \partial_x h\ \rho \big) = 0.
@@ -763,7 +777,7 @@ Pour toute fonction test $f(\theta)$, l'équation \eqref{chap:GHD:eq.chochet.bon
 j_{[f]}(x,t)=\int d\theta\, f(\theta)\,\partial_\theta h\,\rho(x,\theta,t), \qquad F_{[f]}(x,t) = -\int_{\mathbb{R}} d\theta \; \partial_x h \, f'(\theta)  \, \rho(x,\theta,t).
 \end{eqnarray}
 
-Pour $f(\theta) = 1$, $\theta$ et $\theta^2/2$ et $h(\theta,x)=\varepsilon(\theta)+V(x)$, l'équation \eqref{chap:GHD:eq.conserv.2} avec la charge locale \eqref{chap:GHD:eq.chochet.bonnemain.4.11} et les flux et forces \eqref{chap:GHD:eq.flux.1}, dévient les équations d’Euler classiques (Annex \ref{annex:Euler}) :
+Pour $f(\theta) = 1$, $\theta$ et $\theta^2/2$ et $h(\theta,x)=\varepsilon(\theta)+V(x)$, l'équation \eqref{chap:GHD:eq.conserv.2} avec la charge locale \eqref{chap:GHD:eq.chochet.bonnemain.4.11} et les flux et forces \eqref{chap:GHD:eq.flux.1}, déviennent les équations d’Euler classiques (Annexe \ref{annex:Euler}) :
 \begin{eqnarray}\label{chap:3:eq:hydro.1}
 	\left\{
 	\begin{array}{rcl}
@@ -782,12 +796,12 @@ En l’absence de potentiel externe ($V = 0$), le système conserve certaines ch
 
 \smallskip
 
-On a vu que dans un système classique non intégrable, seules ces quelques charges sont conservées. Par exemple dans un système de Gibbs sont conservé , nombre total de particules , quantité de mouvement totale , énergie cinétique totale soit respectivement $\mathcal{Q}[1]  =  \int dx \, q_{[1]}$, $\mathcal{Q}[\theta] = \int dx \, q_{[\theta]}$ et $\mathcal{Q}[{\theta^2}/{2}] = \int dx \, q_{\left[{\theta^2}/{2}\right]} $. 
+On a vu que dans un système classique non intégrable, seules ces quelques charges sont conservées. Par exemple dans un système de \gls{GE} sont conservés , nombre total de particules , quantité de mouvement totale, énergie cinétique totale soit respectivement $\mathcal{Q}[1]  =  \int dx \, q_{[1]}$, $\mathcal{Q}[\theta] = \int dx \, q_{[\theta]}$ et $\mathcal{Q}[{\theta^2}/{2}] = \int dx \, q_{\left[{\theta^2}/{2}\right]} $. 
 
 
 \medskip
 
-Et on a vu qu'en revanche, dans un système intégrable, une infinité de charges sont conservées $\mathcal{Q}[(x,\theta) \mapsto f(\theta)]  =  \int dx \, q_{[(x,\theta) \mapsto f(\theta)]}$. En particulier, dans l'espace $(x,\theta)$, le nombres de rapidité dans chaque intervalle $[\theta , \theta + d\theta]$ est conservé :
+Et on a vu qu'en revanche, dans un système intégrable, une infinité de charges est conservée $\mathcal{Q}[(x,\theta) \mapsto f(\theta)]  =  \int dx \, q_{[(x,\theta) \mapsto f(\theta)]}$. En particulier, dans l'espace $(x,\theta)$, les nombres de rapidité dans chaque intervalle $[\theta , \theta + d\theta]$ est conservé :
 \begin{equation*}
 \Pi(\theta) \delta \theta  = Q[(x,\theta)  \mapsto \delta(\cdot - \theta) \,  \delta \theta ] = \int dx \, \rho(x,\theta;t)\,  \delta \theta.
 \end{equation*}
@@ -817,28 +831,39 @@ En particulier, pour décrire la dynamique à l’échelle d’Euler, il devient
 \section{Régime de quasi-condensation et limite Gross--Pitaevskii}
 
 
-Dans cette section, nous considérons un système décrit par le modèle \gls*{LL} ,sans potentiel extérieur,  dans le régime (\gls{qBEC}), correspondant à la limite $\mathfrak{t} \to 0$ et $\gamma \to 0$ (paramètres définis en \eqref{chap2:eq:t.1} et \eqref{chap2:eq:gamma.1} ) .  Dans ces conditions, la dynamique du gaz peut être décrite par les équations hydrodynamiques issues de l’équation de \gls{GP}. L’objectif est de montrer que les équations de \gls{GHD} reproduisent, dans certaines situations, les équations hydrodynamiques dérivées de \gls*{GP}.
+Dans cette section, nous considérons un système décrit par le modèle \gls*{LL} ,sans potentiel extérieur,  dans le régime (\gls{qBEC}), correspondant à la limite $\mathfrak{t} \to 0$ et $\gamma \to 0$ (paramètres (température réduite et paramètre de Lieb)  définis en \eqref{chap2:eq:t.1} et \eqref{chap2:eq:gamma.1}).  Dans ces conditions, la dynamique du gaz peut être décrite par les équations hydrodynamiques issues de l’équation de \acrfull{GP}. L’objectif est de montrer que les équations de \gls{GHD} reproduisent, dans certaines situations\footnote{
+Par « dans certaines situations », on entend précisément le cas où le système initial correspond à une distribution de rapidité formant une unique mer de Fermi, c'est-à-dire une fonction d'occupation $\nu(x,\theta,t)$ qui prend la valeur 1 dans un intervalle $[\theta_-(x,t), \theta_+(x,t)]$ et 0 ailleurs. Cette restriction est importante car si le système initial contient plusieurs structures (par exemple deux ou plusieurs mers de Fermi distinctes), la correspondance avec les équations de Gross–Pitaevskii n'est plus valide, comme nous le discuterons ultérieurement (voir remarque page~\pageref{rem:plusieurs_mers}). La limite $\gamma \to 0$ garantit également que les interactions restent faibles et que l'approximation de Thomas–Fermi (négligeant la pression quantique) demeure justifiée.
+}, les équations hydrodynamiques dérivées de \gls{GP}.
+
+
 
 
 \subsection{Évolution temporelle selon l’équation de Gross--Pitaevskii}
  
-Dans le régime \gls{qBEC}, la dynamique d’un gaz unidimensionnel décrit par le modèle \gls*{LL} à l’état fondamental peut être décrite par l’équation \gls*{GP} dépendante du temps.
-On a vu l'équation \gls*{GP} dépendante du temps dans \eqref{chap.1:eq.GP.2}, avec $\hbar = m = 1$. Pour généraliser et pour l'utiliser dans un autre chapitre, écrivons-la avec un potentiel externe :
+Dans le régime \gls{qBEC}, la dynamique d’un gaz unidimensionnel décrit par le modèle \gls{LL} à l’état fondamental peut être décrite par l’équation \gls{GP} dépendante du temps.
+On a vu l'équation \gls{GP} dépendante du temps dans \eqref{chap.1:eq.GP.2}, avec $\hbar = m = 1$. Pour généraliser et pour l'utiliser dans un autre chapitre (\ref{chap:disp.exp}), écrivons-la avec un potentiel externe :
 \begin{eqnarray}\label{chap.2:eq.GP.2}
 	i \partial_t \psi = \left( - \frac{1}{2} \partial_x^2 + V + g \vert \psi \vert^2 \right) \psi .
 \end{eqnarray}
 
-En utilisant la représentation de Madelung $\psi(x,t) = \sqrt{n(x,t)}\, e^{i\theta(x,t)}$, on obtient les équations dites hydrodynamiques de la forme de \eqref{chap:3:eq:hydro.1} :  
+En utilisant la représentation de Madelung $\psi(x,t) = \sqrt{n(x,t)}\, e^{i\theta(x,t)}$, on obtient les équations dites hydrodynamiques de la forme de \eqref{chap:3:eq:hydro.1} \cite{Spiegel1980FluidDF,10.1093/acprof:oso/9780198758884.001.0001} :  
 \begin{eqnarray}
     \partial_t n + \partial_x \big( n u \big) &=& 0, \label{eq:continuite}\\
     \partial_t (n u) + \partial_x \left( n u^2 + \mathcal{P} + \tilde{\mathcal{P}}_Q \right) &=& - n \partial_x V , \label{eq:euler}
 \end{eqnarray}
 où la vitesse du fluide, la \emph{pression classique} et un terme de \emph{pression quantique} sont définis par
+\footnote{
+\textbf{Distinction entre pression classique et pression quantique~:}
+La \emph{pression classique} $\mathcal{P} = \frac{1}{2}gn^2$ provient du terme d'interaction répulsive de contact dans l'hamiltonien de \gls{GP}. Elle représente l'effet des collisions répulsives entre particules, analogue à la pression d'un gaz classique due aux chocs entre molécules. Elle dépend uniquement de la densité locale $n$.
+
+La \emph{pression quantique} $\tilde{\mathcal{P}}_Q = -\frac{n}{2}\partial_x\left(\frac{\partial_x\sqrt{n}}{\sqrt{n}}\right)$ est un effet purement quantique, absent en mécanique classique. Elle provient de l'énergie cinétique des gradients de densité et est directement liée au principe d'incertitude~: confiner des particules dans une région de densité élevée augmente leur quantité de mouvement (et donc leur énergie). Mathématiquement, ce terme émerge de la contribution $-\frac{1}{2}\partial_x^2\sqrt{n}$ de l'énergie cinétique dans la décomposition de Madelung. Dans la limite \acrfull{TF} ($\gamma \to 0$), le gradient de densité varie lentement et ce terme devient négligeable devant la pression classique.
+}
 \begin{equation}\label{eq:vitesse}
     u = \partial_x \theta, \quad 
     \mathcal{P} = \frac{1}{2} g n^2 , \quad 
     \tilde{\mathcal{P}}_Q = - \frac{n}{2} \partial_x \left( \frac{\partial_x \sqrt{n}}{\sqrt{n}} \right) .
 \end{equation}
+
 
 On peut aussi écrire \eqref{eq:euler} sous la forme
 \begin{eqnarray}
@@ -862,7 +887,7 @@ Dans la suite nous nous intéressons à la dynamique en l'absence de potentiel e
 %liée à l’équilibre statique du système.
 
 \medskip
-Dans la limite dite de \gls{TF} 1D, les fluctuations de densité sont faibles et le terme de \emph{pression quantique} peut être négligé \cite{PhysRevA.58.2385}.  Le terme de pression se réduit alors à la pression classique 
+Dans la limite dite de \gls{TF} 1D, les fluctuations de densité sont faibles et le terme de \emph{pression quantique} peuvent être négligé \cite{PhysRevA.58.2385}.  Le terme de pression se réduit alors à la pression classique 
 \(
     \mathcal{P} = \frac{1}{2} g n^2.
 \)
@@ -872,16 +897,16 @@ En utilisant la relation de Gibbs-Duhem
 \)
 on obtient l’équation d’état classique du gaz \gls{qBEC} : 
 \begin{equation}
-    \mu = g n.
+    \mu = g n + cts.
 \end{equation}
 
-Les équations de Madelung (\eqref{eq:continuite} \eqref{eq:euler}), se réduisent à  :
+Les équations de Madelung (\eqref{eq:continuite} \eqref{eq:euler}), se réduisent à :
 \begin{eqnarray}
     \partial_t n + \partial_x \big( n u \big) &=& 0, \label{eq:continuite3}\\
     \partial_t (n u) + \partial_x \left( n u^2 + \mathcal{P} \right) &=& 0 \label{eq:euler3}.
 \end{eqnarray}
 
-\subsection{Description par les équations Hydrodynamiques Généralisés} 
+\subsection{Description par les équations Hydrodynamiques Généralisées} 
  
 Dans la suite, nous allons montrer que les équations \eqref{eq:continuite3} et \eqref{eq:euler3} peuvent être retrouvées à partir des équations \gls{GHD}.
 
@@ -921,9 +946,11 @@ L’évolution temporelle des bords est donnée par deux équations de type tran
 
 \paragraph{Vitesse efficace aux bords de la mer de Fermi.}  
 La vitesse du fluide au point $x$ s'écrit simplement :
+\footnote{La vitesse du fluide $u$ est définie comme la moyenne des bords de la mer de Fermi, $\theta_-$ et $\theta_+$, car elle représente la vitesse caractéristique du système à ce point. En prenant la moyenne, on obtient une estimation de la vitesse à laquelle les excitations se propagent dans le système, ce qui est cohérent avec le comportement attendu d'un fluide.}
 \begin{equation}
 	u = \frac{\theta_- + \theta_+}{2}.
 \end{equation}
+
 
 Dans la limite $\gamma \to 0$, la distribution de rapidité prend la forme d’un demi-cercle \cite{LL_1963_1} :
 \begin{equation}
@@ -990,10 +1017,67 @@ Il s’agit exactement des équations de continuité et d’Euler~\eqref{eq:cont
 
 
 
-\paragraph{Correspondance avec les équations GP.}  
-Les équations~\eqref{eq:GHDcontinuite}--\eqref{eq:GHDeuler} correspondent exactement aux équations hydrodynamiques~\eqref{eq:continuite3}--\eqref{eq:euler3}, obtenues à partir de \gls*{GP} lorsque le terme de pression quantique est négligé.  
+\paragraph{Correspondance avec les équations Gross–Pitaevskii.}  
+Les équations~\eqref{eq:GHDcontinuite}--\eqref{eq:GHDeuler} correspondent exactement aux équations hydrodynamiques~\eqref{eq:continuite3}--\eqref{eq:euler3}, obtenues à partir de \gls{GP} lorsque le terme de pression quantique est négligé.  
 La correspondance est donc valable pour une configuration initiale correspondant à une seule mer de Fermi.  
-En revanche, si le système initial contient plusieurs mers de Fermi (par exemple deux pics de densité séparés), cette équivalence avec les équations \gls*{GP} n’est plus vérifiée.  
+En revanche, si le système initial contient plusieurs mers de Fermi (par exemple deux pics de densité séparés), cette équivalence avec les équations \gls{GP} n’est plus vérifiée.  
+
+\begin{Rema}\label{rem:plusieurs_mers}
+	\textbf{(Limite de la correspondance GHD--GP avec plusieurs mers de Fermi)}  
+	Si la distribution initiale $\nu(x,\theta,0)$ comporte plusieurs mers de Fermi distinctes, chaque mer évolue indépendamment selon les équations \gls{GHD}. Cependant, cette situation ne peut pas être capturée par les équations hydrodynamiques dérivées de \gls{GP}, qui supposent une seule mer de Fermi. En effet, dans le cadre de \gls{GP}, la dynamique est décrite par un seul champ d'onde, ce qui ne permet pas de représenter plusieurs structures distinctes dans l'espace des rapidités. Par conséquent, la correspondance entre \gls{GHD} et les équations de \gls{GP} est limitée aux configurations initiales avec une unique mer de Fermi.
+\end{Rema}\footnote{%\color{blue}
+%\paragraph{Correspondance avec les équations Gross–Pitaevskii.}  
+
+Les équations~\eqref{eq:GHDcontinuite}--\eqref{eq:GHDeuler} reproduisent exactement les équations hydrodynamiques~\eqref{eq:continuite3}--\eqref{eq:euler3} dérivées de \gls{GP} dans la limite $\gamma \to 0$, à condition que trois hypothèses structurelles soient satisfaites simultanément.
+
+\medskip
+
+\noindent\textbf{Hypothèse 1 : Configuration initiale avec une unique mer de Fermi.}  
+La distribution initiale $\nu(x,\theta,0)$ doit être une fonction caractéristique sur l'espace des rapidités, c'est-à-dire que pour chaque position $x$, il existe un unique intervalle $[\theta_-(x,0), \theta_+(x,0)]$ où $\nu = 1$ et $\nu = 0$ ailleurs. Cette restriction est fondamentale car :
+
+\begin{itemize}[label=$\bullet$]
+	\item L'équation \gls{GP} postule un condensat décrit par un seul champ scalaire $\psi(x,t)$, duquel on déduit une seule phase $\theta(x,t)$ et une seule densité $n(x,t)$.
+	\item Mathématiquement, cela implique qu'à chaque position $x$, la distribution $\nu(x,\theta,0)$ ne possède qu'une seule région d'occupation continue.
+\end{itemize}
+
+\medskip
+
+\noindent\textbf{Hypothèse 2 : Conservation de la structure topologique.}  
+La condition $\partial_t\nu + v^{\mathrm{eff}}\partial_x\nu + a^{\mathrm{eff}}\partial_\theta\nu = 0$ (équation \eqref{chap:GHD:eq.nu.1.1}) implique que $\nu$ est conservée le long des caractéristiques. Par conséquent, si $\nu$ commence avec une structure unique, elle préserve cette structure au cours du temps : il ne peut y avoir ni création ni fusion spontanée de mers de Fermi supplémentaires. La distribution demeure de la forme~\eqref{eq:merFermi} avec des bords $\theta_\pm(x,t)$ évoluant continûment.
+
+\medskip
+
+\noindent\textbf{Hypothèse 3 : Paramètres thermodynamiques dans le régime quasi-condensé.}  
+La limite $\gamma \to 0$ (interaction faible) combinée à $\mathfrak{t} \to 0$ (température basse) assure que :
+
+\begin{itemize}[label=$\cdot$]
+	\item La distribution de rapidité prend la forme de demi-cercle : $\rho(\theta) = \frac{n}{2\pi c^2}\sqrt{-(\theta-\theta_-)(\theta-\theta_+)}$ avec $c = \sqrt{gn}$.
+	\item La pression quantique $\tilde{\mathcal{P}}_Q$ demeure négligeable devant la pression classique $\mathcal{P} = \frac{1}{2}gn^2$ car les variations spatiales de $n$ restent douces à l'échelle de la longueur de corrélation quantique.
+	\item L'énergie est dominée par les termes cinétiques classiques, justifiant l'utilisation de l'équation de Madelung hydrodynamique.
+\end{itemize}
+
+\medskip
+
+\noindent\textbf{Correspondance rigoureuse.}  
+Sous ces trois conditions, les équations \gls{GHD} pour $\nu$ se transforment exactement en équations hydrodynamiques pour $(n,u)$ via le changement de variables :
+\begin{equation}
+	n(x,t) = \frac{\theta_+(x,t) - \theta_-(x,t)}{4\sqrt{g}}, \quad u(x,t) = \frac{\theta_+(x,t) + \theta_-(x,t)}{2}.
+\end{equation}
+Les équations \eqref{eq:theta+}--\eqref{eq:theta-} se réécrivent sous la forme~\eqref{eq:GHDcontinuite}--\eqref{eq:GHDeuler}, qui coïncident avec \eqref{eq:continuite3}--\eqref{eq:euler3}.
+
+\medskip
+
+\begin{Rema}\label{rem:plusieurs_mers}
+	\textbf{(Domaine de validité : configurations multi-mers de Fermi)}  
+	
+	Si la distribution initiale $\nu(x,\theta,0)$ contient plusieurs mers de Fermi distinctes — par exemple, deux régions d'occupation séparées $[\theta_1^-, \theta_1^+]$ et $[\theta_2^-, \theta_2^+]$ avec $\theta_1^+ < \theta_2^-$ — chaque mer évolue indépendamment selon l'équation \eqref{chap:GHD:eq.nu.1.1}, sans échange de population entre elles (conséquence de la conservation de $\nu$ le long des caractéristiques).
+	
+	Cependant, les équations hydrodynamiques~\eqref{eq:continuite3}--\eqref{eq:euler3}, dérivées de l'équation de Gross–Pitaevskii, supposent implicitement un seul champ condensé $\psi(x,t)$. Cette description ne peut représenter que \emph{une seule} distribution de densité $n(x,t)$ et une seule phase $\theta(x,t)$, même si le système microscopique \gls{LL} contient plusieurs structures indépendantes en rapidité.
+	
+	Par conséquent, bien que la \gls{GHD} soit rigoureusement applicable à ces configurations complexes, la correspondance directe avec les équations de Gross–Pitaevskii se brise dès qu'il existe plusieurs mers de Fermi : il faudrait alors utiliser une générali\-sation multi-composantes des équations hydrodynamiques (p.ex. un mélange de deux condensats), sortant du cadre standard de la théorie \gls{GP}.
+\end{Rema}
+}
+
 
 
 
@@ -1020,11 +1104,20 @@ La dynamique d’un système quantique isolé intégrable possède des propriét
 \medskip
 
 %Dans un système chaotique (non intégrable), l’état localement relaxé est bien décrit par un ensemble de Gibbs classique, caractérisé uniquement par la densité locale $n$ et l’énergie par particule $e_{\mathrm{int}}$. 
-Dans un système chaotique (non intégrable), l’état localement relaxé est bien décrit par un ensemble de Gibbs classique, caractérisé par les trois quantités locales conservées : la densité de particules $n$,la quantité de mouvement par unité de longueur $p$ et l’énergie par unité de longueur $e_{\mathrm{int}}$.
+Dans un système chaotique (non intégrable), l’état localement relaxé est bien décrit par un \gls{GE} classique, caractérisé par les trois quantités locales conservées : la densité de particules $n$,la quantité de mouvement par unité de longueur $p$ et l’énergie par unité de longueur $e_{\mathrm{int}}$.
 
 \medskip
 
-En revanche, pour un système intégrable, l’état stationnaire local ne peut pas être capturé par un simple ensemble de Gibbs : il est correctement décrit par un \gls{GGE}, entièrement déterminé par la distribution de rapidités $\rho(\theta)$. 
+En revanche, pour un système intégrable, la situation est radicalement différente : il existe une infinité de charges conservées (une pour chaque fonction test $f(\theta)$), et l'état stationnaire local est décrit par le \gls{GGE}, paramétré par l'ensemble de la distribution de rapidités $\rho(\theta)$. L’état stationnaire local ne peut pas être capturé par un simple \gls{GE} : il est correctement décrit par un \gls{GGE}, entièrement déterminé par la distribution de rapidités $\rho(\theta)$.
+\footnote{
+\textbf{Lien avec ce qui précède~:} 
+La distinction entre \gls{GE} et \gls{GGE} est cruciale pour comprendre pourquoi la théorie hydrodynamique généralisée est nécessaire. Dans un système non intégrable (chaotique), seules quelques conservations génériques (nombre de particules, impulsion, énergie) subsistent après relaxation, ce qui justifie l'usage d'un \gls{GE} à trois paramètres. En revanche, dans les systèmes intégrables, l'infinité de lois de conservation (voir chapitre~\ref{chap:LL-BA} sur l'ansatz de Bethe) se traduit par une infinité de paramètres effectifs—en pratique, la distribution complète $\rho(\theta)$. Cette richesse de structure conservée est précisément ce qui rend la description par \gls{GHD} indispensable~: il ne suffit plus de suivre quelques densités locales moyennes, mais il faut tracer l'évolution de la distribution de rapidité tout entière. C'est cette transition—de descriptions à variables réduites (\gls{GE}) vers descriptions paramétrées par des fonctions (\gls{GGE} et \gls{GHD})—qui illustre le rôle fondamental de l'intégrabilité dans la dynamique hors équilibre.
+}
+
+
+%\medskip
+
+%En revanche, pour un système intégrable, l’état stationnaire local ne peut pas être capturé par un simple \gls{GE} : il est correctement décrit par un \gls{GGE}, entièrement déterminé par la distribution de rapidités $\rho(\theta)$. 
 
 \medskip
  
@@ -1034,16 +1127,16 @@ Lorsque l’on considère des variations spatiales lentes, cette description s�
 \medskip
 
 L’évolution de cette fonction est alors gouvernée, à l’échelle d’Euler, par les équations de \gls{GHD}. 
-Ces équations traduisent la propagation des quasiparticules et la réorganisation locale des charges conservées.  
+Ces équations traduisent la propagation des quasi-particules et la réorganisation locale des charges conservées.  
 
 \medskip
 
-Dans certaines limites particulières, la \gls{GHD} se connecte aux descriptions hydrodynamiques plus familières. 
-En particulier, dans l’état fondamental et pour un paramètre de Lieb $\gamma \to 0$, les équations de \gls{GHD} se réduisent à celles de l’hydrodynamique issues de l’équation de Gross–Pitaevskii dépendante du temps, lorsque le terme de pression quantique peut être négligé. 
+Dans certaines limites particulières, la théorie \gls{GHD} se connecte aux descriptions hydrodynamiques plus familières. 
+En particulier, dans l’état fondamental et pour un paramètre de Lieb $\gamma \to 0$, les équations de \gls{GHD} se réduisent à celles de l’hydrodynamiques issues de l’équation de \gls{GP} dépendante du temps, lorsque le terme de pression quantique peut être négligé. 
 
 \medskip 
 
-Ainsi, la \gls{GHD} fournit un cadre cohérent et rigoureux pour décrire la dynamique hors équilibre des systèmes intégrables, reliant la description microscopique en termes de rapidités aux équations effectives de l’hydrodynamique macroscopique.
+Ainsi, la théorie  \gls{GHD} fournit un cadre cohérent et rigoureux pour décrire la dynamique hors équilibre des systèmes intégrables, reliant la description microscopique en termes de rapidités aux équations effectives de l’hydrodynamique macroscopique.
 
 
 
