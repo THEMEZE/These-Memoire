@@ -60,57 +60,57 @@
     },
     "7. Mise en place d'un confinement longitudinal dipolaire": {
         "page": 135,
-        "pages": "135-156",
-        "nb_pages": 22
+        "pages": "135-158",
+        "nb_pages": 24
     },
     "Conclusion": {
-        "page": 157,
-        "pages": "157-158",
+        "page": 159,
+        "pages": "159-160",
         "nb_pages": 2
     },
     "Annex A - Action de P et H sur l'état de Bethe": {
-        "page": 159,
-        "pages": "159-162",
+        "page": 161,
+        "pages": "161-164",
         "nb_pages": 4
     },
     "Annex B - Réduction GHD vers transport d’Euler": {
-        "page": 163,
-        "pages": "163-166",
+        "page": 165,
+        "pages": "165-168",
         "nb_pages": 4
     },
     "Annex C - Dérivation alternative des fluctuations de rho": {
-        "page": 167,
-        "pages": "167-170",
+        "page": 169,
+        "pages": "169-172",
         "nb_pages": 4
     },
     "Annex D - Propriétés des facteurs d'homothétie": {
-        "page": 171,
-        "pages": "171-172",
+        "page": 173,
+        "pages": "173-174",
         "nb_pages": 2
     },
     "Annex E - Polarisabilité dynamique et potentiel dipolaire optique": {
-        "page": 173,
-        "pages": "173-176",
+        "page": 175,
+        "pages": "175-178",
         "nb_pages": 4
     },
     "Annex F - Moment tensoriel J=1/2": {
-        "page": 177,
-        "pages": "177-178",
+        "page": 179,
+        "pages": "179-180",
         "nb_pages": 2
     },
     "Bibliographie": {
-        "page": 179,
-        "pages": "179-186",
+        "page": 181,
+        "pages": "181-188",
         "nb_pages": 8
     },
     "Résumé": {
-        "page": 187,
-        "pages": "187-187",
+        "page": 189,
+        "pages": "189-189",
         "nb_pages": 1
     },
     "Blanc_final": {
-        "page": 188,
-        "pages": "188-188",
+        "page": 190,
+        "pages": "190-190",
         "nb_pages": 1
     }
 }

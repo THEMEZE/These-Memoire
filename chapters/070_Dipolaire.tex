@@ -15,7 +15,7 @@ Dans cette section, nous présentons l’implémentation expérimentale et théo
 \smallskip
 
 
-Le formalisme utilisé repose sur une description quantique du couplage dipolaire entre un champ laser classique quasi-monochromatique et un atome à deux niveaux. Nous déduisons l’Hamiltonien effectif en seconde quantification sans faire appel à des transformations de jauge. L’objectif est d’obtenir une expression exploitable pour le potentiel optique ressenti par les atomes dans le régime de grand désaccord.
+Le formalisme utilisé repose sur une description quantique du couplage dipolaire entre un champ laser classique quasi-monochromatique et un atome à deux niveaux. Nous déduisons l’Hamiltonien effectif en seconde quantification en faisant appel à des transformations de jauge. L’objectif est d’obtenir une expression exploitable pour le potentiel optique ressenti par les atomes dans le régime de grand désaccord.
 
 % INSERTION FIGURE 2 niveaux 
 %\begin{figure}[!htb]
@@ -41,7 +41,7 @@ Le formalisme utilisé repose sur une description quantique du couplage dipolair
 %\textit{[Insérer ici un schéma des niveaux d’énergie du Rubidium (transitions D1 et D2, base fine)]}
 %\end{center}
 
-\section{Transformation de jauge et simplification du Hamiltonien}
+\section{Transformation de jauge et simplification de l'Hamiltonien}
 
 %(cf. Complément HIII du tome 1 de Cohen-Tannoudji)\\
 
@@ -248,7 +248,7 @@ Par conséquent, il n’y a \textbf{aucun décalage d’énergie net à l’ordr
 
 Le premier terme, en \(1/(\omega - \omega_{\scriptscriptstyle g\rightarrow e}) = 1/\Delta\), correspond au processus \emph{quasi-résonant} qui domine lorsque le laser est proche d’une transition atomique. 
 Le second terme, en \(1/(\omega + \omega_{\scriptscriptstyle g\rightarrow e})\), est dit \emph{anti-résonant}. 
-Dans l’approximation de l’ordre tournant (ou approximation séculière, RWA), ce terme est négligé car il est fortement décalé en énergie (\(\omega + \omega_{\scriptscriptstyle g\rightarrow e} \gg \omega_{\scriptscriptstyle g\rightarrow e}\)).
+Dans l’approximation de l’ordre tournant (ou approximation séculière, RWA), ce terme est négligé car il est fortement décalé en énergie (\(\omega + \omega_{\scriptscriptstyle g\rightarrow e} \gg \omega - \omega_{\scriptscriptstyle g\rightarrow e}\), ou \(\omega \gg \Delta \) ) .
 
 On obtient alors, dans cette approximation, la correction simplifiée
 
@@ -273,7 +273,7 @@ où \( \vec{u} \) est un vecteur de polarisation unitaire, et \( {\mathcal{E}}(\
 
 
 \paragraph{Potentiel dipolaire.}
-En utilisant l'expression de la fréquence de Rabi \eqref{chap7:eq.Omega.1}, la correction d’énergie à l’ordre 2 \eqref{chap7:eq.E_g(2).1}, que l’on notera \emph{potentiel dipolaire} (\ie \(U_{\mathrm{dip}}(\vec{r}) \equiv \delta E_g^{(2)}\)), s’écrit alors :
+En utilisant l'expression de la fréquence de \emph{Rabi} \eqref{chap7:eq.Omega.1}, la correction d’énergie à l’ordre 2 \eqref{chap7:eq.E_g(2).1}, que l’on notera \emph{potentiel dipolaire} (\ie \(U_{\mathrm{dip}}(\vec{r}) \equiv \delta E_g^{(2)}\)), s’écrit pour \( \omega \gg \Delta \) :
 \begin{equation}\label{chap7:eq.dip.1}
 	U_{\mathrm{dip}}(\vec{r}) = \frac{\hbar \, \Omega^2(\vec{r})}{4 \Delta} ,
 \end{equation}
@@ -302,7 +302,7 @@ ce qui montre que le potentiel dipolaire est proportionnel à l’intensité lum
 
 \medskip
 
-Ce potentiel permet de décrire le confinement des atomes dans des régions où \( I(\vec{r}) \) est élevé (ou faible, selon le signe de \( \Delta \)), formant ainsi des barrières optiques contrôlables avec une résolution sub-micronique.
+Ce potentiel permet de décrire le confinement des atomes dans des régions où \( I(\vec{r}) \) est élevé (ou faible, selon le signe de \( \Delta \)), formant ainsi des barrières optiques contrôlables avec une résolution posiiblement sub-micronique.
 
 
 \subparagraph{Conditions de validité.}
@@ -315,9 +315,9 @@ Les expressions~\eqref{chap7:eq.dip.1} et \eqref{chap7:eq.dip.2}  pour le potent
   %\item \textbf{Réduction à un sous-espace résonant} : le champ est quasi-résonant avec une seule transition atomique, ce qui suppose que le désaccord est faible devant les fréquences optiques impliquées, i.e. $|\Delta| \ll \omega, \omega_{\scriptstyle g \rightarrow e}$. Cela permet de restreindre le système à deux niveaux et d’ignorer les autres transitions dipolaires.
   \item \textbf{Approximation du sous-espace résonant} : le champ est quasi-résonant avec une seule transition atomique, ce qui implique que le désaccord $\Delta$ reste petit par rapport à l’écart énergétique entre l’état excité considéré et les autres états excités de l’atome. Cette condition permet de réduire le système à un modèle à deux niveaux et de négliger les autres transitions dipolaires.
   
-  \item \textbf{Régime de grand désaccord en fréquence (large détuning)} : lorsque $|\Delta| \gg \Gamma$, c’est-à-dire lorsque le désaccord est grand devant la largeur naturelle de la transition, les excitations réelles vers l’état excité sont fortement supprimées. L’interaction lumière-matière peut alors être traitée en perturbation du second ordre : l’atome reste majoritairement dans son état fondamental, et l’effet du champ lumineux se manifeste sous la forme d’un potentiel effectif induit par des couplages virtuels.
+  \item \textbf{Régime de moyen désaccord en fréquence (large détuning)} : lorsque $|\Delta| \gg \Gamma$, c’est-à-dire lorsque le désaccord est grand devant la largeur naturelle de la transition, les excitations réelles vers l’état excité sont fortement supprimées. L’interaction lumière-matière peut alors être traitée en perturbation du second ordre : l’atome reste majoritairement dans son état fondamental, et l’effet du champ lumineux se manifeste sous la forme d’un potentiel effectif induit par des couplages virtuels.\footnote{Il faut aussi $\omega \gg \Delta$ pour justifier l'approximation de l'ordre tournant (RWA).}
   
-  \item \textbf{Régime de faible saturation} : on suppose que la fréquence de Rabi $\Omega$ est beaucoup plus faible que le désaccord, i.e. $\Omega \ll |\Delta|$. Cette condition garantit que la population de l’état excité reste négligeable, ce qui justifie l’approximation adiabatique sur l’état fondamental.
+  \item \textbf{Régime de faible saturation} : on suppose que la fréquence de \emph{Rabi} $\Omega$ est beaucoup plus faible que le désaccord, i.e. $\Omega \ll |\Delta|$. Cette condition garantit que la population de l’état excité reste négligeable, ce qui justifie l’approximation adiabatique sur l’état fondamental.
 \end{itemize}
 
 
@@ -355,10 +355,15 @@ Ce phénomène est à la base des pièges dipolaires optiques, largement utilis�
 
 \subparagraph{Confinement optique.}
 
-Le potentiel dipolaire \( U_{\mathrm{dip}}(\vec{r}) \), dépendant de la position via l’intensité du champ laser, permet de confiner des atomes neutres en créant des paysages de potentiel contrôlés. Selon la géométrie du champ lumineux, on peut générer des régions de potentiel attractif ou répulsif.
+Le potentiel dipolaire \( U_{\mathrm{dip}}(\vec{r}) \), dépendant de la position via l’intensité du champ laser, permet de confiner des atomes neutres en créant des paysages de potentiel contrôlés avec des régions de potentiel attractif ou répulsif.
 
-Dans le cas d’un désaccord bleu (\( \Delta > 0 \)), les atomes sont repoussés des zones de forte intensité. On peut alors façonner des \textit{barrières de potentiel} en structurant l’intensité lumineuse, par exemple à l’aide de faisceaux interférents ou d’optiques diffractives. Cela permet de créer des cavités, des guides ou des réseaux où les atomes sont confinés entre les zones lumineuses, sans nécessairement focaliser le faisceau.
+\smallskip
 
+Dans le cas d’un désaccord bleu (\( \Delta > 0 \)), les atomes sont repoussés des zones de forte intensité. On peut alors façonner des \textit{barrières de potentiel} en structurant l’intensité lumineuse, par exemple à l’aide de phénomènes ' interférents ou de diffraction. Cela permet de créer des cavités, des guides ou des réseaux où les atomes sont confinés entre les zones lumineuses, sans nécessairement focaliser de faisceau.
+
+\smallskip
+
+En revanche, pour un désaccord rouge (\( \Delta < 0 \)), les atomes sont attirés vers les régions de forte intensité. En focalisant un faisceau laser, on peut créer des \textit{puits de potentiel} où les atomes sont piégés au centre du faisceau. Ce principe est largement utilisé dans les expériences de refroidissement et de confinement d’atomes ultrafroids, permettant de manipuler et d’étudier des gaz quantiques avec une grande précision.
 
 %\subparagraph{Taux de diffusion spontanée.}
 %
@@ -420,13 +425,13 @@ Cependant, d’un point de vue pratique, l’augmentation de l’intensité \(I\
 
 \subsection{Atomes multiniveaux et origine du potentiel dipolaire dans le formalisme quantique}\label{sec.7.3.1}
 
-Le modèle à deux niveaux est suffisant pour introduire le concept de piégeage dipolaire, mais il reste limité pour décrire les détails réels d'un atome comme le \({}^{87}\mathrm{Rb}\), qui possède une structure hyperfine et fine complexe. Dans ce contexte, le potentiel dipolaire dépend du sous-niveau quantique occupé par l’atome, et le traitement doit être généralisé.
+Le modèle à deux niveaux est suffisant pour introduire le concept de piégeage dipolaire, mais il reste limité pour décrire les détails réels d'un atome comme le \({}^{87}\mathrm{Rb}\), qui possède une structure hyperfine et fine complexe. Dans ce contexte, le potentiel dipolaire dépend du sous-niveau quantique occupé par l’atome, et le traitement doit être généralisé, si \( \Delta \) n'est pas grand devant les séparations énergétiques entre les différents niveaux excités fines.
 
 \subsubsection{Description quantique de l’atome et du champ laser}
 
 \paragraph{Quantification de champ laser.}
 
-Considérons un atome immobile possédant un état fondamental \( \ket{g} \) et une série d’états excités \( \ket{e_i} \), d’énergies respectives \( \hbar\omega_g \) et \( \hbar\omega_{e_i} \). Le champ laser \eqref{chap7:eq.elec.clas.1} est quantifié dans un volume \( V \), polarisé selon \( \vec{u} \),  et d'expression \cite{CohenTannoudji1988}
+Considérons un atome immobile possédant un état fondamental \( \ket{g} \) et une série d’états excités \( \ket{e_i} \), d’énergies respectives \( \hbar\omega_g \) et \( \hbar\omega_{e_i} \). Le champ laser \eqref{chap7:eq.elec.clas.1} est quantifié dans un volume \( V \); on le suppose polarisé selon \( \vec{u} \);  son expression \cite{CohenTannoudji1988} est alors :
 %\begin{eqnarray}
 %	\operatorvec{E}_\perp(t) = \operator{\mathcal{E}} \vec{u} \cos(\omega t) \quad \longrightarrow \quad \operator{E}_\perp = \sqrt{\frac{\hbar \omega}{2\varepsilon_0 V}} \, \vec{u} \, (\operator{a} + \operator{a}^\dagger),	
 %\end{eqnarray}
@@ -444,7 +449,7 @@ où \( \operator{a} \) et \( \operator{a}^\dagger \) sont les opérateurs d’an
 \end{eqnarray}
 Ainsi, l’élément de matrice global devient simplement proportionnel à l’amplitude classique du champ.
 
-Ainsi, dans l’approximation cohérente et intense (\(\langle N \rangle \gg 1\)), le champ quantique peut être remplacé par un {\bf champ classique}  :
+Donc, dans l’approximation cohérente et intense (\(\langle N \rangle \gg 1\)), le champ quantique peut être remplacé par un {\bf champ classique}  :
 \begin{equation}
 	\operatorvec{E}_\perp \longrightarrow  \operator{\mathcal{E}} \, \operatorvec{u} \cos(\omega t),
 \end{equation}
@@ -464,7 +469,7 @@ Nous travaillons ici dans le formalisme {\bf atome + champ quantifié}. Ce forma
 \begin{itemize}[label = $\bullet$]
 	\item \(\operator{H}_{\mathrm{at}} = \sum_{e_i} \hbar \omega_{\scriptscriptstyle g \rightarrow e_i } \ket{e_i}\bra{e_i} \), l’Hamiltonien de l’atome. Il décrit les états propres internes (typiquement les niveaux électroniques) sans interaction avec le champ. Ici, chaque état excité $\ket{e_i}$ est associé à une énergie $\hbar \omega_i$;
 	\item \(\operator{H}_{\mathrm{L}} = \hbar \omega \left(\operator{a}^\dagger \operator{a} + \frac{1}{2}\right)\), l’Hamiltonien du {\bf champ électromagnétique quantifié} dans un mode unique (celui du laser). Il est représenté comme un oscillateur harmonique quantique avec énergie $ \hbar \omega $  par photon, et opérateurs \( \operator{a} \) , \( \operator{a}^\dagger \) de création/annihilation de photons. Le terme $\tfrac12 \hbar \omega$ est l’énergie du vide (qui peut être ignorée dans la plupart des cas);
-	\item $\operator{H}_{\mathrm{int}} = - \operatorvec{D} \cdot \operatorvec{E}_\perp$, l’interaction \textbf{dipolaire quantifiée} entre l’atome et le champ électrique transverse $\operatorvec{E}_\perp$ \eqref{chap7:eq.elec.quat.1} s’écrit :
+	\item $\operator{H}_{\mathrm{int}} = - \operatorvec{D} \cdot \operatorvec{E}_\perp$, l’interaction \textbf{dipolaire quantifiée} entre l’atome et le champ électrique transverse $\operatorvec{E}_\perp$ \eqref{chap7:eq.elec.quat.1},  qu'on peut écrire sous la forme:
 		\begin{eqnarray}
 			\operator{H}_{\mathrm{int}} 
 			= \sqrt{\frac{\hbar \omega}{2\varepsilon_0 V}} \, (\operatorvec{D} \cdot \vec{u}) \, (\operator{a} + \operator{a}^\dagger).
@@ -478,7 +483,7 @@ Nous travaillons ici dans le formalisme {\bf atome + champ quantifié}. Ce forma
 		
 		\medskip
 		
-		Cette écriture traduit le fait que seules les transitions dipolaires électriques permises par les règles de sélection (parité et conservation du moment angulaire) participent au couplage avec le champ quantifié.
+		Cette écriture traduit le fait que seules les transitions dipolaires électriques permises par les règles de sélection (changement de parité et conservation du moment angulaire) participent au couplage avec le champ quantifié dans le cadre de l'approximation dipolaire.
 	
 \end{itemize}
 
@@ -510,7 +515,7 @@ Considérons un champ électromagnétique monochromatique de fréquence \( \omeg
 	\begin{eqnarray}
 		\langle N \rangle \hbar \omega = \frac{1}{2} \varepsilon_0 \mathcal{E}^2 V,
 	\end{eqnarray}
-	qui permet d’exprimer l’amplitude du champ électrique \( E_0 \) en fonction du nombre moyen de photons \( \langle N \rangle \) dans le champ laser.
+	qui permet d’exprimer l’amplitude du champ électrique \( \mathcal{E} \) en fonction du nombre moyen de photons \( \langle N \rangle \) dans le champ laser.
 \end{itemize}
 
 \medskip
@@ -529,13 +534,44 @@ E_{g,N} = \hbar \omega_{g} + N \hbar \omega,
 E_{e_i,N} = \hbar \omega_{e_i}  + N \hbar \omega.
 \]
 
+% On parle d’« états habillés » pour désigner cette base atome + champ, qui servira à construire 
+% les états propres du système complet en présence d’interaction. 
+% L’interaction dipolaire 
+% \( \operator{H}_{\text{int}} = - \operatorvec{D} \cdot \operatorvec{E}_\perp \) 
+% couple les états \( \ket{g, N+1} \) et \( \ket{e_i, N} \) via l’absorption ou l'émission d’un photon, 
+% ainsi que \( \ket{g, N} \) et \( \ket{e_i, N+1} \) via une émission virtuelle. 
+% Les autres transitions, fortement hors résonance, sont négligées dans l’approximation séculaire.
+
 On parle d’« états habillés » pour désigner cette base atome + champ, qui servira à construire 
 les états propres du système complet en présence d’interaction. 
 L’interaction dipolaire 
-\( \operator{H}_{\text{int}} = - \operatorvec{D} \cdot \operatorvec{E}_\perp \) 
-couple les états \( \ket{g, N+1} \) et \( \ket{e_i, N} \) via l’absorption d’un photon, 
-ainsi que \( \ket{g, N} \) et \( \ket{e_i, N+1} \) via une émission virtuelle. 
-Les autres transitions, fortement hors résonance, sont négligées dans l’approximation séculaire.
+\(
+    H_{\text{int}} = - \vec{D} \cdot \vec{E}_\perp
+\)
+couple spécifiquement les états \( \ket{g, N+1} \) et \( \ket{e_i, N} \), 
+correspondant respectivement à l’absorption et à l’émission d’un photon. 
+Dans l’approximation séculaire, seul ce couplage résonant est conservé : 
+tous les autres termes — en particulier le couplage 
+\( \ket{g, N} \leftrightarrow \ket{e_i, N+1} \) — oscillent rapidement dans l’interaction 
+et sont ainsi négligeables devant les termes quasi résonants.\footnote{
+Dans l’approximation séculaire, on ne conserve que les termes de l’interaction dont la 
+fréquence d’oscillation est proche de zéro dans l’image d’interaction.  
+Les énergies 
+\( E_{g,N} = N \hbar \omega \) et 
+\( E_{e_i,N} = \hbar\omega_{e_i\rightarrow g} + N\hbar\omega \)
+montrent que la différence d’énergie entre 
+\( \ket{g,N+1} \) et \( \ket{e_i,N} \) est 
+proche de la résonance atomique.  
+En revanche, les termes tels que 
+\( \ket{g,N} \leftrightarrow \ket{e_i,N+1} \) 
+contiennent un facteur oscillant 
+\( e^{\pm i(\omega + \omega_{e_i\rightarrow g})t} \), 
+loin de la résonance, et moyennent à zéro. 
+On ne garde donc que le seul bloc résonant 
+\( \ket{g,N+1} \leftrightarrow \ket{e_i,N} \).
+}
+
+
 
 \medskip
 
@@ -551,7 +587,21 @@ Les autres transitions, fortement hors résonance, sont négligées dans l’app
 
 	Or, dans le cas de l’interaction dipolaire, l’opérateur 
 	\( \operator{H}_{\text{int}} = - \operatorvec{D} \cdot \operatorvec{E}_\perp \) 
-	est de parité impaire, alors que les états électroniques 
+	est de parité impaire\footnote{
+Un opérateur \(O\) est dit \emph{de parité impaire} si son comportement 
+sous l’opérateur de parité \(P : \vec{r} \mapsto -\vec{r}\) vérifie 
+\( P O P^{-1} = - O \).  
+Le moment dipolaire \( \vec{D} = -e\,\vec{r} \) est ainsi un vecteur 
+qui change de signe sous \( \vec{r} \to -\vec{r} \).  
+Les états électroniques atomiques \( \ket{g}, \ket{e_i}, \dots \) 
+sont en revanche des fonctions propres de la parité : 
+\( P\ket{\psi} = \pm \ket{\psi} \).  
+Dès lors, l’élément de matrice 
+\( \bra{g} \vec{D} \ket{g} \) ou \( \bra{e_i} \vec{D} \ket{e_i} \) 
+est nul par symétrie, alors que 
+\( \bra{e_i} \vec{D} \ket{g} \neq 0 \) 
+si et seulement si les parités de \( \ket{g} \) et \( \ket{e_i} \) sont opposées.
+}, alors que les états électroniques 
 	\( \ket{g}, \ket{e_i}, \dots \) ont une parité bien définie.  
 
 	\medskip
@@ -641,11 +691,33 @@ Dans ce régime, le deuxième terme du membre de droite des équations \eqref{eq
 {\hbar \Delta} .
 \end{eqnarray}
 
-Cette approximation consiste à ne considérer que la transition \(\ket{g,\,N} \rightarrow \ket{e,\,N-1}\), 
-c’est-à-dire les processus dans lesquels un seul photon est échangé entre l’atome et le champ laser.
+%Cette approximation consiste à ne considérer que la transition \(\ket{g,\,N} \rightarrow \ket{e,\,N-1}\), 
+%c’est-à-dire les processus dans lesquels un seul photon est échangé entre l’atome et le champ laser.
+
+Cette approximation consiste à ne conserver que la transition 
+\(\ket{g,\,N} \rightarrow \ket{e,\,N-1}\), c’est-à-dire le couplage 
+entre les états \(\ket{g,\,N}\) et \(\ket{e,\,N-1}\), qui sont 
+quasi-résonants.%
+\footnote{
+Dans ce couplage, l’atome passe de l’état électronique 
+\(\ket{g}\) à \(\ket{e}\) tandis que le champ voit son nombre de photons 
+diminuer de \(N\) à \(N-1\).  
+Cela correspond à l’absorption \emph{d’exactement un photon} par l’atome.  
+Autrement dit, l’énergie manquante entre \(E_{g,N}\) et \(E_{e,N-1}\) 
+provient d’un unique quantum \(\hbar\omega\) du champ.  
+Toutes les autres transitions, telles que 
+\(\ket{g,\,N} \rightarrow \ket{e,\,N+1}\) (émission stimulée hors résonance) 
+ou les couplages multi-photoniques, sont fortement décalées en énergie et 
+donc négligées dans l’approximation séculaire.  
+La notion « d’un seul photon échangé » signifie donc qu’on ne retient que 
+les processus pour lesquels la variation du nombre de photons est 
+\(\Delta N = -1\), ce qui est l’ordre dominant dans la limite 
+de couplage dipolaire faible et de résonance proche.}
 
 
-\medskip
+
+
+%\medskip
 %}
 
 
@@ -668,9 +740,18 @@ Ce terme relie l’état atomique \( \ket{g} \) au niveau excité \( \ket{e_i} \
 
 \subsection{Structure électronique du Rubidium}
 
-L’atome de Rubidium (\textsuperscript{87}Rb) est un \textbf{élément alcalin}, c’est-à-dire qu’il possède une configuration électronique de la forme $[ \mathrm{Kr} ]\,5s^1$, avec un unique électron de valence situé dans la couche $5s$. Cela implique que la structure énergétique de l’atome est essentiellement déterminée par ce seul électron périphérique, interagissant avec un cœur atomique fermé (couche interne complète).
+L’atome de Rubidium 87 (\textsuperscript{87}Rb) est un \textbf{élément alcalin}. Il possède une configuration électronique de la forme $[ \mathrm{Kr} ]\,5s^1$, avec un unique électron de valence situé dans la couche $5s$. Cela implique que la structure énergétique de l’atome est essentiellement déterminée par ce seul électron périphérique, interagissant avec un cœur atomique fermé (couche interne complète).
 
-En première approximation, on peut donc modéliser le Rubidium comme un système à un électron, à la manière de l’atome d’hydrogène, mais avec un potentiel effectif tenant compte du blindage dû aux électrons du cœur. Ce modèle permet de comprendre la structure fine et les transitions optiques dominantes de l’atome.
+En première approximation, on peut donc modéliser le Rubidium comme un système à un électron, à la manière de l’atome d’hydrogène, mais avec un potentiel effectif tenant compte du \emph{blindage} dû aux électrons du cœur \footnote{
+Le terme \emph{blindage} (ou \emph{screening}) désigne la réduction du champ électrique 
+coulombien du noyau ressentie par l’électron de valence.  
+Dans un atome alcalin comme le Rubidium, les électrons du cœur forment une distribution de charge 
+qui repousse partiellement l’électron externe et « masque » (écrante) en partie la charge nucléaire.  
+Ainsi, l’électron de valence n’interagit pas avec la charge $+Ze$ complète du noyau, 
+mais avec une charge effective plus faible $+Z_{\mathrm{eff}}e$.  
+Le potentiel central ressenti n’est donc plus strictement coulombien, ce qui explique 
+la structure fine particulière des niveaux et leurs écarts par rapport à l’atome d’hydrogène.}
+. Ce modèle permet de comprendre les transitions optiques dominantes de l’atome.
 
 La structure des niveaux d’énergie est ensuite raffinée par les effets suivants :
 \begin{itemize}
@@ -698,7 +779,28 @@ La structure des niveaux d’énergie est ensuite raffinée par les effets suiva
 
 \medskip
 
-En effet le faisceau à environ 770~nm est donc \textbf{hors résonance}, mais \textbf{pas trop éloigné} de ces transitions (désaccord de l’ordre de quelques dizaines de THz), ce qui garantit que la structure hyperfine peut être \textbf{négligée} dans un premier temps, et que l’interaction est bien décrite par la contribution dominante des raies D1 et D2. Dans ce régime de désaccord modéré, le potentiel dipolaire est obtenu comme une somme pondérée des contributions des transitions proches, et les autres transitions atomiques (plus énergétiques) peuvent être ignorées.
+% En effet, le faisceau à environ 770~nm est donc \textbf{hors résonance}, mais \textbf{pas trop éloigné} de ces transitions (désaccord de l’ordre de quelques dizaines de THz), ce qui garantit que la structure hyperfine peut être \textbf{négligée} dans un premier temps, et que l’interaction est bien décrite par la contribution dominante des raies D1 et D2. Dans ce régime de désaccord modéré, le potentiel dipolaire est obtenu comme une somme pondérée des contributions des transitions proches, et les autres transitions atomiques (plus énergétiques) peuvent être ignorées.
+
+En effet, un faisceau à \(\sim 770\,\mathrm{nm}\) est \emph{hors résonance} des transitions 
+D1 et D2 du Rubidium, mais avec un désaccord suffisamment grand pour que la structure 
+hyperfine puisse être négligée dans un premier temps.  
+Plus précisément, dans ce régime où 
+\(\Delta \gg \Delta_{\mathrm{hfs}}\)\footnote{
+Pour le Rubidium, l’écart hyperfin entre les deux multiplets excités est 
+\(E_{5P_{3/2}} - E_{5P_{1/2}} \simeq 7~\mathrm{THz}\).  
+Si le laser est désaccordé d’une valeur \(\Delta\) bien supérieure à cette séparation, 
+les différents sous-niveaux hyperfins contribuent de manière indiscernable à la polarisation 
+induite, de sorte que l’on peut les regrouper dans une description à deux raies effectives 
+correspondant aux transitions fines D1 et D2.  
+Autrement dit, lorsque \(\Delta\gg\Delta_{\mathrm{hfs}}\), l’atome réagit comme si les niveaux 
+hyperfins étaient dégénérés.},
+la réponse de l’atome est dominée par les seules transitions fines 
+D1 (\(5S_{1/2}\rightarrow 5P_{1/2}\)) et D2 (\(5S_{1/2}\rightarrow 5P_{3/2}\)). 
+Dans ce régime, le potentiel dipolaire s’écrit comme une somme pondérée des contributions 
+de ces deux transitions proches en énergie, 
+c’est-à-dire de toutes les transitions dont le désaccord est du même ordre de grandeur que \(\Delta\), 
+tandis que les transitions beaucoup plus énergétiques sont fortement suppres­sées et peuvent être ignorées.
+
 
 \medskip
 
@@ -718,7 +820,7 @@ Lorsque la structure fine est prise en compte, le potentiel dipolaire ne se réd
 
 \medskip
 
-Dans un scénario expérimental où l’on restreint l’espace interne de l’atome à deux sous-niveaux hyperfins ou Zeeman (par exemple pour définir un pseudo-spin), le potentiel dipolaire peut être représenté par une matrice $2\times 2$ de la forme générale :
+Dans un scénario expérimental où l’on restreint l’espace interne de l’atome à deux sous-niveaux hyperfins ou Zeeman (par exemple pour définir un pseudo-spin), le potentiel dipolaire peut être représenté par une matrice $2\times 2$ de la forme générale \cite{Le_Kien_2013}:
 \begin{eqnarray}
 	U_{\mathrm{dip}} \;=\; U_{\mathrm{scal}}^{(0)} \cdot \mbox{Id}_2 
 	\;+\; U^{(1)}_{\mathrm{vec}}\;(\operatorvec{J}\cdot\operatorvec{B}_{\rm fict})
@@ -730,9 +832,19 @@ où :
 \begin{itemize}[label = $\bullet$]
   \item \textbf{Terme scalaire} : $U_{\mathrm{scal}}^{(0)}$ génère un décalage isotrope du niveau atomique qui est indépendant du sous-niveau de $J$ (ou $F$). Ce décalage est la composante « classique » de l’effet Stark AC, proportionnelle à l’intensité lumineuse, et n’entraîne pas de structure fine dépendant de la polarisation de la lumière. Ce terme domine dans la plupart des configurations expérimentales, notamment avec un champ lumineux polarisé rectiligne, comme c’est le cas ici.
 
-  \item \textbf{Terme vectoriel (Zeeman optique)} : $U_{\mathrm{vec}}^{(1)}$ agit comme un champ magnétique fictif (optical Zeeman effect) le long de $\operatorvec{B}_{\rm fict}\propto i(\operatorvec{E}^\ast\times \operatorvec{E})$. En effet, il est proportionnelle à l’opérateur $i(\operatorvec{u}^\ast\times\operatorvec{u})\cdot\operatorvec{J}$ se comportant comme $\operatorvec{J}\cdot \operatorvec{B}_{\rm fict}$. Ainsi, la polarisation circulaire du champ ($i[\operatorvec{u}^\ast\times\operatorvec{u}]\neq 0$) donne un décalage dépendant de l’orientation de $\operatorvec{J}$ (analogue à un effet Zeeman), alors que pour une polarisation rectiligne ($\operatorvec{u}$ réel) ce produit vectoriel s’annule et ce terme vectoriel disparaît. On parle souvent de champ fictif parce que, en convention, le terme vectoriel du Hamiltonien d’interaction s’écrit formellement $\mu_B g_J\,(\operatorvec{J}\cdot\operatorvec{B}_{\rm fict})$. Dans notre cas (polarisation rectiligne), ce terme est donc négligeable.
+  \item \textbf{Terme vectoriel (Zeeman optique)} : $U_{\mathrm{vec}}^{(1)}$ agit comme un champ magnétique fictif (optical Zeeman effect) le long de $\operatorvec{B}_{\rm fict}\propto i(\operatorvec{E}^\ast\times \operatorvec{E})$. En effet, il est proportionnelle à l’opérateur $i(\operatorvec{u}^\ast\times\operatorvec{u})\cdot\operatorvec{J}$ se comportant comme $\operatorvec{J}\cdot \operatorvec{B}_{\rm fict}$. Ainsi, la polarisation circulaire du champ ($i[\operatorvec{u}^\ast\times\operatorvec{u}]\neq 0$) donne un décalage dépendant de l’orientation de $\operatorvec{J}$ (analogue à un effet Zeeman), alors que pour une polarisation rectiligne ($\operatorvec{u}$ réel) ce produit vectoriel s’annule et ce terme vectoriel disparaît. On parle souvent de champ fictif parce que, en convention, le terme vectoriel du Hamiltonien d’interaction s’écrit formellement $\mu_B g_J\,(\operatorvec{J}\cdot\operatorvec{B}_{\rm fict})$. Dans notre cas (polarisation rectiligne), ce terme est donc négligeable.\footnote{
+Pour un champ électrique harmonique 
+\(\operatorvec{E}(\mathbf{r},t)=\operatorvec{E}(\mathbf{r})\,e^{-i\omega t}+{\rm c.c.}\), 
+le vecteur complexe \(\operatorvec{E}(\mathbf{r})\) encode l’amplitude et la polarisation.  
+Le produit vectoriel complexe 
+\(\operatorvec{E}^\ast\times\operatorvec{E}\) mesure précisément la \emph{chiralité} 
+ou la \emph{densité de moment cinétique spin} du champ électromagnétique :  
+il est nul pour une polarisation linéaire (\(\operatorvec{E}\) réel) et non nul pour une polarisation circulaire ou elliptique, où il pointe dans la direction de propagation.  
+La quantité \(i(\operatorvec{E}^\ast\times\operatorvec{E})\) est proportionnelle à la densité de moment angulaire orbital interne du champ et produit un « champ magnétique fictif » ressenti par le moment angulaire atomique via le terme vectoriel du potentiel ac-Stark.  
+Une présentation détaillée de ces propriétés, dans le cadre du couplage lumière–atome et du potentiel optique dipolaire, peut être trouvée dans \cite{Le_Kien_2013}.}
 
-  \item[$\times$] \textbf{Terme tensoriel} : $U_{\mathrm{tens}}^{(2)}$ introduit une anisotropie du potentiel selon l’orientation du moment angulaire par rapport à la polarisation du champ. Ce terme est proportionnel à une combinaison quadrupolaire des composantes de $\vec{J}$ :
+
+  \item[$\times$] \textbf{Terme tensoriel (négligé)} : $U_{\mathrm{tens}}^{(2)}$ introduit une anisotropie du potentiel selon l’orientation du moment angulaire par rapport à la polarisation du champ. Ce terme est proportionnel à une combinaison quadrupolaire des composantes de $\vec{J}$ :
 \begin{eqnarray}
 	\frac{3[(\operatorvec{u}^*\!\cdot \operatorvec{J})(\operatorvec{u}\!\cdot\operatorvec{J})+(\operatorvec{u}\!\cdot\operatorvec{J})(\operatorvec{u}^*\!\cdot \operatorvec{J})]-2\operatorvec{J}^2}{2J(2J-1)}.	
 \end{eqnarray}
@@ -753,7 +865,7 @@ La décomposition \eqref{eq:dipole-potential-decomposition} montre que :
 
 \medskip
 
-Cette structure matricielle du potentiel dipolaire joue un rôle central dans la manipulation cohérente des états internes de l’atome, la réalisation de barrières optiques dépendantes du spin, ou encore la mise en œuvre de qubits dans des réseaux d’atomes piégés. Elle permet également d’exploiter des phénomènes comme les transitions Raman induites optiquement ou la séparation de spin dans des pièges optiques.
+Cette structure matricielle du potentiel dipolaire joue un rôle central dans la manipulation cohérente des états internes de l’atome, la réalisation de barrières optiques dépendantes du spin, ou encore la mise en œuvre de qubits dans des réseaux d’atomes piégés. Elle permet également d’exploiter des phénomènes comme les transitions \emph{Raman} induites optiquement ou la séparation de spin dans des pièges optiques.
 
  
 % \subsection{Cas de désaccords très importants}
@@ -801,25 +913,39 @@ Dans ce contexte, il est utile de travailler dans la base $\ket{L, m_L}$, propre
 \paragraph{Structure orbitale et opérateur dipolaire.}
 
 L’opérateur dipolaire, en tant que vecteur, peut être exprimé dans la base sphérique :
-\begin{eqnarray*}
+\begin{eqnarray}
 \operatorvec{D} &=& \sum_{q = -1}^{+1} \operator{D}_q\, \vec{u}_q,
-\end{eqnarray*}
+\end{eqnarray}
 où $q = 0, \pm 1$ désigne respectivement les composantes de polarisation rectiligne ($\pi$), circulaire droite ($\sigma^+$) et circulaire gauche ($\sigma^-$), et $\vec{u}_q$ est le vecteur de polarisation associé.
 
-Dans cette base, seule la composante $\operator{D}_q$ correspondant au changement $m_L \to m_L' = m_L + q$ est active :
-\begin{eqnarray*}
-\bra{m_L'} \operatorvec{D} \cdot \vec{u}_q \ket{m_L} \propto \delta_{m_L', m_L + q}.
-\end{eqnarray*}
+%Dans cette base, seule la composante $\operator{D}_q$ correspondant au changement $m_L \to m_L' = m_L + q$ est active : :
+Dans cette base, seule la composante $\operator{D}_q$ associée au changement de moment orbital  $m_L \to m_L' = m_L + q$ est non nulle. En effet,
+\begin{eqnarray}\label{chap7:dipolaire:eq:selection_rule}
+\bra{m_L'} \operatorvec{D} \cdot \operatorvec{u}_q \ket{m_L} \propto \delta_{m_L', m_L + q},
+\end{eqnarray}
+ce qui montre que l’opérateur dipolaire ne couple que les états dont les nombres quantiques diffèrent exactement de $q$.
 
-\paragraph{Application du théorème de Wigner-Eckart.}
+\paragraph{Application du théorème de \emph{Wigner-Eckart}.}
 
 L’opérateur dipôle électrique $\operatorvec{D}$ est un opérateur vectoriel, que l’on peut exprimer en termes de composantes sphériques $\operator{D}_q$ avec $q = 0 , \pm 1 $, correspondant aux polarisations $\pi$  et $\sigma^\pm$.
 
 \medskip
 
-Le théorème de Wigner-Eckart permet d’évaluer les éléments de matrice de l’opérateur dipolaire entre états de moment angulaire en factorisant la dépendance radiale et angulaire :
+Le théorème de \emph{Wigner-Eckart}
+\footnote{%
+Le théorème de \emph{Wigner-Eckart} affirme que tout élément de matrice d’un opérateur tensoriel
+irréductible peut se factoriser en un élément réduit, indépendant des projections magnétiques,
+et un coefficient de Clebsch--Gordan contenant toute la dépendance angulaire. Autrement dit,
+pour un opérateur tensoriel $T^{(k)}_q$, on a
+$
+\bra{j',m'} T^{(k)}_q \ket{j,m}
+= \bra{j'}\!\|T^{(k)}\|\!\ket{j}\,
+\braket{j,k; m,q \mid j',m'}.
+$
+Cette factorisation simplifie considérablement le calcul des couplages dipolaires.}
+permet d’évaluer les éléments de matrice de l’opérateur dipolaire entre états de moment angulaire en factorisant la dépendance radiale et angulaire :
 \begin{eqnarray}
-\bra{L', m_{L}'} \operatorvec{D} \cdot \vec{u}_q \ket{L, m_L}
+\bra{L', m_{L}'} \operatorvec{D} \cdot \operatorvec{u}_q \ket{L, m_L}
 & = & \bra{L'}\!\|\operatorvec{D}\|\!\ket{L} \cdot \braket{L, 1; m_L, q | L', m_{L}'} , 
 \label{eq:WignerEckart}
 \end{eqnarray}
@@ -832,14 +958,14 @@ Pour une polarisation linéaire parallèle à l’axe $z$, on a $q=0$ (polarisat
 
 %Prenons le cas spécifique de la transition $5S \rightarrow 5P$, pour une polarisation rectiligne ($q = 0$). On s’intéresse au couplage entre l’état fondamental $\ket{L = 0, m_L = 0}$ et un état excité $\ket{L' = 1, m_L'}$. L’élément de matrice devient alors :
 
-Considérons la transition électronique entre les niveaux $5S$ et $5P$ du rubidium 87, en négligeant la structure fine (i.e., on travaille dans la base des moments angulaires orbitaux $\ket{L , m_L  } $
+Considérons la transition électronique entre les niveaux $5S$ et $5P$ du rubidium 87, en négligeant la structure fine (\ie, on travaille dans la base des moments angulaires orbitaux $\ket{L , m_L  } $
 Dans cette approximation, l'état fondamental est noté $\ket{L = 0, m_L = 0}$ , et l’état excité $\ket{L' = 1, m_{L'}}$ , car la transition dipolaire électrique autorise $\Delta L = \pm 1 $.
 
 
 
 L’élément de matrice s’écrit alors, en utilisant le théorème de Wigner-Eckart :
 \begin{eqnarray}
-\bra{L' = 1, m_L'} \operatorvec{D} \cdot \vec{u}_{q=0} \ket{L = 0, m_L = 0}
+\bra{L' = 1, m_L'} \operatorvec{D} \cdot \operatorvec{u}_{q=0} \ket{L = 0, m_L = 0}
 & = & d_{\scriptstyle 5S \leftrightarrow 5P} \cdot \braket{L=0, 1; m_L = 0, q=0 | 1, m_L' }.
 \end{eqnarray}
 où :
@@ -849,7 +975,7 @@ où :
 \end{itemize}
 Ce dernier impose une condition stricte de conservation de la projection du moment angulaire : $m_{L'} = m_L + q = 0 + 0  = 0 $. Par conséquent, seule la composante $m_{L'} = 0 $  de l’état excité est couplée à $\ket{L = 0 , m_L = 0}$ sous l’action du champ $\pi$-polarisé. Et comme $\braket{0,1;0,0|1,0}=1$, on obtient finalement :
 \begin{eqnarray}
- d_{\scriptstyle 5S \leftrightarrow 5P} = \bra{L' = 1, m_L'=0} \operatorvec{D} \cdot \vec{u}_{q=0} \ket{L = 0, m_L = 0} .
+ d_{\scriptstyle 5S \leftrightarrow 5P} = \bra{L' = 1, m_L'=0} \operatorvec{D} \cdot \operatorvec{u}_{q=0} \ket{L = 0, m_L = 0} .
 \end{eqnarray}
 
 Cette analyse met en évidence le rôle de la polarisation du champ lumineux dans la sélection des transitions permises, et montre que dans le régime de très grand désaccord, la structure fine peut être ignorée au profit d’une description plus simple en termes de nombres quantiques orbitaux.
@@ -857,7 +983,7 @@ Cette analyse met en évidence le rôle de la polarisation du champ lumineux dan
 
 \subparagraph{Valeur de l’élément de matrice réduit.}
 
-L'expression~\eqref{eq:WignerEckart} reste valable pour les éléments de matrice réduits.%~\cite{CCT_QO}. 
+L'expression~\eqref{eq:WignerEckart} reste valable pour les éléments de matrice réduits. %~\cite{CCT_QO}. 
 Dans le cas du rubidium 87, on peut ainsi déterminer numériquement la valeur de l’élément $\bra{L'}\!\|\operatorvec{D}\|\!\ket{L}$, noté $d_{\scriptstyle 5S \leftrightarrow 5P}$, à partir des données spectroscopiques expérimentales (fréquence de transition, largeur naturelle, etc.) \cite{Steck2002}.
 \begin{eqnarray}
 d_{\scriptstyle 5S \leftrightarrow 5P} &\approx& 2{,}5 \times 10^{-29}~\mathrm{C \cdot m}.
@@ -869,7 +995,16 @@ Cette valeur est essentielle pour quantifier les amplitudes de transition, les f
 
 \subsection{Structure fine et base des états $|L, S; J, m_J\rangle$.}
 
-Le moment angulaire électronique total $J$ résulte du couplage entre le moment angulaire orbital total $L$ et le moment angulaire de spin $S$ des électrons, selon la relation $J = L + S$. Dans le cas des atomes alcalins, on ne considère que l’électron de valence, pour lequel le spin est fixé à $S = 1/2$.
+%Le moment angulaire électronique total $J$ résulte du couplage entre le moment angulaire orbital total $L$ et le moment angulaire de spin $S$ des électrons, selon la relation $J = L + S$. Dans le cas des atomes alcalins, on ne considère que l’électron de valence, pour lequel le spin est fixé à $S = 1/2$.
+
+Le moment angulaire électronique total $J$ résulte du couplage entre le moment angulaire orbital total $L$ et le moment angulaire de spin $S$ des électrons, formellement noté $J = L + S$\footnote{
+Ici, $L$ représente le moment cinétique orbital total des électrons, et non une longueur. 
+La notation $J = L + S$ est symbolique : il s’agit d’un couplage vectoriel de moments angulaires quantiques, 
+et non d’une simple addition de nombres. Pour un électron de valence dans un atome alcalin, 
+le spin est fixé à $S = 1/2$, et $L$ correspond à la valeur quantique associée à la configuration orbitale de l’électron externe. 
+Cette notation est largement utilisée dans la littérature (cf. par exemple Sakurai, *Modern Quantum Mechanics*, chap. 3).},
+Dans le cas des atomes alcalins, on ne considère que l’électron de valence, pour lequel le spin est fixé à $S = 1/2$.
+
 
 Lorsque le désaccord du faisceau laser devient comparable à la séparation entre les doublets de structure fine, il est nécessaire de prendre en compte le couplage spin-orbite. Celui-ci donne lieu à une levée de dégénérescence des niveaux d’énergie, conduisant à ce que l’on appelle la structure fine de l’atome. Dans ce régime, les états propres du système s’écrivent dans la base couplée $|L, S; J, m_J\rangle$, où $m_J$ est la projection de $J$ sur l’axe de quantification. Ces niveaux sont représentés sur la figure~\ref{fig:structure_fine_rubidium}.
 
@@ -907,9 +1042,12 @@ En notant $\hbar\omega_{\scriptscriptstyle \tiny 5S_{1/2} \rightarrow 5P_{J'}} =
 	\label{chap:dipolaire:eq:nrj2.3}
 \end{eqnarray}
 
-Ce décalage est purement scalaire dans le cas d’un champ à polarisation linéaire, car les contributions vectorielles (champ fictif) disparaissent lorsque $\operatorvec{u}$ est réel. De plus, le terme tensoriel est nul dans l’état fondamental $5S_{1/2}$ du rubidium 87, qui à $J = \tfrac{1}{2}$.
+%Ce décalage est purement scalaire dans le cas d’un champ à polarisation linéaire, car les contributions vectorielles (champ fictif) disparaissent lorsque $\operatorvec{u}$ est réel. De plus, le terme tensoriel est nul dans l’état fondamental $5S_{1/2}$ du rubidium 87, qui à $J = \tfrac{1}{2}$.
 
-
+Ce décalage est purement scalaire dans le cas d’un champ à polarisation linéaire, 
+car les contributions vectorielles (champ fictif) disparaissent lorsque $\operatorvec{u}$ est réel. 
+De plus, le terme tensoriel est nul dans l’état fondamental $5S_{1/2}$ du Rubidium 87, 
+qui à $J = \tfrac{1}{2}$, pour toute polarisation.
 
 
 \subparagraph{Projection dans la base découplée.}
@@ -945,23 +1083,23 @@ Cette décomposition permet ensuite de calculer les éléments de matrice du mom
 Le moment angulaire électronique total $J$ résulte du couplage entre le moment angulaire orbital $L$ et le spin électronique $S$, selon la relation $J = L + S$. Dans le cas des atomes alcalins, on ne considère que l’électron de valence, pour lequel $S = \tfrac12$.\\
 
 Considérons l’état fondamental $\ket{5\,^2S_{1/2},\,m_J = \pm \tfrac12}$, que l’on peut écrire de manière équivalente comme :
-\begin{eqnarray*}
+\begin{eqnarray}
 	\ket{ 5{~}^2S_{1/2} , m_J = \pm \tfrac12  } ~\equiv~ \ket{ 5S , J=\tfrac12  , m_J= \pm \tfrac12  }  ~\equiv~ \ket{n=5 ; L=0 , S=\tfrac12 ;  J=\tfrac12  , m_J = \pm \tfrac12 }.
-\end{eqnarray*}
+\end{eqnarray}
 
 Dans le but de faciliter les calculs, nous projetons cet état dans la base découplée $\ket{L,\,m_L;\,S,\,m_S}$. Étant donné que $L = 0$ pour l’état $S$, on a $m_L = 0$ nécessairement. L’état se réécrit donc simplement :
-\begin{eqnarray*}
+\begin{eqnarray}\label{chap7:dipolaire:eq:5S_decomposed}
 	\ket{ 5{~}^2S_{1/2} , m_J = \pm \tfrac12  } & = & \ket{  m_L = 0  , m_S = \pm \tfrac12}  	
-\end{eqnarray*}
+\end{eqnarray}
 
 
 Plusieurs notations sont utilisées afin de s’adapter aux préférences des lecteurs et de lever toute ambiguïté.
 On remarque ici que, dans le cas $L = 0$, l’état couplé coïncide avec l’état découplé, car le moment orbital ne contribue pas à la somme vectorielle du moment angulaire total.\\
 
 Continuons avec les états excités $\ket{5\,^2P_{1/2},\,m_J'}$, que l’on peut écrire de manière équivalente comme :
-\begin{eqnarray*}
+\begin{eqnarray}
 	\ket{ 5{~}^2P_{J'} , m_J'  } ~\equiv~ \ket{ 5P , J'  , m_J' }  ~\equiv~ \ket{n=5 ; L'=1 , S'=\tfrac12 ;  J'  , m_J'  }.
-\end{eqnarray*}
+\end{eqnarray}
 
 Pour rappel, les opérateurs de montée/descente agissant sur les états propres du moment angulaire vérifient la relation générale :
 \begin{eqnarray}
@@ -970,35 +1108,36 @@ Pour rappel, les opérateurs de montée/descente agissant sur les états propres
 où l'opérateur $\operator{A} \in \{ \operator{S} , \operator{L} , \operator{J} , \cdots \}$.
 
 Donc 
-\begin{eqnarray*} 
-	\ket{5\,^2P_{1/2},m_J' = \pm\tfrac12} &=& \mp\sqrt{\tfrac{1}{3}}\,\ket{ m_L'=0,\,m_S'=\pm\tfrac12} \;\pm\;\sqrt{\tfrac{2}{3}}\,\ket{m_L'=\pm 1,\,m_S'=\mp\tfrac12},\\ 
-	\ket{5\,^2P_{3/2},m_J' = \pm\tfrac12} &=& +\sqrt{\tfrac{2}{3}}\,\ket{m_L'=0,\,m_S'=\pm\tfrac12} \;+\;\sqrt{\tfrac{1}{3}}\,\ket{ m_L'=\pm 1,\,m_S'=\mp\tfrac12},\\
-	\ket{5\,^2P_{3/2},m_J' = \pm\tfrac32} &= & +\ket{m_L'=\pm 1 , m_S' = \pm \tfrac32}.  
-\end{eqnarray*}
+\begin{eqnarray}
+	\ket{5\,^2P_{1/2},m_J' = \pm\tfrac12} &=& \mp\sqrt{\tfrac{1}{3}}\,\ket{ m_L'=0,\,m_S'=\pm\tfrac12} \;\pm\;\sqrt{\tfrac{2}{3}}\,\ket{m_L'=\pm 1,\,m_S'=\mp\tfrac12} \label{chap7:dipolaire:eq:5P_decomposed_1}   ,\\ 
+	\ket{5\,^2P_{3/2},m_J' = \pm\tfrac12} &=& +\sqrt{\tfrac{2}{3}}\,\ket{m_L'=0,\,m_S'=\pm\tfrac12} \;+\;\sqrt{\tfrac{1}{3}}\,\ket{ m_L'=\pm 1,\,m_S'=\mp\tfrac12} \label{chap7:dipolaire:eq:5P_decomposed_2} ,\\
+	\ket{5\,^2P_{3/2},m_J' = \pm\tfrac32} &= & +\ket{m_L'=\pm 1 , m_S' = \pm \tfrac12} \label{chap7:dipolaire:eq:5P_decomposed_3} .  
+\end{eqnarray}
  
 Cette notation sera utile par la suite pour analyser les transitions permises et les amplitudes associées lors de l’interaction dipolaire avec une lumière polarisée ($q = 0$ correspondant à une polarisation $\pi$). En se rappelant que dans ce cas 
-\begin{eqnarray*}
-	d_{\scriptstyle 5S \rightarrow 5P} & \doteq &\bra{L'=1} \vert \operatorvec{D} \vert \ket{L=1} = \bra{L'=1 , m_L' =0 }  \operatorvec{D} \cdot \operatorvec{u} \ket{L=0 , m_L = 0 }	
-\end{eqnarray*}
-
-il vient que 
-\begin{eqnarray*}
+\begin{eqnarray}\label{chap7:dipolaire:eq:d5S5P}
+	d_{\scriptstyle 5S \rightarrow 5P} & \doteq &\bra{L'=1} \vert \operatorvec{D} \vert \ket{L=1} = \bra{L'=1 , m_L' =0 }  \operatorvec{D} \cdot \operatorvec{u} \ket{L=0 , m_L = 0 },	
+\end{eqnarray}
+il vient que les éléments de matrice du moment dipolaire entre les états de structure fine s’évaluent comme suit. En utilisant la décomposition des états dans la base découplée (équations~\eqref{chap7:dipolaire:eq:5S_decomposed}, \eqref{chap7:dipolaire:eq:5P_decomposed_1}, \eqref{chap7:dipolaire:eq:5P_decomposed_2}, \eqref{chap7:dipolaire:eq:5P_decomposed_3} ) et les règles de sélection (équation~\eqref{chap7:dipolaire:eq:selection_rule}), on trouve :
+%il vient que en utilisant \eqref{chap7:dipolaire:eq:5S_decomposed}, \eqref\label{chap7:dipolaire:eq:5P_decomposed_1} , \eqref\label{chap7:dipolaire:eq:5P_decomposed_2}, \eqref\label{chap7:dipolaire:eq:5P_decomposed_3} , \eqref{chap7:dipolaire:eq:d5S5P} et les règles de sélection \eqref{chap7:dipolaire:eq:selection_rule} :
+\begin{eqnarray}
 	\langle 5 {~}^2P_{1/2} , m_J' = \pm\tfrac12 \vert \operatorvec{D} \cdot \operatorvec{u}\vert 5 {~}^2S_{1/2} , m_J = \pm  \tfrac12 \rangle	 &=& \mp  \sqrt{\frac{1}{3}} d_{\scriptstyle 5S \rightarrow 5P},\\
 	\langle 5 {~}^2P_{3/2} , m_J' = \pm \tfrac12 \vert \operatorvec{D} \cdot \operatorvec{u}\vert 5 {~}^2S_{1/2} , m_J = \pm  \tfrac12 \rangle	 &=& \sqrt{\frac{2}{3}} d_{\scriptstyle 5S \rightarrow 5P} , \\
 	\langle 5 {~}^2P_{3/2} , m_J' = \pm \tfrac32 \vert \operatorvec{D} \cdot \operatorvec{u}\vert 5 {~}^2S_{1/2} , m_J = \pm  \tfrac12 \rangle & = & 0 .
-\end{eqnarray*}
+\end{eqnarray}
 
 
 \subparagraph{Potentiel dipolaire}
 
-Potentiel dipolaire s'écrit :
+En utilisant les résultats précédents, on peut maintenant calculer le potentiel dipolaire ressenti par un atome de rubidium 87 dans l’état fondamental $\ket{5S_{1/2}, m_J = \pm \tfrac12}$, lorsqu’il est soumis à un champ électromagnétique de polarisation linéaire (composante $q = 0$) et de grande fréquence de désaccord par rapport aux transitions D1 et D2.
+Le Potentiel dipolaire s'écrit :
 
-\begin{eqnarray*}
+\begin{eqnarray}
 	U_{\mathrm{dip}}(\operatorvec{r}) &  = & \frac{ \vert \mathcal{E} \vert^2}{4 \hbar} \left( \frac{ \vert \langle 5 {~}^2P_{1/2}  \vert \operatorvec{D} \cdot \operatorvec{u}\vert 5 {~}^2S_{1/2}  \rangle \vert^2}{ \Delta_1} + \frac{ \vert\langle 5 {~}^2P_{3/2}  \vert \operatorvec{D} \cdot \operatorvec{u}\vert 5 {~}^2S_{1/2}  \rangle \vert^2}{ \Delta_2}  \right )\\ & = &  \frac{  d_{\scriptstyle \tiny  5S \rightarrow 5P}^2 \vert \mathcal{E} \vert^2 }{4 \hbar} \left( \frac{ 1}{ 3 \Delta_1} + \frac{2 }{ 3 \Delta_2}  \right ).		
-\end{eqnarray*}
+\end{eqnarray}
 
 Ainsi finalement 
-\begin{eqnarray}\label{eq.7.47}
+\begin{eqnarray}\label{eq:7.47}
 	U_{\mathrm{dip}}(\operatorvec{r}) &=& \frac{\hbar \, \Gamma^2}{8 I_{\mathrm{sat}}} \left( \frac{ 1}{ 3 \Delta_1} + \frac{2 }{ 3 \Delta_2}  \right ) I(\operatorvec{r}) ,	
 \end{eqnarray}
 
@@ -1007,9 +1146,16 @@ avec $\Delta_1 = \omega -\omega_{\scriptstyle \tiny 5S_{1/2} \rightarrow 5P_{1/2
 \subparagraph{Taux d’émission spontanée}
 Le même hamiltonien d’interaction qui génère le potentiel dipolaire est aussi responsable des processus de diffusion de photons (absorption suivie de réémission spontanée), qui conduisent à des effets dissipatifs.
 
-Dans le cas d’un champ à polarisation linéaire et avec un grand désaccord par rapport aux transitions D1 et D2, le {\bf taux d’émission spontanée} est donné par :
+%Dans le cas d’un champ à polarisation linéaire et avec un grand désaccord par rapport aux transitions D1 et D2, le {\bf taux d’émission spontanée} est donné par :
 
-\begin{eqnarray}\label{eq.7.48}
+\smallskip
+
+Dans le cas d’un champ à polarisation linéaire et pour un laser fortement désaccordé 
+(par rapport aux transitions D1 et D2), le {\bf taux d’émission spontanée} 
+$\Gamma_{\mathrm{sc}}(\vec{r})$ associé à la diffusion de photons par l’atome de Rubidium 87 
+est donné par :
+
+\begin{eqnarray}\label{eq:7.48}
 \Gamma_{\mathrm{sc}}(\vec{r}) & = & \frac{\Gamma^3}{8 I_{\mathrm{sat}}} \left( \frac{1}{3 \Delta_1^2} + \frac{2}{3 \Delta_2^2} \right) I(\vec{r}) .
 \label{eq:scattering_rate}
 \end{eqnarray}
@@ -1051,9 +1197,9 @@ Notre objectif est de réaliser un piégeage dipolaire optique pour des atomes d
 
 \vspace{1em}
 
-Dans cette configuration, les faisceaux lasers génèrent un potentiel optique conservatif $U_{dip}(\vec{r})$ et induisent un taux de diffusion spontané $\Gamma_{sc}(\vec{r})$, tous deux proportionnels à l’intensité locale $I(\vec{r})$. Ces deux effets ont des conséquences opposées sur les atomes : le premier permet de les confiner, le second les chauffe et peut entraîner leur perte. Il est donc crucial d’optimiser ce compromis
+Dans cette configuration, les faisceaux lasers génèrent un potentiel optique conservatif $U_{dip}(\vec{r})$ et induisent un taux de diffusion spontané $\Gamma_{sc}(\vec{r})$, tous deux proportionnels à l’intensité locale $I(\vec{r})$. Ces deux effets ont des conséquences opposées sur les atomes : le premier permet de les confiner, le second les chauffe et peut entraîner leur perte. Il est donc crucial d’optimiser le choix du laser (longueur d’onde, puissance) pour maximiser la profondeur du piège tout en minimisant la diffusion photonique.
 
-\subsubsection*{Critères de sélection}
+\subsubsection*{Critères de sélection de la longueur d’onde du laser}
 
 Deux critères fondamentaux guident notre choix de laser :
 \begin{itemize}[label = $\bullet$]
@@ -1063,18 +1209,18 @@ Deux critères fondamentaux guident notre choix de laser :
 		\end{equation}
 		Cette valeur garantit une barrière suffisante pour confiner les atomes contre leur agitation thermique résiduelle ou leur expansion quantique.
 	\item Le {\bf taux de diffusion spontané}  au point $x^\ast$ défini par $U_{dip}(x^\ast) = U_{dip}(0)/2$ doit rester inférieur à une valeur seuil pour limiter l’échauffement et les pertes :
-		\begin{equation}\label{eq:7.50}
+		\begin{equation}\label{eq:7.51}
 			\Gamma_{sp}(x^\ast) \leq \Gamma_{sp}^{(max)} = 2\pi \times 1~s^{-1}.	
 		\end{equation}
-		Ce critère conduit, en utilisant le fait que le potentiel $U_{dip}^{(min)}(\vec{r})$ et le taux de diffusion spontanée $\Gamma_{sp}(\vec{r})$ soit proportionnelle à l’intensité $I(\vec{r})$, à la borne stricte suivante :
-		\begin{equation}\label{eq:7.51}
+		Ce critère conduit, en utilisant le fait que le potentiel $U_{dip}^{(min)}(\vec{r})$ et le taux de diffusion spontanée $\Gamma_{sp}(\vec{r})$ sont proportionnels à l’intensité $I(\vec{r})$, à la borne stricte suivante :
+		\begin{equation}\label{eq:7.52}
 			\Gamma_{sp}(0) \leq  2\pi \times 2~s^{-1}.	
 		\end{equation}
 \end{itemize}
 
 \subsubsection*{Figure de mérite : ratio potentiel / diffusion}
 
-Les conditions des Eqs.~\eqref{eq:7.49} et \eqref{eq:7.50} impliquent que, pour un point particulier \(\vec{r}^*\), le rapport entre la profondeur du piège et la diffusion photonique satisfait
+Les conditions des équations~\eqref{eq:7.50} et \eqref{eq:7.51} impliquent que, pour un point particulier \(\vec{r}^*\), le rapport entre la profondeur du piège et la diffusion photonique satisfait
 \[
 \frac{U_{\rm dip}(\vec{r}^*)}{\hbar \Gamma_{\rm sc}(\vec{r}^*)} > \frac{2\,U_{\rm dip}^{(min)}}{\hbar \Gamma_{\rm sc}^{(max)}} .
 \]
@@ -1117,7 +1263,7 @@ Un calcul numérique montre que, sous ces contraintes, il est nécessaire de sé
 
 %Dans notre cadre d’un piégeage \textbf{blue-detuned}, les atomes sont confinés dans la région \textbf{centrale de faible intensité}, située entre deux faisceaux focalisés. Le piégeage repose donc sur la présence de \textbf{parois optiques abruptes} générées par les faisceaux blue-detuned. Cela impose que chaque faisceau présente un fort gradient d’intensité, ce qui nécessite un waist petit.
 
-Le faisceau utilisé est gaussien. On rappelle que le \textit{waist} $w_0$ désigne le rayon du faisceau, défini comme la distance radiale $r$ pour laquelle l’intensité transverse chute à $1/e^2$ de sa valeur au centre du faisceau, et ce à la position où le faisceau est le plus focalisé. Typiquement, nous utilisons ici des faisceaux avec un waist de l’ordre de $w_0 \sim 1~\mu\text{m}$.  
+Le faisceau utilisé est gaussien. On rappelle que le \textit{waist} $w_0$ désigne le rayon du faisceau, défini comme la distance radiale $r$ pour laquelle l’intensité transverse chute à $1/e^2$ de sa valeur au centre du faisceau qui est la position où le faisceau est le plus focalisé. Nous consicérons ici des faisceaux avec un waist de l’ordre de $w_0 \sim 1~\mu\text{m}$.  
 
 \medskip
 
@@ -1150,17 +1296,17 @@ avec $P$ la puissance incidente. Cette expression relie directement la puissance
 %	 \underbrace{U_{dip}^{(min)} \cdot  \frac{\pi w_0^2}{2} \frac{8 I_{sat}}{\Gamma^2} \cdot \left( \frac{ 1}{ 3 \Delta_1} + \frac{2 }{ 3 \Delta_2}  \right )^{-1} }_{P^{(min)}(\lambda)}  \leq P(\lambda) \leq \underbrace{ \Gamma_{sc}^{(max)} \cdot \frac{\pi w_0^2}{2} \frac{8 I_{sat}}{\Gamma^3} \cdot \left( \frac{ 1}{ 3 \Delta_1^2} + \frac{2 }{ 3 \Delta_2^2}  \right )^{-1}}_{ P^{(max)}(\lambda)} 
 %\end{eqnarray}
 
-Les conditions des Eqs.~\eqref{eq:7.49} et \eqref{eq:7.50} impliquent alors, en utilisant les expressions \eqref{eq:7.46} et \eqref{eq:7.47} pour le potentiel dipolaire et le taux de diffusion de photons, que la puissance laser doit satisfaire
-\begin{equation}
+Les conditions des équations~\eqref{eq:7.50} et \eqref{eq:7.51} impliquent alors, en utilisant les expressions \eqref{eq:7.47} et \eqref{eq:7.48} pour le potentiel dipolaire et le taux de diffusion de photons, que la puissance laser doit satisfaire
+\begin{equation}\label{eq:7.53}
 	P_{\rm min}(\lambda) \le P(\lambda) \le P_{\rm max}(\lambda),
 \end{equation}
 avec
-\begin{align*}
+\begin{align}
 P_{\rm min}(\lambda) &= U_{\rm dip}^{(min)} \cdot \frac{\pi w_0^2}{2} \frac{8 I_{\rm sat}}{\Gamma^2} 
 \left( \frac{1}{3 \Delta_1} + \frac{2}{3 \Delta_2} \right)^{-1}, \\
 P_{\rm max}(\lambda) &= \Gamma_{\rm sc}^{(max)} \cdot \pi w_0^2 \frac{8 I_{\rm sat}}{\Gamma^3} 
 \left( \frac{1}{3 \Delta_1^2} + \frac{2}{3 \Delta_2^2} \right)^{-1}.
-\end{align*}
+\end{align}
 
 \medskip
 
@@ -1197,7 +1343,7 @@ Un premier filtrage des sources laser admissibles impose que la longueur d’ond
 
 \subsubsection*{Prise en compte des pertes optiques}
 
-L’ensemble des éléments optiques traversés par le faisceau — incluant la sortie de fibre, les lentilles de collimation et de focalisation, les miroirs de redirection, les trou de filtrages, ainsi que le diviseur de faisceau — induit des pertes cumulées non négligeables. Une estimation réaliste, fondée sur les caractéristiques typiques des composants et l'expérience de montage, indique que les pertes globales s’élèvent à environ $60$ à $75\%$.
+L’ensemble des éléments optiques traversés par le faisceau — incluant la sortie de fibre, les lentilles de collimation et de focalisation, les miroirs de redirection, les trous de filtrages, ainsi que le diviseur de faisceau — induit des pertes cumulées non négligeables. Une estimation réaliste, fondée sur les caractéristiques typiques des composants et l'expérience de montage, indique que les pertes globales s’élèvent à environ $60$ à $75\%$.
 
 Ces pertes doivent être prises en compte dès le dimensionnement initial du système laser, afin de garantir que la puissance effectivement disponible au niveau des atomes soit suffisante pour atteindre les profondeurs de piège souhaitées. En pratique, on modélise cette efficacité par un facteur global $\eta$, défini comme :
 \begin{eqnarray*}
@@ -1205,6 +1351,10 @@ Ces pertes doivent être prises en compte dès le dimensionnement initial du sys
 \end{eqnarray*}
 
 Ce coefficient sera utilisé dans la suite pour évaluer les puissances minimales requises des sources laser candidates. Une marge de sécurité est également conservée pour pallier les éventuels désalignements ou dégradations optiques en conditions expérimentales réelles.
+
+\smallskip
+
+Au niveau des atomes, la puissance des lasers doit donc satisfaire \eqref{eq:7.53}, soit être entre la courbe (en bleue) $P^{\rm (min)}(\lambda)$ et (en jaune) $P^{\rm (max)}(\lambda)$ de la figure \eqref{fig:7.6} (et après dans la figure \eqref{chap7:fig:puiss.2}). En tenant compte des pertes optiques, cela se traduit par la condition suivante sur la puissance initiale des lasers. Donc, nous cherchons des lasers dans la zone de tolérances (en vert) de la figure \eqref{fig:7.6} (et après dans la figure \eqref{chap7:fig:puiss.2}). 
 
 %%-------------------------
 %Un facteur de sécurité supplémentaire est nécessaire si l’on envisage de moduler l’intensité ou d’utiliser des optiques à densité variable.
@@ -1232,7 +1382,7 @@ Ce coefficient sera utilisé dans la suite pour évaluer les puissances minimale
 
 \subsubsection*{Sources laser utilisées et pureté spatiale}
 
-Trois sources laser ont été identifiées pour la réalisation de la boîte optique blue-detuned destinée au piégeage dipolaire du Rubidium-87, dont deux répondent aux conditions de puissance admissibles $P^{(min)}(\lambda)$ et $P^{(max)}(\lambda)$.
+Trois sources laser ont été identifiées pour la réalisation de la boîte optique blue-detuned destinée au piégeage dipolaire du Rubidium-87, dont deux répondent aux conditions de puissance admissibles $P^{\rm (min)}(\lambda)$ et $P^{\rm (max)}(\lambda)$.
 
 \begin{itemize}[label = $\bullet$]
     \item \textbf{DFB} à $\lambda = 772.5~\text{nm}$, puissance $P = 75~\text{mW}$.
@@ -1242,23 +1392,26 @@ Trois sources laser ont été identifiées pour la réalisation de la boîte opt
 
 \medskip
 
-Le laser \gls*{DFB} (Distributed Feedback) intègre un réseau de Bragg directement dans la région active, ce qui permet un couplage efficace entre la rétroaction optique et le gain, assurant une émission monomode stable tant sur le plan spectral que spatial. Cette architecture confère au DFB une excellente stabilité et une robustesse appréciées en physique atomique.
+Le laser \gls{DFB} (Distributed Feedback) intègre un réseau de Bragg directement dans la région active, ce qui permet un couplage efficace entre la rétroaction optique et le gain, assurant une émission monomode stable tant sur le plan spectral que spatial. Cette architecture confère au DFB une excellente stabilité et une robustesse appréciées en physique atomique.
 
-Le laser \gls*{DBR} (Distributed Bragg Reflector), quant à lui, dispose d’un réseau de Bragg séparé de la région active. Cette configuration offre une plus grande flexibilité dans le réglage de la longueur d’onde, mais entraîne généralement une stabilité spectrale un peu moindre par rapport aux lasers DFB.
+Le laser \gls{DBR} (Distributed Bragg Reflector), quant à lui, dispose d’un réseau de Bragg séparé de la région active. Cette configuration offre une plus grande flexibilité dans le réglage de la longueur d’onde, mais entraîne généralement une stabilité spectrale un peu moindre par rapport aux lasers DFB.
 
 \medskip
 
-Ces diodes sont pigtaillées sur des fibres monomodes à maintien de polarisation (type PM780-HP), assurant un profil spatial très pur. En effet, bien que des modes transverses supérieurs puissent être émis par la puce laser, la fibre ne guide que le mode fondamental LP$_{01}$, équivalent au mode gaussien TEM$_{00}$, dans la gamme spectrale $770{-}780~\text{nm}$. Cette configuration agit comme un filtre spatial puissant, garantissant une sortie de faisceau gaussien avec une pureté supérieure à $99.5\%$ en puissance.
+
+Ces diodes sont pigtaillées\footnote{"couplées à des fibres"} sur des fibres monomodes à maintien de polarisation (type PM780-HP), assurant un profil spatial très pur. En effet, bien que des modes transverses supérieurs puissent être émis par la puce laser, la fibre ne guide que le mode fondamental LP$_{01}$, équivalent au mode gaussien TEM$_{00}$, dans la gamme spectrale $770{-}780~\text{nm}$. Cette configuration agit comme un filtre spatial puissant, garantissant une sortie de faisceau gaussien avec une pureté supérieure à $99.5\%$ en puissance.
 
 \medskip
 
 Cette haute pureté spatiale est cruciale pour obtenir une focalisation optimale et des gradients de champ suffisamment intenses dans la zone de piégeage, tout en minimisant les pertes optiques et les effets parasites liés à la présence de modes non fondamentaux.
 
-Enfin, les troix lasers  se situent dans la zone de tolérence définie par les conditions sur la puissance minimale et maximale en fonction de la longueur d’onde, validant leur adéquation pour la construction de notre boîte optique blue-detuned.
+\smallskip
+
+Les troix lasers  se situent dans la zone de tolérance définie par les conditions sur la puissance minimale et maximale en fonction de la longueur d’onde, validant leur adéquation pour la construction de notre boîte optique blue-detuned.
 
 \medskip
 
-Avec un waist de $w_0 = 1~\mu\text{m}$, les puissances minimales requises pour satisfaire les conditions $U_{dip}^{(min)}$ et $\Gamma_{sp}^{(max)}$ sont extrêmement faibles : environ $1.1~\mu\text{W}$ pour la DFB à $772.5~\text{nm}$, $0.3~\mu\text{W}$ pour la DBR à $778.0~\text{nm}$, et $1.4~\mu\text{W}$ pour la DBR à $770.5~\text{nm}$. Ces valeurs sont très largement inférieures aux puissances disponibles pour chacun de ces lasers, même en tenant compte des pertes optiques, ce qui confirme la faisabilité expérimentale du dispositif.
+Avec un waist de $w_0 = 1~\mu\text{m}$, les puissances minimales requises pour satisfaire les conditions $U_{dip}^{(min)}$ et $\Gamma_{sp}^{(max)}$ sont extrêmement faibles : environ $1.1~\mu\text{W}$ pour la \gls{DFB} à $772.5~\text{nm}$, $0.3~\mu\text{W}$ pour la \gls{DBR} à $778.0~\text{nm}$, et $1.4~\mu\text{W}$ pour la DBR à $770.5~\text{nm}$. Ces valeurs sont très largement inférieures aux puissances disponibles pour chacun de ces lasers, même en tenant compte des pertes optiques, ce qui confirme la faisabilité expérimentale du dispositif.
 
 \paragraph{Choix du waist pour les projets futurs.}
 
@@ -1294,11 +1447,11 @@ Afin de garder une marge pour ces projets, nous avons choisi un waist de $300\,\
 
 %Ce constat a notamment motivé l’ajout d’un amplificateur optique (TA — Tapered Amplifier) en sortie du laser à $770.5~\text{nm}$, afin de compenser la puissance disponible limitée et garantir des conditions de piégeage satisfaisantes malgré les pertes optiques du système.
 
-Avec un waist de $w_0 = 300~\mu\text{m}$, les puissances minimales requises augmentent considérablement en raison de la baisse d’intensité au centre du faisceau. On obtient ainsi des puissances nécessaires de l’ordre de $102~\text{mW}$ pour la DFB à $772.5~\text{nm}$, $30~\text{mW}$ pour la DBR à $778.0~\text{nm}$, et $127~\text{mW}$ pour la DBR à $770.5~\text{nm}$ (Fig.~\ref{chap7:fig:puiss.2}).  
+Avec un waist de $w_0 = 300~\mu\text{m}$, les puissances minimales requises augmentent considérablement pour conserver la même intensité au centre du faisceau. On obtient ainsi des puissances nécessaires de l’ordre de $102~\text{mW}$ pour la \gls{DFB} à $772.5~\text{nm}$, $30~\text{mW}$ pour la \gls{DBR} à $778.0~\text{nm}$, et $127~\text{mW}$ pour la \gls{DBR} à $770.5~\text{nm}$ (Fig.~\ref{chap7:fig:puiss.2}).  
 
 \medskip
 
-Afin d’assurer un potentiel dipolaire plus propre, avec le moins de diffusion et de chauffage possible, nous avons choisi la source laser présentant le plus grand désaccord : la DBR à $770.5~\text{nm}$. Néanmoins, pour obtenir un puits suffisamment profond, la puissance disponible reste insuffisante.  
+Afin d’assurer un potentiel dipolaire plus propre, avec le moins de diffusion et de chauffage possible, nous avons choisi la source laser présentant le plus grand désaccord : la \gls{DBR} à $770.5~\text{nm}$. Néanmoins, pour obtenir un puits suffisamment profond, la puissance disponible reste insuffisante.  
 
 \medskip
 
@@ -1334,7 +1487,7 @@ Afin de compenser le déficit de puissance du laser \gls{DBR} à $770.5~\text{nm
 
 %Un \gls{TA} est un semi-conducteur optique amplificateur non résonant, composé d'une région d'entrée étroite (guidée) et d'une région de sortie évasée (tapered), permettant d'amplifier efficacement un faisceau monomode tout en conservant un profil spatial de bonne qualité. Contrairement aux lasers, le \gls*{TA} n'oscille pas par lui-même : il agit uniquement sur un signal incident (seed). Il peut amplifier des puissances faibles (quelques mW) en entrée jusqu’à plusieurs centaines de mW, voire au-delà, en sortie.
 
-Un \gls{TA} est un semi-conducteur optique amplificateur non résonant, composé d'une région d'entrée étroite (guidée) et d'une région de sortie évasée (tapered), permettant d'amplifier efficacement un faisceau monomode tout en conservant un profil spatial de bonne qualité. Contrairement aux lasers, le \gls*{TA} n'oscille pas par lui-même : il agit uniquement sur une source laser fournie en entrée. Il peut amplifier des puissances faibles, de l'ordre de 20~mW, jusqu’à plusieurs centaines de mW, voire au-delà, en sortie.
+Un \gls{TA} est un semi-conducteur optique amplificateur non résonant, composé d'une région d'entrée étroite (guidée) et d'une région de sortie évasée (tapered), permettant d'amplifier efficacement un faisceau monomode tout en conservant un profil spatial de bonne qualité. Contrairement aux lasers, le \gls{TA} n'oscille pas par lui-même : il agit uniquement sur une source laser fournie en entrée. Il peut amplifier des puissances faibles, de l'ordre de $20~mW$, jusqu’à plusieurs centaines de mW, voire au-delà, en sortie.
 
 
 Ce dispositif est particulièrement adapté aux expériences de piégeage optique, où une puissance laser relativement élevée est nécessaire tout en maintenant une bonne qualité spatiale.
@@ -1354,7 +1507,7 @@ L'utilisation d’un TA s’accompagne de plusieurs contraintes expérimentales 
 \begin{itemize}[label=$\bullet$]
     \item \textbf{Sensibilité aux rétro-réflexions :} la puce du \gls{TA} ne supporte pas les retours optiques parasites, qui peuvent entraîner des instabilités, des dégradations de performance, voire endommager le composant. Un \textbf{isolateur optique} est donc placé en sortie pour bloquer tout retour de lumière vers le \gls{TA}.
     
-    \item \textbf{Mode spatial en sortie :} la sortie du \gls{TA} reste monomode, mais le profil spatial est fortement déformé et s’éloigne d’un mode TEM$_{00}$ parfait. Un trou de filtrage ou une \textbf{trou de filtrage} de $50~\mu$m (à ajuster selon le profil observé) peut être utilisé pour filtrer et améliorer la qualité spatiale du faisceau.
+    \item \textbf{Mode spatial en sortie :} la sortie du \gls{TA} reste monomode, mais le profil spatial est fortement déformé et s’éloigne d’un mode TEM$_{00}$ parfait. Un  \textbf{trou de filtrage} de $50~\mu$m (à ajuster selon le profil observé) peut être utilisé pour filtrer et améliorer la qualité spatiale du faisceau.
 \end{itemize}
 
 \subsubsection*{Mise en œuvre expérimentale}
@@ -1370,9 +1523,9 @@ Le schéma global de l’amplification est présenté sur la figure~\ref{fig:TA_
 
     \item \textbf{Isolateur optique :} un isolateur optique est placé immédiatement après le \gls{TA} pour éviter tout retour de lumière vers la puce.
 
-    \item \textbf{Modulation de puissance :} un modulateur acousto-optique \gls{AOM} est inséré juste avant la fibre optique, permettant de couper la lumière à la demande (switch rapide) ou de moduler dynamiquement l’intensité laser. Cela permet un contrôle fin de l’illumination au niveau des atomes.
+    \item \textbf{Modulation de puissance :} un modulateur acousto-optique \gls{AOM} est inséré juste avant une fibre optique, permettant de couper la lumière à la demande (switch rapide) ou de moduler dynamiquement l’intensité laser. Cela permet un contrôle fin de l’illumination au niveau des atomes.
     
-    \item \textbf{Mesure de puissance :} une photodiode ou un puissance-mètre placé après l’AOM permet de mesurer précisément la puissance en fonction du courant injecté dans le \gls{TA}, et de corriger les effets d’instabilité si nécessaire.
+    \item \textbf{Mesure de puissance :} une photodiode ou un puissance-mètre placé après l’\gls{AOM} permet de mesurer précisément la puissance en fonction du courant injecté dans le \gls{TA}, et de corriger les effets d’instabilité si nécessaire.
 
 \end{itemize}
 
@@ -1387,7 +1540,7 @@ La diode laser et le \gls{TA} sont asservis à une température stable afin d’
     \label{fig:Puissance_TA}
 \end{figure}
 
-Afin d’éviter une dégradation prématurée des composants, il a été choisi de ne pas les faire fonctionner à leurs limites maximales. La diode laser est ainsi réglée pour fournir une puissance d’environ $25\,\text{mW}$ (courant $I_{\text{diode}} = 150.6\,\text{mA}$) et le TA est exploité avec un courant d’environ $1.5\,\text{A}$. Cette configuration assure un bon compromis entre puissance de sortie et longévité des dispositifs, tout en garantissant une amplification stable et un profil spatial préservé.
+Afin d’éviter une dégradation prématurée des composants, il a été choisi de ne pas les faire fonctionner à leurs limites maximales. La diode laser est ainsi réglée pour fournir une puissance d’environ $25\,\text{mW}$ (courant $I_{\text{diode}} = 150.6\,\text{mA}$) et le \gls{TA} est exploité avec un courant d’environ $1.5\,\text{A}$. Cette configuration assure un bon compromis entre puissance de sortie et longévité des dispositifs, tout en garantissant une amplification stable et un profil spatial préservé.
 
 
 \medskip
@@ -1409,7 +1562,7 @@ Il semble donc nécessaire d’envisager, à terme, le remplacement par un \gls{
 
 \medskip
 
-L’\gls*{AOM} génère plusieurs ordres de diffraction : le mode zéro (non diffracté), les modes $\pm 1$, etc. Afin d’optimiser le transfert d’énergie dans un mode diffracté souhaité (par exemple le premier ordre $\pm 1$), le cristal AOM a été ajusté finement en rotation. Ce réglage permet de maximiser la puissance dans ce mode non nul.
+L’\gls{AOM} génère plusieurs ordres de diffraction : le mode zéro (non diffracté), les modes $\pm 1$, etc. Afin d’optimiser le transfert d’énergie dans un mode diffracté souhaité (par exemple le premier ordre $\pm 1$), le cristal \gls{AOM} a été ajusté finement en rotation. Ce réglage permet de maximiser la puissance dans ce mode non nul.
 
 \medskip
 
@@ -1417,7 +1570,7 @@ Le faisceau correspondant à ce mode diffracté, qui concentre la majorité de l
 
 \medskip
 
-Ainsi, l’\gls*{AOM} est configuré de manière à transférer efficacement la puissance vers le mode diffracté utile, avec une puissance d’environ $62\,\text{mW}$ disponible à l'entée de la fibre, garantissant une qualité spatiale et une polarisation stables pour l’expérience.
+Ainsi, l’\gls{AOM} est configuré de manière à transférer efficacement la puissance vers le mode diffracté utile, avec une puissance d’environ $62\,\text{mW}$ disponible à l'entée de la fibre, garantissant une qualité spatiale et une polarisation stables pour l’expérience.
 
 \medskip
 
@@ -1431,7 +1584,7 @@ L’introduction du \gls{DMD} offre une flexibilité supplémentaire : il permet
 
 \medskip
 
-En combinant le potentiel de la puce et le \gls*{DMD}, il est possible de préparer des nuages atomiques homogènes sur des zones plus étendues que celles limitées par le potentiel quartique de la puce seule. Cependant, pour générer des potentiels encore plus exotiques et modulables, l’utilisation d’un \gls{TA} est nécessaire. Après optimisation, nous avons injecté environ 62~mW dans la fibre conduisant vers le DMD. Cette configuration est satisfaisante pour le projet en cours, mais elle révèle certaines limitations du \gls{TA} utilisé : le profil spatial du faisceau s’écarte significativement d’un mode TEM$_{00}$, ce qui explique la faible puissance réellement injectée. Pour atteindre des performances supérieures et exploiter pleinement la flexibilité du DMD, il serait nécessaire de remplacer le \gls{TA} actuel par un modèle offrant un profil spatial plus adapté.
+En combinant le potentiel de la puce et le \gls{DMD}, il est possible de préparer des nuages atomiques homogènes sur des zones plus étendues que celles limitées par le potentiel quartique de la puce seule. Cependant, pour générer des potentiels encore plus exotiques et modulables, l’utilisation d’un \gls{TA} est nécessaire. Après optimisation, nous avons injecté environ 62~mW dans la fibre conduisant vers le \gls{DMD}. Cette configuration est satisfaisante pour le projet en cours, mais elle révèle certaines limitations du \gls{TA} utilisé : le profil spatial du faisceau s’écarte significativement d’un mode TEM$_{00}$, ce qui explique la faible puissance réellement injectée. Pour atteindre des performances supérieures et exploiter pleinement la flexibilité du \gls{DMD}, il serait nécessaire de remplacer le \gls{TA} actuel par un modèle offrant un profil spatial plus adapté.
 
 
 

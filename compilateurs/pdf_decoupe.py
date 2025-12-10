@@ -362,7 +362,7 @@ parts = {
     "4. Fluctuations de la distribution de rapidités dans les états stationnaires du modèle de Lieb–Liniger homogène": {"page": "", "pages": "", "nb_pages": 24},
     "5. Dispositif expérimental": {"page": "", "pages": "", "nb_pages": 24},
     "6. Étude du protocole de bi-partition : Mesure de distribution de rapidités locales rho(x,θ) pour des systèmes hors équilibre": {"page": "", "pages": "", "nb_pages": 18},
-    "7. Mise en place d'un confinement longitudinal dipolaire": {"page": "", "pages": "", "nb_pages": 22},
+    "7. Mise en place d'un confinement longitudinal dipolaire": {"page": "", "pages": "", "nb_pages": 24},
     "Conclusion": {"page": "", "pages": "", "nb_pages": 2},
     "Annex A - Action de P et H sur l'état de Bethe": {"page": "", "pages": "", "nb_pages": 4},
     "Annex B - Réduction GHD vers transport d’Euler": {"page": "", "pages": "", "nb_pages": 4},
