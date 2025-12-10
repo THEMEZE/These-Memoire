@@ -14,18 +14,18 @@ Ce chapitre est consacré à l’étude de la dynamique hors équilibre d’un g
 %\paragraph{Une analogie classique : le pendule de Newton :}
 %Une illustration classique du comportement non diffusif des systèmes intégrables est fournie par le pendule de Newton : les chocs élastiques entre sphères de masses égales conduisent à une propagation balistique de l’énergie, sans diffusion. Cette analogie, bien que classique, capture l’essence du transport cohérent que l’on retrouve dans les systèmes intégrables quantiques.
 
-\paragraph{Le problème de Riemann en hydrodynamique :}
-Un test fondamental de la dynamique hors équilibre est fourni par le problème dit de Riemann \cite{Riemann1860,Bressan2013}, qui consiste à étudier l’évolution d’un système à partir d'une discontinuité initiale dans l'espace. Dans sa formulation générale, on considère une équation de conservation de la forme
+\paragraph{Le problème de \emph{Riemann} en hydrodynamique :}
+Un test fondamental de la dynamique hors équilibre est fourni par le problème dit de \emph{Riemann} \cite{Riemann1860,Bressan2013}, qui consiste à étudier l’évolution d’un système à partir d'une discontinuité initiale dans l'espace. Dans sa formulation générale, on considère une équation de conservation de la forme
 \begin{eqnarray}\label{chap6:eq.Rieman.1}
 \partial_t u + \partial_x f(u) = 0.
 \end{eqnarray}
 %accompagnée d'une condition initiale arbitraire $u(x, t = 0) = u_0(x)$.
 %Dans le cas particulier que nous considérons ici, l’état initial est composé de deux régions homogènes, juxtaposées de part et d’autre de l’origine :
-Le problème de Riemann correspond au cas où la situation initiale est composée de deux régions homogènes, juxtaposées de part et d’autre de l’origine :
+Le problème de \emph{Riemann} correspond au cas où la situation initiale est composée de deux régions homogènes, juxtaposées de part et d’autre de l’origine :
 \begin{eqnarray}\label{chap6:eq.Rieman.cond.1}
 	u( x, t=0 ) = \left \{\begin{array}{rcl} u_g & \text{si} & x<0 \\ u_d & \text{si} & x > 0 \end{array} \right. \,.
 \end{eqnarray}
-Ce type de configuration, appelé problème de Riemann à données discontinues, permet de sonder la réponse non linéaire du système.
+Ce type de configuration, appelé problème de \emph{Riemann} à données discontinues, permet de sonder la réponse non linéaire du système.
 %Sa résolution dans des systèmes intégrables, notamment en présence de degrés de liberté internes ou d’interactions fortes, est longtemps restée une question ouverte.
 
 % \paragraph{Le problème de Riemann quantique : un cadre paradigmatique.}
@@ -33,11 +33,11 @@ Ce type de configuration, appelé problème de Riemann à données discontinues,
 % Nous considérons le cas d'un système quantique integrable. un macro état est alors définie par une infinité de paramètre chacun correspon à la quantité local conservé d'une quantité global comme expliqué dans le chapitre \ref{chap:relaxation}.
 % L'équation de continuité lié au quantité conservé qui sont de type \eqref{chap6:eq.Rieman.1} sont de nombre infinie. Le problème de Riemann \eqref{chap6:eq.Rieman.cond.1} au dessus se généralise au cas ou on a un nombre infinie de parametre $u$.
 
-\paragraph{Le problème de Riemann quantique : un cadre paradigmatique.}
+\paragraph{Le problème de \emph{Riemann quantique} : un cadre paradigmatique.}
 Considérons le cas d’un système quantique intégrable.  
 Un macro-état est caractérisé par un ensemble infini de paramètres, chacun associé à une charge conservée locale reliée à une charge globale, comme discuté au chapitre~\ref{chap:relaxation}.  
 Les équations de continuité correspondantes, de la forme \eqref{chap6:eq.Rieman.1}, forment alors un système infini de relations couplées.  
-Dans ce cadre, le problème de Riemann \eqref{chap6:eq.Rieman.cond.1} se généralise naturellement au cas d’un nombre infini de champs hydrodynamiques $u$, engendrant une dynamique gouvernée par une hiérarchie de lois de conservation.
+Dans ce cadre, le problème de \emph{Riemann} \eqref{chap6:eq.Rieman.cond.1} se généralise naturellement au cas d’un nombre infini de champs hydrodynamiques $u$, engendrant une dynamique gouvernée par une hiérarchie de lois de conservation.
 
 %Dans un système quantique intégrable, le problème de Riemann consiste à connecter brusquement deux régions préparées dans des états thermodynamiques différents, généralement homogènes. Ce scénario, dit de \emph{quench bipartite}, constitue un cadre paradigmatique pour sonder la dynamique hors équilibre dans les gaz quantiques unidimensionnels~\cite{doyon2017lecture,bertini2016transport}. Contrairement au cas classique, la présence d’un nombre infini de constantes du mouvement empêche l’établissement d’un état thermique usuel. La relaxation locale conduit alors à un état d’équilibre généralisé, spécifique à chaque région de l’espace-temps. Le problème de Riemann quantique permet ainsi d’étudier la propagation balistique d’informations, l’émergence d’un régime autosimilaire stationnaire, et la structure fine des distributions locales de quasi-particules. Il offre un terrain théorique idéal pour tester la validité de la Théorie Hydrodynamique Généralisée~\cite{castro2016emergent,doyon2017ghd}, tout en étant expérimentalement accessible grâce aux systèmes ultrafroids unidimensionnels.
 
@@ -48,12 +48,12 @@ Dans ce cadre, le problème de Riemann \eqref{chap6:eq.Rieman.cond.1} se génér
 Nous considérons un gaz quantique unidimensionnel de bosons faiblement interactifs, confiné dans une géométrie strictement 1D, et bien décrit par le modèle intégrable de \gls{LL} avec interactions répulsives. %Ce système présente un comportement quantique collectif tout en restant dans un régime faiblement corrélé, ce qui en fait un candidat idéal pour tester les prédictions de la GHD.
 
 \paragraph{Préparation expérimentale et protocole de coupure :}
-La configuration initiale consiste à préparer un gaz homogène à densité constante $n_0$, et à température contrôlée (voir Fig.~\ref{fig:BiPart.insitut}). Un protocole de coupe abrupte est ensuite appliqué : la partie gauche du système ($x<0$) est vidée de ses atomes, tandis que la partie droite ($x>0$) reste occupée. Ce \emph{quench bipartite} génère une discontinuité initiale de densité, analogue au problème de Riemann, mais dans un système quantique doté d’un nombre infini de lois de conservation. Ce protocole a déjà fait l’objet d’une première étude expérimentale dans la thèse de L. Dubois \cite{L.Dubois2024}, qui en a révélé le potentiel pour sonder la dynamique hors équilibre.
+La configuration initiale consiste à préparer un gaz homogène à densité constante $n_0$, et à température contrôlée (voir Fig.~\ref{fig:BiPart.insitut}). Un protocole de coupe abrupte est ensuite appliqué : la partie gauche du système ($x<0$) est vidée de ses atomes, tandis que la partie droite ($x>0$) reste occupée. Ce \emph{quench bipartite} génère une discontinuité initiale de densité, analogue au problème de \emph{Riemann}, mais dans un système quantique doté d’un nombre infini de lois de conservation. Ce protocole a déjà fait l’objet d’une première étude expérimentale dans la thèse de L. Dubois \cite{L.Dubois2024}, qui en a révélé le potentiel pour sonder la dynamique hors équilibre.
 
 \paragraph{Observation d’une propagation balistique.}
 Nous analysons la dynamique unitaire du gaz à l’aide du formalisme de \gls{GHD}.  
-À l’échelle d’Euler, le cadre de la \gls*{GHD} ne décrit pas l’état initial de type Riemann \eqref{chap6:eq.Rieman.cond.1}, mais devient valide après une courte évolution temporelle.  
-Nous montrons que la discontinuité initiale engendre une propagation balistique, en accord avec la solution du problème de Riemann généralisé.  
+À l’échelle d’\emph{Euler}, le cadre de la \gls{GHD} ne décrit pas l’état initial de type \emph{Riemann}\eqref{chap6:eq.Rieman.cond.1}, mais devient valide après une courte évolution temporelle.  
+Nous montrons que la discontinuité initiale engendre une propagation balistique, en accord avec la solution du problème de \emph{Riemann généralisé}.  
 Le profil de densité, mesuré à différents instants $t$, présente une dépendance universelle en $x/t$ (voir Fig.~\ref{fig:BiPart.coupure1} (e)--(g)).  
 De légers écarts subsistent néanmoins, que nous attribuons à des effets entropiques ainsi qu’à des imperfections expérimentales.
 
@@ -62,7 +62,7 @@ De légers écarts subsistent néanmoins, que nous attribuons à des effets entr
 Un aspect central de notre approche repose sur la reconstruction de la distribution initiale de rapidité à partir des profils de densité mesurés dans la région de transition. Cette démarche s’apparente à une forme de {\bf thermométrie généralisée}, et permet à priori d’inférer des informations fines sur les états locaux du système.
 
 \paragraph{Accès expérimental au facteur d’occupation $\nu(x,\theta)$ :}
-Nous développons également une méthode expérimentale originale permettant de mesurer localement le facteur d’occupation $\nu(x,\theta)$ dans la région de déformation. La \gls*{GHD} prédit que cette quantité révèle une forte asymétrie : large et lisse du côté initialement occupé, abrupte et tronquée du côté initialement vide. Cette asymétrie reflète le fait que, localement, le système est dans un état non thermique, alors que dans un état thermique, le facteur d'occupation $\nu(\theta)$ serait symétrique par rapport à $\theta = 0$.
+Nous développons également une méthode expérimentale originale permettant de mesurer localement le facteur d’occupation $\nu(x,\theta)$ dans la région de déformation. La \gls{GHD} prédit que cette quantité révèle une forte asymétrie : large et lisse du côté initialement occupé, abrupte et tronquée du côté initialement vide. Cette asymétrie reflète le fait que, localement, le système est dans un état non thermique, alors que dans un état thermique, le facteur d'occupation $\nu(\theta)$ serait symétrique par rapport à $\theta = 0$.
 %la nature hors équilibre du système, et s’accorde qualitativement avec les prédictions de la GHD, bien que la résolution spatiale expérimentale limite l’accès aux détails les plus fins.
 Cette asymétrie reflète le fait que, localement, le système est dans un état non thermique. En effet, dans un état thermique, le facteur d'occupation $\nu(\theta)$ est symétrique, tandis qu'ici, il présente une coupure nette du côté initialement vide.
 %la nature hors équilibre du système, et s’accorde qualitativement avec les prédictions de la GHD, bien que la résolution spatiale expérimentale limite l’accès aux détails les plus fins.
@@ -81,10 +81,10 @@ L’objectif est double :
 
 \begin{itemize}[label = $\bullet$]
 	\item du point de vue expérimental, suivre en temps réel l’évolution du gaz et caractériser ses propriétés locales et globales ;
-	\item du point de vue théorique, confronter ces observations aux prédictions de la théorie \gls*{GHD}, qui fournit un cadre analytique pour décrire la relaxation de systèmes intégrables à grande échelle.
+	\item du point de vue théorique, confronter ces observations aux prédictions de la théorie \gls{GHD}, qui fournit un cadre analytique pour décrire la relaxation de systèmes intégrables à grande échelle.
 \end{itemize}
 
-Cette étude constitue une illustration directe du problème de Riemann quantique, dans lequel un état initial composé de deux régions thermodynamiques différentes évolue selon une dynamique déterministe. Elle permet également d’accéder à des signatures locales de la distribution de rapidités, jusque-là difficiles à sonder expérimentalement.
+Cette étude constitue une illustration directe du problème de \emph{Riemann quantique}, dans lequel un état initial composé de deux régions thermodynamiques différentes évolue selon une dynamique déterministe. Elle permet également d’accéder à des signatures locales de la distribution de rapidités, jusque-là difficiles à sonder expérimentalement.
 
 \medskip
 
@@ -129,7 +129,7 @@ Les détails concernant l’imagerie, le piégeage et la sélection spatiale son
 %La bipartition initiale est réalisée en illuminant l’extrémité gauche du gaz par un faisceau quasi-résonant façonné par un \gls{DMD}. Les atomes exposés sont expulsés du piège via pression de radiation. Cette méthode, développée dans \cite{PhysRevLett.133.113402}, permet de créer une discontinuité nette du profil de densité, entre une région vide ($x<0$) et une région remplie homogène ($x>0$). %La résolution spatiale est limitée par celle du système d’imagerie (quelques $\mu$m).
 
 \paragraph{Préparation et coupure bipartite} 
-Comme décrit en détail au Chap.~\ref{chap:disp.exp}, nous préparons un gaz unidimensionnel de bosons $^{87}$Rb dans l’état hyperfin $|F=2,m_F=2\rangle$, piégé sur une puce atomique. Le confinement transverse, assuré par des microfils RF, place le système dans le régime 1D (\(\mu, k_B T \ll \hbar \omega_\perp\)), tandis qu’un confinement longitudinal quartique $V(x)=a_4 x^4$ assure une densité homogène sur environ $250~\mu$m. Cette homogénéité est cruciale pour simuler le problème de Riemann.
+Comme décrit en détail au Chap.~\ref{chap:disp.exp}, nous préparons un gaz unidimensionnel de bosons $^{87}$Rb dans l’état hyperfin $|F=2,m_F=2\rangle$, piégé sur une puce atomique. Le confinement transverse, assuré par des microfils RF, place le système dans le régime 1D (\(\mu, k_B T \ll \hbar \omega_\perp\)), tandis qu’un confinement longitudinal quartique $V(x)=a_4 x^4$ assure une densité homogène sur environ $250~\mu$m. Cette homogénéité est cruciale pour simuler le problème de \emph{Riemann}.
 
 \medskip 
 
@@ -137,7 +137,7 @@ La coupure bipartite est ensuite obtenue par illumination sélective d’une ext
 
 
 \paragraph{Évolution après coupure}
-Une fois la coupure effectuée, le confinement longitudinal est supprimé tandis que le confinement transverse est maintenu. Le gaz évolue alors librement dans une direction, ce qui est analogue  à  \eqref{chap6:eq.Rieman.1}, mais depuis une condition initiale de deux régions homogènes (problème de Riemann) \eqref{chap6:eq.Rieman.cond.1}. L’évolution du profil de densité $n(x,t)$ est mesuré par imagerie après différentes durées $t$ d’évolution.
+Une fois la coupure effectuée, le confinement longitudinal est supprimé tandis que le confinement transverse est maintenu. Le gaz évolue alors librement dans une direction, ce qui est analogue  à  \eqref{chap6:eq.Rieman.1}, mais depuis une condition initiale de deux régions homogènes (problème de \emph{Riemann}) \eqref{chap6:eq.Rieman.cond.1}. L’évolution du profil de densité $n(x,t)$ est mesuré par imagerie après différentes durées $t$ d’évolution.
 
 %\begin{center}
 %	[figure de shemat de coupure en tikz zt au coter deux nuage , un coupé et l'autre non coupé]	
@@ -167,7 +167,7 @@ Une fois la coupure effectuée, le confinement longitudinal est supprimé tandis
 %}
 
 
-Dans cette section, nous présentons le cadre théorique de \gls*{GHD} appliqué à l’expérience décrite précédemment. L’objectif est de décrire analytiquement la dynamique balistique induite par une coupure bipartite dans un gaz quantique unidimensionnel, en exploitant les équations de \gls*{GHD} appliquées au modèle de \gls*{LL}.\\
+Dans cette section, nous présentons le cadre théorique de \gls{GHD} appliqué à l’expérience décrite précédemment. L’objectif est de décrire analytiquement la dynamique balistique induite par une coupure bipartite dans un gaz quantique unidimensionnel, en exploitant les équations de \gls{GHD} appliquées au modèle de \gls{LL}.\\
 
 %{\color{blue}
 %Nous procédons en plusieurs étapes : 
@@ -239,14 +239,14 @@ On remarque toutefois que les conditions initiales pour $\nu$ sont formellement 
 
 \medskip
 
-Dans ce travail, nous choisissons de formuler la dynamique hydrodynamique généralisée en termes de la fonction d’occupation $\nu(x,\theta;t)$, plutôt que de la distribution de rapidité $\rho(x,\theta,t)$. Cette approche présente plusieurs avantages. D’une part, l’équation vérifiée par $\nu$ est une équation de transport pur \eqref{eq:nu.cont}, ce qui permet une résolution naturelle par la méthode des caractéristiques, plus simplement que dans \eqref{eq:rho.cont}. D’autre part, $\nu$ possède une interprétation physique claire comme facteur d'occupation, borné entre 0 et 1, ce qui en fait une variable plus stable et mieux adaptée aux calculs analytiques ou numériques.
+Dans ce travail, nous choisissons de formuler la dynamique hydrodynamique généralisée en termes de la fonction d’occupation $\nu(x,\theta;t)$, plutôt que de la distribution de rapidité $\rho(x,\theta,t)$. Cette approche présente plusieurs avantages. D’une part, l’équation vérifiée par $\nu$ est une équation de transport pur \eqref{eq:nu.cont}, ce qui permet une résolution naturelle par la méthode des caractéristiques, et donc une résolution plus simple que dans \eqref{eq:rho.cont}. D’autre part, $\nu$ possède une interprétation physique claire comme facteur d'occupation, borné entre 0 et 1, ce qui en fait une variable plus stable et mieux adaptée aux calculs analytiques ou numériques.
 De plus, la dynamique effective des observables s’exprime naturellement en fonction de $\nu$.
 Enfin, $\nu$ et $\rho$ étant liés (par \eqref{eq:TBA-nu}), résoudre l’équation en $\nu$ revient, une fois $v^{\rm eff}_{[\nu]}$ déterminé, à résoudre complètement la dynamique de $\rho$.
 
 
 \paragraph{Structure auto-similaire de la solution.}
-Un point central est que les conditions initiales ~\eqref{eq:nu.cont.init} sont invariantes par dilatation. En effet, quelque soit $\alpha >0$, et pour tout $x$ réelle, on a $\nu(\alpha x , \theta ; t = 0 ) = \nu( x , \theta ; t = 0 ) $.
-Un autre point central de la \gls*{GHD} est l’invariance d’échelle des solutions de l’équation~\eqref{eq:nu.cont} (\eqref{eq:rho.cont} aussi et plus généralement de \eqref{chap6:eq.Rieman.1}). En effet, si $\nu(x,\theta;t)$ est solution de  l’équation~\eqref{eq:nu.cont}, alors $\nu(\alpha x, \theta; \alpha t)$ l’est également,  pour tout $\alpha > 0$ , avec les conditions initiales $\nu(\alpha x , \theta ; t = 0 )$. Comme les fonctions $\nu(\alpha \cdot , \theta ; t = 0 )$ et $\nu( \alpha x , \theta ; t = 0 )$ coïncident, ainsi si $\eqref{eq:nu.cont}$ admet au plus une solution physique ("entropique" \cite{coulombel:cel-00616496}) pour chaque donnée initiale, on doit avoir $\nu( \alpha x , \theta ; \alpha t ) = \nu(  x , \theta ;  t )$ pour tout $\alpha > 0 $. Cette propriété implique que :
+Un point central est que les conditions initiales~\eqref{eq:nu.cont.init} sont invariantes par dilatation. En effet, quel que soit $\alpha >0$, et pour tout $x$ réel, on a $\nu(\alpha x , \theta ; t = 0 ) = \nu( x , \theta ; t = 0 ) $.
+Un autre point central de la \gls{GHD} est l’invariance d’échelle des solutions de l’équation~\eqref{eq:nu.cont} (\eqref{eq:rho.cont} aussi et plus généralement de \eqref{chap6:eq.Rieman.1}). En effet, si $\nu(x,\theta;t)$ est solution de  l’équation~\eqref{eq:nu.cont}, alors $\nu(\alpha x, \theta; \alpha t)$ l’est également,  pour tout $\alpha > 0$ , avec les conditions initiales $\nu(\alpha x , \theta ; t = 0 )$. Comme les fonctions $\nu(\alpha \cdot , \theta ; t = 0 )$ et $\nu( \alpha x , \theta ; t = 0 )$ coïncident, ainsi si $\eqref{eq:nu.cont}$ admet au plus une solution physique ("entropique" \cite{coulombel:cel-00616496}) pour chaque donnée initiale, on doit avoir $\nu( \alpha x , \theta ; \alpha t ) = \nu(  x , \theta ;  t )$ pour tout $\alpha > 0 $. Cette propriété implique que :
 \begin{equation}
     \nu(x,\theta;t) = \nu^*\left(\frac{x}{t},\theta\right),
     \label{eq:nuvsnuetoile}
@@ -301,7 +301,7 @@ Le fait qu’à grande échelle le gaz présente localement un facteur d’occup
 
 \medskip
 
-Dans le cadre de la \gls*{GHD}, la dynamique balistique résultant du quench bipartite est décrite par une solution auto-similaire paramétrée par une coupure en rapidité $\theta^*(\xi)$. Cette solution permet de prédire les profils de densité et d’occupation mesurables dans l’expérience. Elle fournit également un point de comparaison direct avec les données expérimentales obtenues à différents temps $t$, comme nous le verrons dans les sections suivantes.
+Dans le cadre de la \gls{GHD}, la dynamique balistique résultant du quench bipartite est décrite par une solution auto-similaire paramétrée par une coupure en rapidité $\theta^*(\xi)$. Cette solution permet de prédire les profils de densité et d’occupation mesurables dans l’expérience. Elle fournit également un point de comparaison direct avec les données expérimentales obtenues à différents temps $t$, comme nous le verrons dans les sections suivantes.
 
 
 \subsection{Validation expérimentale de la dynamique hydrodynamique}
@@ -317,7 +317,7 @@ Dans le cadre de la \gls*{GHD}, la dynamique balistique résultant du quench bip
 %}
 
 
-Dans cette section, nous présentons les résultats expérimentaux obtenus après la coupure bipartite, et les comparons aux prédictions de la \gls*{GHD} à l’échelle d’Euler. L’objectif est de vérifier que la dynamique du gaz est bien décrite, à court et moyen terme, par une solution auto-similaire des équations hydrodynamiques.
+Dans cette section, nous présentons les résultats expérimentaux obtenus après la coupure bipartite, et les comparons aux prédictions de la \gls{GHD} à l’échelle d’\emph{Euler}. L’objectif est de vérifier que la dynamique du gaz est bien décrite, à court et moyen terme, par une solution auto-similaire des équations hydrodynamiques.
 
 %{\color{blue}
 %Nous structurons cette analyse en quatre étapes :
@@ -335,7 +335,7 @@ Dans cette section, nous présentons les résultats expérimentaux obtenus aprè
 %L’évolution du profil de densité $n(x,t)$ est alors enregistrée à différents temps $t$ après la libération, en utilisant une imagerie par absorption.
 
 
-\paragraph{Mise en évidence de l’auto-similarité (régime d’Euler).}
+\paragraph{Mise en évidence de l’auto-similarité (régime d’\emph{Euler}).}
 Avec l'équation \eqref{eq:nuetoile} on a $\nu^*(\xi,\theta)$, puis $\rho^\ast(\xi,\theta)$ via les équations~\eqref{eq:TBA-rhos-2} et \eqref{eq:TBA-nu}, ce qui permet finalement de déterminer le profil de densité linéaire $n^\ast(\xi)$ à un instant donné : 
 \begin{equation}
     n^\ast(\xi) = \int d\theta \, \rho^\ast(\xi,\theta).
@@ -347,7 +347,7 @@ Or \eqref{eq:nuvsnuetoile} implique que
 %Pour se concentrer sur les facteurs d'occupation $\nu$, on note simplement que la distribution de rapidité $\rho$ adopte une forme auto-similaire :
 \(
 \rho(x,\theta;t) = \rho^\ast(\xi,\theta).
-\).
+\)
 En injectant dans l'equation~\eqref{chap6:eq:lineardensity}, il vient que  :
 \begin{equation}
 	n(x;t) = n^\ast\left( \xi \right).
@@ -356,23 +356,23 @@ En injectant dans l'equation~\eqref{chap6:eq:lineardensity}, il vient que  :
 
 \medskip
 
-Cette propriété est testée expérimentalement en superposant les profils mesurés à différents temps, après mise à l’échelle selon $\xi = x/t$. La Fig.~\ref{fig:euler} montre les profils normalisés mesurés entre $t = 10$~ms et $t = 18$~ms. L’excellent recouvrement obtenu confirme la validité du régime balistique et la pertinence de la description auto-similaire prédite par la \gls*{GHD}.
+Cette propriété est testée expérimentalement en superposant les profils mesurés à différents temps, après mise à l’échelle selon $\xi = x/t$. La Fig.~\ref{fig:euler} montre les profils normalisés mesurés entre $t = 10$~ms et $t = 18$~ms. L’excellent recouvrement obtenu confirme la validité du régime balistique et la pertinence de la description auto-similaire prédite par la \gls{GHD}.
 
 \paragraph{Contraintes expérimentales.}
 
-L’application de la \gls*{GHD} à l’échelle d’Euler dans notre expérience est limitée par des contraintes pratiques qui définissent une fenêtre temporelle $t \in [t_m, t_{\mathrm{max}}]$ d’observation fiable : 
+L’application de la \gls{GHD} à l’échelle d’\emph{Euler} dans notre expérience est limitée par des contraintes pratiques qui définissent une fenêtre temporelle $t \in [t_m, t_{\mathrm{max}}]$ d’observation fiable : 
 
 \begin{itemize}[label = $\bullet$]
   \item Pour $t > t_{\mathrm{max}} \simeq 18$~ms, la densité atomique devient trop faible et les effets de taille finie compromettent l’approximation d’un système quasi-infini.
-  \item Pour $t < t_{\mathrm{min}} \simeq 6 \pm 2$~ms, plusieurs facteurs réduisent la pertinence de la comparaison avec la \gls*{GHD} :
+  \item Pour $t < t_{\mathrm{min}} \simeq 6 \pm 2$~ms, plusieurs facteurs réduisent la pertinence de la comparaison avec la \gls{GHD} :
   \begin{itemize}[label = $\circ$]
     \item la coupure initiale n’est pas parfaitement abrupte (longueur caractéristique $\sim 1~\mu$m) ;
     \item la résolution de l’imagerie limite la détection précise du bord de densité ;
-    \item la \gls*{GHD} décrit par construction les grandes échelles spatio-temporelles.
+    \item la \gls{GHD} décrit par construction les grandes échelles spatio-temporelles.
   \end{itemize}
 \end{itemize}
 
-Ainsi, dans nos conditions expérimentales, la comparaison avec la \gls*{GHD} est la plus pertinente pour des temps compris entre $t_{\mathrm{min}} \approx 6$~ms et $t_{\mathrm{max}} \approx 18$~ms.
+Ainsi, dans nos conditions expérimentales, la comparaison avec la \gls{GHD} est la plus pertinente pour des temps compris entre $t_{\mathrm{min}} \approx 6$~ms et $t_{\mathrm{max}} \approx 18$~ms.
 
 %\paragraph{Comparaison avec la prédiction théorique à température nulle.}
 %
@@ -399,7 +399,7 @@ Profils de densité mesurés pour différents temps $t$, représentés en foncti
 %
 %\subsection*{Résumé}
 %
-%Nous avons étudié la dynamique hors équilibre d’un gaz unidimensionnel de bosons à la suite d’une coupure bipartite, créant une discontinuité initiale dans le profil de densité. Cette configuration, analogue au problème de Riemann quantique, engendre une évolution balistique décrite par la Théorie \gls*{GHD}.
+%Nous avons étudié la dynamique hors équilibre d’un gaz unidimensionnel de bosons à la suite d’une coupure bipartite, créant une discontinuité initiale dans le profil de densité. Cette configuration, analogue au problème de Riemann quantique, engendre une évolution balistique décrite par la Théorie \gls{GHD}.
 %
 %\medskip
 %
@@ -410,11 +410,11 @@ Profils de densité mesurés pour différents temps $t$, représentés en foncti
 %Côté théorique, nous avons présenté les équations de GHD dans leur forme convective, et montré que la solution du problème de Riemann s’exprime sous la forme d’une distribution auto-similaire $\nu(\xi, \theta)$. Cette structure permet de prédire analytiquement les profils de densité.
 %\medskip
 %
-%La comparaison entre les données expérimentales et les prédictions de la \gls*{GHD} à température nulle montre une bonne correspondance dans un régime temporel intermédiaire bien défini ($t \in [6,18]$~ms). Ces résultats valident la \gls*{GHD} comme cadre pertinent pour décrire la relaxation balistique de systèmes quantiques intégrables, et ouvrent la voie à des explorations plus fines des effets thermiques et quantiques hors équilibre.
+%La comparaison entre les données expérimentales et les prédictions de la \gls{GHD} à température nulle montre une bonne correspondance dans un régime temporel intermédiaire bien défini ($t \in [6,18]$~ms). Ces résultats valident la \gls{GHD} comme cadre pertinent pour décrire la relaxation balistique de systèmes quantiques intégrables, et ouvrent la voie à des explorations plus fines des effets thermiques et quantiques hors équilibre.
 
 \paragraph{Conclusion}
 
-Nous avons étudié la dynamique hors équilibre d’un gaz unidimensionnel de bosons après une coupure bipartite, créant une discontinuité initiale dans le profil de densité. Cette configuration, analogue au problème de Riemann quantique, engendre une évolution balistique qui peut être décrite par la Théorie d’Hydrodynamique Généralisée (\gls*{GHD}).
+Nous avons étudié la dynamique hors équilibre d’un gaz unidimensionnel de bosons après une coupure bipartite, créant une discontinuité initiale dans le profil de densité. Cette configuration, analogue au problème de \emph{Riemann quantique}, engendre une évolution balistique qui peut être décrite par la Théorie d’Hydrodynamique Généralisée (\gls{GHD}).
 
 \medskip
 
@@ -422,11 +422,11 @@ Sur le plan expérimental, un protocole précis a été mis en œuvre pour prép
 
 \medskip
 
-Côté théorique, nous avons présenté les équations de \gls*{GHD} dans leur forme convective et montré que la solution du problème de Riemann s’exprime sous la forme d’une distribution auto-similaire $\nu(\xi, \theta)$, avec $\xi = x/t$. Cette structure permet de prédire analytiquement les profils de densité et de comparer directement les résultats expérimentaux aux prédictions théoriques.
+Côté théorique, nous avons présenté les équations de \gls{GHD} dans leur forme convective et montré que la solution du problème de \emph{Riemann} s’exprime sous la forme d’une distribution auto-similaire $\nu(\xi, \theta)$, avec $\xi = x/t$. Cette structure permet de prédire analytiquement les profils de densité et de comparer directement les résultats expérimentaux aux prédictions théoriques.
 
 \medskip
 
-La confrontation entre données expérimentales et \gls*{GHD} à température nulle montre une bonne correspondance dans un régime temporel intermédiaire ($t \in [6,18]$~ms). Ces observations confirment que la dynamique induite par une coupure bipartite est bien capturée par la \gls*{GHD} à l’échelle d’Euler, validant ce cadre pour décrire la relaxation balistique des systèmes quantiques intégrables. Elles ouvrent également la voie à des explorations plus fines des effets thermiques et des corrections hors-échelle d’Euler.
+La confrontation entre données expérimentales et \gls{GHD} à température nulle montre une bonne correspondance dans un régime temporel intermédiaire ($t \in [6,18]$~ms). Ces observations confirment que la dynamique induite par une coupure bipartite est bien capturée par la \gls{GHD} à l’échelle d’\emph{Euler}, validant ce cadre pour décrire la relaxation balistique des systèmes quantiques intégrables. Elles ouvrent également la voie à des explorations plus fines des effets thermiques et des corrections hors-échelle d’\emph{Euler}.
 
 
 
@@ -462,11 +462,11 @@ La confrontation entre données expérimentales et \gls*{GHD} à température nu
 
 \subsection*{Introduction}
 
-Dans la section précédente, nous avons analysé l’auto-similarité des profils de densité $n(\xi)$, confirmant la description hydrodynamique de la dynamique bipartite. Nous poursuivons ici en considérant un observable plus fin : la distribution locale en rapidité $\rho(\xi,\theta)$. Contrairement à la densité, cette distribution révèle une asymétrie marquée entre les deux côtés de la jonction, c’est-à-dire que la forme de la distribution diffère nettement selon que l’on se place du côté initialement occupé ou vide ; cette asymétrie se manifeste expérimentalement par une coupure abrupte du facteur d’occupation du côté occupé, alors qu’elle reste lisse du côté vide. En particulier, la \gls{GHD} prédit l’apparition d’une discontinuité abrupte dans le facteur d’occupation du côté occupé, signature d’un état local proche du fondamental, tandis que du côté vide la distribution demeure lisse.
+Dans la section précédente, nous avons analysé l’auto-similarité des profils de densité $n(\xi)$, confirmant la description hydrodynamique de la dynamique bipartite. Nous poursuivons ici en considérant une observable plus fine : la distribution locale en rapidité $\rho(\xi,\theta)$. Contrairement à la densité, cette distribution révèle une asymétrie marquée entre les deux côtés de la jonction, c’est-à-dire que la forme de la distribution diffère nettement selon que l’on se place du côté initialement occupé ou vide ; cette asymétrie se manifeste expérimentalement par une coupure abrupte du facteur d’occupation du côté occupé, alors qu’elle reste lisse du côté vide. En particulier, la \gls{GHD} prédit l’apparition d’une discontinuité abrupte dans le facteur d’occupation du côté occupé, signature d’un état local proche du fondamental, tandis que du côté vide la distribution demeure lisse.
 
 \medskip
 
-Pour accéder expérimentalement à cette observable, nous nous appuyons sur un protocole développé dans notre équipe \cite{PhysRevLett.133.113402} (présenté en détail en fin du Chapitre~5), qui permet de reconstruire indirectement la distribution en rapidité à partir de l’expansion libre d’une tranche localisée du gaz. En parallèle, nous comparons ces mesures aux simulations numériques issues de la GHD, afin de tester directement la présence de la discontinuité prédite.
+Pour accéder expérimentalement à cette observable, nous nous appuyons sur un protocole développé dans notre équipe \cite{PhysRevLett.133.113402} (présenté en détail en fin du Chapitre~\ref{chap:disp.exp}), qui permet de reconstruire indirectement la distribution en rapidité à partir de l’expansion libre d’une tranche localisée du gaz. En parallèle, nous comparons ces mesures aux simulations numériques issues de la GHD, afin de tester directement la présence de la discontinuité prédite.
 
 
 %{\color{blue}
@@ -490,7 +490,7 @@ Pour accéder expérimentalement à cette observable, nous nous appuyons sur un 
     };
     \node[circle, draw=none, above=0cm of assy , shift={( -2.5cm , -0.5cm )}] {(b)};
 \end{tikzpicture}
-\caption{(a) {\it Profil de bord et tranche sélectionnée.} Le profil de bord après $18\,\mathrm{ms}$ est montré en rouge. L'ajustement thermique donne une température $T = 560\,\mathrm{nK}$ (orange). Le profil de densité mesuré $1\,\mathrm{ms}$ après la sélection de la tranche est en bleu. (b) {\it Asymétrie du profil d’expansion de la tranche.} Le profil de densité après une expansion pendant $\tau = 30\,\mathrm{ms}$ est comparé à son image miroir. Le centre de symétrie $x_s = -17\,\mu$m minimise la distance quadratique $\mathcal{\delta}^2(x_s) = \int dx\, \left[\frac{\tilde{n}(x) - \tilde{n}(2x_s - x)}{2}\right]^2 \Big / \int dx \,  n(x)^2$.}
+\caption{(a) {\it Profil de bord et tranche sélectionnée.} Le profil de bord après $18\,\mathrm{ms}$ est montré en rouge. L'ajustement thermique donne une température $T = 560\,\mathrm{nK}$ (rouge). Le profil de densité mesuré $1\,\mathrm{ms}$ après la sélection de la tranche est en bleu. (b) {\it Asymétrie du profil d’expansion de la tranche.} Le profil de densité après une expansion pendant $\tau = 30\,\mathrm{ms}$ est comparé à son image miroir. Le centre de symétrie $x_s = -17\,\mu$m minimise la distance quadratique $\mathcal{\delta}^2(x_s) = \int dx\, \left[\frac{\tilde{n}(x) - \tilde{n}(2x_s - x)}{2}\right]^2 \Big / \int dx \,  n(x)^2$.}
 \label{fig:simul_deformation}
 \end{figure}
 
@@ -514,13 +514,13 @@ Afin d’accéder localement à la distribution de rapidité, nous exploitons le
 
 \medskip
 \noindent
-Pour isoler une telle région, un {\bf faisceau pousseur} est appliqué afin d’{\bf éliminer tous les atomes situés hors d’un intervalle spatial} centré en $x_0 = 18~\mu\mathrm{m}$ et de largeur $\ell$. Cette technique, inspirée de la Réf.~\cite{PhysRevLett.133.113402} (cf Chap 5), permet de ne conserver qu’une {\bf tranche localisée du gaz}, dont la distribution en rapidité reflète l’état local $\rho(x,\theta)$ aux abords de $x \approx x_0$, comme illustré en Fig.~\ref{fig:BiPart.coupure2}(a)--(c).
+Pour isoler une telle région, un {\bf faisceau pousseur} est appliqué afin d’{\bf éliminer tous les atomes situés hors d’un intervalle spatial} centré en $x_0 = 18~\mu\mathrm{m}$ et de largeur $\ell$. Cette technique, inspirée de la Réf.~\cite{PhysRevLett.133.113402} (cf~Chap \ref{chap:disp.exp}), permet de ne conserver qu’une {\bf tranche localisée du gaz}, dont la distribution en rapidité reflète l’état local $\rho(x,\theta)$ aux abords de $x \approx x_0$, comme illustré en Fig.~\ref{fig:BiPart.coupure2}(a)--(c).
 
 
 \medskip
 \paragraph{Contrôle expérimental du faisceau de sélection.}
 
-Le profil du faisceau pousseur est caractérisé par sa position centrale $x_0$ et sa largeur $\ell$. Lors des expériences présentées ici, seule la position $x_0$ a été enregistrée (ici $x_0 = 18~\mu\mathrm{m}$). tandis que la largeur $\ell$ n’a pas été enregistré. Cette limitation  a depuis été corrigée, mais pour les données utilisées dans cette thèse, la valeur de $\ell$ sera déterminée a posteriori par analyse des profils expérimentaux.
+Le profil du faisceau pousseur est caractérisé par sa position centrale $x_0$ et sa largeur $\ell$. Lors des expériences présentées ici, seule la position $x_0$ a été enregistrée (ici $x_0 = 18~\mu\mathrm{m}$). Tandis que la largeur $\ell$ n’a pas été enregistré. Cette limitation  a depuis été corrigée, mais pour les données utilisées dans cette thèse, la valeur de $\ell$ sera déterminée a posteriori par analyse des profils expérimentaux.
 
 %La sélection spatiale du gaz est réalisée à l’aide d’un dispositif à micro-miroirs (DMD), qui permet de contrôler finement la forme du faisceau pousseur utilisé pour éliminer les atomes hors d’un intervalle centré en $x_0$. Ce dispositif est piloté via une interface logicielle développée au sein de l’équipe, basée sur les outils \textsc{Cicero-Iso} et \textsc{Spartacus}. Le DMD est commandé par une série de paramètres expérimentaux transmis à ces logiciels, dont certains (comme la position $x_0$) sont enregistrés systématiquement au cours de l’expérience. En revanche, d'autres paramètres, notamment la largeur effective $\ell$ du faisceau, n’ont pas été archivés dans les paramètres enrégistrés associée aux séquences expérimentales. Ainsi, dans les paragraphes précédents, nous avons pu indiquer précisément la valeur de $x_0$ (ici $x_0 = 18~\mu\mathrm{m}$), mais non celle de $\ell$. Cette valeur sera déterminée a posteriori par analyse des profils expérimentaux, et jouera un rôle essentiel dans les simulations numériques présentées plus loin.
 
@@ -549,14 +549,14 @@ Dans l’idéal, la tranche sélectionnée devrait être suffisamment étroite p
 
 \paragraph{Estimation de $\ell$ et conséquences}
 
-Une difficulté provient du fait que les paramètres programmés du \gls*{DMD} n’ont pas été sauvegardés pour ces acquisitions. Cette erreur a été corrigée pour les mesures ultérieures. Pour les données actuelles, la position et la largeur de la tranche ont été extraites directement des profils expérimentaux :  
+Une difficulté provient du fait que les paramètres programmés du \gls{DMD} n’ont pas été sauvegardés pour ces acquisitions. Cette erreur a été corrigée pour les mesures ultérieures. Pour les données actuelles, la position et la largeur de la tranche ont été extraites directement des profils expérimentaux :  
 
 \begin{itemize}[label=$\bullet$]
     \item le profil de densité du nuage juste avant l’impulsion du faisceau pousseur (courbe rose de la figure~\ref{fig:simul_deformation} a)) ;
-    \item le profil de densité après l’application du faisceau pousseur, après un délai incompressible de $1~\mathrm{ms}$ (courbe blue de la figure~\ref{fig:simul_deformation} a)).
+    \item le profil de densité après l’application du faisceau pousseur, après un délai incompressible de $1~\mathrm{ms}$ (courbe bleu de la figure~\ref{fig:simul_deformation} a)).
 \end{itemize}
 
-Les simulations \gls*{GHD} indiquent que, pendant ce délai, la distribution réelle de densité ne subit ni déplacement significatif ni déformation notable. %Le centre de la tranche, noté $x_0$, est donc déterminé par ajustement de la courbe post-sélection avec une fonction porte. 
+Les simulations \gls{GHD} indiquent que, pendant ce délai, la distribution réelle de densité ne subit ni déplacement significatif ni déformation notable. %Le centre de la tranche, noté $x_0$, est donc déterminé par ajustement de la courbe post-sélection avec une fonction porte. 
 
 \subparagraph{Détermination de la taille de la tranche \(\ell\).}
 
@@ -586,7 +586,7 @@ Après la sélection, la tranche est laissée en expansion libre unidimensionnel
 \begin{equation}
 \tau\, \tilde{n}(\tau \theta - x_0 ; \tau) \underset{\tau \to \infty}{\longrightarrow} \Pi(\theta),
 \end{equation}
-où la distribution de rapidités extensive est $\Pi(\theta) = \int \rho(x, \theta ; \tau \geq 0)\, dx $ est une constante du mouvement. Cette distribution peut etre calculée en utilisant l'état initial :
+où la distribution de rapidités extensive $\Pi(\theta) = \int \rho(x, \theta ; \tau \geq 0)\, dx $ est une constante du mouvement. Cette distribution peut etre calculée en utilisant l'état initial :
 \begin{equation}\label{chap6:eq.Pi.1}
 \Pi(\theta)  = \int_{x_0 - \ell/2}^{x_0 + \ell/2} \rho(x, \theta ; \tau = 0)\, dx.
 \end{equation}
@@ -597,7 +597,7 @@ Comme discuté en section \ref{sec:ghd}, la théorie prédit que la distribution
 
 
 \subparagraph{Mise en évidence de l’asymétrie par symétrisation.}
-La figure \ref{fig:simul_deformation}(b) présente deux courbes : le profil mesuré $\tilde{n}(x)$ (abréviation de $\tilde{n}(x,\tau)$) et son image par symétrie par rapport à un axe $x = 2x_s$. L’objectif est de rendre visible l’asymétrie du profil.
+La figure \ref{fig:simul_deformation}(b) présente deux courbes : le profil mesuré $\tilde{n}(x)$ (abréviation de $\tilde{n}(x,\tau)$) et son image par symétrie par rapport à un axe $x = x_s$. L’objectif est de rendre visible l’asymétrie du profil.
 Pour ce faire, nous considérons une décomposition naturelle du profil autour d’un centre $x = x_s$ :
 \begin{equation}
 \tilde{n}(x) = \tilde{n}_{\text{pair}}^{(x_s)}(x) + \tilde{n}_{\text{impair}}^{(x_s)}(x),\quad \mbox{où} \, \left\{\begin{array}{lcr}\tilde{n}_{\text{pair}}^{(x_s)}(x) &=&  \displaystyle \frac{\tilde{n}(x) + \tilde{n}(2x_s - x)}{2} , \\ \tilde{n}_{\text{impair}}^{(x_s)}(x) &=& \displaystyle \frac{\tilde{n}(x) - \tilde{n}(2x_s - x) }{2}\end{array} \right. .
@@ -665,13 +665,13 @@ L’analyse expérimentale révèle une forte asymétrie du profil d’expansion
 
 \medskip
 
-Pour approfondir cette analyse, nous nous appuyons sur des simulations numériques basées sur l’équation de \gls*{GHD}. Celles-ci permettent de modéliser la dynamique complète de la tranche sélectionnée, depuis la déformation du bord jusqu’à son expansion, et de confronter quantitativement les distributions mesurées aux prédictions théoriques.
+Pour approfondir cette analyse, nous nous appuyons sur des simulations numériques basées sur l’équation de \gls{GHD}. Celles-ci permettent de modéliser la dynamique complète de la tranche sélectionnée, depuis la déformation du bord jusqu’à son expansion, et de confronter quantitativement les distributions mesurées aux prédictions théoriques.
 
 
 \section{Simulations numériques}
 \label{sec:simulations}
 
-Cette section présente en détail les étapes nécessaires à la résolution numérique de l’équation de \gls*{GHD} dans le cadre des simulations effectuées.Dans un premier temps, nous explicitons le calcul du facteur d’occupation $\nu(\theta)$ et de la densité de rapidité $\rho(\theta)$ à l’équilibre thermique, obtenus à partir d’un couple $(T, \mu)$ donné.Nous décrivons ensuite l’évolution du système sous l’effet du potentiel de piégeage : en particulier, nous nous intéressons à la dynamique du contour délimitant la région occupée dans l’espace des phases $(x, \theta)$, en exploitant la conservation lagrangienne du facteur d’occupation.La simulation permet alors de suivre la déformation du bord au cours du temps. Une fois ce bord suffisamment évolué, nous extrayons une tranche du système pour en simuler l’expansion.Enfin, nous comparons la distribution de rapidité issue de cette expansion numérique avec celle mesurée expérimentalement, dans des conditions analogues.
+Cette section présente en détail les étapes nécessaires à la résolution numérique de l’équation de \gls{GHD} dans le cadre des simulations effectuées. Dans un premier temps, nous explicitons le calcul du facteur d’occupation $\nu(\theta)$ et de la densité de rapidité $\rho(\theta)$ à l’équilibre thermique, obtenus à partir d’un couple $(T, \mu)$ donné. Nous décrivons ensuite l’évolution du système sous l’effet du potentiel de piégeage : en particulier, nous nous intéressons à la dynamique du contour délimitant la région occupée dans l’espace des phases $(x, \theta)$, en exploitant la conservation lagrangienne du facteur d’occupation. La simulation permet alors de suivre la déformation du bord au cours du temps. Une fois ce bord suffisamment évolué, nous extrayons une tranche du système pour en simuler l’expansion. Enfin, nous comparons la distribution de rapidité issue de cette expansion numérique avec celle mesurée expérimentalement, dans des conditions analogues.
 
 
 %\subsection{Système homogène à l'équilibre thermique}
@@ -711,7 +711,7 @@ Cette section présente en détail les étapes nécessaires à la résolution nu
 
 \subsection{Système homogène à l'équilibre thermique}
 
-Nous considérons d’abord un gaz unidimensionnel homogène infini, à l’équilibre thermique, caractérisé par le couple de paramètres thermodynamiques $(T, \mu)$. Comme expliqué au chapitre~\ref{chap:relaxation}, la thermodynamique de Bethe-Ansatz \gls{TBA} permet de déterminer la facteur d'occupation $\nu_0(\theta)$ et la distribution de rapidités  $\rho_0(\theta)$ et  densité d'état $\rho_s(\theta)$ via \eqref{eq:dressing}.  
+Nous considérons d’abord un gaz unidimensionnel homogène infini, à l’équilibre thermique, caractérisé par le couple de paramètres thermodynamiques $(T, \mu)$. Comme expliqué au chapitre~\ref{chap:relaxation}, la thermodynamique de Bethe-Ansatz \gls{TBA} permet de déterminer le facteur d'occupation $\nu_0(\theta)$, la distribution de rapidités  $\rho_0(\theta)$ et la densité d'état $\rho_s(\theta)$ via \eqref{eq:dressing}.  
 
 \medskip
 
@@ -720,7 +720,7 @@ Pour les simulations présentées ici, nous utilisons la densité expérimentale
 \medskip
 
 
-Dans ce régime homogène, la distribution est indépendante de la position :
+Dans ce régime homogène, le facteur d'occupation est indépendante de la position :
 \begin{equation}
 \nu(x, \theta) = \nu_0(\theta), \quad \forall x,
 \end{equation}
@@ -802,7 +802,7 @@ Par conséquent, on peut écrire l’évolution du facteur d’occupation de man
 \end{cases}
 \end{equation}
 
-Cette propriété est une conséquence directe du cadre intégrable sous-jacent et de la forme particulière de l’équation de \gls*{GHD}, qui assure que les caractéristiques $(x(t),\theta)$ suivent une dynamique conservant localement le facteur d’occupation.
+Cette propriété est une conséquence directe du cadre intégrable sous-jacent et de la forme particulière de l’équation de \gls{GHD}, qui assure que les caractéristiques $(x(t),\theta)$ suivent une dynamique conservant localement le facteur d’occupation.
 
 \medskip
 
@@ -817,11 +817,20 @@ Dans la configuration initiale correspondant à l’expérience de déformation 
 \medskip
 
 Avec cette condition initiale, le contour \(\partial\Gamma_t^b\) reste bijectif, c’est-à-dire que pour une position donnée $x$, il n’existe qu’une seule rapidité \(\theta^*\) appartenant à \(\partial\Gamma_t^b\). Réciproquement, pour chaque \(\theta^*\), il n’existe qu’un unique $x$ appartenant à \(\partial\Gamma_t^b\), noté \(x(\theta^*,t)\). 
-Nous pouvons donc paramétrer le contour par \(\theta^*\). 
+Nous pouvons donc paramétrer le contour par \(\theta^*\). \footnote{Cette bijectivité est une conséquence de la nature monotone de la vitesse efficace \(v^{\rm eff}_{[\nu]}(\theta)\) en fonction de \(\theta\) pour un facteur d’occupation de type « patch ». En effet, \(v^{\rm eff}_{[\nu]}(\theta)\) est une fonction croissante de \(\theta\). Par conséquent, les trajectoires caractéristiques ne se croisent pas, assurant ainsi la bijectivité du contour.
+
+\smallskip
+
+Avec cette condition initiale, le contour $\partial\Gamma_t^b$ reste bijectif, c’est-à-dire que pour une position donnée $x$, il n’existe qu’une seule rapidité $\theta^*$ appartenant à $\partial\Gamma_t^b$ . Réciproquement, pour chaque $\theta^*$, il n’existe qu’un unique $x$ appartenant à $\partial\Gamma_t^b$, noté $x(\theta^*,t)$.Nous pouvons donc paramétrer le contour par $\theta^*$.
+
+\smallskip
+
+La notation $\partial A$ désigne la frontière (ou bord) d’un ensemble $A$ dans le sens de la topologie : $\partial A = \overline{A} \setminus A^\circ$, où $\overline{A}$ est l’adhérence de $A$ et $A^\circ$ son intérieur. Dans notre contexte, $\partial\Gamma_t^b$ représente donc la courbe délimitant le domaine $\Gamma_t^b$ dans l’espace $(x,\theta)$.
+}
 
 \medskip
 
-La théorie \gls*{GHD} permet de calculer \(x(\theta^*,t)\) de la manière suivante. D’après l’équation \eqref{eq:contour_support}, la distribution du facteur d’occupation au point \(x(\theta^*,t)\) est donnée par
+La théorie \gls{GHD} permet de calculer \(x(\theta^*,t)\) de la manière suivante. D’après l’équation \eqref{eq:contour_support}, la distribution du facteur d’occupation au point \(x(\theta^*,t)\) est donnée par
 \begin{equation}
 \nu^*(x(\theta^*,t) , \theta) =
 \begin{cases}
@@ -897,7 +906,7 @@ Enfin, en fixant \(n_0 = 56~\mu\mathrm{m}^{-1}\), nous ajustons la température 
 (b) Densité spatiale linéique $n(x)$ : en pointillés, $n(x; t = 0^-) = \int \rho(x, \theta; t = 0^-) \, \mathrm{d}\theta = n_0 = 56~\mu\mathrm{m}^{-1}$ juste avant le quench ; en ligne pleine, $n(x; t = 0^+) = n_0$ pour $x > 0$ et $0$ pour $x < 0$.
 (c) À gauche de la coupure ($x < 0$) : en pointillés, $\nu(x, \theta ; t = 0^-) = \nu_0(\theta)$ ; en ligne pleine, $\nu(x, \theta ; t = 0^+) = 0$.
 (d) À droite de la coupure ($x > 0$), le facteur d'occupation reste inchangé : $\nu(x, \theta ; t = 0^+) = \nu_0(\theta)$.
-(e) À l'instant $t = 18~\mathrm{ms}$, après l'évolution balistique post-quench, le facteur d'occupation est donné par $\nu^\ast(x_b(t)/t, \theta) = \nu_0(\theta)$ pour $\theta < \theta_b$, et nul pour $\theta > \theta_b$, résolvant l'équation~(\ref{eq:nuetoile}), pour $t>0$. $\nu(x(t), \theta)(=\nu^\ast(x(t)/t, \theta))$ est invariant de la déformation pour $t>0$.  Le bord représenté en tirets par l'ensemble des points $(x_b(t)/t,\, \theta( t))$. Étant donné que la coupure initiale est en $x = 0$ et que l’évolution du bord est balistique, cette courbe résout $v^{\mbox{\tiny eff}}_{[\nu^\ast(x(t)/t, \cdot) ]}(\theta) = x(t)/t = v)$ (\ref{eq:nu.cont}).
+(e) À l'instant $t = 18~\mathrm{ms}$, après l'évolution balistique post-quench, le facteur d'occupation est donné par $\nu^\ast(x_b(t)/t, \theta) = \nu_0(\theta)$ pour $\theta < \theta_b$, il est nul pour $\theta > \theta_b$, résolvant l'équation~(\ref{eq:nuetoile}), pour $t>0$. $\nu(x(t), \theta)(=\nu^\ast(x(t)/t, \theta))$ est invariant de la déformation pour $t>0$.  Le bord est représenté en tirets par l'ensemble des points $(x_b(t)/t,\, \theta( t))$. Étant donné que la coupure initiale est en $x = 0$ et que l’évolution du bord est balistique, cette courbe résout $v^{\mbox{\tiny eff}}_{[\nu^\ast(x(t)/t, \cdot) ]}(\theta) = x(t)/t = v)$ (\ref{eq:nu.cont}).
 (f) Densité spatiale  $n^\ast(x/t)$ en régime hydrodynamique (scaling).
 (g) Pour les atomes à droite de la coupure : en pointillés, $\nu^\ast(x(t)/t, \theta) = \nu_0(\theta)$ ; en ligne pleine, $\nu^\ast(x_b(t)/t, \theta) = \nu_0(\theta)$ pour $\theta < \theta_b$ et nul pour $\theta > \theta_b$. Le raisonnement est similaire pour les atomes à gauche de la coupure.
 }
@@ -1067,13 +1076,13 @@ Dans un premier temps, la tranche est extraite du bord du système, tel qu’il 
 \end{figure}
 
 
-\subsection{Comparaison aux données expérimentales et discussion}
+\subsection{Comparaison avec les données expérimentales et discussion}
 
 Nous comparons dans cette section les profils de densité obtenus par simulation GHD à ceux mesurés expérimentalement après expansion d’une tranche extraite du bord du système.
 
 \medskip
 
-La Fig.\ref{fig:simul_expansion}(a) montre le profil d’expansion simulé à partir d’un état initial à température $T = 560~nK$, déterminée indépendamment par ajustement sur la déformation du bord (cf. Fig.\ref{fig:simul_deformation}). Le profil présente une forte asymétrie caractéristique, avec un bord droit abrupt et une densité qui s'annule au-delà d’une certaine position. Toutefois, cette chute est moins abrupte que celle de la distribution locale des rapidités $\rho(x, \theta)$ au centre de la tranche (courbes $\tau n_{\mathrm{GHD}}$ et $\ell \rho$ de la figure\ref{fig:simul_expansion}(a)). Deux effets principaux expliquent cet élargissement :
+La figure~\ref{fig:simul_expansion}(a) montre le profil de densité après expansion simulé à partir d’un état initial à température $T = 560~nK$, déterminé indépendamment par ajustement sur la déformation du bord (cf. Fig.\ref{fig:simul_deformation}). Le profil présente une forte asymétrie caractéristique, avec un bord droit abrupt et une densité qui s'annule au-delà d’une certaine position. Toutefois, cette chute est moins abrupte que celle de la distribution locale des rapidités $\rho(x, \theta)$ au centre de la tranche (courbes $\tau n_{\mathrm{GHD}}$ et $\ell \rho$ de la figure\ref{fig:simul_expansion}(a)). Deux effets principaux expliquent cet élargissement :
 \begin{itemize}
 	\item[(i)] La distribution de rapidité n’est pas homogène dans la tranche, si bien que la distribution intégrée $\Pi(\theta) = \int \rho(x,\theta) \, dx $  diffère de $\ell \rho(x , \theta )$ , comme visible sur la Fig.~\ref{fig:simul_expansion}(a), ligne pleine versus pointillée ;
 	\item[(ii)] Le temps d’expansion $\tau =30~ ms$ est fini, de sorte que la densité spatiale observée $\tilde{n}(x , \tau )$ diffère de la transformation directe $\Pi( (x-x_0)/\tau) /\tau $, comme le montre la comparaison entre les courbes rouge et marron dans la même figure.
@@ -1085,7 +1094,7 @@ La Fig.~\ref{fig:simul_expansion}(b) compare la densité simulée pour une temp�
 
 \medskip
 
-Afin d’améliorer cet accord, nous avons traité la température $T$ de l’état initial comme un paramètre libre. L’ajustement donne une température apparente de $T=1550~nK$, représentée par la ligne magenta dans la Fig.~\ref{fig:simul_expansion}(b). Cette valeur permet de mieux reproduire le profil d’expansion, en particulier dans les régions périphériques.
+Afin d’améliorer cet accord, nous avons traité la température $T$ de l’état initial comme un paramètre libre. L’ajustement donne une température apparente de $T=1550~nK$, représentée par la ligne magenta dans la Fig.~\ref{fig:simul_expansion}(b). Cette valeur permet de mieux reproduire le profil d’expansion, en particulier dans la région périphérique.
 
 \medskip
 
@@ -1093,12 +1102,12 @@ Cependant, le profil au bord correspondant à cette température, présenté en 
 
 \medskip
 
-Une analyse plus fine du profil expérimental met en évidence, du côté des petites valeurs de $x$ (courbe bleue, Fig.~\ref{fig:simul_expansion}(b)), la présence de défauts absents des prédictions de la \gls*{GHD} à l’échelle d’Euler.  
+Une analyse plus fine du profil expérimental met en évidence, du côté des petites valeurs de $x$ (courbe bleue, Fig.~\ref{fig:simul_expansion}(b)), la présence de défauts absents des prédictions de la théorie \gls{GHD} à l’échelle d’\emph{Euler}.  
 Ces écarts pourraient résulter de mécanismes échappant au cadre du modèle, notamment :
 
 \begin{itemize}[label = $\bullet$]
 \item \textbf{Effets de sélection de tranche} : le faisceau pousseur utilisé pourrait chauffer localement les atomes en bordure, entraînant des distributions de rapidité plus étendues que prévu.
-\item \textbf{Effets diffusifs} : dans les régions de forts gradients, notamment au bord du gaz, des termes de diffusion (omnis présents dans la GHD à l’échelle d’Euler) pourraient devenir significatifs. De telles corrections ont été proposées récemment pour modéliser la GHD au-delà de l’approximation eulérienne.
+\item \textbf{Effets diffusifs} : dans les régions de forts gradients, notamment au bord du gaz, des termes de diffusion (omnis présents dans la GHD à l’échelle d’\emph{Euler}) pourraient devenir significatifs. De telles corrections ont été proposées récemment pour modéliser la GHD au-delà de l’approximation eulérienne.
 \end{itemize}
 
 \medskip
@@ -1119,40 +1128,40 @@ En résumé, bien que la GHD reproduise globalement la forme du profil d’expan
     };
     \node[circle, draw=none, above=0cm of pi , shift={( -2.5cm , -0.5cm )}] {(b)};
 \end{tikzpicture}
-\caption{(a) {\it Profil de densité après expansion de la tranche : effets de la largeur finie et du temps d’expansion fini.} Courbe rouge : profil obtenu par simulation GHD après expansion pendant $\tau = 30$ ms, avec $T = 560$ nK. Courbe marron : distribution asymptotique $\Pi((x - x_0)/\tau)/\tau$. Courbe pointillée noire : approximation $\ell \rho(x_0, (x - x_0)/\tau)/\tau$ dans le cas d’une tranche étroite. (b) {\it Comparaison aux données expérimentales.} En bleu : profil expérimental après expansion pendant $\tau = 30$ ms. En rouge : simulation GHD avec $T = 560$ nK. En gris : ajustement du profil expérimental donnant $T = 1550$ nK.}
+\caption{(a) {\it Profil de densité après expansion de la tranche : effets de la largeur finie et du temps d’expansion fini.} Courbe rouge : profil obtenu par simulation \gls{GHD} après expansion pendant $\tau = 30$ ms, avec $T = 560$ nK. Courbe marron : distribution asymptotique $\Pi((x - x_0)/\tau)/\tau$. Courbe pointillée bleue : approximation $\ell \rho(x_0, (x - x_0)/\tau)/\tau$ dans le cas d’une tranche étroite. (b) {\it Comparaison aux données expérimentales.} En bleu : profil expérimental après expansion pendant $\tau = 30$ ms. En rouge : simulation GHD avec $T = 560$ nK. En gris : ajustement du profil expérimental donnant $T = 1550$ nK.}
 \label{fig:simul_expansion}
 \end{figure}
 
 \subsection*{Résumé}
 
-Cette section a détaillé la mise en œuvre des simulations numériques basées sur \gls*{GHD}, permettant de modéliser finement la dynamique du système dans les régimes explorés expérimentalement.
+Cette section a détaillé la mise en œuvre des simulations numériques basées sur \gls{GHD}, permettant de modéliser finement la dynamique du système dans les régimes explorés expérimentalement.
 
 \medskip
 
 Nous avons ajusté la température pour reproduire au mieux le profil de densité du bord (Fig.~\ref{fig:simul_expansion}(b)).
 %Nous avons d’abord établi l’état initial du gaz à l’équilibre thermique, en déterminant les distributions $\nu(\theta)$ et $\rho(\theta)$ à partir de la densité et de la température expérimentales. En exploitant la conservation lagrangienne du facteur d’occupation, nous avons ensuite simulé la déformation du bord dans le piégeage, puis l’expansion unidimensionnelle d’une tranche extraite de ce bord.
 
-Les simulations reproduisent qualitativement les principaux traits observés expérimentalement, notamment l’asymétrie du profil d’expansion et la chute abrupte du bord. Cependant, des écarts significatifs subsistent, notamment dans les régions périphériques et dans la forme fine des profils. Ces différences soulignent les limites du modèle à l’échelle d’Euler, et suggèrent que des effets hors modèle — tels que  le chauffage local, ou des corrections diffusives — peuvent jouer un rôle non négligeable.
+Les simulations reproduisent qualitativement les principaux traits observés expérimentalement, notamment l’asymétrie du profil d’expansion et la chute abrupte du bord. Cependant, des écarts significatifs subsistent, notamment dans les régions périphériques et dans la forme fine des profils. Ces différences soulignent les limites du modèle à l’échelle d’\emph{Euler}, et suggèrent que des effets hors modèle — tels que  le chauffage local, ou des corrections diffusives — peuvent jouer un rôle non négligeable.
 
 \medskip
 
-Ces résultats confirment la pertinence de la \gls*{GHD} pour décrire la dynamique collective d’un gaz unidimensionnel hors équilibre, tout en ouvrant la voie à des extensions du modèle pour capturer des effets plus fins, au-delà de l’approximation hydrodynamique idéale.
+Ces résultats confirment la pertinence de la théorie \gls{GHD} pour décrire la dynamique collective d’un gaz unidimensionnel hors équilibre, tout en ouvrant la voie à des extensions du modèle pour capturer des effets plus fins, au-delà de l’approximation hydrodynamique idéale.
 
 \section*{Conclusion du chapitre}
 
-Ce chapitre a présenté une exploration conjointe expérimentale et théorique de la dynamique hors équilibre d’un gaz unidimensionnel de bosons, initiée par une coupure bipartite. Ce protocole génère un état initial présentant une discontinuité macroscopique de densité, dont l’évolution constitue une réalisation physique du problème de Riemann quantique.
+Ce chapitre a présenté une exploration conjointe expérimentale et théorique de la dynamique hors équilibre d’un gaz unidimensionnel de bosons, initiée par une coupure bipartite. Ce protocole génère un état initial présentant une discontinuité macroscopique de densité, dont l’évolution constitue une réalisation physique du problème de \emph{Riemann quantique}.
 
 \medskip
 
-L’analyse repose sur la \gls*{GHD}, cadre théorique récent permettant de décrire, à l’échelle d’Euler, la dynamique de systèmes quantiques intégrables. Nous avons vus que la \gls*{GHD} permet non seulement de prédire les profils de densité issus de la dynamique balistique du gaz, mais également de modéliser la distribution locale des rapidités, accessibles via un protocole de sélection spatiale.
+L’analyse repose sur la théorie \gls{GHD}, cadre théorique récent permettant de décrire, à l’échelle d’\emph{Euler}, la dynamique de systèmes quantiques intégrables. Nous avons vu que la théorie \gls{GHD} permet non seulement de prédire les profils de densité issus de la dynamique balistique du gaz, mais également de modéliser la distribution locale des rapidités, accessibles via un protocole de sélection spatiale.
 
 \medskip
 
-Les mesures expérimentales,  confirment l’existence d’une structure auto-similaire de la dynamique, ainsi que l’asymétrie caractéristique des distributions de rapidité hors équilibre. Les écarts résiduels entre théorie et expérience soulignent la nécessité de développer des extensions de la GHD, intégrant des effets hors d’équilibre plus subtils, tels que la diffusion, le chauffage local ou les défauts de sélection.
+Les mesures expérimentales  confirment l’existence d’une structure auto-similaire de la dynamique, ainsi que l’asymétrie caractéristique des distributions de rapidité hors équilibre. Les écarts résiduels entre théorie et expérience soulignent la nécessité de développer des extensions de la GHD, intégrant des effets hors d’équilibre plus subtils, tels que la diffusion, le chauffage local ou les défauts de sélection.
 
 \medskip
 
-Ainsi, ce travail établit une correspondance quantitative entre un cadre mathématique hydrodynamique issu de l’intégrabilité quantique et des observations expérimentales fines, consolidant la \gls*{GHD} comme un outil efficace pour décrire la relaxation déterministe de systèmes quantiques unidimensionnels, et ouvrant des perspectives pour explorer les limites de cette approche dans des régimes plus complexes.
+Ainsi, ce travail établit une correspondance quantitative entre un cadre mathématique hydrodynamique issu de l’intégrabilité quantique et des observations expérimentales (fines), consolidant la théorie \gls{GHD} comme un outil efficace pour décrire la relaxation déterministe de systèmes quantiques unidimensionnels et ouvrant des perspectives pour explorer les limites de cette approche dans des régimes plus complexes.
 
 \medskip
 

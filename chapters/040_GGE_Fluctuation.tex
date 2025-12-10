@@ -424,7 +424,7 @@ ce qui correspond simplement à remplacer $\beta_i$ par $\beta_i + \epsilon$ à 
 \dfonc{f_i} F[w] 
 = \lim_{\epsilon \to 0} 
 \frac{F(\beta_1,\dots,\beta_i + \epsilon,\dots) - F(\beta_1,\dots,\beta_i,\dots)}{\epsilon}
-= \left. \frac{\partial F[w]}{\partial \beta_i} \right|_{\beta_{j\neq i}}.
+= \left. \frac{\partial F[w]}{\partial \beta_i} \right)_{\beta_{j\neq i}}.
 \]
 Cette démonstration repose crucialement sur le fait que les fonctions $f_j$ sont considérées comme indépendantes des $\beta_j$ et, plus généralement, comme fixes dans l’espace fonctionnel.}
 
@@ -508,7 +508,7 @@ Les états propres du gaz de \gls{LL} sont décrits par les rapidités $\{\theta
 \begin{eqnarray}\label{chap:4:eq:EBA}
 	L \frac{m}\hbar \theta_a + \frac{m}\hbar \sum_{b \ne a} 2 \arctan \!\left( \hbar \frac{\theta_a - \theta_b}{g} \right) = 2 \pi I_a,
 \end{eqnarray}
-où \( \{I_a\} \) est un ensemble d’entiers (ou demi-entiers) caractérisant une configuration de type Bethe .%et \( g  \) l’intensité des interactions.
+où \( \{I_a\} \) est un ensemble d’entiers (ou demi-entiers) caractérisant une configuration de type \gls{BA} .%et \( g  \) l’intensité des interactions.
 
 \subparagraph{État fondamental.}
 Dans le cas de l'état fondamental, les nombres quantiques sont distribués de façon régulière selon~\eqref{chap:1:eq:EBA.1} :
@@ -553,9 +553,9 @@ et on fixe les paramètres physiques du système : \( N = 7 \) particules,\( L =
 \subparagraph{Initialisation : état fondamental.}
 
 \begin{enumerate}%[label = $\bullet$]
-    \item On commence par fixer la configuration d'entier de Bethe  \( \{I_a\} \) correspondant à l’état fondamental. Celle-ci est donnée par l'équation ~\eqref{chap:4:eq:EBA.1}.
+    \item On commence par fixer la configuration d'entier de \gls{BA}  \( \{I_a\} \) correspondant à l’état fondamental. Celle-ci est donnée par l'équation ~\eqref{chap:4:eq:EBA.1}.
 
-    \item On résout ensuite les équations de Bethe \eqref{chap:4:eq:EBA} associées afin d'obtenir l’ensemble des rapidités \( \{ \theta_a \} \).
+    \item On résout ensuite les équations de \gls{BA} \eqref{chap:4:eq:EBA} associées afin d'obtenir l’ensemble des rapidités \( \{ \theta_a \} \).
 
 	\item Ces rapidités définissent une distribution empirique de rapidité, notée \( \rho^e(\theta) \), que l’on enregistre sous la forme \eqref{chap.4:eq.rho.111111}.
 	Pour rendre cette distribution exploitable numériquement, on la discrétise sur une grille discrète \( \{ \theta_a \} \).
@@ -858,7 +858,7 @@ Pour de petits \(N_{\rm conf}\), la perturbation \(\varepsilon\) doit être augm
 	\chi_w(\theta, \theta') \approx \alpha C_w(\theta, \theta'), \quad 0 < \alpha < 1.
 \end{eqnarray*}
 
-Par exemple, pour \(N_{\rm conf} = 10^5\), la mesure \eqref{cha4:eq:std.1} est de $8\%$. Les calculs sont longs à faire converger. On peut utiliser \(N_{\rm cell} = 100\) et \(\varepsilon = 1\), et obtenir :
+Par exemple, pour \(N_{\rm conf} = 10^5\), la mesure \eqref{cha4:eq:std.1} est de $8\%$.  On peut utiliser \(N_{\rm cell} = 100\) et \(\varepsilon = 1\), et obtenir :
 \begin{eqnarray*}
     \frac{\left\Vert  \alpha C_w - \chi_w \right\Vert_2}{\left\Vert \alpha C_w \right\Vert_2} \;\sim\; 27\%
 \end{eqnarray*}
@@ -1024,12 +1024,12 @@ Dans l’équation \eqref{chap:TBA:eq:ensemble_average}, nous avons vu que, dans
 \begin{eqnarray}
 	\langle \operator{\mathcal{O}} \rangle_{w} & = & \frac{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])} \, \langle\operator{\mathcal{O}}\rangle_{[\rho]}}{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{\mathrm{YY}}[\rho] - \mathcal{W}[\rho])}}. \label{chap:Fluc:eq:ensemble_average}
 \end{eqnarray}
-où $\mathcal{S}_{\mathrm{YY}}$ est l’entropie de Yang–Yang et $\mathcal{W}$ l’énergie généralisée, introduites respectivement dans \eqref{chap.2.entropi.int} et \eqref{chap.2.W.int}, que l'on rappelle.
+où $\mathcal{S}_{\mathrm{YY}}$ est l’entropie de \gls{YY} et $\mathcal{W}$ l’énergie généralisée, introduites respectivement dans \eqref{chap.2.entropi.int} et \eqref{chap.2.W.int}, que l'on rappelle.
 \begin{eqnarray}
 	\mathcal{S}_{YY}[\rho] & = & \int d \theta  \, [ \rho_s\ln \rho_s - \rho \ln \rho - ( \rho_s - \rho ) \ln ( \rho_s - \rho ) ] (\theta) , \label{chap.4.entropi.int}\\
 	\mathcal{W}[\rho] & = & \int   w(\theta) \rho(\theta) \, d \theta, \label{chap.4.W.int}
 \end{eqnarray}
-où \(\rho_s(\theta)\) désigne la {\em densité d’états} liée à \(\rho\) par les équations de Bethe \eqref{eq:TBA-rhos} :
+où \(\rho_s(\theta)\) désigne la {\em densité d’états} liée à \(\rho\) par les équations de \gls{BA} \eqref{eq:TBA-rhos} :
 \begin{eqnarray}
 	2\pi \rho_s = 1 + \Delta \star \rho.
 \end{eqnarray}
@@ -1087,7 +1087,7 @@ Comme nous l’avons vu (au chapitre~(\ref{chap:relaxation})), la condition d’
 %    leftmargin=2pt,
 %    rightmargin=2pt
 %]
-%\paragraph{Rappel : Approche thermodynamique (Yang–Yang et énergie généralisée).}
+%\paragraph{Rappel : Approche thermodynamique (\gls{YY} et énergie généralisée).}
 %
 %Dans l’approximation thermodynamique, le système est décrit en termes de grandeurs macroscopiques, notamment par la distribution de rapidité $\rho(\theta)$.
 %Dans l’équation \eqref{chap:TBA:eq:ensemble_average}, la moyenne d’un observable s’écrit, dans la limite thermodynamique :
@@ -1098,7 +1098,7 @@ Comme nous l’avons vu (au chapitre~(\ref{chap:relaxation})), la condition d’
 %	{\int \mathcal{D} \rho \; e^{L (\mathcal{S}_{\mathrm{YY}}[\rho] - \mathcal{W}[\rho])}}.
 %	\label{chap:Fluc:eq:ensemble_average}
 %\end{eqnarray}
-%où $\mathcal{S}_{\mathrm{YY}}$ est l’entropie de Yang–Yang et $\mathcal{W}$ l’énergie généralisée :
+%où $\mathcal{S}_{\mathrm{YY}}$ est l’entropie de \gls{YY} et $\mathcal{W}$ l’énergie généralisée :
 %\begin{eqnarray}
 %	\mathcal{S}_{YY}[\rho] & = & \int d \theta
 %	\big[ \rho_s\ln \rho_s - \rho \ln \rho - ( \rho_s - \rho ) \ln ( \rho_s - \rho ) \big] (\theta),
@@ -1106,7 +1106,7 @@ Comme nous l’avons vu (au chapitre~(\ref{chap:relaxation})), la condition d’
 %	\mathcal{W}[\rho] & = & \int   w(\theta) \rho(\theta) \, d \theta,
 %	\label{chap.4.W.int}
 %\end{eqnarray}
-%avec $\rho_s(\theta)$ la densité d’états reliée à $\rho$ par les équations de Bethe \eqref{eq:TBA-rhos} :
+%avec $\rho_s(\theta)$ la densité d’états reliée à $\rho$ par les équations de \gls{BA} \eqref{eq:TBA-rhos} :
 %\begin{eqnarray}
 %	2\pi \rho_s = 1 + \Delta \star \rho.
 %\end{eqnarray}
@@ -1130,7 +1130,7 @@ Comme nous l’avons vu (au chapitre~(\ref{chap:relaxation})), la condition d’
 %	 \rho_{\mathrm{eq}} =  \braket{ \operator{\rho}(\theta) }_w.
 %\end{eqnarray}
 %
-%Dans le cadre du GGE continu, l’état macroscopique est entièrement déterminé par une densité spectrale $\rho(\theta)$ qui maximise l’entropie de Yang–Yang, $\mathcal{S}_{\mathrm{YY}}[\rho]$, sous contrainte des charges généralisées. Le poids spectral $w(\theta)$ est alors fixé.
+%Dans le cadre du GGE continu, l’état macroscopique est entièrement déterminé par une densité spectrale $\rho(\theta)$ qui maximise l’entropie de \gls{YY}, $\mathcal{S}_{\mathrm{YY}}[\rho]$, sous contrainte des charges généralisées. Le poids spectral $w(\theta)$ est alors fixé.
 %
 %La condition d’équilibre peut s’écrire sous forme variationnelle :
 %\begin{eqnarray}
@@ -1158,9 +1158,6 @@ On en déduit que la réponse de $\rho$ à une variation infinitésimale du poid
 La susceptibilité fonctionnelle $\chi_w(\theta, \theta')$, définie dans \eqref{chap4:eq.susceptibilite-fonctionnelle_3}, coïncide avec cette expression.
 
 
-
-
-
 \subsection{Fluctuations gaussiennes autour de l’équilibre thermodynamique}
 
 Une autre approche pour accéder aux fluctuations de la distribution de rapidité $\rho = \rho_{\mathrm{eq}} + \delta \rho $  est d'étudier la structure variationnelle de l’action effective $\mathcal{S}_{YY} - \mathcal{W}$ autour du point d’équilibre $\rho_{\mathrm{eq}}$. En effet, par définition de ce point d’équilibre, toute variation infinitésimale $\delta \rho$ satisfait  \cite{Wheeler_FieldTheory_Ch5}:
@@ -1168,11 +1165,11 @@ Une autre approche pour accéder aux fluctuations de la distribution de rapidit�
 	(\mathcal{S}_{YY} - \mathcal{W})[\rho_{\mathrm{eq}} + \delta \rho ]  = \exp \{\dfonc{\delta \rho }\}\left ( (\mathcal{S}_{YY} - \mathcal{W})[\rho_{\mathrm{eq}}] \right ).
 \end{eqnarray*}
 %Dans un état de \gls{GGE} consiste à exploiter le développement quadratique de l’action effective autour de l’équilibre thermodynamique. Cette méthode, dite \emph{gaussienne}, repose sur le fait que, dans la limite thermodynamique, l’intégrale fonctionnelle définissant le GGE est dominée par les configurations proches du point-selle $\rho_{\mathrm{eq}}$.
-Dans la limite thermodynamique, l’intégrale fonctionnelle définissant le \gls{GGE} est dominée par les configurations proches du point-selle $\rho_{\mathrm{eq}}$. Cette approximation, dite gaussienne, repose alors sur le développement quadratique de l’action effective en $\delta \rho$.
+Dans la limite thermodynamique, l’intégrale fonctionnelle définissant le \gls{GGE} est dominée par les configurations proches de l'extremum $\rho_{\mathrm{eq}}$. Cette approximation, dite gaussienne, repose alors sur le développement quadratique de la {\em fonction thermodynamique effective} $\mathcal{S}_{YY} - \mathcal{W}$ en $\delta \rho$.
 
 \smallskip
 
-On peut ainsi développer l’action $\mathcal{S}_{YY} - \mathcal{W}$ au second ordre autour de ce point d'équilibre :
+On peut ainsi développer la {\em fonction thermodynamique effective} $\mathcal{S}_{YY} - \mathcal{W}$  au second ordre autour de ce point d'équilibre :
 %\begin{eqnarray}
 %	(\mathcal{S}_{YY} - \mathcal{W})[\rho] \approx (\mathcal{S}_{YY} - \mathcal{W})[\rho_{\mathrm{eq}}]  + \underbrace{\int d\theta \left . \frac{ \delta (\mathcal{S}_{YY} - \mathcal{W})[\rho]}{\delta \rho (\theta) }  \right)_{\rho = \rho_{eq} } \delta \rho(\theta)}_{\text{= 0 par stationnarité}} - \frac{1}{2} \int d\theta d \theta' \delta \rho(\theta) \mathcal{H}(\theta, \theta' )\delta \rho(\theta') + \mathcal{O}(\delta \rho^3)
 %\end{eqnarray}
@@ -1183,7 +1180,7 @@ où
 \(
 \displaystyle \mathcal{H}(\theta, \theta' ) = -\left.\frac{\delta^{2}(\mathcal{S}_{YY}-\mathcal{W})[\rho]}{\delta\rho(\theta)\,\delta\rho(\theta')}\right)_{\rho = \rho_{\mathrm{eq}}}
 \)
-est la \textit{hessienne} de l’action effective.
+est la \emph{matrice hessienne} de la {\em fonction thermodynamique effective}.
 
 \smallskip
 
@@ -1211,9 +1208,11 @@ Sous l’approximation gaussienne autour de l’état d’équilibre (en particu
 
 \medskip
 
-Ces relations posent les bases d'une description quantifiée des fluctuations de densité de rapidité, essentielles pour tester expérimentalement la validité du \gls{GGE}, comprendre les corrélations à longue distance, et accéder aux propriétés dynamiques fines des systèmes intégrables en une dimension.\\
+Ces relations posent les bases d'une description quantifiée des fluctuations de densité de rapidité, essentielles pour tester expérimentalement la validité du \gls{GGE}, particulièrement pour la mesure des  corrélations à longue distance, et accéder aux propriétés dynamiques fines des systèmes intégrables en une dimension.
 
-Ce développement quadratique justifie le caractère gaussien des fluctuations dans le régime thermodynamique, et sera à la base des extensions hydrodynamiques de type MFT (Macroscopic Fluctuation Theory).
+\smallskip
+
+Ce développement quadratique justifie le caractère gaussien des fluctuations dans le régime thermodynamique, et sera à la base des extensions hydrodynamiques de type \gls{MFT}.
 
 \paragraph{Structure de \(\mathcal{H}\).}
 
@@ -1245,7 +1244,7 @@ avec un poids spectral \(w(\theta)\) fixé \eqref{chap.4.W.int}.% La seconde dé
 
 \medskip
 
-En revanche, la courbure fonctionnelle provient entièrement de l'entropie de Yang–Yang, donnée par l’expression \eqref{chap.4.entropi.int}.
+La courbure fonctionnelle provient donc entièrement de l'entropie de \gls{YY}, donnée par l’expression \eqref{chap.4.entropi.int}.
 %\begin{eqnarray}
 %	\mathcal{S}_{\mathrm{YY}}[\rho] = \int d\theta \left[
 %	\rho_s(\theta) \ln \rho_s(\theta) - \rho(\theta) \ln \rho(\theta) - (\rho_s(\theta) - \rho(\theta)) \ln(\rho_s(\theta) - \rho(\theta))
@@ -1397,7 +1396,7 @@ Ainsi, l’opérateur de fluctuation \(\mathcal{H}\) coïncide avec la hessienne
 			\end{scope}
 
 	\end{tikzpicture}
-	\caption{Représentation schématique de l’action effective $L(\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])$ en fonction de la distribution de rapidité $\rho$. La configuration la plus probable, (associée à $\rho_{\mathrm{ed}}$) , correspond au minimum (point-selle) de l’action. Les fluctuations autour de l’équilibre sont modélisées par un développement quadratique de l’action, conduisant à une approximation gaussienne des fluctuations de $\rho$. Pour faciliter la compréhension, on représente ici $\rho$ comme une variable unidimensionnelle, alors qu’en réalité il s’agit d’une fonction définie dans un espace de dimension infinie.}
+	\caption{Représentation schématique de l’action effective $L(\mathcal{S}_{YY}[\rho] - \mathcal{W}[\rho])$ en fonction de la distribution de rapidité $\rho$. La configuration la plus probable, (associée à $\rho_{\mathrm{eq}}$) , correspond au minimum (extremum) de l’action. Les fluctuations autour de l’équilibre sont modélisées par un développement quadratique de l’action, conduisant à une approximation gaussienne des fluctuations de $\rho$. Pour faciliter la compréhension, on représente ici $\rho$ comme une variable unidimensionnelle, alors qu’en réalité il s’agit d’une fonction définie dans un espace de dimension infinie.}
 	\label{fig:Act.gauss}
 \end{figure}
 
@@ -1480,7 +1479,7 @@ Ainsi, l’opérateur de fluctuation \(\mathcal{H}\) coïncide avec la hessienne
 %\end{equation}
 
 
-En calculant la dérivée fonctionnelle seconde de l'entropie de Yang–Yang, définie en \eqref{chap.4.entropi.int}, dans la direction d'une variation $\delta \rho$, on obtient l'opérateur hessien $\mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})}$.
+En calculant la dérivée fonctionnelle seconde de l'entropie de \gls{YY}, définie en \eqref{chap.4.entropi.int}, dans la direction d'une variation $\delta \rho$, on obtient l'opérateur hessien $\mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})}$.
 L'opérateur hermien $\mathcal{H}$ est donné par $\mathcal{H} = -\mathcal{H}^{(\mathcal{S}_{\mathrm{YY}})}$, et se décompose comme suit :
 \begin{eqnarray}
 	\mathcal{H}(\theta, \theta') & = & \mathcal{D}(\theta, \theta') + \mathcal{V}(\theta, \theta')
@@ -1503,7 +1502,7 @@ avec $\rho_{\! eq}(\theta) = \nu_{\! eq}(\theta)\rho_{\! s, eq}(\theta)$.
 %\subsection*{Forme explicite du hessien : fluctuations gaussiennes}
 %
 %Il est classique (cf. appendix~\ref{appendix:YYentropy}) que
-%l’entropie de Yang–Yang admet un hessien diagonal en base des \(\theta\) :
+%l’entropie de \gls{YY} admet un hessien diagonal en base des \(\theta\) :
 %\begin{equation}
 %\mathcal{H}^{(S)}(\theta,\theta') =
 %\frac{\delta(\theta-\theta')}{\nu_{\!eq}(\theta)\big(1-\nu_{\!eq}(\theta)\big)}.
@@ -1635,12 +1634,12 @@ avec une partie symétrique régulière avec interaction $\mathcal{B}$.
 
 \medskip
 
-Les équations (\ref{chap:fluctu:eq:hessienne3}) , (\ref{chap:fluctu:eq:hessienner.inv.1}) , (\ref{chap:fluctu:eq:hessienner.prod.inv}) et (\ref{chap:fluctu:eq:irreg.prod.inv}) , il vient que cette série d'équivalences
+À partir des équations (\ref{chap:fluctu:eq:hessienne3}) , (\ref{chap:fluctu:eq:hessienner.inv.1}) , (\ref{chap:fluctu:eq:hessienner.prod.inv}) et (\ref{chap:fluctu:eq:irreg.prod.inv}) , il vient que cette série d'équivalences
 \begin{eqnarray*}
 	\left \{\begin{array}{rcl} \mathcal{H}\cdot\mathcal{H}^{-1} & =& \delta \\  \mathcal{H}^{-1}\cdot \mathcal{H}& =& \delta  \end{array} \right.  \mbox{\ie}	 \left \{\begin{array}{rcl} \mathcal{H}\cdot\mathcal{B} & =& - \mathcal{V}\cdot\mathcal{D}^{-1} \\  \mathcal{B}\cdot\mathcal{H} & =& - \mathcal{D}^{-1}\cdot\mathcal{V}  \end{array} \right. \mbox{\ie} \left \{\begin{array}{rcl} \mathcal{B} & =& - \mathcal{H}^{-1}\cdot\mathcal{V}\cdot \mathcal{D}^{-1}  \\  \mathcal{B} & =& - \mathcal{D}^{-1}\cdot\mathcal{V}\cdot \mathcal{H}^{-1}  \end{array} \right.
 \end{eqnarray*}
-Du fait que toutes ces fonctions ($\mathcal{H}$, $\mathcal{D}$, $\mathcal{V}$ et inverse) soit symétriques alors les équations ci-dessus sont tous équivalentes et $\mathcal{B}$ étant donc symétrique.
-Donc en utilisant (\ref{chap:fluctu:eq:reg}) et (\ref{chap:fluctu:eq:irreg.inv})
+Du fait que toutes ces fonctions ($\mathcal{H}$, $\mathcal{D}$, $\mathcal{V}$ et inverse) soit symétriques, les équations ci-dessus sont tous équivalentes et $\mathcal{B}$ étant donc symétrique.
+Ainsi en utilisant (\ref{chap:fluctu:eq:reg}) et (\ref{chap:fluctu:eq:irreg.inv})
 \begin{eqnarray}
 	\mathcal{B}(\theta , \theta ' )  & = & - (\mathcal{D}^{-1}\cdot\mathcal{V}\cdot \mathcal{H}^{-1})(\theta , \theta') 	, \label{chap:fluctu:eq:B.1}\\
 	& = & 	 (\rho_{\! s , eq}(\theta) \nu_{\! eq}(\theta) (1 -  \nu_{\! eq}(\theta) )) \times  \notag\\
@@ -1661,19 +1660,19 @@ En injectant cette dernière équation ainsi que \eqref{chap:fluctu:eq:hessienne
 %\end{eqnarray}
 
 
-Cette expression explicite des corrélations permet d'évaluer les fluctuations des grandeurs macroscopiques comme le nombre total de particules ou l'énergie, en les exprimant comme des observables linéaires de la densité \( \rho(\theta) \). Une autre dérivation alternative est en annexe \ref{annex:Jerome}.
+Cette expression explicite des corrélations permet d'évaluer les fluctuations des grandeurs macroscopiques comme le nombre total de particules ou l'énergie, en les exprimant comme des observables linéaires de la densité \( \rho(\theta) \). Une dérivation alternative est exposée en annexe \ref{annex:Jerome}.
 
 \subsection{Vérification numérique thermodynamique : inversion de la courbure et dérivée fonctionnelle}
 
 
 %\paragraph{Principe de fluctuation-réponse.}
 
-Dans cette sous-section, nous proposons de tester l’expression \eqref{chap:fluctu:eq:B.1}.
+Dans cette sous-section, nous proposons de tester l’expression \eqref{eq:fluctuations} .%\eqref{chap:fluctu:eq:B.1}
 %Dans cette équation, le membre de droite s’écrit :
 %\begin{eqnarray*}
 %\left( L \mathcal{H} \right)^{-1} (\theta, \theta').
 %\end{eqnarray*}
-%où $\mathcal{H}$ désigne l’opposé de la hessienne de l'entropie de Yang–Yang.
+%où $\mathcal{H}$ désigne l’opposé de la hessienne de l'entropie de \gls{YY}.
 %Or $\left( L \mathcal{H} \right)^{-1} (\theta, \theta')$ est aussi le membre de droite de \eqref{chap:Fluc:eq:susp-2}.
 
 
@@ -1683,9 +1682,9 @@ Dans cette sous-section, nous proposons de tester l’expression \eqref{chap:flu
 
 \paragraph{Calcul de la matrice hessienne}
 
-%On considère un gaz de bosons unidimensionnels intégrables, décrit par l’équation de Bethe, dans un état d’équilibre généralisé déterminé par une {\em taille du système} \(L\), une intensité d'interaction \(g\)   un {\em poids spectral} \( w(\theta) \) fixé . À partir de ces paramètres , on résout numériquement les {\em équations TBA} \eqref{chap:TBA:eq:e} pour déterminer les quantités thermodynamiques d'équilibre : la {\em distribution de rapidité}  \( \rho_{\mathrm{eq}}(\theta) \), la {\em densité d'états} \( \rho_{s,\mathrm{eq}}(\theta) \), et la {\em fonction d'occupation} \( \nu_{\! \mathrm{eq}}(\theta) = \rho_{\! \mathrm{eq}}(\theta) / \rho_{\! s,\mathrm{eq}}(\theta) \). Avec ces paramètres et quantités thermodynamiques nous avons $ \mathcal{D}(\theta , \theta')$ (et son inverse $ \mathcal{D}^{-1}(\theta , \theta')$) définie en \eqref{chap:fluctu:eq:irreg_0} (resp. \eqref{chap:fluctu:eq:irreg.inv})  et puis  $ \mathcal{V}(\theta , \theta')$ avec \eqref{chap:fluctu:eq:reg} et donc $ \mathcal{H}(\theta , \theta')$ avec  \eqref{chap:fluctu:eq:hessienne3} est donc la partie irrégulière (diagonale) et réguilère de   \(\left( L \mathcal{H} \right)^{-1} (\theta, \theta')\) avec \eqref{chap:fluctu:eq:fluctuations.10}
+%On considère un gaz de bosons unidimensionnels intégrables, décrit par l’équation de \gls{BA}, dans un état d’équilibre généralisé déterminé par une {\em taille du système} \(L\), une intensité d'interaction \(g\)   un {\em poids spectral} \( w(\theta) \) fixé . À partir de ces paramètres , on résout numériquement les {\em équations TBA} \eqref{chap:TBA:eq:e} pour déterminer les quantités thermodynamiques d'équilibre : la {\em distribution de rapidité}  \( \rho_{\mathrm{eq}}(\theta) \), la {\em densité d'états} \( \rho_{s,\mathrm{eq}}(\theta) \), et la {\em fonction d'occupation} \( \nu_{\! \mathrm{eq}}(\theta) = \rho_{\! \mathrm{eq}}(\theta) / \rho_{\! s,\mathrm{eq}}(\theta) \). Avec ces paramètres et quantités thermodynamiques nous avons $ \mathcal{D}(\theta , \theta')$ (et son inverse $ \mathcal{D}^{-1}(\theta , \theta')$) définie en \eqref{chap:fluctu:eq:irreg_0} (resp. \eqref{chap:fluctu:eq:irreg.inv})  et puis  $ \mathcal{V}(\theta , \theta')$ avec \eqref{chap:fluctu:eq:reg} et donc $ \mathcal{H}(\theta , \theta')$ avec  \eqref{chap:fluctu:eq:hessienne3} est donc la partie irrégulière (diagonale) et réguilère de   \(\left( L \mathcal{H} \right)^{-1} (\theta, \theta')\) avec \eqref{chap:fluctu:eq:fluctuations.10}
 
-On considère un gaz de bosons unidimensionnels intégrable, décrit par l'équation de Bethe, dans un état d'équilibre généralisé caractérisé par la {\em taille du sous-système} \(L\), l'{\em intensité d'interaction} \(g\), et un {\em poids spectral} fixé \(w(\theta)\).
+On considère un gaz de bosons unidimensionnels intégrable, décrit par l'équation de \gls{BA}, dans un état d'équilibre généralisé caractérisé par la {\em taille du sous-système} \(L\), l'{\em intensité d'interaction} \(g\), et un {\em poids spectral} fixé \(w(\theta)\).
 
 À partir de ces paramètres, on résout numériquement les {\em équations} \gls{TBA} (cf \eqref{chap:TBA:eq:e}), ce qui permet d'obtenir les grandeurs thermodynamiques d'équilibre :
 \begin{itemize}[label = $\bullet$]
@@ -1727,7 +1726,7 @@ Le membre de gauche de l’équation \eqref{chap:Fluc:eq:susp-2}, à savoir
 \begin{eqnarray*}
 \chi_w(\theta, \theta') \, \left ( =  - \frac{1}{L} \frac{\delta \rho_{\mathrm{eq}}(\theta)}{\delta w(\theta')} \right ) ,
 \end{eqnarray*}
-peut être évalué numériquement sans avoir à recourir à l'entropie de Yang–Yang. Il suffit en effet de calculer la variation de la {\em distribution de rapidité à l'équilibre} $\rho_{\mathrm{eq}}(\theta)$ en réponse à une petite perturbation $\varepsilon$  du {\em poids spectral} $w(\theta')$ (exactement \eqref{cahp4:eq.sus.e.1}).
+peut être évalué numériquement sans avoir à recourir à l'entropie de \gls{YY}. Il suffit en effet de calculer la variation de la {\em distribution de rapidité à l'équilibre} $\rho_{\mathrm{eq}}(\theta)$ en réponse à une petite perturbation $\varepsilon$  du {\em poids spectral} $w(\theta')$ (voir\eqref{cahp4:eq.sus.e.1}).
 
 
 
@@ -1738,7 +1737,7 @@ peut être évalué numériquement sans avoir à recourir à l'entropie de Yang�
 %
 %Cette quantité représente la réponse directe du système à une perturbation du poids spectral, et peut être comparée à l’inverse de la matrice hessienne obtenue précédemment.
 
-%par différentiation numérique de la solution des équations TBA. Concrètement, on introduit une perturbation locale \( \delta w(\theta') \) sur le potentiel spectral et on mesure la variation de \( \rho_{\mathrm{eq}}(\theta) \) en résolvant à nouveau l’équation de Bethe pour chaque perturbation, en conservant \( g \), \( N \), et \( L \) constants.
+%par différentiation numérique de la solution des équations TBA. Concrètement, on introduit une perturbation locale \( \delta w(\theta') \) sur le potentiel spectral et on mesure la variation de \( \rho_{\mathrm{eq}}(\theta) \) en résolvant à nouveau l’équation de \gls{BA} pour chaque perturbation, en conservant \( g \), \( N \), et \( L \) constants.
 
 
 \subsubsection{Dans un équilibre thermodynamique généralisé}
@@ -1754,11 +1753,11 @@ et on fixe les paramètres physiques du sous-système : \( L = 10 \) , et \( g =
 
 \medskip
 
-Le nombre de particules $N$ est fixé par ces paramètres, contrairement aux simulations de la partie Monte-Carlo faites dans la section précédente.
+Le nombre de particules $N$ est fixé par ces paramètres, contrairement aux simulations de la partie \emph{Monte-Carlo} considéré dans la section précédente.
 
 \medskip
 
-On fais ce calcules numérique avec $\varepsilon = 10^{-10}$ suffisamment petit pour que l'approximation \eqref{cahp4:eq.sus.e.1} soit vérifiée.
+On fait ce calcul numérique avec $\varepsilon = 10^{-10}$ suffisamment petit pour que l'approximation \eqref{cahp4:eq.sus.e.1} soit vérifiée.
 
 \medskip
 
@@ -1771,7 +1770,7 @@ Nous obtenons deux matrices
 \left( L \mathcal{H} \right)^{-1} (\theta, \theta') \,\text{et} \, \chi_w(\theta, \theta')
 \)
 (Fig~\eqref{fig:chi_thermodynamique}).
-Afin de tester la validité l’expression \eqref{chap:fluctu:eq:fluctuations.10}, nous quantifions leur similarité, en calculant une {\em norme relative} en utilisant la norme \(2\) :
+Afin de tester la validité l’expression \eqref{chap:fluctu:eq:fluctuations.10}, nous quantifions leur similarité, en calculant une {\em norme relative} en utilisant la norme \(\ell^2\) :
 \begin{eqnarray*}
     \frac{\left\Vert  (L\mathcal{H})^{-1}- \chi_w \right\Vert_2}{\left\Vert (L\mathcal{H})^{-1} \right\Vert_2} \;=\; 0.015 \%.
 \end{eqnarray*}
@@ -1794,13 +1793,13 @@ Afin de tester la validité l’expression \eqref{chap:fluctu:eq:fluctuations.10
 
 \paragraph{Conclusion.}
 
-Nous avons vérifié la formule \eqref{chap:fluctu:eq:fluctuations.10} de deux manières. D’une part, en évaluant directement à un {\em poids spectral} $w$ fixé $(L\mathcal{H})^{-1}$; d’autre part, en calculant le différentiel de la distribution de rapidité par rapport au poids spectral \(\chi_w\), c’est-à-dire  en appliquant le principe de fluctuation–réponse. Pour le {\em poids spectral} et les paramètres considérés, les deux approches donnent des résultats numériques concordants, ce qui constitue une validation de la formule \eqref{chap:fluctu:eq:fluctuations.10}.
+Nous avons vérifié la formule \eqref{chap:fluctu:eq:fluctuations.10} de deux manières. D’une part, en évaluant directement à un {\em poids spectral} $w$ fixé $(L\mathcal{H})^{-1}$; d’autre part, en calculant la différentielle de la distribution de rapidité par rapport au poids spectral \(\chi_w\), c’est-à-dire  en appliquant le principe de fluctuation–réponse. Pour le {\em poids spectral} et les paramètres considérés, les deux approches donnent des résultats numériques concordants, ce qui constitue une validation de la formule \eqref{chap:fluctu:eq:fluctuations.10}.
 
-%Cette vérification confirme que, dans le régime thermodynamique, la structure variationnelle de l’entropie de Yang–Yang encode entièrement les fluctuations et les réponses spectrales du système. Il s’agit d’un test non trivial du principe de fluctuation–réponse appliqué aux systèmes intégrables.
+%Cette vérification confirme que, dans le régime thermodynamique, la structure variationnelle de l’entropie de \gls{YY} encode entièrement les fluctuations et les réponses spectrales du système. Il s’agit d’un test non trivial du principe de fluctuation–réponse appliqué aux systèmes intégrables.
 
 \medskip
 
-Dans un second temps, il est naturel de vouloir tester ce principe pour différentes formes du {\em poids spectral} $w$. Dans le cas général du GGE, $w$ appartient à un espace de dimension infinie. Afin de réduire cette complexité, nous nous restreignons à une sous-famille à deux paramètres, en nous plaçant dans le cadre de l’équilibre thermique. Ce choix permet de comparer explicitement les fluctuations de grandeurs thermodynamiques macroscopiques, telles que le nombre total de particules et l’énergie cinétique.
+Dans un second temps, il est naturel de vouloir tester ce principe pour différentes formes du {\em poids spectral} $w$. Dans le cas général du \gls{GGE}, $w$ appartient à un espace de dimension infinie. Afin de réduire cette complexité, nous nous restreignons à une sous-famille à deux paramètres, en nous plaçant dans le cadre de l’équilibre thermique. Ce choix permet de comparer explicitement les fluctuations de grandeurs thermodynamiques macroscopiques, telles que le nombre total de particules et l’énergie cinétique.
 
 
 
@@ -2022,17 +2021,17 @@ Conformément à l’équation~\eqref{chap4:eq.cumulant.distr.q.10}, nous calcul
 	C_w[f_2,f_2]  & = & L^2 \iint d\theta\, d\theta'\; f_2(\theta)\,(L\mathcal{H})^{-1}(\theta , \theta')\, f_2(\theta').
 \end{eqnarray}
 
-Pour chaque régime simulé (correspondant aux {\bf points bleus} et {\bf rouges} sur la figure~\ref{chap:4:fig:diagr}), nous évaluons numériquement les quantités \( C_w[f_0,f_0] \) et \( C_w[f_2,f_2] \), qui représentent les fluctuations extensives des observables associées aux charges \( \operator{Q}_0 \) (nombre de particules) et \( \operator{Q}_2 \) (énergie cinétique).
+Pour chaque régime simulé (correspondant aux {\bf points bleus} et {\bf rouge} sur la figure~\eqref{chap:4:fig:diagr}), nous évaluons numériquement les quantités \( C_w[f_0,f_0] \) et \( C_w[f_2,f_2] \), qui représentent les fluctuations extensives des observables associées aux charges \( \operator{Q}_0 \) (nombre de particules) et \( \operator{Q}_2 \) (énergie cinétique).
 
 \medskip
 
-Ces résultats sont représentés par des {\bf points orange} dans la figure~\ref{chap:4:fig.fluctu.A_com}, illustrant l’évolution des fluctuations en fonction du régime thermodynamique du sous-système.
+Ces résultats sont représentés par des {\bf points rouges} dans la figure~\ref{chap:4:fig.fluctu.A_com}, illustrant l’évolution des fluctuations en fonction du régime thermodynamique du sous-système.
 
 
-\paragraph{Susecptibilité des observables thermodynamiques.}
+\paragraph{Susceptibilité des observables thermodynamiques.}
 
 \medskip
-En parallèle, pour chaque régime simulé (correspondant aux {\bf points bleus} et {\bf rouges} de la figure~\ref{chap:4:fig:diagr}), et conformément à l’équation~\eqref{chap4:eq.moment.distr.q.10}, nous calculons les moyennes des charges associées au nombre total de particules et à l’énergie cinétique totale, données respectivement par :
+En parallèle, pour chaque régime simulé (correspondant aux {\bf points bleus} et {\bf rouge} de la figure~\eqref{chap:4:fig:diagr}), et conformément à l’équation~\eqref{chap4:eq.moment.distr.q.10}, nous calculons les moyennes des charges associées au nombre total de particules et à l’énergie cinétique totale, données respectivement par :
 \begin{eqnarray}
 	\braket{\operator{\mathcal{Q}}[f_0]}_w & = & L \int d\theta\; f_0(\theta)\, \braket{\operator{\rho}(\theta)}_w,\\
 	\braket{\operator{\mathcal{Q}}[f_2]}_w & = & L \int d\theta\; f_2(\theta)\, \braket{\operator{\rho}(\theta)}_w.
@@ -2040,7 +2039,7 @@ En parallèle, pour chaque régime simulé (correspondant aux {\bf points bleus}
 
 \medskip
 
-Nous souhaitons ensuite approximer les susceptibilités thermodynamiques définies par :
+Nous souhaitons ensuite évaluer les susceptibilités thermodynamiques définies par :
 \begin{eqnarray}
 	\chi_w[f_i, f_i] & = & - \left. \frac{\partial \braket{\operator{\mathcal{Q}}[f_i]}_w}{\partial \beta_i} \right)_{\beta_{j \neq i} \text{ fixés}}.
 \end{eqnarray}
@@ -2052,7 +2051,7 @@ Pour cela, nous procédons à une variation infinitésimale du poids spectral $w
 	\[
 	w \rightarrow w - \beta \epsilon_\mu f_0.
 	\]
-	On résout alors numériquement les équations TBA pour ce nouveau poids, afin de calculer :
+	On résout alors numériquement les équations \gls{TBA} pour ce nouveau poids, afin de calculer :
 	\[
 	\braket{\operator{\mathcal{Q}}[f_0]}_{w - \beta \epsilon_\mu f_0}.
 	\]
@@ -2077,7 +2076,7 @@ Ces simulations permettent d’estimer numériquement les susceptibilités :
 
 \medskip
 
-Ces approximations numériques sont représentées par des {\bf points bleus} dans la figure~\ref{chap:4:fig.fluctu.A_com}, et permettent de confronter les résultats issus de la dérivée fonctionnelle avec ceux provenant de la réponse directe à une perturbation du poids spectral.
+Ces approximations numériques sont représentées par des {\bf points bleus} dans la figure~\eqref{chap:4:fig.fluctu.A_com}, et permettent de comparer les résultats issus de la dérivée fonctionnelle avec ceux provenant de la réponse directe à une perturbation du poids spectral.
 
 
 
@@ -2194,7 +2193,7 @@ Ces approximations numériques sont représentées par des {\bf points bleus} da
     \caption{
     (a) Diagramme de phase du modèle de \acrlong{LL} à l’équilibre thermique. Différents régimes asymptotiques sont séparés par des transitions progressives. Les points bleus représentent les fluctuations calculées numériquement pour différentes températures. Les coordonnées sont données par \( \gamma = \frac{m g}{\hbar^2 n} \) et \( t = \frac{k_B T}{m g^2/\hbar^2} \). Les régimes choisis pour les simulations sont indiqués par les points bleus (\( \gamma = 0.02 \) constant) et le point rouge correspond à \( t = 70 \), utilisé dans les sous-figures (b) et (c).
     (b) Représentation de la diagonale \( \mathcal{D}^{-1}(\theta, \theta)/\delta(\theta, \theta) \).
-    (c) Représentation en niveaux de couleur de la partie régulière \( \mathcal{B} \) des fluctuations \( \delta \rho \) pour \( t = 70 \) et \( \gamma = 0.02 \) (point rouge dans (a)).
+    (c) Représentation en niveaux de couleur de la partie régulière \( \mathcal{B} \) des fluctuations de\( \delta \rho \) pour \( t = 70 \) et \( \gamma = 0.02 \) (point rouge dans (a)).
     }
     \label{chap:4:fig:diag_fig}
 \end{figure}
@@ -2226,7 +2225,7 @@ Dans ce chapitre, nous avons étudié les fluctuations de la distribution de rap
 
 \medskip
 
-Nous avons d’abord introduit le formalisme général des \gls{GGE}, dans lequel les observables macroscopiques sont dérivées fonctionnellement du potentiel conjugué $w(\theta)$. Dans ce cadre, nous avons montré que la matrice de susceptibilité spectrale $\chi_w(\theta , \theta')$ décrit à la fois la réponse linéaire de la densité spectrale moyenne à une perturbation infinitésimale du potentiel, et les corrélations entre fluctuations de la densité, conformément au principe de fluctuation-réponse. En utilisant ce lien, nous avons vu que nous pouvons  échantillonner \gls{GGE}.
+Nous avons d’abord introduit le formalisme général des \gls{GGE}, dans lequel les observables macroscopiques sont dérivées fonctionnellement du potentiel conjugué $w(\theta)$. Dans ce cadre, nous avons montré que la matrice de susceptibilité spectrale $\chi_w(\theta , \theta')$ décrit à la fois la réponse linéaire de la densité spectrale moyenne à une perturbation infinitésimale du potentiel et les corrélations entre fluctuations de la densité, conformément au principe de \emph{fluctuation-réponse}. En utilisant ce lien, nous avons vu que nous pouvons  \emph{échantillonner \gls{GGE}}.
 
 \medskip
 
@@ -2234,11 +2233,11 @@ Nous avons ensuite approfondi l’étude de la limite thermodynamique, où les f
 
 \medskip
 
-Enfin, nous avons relié ces objets locaux à des susceptibilités globales via une projection sur les fonctions test $f_i(\theta)$, en considérant le poids spectral $w(\theta)$ comme une combinaison linéaire des charges $\operator{Q}_i$ . Ce formalisme nous a permis d’interpréter la dérivée de l’observable $\langle \operator{Q}_i \rangle_w$ par rapport au multiplicateur de Lagrange $\beta_i$ comme une dérivée fonctionnelle projetée de la matrice $\chi_w(\theta , \theta')$ , et d’en valider la structure par une comparaison numérique explicite sur l’énergie et le nombre de particules.
+Enfin, nous avons relié ces objets locaux à des susceptibilités globales via une projection sur les fonctions test $f_i(\theta)$, en considérant le poids spectral $w(\theta)$ comme une combinaison linéaire des charges $\operator{Q}_i$ . Ce formalisme nous a permis d’interpréter la dérivée de l’observable $\langle \operator{Q}_i \rangle_w$ par rapport au multiplicateur de Lagrange $\beta_i$ comme une dérivée fonctionnelle projetée de la matrice $\chi_w(\theta , \theta')$, et d’en valider la structure par une comparaison numérique explicite pour l’énergie et le nombre de particules.
 
 \medskip
 
-Nous avons vérifié numériquement la validité de notre formule des fluctuations (Eq. \eqref{chap:fluctu:eq:fluctuations.10}), ce qui confirme son exactitude et sa pertinence dans le cadre du formalisme développé.
+Nous avons vérifié numériquement la validité de notre formule des fluctuations (eq~\eqref{chap:fluctu:eq:fluctuations.10}), ce qui confirme son exactitude et sa pertinence dans le cadre du formalisme développé.
 
 
 %\paragraph{🔸 Remarque sur les corrélations globales.}

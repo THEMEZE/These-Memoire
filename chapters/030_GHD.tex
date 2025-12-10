@@ -846,7 +846,7 @@ On a vu l'équation \gls{GP} dépendante du temps dans \eqref{chap.1:eq.GP.2}, a
 	i \partial_t \psi = \left( - \frac{1}{2} \partial_x^2 + V + g \vert \psi \vert^2 \right) \psi .
 \end{eqnarray}
 
-En utilisant la représentation de Madelung $\psi(x,t) = \sqrt{n(x,t)}\, e^{i\theta(x,t)}$, on obtient les équations dites hydrodynamiques de la forme de \eqref{chap:3:eq:hydro.1} \cite{Spiegel1980FluidDF,10.1093/acprof:oso/9780198758884.001.0001} :  
+En utilisant la représentation de \emph{Madelung} $\psi(x,t) = \sqrt{n(x,t)}\, e^{i\theta(x,t)}$, on obtient les équations dites hydrodynamiques de la forme de \eqref{chap:3:eq:hydro.1} \cite{Spiegel1980FluidDF,10.1093/acprof:oso/9780198758884.001.0001} :  
 \begin{eqnarray}
     \partial_t n + \partial_x \big( n u \big) &=& 0, \label{eq:continuite}\\
     \partial_t (n u) + \partial_x \left( n u^2 + \mathcal{P} + \tilde{\mathcal{P}}_Q \right) &=& - n \partial_x V , \label{eq:euler}
@@ -856,7 +856,7 @@ où la vitesse du fluide, la \emph{pression classique} et un terme de \emph{pres
 \textbf{Distinction entre pression classique et pression quantique~:}
 La \emph{pression classique} $\mathcal{P} = \frac{1}{2}gn^2$ provient du terme d'interaction répulsive de contact dans l'hamiltonien de \gls{GP}. Elle représente l'effet des collisions répulsives entre particules, analogue à la pression d'un gaz classique due aux chocs entre molécules. Elle dépend uniquement de la densité locale $n$.
 
-La \emph{pression quantique} $\tilde{\mathcal{P}}_Q = -\frac{n}{2}\partial_x\left(\frac{\partial_x\sqrt{n}}{\sqrt{n}}\right)$ est un effet purement quantique, absent en mécanique classique. Elle provient de l'énergie cinétique des gradients de densité et est directement liée au principe d'incertitude~: confiner des particules dans une région de densité élevée augmente leur quantité de mouvement (et donc leur énergie). Mathématiquement, ce terme émerge de la contribution $-\frac{1}{2}\partial_x^2\sqrt{n}$ de l'énergie cinétique dans la décomposition de Madelung. Dans la limite \acrfull{TF} ($\gamma \to 0$), le gradient de densité varie lentement et ce terme devient négligeable devant la pression classique.
+La \emph{pression quantique} $\tilde{\mathcal{P}}_Q = -\frac{n}{2}\partial_x\left(\frac{\partial_x\sqrt{n}}{\sqrt{n}}\right)$ est un effet purement quantique, absent en mécanique classique. Elle provient de l'énergie cinétique des gradients de densité et est directement liée au principe d'incertitude~: confiner des particules dans une région de densité élevée augmente leur quantité de mouvement (et donc leur énergie). Mathématiquement, ce terme émerge de la contribution $-\frac{1}{2}\partial_x^2\sqrt{n}$ de l'énergie cinétique dans la décomposition de \emph{Madelung}. Dans la limite \acrfull{TF} ($\gamma \to 0$), le gradient de densité varie lentement et ce terme devient négligeable devant la pression classique.
 }
 \begin{equation}\label{eq:vitesse}
     u = \partial_x \theta, \quad 
@@ -900,7 +900,7 @@ on obtient l’équation d’état classique du gaz \gls{qBEC} :
     \mu = g n + cts.
 \end{equation}
 
-Les équations de Madelung (\eqref{eq:continuite} \eqref{eq:euler}), se réduisent à :
+Les équations de \emph{Madelung} (\eqref{eq:continuite} \eqref{eq:euler}), se réduisent à :
 \begin{eqnarray}
     \partial_t n + \partial_x \big( n u \big) &=& 0, \label{eq:continuite3}\\
     \partial_t (n u) + \partial_x \left( n u^2 + \mathcal{P} \right) &=& 0 \label{eq:euler3}.
@@ -1053,7 +1053,7 @@ La limite $\gamma \to 0$ (interaction faible) combinée à $\mathfrak{t} \to 0$ 
 \begin{itemize}[label=$\cdot$]
 	\item La distribution de rapidité prend la forme de demi-cercle : $\rho(\theta) = \frac{n}{2\pi c^2}\sqrt{-(\theta-\theta_-)(\theta-\theta_+)}$ avec $c = \sqrt{gn}$.
 	\item La pression quantique $\tilde{\mathcal{P}}_Q$ demeure négligeable devant la pression classique $\mathcal{P} = \frac{1}{2}gn^2$ car les variations spatiales de $n$ restent douces à l'échelle de la longueur de corrélation quantique.
-	\item L'énergie est dominée par les termes cinétiques classiques, justifiant l'utilisation de l'équation de Madelung hydrodynamique.
+	\item L'énergie est dominée par les termes cinétiques classiques, justifiant l'utilisation de l'équation de \emph{Madelung hydrodynamique}.
 \end{itemize}
 
 \medskip
