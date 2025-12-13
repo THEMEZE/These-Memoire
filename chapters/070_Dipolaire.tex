@@ -1205,12 +1205,12 @@ Deux critères fondamentaux guident notre choix de laser :
 \begin{itemize}[label = $\bullet$]
 	\item Le {\bf potentiel dipolaire} au niveau des atomes, $U_{dip}(0)$, doit être supérieur à une valeur minimale $U_{dip}^{(min)}$, fixée à :
 		\begin{equation}\label{eq:7.50}
-			U_{dip}(0)  \geq U_{dip}^{(min)} = k_B \times 1 \mu K.	
+			U_{dip}(0)  \geq U_{dip}^{(min)} \equiv k_B \times 1 \mu K.	
 		\end{equation}
 		Cette valeur garantit une barrière suffisante pour confiner les atomes contre leur agitation thermique résiduelle ou leur expansion quantique.
 	\item Le {\bf taux de diffusion spontané}  au point $x^\ast$ défini par $U_{dip}(x^\ast) = U_{dip}(0)/2$ doit rester inférieur à une valeur seuil pour limiter l’échauffement et les pertes :
 		\begin{equation}\label{eq:7.51}
-			\Gamma_{sp}(x^\ast) \leq \Gamma_{sp}^{(max)} = 2\pi \times 1~s^{-1}.	
+			\Gamma_{sp}(x^\ast) \leq \Gamma_{sp}^{(max)} \equiv 2\pi \times 1~s^{-1}.	
 		\end{equation}
 		Ce critère conduit, en utilisant le fait que le potentiel $U_{dip}^{(min)}(\vec{r})$ et le taux de diffusion spontanée $\Gamma_{sp}(\vec{r})$ sont proportionnels à l’intensité $I(\vec{r})$, à la borne stricte suivante :
 		\begin{equation}\label{eq:7.52}
@@ -1224,7 +1224,7 @@ Les conditions des équations~\eqref{eq:7.50} et \eqref{eq:7.51} impliquent que,
 \[
 \frac{U_{\rm dip}(\vec{r}^*)}{\hbar \Gamma_{\rm sc}(\vec{r}^*)} > \frac{2\,U_{\rm dip}^{(min)}}{\hbar \Gamma_{\rm sc}^{(max)}} .
 \]
-En utilisant les Eqs.~\eqref{eq.7.47} et \eqref{eq.7.48}, cette condition se réécrit explicitement sous la forme
+En utilisant les équations ~\eqref{eq:7.47} et \eqref{eq:7.48}, cette condition se réécrit explicitement sous la forme
 %\begin{equation}
 %\frac{U_{\rm dip}(\vec{r}^*)}{\hbar \Gamma_{\rm sc}(\vec{r}^*)} 
 %= \frac{1}{\Gamma} \cdot 
@@ -1263,7 +1263,7 @@ Un calcul numérique montre que, sous ces contraintes, il est nécessaire de sé
 
 %Dans notre cadre d’un piégeage \textbf{blue-detuned}, les atomes sont confinés dans la région \textbf{centrale de faible intensité}, située entre deux faisceaux focalisés. Le piégeage repose donc sur la présence de \textbf{parois optiques abruptes} générées par les faisceaux blue-detuned. Cela impose que chaque faisceau présente un fort gradient d’intensité, ce qui nécessite un waist petit.
 
-Le faisceau utilisé est gaussien. On rappelle que le \textit{waist} $w_0$ désigne le rayon du faisceau, défini comme la distance radiale $r$ pour laquelle l’intensité transverse chute à $1/e^2$ de sa valeur au centre du faisceau qui est la position où le faisceau est le plus focalisé. Nous consicérons ici des faisceaux avec un waist de l’ordre de $w_0 \sim 1~\mu\text{m}$.  
+Le faisceau utilisé est gaussien. On rappelle que le \textit{waist} $w_0$ désigne le rayon du faisceau, défini comme la distance radiale $r$ pour laquelle l’intensité transverse chute à $1/e^2$ de sa valeur au centre du faisceau qui est la position où le faisceau est le plus focalisé. Nous considérons ici des faisceaux avec un waist de l’ordre de $w_0 \sim 1~\mu\text{m}$.  
 
 \medskip
 
@@ -1302,9 +1302,9 @@ Les conditions des équations~\eqref{eq:7.50} et \eqref{eq:7.51} impliquent alor
 \end{equation}
 avec
 \begin{align}
-P_{\rm min}(\lambda) &= U_{\rm dip}^{(min)} \cdot \frac{\pi w_0^2}{2} \frac{8 I_{\rm sat}}{\Gamma^2} 
+P_{\rm min}(\lambda) &= U_{\rm dip}^{(min)}  \frac{\pi w_0^2}{2} \frac{8 I_{\rm sat}}{\hbar \Gamma^2} 
 \left( \frac{1}{3 \Delta_1} + \frac{2}{3 \Delta_2} \right)^{-1}, \\
-P_{\rm max}(\lambda) &= \Gamma_{\rm sc}^{(max)} \cdot \pi w_0^2 \frac{8 I_{\rm sat}}{\Gamma^3} 
+P_{\rm max}(\lambda) &= \Gamma_{\rm sc}^{(max)}  \pi w_0^2 \frac{8 I_{\rm sat}}{\Gamma^3} 
 \left( \frac{1}{3 \Delta_1^2} + \frac{2}{3 \Delta_2^2} \right)^{-1}.
 \end{align}
 

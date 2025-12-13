@@ -292,6 +292,7 @@ tex_files = [
 tex_idx_bib_files = [
     #"/Users/themezeguillaume/Desktop/interface_web_launcher/sites/Scroll_Web/quantum-mechanics-thesis-main/These_Memoire_19_07_2025/These_Memoire",
     "./main",
+    #"./test",
     # Ajoute ici les .tex (SANS .tex à la fin) à compiler avec index+bibtex
 ]
 
