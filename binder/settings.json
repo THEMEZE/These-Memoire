@@ -1,0 +1,54 @@
+{
+    // ============================
+    // LTeX+ — Correction LaTeX locale
+    // ============================
+    "ltex.language": "fr",
+    "ltex.enabled": true,
+    "ltex.documentTypes": [
+        "latex",
+        "markdown",
+        "plaintext"
+    ],
+    "ltex.ltex-ls.enabled": true,
+    "ltex.ltex-ls.javaHome": null, // laisse LTeX gérer automatiquement
+    "ltex.additionalRules.enablePickyRules": true,
+    "ltex.dictionary": {
+        "fr": [
+            "quantique",
+            "bosonique",
+            "Théméze",
+            "Guillaume"
+        ]
+    },
+    // ============================
+    // LanguageTool Linter (serveur externe)
+    // ============================
+    "languagetool-linter.language": "fr",
+    "languagetool-linter.enabled": true,
+    "languagetool-linter.serviceType": "external",
+    "languagetool-linter.external.url": "http://localhost:8081",
+    "languagetool-linter.ignoreExtensions": [
+        ".tex",
+        ".bib",
+        ".cls",
+        ".sty"
+    ],
+    // ============================
+    // Éviter le conflit LTEX ↔ LT Linter
+    // ============================
+    "ltex.checkFrequency": "save", // LTeX n'analyse pas en continu en même temps que LT
+    "languagetool-linter.run": "onSave", // Analyse au moment de la sauvegarde
+    // ============================
+    // lm-writing-tool — Rephrasage
+    // ============================
+    "lm-writing-tool.model": "qwen2.5:7b", // ou "llama3:8b"
+    "lm-writing-tool.provider": "ollama",
+    "lm-writing-tool.targetLanguage": "fr",
+    "lm-writing-tool.suggestionsOnHover": true,
+    "lm-writing-tool.enableRephraseCommand": true,
+    // ============================
+    // LaTeX Workshop
+    // ============================
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.view.pdf.viewer": "tab"
+}

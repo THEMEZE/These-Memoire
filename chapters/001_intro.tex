@@ -1,0 +1,95 @@
+%\chapter*
+%{Introduction générale}
+%\addcontentsline{toc}{chapter}{Introduction générale}
+%\minitoc[n] % <-- [n] force l'affichage même pour un chapitre non numéroté
+
+\chapter*{Introduction générale}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+\minitoc
+
+%\section*{Introduction}
+
+Ma thèse porte sur l’étude des gaz d’atomes froids, plus précisément sur  des systèmes expérimentaux où des ensembles de quelques dizaines à plusieurs millions d’atomes sont refroidis jusqu’à des températures proches du zéro absolu. Dans ce régime extrême, les effets quantiques collectifs prennent le dessus et donnent accès à une physique à $N$ corps difficilement accessible autrement \cite{RevModPhys.80.885}. Ces gaz offrent ainsi un laboratoire exceptionnel pour explorer la mécanique quantique et tester des modèles théoriques complexes. Ils trouvent aussi de nombreuses applications, allant de la métrologie de très haute précision au développement de processeurs quantiques \cite{PhysRevLett.96.010401}, en passant par la simulation de systèmes quantiques dont la dimension de l’espace de Hilbert croît de manière exponentielle avec le nombre de particules, ce qui rend leur traitement classique rapidement inabordable \cite{Nielsen2010,Feynman1982}.%en passant par la simulation de systèmes quantiques dont la description exacte est hors de portée des calculs classiques en raison de la croissance exponentielle des degrés de liberté \cite{Nielsen2010,Feynman1982}. 
+
+\medskip 
+
+Parmi ces systèmes, les gaz atomiques unidimensionnels (1D) constituent une plateforme privilégiée pour l’étude de la physique quantique dans les systèmes de basse dimension. En réduisant drastiquement le mouvement transversal des atomes grâce à des pièges très confinants, leurs degrés de liberté sont figés dans deux directions et le mouvement se limite à une seule dimension. Cette géométrie particulière conduit à des systèmes de type : modèles de bosons \cite{Bloch2005,Kinoshita2004,Haller2009,Amerongen2008,Jacqmin2011,Dubail2025SolitonsOndes}, de fermions \cite{Guan2013,Liao2010,Moritz2005} ou encore de mélanges multi-composants \cite{Pagano2014}. Leur intérêt réside notamment dans la possibilité d’établir des comparaisons directes avec des descriptions théoriques et numériques très précises, mais aussi dans leur rôle de systèmes analogues pour comprendre des matériaux de basse dimension tels que les chaînes de spins, les nano-fils supraconducteurs ou les réseaux de jonctions Josephson. Dans les expériences menées au \gls{LCF}, ces gaz 1D sont réalisés en piégeant des atomes de rubidium 87 à l’aide de champs magnétiques générés par des microstructures déposées sur une puce atomique.
+
+\medskip
+
+La restriction à une dimension unique entraîne des propriétés singulières pour les gaz atomiques. Ainsi, les fluctuations quantiques y sont fortement amplifiées, ce qui empêche la formation d’une condensation de Bose-Einstein à température nulle (en anglais \glsreset{qBEC}\gls{qBEC}). Certains de ces systèmes 1D présentent également une intégrabilité : ils possèdent autant de quantités conservées que de degrés de liberté. Cette caractéristique se traduit par une dynamique particulière, différentes de celles des systèmes ergodiques. Ces gaz ne tendent pas vers un état thermique classique, mais vers un état décrit par des fonctions conservées dont les distributions de rapidités, qui paramètrent l’ensemble des constantes de mouvement du système.
+
+\medskip
+
+Ma thèse s’est concentrée sur l’étude d’un gaz 1D de bosons avec interactions de contact répulsives, un système intégrable étudié initialement par Lieb et Liniger \cite{LL_1963_1,LL_1963_2}. Les états propres de ce modèle, obtenus via l’ansatz de Bethe (\acrshort{BA}), sont décrits par des rapidités qui peuvent être interprétées comme les vitesses de quasi-particules à temps de vie infini. Dans la limite thermodynamique, l’état relaxé du système est entièrement caractérisé par la distribution de rapidités.  
+
+\medskip
+
+Durant cette thèse, j’ai réalisé une partie des expériences avec Léa Dubois, doctorante ayant travaillé sur le même dispositif. J’ai contribué à l’étude expérimentale de la distribution de rapidités, ainsi qu’à l’analyse numérique des résultats via des simulations basées sur la théorie Hydrodynamique Généralisée (\acrshort{GHD}). Mon apport a notamment porté sur l’étude des fluctuations dans le cadre du formalisme de l'Ensemble de Gibbs Généralisé (\acrshort{GGE}) et sur la mise en place d’un potentiel dipolaire permettant de contrôler et de moduler la distribution atomique.  
+
+\medskip
+
+Ce mémoire présente les résultats obtenus sur la caractérisation expérimentale et numérique des gaz de bosons 1D, tant à l’équilibre qu’hors équilibre, à travers l’étude de la distribution de rapidités spatialement résolue. Il est structuré en sept chapitres, chacun abordant un aspect spécifique de l’étude, qu’il soit théorique, numérique ou expérimental.
+
+
+
+\section*{Présentation des chapitres}
+
+%Le mémoire est structuré en sept chapitres, chacun abordant un aspect précis de l’étude des gaz de bosons 1D. 
+%Les chapitres sont conçus pour être indépendants à la lecture, bien que certaines références croisées permettent de suivre le fil complet de la thèse.
+
+\paragraph{Chapitre 1 : Modèle de Lieb-Liniger et approche Bethe Ansatz.}  
+Ce chapitre introduit de manière pédagogique le modèle de Lieb-Liniger \gls{LL} et l’approche de l’ansatz de Bethe (\acrshort{BA}). Il commence par un rappel des notions de première et deuxième quantification pour expliquer la structure de l’Hamiltonien de (\acrshort{LL}), en particulier l’interaction de contact. Les états de Bethe sont des états propres de l’Hamiltonien de (\acrshort{LL}), ainsi que des opérateurs nombre de particules et quantité de mouvement. Ils constituent un point de départ pour l’étude des charges conservées, qui sera développée dans le chapitre suivant \cite{Caux_2011}.
+
+\paragraph{Chapitre 2 : Relaxation et Équilibre dans les Systèmes Quantiques Intégrables : de l’Ensemble de Gibbs Généralisé à la Thermodynamique de Bethe.}  
+Le chapitre 2 présente le formalisme l'Ensemble de Gibbs Généralisé (\acrshort{GGE}) et introduit le formalisme du Bethe Ansatz thermodynamique (\acrshort{TBA}) à travers les travaux de Yang et Yang. On y détaille notamment le calcul des moyennes de charges locales et le formalisme nécessaire pour relier l’état intégrable aux distributions de rapidités. Les notions de fluctuations sont évoquées, mais leur étude détaillée est laissée au chapitre \ref{chap:Fluctu}.
+
+
+\paragraph{Chapitre 3 : Dynamique hors-équilibre et hydrodynamique généralisée.}  
+Le chapitre 3 étend l’étude à la dynamique hors équilibre à l’aide de la théorie d'Hydrodynamique Généralisé (\acrshort{GHD}). On y montre comment le formalisme de (\acrshort{GGE}) se traduit dans la dynamique, et que les distributions de rapidités restent des quantités conservées, contrairement à l’approche classique de Gibbs.
+
+%\paragraph{Chapitre 4 : Fluctuation de la distribution de rapidité dans des état d'équilibre.}  
+%Ce chapitre explore les fluctuations des rapidités. Les simulations de Monte-Carlo permettent de vérifier si l’on peut échantillonner correctement le \acrshort{GGE}. Le principe de fluctuation-réponse est utilisé pour tester la cohérence des formules obtenues, dans le régime où le formalisme \acrshort{TBA} est valide.
+
+\paragraph{Chapitre 4 : Fluctuations de la distribution de rapidités dans les états stationnaires du modèle de Lieb–Liniger homogène.}  
+Nous avons montré qu'il est possible d'échantillonner correctement le (\acrshort{GGE}) en utilisant des simulations de Monte-Carlo. Le principe de fluctuation-réponse est employé pour tester la validité des formules établies dans le régime dans lequel le formalisme (\acrshort{TBA}) est applicable.
+
+
+
+\paragraph{Chapitre 5 : Dispositif expérimental.}  
+Ce chapitre présente les aspects expérimentaux de la thèse : lasers, puce atomique, \gls{DMD}, etc. Deux expériences principales sont décrites : la première étudie l’évolution d’un nuage initialement piégé dans un potentiel harmonique, dans le régime de quasi-condensation de Bose (\acrshort{qBEC}); la seconde utilise le (\acrshort{DMD}) pour résoudre spatialement la distribution de rapidités et pour préparer des états hors équilibre.
+
+%\paragraph{Chapitre 6 : Analyse des déformations de profil et simulations GHD.} 
+\paragraph{Chapitre 6 : Étude du protocole de bi-partition : Mesure de distribution de rapidités locales $\rho(x , \theta ) $  pour des systèmes hors équilibre.}
+Le chapitre 6 se concentre sur l’étude des déformations du profil de densité et des résultats numériques issus des simulations (\acrshort{GHD}), permettant de comparer les prédictions théoriques avec les mesures expérimentales.
+
+\paragraph{Chapitre 7 : Potentiel dipolaire et perspectives expérimentales.}  
+Le dernier chapitre présente la réflexion sur l’ajout d’un potentiel dipolaire et les perspectives expérimentales associées. On y discute comment ce potentiel permet de préparer des distributions atomiques plus complexes et d’étudier de nouveaux régimes dynamiques.
+
+\bigskip
+
+\noindent Bien que chaque chapitre puisse être lu indépendamment, certaines dépendances existent pour une compréhension plus complète :  
+\begin{itemize}[label = $\bullet$]
+    \item Le chapitre 4 s’appuie sur le chapitre 2, lui-même basé sur le chapitre 1.  
+    \item Le chapitre 7 se fonde sur le chapitre 6, qui fait référence au chapitre 3, lequel repose sur le chapitre 2.  
+\end{itemize}
+
+
+%
+%{\color{blue}
+%\section*{Introduction}
+%
+%Cette thèse s’inscrit dans le domaine des atomes ultra-froids, des systèmes où les propriétés quantiques deviennent dominantes grâce à des températures extrêmement basses. Ces gaz constituent des plateformes idéales pour explorer la physique quantique à N corps, avec des applications allant de la métrologie de précision au développement de processeurs quantiques, et servent également de simulateurs pour des systèmes complexes difficilement accessibles par calcul numérique.
+%
+%Parmi ces systèmes, les gaz unidimensionnels (1D) sont particulièrement intéressants. Confinés dans des potentiels étroits transversalement, les atomes ne peuvent se déplacer que le long d’une direction, ce qui permet d’étudier des gaz de bosons, de fermions ou de mélanges atomiques dans un cadre contrôlé. Dans notre expérience au Laboratoire Charles Fabry, des atomes de rubidium 87 sont piégés par des potentiels magnétiques générés par des fils déposés sur une puce atomique.
+%
+%La dimensionnalité réduite confère à ces gaz des propriétés uniques. Les fluctuations quantiques sont renforcées et empêchent la formation d’une condensation de Bose-Einstein en 1D. Certains systèmes unidimensionnels sont intégrables, possédant autant de quantités conservées que de degrés de liberté, ce qui entraîne des dynamiques hors du cadre thermique classique. L’état relaxé est alors décrit par la distribution de rapidités, fonction conservée caractérisant l’ensemble des quasi-particules.
+%
+%Cette thèse se concentre sur un gaz 1D de bosons avec interactions de contact répulsives, modèle intégrable étudié initialement par Lieb et Liniger. Les états propres, obtenus via l’ansatz de Bethe, sont décrits par des rapidités, interprétables comme des vitesses de quasi-particules à vie infinie. La limite thermodynamique du système est entièrement caractérisée par la distribution de rapidités.
+%
+%Au cours de ce travail, j’ai participé à la réalisation expérimentale avec L. Dubois, en mesurant la distribution de rapidités spatialement résolue pour des gaz inhomogènes. Mon apport principal concerne l’analyse numérique des données via la théorie hydrodynamique généralisée (GHD), l’étude des fluctuations dans le cadre du GGE, et la mise en place d’un potentiel dipolaire permettant de moduler et contrôler la distribution atomique.
+%
+%Le mémoire présente les résultats obtenus sur la caractérisation expérimentale et numérique des gaz de bosons 1D, à l’équilibre comme hors équilibre, en mettant l’accent sur la distribution de rapidités localement résolue. Les sept chapitres sont organisés en trois parties distinctes, couvrant les aspects expérimentaux, numériques et théoriques de cette étude.
+%}
+
+
