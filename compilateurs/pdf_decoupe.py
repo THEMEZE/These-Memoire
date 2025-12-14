@@ -354,7 +354,7 @@ parts = {
     "Titre": {"page": 1, "pages": "1-1", "nb_pages": 1},
     "Blanc": {"page": "", "pages": "{2,4}", "nb_pages": ""},
     "Acronymes": {"page": 3, "pages": "", "nb_pages": 2},
-    "Pourquoi 1D ?": {"page": "", "pages": "", "nb_pages": 4},
+    #"Pourquoi 1D ?": {"page": "", "pages": "", "nb_pages": 4},
     "Introduction": {"page": "", "pages": "", "nb_pages": 3},
     "Sommaire": {"page": "", "pages": "", "nb_pages": 3},
     "1. Modèle de Lieb-Liniger et approche Bethe Ansatz": {"page": "", "pages": "", "nb_pages": 22},

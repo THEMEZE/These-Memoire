@@ -18,104 +18,99 @@
         "pages": "3-4",
         "nb_pages": 2
     },
-    "Pourquoi 1D ?": {
-        "page": 5,
-        "pages": "5-8",
-        "nb_pages": 4
-    },
     "Introduction": {
-        "page": 9,
-        "pages": "9-11",
+        "page": 5,
+        "pages": "5-7",
         "nb_pages": 3
     },
     "Sommaire": {
-        "page": 12,
-        "pages": "12-14",
+        "page": 8,
+        "pages": "8-10",
         "nb_pages": 3
     },
     "1. Modèle de Lieb-Liniger et approche Bethe Ansatz": {
-        "page": 15,
-        "pages": "15-36",
+        "page": 11,
+        "pages": "11-32",
         "nb_pages": 22
     },
     "2. Relaxation et Équilibre dans les Systèmes Quantiques Intégrables : Une Approche par la Thermodynamique de Bethe": {
-        "page": 37,
-        "pages": "37-54",
+        "page": 33,
+        "pages": "33-50",
         "nb_pages": 18
     },
     "3. Dynamique hors-équilibre et hydrodynamique généralisée": {
-        "page": 55,
-        "pages": "55-72",
+        "page": 51,
+        "pages": "51-68",
         "nb_pages": 18
     },
     "4. Fluctuations de la distribution de rapidités dans les états stationnaires du modèle de Lieb–Liniger homogène": {
-        "page": 73,
-        "pages": "73-96",
+        "page": 69,
+        "pages": "69-92",
         "nb_pages": 24
     },
     "5. Dispositif expérimental": {
-        "page": 97,
-        "pages": "97-120",
+        "page": 93,
+        "pages": "93-116",
         "nb_pages": 24
     },
     "6. Étude du protocole de bi-partition : Mesure de distribution de rapidités locales rho(x,θ) pour des systèmes hors équilibre": {
-        "page": 121,
-        "pages": "121-138",
+        "page": 117,
+        "pages": "117-134",
         "nb_pages": 18
     },
     "7. Mise en place d'un confinement longitudinal dipolaire": {
-        "page": 139,
-        "pages": "139-162",
+        "page": 135,
+        "pages": "135-158",
         "nb_pages": 24
     },
     "Conclusion": {
-        "page": 163,
-        "pages": "163-164",
+        "page": 159,
+        "pages": "159-160",
         "nb_pages": 2
     },
     "Annex A - Action de P et H sur l'état de Bethe": {
+        "page": 161,
+        "pages": "161-164",
+        "nb_pages": 4
+    },
+    "Annex B - Réduction GHD vers transport d’Euler": {
         "page": 165,
         "pages": "165-168",
         "nb_pages": 4
     },
-    "Annex B - Réduction GHD vers transport d’Euler": {
+    "Annex C - Dérivation alternative des fluctuations de rho": {
         "page": 169,
         "pages": "169-172",
         "nb_pages": 4
     },
-    "Annex C - Dérivation alternative des fluctuations de rho": {
-        "page": 173,
-        "pages": "173-176",
-        "nb_pages": 4
-    },
     "Annex D - Propriétés des facteurs d'homothétie": {
-        "page": 177,
-        "pages": "177-178",
+        "page": 173,
+        "pages": "173-174",
         "nb_pages": 2
     },
     "Annex E - Polarisabilité dynamique et potentiel dipolaire optique": {
-        "page": 179,
-        "pages": "179-182",
+        "page": 175,
+        "pages": "175-178",
         "nb_pages": 4
     },
     "Annex F - Moment tensoriel J=1/2": {
-        "page": 183,
-        "pages": "183-184",
+        "page": 179,
+        "pages": "179-180",
         "nb_pages": 2
     },
     "Bibliographie": {
-        "page": 185,
-        "pages": "185-192",
+        "page": 181,
+        "pages": "181-188",
         "nb_pages": 8
     },
     "Résumé": {
-        "page": 193,
-        "pages": "193-193",
+        "page": 189,
+        "pages": "189-189",
         "nb_pages": 1
     },
     "Blanc_final": {
-        "page": 194,
-        "pages": "194-194",
+        "page": 190,
+        "pages": "190-190",
         "nb_pages": 1
     }
 }
