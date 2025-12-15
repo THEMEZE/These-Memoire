@@ -19,7 +19,8 @@
 %\printbibliography[heading=subsubbibliography,title={Bibliographie du l'Introduction}]
 %\printbibliography[title={Bibliographie du l'Introduction}]
 %\printbibliography[heading=subbibliography, section=\therefsection]
-\printbibliography[heading=subbibliographyintro,title={Bibliographie de l'introduction}]
+%\printbibliography[heading=subbibliographyintro,title={Bibliographie de l'introduction}]
+\printbibliography[heading=subbibliographyintro,title={Bibliographie}]
 \end{refsection}
 
 %\section*{Bibliographie de l'Introduction}
@@ -32,6 +33,15 @@
 \tableofcontents
 \mainmatter
 
+% Redéfinition de la numérotation des chapitres en chiffres romains
+\renewcommand{\thechapter}{\Roman{chapter}~}
+\renewcommand{\thesection}{\Alph{section}}
+\renewcommand{\thesubsection}{\thesection-\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection-\alph{subsubsection}}
+\renewcommand{\theparagraph}{\thesubsubsection-\roman{paragraph}}
+\renewcommand{\thesubparagraph}{\theparagraph-\roman{subparagraph}}
+
+
 \begin{refsection}
 \input{chapters/010_LL_BA}
 %\printbibliography[heading=bibintoc,title={Bibliographie du chapitre}]
@@ -39,7 +49,8 @@
 %\printbibliography[heading=subsubbibliography, title={Bibliographie du chapitre}]
 %\printbibliography[title={Bibliographie du chapitre}]
 %\printbibliography[heading=subbibliography, section=\therefsection]
-\printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+%\printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+\printbibliography[heading=subbibliography,title={Bibliographie}]
 \end{refsection}
 
 \begin{refsection}
@@ -48,7 +59,8 @@
 %\printbibliography[heading=subbibliography, title={Bibliographie du chapitre}]
 %\printbibliography[heading=subsubbibliography,title={Bibliographie du chapitre}]
 %\printbibliography[heading=subbibliography, section=\therefsection]
-\printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+%\printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+\printbibliography[heading=subbibliography,title={Bibliographie}]
 \end{refsection}
 
 
@@ -58,7 +70,8 @@
 %\printbibliography[heading=subbibliography, title={Bibliographie du chapitre}]
 %\printbibliography[heading=subsubbibliography,title={Bibliographie du chapitre}]
 %\printbibliography[heading=subbibliography, section=\therefsection]
-\printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+%\printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+\printbibliography[heading=subbibliography,title={Bibliographie}]
 \end{refsection}
 
 %\input{chapters/030_GHD_1}
@@ -71,7 +84,8 @@
 %\printbibliography[heading=subbibliography, title={Bibliographie du chapitre}]
 %\printbibliography[heading=subsubbibliography,title={Bibliographie du chapitre}]
 %\printbibliography[heading=subbibliography, section=\therefsection]
-\printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+%\printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+\printbibliography[heading=subbibliography,title={Bibliographie}]
 \end{refsection}
 
 \begin{refsection}
@@ -80,7 +94,8 @@
 %\printbibliography[heading=subbibliography, title={Bibliographie du chapitre}]
 %\printbibliography[heading=subsubbibliography,title={Bibliographie du chapitre}]
 %\printbibliography[heading=subbibliography, section=\therefsection]
-\printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+%\printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+\printbibliography[heading=subbibliography,title={Bibliographie}]
 \end{refsection}
 
 \begin{refsection}
@@ -89,7 +104,8 @@
 %\printbibliography[heading=subbibliography, title={Bibliographie du chapitre}]
 %\printbibliography[heading=subsubbibliography,title={Bibliographie du chapitre}]
 %\printbibliography[heading=subbibliography, section=\therefsection]
-\printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+%\printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+\printbibliography[heading=subbibliography,title={Bibliographie}]
 \end{refsection}
 
 \begin{refsection}
@@ -98,7 +114,8 @@
 %\printbibliography[heading=subbibliography, title={Bibliographie du chapitre}]
 %\printbibliography[heading=subsubbibliography,title={Bibliographie du chapitre}]
 %\printbibliography[heading=subbibliography, section=\therefsection]
-\printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+%\printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+\printbibliography[heading=subbibliography,title={Bibliographie}]
 \end{refsection}
 
 \input{chapters/080_conclusion}
@@ -106,6 +123,13 @@
 
 
 \appendix
+
+% Redéfinition de la numérotation des chapitres en chiffres romains
+\renewcommand{\thechapter}{\Alph{chapter}.}
+\renewcommand{\thesection}{\alph{section}.}
+\renewcommand{\thesubsection}{\thesection\roman{subsection}.}
+\renewcommand{\thesubsubsection}{\thesubsection\arabic{subsubsection}.}
+
 %\input{chapters/99_annexes}
 \input{chapters/011_PH}
 \input{chapters/031_Euler}
@@ -117,7 +141,8 @@
 %\printbibliography[heading=subbibliography,title={Bibliographie de l'annex}]
 %\printbibliography[heading=subsubbibliography,title={Bibliographie de l'annex}]
 %\printbibliography[heading=annexbibliography,section=\therefsection]
-\printbibliography[heading=annexbibliography,title={Bibliographie de l'annexe}]
+%\printbibliography[heading=annexbibliography,title={Bibliographie de l'annexe}]
+\printbibliography[heading=annexbibliography,title={Bibliographie}]
 \end{refsection}
 
 
@@ -131,7 +156,8 @@
 %\printbibliography[heading=subbibliography,title={Bibliographie de l'annex}]
 %\printbibliography[heading=subsubbibliography,title={Bibliographie de l'annex}]
 %\printbibliography[heading=annexbibliography,section=\therefsection]
-\printbibliography[heading=annexbibliography,title={Bibliographie de l'annexe}]
+%\printbibliography[heading=annexbibliography,title={Bibliographie de l'annexe}]
+\printbibliography[heading=annexbibliography,title={Bibliographie}]
 \end{refsection}
 
 
