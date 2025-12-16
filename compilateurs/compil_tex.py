@@ -250,7 +250,7 @@ def clean_auxiliary_files(tex_path):
         ".acn" ,".acr" , ".alg", ".ist", ".bcf",
         ".run.xml", ".fdb_latexmk", ".fls", ".glg",
         ".glo", ".gls", ".synctex.gz", ".mtc",
-    ] + [f".mtc{i}" for i in range(15)]
+    ] + [f".mtc{i}" for i in range(20)]
 
     deleted_files = []
 

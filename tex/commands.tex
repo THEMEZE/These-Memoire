@@ -69,7 +69,7 @@
 
 
 %\usepackage{minitoc}
-\setcounter{minitocdepth}{6} % profondeur affichée pour les mini-sommaires
+\setcounter{minitocdepth}{2} % profondeur affichée pour les mini-sommaires
 \renewcommand{\mtctitle}{Sommaire} % titre des minitocs
 \dominitoc % active les mini-sommaires
 
@@ -81,19 +81,22 @@
 % Heading pour la biblio de l'introduction
 \defbibheading{subbibliographyintro}{%
   %\subsection*{Bibliographie de l'Introduction}%
-  \subsection*{Bibliographie}%
+  \section*{Bibliographie}%
+  \addcontentsline{toc}{section}{Bibliographie}
 }
 
 % Heading pour la biblio par chapitre
 \defbibheading{subbibliography}{%
   %\subsection*{Bibliographie du chapitre}%
-  \subsection*{Bibliographie}%
+  \section*{Bibliographie}%
+  \addcontentsline{toc}{section}{Bibliographie}
 }
 
 % Heading pour la biblio des annexes
 \defbibheading{annexbibliography}{%
   %\subsection*{Bibliographie de l’annexe}%
-  \subsection*{Bibliographie}%
+  \section*{Bibliographie}%
+  \addcontentsline{toc}{section}{Bibliographie}
 }
 
 
