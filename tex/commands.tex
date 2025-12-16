@@ -65,11 +65,14 @@
 \newacronym{MFT}{MFT}{Macroscopic Fluctuation Theory}
 
 
+% Profondeur de la numérotation et de la ToC
 
 
+%\usepackage{minitoc}
+\setcounter{minitocdepth}{6} % profondeur affichée pour les mini-sommaires
+\renewcommand{\mtctitle}{Sommaire} % titre des minitocs
+\dominitoc % active les mini-sommaires
 
-\setcounter{secnumdepth}{5}  % numérotation jusqu’aux subsubsections
-\setcounter{tocdepth}{5}     % affichage de la ToC jusqu’aux subsections
 
 \defbibheading{subsubbibliography}[\refname]{%
   \subsubsection*{#1}%

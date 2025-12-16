@@ -20,13 +20,13 @@
     },
     "Introduction": {
         "page": 5,
-        "pages": "5-7",
-        "nb_pages": 3
+        "pages": "5-8",
+        "nb_pages": 4
     },
     "Sommaire": {
-        "page": 8,
-        "pages": "8-10",
-        "nb_pages": 3
+        "page": 9,
+        "pages": "9-10",
+        "nb_pages": 2
     },
     "1. Modèle de Lieb-Liniger et approche Bethe Ansatz": {
         "page": 11,

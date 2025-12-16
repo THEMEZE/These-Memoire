@@ -30,16 +30,20 @@
 %  title={Bibliographie de l'Introduction}
 %]
 
+\newpage
+\setcounter{secnumdepth}{4}  % numérotation jusqu'aux subsubsections
+\setcounter{tocdepth}{4}     % affichage du sommaire principal jusqu'aux subsubsections
+\pdfbookmark[0]{Table des matièresssssss}{tablematieres} % pour ajouter la table des matières dans l'``index'' du fichier compilé
 \tableofcontents
 \mainmatter
 
 % Redéfinition de la numérotation des chapitres en chiffres romains
-\renewcommand{\thechapter}{\Roman{chapter}~}
+\renewcommand{\thechapter}{\Roman{chapter}}
 \renewcommand{\thesection}{\Alph{section}}
 \renewcommand{\thesubsection}{\thesection-\arabic{subsection}}
 \renewcommand{\thesubsubsection}{\thesubsection-\alph{subsubsection}}
 \renewcommand{\theparagraph}{\thesubsubsection-\roman{paragraph}}
-\renewcommand{\thesubparagraph}{\theparagraph-\roman{subparagraph}}
+%\renewcommand{\thesubparagraph}{\theparagraph-\roman{subparagraph}}
 
 
 \begin{refsection}

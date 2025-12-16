@@ -101,70 +101,39 @@
 % \end{eqnarray}
 % et oublient toute l'information microscopique initiale (positions et vitesses individuelles des sphères).
 
-\chapter*{Pourquoi étudier l’unidimensionnel ?  
-Un exemple simple : les sphères dures}
+\chapter*{Pourquoi étudier l’unidimensionnel ?  Un exemple simple : les sphères dures}
 
 En lisant le titre de ce mémoire,
-\emph{\textbf{Étude de la dynamique hors équilibre des gaz de bosons unidimensionnels}},
-un lecteur non initié pourrait légitimement se demander pourquoi s’intéresser à des systèmes
-unidimensionnels, qui semblent a priori très éloignés de notre réalité tridimensionnelle.
-L’objectif de ce chapitre est d’illustrer, à l’aide d’un exemple simple et standard,
-l’intérêt fondamental de l’étude des systèmes de basse dimension.
-Nous considérons pour cela le modèle classique des \emph{sphères dures}
-\footnote{Voir par exemple le cours en ligne très pédagogique de Jérôme Dubail au Collège de France :
-\url{https://www.youtube.com/watch?v=t53C5hoXiw4}~\cite{Dubail2025SolitonsOndes}.}.
+\emph{\textbf{Étude de la dynamique hors équilibre des gaz de bosons unidimensionnels}}, un lecteur non initié pourrait légitimement se demander pourquoi s’intéresser à des systèmes unidimensionnels, qui semblent a priori très éloignés de notre réalité tridimensionnelle.L’objectif de ce chapitre est d’illustrer, à l’aide d’un exemple simple et standard,l’intérêt fondamental de l’étude des systèmes de basse dimension.
+Nous considérons pour cela le modèle classique des \emph{sphères dures} \footnote{Voir par exemple le cours en ligne très pédagogique de Jérôme Dubail au Collège de France : \url{https://www.youtube.com/watch?v=t53C5hoXiw4}~\cite{Dubail2025SolitonsOndes}.}.
 
 \section*{Les sphères dures en deux dimensions}
 
-Considérons un ensemble de particules sphériques identiques se déplaçant librement
-dans un espace bidimensionnel muni de conditions aux limites périodiques
-\footnote{Les conditions aux limites périodiques signifient que lorsqu’une particule quitte un côté du domaine,
-elle réapparaît instantanément du côté opposé avec la même vitesse. Elles permettent de simuler
-un système homogène et de taille infinie, en éliminant les effets de bord.}.
-Les particules interagissent uniquement par des collisions élastiques
-lorsqu’elles entrent en contact, sans interaction à distance.
-
-Les sphères sont initialement disposées de manière aléatoire dans l’espace,
-et toutes sont au repos. À l’instant initial, on applique une impulsion à une seule sphère,
-par exemple en la frappant brièvement (la sphère rouge dans la figure~\ref{fig:hard_spheres_2D_animation}a).
-Cette impulsion localisée constitue une excitation fortement hors équilibre du système.
+Considérons un ensemble de particules sphériques identiques se déplaçant librement dans un espace bidimensionnel muni de conditions aux limites périodiques \footnote{Les conditions aux limites périodiques signifient que lorsqu’une particule quitte un côté du domaine, elle réapparaît instantanément du côté opposé avec la même vitesse. Elles permettent de simuler un système homogène et de taille infinie, en éliminant les effets de bord.}. Les particules interagissent uniquement par des collisions élastiques lorsqu’elles entrent en contact, sans interaction à distance.
 
 \smallskip
 
-Dans cet état initial, toute l’énergie cinétique est concentrée dans un seul degré de liberté.
-La distribution des vitesses est donc très éloignée de la distribution d’équilibre attendue,
-à savoir la distribution de \emph{Maxwell--Boltzmann}.
-Au cours du temps, la sphère excitée entre en collision avec ses voisines,
-leur transmettant progressivement de l’énergie et de l’impulsion.
-Par une succession de collisions élastiques, l’excitation initiale se propage
-dans l’ensemble des degrés de liberté du système.
+Les sphères sont initialement disposées de manière aléatoire dans l’espace, et toutes sont au repos. À l’instant initial, on applique une impulsion à une seule sphère, par exemple en la frappant brièvement (la sphère rouge dans la figure~\ref{fig:hard_spheres_2D_animation}a). Cette impulsion localisée constitue une excitation fortement hors équilibre du système.
 
 \smallskip
 
-Après un temps suffisamment long, l’énergie initialement localisée est redistribuée
-de manière quasi uniforme entre toutes les particules.
-La distribution des vitesses converge alors vers la distribution de Maxwell--Boltzmann,
-qui est une loi gaussienne entièrement caractérisée par ses premiers moments
-(voir figure~\ref{fig:hard_spheres_2D_animation}c).
-Cet état correspond à l’équilibre thermodynamique du système.
-Le processus par lequel un système isolé évolue spontanément vers un tel état
-est appelé \emph{thermalisation}.
+Dans cet état initial, toute l’énergie cinétique est concentrée dans un seul degré de liberté. La distribution des vitesses est donc très éloignée de la distribution d’équilibre attendue, à savoir la distribution de \emph{Maxwell--Boltzmann}. Au cours du temps, la sphère excitée entre en collision avec ses voisines, leur transmettant progressivement de l’énergie et de l’impulsion. Par une succession de collisions élastiques, l’excitation initiale se propage dans l’ensemble des degrés de liberté du système.
 
 \smallskip
 
-Un point fondamental est que, après relaxation, le système \emph{oublie}
-la quasi-totalité de l’information microscopique sur ses conditions initiales
-(positions et vitesses individuelles des particules).
-Son état macroscopique est alors décrit par un nombre restreint de champs
-hydrodynamiques conservés :
+Après un temps suffisamment long, l’énergie initialement localisée est redistribuée de manière quasi uniforme entre toutes les particules. La distribution des vitesses converge alors vers la distribution de Maxwell--Boltzmann, qui est une loi gaussienne entièrement caractérisée par ses premiers moments (voir figure~\ref{fig:hard_spheres_2D_animation}c).
+Cet état correspond à l’équilibre thermodynamique du système. Le processus par lequel un système isolé évolue spontanément vers un tel état est appelé \emph{thermalisation}.
+
+\smallskip
+
+Un point fondamental est que, après relaxation, le système \emph{oublie} la quasi-totalité de l’information microscopique sur ses conditions initiales (positions et vitesses individuelles des particules).
+Son état macroscopique est alors décrit par un nombre restreint de champs hydrodynamiques conservés :
 \begin{eqnarray}
     n(\mathbf{x},t) & : & \text{densité de particules}, \nonumber \\
     p(\mathbf{x},t) & : & \text{densité d’impulsion}, \nonumber \\
     \varepsilon(\mathbf{x},t) & : & \text{densité d’énergie}. \nonumber
 \end{eqnarray}
-Ces quantités macroscopiques suffisent à décrire le comportement du système
-à grande échelle spatiale et temporelle, indépendamment des détails microscopiques.
-Cette perte d’information et cette description universelle sont au cœur
+Ces quantités macroscopiques suffisent à décrire le comportement du système à grande échelle spatiale et temporelle, indépendamment des détails microscopiques. Cette perte d’information et cette description universelle sont au cœur
 de la physique statistique et de la thermodynamique.
 
 
