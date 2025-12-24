@@ -101,15 +101,17 @@
 % \end{eqnarray}
 % et oublient toute l'information microscopique initiale (positions et vitesses individuelles des sphères).
 
-\chapter*{Pourquoi étudier l’unidimensionnel ?  Un exemple simple : les sphères dures}
+\chapter{Pourquoi étudier un système unidimensionnel ?  Un exemple simple : les sphères dures}
+\minitoc[n] % <-- [n] force l'affichage même pour un chapitre non numéroté
 
 En lisant le titre de ce mémoire,
 \emph{\textbf{Étude de la dynamique hors équilibre des gaz de bosons unidimensionnels}}, un lecteur non initié pourrait légitimement se demander pourquoi s’intéresser à des systèmes unidimensionnels, qui semblent a priori très éloignés de notre réalité tridimensionnelle.L’objectif de ce chapitre est d’illustrer, à l’aide d’un exemple simple et standard,l’intérêt fondamental de l’étude des systèmes de basse dimension.
 Nous considérons pour cela le modèle classique des \emph{sphères dures} \footnote{Voir par exemple le cours en ligne très pédagogique de Jérôme Dubail au Collège de France : \url{https://www.youtube.com/watch?v=t53C5hoXiw4}~\cite{Dubail2025SolitonsOndes}.}.
 
 \section*{Les sphères dures en deux dimensions}
+\addcontentsline{toc}{section}{Les sphères dures en deux dimensions}
 
-Considérons un ensemble de particules sphériques identiques se déplaçant librement dans un espace bidimensionnel muni de conditions aux limites périodiques \footnote{Les conditions aux limites périodiques signifient que lorsqu’une particule quitte un côté du domaine, elle réapparaît instantanément du côté opposé avec la même vitesse. Elles permettent de simuler un système homogène et de taille infinie, en éliminant les effets de bord.}. Les particules interagissent uniquement par des collisions élastiques lorsqu’elles entrent en contact, sans interaction à distance.
+Premièrement, considérons un ensemble de particules sphériques identiques se déplaçant librement dans un espace bidimensionnel muni de conditions aux limites périodiques \footnote{Les conditions aux limites périodiques signifient que lorsqu’une particule quitte un côté du domaine, elle réapparaît instantanément du côté opposé avec la même vitesse. Elles permettent de simuler un système homogène et de taille infinie, en éliminant les effets de bord.}. Les particules interagissent uniquement par des collisions élastiques lorsqu’elles entrent en contact, sans interaction à distance.
 
 \smallskip
 
@@ -135,6 +137,10 @@ Son état macroscopique est alors décrit par un nombre restreint de champs hydr
 \end{eqnarray}
 Ces quantités macroscopiques suffisent à décrire le comportement du système à grande échelle spatiale et temporelle, indépendamment des détails microscopiques. Cette perte d’information et cette description universelle sont au cœur
 de la physique statistique et de la thermodynamique.
+
+\smallskip
+
+On dit que ce système bidimensionnel est \emph{ergodique}/\emph{chaotique} : il explore de manière exhaustive son espace des phases au cours du temps, permettant ainsi la thermalisation et l’émergence d’un comportement macroscopique universel.
 
 
 
@@ -249,6 +255,7 @@ de la physique statistique et de la thermodynamique.
 \end{figure}
 
 \section*{Les sphères dures en une dimension}
+\addcontentsline{toc}{section}{Les sphères dures en une dimension}
 
 Maintenant, considérons le même ensemble de sphères dures, mais cette fois confinées à se déplacer le long d'une ligne unidimensionnelle avec des conditions aux limites périodiques
 . Comme précédemment, nous donnons une impulsion initiale à une des sphères (figure~\ref{fig:hard_spheres_1D_animation} a). Cependant, en raison de la contrainte unidimensionnelle, les collisions entre les sphères sont beaucoup plus restrictives. On remarque qu'à tout moment, une seule sphère est en mouvement. On connais ce phènomène depuis notre enfance; c'est le même phénomène qu'avanec le \emph{pendule de Newton} (cf figure~\ref{fig:hard_spheres_1D_animation} b)). 
@@ -262,6 +269,30 @@ Lorsqu'une sphère entre en collision avec une autre identique, elles échangent
 Contrairement au cas bidimensionnel, le système unidimensionnel ne parvient jamais à se thermaliser. Les grandeurs macroscopiques telles que la densité de particules, la densité d'impulsion et la densité d'énergie restent constantes et dépendent fortement des conditions initiales microscopiques (positions et vitesses individuelles des sphères). Le système conserve une mémoire complète de son état initial, ce qui empêche l'atteinte d'un état d'équilibre thermodynamique.
 Plus simplement, contraiment au cas bidimentionelle, trois nombre sont insuffisants pour décrire l'état du système unidimensionnel. Il faut en fait connaître la position et la vitesse de chaque sphère individuellement pour décrire complètement l'état du système à tout instant. Tous une fonction : la distribution des vitesses initiale, décrit complètement l'état du système à tout instant.
 Plus formellement, on dit que le système unidimensionnel possède un grand nombre de \textit{constantes du mouvement} (en fait autant que de degrés de liberté), ce qui empêche la thermalisation.
+
+\smallskip
+
+Ici, la contrainte dimensionnelle joue un rôle crucial en limitant les interactions possibles entre les particules. En une dimension, les particules ne peuvent pas contourner les autres, ce qui restreint considérablement la dynamique du système. Cette limitation conduit à une conservation stricte de la distribution des vitesses, empêchant ainsi le processus de thermalisation observé dans les dimensions supérieures.
+
+\smallskip
+
+Il est important de noter que ce comportement non-thermalisant n'est pas spécifique aux sphères dures, mais est une caractéristique générale des systèmes unidimensionnels avec des interactions courtes portées. De nombreux autres modèles unidimensionnels, qu'ils soient classiques ou quantiques, présentent également cette absence de thermalisation en raison de la contrainte dimensionnelle et des nombreuses constantes du mouvement associées.
+
+\smallskip
+
+Il en résulte que les systèmes unidimensionnels offrent un terrain d'étude fascinant pour explorer des phénomènes hors équilibre et des dynamiques non-thermalisantes, mettant en lumière l'importance de la dimensionnalité dans la physique statistique et la dynamique des systèmes complexes.
+
+\smallskip
+
+Ici pour une systeme de sphères dures en une dimension, le nombre de constantes du mouvement est égal au nombre de degrés de liberté (nombre de sphères). On dit que ce système est \emph{non-ergodique}/\emph{intégrable} : il ne thermalise pas et ne perd pas la mémoire de ses conditions initiales.
+
+\smallskip
+
+Dans la limite où le nombre de sphères devient très grand, on peut décrire la dynamique du système à l'aide d'une équation cinétique intégrable appelée \emph{équation de Boltzmann--Enskog} intégrable. Cette équation permet de suivre l'évolution de la distribution des vitesses des sphères au cours du temps, en tenant compte des collisions élastiques entre elles. Cependant, en raison de l'intégrabilité du système, la distribution des vitesses reste inchangée, reflétant l'absence de thermalisation.
+
+\smallskip
+
+Dans le chapitre \ref{chap:LL-BA}, nous verrons que le modèle quantique des bosons en interaction de contact en une dimension (modèle de Lieb--Liniger) partage cette propriété d'intégrabilité, conduisant à une absence de thermalisation similaire à celle observée dans le modèle classique des sphères dures unidimensionnelles.
 
 
 \begin{figure}[H]
@@ -333,3 +364,8 @@ Plus formellement, on dit que le système unidimensionnel possède un grand nomb
     
 	\label{fig:hard_spheres_1D_animation}
 \end{figure}
+
+\section*{Dinamique hors équilibre et intégrabilité en basse dimension}
+\addcontentsline{toc}{section}{Dinamique hors équilibre et intégrabilité en basse dimension}
+
+

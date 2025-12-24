@@ -226,7 +226,77 @@ decorations.pathreplacing}
 
 %\usepackage{chapterbib}
 \usepackage[most]{tcolorbox}
+\tcbuselibrary{skins}
 
+\NewTotalTColorBox[auto counter]{\Definition}{ +m }{ 
+    notitle,
+    colback=green!5!white,
+    frame hidden,
+    boxrule=0pt,
+    enhanced,
+    sharp corners,
+    borderline west={4pt}{0pt}{green!50!black},
+}{
+    \textcolor{green!50!black}{
+        \sffamily
+        \textbf{Definition~\thetcbcounter.}%
+    }%
+    #1
+}
+
+\NewTotalTColorBox[auto counter]{\Lemma}{ +m +m }{ 
+    notitle,
+    colback=orange!5!white,
+    colbacklower=white,
+    frame hidden,
+    boxrule=0pt,
+    bicolor,
+    sharp corners,
+    borderline west={4pt}{0pt}{orange!50!black},
+    fontupper=\sffamily
+}{
+    \textcolor{orange!50!black}{
+        \sffamily
+        \textbf{Lemma~\thetcbcounter.}%
+    }%
+    #1
+    \tcblower%
+    \textcolor{orange!50!black}{
+        \sffamily
+        \textbf{Proof.}%
+    }%
+    #2
+}
+
+\NewTotalTColorBox[auto counter]{\Example}{ +m +m }{ 
+    notitle,
+    colback=blue!5!white,
+    colbacklower=white,
+    frame hidden,
+    boxrule=0pt,
+    bicolor,
+    sharp corners,
+    borderline west={4pt}{0pt}{blue!50!black},
+    fontupper=\sffamily,
+    underlay={\begin{tcbclipinterior}
+    \shade[inner color=red!50!yellow,outer color=yellow!10!white]
+    (interior.north west) circle (2cm);
+    \draw[help lines,step=5mm,yellow!80!black,shift={(interior.north west)}]
+    (interior.south west) grid (interior.north east);
+    \end{tcbclipinterior}},
+}{
+    \textcolor{blue!50!black}{
+        \sffamily
+        \textbf{Exemple~\thetcbcounter.}%
+    }%
+    #1
+    \tcblower%
+    \textcolor{blue!50!black}{
+        \sffamily
+        \textbf{...}%
+    }%
+    #2
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\usepackage[utf8]{inputenc}
 %\usepackage[T1]{fontenc}

@@ -2,11 +2,63 @@
 
 \begin{document}
 
-\includepdf[pages=1]{./figures/official_template_phd_universite-paris_saclay_2/Modele_These_UParisSaclay_2022.pdf}
 
-\printglossary[type=\acronymtype,title=Liste des acronymes]
+
+% 4e de couverture (page impaire)
+\includepdf[pages=1-2]{./figures/official_template_phd_universite-paris_saclay_2/Modele_These_UParisSaclay_2022.pdf}
+
 
 \frontmatter
+
+%\maketitle
+
+% Title page
+\cleardoublepage
+\thispagestyle{empty}
+\vspace*{\fill}
+
+\begin{titlepage}
+\centering
+
+{\Large Université Paris-Saclay\par}
+\vspace{1cm}
+
+{\large École doctorale Ondes et Matières\par}
+{\large Laboratoire Charles Fabry\par}
+\vspace{2cm}
+
+{\huge\bfseries
+Étude de la dynamique hors équilibre\\
+des gaz de bosons unidimensionnels\par}
+\vspace{2cm}
+
+{\Large Thèse de doctorat\par}
+\vspace{0.5cm}
+
+{\large
+présentée par\par
+Guillaume THÉMÈZE\par}
+\vspace{1.5cm}
+
+{\large
+Directeur de thèse : Isabelle Bouchoule\par}
+\vspace{2cm}
+
+{\large
+Soutenue le 04 Novembre 2025 \par}
+
+\date{\today}
+
+\vfill
+\end{titlepage}
+
+\cleardoublepage
+
+% Affichage de la liste des acronymes
+\printglossary[type=\acronymtype,title=Liste des acronymes]
+
+
+
 
 \begin{refsection}
     %\input{chapters/000_1D?}
@@ -31,11 +83,25 @@
 %]
 
 \newpage
+\cleardoublepage
+
 \setcounter{secnumdepth}{4}  % numérotation jusqu'aux subsubsections
 \setcounter{tocdepth}{4}     % affichage du sommaire principal jusqu'aux subsubsections
-\addtocontents{toc}{\protect\setcounter{tocdepth}{6}} % pour afficher jusqu'aux subsubsections dans le sommaire
-\pdfbookmark[0]{Table des matièresssssss}{tablematieres} % pour ajouter la table des matières dans l'``index'' du fichier compilé
+\addtocontents{toc}{\protect\setcounter{tocdepth}{7}} % pour afficher jusqu'aux subsubsections dans le sommaire
+\pdfbookmark[1]{Table des matières}{tablematieres} % pour ajouter la table des matières dans l'``index'' du fichier compilé
+\begingroup
+%\renewcommand{\contentsname}{Sommaire}
 \tableofcontents
+\endgroup
+
+% \cleardoublepage
+% \setcounter{secnumdepth}{4}  % numérotation jusqu'aux subsubsections
+% \addtocontents{toc}{\protect\setcounter{tocdepth}{7}} % pour afficher jusqu'aux subsubsections dans le sommaire
+% \phantomsection
+% \pdfbookmark[1]{Table des matièresss}{toc}
+% \tableofcontents
+
+
 \mainmatter
 
 % Redéfinition de la numérotation des chapitres en chiffres romains
@@ -180,10 +246,10 @@
 
 
 % Fin de ton manuscrit
-\cleardoublepage
+%\cleardoublepage
 
 % 4e de couverture (page paire)
-\includepdf[pages=2,pagecommand={}]{./figures/official_template_phd_universite-paris_saclay_2/Modele_These_UParisSaclay_2022.pdf}
+%\includepdf[pages=2,pagecommand={}]{./figures/official_template_phd_universite-paris_saclay_2/Modele_These_UParisSaclay_2022.pdf}
 
 
 

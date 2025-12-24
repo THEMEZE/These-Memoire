@@ -226,17 +226,7 @@ def compile_biblatex(tex_file, show_output=False):
         if show_output:
             print(e)
 
-def compile_latex_index_bibtex(path):
-    compile_latex(path + ".tex")      # 1ère passe LaTeX
-    #compile_index(path + ".idx")      # makeindex
-    #compile_indices(path + ".acn")
-    compile_acr(path)
-    #compile_bibtex(path)              # bibtex
-    compile_biblatex(path)#, show_output=True)            # biblatex
-    compile_biblatex(path)            # biblatex
-    compile_latex(path + ".tex")      # 2e passe LaTeX
-    compile_latex(path + ".tex")      # 3e passe LaTeX (pour les refs/bib à jour)
-    compile_latex(path + ".tex")      # 3e passe LaTeX (pour les refs/bib à jour)
+
 
 def clean_auxiliary_files(tex_path):
     tex_path = Path(tex_path)
@@ -264,6 +254,20 @@ def clean_auxiliary_files(tex_path):
         print(f"🧹 Fichiers auxiliaires supprimés : {', '.join(deleted_files)}")
     else:
         print(f"🧼 Aucun fichier auxiliaire à supprimer pour {tex_path.name}")
+
+def compile_latex_index_bibtex(path):
+    compile_latex(path + ".tex")      # 1ère passe LaTeX
+    #compile_index(path + ".idx")      # makeindex
+    #compile_indices(path + ".acn")
+    compile_acr(path)
+    #compile_bibtex(path)              # bibtex
+    compile_biblatex(path)#, show_output=True)            # biblatex
+    compile_biblatex(path)            # biblatex
+    #clean_auxiliary_files(path) # nettoyage des fichiers auxiliaires générés par biblatex
+    compile_latex(path + ".tex")      # 1e passe LaTeX
+    compile_latex(path + ".tex")      # 2e passe LaTeX (pour les refs/bib à jour)
+    compile_latex(path + ".tex")      # 3e passe LaTeX (pour les refs/bib à jour)
+    compile_latex(path + ".tex")      # 4e passe LaTeX (pour les refs/bib à jour)
 
 # === CONFIGURATION ===
 
