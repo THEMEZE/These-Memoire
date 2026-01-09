@@ -2,46 +2,135 @@
 
 \begin{document}
 
-\includepdf[pages=1]{./figures/official_template_phd_universite-paris_saclay_2/Modele_These_UParisSaclay_2022.pdf}
 
-\printglossary[type=\acronymtype,title=Liste des acronymes]
+
+% 4e de couverture (page impaire)
+%\includepdf[pages=1-2]{./figures/official_template_phd_universite-paris_saclay_2/Modele_These_UParisSaclay_2022.pdf}
+
 
 \frontmatter
 
+%\maketitle
+
+% Title page
+% \cleardoublepage
+% \thispagestyle{empty}
+% \vspace*{\fill}
+
+% \begin{titlepage}
+% \centering
+
+% {\Large Université Paris-Saclay\par}
+% \vspace{1cm}
+
+% {\large École doctorale Ondes et Matières\par}
+% {\large Laboratoire Charles Fabry\par}
+% \vspace{2cm}
+
+% {\huge\bfseries
+% Étude de la dynamique hors équilibre\\
+% des gaz de bosons unidimensionnels\par}
+% \vspace{2cm}
+
+% {\Large Thèse de doctorat\par}
+% \vspace{0.5cm}
+
+% {\large
+% présentée par\par
+% Guillaume THÉMÈZE\par}
+% \vspace{1.5cm}
+
+% {\large
+% Directeur de thèse : Isabelle Bouchoule\par}
+% \vspace{2cm}
+
+% {\large
+% Soutenue le 04 Novembre 2025 \par}
+
+% \date{\today}
+
+% \vfill
+% \end{titlepage}
+
+% \cleardoublepage
+
+% Affichage de la liste des acronymes
+%\printglossary[type=\acronymtype,title=Liste des acronymes]
+
+
+
+
 \begin{refsection}
-    \input{chapters/000_1D?}
-    %\input{chapters/brouillons}
+    %\input{chapters/000_1D?}
+%\end{refsection}
+
+%\begin{refsection}
+%\input{chapters/001_intro}
+%\printbibliography[heading=bibliography,title={Bibliographie du l'Introduction}]
+%\printbibliography[heading=subbibliography,title={Bibliographie du l'Introduction}]
+%\printbibliography[heading=subsubbibliography,title={Bibliographie du l'Introduction}]
+%\printbibliography[title={Bibliographie du l'Introduction}]
+%\printbibliography[heading=subbibliography, section=\therefsection]
+%\printbibliography[heading=subbibliographyintro,title={Bibliographie de l'introduction}]
+%\printbibliography[heading=subbibliographyintro,title={Bibliographie}]
 \end{refsection}
 
-% \begin{refsection}
-% \input{chapters/001_intro}
-% %\printbibliography[heading=bibliography,title={Bibliographie du l'Introduction}]
-% %\printbibliography[heading=subbibliography,title={Bibliographie du l'Introduction}]
-% %\printbibliography[heading=subsubbibliography,title={Bibliographie du l'Introduction}]
-% %\printbibliography[title={Bibliographie du l'Introduction}]
-% %\printbibliography[heading=subbibliography, section=\therefsection]
-% \printbibliography[heading=subbibliographyintro,title={Bibliographie de l'introduction}]
-% \end{refsection}
+%\section*{Bibliographie de l'Introduction}
+%\printbibliography[heading=none]
+%\printbibliography[
+%  heading=bibsectionnonum,
+%  title={Bibliographie de l'Introduction}
+%]
 
-% %\section*{Bibliographie de l'Introduction}
-% %\printbibliography[heading=none]
-% %\printbibliography[
-% %  heading=bibsectionnonum,
-% %  title={Bibliographie de l'Introduction}
-% %]
+% \newpage
+% \cleardoublepage
 
+\setcounter{secnumdepth}{7}  % numérotation jusqu'aux subsubsections
+\setcounter{tocdepth}{7}     % affichage du sommaire principal jusqu'aux subsubsections
+\addtocontents{toc}{\protect\setcounter{tocdepth}{3}} % pour afficher jusqu'aux subsubsections dans le sommaire
+\pdfbookmark[1]{Table des matières}{tablematieres} % pour ajouter la table des matières dans l'``index'' du fichier compilé
+\begingroup
+%\renewcommand{\contentsname}{Sommaire}
+\tableofcontents
+\endgroup
+
+% \cleardoublepage
+% \setcounter{secnumdepth}{4}  % numérotation jusqu'aux subsubsections
+% \addtocontents{toc}{\protect\setcounter{tocdepth}{7}} % pour afficher jusqu'aux subsubsections dans le sommaire
+% \phantomsection
+% \pdfbookmark[1]{Table des matièresss}{toc}
 % \tableofcontents
-% \mainmatter
 
-% \begin{refsection}
-% \input{chapters/010_LL_BA}
-% %\printbibliography[heading=bibintoc,title={Bibliographie du chapitre}]
-% %\printbibliography[heading=subbibliography, title={Bibliographie du chapitre}]
-% %\printbibliography[heading=subsubbibliography, title={Bibliographie du chapitre}]
-% %\printbibliography[title={Bibliographie du chapitre}]
-% %\printbibliography[heading=subbibliography, section=\therefsection]
-% \printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
-% \end{refsection}
+% Profondeur de la numérotation et de la ToC
+%\usepackage{minitoc}
+\setcounter{minitocdepth}{2} % profondeur affichée pour les mini-sommaires
+\renewcommand{\mtctitle}{Sommaire} % titre des minitocs
+\dominitoc % active les mini-sommaires
+
+
+\mainmatter
+
+% Redéfinition de la numérotation des chapitres en chiffres romains
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\Alph{section}}
+\renewcommand{\thesubsection}{\thesection-\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection-\alph{subsubsection}}
+\renewcommand{\theparagraph}{\thesubsubsection-\roman{paragraph}}
+%\renewcommand{\thesubparagraph}{\theparagraph-\roman{subparagraph}}
+
+
+\begin{refsection}
+%\input{chapters/010_LL_BA}
+\input{chapters/011}
+%\printbibliography[heading=bibintoc,title={Bibliographie du chapitre}]
+%\printbibliography[heading=subbibliography, title={Bibliographie du chapitre}]
+%\printbibliography[heading=subsubbibliography, title={Bibliographie du chapitre}]
+%\printbibliography[title={Bibliographie du chapitre}]
+%\printbibliography[heading=subbibliography, section=\therefsection]
+%\printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+\printbibliography[heading=subbibliography,title={Bibliographie}]
+
+\end{refsection}
 
 % \begin{refsection}
 % \input{chapters/020_GGE_TBA}
@@ -49,7 +138,8 @@
 % %\printbibliography[heading=subbibliography, title={Bibliographie du chapitre}]
 % %\printbibliography[heading=subsubbibliography,title={Bibliographie du chapitre}]
 % %\printbibliography[heading=subbibliography, section=\therefsection]
-% \printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+% %\printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+% \printbibliography[heading=subbibliography,title={Bibliographie}]
 % \end{refsection}
 
 
@@ -59,7 +149,8 @@
 % %\printbibliography[heading=subbibliography, title={Bibliographie du chapitre}]
 % %\printbibliography[heading=subsubbibliography,title={Bibliographie du chapitre}]
 % %\printbibliography[heading=subbibliography, section=\therefsection]
-% \printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+% %\printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+% \printbibliography[heading=subbibliography,title={Bibliographie}]
 % \end{refsection}
 
 % %\input{chapters/030_GHD_1}
@@ -72,7 +163,8 @@
 % %\printbibliography[heading=subbibliography, title={Bibliographie du chapitre}]
 % %\printbibliography[heading=subsubbibliography,title={Bibliographie du chapitre}]
 % %\printbibliography[heading=subbibliography, section=\therefsection]
-% \printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+% %\printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+% \printbibliography[heading=subbibliography,title={Bibliographie}]
 % \end{refsection}
 
 % \begin{refsection}
@@ -81,7 +173,8 @@
 % %\printbibliography[heading=subbibliography, title={Bibliographie du chapitre}]
 % %\printbibliography[heading=subsubbibliography,title={Bibliographie du chapitre}]
 % %\printbibliography[heading=subbibliography, section=\therefsection]
-% \printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+% %\printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+% \printbibliography[heading=subbibliography,title={Bibliographie}]
 % \end{refsection}
 
 % \begin{refsection}
@@ -90,7 +183,8 @@
 % %\printbibliography[heading=subbibliography, title={Bibliographie du chapitre}]
 % %\printbibliography[heading=subsubbibliography,title={Bibliographie du chapitre}]
 % %\printbibliography[heading=subbibliography, section=\therefsection]
-% \printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+% %\printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+% \printbibliography[heading=subbibliography,title={Bibliographie}]
 % \end{refsection}
 
 % \begin{refsection}
@@ -99,7 +193,8 @@
 % %\printbibliography[heading=subbibliography, title={Bibliographie du chapitre}]
 % %\printbibliography[heading=subsubbibliography,title={Bibliographie du chapitre}]
 % %\printbibliography[heading=subbibliography, section=\therefsection]
-% \printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+% %\printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
+% \printbibliography[heading=subbibliography,title={Bibliographie}]
 % \end{refsection}
 
 % \input{chapters/080_conclusion}
@@ -107,6 +202,13 @@
 
 
 % \appendix
+
+% % Redéfinition de la numérotation des chapitres en chiffres romains
+% \renewcommand{\thechapter}{\Alph{chapter}.}
+% \renewcommand{\thesection}{\alph{section}.}
+% \renewcommand{\thesubsection}{\thesection\roman{subsection}.}
+% \renewcommand{\thesubsubsection}{\thesubsection\arabic{subsubsection}.}
+
 % %\input{chapters/99_annexes}
 % \input{chapters/011_PH}
 % \input{chapters/031_Euler}
@@ -118,7 +220,8 @@
 % %\printbibliography[heading=subbibliography,title={Bibliographie de l'annex}]
 % %\printbibliography[heading=subsubbibliography,title={Bibliographie de l'annex}]
 % %\printbibliography[heading=annexbibliography,section=\therefsection]
-% \printbibliography[heading=annexbibliography,title={Bibliographie de l'annexe}]
+% %\printbibliography[heading=annexbibliography,title={Bibliographie de l'annexe}]
+% \printbibliography[heading=annexbibliography,title={Bibliographie}]
 % \end{refsection}
 
 
@@ -132,7 +235,8 @@
 % %\printbibliography[heading=subbibliography,title={Bibliographie de l'annex}]
 % %\printbibliography[heading=subsubbibliography,title={Bibliographie de l'annex}]
 % %\printbibliography[heading=annexbibliography,section=\therefsection]
-% \printbibliography[heading=annexbibliography,title={Bibliographie de l'annexe}]
+% %\printbibliography[heading=annexbibliography,title={Bibliographie de l'annexe}]
+% \printbibliography[heading=annexbibliography,title={Bibliographie}]
 % \end{refsection}
 
 
@@ -150,10 +254,10 @@
 
 
 % % Fin de ton manuscrit
-% \cleardoublepage
+% %\cleardoublepage
 
 % % 4e de couverture (page paire)
-% \includepdf[pages=2,pagecommand={}]{./figures/official_template_phd_universite-paris_saclay_2/Modele_These_UParisSaclay_2022.pdf}
+% %\includepdf[pages=2,pagecommand={}]{./figures/official_template_phd_universite-paris_saclay_2/Modele_These_UParisSaclay_2022.pdf}
 
 
 

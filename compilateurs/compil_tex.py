@@ -262,7 +262,7 @@ def compile_latex_index_bibtex(path):
     compile_acr(path)
     #compile_bibtex(path)              # bibtex
     compile_biblatex(path)#, show_output=True)            # biblatex
-    compile_biblatex(path)            # biblatex
+    #compile_biblatex(path)            # biblatex
     #clean_auxiliary_files(path) # nettoyage des fichiers auxiliaires générés par biblatex
     compile_latex(path + ".tex")      # 1e passe LaTeX
     compile_latex(path + ".tex")      # 2e passe LaTeX (pour les refs/bib à jour)
@@ -295,8 +295,8 @@ tex_files = [
 
 tex_idx_bib_files = [
     #"/Users/themezeguillaume/Desktop/interface_web_launcher/sites/Scroll_Web/quantum-mechanics-thesis-main/These_Memoire_19_07_2025/These_Memoire",
-    "./main",
-    #"./test",
+    #"./main",
+    "./test",
     # Ajoute ici les .tex (SANS .tex à la fin) à compiler avec index+bibtex
 ]
 

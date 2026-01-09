@@ -81,7 +81,7 @@ La première quantification est la mécanique quantique standard, celle que vous
 \end{eqnarray}
 où $\hbar$ est la constante de Planck réduite, satisfaisant la {\bf relation de commutation canonique} fondamentale $[\operator{x}, \operator{p}] = i\hbar$. L’état du système est alors décrit par une {\bf fonction d’onde} $\psi(x,t)$, solution de {\bf l’équation de  Schrödinger} indépendante du nombre de particules :
 \begin{eqnarray}
-\quad i \hbar \frac{\partial \psi }{\partial t}  &= \operator{\mathcal{H}} \, \psi,\label{chap.1.rapel.2}
+\quad i \hbar \frac{\partial \psi }{\partial t}  = \operator{\mathcal{H}} \, \psi,\label{chap.1.rapel.2}
 \end{eqnarray}
 avec $\operator{\mathcal{H}}$ l’opérateur hamiltonien. 
 
@@ -100,25 +100,26 @@ avec $\operator{\mathcal{H}}$ l’opérateur hamiltonien.
 % 	{~}\\
 \Example{
         particule libre en une boite à une dimension.
+		%\subparagraph{Exemple : particule libre en une boite à une dimension.} 
     }{   
-	Dans le cas d’une particule libre de masse $m$ se déplaçant en une dimension, l’Hamiltonien est constitué uniquement du terme cinétique $\operator{\mathcal{H}} = \operator{p}^2 / 2m$. En représentation position, où l’opérateur quantité de mouvement s’écrit comme dans l’équation \eqref{chap.1.rapel.1}, l’Hamiltonien prend alors la forme différentielle :
+\subparagraph{Dans le cas d’une particule libre} de masse $m$ se déplaçant en une dimension, l’Hamiltonien est constitué uniquement du terme cinétique $\operator{\mathcal{H}} = \operator{p}^2 / 2m$. En représentation position, où l’opérateur quantité de mouvement s’écrit comme dans l’équation \eqref{chap.1.rapel.1}, l’Hamiltonien prend alors la forme différentielle :
 	\begin{eqnarray}
-		\operator{\mathcal{H}} = -\frac{\hbar^2}{2m} \partial_x^2.\label{chap.1.rapel.libre.1}
+		\operator{\mathcal{H}} = -\frac{\hbar^2}{2m} \operator{\partial}_x^2.\label{chap.1.rapel.libre.1}
 	\end{eqnarray}
-	Les états propres stationnaires de \eqref{chap.1.rapel.2} dépendant du temps sont de la forme $\psi_k(x,t) = \varphi_k(x)\,e^{-i\varepsilon(k)t/\hbar}$ où $\varphi_k(x)$ est une fonction propre de l’hamiltonien,  soit de  l’équation stationnaire  $\operator{\mathcal{H}} \, \varphi_k = \varepsilon(k)\varphi_k$ \ie pour une particule libre :
+\subparagraph{Les états propres stationnaires} de \eqref{chap.1.rapel.2} dépendant du temps sont de la forme $\psi_k(x,t) = \varphi_k(x)\,e^{-i\varepsilon(k)t/\hbar}$ où $\varphi_k(x)$ est une fonction propre de l’hamiltonien,  soit de  l’équation stationnaire  $\operator{\mathcal{H}} \, \varphi_k = \varepsilon(k)\varphi_k$ \ie pour une particule libre :
 	\begin{eqnarray}
-		- \frac{\hbar^2}{2m} \partial_x^2 \varphi_k = \varepsilon(k) \varphi_k,\label{chap.1.rapel.libre.2}
+		- \frac{\hbar^2}{2m} \operator{\partial}_x^2 \varphi_k = \varepsilon(k) \varphi_k,\label{chap.1.rapel.libre.2}
 	\end{eqnarray}
 	avec $\varepsilon(k)$ l’énergie associée à une onde plane de nombre d’onde $k$
 	\begin{eqnarray}
 		\varepsilon(k) = \frac{\hbar^2 k^2 }{2 m}\label{chap.1.rapel.libre.3}.
 	\end{eqnarray}
-	Les fonctions propres spatiales $f_k(x)$ de l’hamiltonien libre s’écrivent comme des combinaisons linéaires d’ondes planes  
+Les fonctions propres spatiales $f_k(x)$ de l’hamiltonien libre s’écrivent comme des combinaisons linéaires d’ondes planes  
 	\begin{eqnarray}
 		f_k(x) = a e^{-i k x} + b e^{i k x},~~ \mbox{avec}\quad  (a,b) \in \mathbb{C}^2\label{chap.1.rapel.libre.4}.
 	\end{eqnarray}
 \subparagraph{Périodicité.}
-	Si la particule est confinée dans une boîte de longueur $L$ avec des conditions aux limites périodiques (ie $f_k(x+L) = f_k(x)$), alors le spectre de $k$ est quantifié : 
+	Si la particule est confinée dans une boîte de longueur $L$ avec des conditions aux limites périodiques (\ie $f_k(x+L) = f_k(x)$), alors le spectre de $k$ est quantifié : 
 	\begin{eqnarray}
 		e^{ikL}= 1 \quad\mbox{ou encore} kL \in 2\pi\mathbb{Z}\label{chap.1.rapel.libre.5}.
 	\end{eqnarray}
@@ -136,6 +137,31 @@ avec $\operator{\mathcal{H}}$ l’opérateur hamiltonien.
 %	,~~ , ~~\varphi_k(x) = a e^{-i k x} + b e^{i k x},~~ kL \in 2\pi\mathbb{Z}.\label{chap.1.recap}
 %\end{eqnarray}
 %\end{mdframed}
+
+% \begin{tcolorbox}[enhanced,title=My Title,
+% overlay={\begin{tcbclipinterior}
+% \draw[red,line width=1cm] (interior.north west)--(interior.south east);
+% \draw[red,line width=1cm] (interior.south west)--(interior.north east);
+% \end{tcbclipinterior}}]
+% \lipsum[1]
+% \end{tcolorbox}
+
+% \tcbset{enhanced jigsaw,fonttitle=\bfseries,opacityback=0.35,colback=blue!5!white,
+% frame style={left color=red!75!black,right color=red!10!yellow}}
+% \begin{tikzpicture}% draw two balls
+% \path[use as bounding box] (0,0.8) rectangle +(0.1,0.1);
+% \shadedraw [shading=ball] (0,0) circle (1cm);
+% \shadedraw [ball color=red] (3,-2.2) circle (1cm);
+% \end{tikzpicture}
+% \begin{tcolorbox}[title=A translucent box,
+% overlay={\begin{tcbinvclipframe}
+% \draw[red,line width=1cm] ([xshift=-2mm,yshift=2mm]frame.north west)
+% --([xshift=2mm,yshift=-2mm]frame.south east);
+% \draw[red,line width=1cm] ([xshift=-2mm,yshift=-2mm]frame.south west)
+% --([xshift=2mm,yshift=2mm]frame.north east);
+% \end{tcbinvclipframe}}]
+% \lipsum[2]
+% \end{tcolorbox}
 
 \medskip
 

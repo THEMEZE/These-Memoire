@@ -66,6 +66,8 @@
     \newtheorem{Rap}[Theo]{Rappel}
     \newtheorem*{Merci}{Remerciements}
 
+\renewcommand{\proofname}{\bf Démonstration}
+
 \mdfdefinestyle{propstyle}{%
 linecolor=black,linewidth=2pt,%
 hidealllines=true,
@@ -244,7 +246,7 @@ innertopmargin=\topskip,
 \DTMsetstyle{french} % ou autre style
 %\DTMsetup{showtimezone=false}
 
-\fancyfoot[L]{Thèse}
+\fancyfoot[L]{Manuscrit de Thèse de Doctorat -- G.THÉMÈZE}
 %\fancyfoot[R]{Paris, \mydatetime\today{} -- Période 2022--2025}
 %\fancyfoot[R]{Paris, \DTMnow -- Période 2022--2025}
 %\fancyfoot[R]{Paris,  Période 2022--2025}
@@ -271,6 +273,7 @@ innertopmargin=\topskip,
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\operatorvec}[1]{\vec{{\bm{#1}}}} % pour les operateur
+%\newcommand{\operator}[1]{\widehat{\bm{#1}}} % pour les operaeur vecteur
 \newcommand{\operator}[1]{\hat{\bm{#1}}} % pour les operaeur vecteur
 \newcommand{\operatormat}[1]{\operatorname{#1}} % pour les operaeur vecteur
 \newcommand{\operatortilde}[1]{\tilde{\bm{#1}}} % pour les opetateur avec un tilde
@@ -323,5 +326,35 @@ innertopmargin=\topskip,
 \newcommand{\eg}{\emph{e.g.}\xspace}
 \newcommand{\ie}{\emph{i.e.}\xspace}
 \newcommand{\etal}{\emph{et al.}\xspace}
+
+% \usepackage{mathtools}
+% \usepackage{etoolbox}
+% % Math symbol font matha
+% \DeclareFontFamily{U}{matha}{\hyphenchar\font45}
+% \DeclareFontShape{U}{matha}{m}{n}{
+%       <5> <6> <7> <8> <9> <10> gen * matha
+%       <10.95> matha10 <12> <14.4> <17.28> <20.74> <24.88> matha12
+%       }{}
+% \DeclareSymbolFont{matha}{U}{matha}{m}{n}
+% \DeclareFontSubstitution{U}{matha}{m}{n}
+
+% % Math symbol font mathb
+% \DeclareFontFamily{U}{mathx}{\hyphenchar\font45}
+% \DeclareFontShape{U}{mathx}{m}{n}{
+%       <5> <6> <7> <8> <9> <10>
+%       <10.95> <12> <14.4> <17.28> <20.74> <24.88>
+%       mathx10
+%       }{}
+% \DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
+% \DeclareFontSubstitution{U}{mathx}{m}{n}
+
+% % Symbol definition
+% \DeclareMathDelimiter{\vvvert}{0}{matha}{"7E}{mathx}{"17}
+% \DeclarePairedDelimiterX{\normi}[1]
+%   {\vvvert}
+%   {\vvvert}
+%   {\ifblank{#1}{\:\cdot\:}{#1}}
+
+%\usepackage{stix2}
 
 

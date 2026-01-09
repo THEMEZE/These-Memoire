@@ -65,6 +65,8 @@ decorations.pathreplacing}
 \usetikzlibrary{calc,patterns,shapes.geometric}
 \usepackage{anyfontsize}
 
+\usepackage{amscd}
+
 
 % -------------------------------------
 % Pour les chapitres
@@ -223,6 +225,7 @@ decorations.pathreplacing}
 \usepackage[acronym]{glossaries}  % ou glossaries-extra
 \makeglossaries                   % IMPORTANT : génère les fichiers nécessaires
 
+\usepackage{lipsum}
 
 %\usepackage{chapterbib}
 \usepackage[most]{tcolorbox}
@@ -270,6 +273,39 @@ decorations.pathreplacing}
 
 \NewTotalTColorBox[auto counter]{\Example}{ +m +m }{ 
     notitle,
+    %title={A listing box with shadow and some specials},
+    colback=white,
+    colbacklower=white,
+    frame hidden,
+    boxrule=0pt,
+    bicolor,
+    sharp corners,
+    borderline west={4pt}{0pt}{blue!50!black},
+    fontupper=\sffamily,
+    % underlay={\begin{tcbclipinterior}
+    % \shade[inner color=red!50!yellow,outer color=yellow!10!white](interior.north west) circle (2cm);
+    % \draw[help lines,step=5mm,yellow!80!black,shift={(interior.north west)}]
+    % (interior.south west) grid (interior.north east);
+    % \end{tcbclipinterior}},
+    % finish ={ \begin{tcbclipinterior}
+    % \shade[inner color=red!50!yellow,outer color=yellow!10!white](interior.north west) circle (2cm);
+    % \draw[help lines,step=5mm,yellow!80!black,shift={(interior.north west)}]
+    % (interior.south west) grid (interior.north east);
+    % \end{tcbclipinterior}},  
+%     overlay={\begin{tcbclipinterior}
+% \draw[red,line width=1cm] (interior.north west)--(interior.south east);
+% \draw[red,line width=1cm] (interior.south west)--(interior.north east);
+% \end{tcbclipinterior}},
+}{
+    \textcolor{blue!50!black}{
+        \sffamily
+        \textbf{Exemple : #1}%
+    }%
+    #2
+}
+
+\NewTotalTColorBox[auto counter]{\Examples}{ +m +m }{ 
+    notitle,
     colback=blue!5!white,
     colbacklower=white,
     frame hidden,
@@ -278,25 +314,31 @@ decorations.pathreplacing}
     sharp corners,
     borderline west={4pt}{0pt}{blue!50!black},
     fontupper=\sffamily,
-    underlay={\begin{tcbclipinterior}
-    \shade[inner color=red!50!yellow,outer color=yellow!10!white]
-    (interior.north west) circle (2cm);
-    \draw[help lines,step=5mm,yellow!80!black,shift={(interior.north west)}]
-    (interior.south west) grid (interior.north east);
-    \end{tcbclipinterior}},
+
+    % >>> underlay UNIQUEMENT après \tcblower <<<
+    underlay={
+      \tcbiflower{%
+        \begin{tcbclipinterior}
+          %\shade[inner color=red!50!yellow,outer color=yellow!10!white]
+          %  (interior.north west) circle (2cm);
+          \draw[help lines,step=5mm,yellow!80!black,
+                shift={(interior.north west)}]
+            (interior.south west) grid (interior.north east);
+        \end{tcbclipinterior}
+      }%{}%
+    },
 }{
-    \textcolor{blue!50!black}{
-        \sffamily
-        \textbf{Exemple~\thetcbcounter.}%
-    }%
+    \textcolor{blue!50!black}{\sffamily\textbf{Exemple~\thetcbcounter.}}%
     #1
-    \tcblower%
-    \textcolor{blue!50!black}{
-        \sffamily
-        \textbf{...}%
-    }%
+    \tcblower
+    \textcolor{blue!50!black}{\sffamily\textbf{...}}%
     #2
 }
+
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\usepackage[utf8]{inputenc}
 %\usepackage[T1]{fontenc}
