@@ -1,0 +1,2109 @@
+\chapter{}
+
+\minitoc
+
+\section{Transformée de Fourier, variables conjuguées et changements de représentation\label{sec:fourier_def_prop}}
+
+% On suppose le lecteur familier avec la transformée de Fourier ainsi qu’avec les bases de la théorie des distributions \cite{AppelMathPhysiciens, GerardNotesFourier, BabadjianChap5, DeMarcayFourier, HareMQ}. Néanmoins, afin d’assurer la cohérence et la lisibilité du présent manuscrit, nous rappelons ici les définitions et propriétés de la transformée de Fourier qui seront utilisées de manière implicite tout au long de cette section.
+
+% \smallskip
+
+% Une attention particulière sera portée aux espaces de Hilbert séparables $\mathcal{L}^2(\mathbb{R})$, $\mathcal{L}^2([0,L])$ et $\ell^2(\mathbb{Z})$, qui sont isomorphes du point de vue hilbertien et admettent une interprétation naturelle en termes d’énergie dans de nombreux modèles physiques. Ces espaces constituent également le cadre privilégié de la représentation des états quantiques et de leurs transformations \cite{AppelMathPhysiciens, GourdonAnalyse, GourdonAlgebre}.
+
+% \smallskip
+
+% L’espace $\mathcal{L}^2(\mathbb{R})$ est en particulier stable par transformée de Fourier, propriété fondamentale qui justifie son rôle central en physique mathématique, notamment en mécanique quantique et en analyse spectrale \cite{AppelMathPhysiciens, HareMQ}.
+
+% \smallskip
+
+% Enfin, nous adopterons un jeu de conventions générales pour la transformée de Fourier, choisies de manière à englober les conventions usuelles employées aussi bien par les physiciens que par les analystes, et à faciliter les passages entre les différentes représentations.
+
+% \smallskip
+
+La transformée de Fourier occupe une place singulière en analyse et en physique mathématique, en ce qu’elle réalise un changement de représentation fondamental entre variables conjuguées. Elle intervient aussi bien comme outil technique que comme opérateur structurel, reliant des espaces fonctionnels a priori distincts et révélant les symétries profondes des modèles considérés. Dans ce manuscrit, on supposera le lecteur familier avec les définitions usuelles de la transformée de Fourier ainsi qu’avec les bases de la théorie des distributions (voir par exemple \cite{AppelMathPhysiciens, GerardNotesFourier, BabadjianChap5, DeMarcayFourier, HareMQ}). Néanmoins, afin d’assurer la cohérence interne de l’exposé et d’unifier les notations employées par la suite, nous rappelons ici les définitions et propriétés essentielles qui seront utilisées, parfois de manière implicite, tout au long de cette section.
+
+\smallskip
+
+L’accent sera mis sur les espaces de Hilbert séparables
+
+$$
+\ell^2(\mathbb{Z}),\qquad \mathcal{L}^2([0,L]),\qquad \mathcal{L}^2(\mathbb{R}) ,
+$$
+
+qui jouent un rôle central tant en analyse harmonique qu’en mécanique quantique. Ces espaces, bien que définis sur des ensembles de nature différente (continu non borné, intervalle compact, ensemble discret), sont isomorphes du point de vue hilbertien. Ils constituent ainsi des cadres équivalents pour la description des états physiques, la différence entre eux relevant essentiellement du choix de représentation — position, impulsion, ou modes discrets — plutôt que d’une distinction intrinsèque des degrés de liberté. Cette équivalence structurelle est au cœur de l’interprétation énergétique de ces espaces et sous-tend de nombreux modèles physiques et spectraux \cite{AppelMathPhysiciens, GourdonAnalyse, GourdonAlgebre}.
+
+\smallskip
+
+Dans ce contexte, la transformée de Fourier apparaît comme un opérateur unitaire reliant ces différentes représentations. Sur  $\mathcal{L}^2(\mathbb{R})$ , elle définit une isométrie surjective, et donc un automorphisme hilbertien, échangeant — à des facteurs de normalisation près — l’opérateur de dérivation et l’opérateur de multiplication par la variable. Cette propriété, qui dépasse le simple cadre des fonctions intégrables, confère à  $\mathcal{L}^2(\mathbb{R})$ un statut privilégié : cet espace est stable par transformée de Fourier et constitue le cadre naturel de l’analyse spectrale des opérateurs différentiels, ainsi que de la formulation mathématique de la mécanique quantique \cite{AppelMathPhysiciens, HareMQ, cohen1973mecanique1, cohen1973mecanique2, cohen1973mecanique3}.
+
+\smallskip
+
+L’étude de la transformée de Fourier sur des domaines compacts ou discrets conduit naturellement aux séries de Fourier et à leurs généralisations. Le passage de  $\mathcal{L}^2(\mathbb{R})$ à  $\mathcal{L}^2([0,L])$ , puis à  $\ell^2(\mathbb{Z})$ , peut être interprété comme une succession de restrictions, de périodisations et de discrétisations, dont le peigne de Dirac fournit un modèle distributionnel unificateur. Cette perspective permet de traiter de manière cohérente les liens entre transformée de Fourier continue, séries de Fourier et transformations unitaires entre espaces de Hilbert isomorphes.
+
+\smallskip
+
+Au-delà de son rôle analytique, la transformée de Fourier admet une interprétation géométrique naturelle. Elle peut être vue comme une rotation dans l’espace des phases, ou plus précisément comme une transformation symplectique agissant sur les variables conjuguées. Cette interprétation éclaire le lien profond entre transformée de Fourier, relations de commutation canoniques et principe d’incertitude. En mécanique quantique, elle formalise le passage entre les représentations position et impulsion, et justifie l’introduction des opérateurs de position et d’impulsion comme générateurs infinitésimaux de translations dans des représentations unitaires équivalentes.
+
+\smallskip
+
+Enfin, l’introduction du formalisme des kets et des bras permet d’étendre cette analyse au cadre des distributions tempérées. Les états propres généralisés de la position ou de l’impulsion, bien qu’ils n’appartiennent pas à l’espace de Hilbert  $\mathcal{L}^2(\mathbb{R})$ , prennent un sens rigoureux dans le dual d’un espace de test convenablement choisi. Cette extension est indispensable pour une formulation cohérente de la mécanique quantique et pour l’interprétation physique des changements de représentation induits par la transformée de Fourier.
+
+\smallskip
+
+Dans toute cette section, nous adopterons un jeu de conventions générales pour la transformée de Fourier, choisi de manière à englober les conventions usuelles employées aussi bien en analyse qu’en physique, et à faciliter les passages entre les différentes représentations.%Ces conventions seront fixées une fois pour toutes et utilisées de manière systématique dans la suite du manuscrit.
+
+\smallskip
+
+
+\subsection{Transformée de Fourier : définition et cadre fonctionnel $\mathcal L^1$}
+
+Dans cette sous-section, on commence par définir et établir les principales propriétés de la transformée de Fourier d'une fonction intégrable \cite{AppelMathPhysiciens, GerardNotesFourier, BabadjianChap5, DeMarcayFourier, HareMQ, GourdonAnalyse, GourdonAlgebre}.
+
+\smallskip  
+
+\subsubsection{Définition intégrale de la transformée de Fourier sur $\mathbb R$}
+
+On trouve des différentes définitions de la {\bf transformée de Fourier} dans différent domaine comme en numérique, optique,  mécanique quantique, etc. Pour englober ces cas usuels, on se prend la définition suivante :
+\begin{Defi}[\bf Transformée de Fourier] Soit $f$ une fonction, réelle ou complexe, d'une variable {\em réelle}. On appelle {\bf transformée de Fourier} (ou {\bf spectre}) de $f$, {\em s'il existe}, la fonction notée $\tilde f$ de la variable réelle définie par :
+    \begin{eqnarray}
+        \tilde{f}(k) \doteq \alpha \int_{\mathbb{R}} f(x)\, e^{\mp i \gamma k x}\, dx, \label{eq:fourier_def}, 
+    \end{eqnarray}
+    avec $(\alpha , \gamma ) \in \mathbb{C} \times \mathbb{R}$. On écrit alors symboliquement :
+    \begin{eqnarray}
+        \tilde{f} \equiv \mathcal F [f], 
+    \end{eqnarray} 
+    et l'opérateur\footnote{On notera les actions des opérateurs $f \overset{\operator{\mathcal{A}}}{\longmapsto} \mathcal A[f]$ comme l'action de l'opérateur $\operator{\mathcal{A}}$ sur le vecteur $f$. On peut aussi noter $\operator{\mathcal A} \colon f \mapsto \mathcal A[f]$. Pour différentier avec les applications sur des scalaires, on gardera la première notation} $\operator{\mathcal{F}} $ (avec le chapeau)  tel que 
+    \begin{eqnarray}
+        f \overset{\operator{\mathcal F}}{\longmapsto} \operator{\mathcal{F}} f =  \mathcal F[f]
+    \end{eqnarray}
+    et inversement
+    \begin{eqnarray}
+        \mathcal{F}^{-1}[f](k) \equiv \beta \int_{\mathbb{R}} f(x)\, e^{\pm i \gamma k x}\, dx,
+    \end{eqnarray}
+    avec $\beta \in \mathbb{C}$ et avec la contrainte $ \gamma = 2 \pi \alpha \beta $.
+\end{Defi} 
+
+Le choix usuel en traitement du signal est $\alpha = \beta = 1$ et $\gamma = 2\pi$, et la variable conjuguée de $x$ est alors une fréquence ; en optique, on utilise le plus souvent $\alpha = \beta = \frac{1}{\sqrt{2\pi}}$ et $\gamma = 1$ ; en mécanique quantique, on peut conserver le choix de l’optique, mais la variable conjuguée de $x$ est ainsi $k = \frac{p}{\hbar}$, ou bien on fait comme ici $\gamma = \frac{1}{\hbar}$ et $\alpha = \beta = \frac{1}{\sqrt{2\pi\hbar}}$. On notera qu’en optique, où les champs sont réels, on peut aussi choisir le signe $\mp$ que l’on préfère devant $\gamma$, alors qu’en mécanique quantique, on doit faire $\mp \rightarrow -$ et $\pm \rightarrow +$. En dimension $d$, le pré-facteur est mis à la puissance $d$ et dans la phase $\frac{px}{\hbar}$ devient $\frac{\vec{p} \cdot \vec{r}}{\hbar}$.\\
+
+
+\subsubsection{Cadre minimal de définition : Espaces $\mathcal L^1(\mathbb R)$ et $\mathcal L^\infty(\mathbb R)$}
+
+On considère l'espace, noté $\mathcal L^1(\mathbb{R})$, des fonctions intégrables (au sens de Lebesgue). 
+
+\smallskip
+
+Soit $\mathbb K$ un corps.
+
+
+
+\begin{Defi}[\bf Espace \bm{$\mathcal L^1$}] On note $\mathcal L^1(\mathbb{R} , \mathbb K)$ ou $\mathcal L^1(\mathbb{R})$ ou $\mathcal L^1$, l'espace vectoriel des fonctions sommables, définies \guillemotleft{} à une égalité presque partout près \guillemotright{}, muni de la norme 1 $\Vert \bullet \Vert_1$:
+    \begin{eqnarray}
+        \Vert f \Vert_1 \doteq \int_{\mathbb{R}} \vert f(x) \vert \, dx .
+    \end{eqnarray}
+\end{Defi}
+
+Ainsi, la {\em transformation de Fourier est naturellement définie sur l'ensemble $\mathcal L^1$ des fonctions intégrables définies à une égalité presque partout près}.
+
+\begin{Defi}[\bf Espace \bm{$\mathcal L^\infty$}]On note $\mathcal L^\infty(\mathbb{R} , \mathbb K)$ ou $\mathcal L^\infty(\mathbb{R})$ ou $\mathcal L^\infty$, l'espace vectoriel des fonctions mesurables bornées. On le munit de la \guillemotleft{} norme du sup / $\infty$ \footnote{Il est possible de définir les fonctions de $\mathcal L^\infty$ à une égalité presque partout près. On doit alors modifier la norme en conséquence.} \guillemotright{} $\Vert \bullet \Vert_\infty$ : 
+    \begin{eqnarray}
+        \Vert f \Vert_\infty \doteq \sup_{x \in \mathbb{R}} \vert f (x) \vert  .
+    \end{eqnarray}
+\end{Defi}
+Cet espace nous intéresse ici, car la transformée de Fourier d'une fonction intégrable est une fonction bornée :
+
+\begin{Prop}[\bf La transformation de Fourier envoie \bm{$\mathcal L^1$} dans \bm{$\mathcal L^\infty$}] Soit $f \in \mathcal L^1(\mathbb{R})$ une fonction intégrable et notons $\tilde f$ sa transformée de Fourier. Alors $\tilde f$ est une fonction continue de $\mathbb R $. De plus, elle est bornée et $\Vert \tilde f \Vert_\infty \leq \Vert f \Vert_1$. 
+\end{Prop}  
+
+\begin{Theo}[\bf Continuité de la transformation de Fourier dans \bm{$\mathcal L^1$}] La transformation de Fourier, définie sur $\mathcal L^1(\mathbb R)$ et à valeurs dans $\mathcal L^\infty(\mathbb R)$, est une opération linéaire et continue. 
+\end{Theo}
+
+\subsection{Dérivation et dualité Fourier}
+
+\subsubsection{Opérateur de multiplication et opérateur de dérivation}
+
+
+
+On définit l'opérateur
+%\footnote{On notera les actions des opérateurs $f \overset{\operator{\mathcal{A}}}{\longmapsto} \mathcal A[f]$ comme l'action de l'opérateur $\operator{\mathcal{A}}$ sur le vecteur $f$. On peut aussi noter $\operator{\mathcal A} \colon f \mapsto \mathcal A[f]$. Pour différentier avec les applications sur des scalaires, on gardera la première notation}
+dérivation noté $\operator{\partial}$ tel que pour toute fonction $f$ dérivable : 
+\begin{eqnarray}
+ f \overset{\operator{\partial}}{\longmapsto} \partial f, \quad \mbox{tel que } \partial f \colon x \mapsto f'(x).
+\end{eqnarray}
+Si on fixe le nom la variable de dérivation, par exemple \guillemotleft{}$x$\guillemotright{}, on définit l'opérateur $\operator{\partial}_x$ tel que :
+\begin{eqnarray}
+ f \overset{\operator{\partial}_x}{\longmapsto} \partial_x f \equiv \frac{\partial f }{\partial x }.
+\end{eqnarray}
+% Dans des démonstrations, pour plus de lisibilité, nous écrirons directement $\partial_x($\guillemotleft{} valeur de fonction \guillemotright{}$)$ en pensant à la dérivée selon la variable noté \guillemotleft{}$x$\guillemotright{} d'une fonction. Par exemple $\partial_x \left( e^{\mp i \gamma k x} \right) \equiv  \partial_x \left( x \mapsto e^{\mp i \gamma k x} \right)$. Si la fonction est à une seule variable, il n'est pas la peine de fixer le nom de la variable et on pourra noter par exemple $\partial ( x f (x ))  \equiv  \partial ( x \mapsto x f(x) )$.
+% \medskip 
+
+Dans les démonstrations, afin d’améliorer la lisibilité, nous écrirons directement
+$\partial_x(\guillemotleft{}\!\text{valeur de fonction}\!\guillemotright{})$
+pour désigner la dérivée, par rapport à la variable notée \guillemotleft{}$x$\guillemotright{}, d’une fonction\footnote{%
+Cette notation est purement formelle : lorsqu’elle est appliquée à un scalaire (c’est-à-dire à une valeur numérique indépendante de la variable), la dérivée est identiquement nulle.}. Par exemple sur l'opération \guillemotleft{} multiplication par la variable\guillemotright{}, on notera,
+\begin{eqnarray}
+\partial_x \left( e^{\mp i \gamma k x} \right)
+\;\equiv\;
+\partial_x \left( x \mapsto e^{\mp i \gamma k x} \right).
+\end{eqnarray}
+
+Lorsque la fonction ne dépend que d’une seule variable, il n’est pas nécessaire de préciser explicitement le nom de celle-ci ; on pourra alors écrire, par exemple,
+\begin{eqnarray}
+\partial \bigl( x f(x) \bigr)
+\;\equiv\;
+\partial \left( x \mapsto x f(x) \right).
+\end{eqnarray}
+
+
+\medskip
+
+%\subsubsection{Liens entre transformation de Fourier, dérivation et mythification par l'identité}
+\subsubsection{Conjugaison des opérateurs par la transformée de Fourier {\tiny (dualité dérivation–multiplication)}}
+
+
+On a la relation très importante entre transformation de Fourier et dérivation :
+
+\begin{Theo}[\bf Transformation de Fourier et dérivation] Soit $f \in \mathcal L^1$ une fonction décroissant suffisamment vite pour que $\mathrm{id}_{\mathbb R}^q \,   f \colon x \mapsto x^q f (x)$ soit également dans $\mathcal L^1$ pour $q \in \llbracket 0 , n \rrbracket$. Alors $\mathcal F[f]$ est $n$ fois dérivable et on a 
+\begin{eqnarray}
+ \mathcal F[x \mapsto (\mp i \gamma x)^q f(x)] = \partial^q \mathcal F[f] \quad q \in \llbracket 0 , n \rrbracket.
+\end{eqnarray}
+Inversement, si $f\in \mathcal L^1$ est de classe $\mathcal C^n$ et si ses dérivées successives $ \partial^q f ~ (\equiv f^{(q)})$ sont intégrables pour $q \in \llbracket 0 , n \rrbracket$, ainsi on a 
+\begin{eqnarray}
+ \mathcal F[\partial^q f] = (\pm i \gamma \, \mathrm{id}_{\mathbb R})^q \, \mathcal F[f] ~(\colon x \mapsto (\pm i \gamma x)^q \tilde f) \quad q \in \llbracket 0 , n \rrbracket.
+\end{eqnarray}
+On retiendra notamment que :
+\begin{eqnarray}
+     \mathcal F[\partial f] = \pm i \gamma \, \mathrm{id}_{\mathbb R} \,  \mathcal F[f] ~(\colon x \mapsto \pm i \gamma x \tilde f )\quad \mbox{et} \quad  \mathcal F[\mp i \gamma \, \mathrm{id}_{\mathbb R}\, f] = \partial \mathcal F[f]
+\end{eqnarray}
+
+\end{Theo}
+
+\begin{proof}
+    Pour tous $x \in \mathbb R$, la fonction $k \mapsto f(x) \, e^{\mp i \gamma k x } $ est de classe $ \mathcal C^\infty $, de dérivée q-ième bornén en module par $\vert (\gamma x )^q \, f(x) \vert $, qui est intégrable. On applique alors le théorème de dérivation sous le signe somme, qui nous donne 
+    \begin{eqnarray}
+        \partial \mathcal F[f] = \alpha \int_{\mathbb R} \partial_k (f(x)\, e^{\mp i \gamma k x }) = \alpha \int_{\mathbb R} \mp i \gamma  x \, f(x)\, e^{\mp i \gamma k x }
+    \end{eqnarray}
+    puis par récurrence immédiate, la première formule.
+
+    \smallskip
+
+    La transformée de Fourier de la dérivée d'une fonction peut être calculée par intégration par parties. Considérons une fonction $f$ suffisamment régulière telle que $f$ et ses dérivées tendent vers zéro à l'infini. La transformée de Fourier de $\partial_x f$ est donnée par :
+
+    \begin{eqnarray}
+        \mathcal{F}[\partial_x f](k) = \alpha \int_{\mathbb{R}} \partial_x f(x) \, e^{\mp i \gamma k x} \, dx.
+    \end{eqnarray}
+
+    En intégrant par parties, on obtient :
+
+    \begin{eqnarray}
+        \int_{\mathbb{R}} \partial_x f(x) \, e^{\mp i \gamma k x} \, dx = \left[ f(x) \, e^{\mp i \gamma k x} \right]_{-\infty}^{+\infty} - \int_{\mathbb{R}} f(x) \, \partial_x \left( e^{\mp i \gamma k x} \right) \, dx.
+    \end{eqnarray}
+
+    Le terme de bord s'annule car $f$ tend vers zéro à l'infini. La dérivée de l'exponentielle donne :
+
+    \begin{eqnarray}
+        \partial_x \left( e^{\mp i \gamma k x} \right) = \mp i \gamma k \, e^{\mp i \gamma k x}.
+    \end{eqnarray}
+
+    Ainsi,
+
+    \begin{eqnarray}
+            \mathcal{F}[\partial_x f](k) = \alpha \left( \pm i \gamma k \right) \int_{\mathbb{R}} f(x) \, e^{\mp i \gamma k x} \, dx = \pm i \gamma k \, \mathcal{F}[f](k).
+    \end{eqnarray}
+    Ce qui montre la deuxième formule pour $q=1$. On peut, par récurrence sur $q$, généraliser cela aux dérivées d'ordre supérieur 
+    \begin{eqnarray}
+        \mathcal{F}[\partial_x^q f](k) = (\pm i \gamma k)^q \, \mathcal{F}[f](k),
+    \end{eqnarray}
+    et de conclure.
+
+\end{proof}
+
+\subsubsection{Représentations : variables conjuguées et relations de commutation}
+
+\paragraph{Variables conjuguées {\tiny (Opérateur de multiplication et opérateur de dérivation)} et transformée de Fourier.}
+
+On note l'opérateur de multiplication $\operator{\mathcal M}_{\varphi}$ tel que 
+\begin{eqnarray}
+    f \overset{\operator{\mathcal M}_{\varphi}}{\longmapsto} \left ( x \mapsto \varphi(x) f(x)  \right ),
+\end{eqnarray}
+en particulier $\operator{\mathcal M}_{\mathrm{id}_{\mathbb R}}$ est tel que 
+\begin{eqnarray}
+    f \overset{\operator{\mathcal M}_{\mathrm{id}_{\mathbb R}}}{\longmapsto} \left ( \operator{\mathrm{id}}_{\mathbb R} f \colon  x \mapsto x f(x)  \right ),
+\end{eqnarray}
+nous intéresse. Et Rappelons-nous de l'opérateur dérivation $\operator{\partial}$ :
+\begin{eqnarray}
+    f \overset{\operator{\partial}}{\longmapsto} \left ( \partial f \colon  x \mapsto \partial_x f(x) = f'(x)   \right ).
+\end{eqnarray}
+
+Ce dernier théorème s’écrit sous forme opérationnelle de la manière suivante :
+\begin{eqnarray}
+    \mp i \gamma \,\operator{\mathcal{F}} \, \,\operator{\mathcal M}_{\mathrm{id}_{\mathbb R}} \, \operator{\mathcal{F}}^{-1} = \operator{\partial} \quad \mbox{et} \quad  \operator{\mathcal{F}}\, \operator{\partial} \, \operator{\mathcal{F}}^{-1} = \pm i \gamma \, \operator{\mathcal M}_{\mathrm{id}_{\mathbb R}}. 
+\end{eqnarray}
+
+L’opérateur de transformée de Fourier $\operator{\mathcal{F}}$ permet le passage d’une représentation à sa représentation conjuguée. En particulier, la représentation conjuguée de l’opérateur
+\begin{eqnarray}
+    \operator{\mathcal{D}} \;\equiv\; \mp \frac{i}{\gamma}\,\operator{\partial}
+\end{eqnarray}
+est donnée par l’opérateur $\operator{\mathcal M}_{\mathrm{id}_{\mathbb R}}$, et réciproquement, la représentation conjuguée de l’opérateur $\operator{\mathcal M}_{\mathrm{id}_{\mathbb R}}$ est $-\operator{\mathcal{D}}$, car 
+\begin{eqnarray}\label{annex:1:TF.k.rep}
+    \operator{\mathcal{F}} \, \,  \operator{\mathcal M}_{\mathrm{id}_{\mathbb R}} \, \operator{\mathcal{F}}^{-1} = -\operator{\mathcal{D}} \quad \mbox{et} \quad  \operator{\mathcal{F}}\, \operator{\mathcal{D}} \, \operator{\mathcal{F}}^{-1} =  \operator{\mathcal M}_{\mathrm{id}_{\mathbb R}}, 
+\end{eqnarray}
+et inversement 
+\begin{eqnarray}\label{annex:1:TF.x.rep}
+    \operator{\mathcal{F}}^{-1} \operator{\mathcal M}_{\mathrm{id}_{\mathbb R}} \, \operator{\mathcal{F}} = \operator{\mathcal{D}} \quad \mbox{et} \quad  \operator{\mathcal{F}}^{-1}\operator{\mathcal{D}} \, \operator{\mathcal{F}} =  -\operator{\mathcal M}_{\mathrm{id}_{\mathbb R}}.
+\end{eqnarray}
+%L'opérateur transformée de Fourier $\operator{\mathcal{F}}$ permet la passage dune represetation à sa conjuguée. La représentation conjuguée de l'opérateur $\operator{\mathcal{D}} \equiv \mp \frac{i}{\gamma} \operator{\partial}$ est $\operator{\mathrm{id}}_{\mathbb R}$ et inversement celui de $\operator{\mathrm{id}}_{\mathbb R}$ et $-\operator{\mathcal{D}}$.
+
+\medskip
+
+\paragraph{Relations de commutation des variables conjuguées.}
+
+De plus, comme $\partial (y f(y)) - y \, \partial (f(y)) = f(y)$ on en déduit l’égalité opérationnelle 
+\begin{eqnarray}
+    \operator{\partial}\, \operator{\mathcal M}_{\mathrm{id}_{\mathbb R}} - \operator{\mathcal M}_{\mathrm{id}_{\mathbb R}} \operator{\partial} = \operator{\mathrm{id}}_{\mathcal L^1 (\mathbb{R})}.
+\end{eqnarray}
+En utilisant les crochets de Lie (commutateur), cela s’écrit 
+\begin{eqnarray}
+    [\operator{\partial} ,  \operator{\mathcal M}_{\mathrm{id}_{\mathbb R}} ]\;\equiv\;\operator{\mathrm{id}}_{\mathcal L^1 (\mathbb{R})}.
+\end{eqnarray}
+Ou encore, en termes de l’opérateur $\operator{\mathcal{D}}$ on obtient
+\begin{eqnarray}
+    [\operator{\mathcal M}_{\mathrm{id}_{\mathbb R}}, \operator{\mathcal{D}} ]\;\equiv\; \pm \frac{i}\gamma \,  \operator{\mathrm{id}}_{\mathcal L^1 (\mathbb{R})}.
+\end{eqnarray}
+
+% On impose $\gamma \equiv \hbar^{-1}$, $\pm \equiv +$ (et $\mp \equiv -$).
+% \smallskip
+% Et on fixe la variable \guillemotleft{} x \guillemotright{}, pour en physique,  la représentation de la position. On reconnait l'opérateur position en l'opérateur $\operator{\mathrm{id}}_{\mathbb R}$; et la réecrit  $(\operator{\mathrm{id}}_{\mathbb R} \rightarrow \operator{\mathcal X})$ tel que $\operator{\mathcal X}f(x) = xf(x)$ et on réécrit $\operator{\mathcal D} \rightarrow \operator{\mathcal P} \equiv \frac{\hbar}i \operator{\partial}_x $. 
+% \smallskip
+% Si on fixe la variable \guillemotleft{} p \guillemotright{}, pour en physique,  la représentation de l'impulsion, on réécrit et on reconnait  $\operator{\mathrm{id}}_{\mathbb R} \rightarrow \operator{\mathcal P}$ tel que $\operator{\mathcal P}\tilde f(p) = p \tilde f(p)$ et on réécrit $\operator{\mathcal D} \rightarrow \operator{\mathcal X} \equiv i\hbar \operator{\partial}_p $ 
+
+% \medskip
+
+%\subsubsection{Interprétation matricielle : rotation symplectique}
+
+% Dans la transformée de Fourier permet 
+% \begin{eqnarray}
+%     (\operator{\mathcal M}_{\mathrm{id}_{\mathbb R}} , \operator{\mathcal{D}} ) \longmapsto (- \operator{\mathcal{D}} , \operator{\mathcal M}_{\mathrm{id}_{\mathbb R}})
+% \end{eqnarray} 
+% Ces relations s’écrivent sous forme matricielle :
+% \begin{eqnarray}
+%     \left ( \begin{array}{c}  - \operator{\mathcal{D}}  \\ \operator{\mathcal M}_{\mathrm{id}_{\mathbb R}}  \end{array}\right ) & = &  \left ( \begin{array}{c c} 0 & -1  \\  1 & 0    \end{array}\right ) \left ( \begin{array}{c} \operator{\mathcal M}_{\mathrm{id}_{\mathbb R}} \\  \operator{\mathcal{D}}   \end{array}\right ) ,
+% \end{eqnarray}
+% Or 
+% \begin{eqnarray}
+%     \left ( \begin{array}{c c} 0 & -1  \\  1 & 0    \end{array}\right ) & = & R(-\pi/2 ),
+% \end{eqnarray}
+% où $R(\theta)$ est une rotation matricielle 2x2 tel que  :
+% \begin{eqnarray}
+%     R(\theta) & = &  \left ( \begin{array}{c c} \cos \theta & \sin \theta   \\  -  \sin \theta  & \cos \theta     \end{array}\right ).
+% \end{eqnarray}
+% Donc la transformée de Fourier fait une rotation d'angle $-\fract\pi 2 $ dans l'espcece des représentation. 
+
+
+
+
+\subsubsection{Représentations quantiques : position et impulsion ; et normalisations}
+
+\paragraph{Choix de conventions.}
+
+Si on fixe les noms des variables \guillemotleft{}$x$\guillemotright{} et \guillemotleft{}$k$\guillemotright{} tel que la transformée de Fourier permet de passer d'une fonction de \guillemotleft{}$x$\guillemotright{} à une fonction de \guillemotleft{}$k$\guillemotright{}. Donc dans l'équation \eqref{annex:1:TF.k.rep}, on a des opérations agissant sur des fonctions en représentation \guillemotleft{}$k$\guillemotright{} et l'équation \eqref{annex:1:TF.x.rep} pour des fonctions en représentation \guillemotleft{}$x$\guillemotright{}.  Alors dans l'équation \eqref{annex:1:TF.k.rep}, $\operator{\mathcal M}_{\mathrm{id}_{\mathbb R}}$ et $\operator{\mathcal{D}}$   s'identifient  à :
+\begin{eqnarray}
+\operator{\mathcal M}_{\mathrm{id}_{\mathbb R}} & \longrightarrow &  \operator{\mathcal{K}} \quad \mbox{tel que} \quad 
+(\operator{\mathcal{K}} f)(k) = k f(k),\\
+\operator{\mathcal{D}} & \longrightarrow &  \operator{\mathcal{D}}_k \; \equiv\; \mp \frac{i}{\gamma}\,\operator{\partial}_k  
+\end{eqnarray}
+et dans l'équation \eqref{annex:1:TF.x.rep}, $\operator{\mathcal M}_{\mathrm{id}_{\mathbb R}}$ et $\operator{\mathcal{D}}$ s'identifient à  :
+\begin{eqnarray}
+\operator{\mathcal M}_{\mathrm{id}_{\mathbb R}} & \longrightarrow&  \operator{\mathcal{X}} \quad \mbox{tel que} \quad 
+(\operator{\mathcal{X}} f)(x) = x f(x),\\
+\operator{\mathcal{D}} & \longrightarrow &  \operator{\mathcal{D}}_x \; \equiv\; \mp \frac{i}{\gamma}\,\operator{\partial}_x.
+\end{eqnarray}
+En injectant dans \eqref{annex:1:TF.k.rep} et  \eqref{annex:1:TF.x.rep} et en appliquant $\operator{\mathcal{F}}$ à gauche et $\operator{\mathcal{F}}^{-1}$ à droite de l'équation \eqref{annex:1:TF.x.rep}, on obtient :
+\begin{eqnarray}
+    \left \{ 
+        \begin{array}{rclcrlc}  
+            \operator{\mathcal F} \, \,  \operator{\mathcal K} \, \operator{\mathcal{F}}^{-1} &  =  &-\operator{\mathcal{D}}_k, &&\operator{\mathcal{F}}\, \operator{\mathcal{D}}_x \, \operator{\mathcal{F}}^{-1} &= &  \operator{\mathcal K}, \\  \operator{\mathcal{F}} \, \,  \operator{\mathcal{D}}_x  \, \operator{\mathcal{F}}^{-1}  & =  & \operator{\mathcal X} &\mbox{et} &  \quad   \operator{\mathcal{F}}\, ( - \operator{\mathcal X} )\, \operator{\mathcal{F}}^{-1} & =&  \operator{\mathcal{D}}_x.
+        \end{array} 
+        \right . 
+\end{eqnarray} 
+
+% Donc la représentation \guillemotleft{}$x$\guillemotright{} :
+% \begin{eqnarray} 
+%     \operator{\mathcal K} & = & \operator{\mathcal{D}}_x,
+% \end{eqnarray}
+% et dans la représentation \guillemotleft{}$k$\guillemotright{} :
+% \begin{eqnarray} 
+%     \operator{\mathcal X} & = & -\operator{\mathcal{D}}_k.
+% \end{eqnarray}
+
+Donc 
+\begin{eqnarray} 
+    \left \{ 
+        \begin{array}{rclcl}  
+            \operator{\mathcal K} & = & \operator{\mathcal{D}}_x & & \mbox{dans la représentation \guillemotleft{}$x$\guillemotright{}},  \\  
+            \operator{\mathcal X} & = & -\operator{\mathcal{D}}_k. & & \mbox{dans la représentation \guillemotleft{}$k$\guillemotright{}}
+        \end{array} 
+        \right .
+\end{eqnarray}
+
+\paragraph{Position et Impulsion.}
+
+En particulier, si l’on impose les conventions $\gamma \equiv \hbar^{-1}$, $\pm \equiv +$ (et $\mp \equiv -$), et si l’on fixe les variables \guillemotleft$x$\guillemotright{} et \guillemotleft$p$\guillemotright{}, correspondant en physique, respectivement, aux représentations de la position et de l’impulsion, et si $\mathcal F [ x \mapsto f(x) ](p)$, alors on reconnaît les opérateurs de position $\operator{\mathcal X}$ et d’impulsion
+$\operator{\mathcal P}$ de la mécanique quantique :
+\begin{eqnarray}
+    \left\{
+        \begin{array}{rclcl}
+            \operator{\mathcal P} & = & - i \hbar\, \operator{\partial}_x & & \mbox{dans la représentation \guillemotleft$x$\guillemotright{}},\\
+            \operator{\mathcal X} & = & + i \hbar\, \operator{\partial}_p & & \mbox{dans la représentation \guillemotleft$p$\guillemotright{}}
+        \end{array}
+    \right.
+\end{eqnarray}
+et leur commutateur est
+\begin{eqnarray}
+    [\operator{\mathcal{X}} ,  \operator{\mathcal{P}} ]\;\equiv\; i\hbar \, \operator{\mathrm{id}}_{\mathcal L^1 (\mathbb{R})}.
+\end{eqnarray}
+
+% \paragraph{Normalisations : variables conjuguées adimensionnées.}
+
+% On réécrit les variables à l’aide d’un paramètre d’échelle $\eta$ tel que
+% \begin{eqnarray}
+%     x = \eta\, x_\ast,
+%     & \quad &
+%     k = \frac{1}{\gamma \eta}\, k_\ast,
+% \end{eqnarray}
+% de telle sorte que $x_\ast$ et $k_\ast$ soient sans dimension. Avec ces variables,la transformée de Fourier et la transformée de Fourier inverse s’écrivent
+% \begin{eqnarray}
+%     \mathcal F_\ast[f](k_\ast)  =  \alpha_\ast \int_{\mathbb R} d x_\ast\, f(x_\ast)\, e^{\mp i x_\ast k_\ast}, \quad 
+%     \mathcal F_\ast^{-1}[f](x_\ast) = \beta_\ast \int_{\mathbb R} d k_\ast\,f(k_\ast)\, e^{\pm i x_\ast k_\ast},
+% \end{eqnarray}
+% avec
+% \begin{eqnarray}
+%     \alpha_\ast = \eta\, \alpha,\quad\beta_\ast = \frac{1}{\gamma \eta}\, \beta,\quad \mbox{et} \quad2\pi\, \alpha_\ast \beta_\ast = 1.
+% \end{eqnarray}
+
+% Ainsi, le paramètre $\gamma$ disparaît explicitement.
+% Plus haut , nous avons nommé les variables \guillemotleft$x$\guillemotright{} et \guillemotleft$k$\guillemotright{} pour des raisons pédagogiques et afin de retrouver les opérateurs bien connus de la mécanique quantique.
+% Cependant, pour la définition abstraite de la transformée de Fourier, ces variables sont muettes.\footnote{On peut, c'est plus matheux, et lisible, mais on ne le fera pas, écrire les expressions sans indice \guillemotleft$\ast$\guillemotright{}, sans prêter attention à l’échange des notations $x$ ou $k$.
+
+% \medskip
+
+% À partir de ce point, la transformée de Fourier s’écrit
+% \begin{eqnarray}
+%     \mathcal F[f](k) = \alpha \int_{\mathbb R} d x\,f(x)\, e^{\mp i x k}, \quad 
+%     \mathcal F^{-1}[f](k) = \beta \int_{\mathbb R} d x\,f(x)\, e^{\pm i x k},
+% \end{eqnarray}
+% avec
+% \begin{eqnarray}
+%     2\pi\, \alpha \beta = 1,
+% \end{eqnarray}
+% où $x$ et $k$ sont désormais sans dimension physique.
+% }
+
+%---------------------------------
+
+\paragraph{Normalisations : variables conjuguées adimensionnées.}
+
+On réécrit les variables à l’aide d’un paramètre d’échelle $\eta$ tel que
+\begin{eqnarray}
+    x = \eta\, x_\ast,
+    & \quad &
+    k = \frac{1}{\gamma \eta}\, k_\ast,
+\end{eqnarray}
+de telle sorte que $x_\ast$ et $k_\ast$ soient sans dimension physique. 
+Avec ces variables, la transformée de Fourier et la transformée de Fourier inverse s’écrivent
+\begin{eqnarray}
+    \mathcal F_\ast[f](k_\ast)  
+    &=& \alpha_\ast \int_{\mathbb R} d x_\ast\, f(x_\ast)\, e^{\mp i x_\ast k_\ast}, \\
+    \mathcal F_\ast^{-1}[f](x_\ast) 
+    &=& \beta_\ast \int_{\mathbb R} d k_\ast\, f(k_\ast)\, e^{\pm i x_\ast k_\ast},
+\end{eqnarray}
+avec
+\begin{eqnarray}
+    \alpha_\ast = \eta\, \alpha,
+    \qquad
+    \beta_\ast = \frac{1}{\gamma \eta}\, \beta,
+    \qquad
+    2\pi\, \alpha_\ast \beta_\ast = 1.
+\end{eqnarray}
+
+Ainsi, le paramètre $\gamma$ disparaît explicitement des expressions.
+Dans ce manuscrit, nous avons nommé les variables \guillemotleft$x$\guillemotright{} et 
+\guillemotleft$k$\guillemotright{} pour des raisons pédagogiques et afin de faire apparaître 
+les opérateurs usuels de la mécanique quantique. 
+Cependant, pour la définition abstraite de la transformée de Fourier, ces variables sont muettes.\footnote{D’un point de vue purement mathématique, il serait possible — et parfois plus lisible — d’écrire les expressions sans indice \guillemotleft$\ast$\guillemotright{}, sans attacher d’importance particulière à l’échange des notations $x$ et $k$. Ce choix ne sera toutefois pas retenu ici.
+
+\medskip
+
+À partir de ce point, la transformée de Fourier s’écrit
+\begin{eqnarray}
+    \mathcal F[f](k) 
+    &=& \alpha \int_{\mathbb R} d x\, f(x)\, e^{\mp i x k}, \\
+    \mathcal F^{-1}[f](x) 
+    &=& \beta \int_{\mathbb R} d k\, f(k)\, e^{\pm i x k},
+\end{eqnarray}
+avec la condition de normalisation
+\begin{eqnarray}
+    2\pi\, \alpha \beta = 1,
+\end{eqnarray}
+où $x$ et $k$ sont désormais des variables sans dimension physique.}
+
+
+
+
+
+% -------------------------------------------------------------
+
+
+\subsection{Interprétation géométrique : rotation symplectique}
+
+% -----
+% A.4.1 Espace des phases et structures symplectiques
+
+% A.4.2 Transformée de Fourier comme rotation canonique
+
+% A.4.3 Choix de conventions et normalisations
+% ------
+
+\subsubsection{Espace des phases et structures symplectiques}
+
+L'espace des phases d'un système à un degré de liberté est décrit par les coordonnées canoniques $(x, p)$ de l'espace $\mathbb{R}^2$. Cet espace est naturellement muni d'une \textbf{structure symplectique} définie par la forme bilinéaire antisymétrique $\omega = dx \wedge dp$. Dans ce formalisme, les transformations canoniques sont les difféomorphismes qui préservent cette forme $\omega$, préservant ainsi le volume dans l'espace des phases et les relations de commutation fondamentales $[\hat{x}, \hat{p}] = i\hbar$.
+
+Dans ce contexte, la \textbf{Transformée de Fourier} $\mathcal{F}$ n'est pas seulement un outil analytique, mais s'interprète géométriquement comme une \textbf{rotation d'angle $\pi/2$} dans cet espace des phases. En effet, l'action de $\mathcal{F}$ réalise la permutation des variables conjuguées :
+\begin{equation}
+    x \xrightarrow{\mathcal{F}} p \quad \text{et} \quad p \xrightarrow{\mathcal{F}} -x
+\end{equation}
+Cette rotation appartient au groupe métaplectique $Mp(2, \mathbb{R})$, qui est le revêtement à deux feuillets du groupe symplectique $Sp(2, \mathbb{R})$. L'opérateur de Fourier peut être vu comme l'opérateur d'évolution unitaire $U(t) = e^{-i \frac{\pi}{2} \hat{H}}$ associé à l'Hamiltonien de l'oscillateur harmonique $\hat{H} = \frac{1}{2}(\hat{x}^2 + \hat{p}^2)$ pour un temps de propagation $t = \pi/2$.
+
+
+
+Cette vision géométrique unifie la transformation des opérateurs d'échelle $\hat{a}$ et $\hat{a}^\dagger$ (qui subissent une rotation de phase complexe $e^{\mp i\pi/2}$) et la préservation de la structure des états de Hermite-Gauss, qui apparaissent comme les modes propres invariants par rotation de cet espace des phases.
+
+\subsubsection{Transformée de Fourier comme rotation canonique}
+
+La transformée de Fourier permet l’échange
+\begin{eqnarray}
+    \bigl(\operator{\mathcal M}_{\mathrm{id}_{\mathbb R}}, \operator{\mathcal D}\bigr)
+    \longmapsto
+    \bigl(-\operator{\mathcal D}, \operator{\mathcal M}_{\mathrm{id}_{\mathbb R}}\bigr).
+\end{eqnarray}
+
+Ces relations s’écrivent sous forme matricielle :
+\begin{eqnarray}
+    \left(
+    \begin{array}{cc}
+        0 & -1 \\
+        1 & 0
+    \end{array}
+    \right)
+    \left(
+    \begin{array}{c}
+        \operator{\mathcal M}_{\mathrm{id}_{\mathbb R}} \\
+        \operator{\mathcal D}
+    \end{array}
+    \right)
+    &=&
+    \left(
+    \begin{array}{c}
+        - \operator{\mathcal D} \\
+        \operator{\mathcal M}_{\mathrm{id}_{\mathbb R}}
+    \end{array}
+    \right).
+\end{eqnarray}
+Or on peut écrire 
+\begin{eqnarray}
+    \left(
+    \begin{array}{cc}
+        0 & -1 \\
+        1 & 0
+    \end{array}
+    \right)
+    & = &
+    R(\pi/2),
+\end{eqnarray}
+où $R(\theta)$ désigne une matrice de rotation $2\times 2$, d'angle $\theta$ définie par
+\begin{eqnarray}
+    R(\theta)
+    & = &
+    \left(
+    \begin{array}{cc}
+        \cos \theta & -\sin \theta \\
+        \sin \theta & \cos \theta
+    \end{array}
+    \right).
+\end{eqnarray}
+
+Ainsi, la transformée de Fourier réalise une rotation d’angle
+$\theta \equiv \frac{\pi}{2}$ dans l’espace des représentations.
+
+\subsubsection{Valeurs et vecteur propre de la transformée de Fourier}
+
+\paragraph{Rotation.}
+
+Plus généralement, les rotations s’écrivent sous la forme
+\begin{eqnarray}
+    R(\theta)=\exp(\theta J), \qquad \theta \in \mathbb{R},
+\end{eqnarray}
+où
+\(
+J =
+\begin{pmatrix}
+0 & -1 \\
+1 & 0
+\end{pmatrix},
+\)
+car $J$ est une matrice antisymétrique génératrice des rotations planes\footnote{Souvenir de classes préparatoires : voir par exemple l’exercice~5 («~Exponentielle d’une matrice antisymétrique~»), p.~266 de \cite{GourdonAlgebre}.}:
+ 
+\begin{eqnarray}
+    R(\theta) = \sum_{n=0}^{+\infty} \frac{\theta^n}{n!}J^n = \sum_{n=0}^{+\infty} \frac{(-1)^n\theta^{2n}}{(2n)!}I_2 +  \sum_{n=0}^{+\infty}\frac{(-1)^n\theta^{2n+1}}{(2n+1)!}J = \cos(\theta)I_2 + \sin(\theta)J
+\end{eqnarray}
+\footnote{%
+La décomposition exponentielle
+\(
+R(\theta)=\exp(\theta J)=\cos(\theta)\,I_2+\sin(\theta)\,J
+\)
+reflète un mécanisme général reliant rotations et générateurs infinitésimaux. 
+En mécanique quantique, toute rotation d’angle \(\theta\) autour d’un axe unitaire 
+\(\boldsymbol n\in\mathbb R^3\) est représentée dans l’espace des spineurs par l’opérateur unitaire
+\(
+U(\boldsymbol n,\theta)=\exp\!\big(-\tfrac{i\theta}{2}\,\boldsymbol n\cdot\boldsymbol\sigma\big),
+\)
+où \(\boldsymbol\sigma=(\sigma_x,\sigma_y,\sigma_z)\) désigne les matrices de Pauli. 
+En utilisant l’identité \((\boldsymbol n\cdot\boldsymbol\sigma)^2=I\), on obtient la forme fermée
+\(
+U(\boldsymbol n,\theta)=\cos(\tfrac{\theta}{2})\,I
+-i\sin(\tfrac{\theta}{2})\,\boldsymbol n\cdot\boldsymbol\sigma.
+\)
+Cette représentation réalise le morphisme doublement couvrant \(\mathrm{SU}(2)\to\mathrm{SO}(3)\),
+caractérisé notamment par \(U(\boldsymbol n,2\pi)=-I\).}
+car en effet $J^{2n} = (-1)^n I_2$ et $J^{2n+1} = (-1)^n J$.
+
+
+
+% -----------------------------
+
+
+
+% \paragraph{Les matrices de Pauli et l'espace des matrices hermitiennes}
+
+% L'ensemble des matrices de Pauli, que l'on notera 
+% \(\sigma_0, \sigma_1, \sigma_2, \sigma_3\) avec 
+% \(\sigma_0 = I_2\) et \(\sigma_1 = \sigma_x, \sigma_2 = \sigma_y, \sigma_3 = \sigma_z\), 
+% forme une base de l'espace vectoriel des matrices hermitiennes $2 \times 2$. 
+% Ainsi, toute matrice hermitienne \(H\) peut s'écrire comme une combinaison linéaire réelle :
+% \begin{eqnarray}
+% H = \sum_{\mu=0}^{3} h_\mu \, \sigma_\mu, \quad h_\mu \in \mathbb{R}.
+% \end{eqnarray}
+% Cette représentation est particulièrement utile car elle relie les propriétés algébriques des matrices hermitiennes aux structures géométriques de \(\mathbb{R}^3\) via les matrices de Pauli \(\sigma_1, \sigma_2, \sigma_3\).
+
+\paragraph{Les matrices de Pauli et l'espace des matrices hermitiennes.}
+
+L'ensemble des matrices de Pauli, que l'on notera 
+\(\sigma_0, \sigma_1, \sigma_2, \sigma_3\), avec 
+\(\sigma_0 = I_2\) et \(\sigma_1 = \sigma_x, \sigma_2 = \sigma_y, \sigma_3 = \sigma_z\), 
+forme une base de l'espace vectoriel des matrices hermitiennes $2 \times 2$. 
+Ainsi, toute matrice hermitienne \(H\) peut s'écrire comme une combinaison linéaire réelle :
+\begin{eqnarray}
+H &=& n_0 \sigma_0 + n_1 \sigma_1 + n_2 \sigma_2 + n_3 \sigma_3, \quad (n_0 , n_1 , n_2 , n_3 ) \in \mathbb{R}^4.
+\end{eqnarray}
+
+Les matrices \(\sigma_\mu\) sont données explicitement par :
+\begin{eqnarray}
+\sigma_0 = I_2 = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}, \quad 
+\sigma_1 = \sigma_x = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \quad 
+\sigma_2 = \sigma_y = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}, \quad 
+\sigma_3 = \sigma_z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}.
+\end{eqnarray}
+
+Cette représentation est particulièrement utile car elle relie les propriétés algébriques des matrices hermitiennes aux structures géométriques de \(\mathbb{R}^3\) via les matrices de Pauli \(\sigma_1, \sigma_2, \sigma_3\).
+
+
+\paragraph{Matrices unitaires et rotations $SU(2)$.}
+
+Toute matrice unitaire $U$ peut s'écrire sous la forme
+\begin{eqnarray}
+U = e^{i H},
+\end{eqnarray}
+où $H$ est hermitienne. Plus généralement, on peut écrire
+\begin{eqnarray}
+H = n_0 \, \sigma_0 + \bm{n} \cdot \bm{\sigma},
+\end{eqnarray}
+avec $n_0 \in \mathbb{R}$ et $\bm{n} \in \mathbb{R}^3$ et $\bm{\sigma}=(\sigma_x,\sigma_y,\sigma_z)$.  
+
+Dans ce cas, on obtient :
+\begin{eqnarray}
+U &=& e^{i n_0 \sigma_0} \, e^{i \bm{n} \cdot \bm{\sigma}} \quad 
+   = e^{i n_0} \, e^{i \bm{n} \cdot \bm{\sigma}},
+\end{eqnarray}
+puisque $\sigma_0$ commute avec toutes les matrices.  
+
+Pour un $\bm{n}$ quelconque, l'identité
+\begin{eqnarray}
+(\hat{\bm{n}} \cdot \bm{\sigma})^2 = I, \quad \hat{\bm{n}} = \frac{\bm{n}}{|\bm{n}|}
+\end{eqnarray}
+permet de calculer la forme fermée :
+\begin{eqnarray}
+e^{i \bm{n} \cdot \bm{\sigma}} 
+&=& \cos(|\bm{n}|) \, I + i \sin(|\bm{n}|) \, \hat{\bm{n}} \cdot \bm{\sigma}.
+\end{eqnarray}
+
+Ainsi, pour un $H$ quelconque :
+\begin{eqnarray}
+U &=& e^{i n_0} \Big[ \cos(|\bm{n}|) \, I + i \sin(|\bm{n}|) \, \hat{\bm{n}} \cdot \bm{\sigma} \Big].
+\end{eqnarray}
+
+Cette expression généralise la rotation SU(2) classique $U(\bm{n},\theta)$ à un vecteur $\bm{n}$ quelconque et inclut un facteur global de phase $e^{i n_0}$ provenant de la composante proportionnelle à $\sigma_0$.\footnote{
+
+\paragraph*{Matrices unitaires et rotations SU(2)}
+
+Toute matrice unitaire $U$ peut s'écrire sous la forme
+\begin{eqnarray}
+U = e^{i H},
+\end{eqnarray}
+où $H$ est hermitienne. En particulier, pour $H$ traceless, on obtient une rotation élémentaire dans SU(2) :
+\begin{eqnarray}
+U(\bm{n},\theta) = \exp\Big(-\frac{i \theta}{2} \, \bm{n} \cdot \bm{\sigma} \Big),
+\end{eqnarray}
+où \(\bm{\sigma} = (\sigma_x, \sigma_y, \sigma_z)\) désigne les matrices de Pauli et \(\bm{n}\) est un vecteur unitaire définissant l'axe de rotation.  
+
+En utilisant l'identité
+\begin{eqnarray}
+(\bm{n} \cdot \bm{\sigma})^2 = I,
+\end{eqnarray}
+on obtient la forme fermée :
+\begin{eqnarray}
+U(\bm{n},\theta) = \cos\Big(\frac{\theta}{2}\Big) I - i \sin\Big(\frac{\theta}{2}\Big) \, \bm{n} \cdot \bm{\sigma}.
+\end{eqnarray}
+
+Pour être précis, si l'on écrit \(\bm{n} = \eta \, \bm{n}_\ast\) avec \(\bm{n}_\ast\) unitaire, cette formule reste valide et \(\eta\) se retrouve dans l'angle effectif de rotation.
+
+}
+\footnote{La matrice $(\bm{n} \cdot \bm{\sigma})$, avec $\bm{n} = (n_x, n_y, n_z)$ unitaire et $\bm{\sigma} = (\sigma_x, \sigma_y, \sigma_z)$, s'écrit explicitement sous forme 2×2 :
+\begin{eqnarray}
+\bm{n} \cdot \bm{\sigma} = n_x \sigma_x + n_y \sigma_y + n_z \sigma_z
+= \begin{pmatrix}
+n_z & n_x - i n_y \\
+n_x + i n_y & -n_z
+\end{pmatrix}.
+\end{eqnarray}
+Cette forme permet de visualiser facilement les composantes de $\bm{n}$ dans la matrice de Pauli et sert de base pour l'exponentielle $U = e^{i \theta (\bm{n} \cdot \bm{\sigma})}$.}
+\footnote{La forme matricielle explicite de l'exponentielle $U = e^{i \theta (\bm{n} \cdot \bm{\sigma})}$, avec $\bm{n} = (n_x, n_y, n_z)$ unitaire et $\bm{\sigma} = (\sigma_x, \sigma_y, \sigma_z)$, s'écrit :
+\begin{eqnarray}
+U = \cos \theta \, I + i \sin \theta \, (\bm{n} \cdot \bm{\sigma}) 
+= \begin{pmatrix}
+\cos \theta + i \sin \theta \, n_z & i \sin \theta (n_x - i n_y) \\
+i \sin \theta (n_x + i n_y) & \cos \theta - i \sin \theta \, n_z
+\end{pmatrix}.
+\end{eqnarray}
+Cette représentation permet de visualiser directement l'exponentielle comme une rotation dans l'espace SU(2).}
+
+
+\paragraph{Diagonalisation de transformations de Fourier.}
+Considérons la forme matricielle de la transformation de Fourier. Dans l'estpace des phases engendrées par $(\operator{\mathcal M}_{\mathrm{id}_{\mathbb R}} , \operator{\mathcal D} )$ on peut l'écrire sous la forme exponentielle :
+\begin{eqnarray}
+F = e^{\theta J}, \quad J = -i \sigma_2,
+\end{eqnarray}
+avec $\theta \in \mathbb{R}$. Cette forme est utile pour exploiter la structure SU(2) et les rotations générées par les matrices de Pauli.
+
+\subparagraph{Objectif.} 
+Nous souhaitons diagonaliser $F$ via une transformation unitaire $U$ :
+\begin{eqnarray}
+U F U^\dagger ~~(\text{diagonale}).
+\end{eqnarray}
+
+
+\subparagraph{Réécriture générale de $F$.}
+On peut écrire :
+\begin{eqnarray}
+F = e^{\theta J} = e^{\theta (-i \sigma_2)} = e^{- i \theta \sigma_2} 
+= \cos \theta \, I - i \sin \theta \, \sigma_2.
+\end{eqnarray}
+
+\subparagraph{Conjugaison par $U$.}
+Pour un vecteur $\bm{n} = |\bm{n}| \hat{\bm{n}}$ (avec $\hat{\bm{n}}$ unitaire  )  et $U = e{i n_0}e^{i \bm{n} \cdot \bm{\sigma}}$, on a :
+\begin{eqnarray}
+U F U^\dagger &=& e^{i \bm{n} \cdot \bm{\sigma}} (\cos \theta I - i \sin \theta \, \sigma_2) e^{- i \bm{n} \cdot \bm{\sigma}} \\
+&=& \cos \theta I - i \sin \theta \, (U \sigma_2 U^\dagger).
+\end{eqnarray}
+Ainsi, $U F U^\dagger$ est diagonale si et seulement si $U \sigma_2 U^\dagger$ est diagonale.
+
+\subparagraph{Conjugaison des matrices de Pauli.}
+On sait que pour un vecteur unitaire $\bm{n}$ et un vecteur $\bm{a} \in \mathbb{R}^3$ :
+\begin{eqnarray}
+U (\bm{a} \cdot \bm{\sigma}) U^\dagger = (R_{\hat{\bm{n}}}(2|\bm{n}|) \, \bm{a}) \cdot \bm{\sigma},
+\end{eqnarray}
+où $U = e{i n_0}e^{i |\bm{n}| \hat{\bm{n}} \cdot \bm{\sigma}}$ et $R_{\bm{n}}(2|\bm{n}|)$ est la rotation 3D autour de l'axe $\bm{n}$ d'angle $2\phi$\footnote{La démonstration de la conjugaison des matrices de Pauli repose sur l'identité $(\bm{n}\cdot\bm{\sigma})^2 = I$ et la formule trigonométrique de l'exponentielle : $U = e^{i \phi \, \bm{n} \cdot \bm{\sigma}} = \cos \phi \, I + i \sin \phi \, (\bm{n} \cdot \bm{\sigma})$. En développant
+\begin{eqnarray}
+U (\bm{a} \cdot \bm{\sigma}) U^\dagger = (\cos \phi I + i \sin \phi \, \bm{n} \cdot \bm{\sigma}) (\bm{a} \cdot \bm{\sigma}) (\cos \phi I - i \sin \phi \, \bm{n} \cdot \bm{\sigma}),
+\end{eqnarray}
+et en utilisant les identités des matrices de Pauli
+\begin{eqnarray}
+(\bm{n}\cdot\bm{\sigma})(\bm{a}\cdot\bm{\sigma}) = (\bm{n}\cdot\bm{a}) I + i (\bm{n} \times \bm{a}) \cdot \bm{\sigma},
+\quad
+[\bm{n}\cdot\bm{\sigma}, \bm{a}\cdot\bm{\sigma}] = 2 i (\bm{n} \times \bm{a}) \cdot \bm{\sigma},
+\end{eqnarray}
+on obtient
+\begin{eqnarray}
+U (\bm{a} \cdot \bm{\sigma}) U^\dagger = \cos(2\phi) \, (\bm{a}\cdot\bm{\sigma}) + \sin(2\phi) \, (\bm{n} \times \bm{a}) \cdot \bm{\sigma} + 2 \sin^2 \phi \, (\bm{n} \cdot \bm{a}) (\bm{n} \cdot \bm{\sigma}),
+\end{eqnarray}
+ce qui correspond exactement à la rotation de Rodrigues pour le vecteur $\bm{a}$ autour de $\bm{n}$ :
+\begin{eqnarray}
+R_{\bm{n}}(2\phi) \, \bm{a} = \bm{a} \cos(2\phi) + (\bm{n} \times \bm{a}) \sin(2\phi) + \bm{n} (\bm{n} \cdot \bm{a}) (1 - \cos(2\phi)).
+\end{eqnarray}
+Ainsi, la conjugaison par $U$ dans SU(2) se traduit par une rotation classique 3D du vecteur $\bm{a}$.}.  
+
+Dans notre cas :
+\begin{eqnarray}
+U \sigma_2 U^\dagger = (R_{\hat{\bm{n}}}(2\vert n \vert ) \, \hat{e}_y) \cdot \bm{\sigma}.
+\end{eqnarray}
+
+
+
+\subparagraph{Condition pour être diagonale.}
+Une matrice $x \sigma_x + y \sigma_y + z \sigma_z$ est diagonale si et seulement si $x=y=0$. Il faut donc que :
+\begin{eqnarray}
+R_{\hat{\bm{n}}}(2\vert n \vert ) \, \hat{e}_y \propto \hat{e}_z.
+\end{eqnarray}
+Donc il faut que 
+\begin{eqnarray}
+U \sigma_2 U^\dagger \propto \sigma_3.
+\end{eqnarray}
+pour que $U F U^\dagger $ soit diagonale.
+
+\subparagraph{Solution connue.}
+Une solution connue est :
+\begin{eqnarray}
+    n_0 & = & \mp\frac{\pi}{4},\\
+\bm{n} &=& \pm \frac{1}{\sqrt{3}} (\pm 1,\mp 1, \pm 1 ), \\
+\vert n \vert  &=& \frac{\pi}{3}.
+\end{eqnarray}
+Alors la matrice de passage correspondent est :
+\begin{equation}
+    U = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & i \\ 1 & -i \end{pmatrix}
+\end{equation}
+
+\footnote{
+\paragraph*{Valeurs propres de $U$}
+Contrairement à une rotation pure, les valeurs propres de cette matrice spécifique $U$ se calculent via le polynôme caractéristique $\det(U - \lambda I) = 0$. 
+Les valeurs propres sont :
+\begin{equation}
+    \lambda_{\pm} = \frac{(1-i) \pm \sqrt{(1-i)^2 - 4(-i)}}{2} = \frac{(1-i) \pm \sqrt{2i}}{2}
+\end{equation}
+Elles sont de la forme $e^{i \phi}$, car $U$ est unitaire.
+
+\paragraph*{Lien avec la matrice qui diagonalise $\sigma_y$}
+Les vecteurs propres de la matrice de Pauli $\sigma_y = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}$ sont :
+\begin{equation}
+    v_+ = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ i \end{pmatrix}, \quad
+    v_- = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -i \end{pmatrix}
+\end{equation}
+
+La matrice de passage $P$ qui diagonalise $\sigma_y$ (telle que $P^\dagger \sigma_y P = \sigma_z$) est construite en plaçant ces vecteurs en colonnes :
+\begin{equation}
+    P = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ i & -i \end{pmatrix}
+\end{equation}
+
+\paragraph*{Comparaison avec $U$}
+On remarque que votre matrice $U$ est la **transposée** de la matrice de passage $P$ (ou sa version conjuguée par rapport à certains éléments) :
+\begin{equation}
+    U = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & i \\ 1 & -i \end{pmatrix} \quad \text{alors que} \quad P = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ i & -i \end{pmatrix}
+\end{equation}
+
+En physique quantique, cette matrice $U$ permet de passer de la base des états liés à l'impulsion et la position aux opérateurs d'échelle (création/annihilation). Elle réalise la transformation :
+\begin{equation}
+    U^\dagger \sigma_y U = \sigma_x
+\end{equation}
+C'est une rotation de $\pi/2$ autour d'un axe spécifique dans l'espace de Bloch.
+}
+et en effet $U\sigma_zU^\dag = -\sigma_z$ ainsi :
+\begin{eqnarray}
+    U F U^\dag = i \sigma .
+\end{eqnarray}
+
+\paragraph{Valeurs et fonctions propres.}
+
+%\subparagraph{Variables conjuguées adimentionnés :.}
+\subparagraph{Passage aux opérateurs création et annihilation/}
+
+Puisque $U$ est sans dimension, on prend des variables conjuguées adimentionnés :
+\begin{eqnarray}
+    \operator{\mathcal X} = \frac{1}\eta  \operator{\mathcal M}_{\mathrm{id}_{\mathbb R}} , \quad \operator{\mathcal K} = \eta \gamma \operator{\mathcal D},
+\end{eqnarray}
+avec $\eta$ un paramètre d'échelle, ainsi 
+\begin{eqnarray}
+    \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & i \\ 1 & -i \end{pmatrix}  \begin{pmatrix} \operator{\mathcal X} \\\operator{\mathcal K} \end{pmatrix} & = &  \begin{pmatrix} \operator{a} \\ \operator{a}^\dag \end{pmatrix}
+\end{eqnarray}
+avec $\operator{a}$ l'opérateur \guillemotleft{}annihilation\guillemotright{} et $\operator{a}^\dag$ l'opérateur \guillemotleft{}création\guillemotright{}.
+
+\smallskip
+
+Et on a 
+\begin{eqnarray}
+    \begin{array}{rclcrcl}
+    \operator{\mathcal{F}} \,\operator{a} \, \operator{\mathcal{F}}^{-1}  &=& -i \operator{a},  \quad && \quad  \operator{\mathcal{F}}\, \operator{a}^\dag \, \operator{\mathcal{F}}^{-1}&= & i\operator{a}^\dag ,\\
+    \operator{\mathcal{F}}^{-1} \,\operator{a} \, \operator{\mathcal{F}} &=& i \operator{a}  \quad &\mbox{et}& \quad  \operator{\mathcal{F}}^{-1} \operator{a}^\dag \, \operator{\mathcal{F}} &= & -i\operator{a}^\dag
+    \end{array} .
+\end{eqnarray}
+
+\subparagraph{Opérateur nombre.}
+On introduit l'opérateur 
+\begin{eqnarray}
+    \operator{\mathcal N} & = &  \operator{a}^\dag  \operator{a}.
+\end{eqnarray}
+qui est hermitien et vérifie 
+\begin{eqnarray}
+    \operator{\mathcal{F}} \,\operator{\mathcal N} \, \operator{\mathcal{F}}^{-1} =  \operator{\mathcal{F}} \,\operator{a}^\dag \, \operator{\mathcal{F}}^{-1} \operator{\mathcal{F}} \,\operator{a} \, \operator{\mathcal{F}}^{-1} = i \operator{a}^\dag ( - i \operator{a})  = \operator{\mathcal N}.
+\end{eqnarray}
+Donc 
+
+\medskip
+On se place ici à l'espace $\mathcal L^2$ définie plus bas\footnote{
+    Sur un espace de mesure finie (ex: un intervalle $[a, b]$)Si $\mu(X) < \infty$, alors les fonctions de carré sommable sont aussi sommables.Relation : $\mathcal{L}^2(X) \subset \mathcal{L}^1(X)$Démonstration rapide :D'après l'inégalité de Cauchy-Schwarz appliquée à $|f| \cdot 1$ :$$\int_X |f| \, d\mu \leq \sqrt{\int_X |f|^2 \, d\mu} \cdot \sqrt{\int_X 1^2 \, d\mu}$$Si $\int |f|^2 < \infty$ et $\mu(X) < \infty$, alors $\int |f| < \infty$.2. Sur un espace de mesure infinie (ex: $\mathbb{R}$)Sur $\mathbb{R}$, il n'y a aucune inclusion entre les deux espaces.$f \in \mathcal{L}^2$ mais $f \notin \mathcal{L}^1$ :La fonction $f(x) = \frac{1}{\sqrt{x^2+1}}$ n'est pas intégrable sur $\mathbb{R}$ (décroissance trop lente), mais son carré l'est.$f \in \mathcal{L}^1$ mais $f \notin \mathcal{L}^2$ :La fonction $f(x) = \frac{1}{\sqrt{x}}$ sur $]0, 1]$ (et 0 ailleurs) est intégrable, mais son carré $1/x$ diverge en zéro.3. Cas des suites ($\ell^p$)Pour les suites, la logique est inversée car la mesure de comptage sur un point est $1 \geq 1$.Relation : $\ell^1 \subset \ell^2$Si une série $\sum |x_n|$ converge, alors ses termes tendent vers 0. À partir d'un certain rang, $|x_n| < 1$, donc $|x_n|^2 < |x_n|$. La convergence de la série des carrés est alors garantie.
+%     \begin{table}[h]
+% \centering
+% \renewcommand{\arraystretch}{1.5} % Pour plus d'espace entre les lignes
+% \begin{tabular}{lcp{6cm}}
+% \toprule
+% \textbf{Espace} & \textbf{Inclusion} & \textbf{Condition / Commentaire} \\
+% \midrule
+% \textbf{Mesure finie} & $\mathcal{L}^2 \subset \mathcal{L}^1$ & Toujours vrai (ex: intervalle $[a, b]$). Découle de l'inégalité de Cauchy-Schwarz. \\
+% \textbf{Mesure infinie} & $\mathcal{L}^1 \cap \mathcal{L}^2$ & Intersection non vide, mais aucune inclusion mutuelle (ex: sur $\mathbb{R}$). \\
+% \textbf{Suites} & $\ell^1 \subset \ell^2$ & Toujours vrai. Si $\sum |x_n|$ converge, alors $\sum |x_n|^2$ converge aussi. \\
+% \bottomrule
+% \end{tabular}
+% \caption{Inclusions entre les espaces de Lebesgue $\mathcal{L}^1$ et $\mathcal{L}^2$.}
+% \end{table}
+% \begin{tabular}{lcp{6cm}}
+% \toprule
+% \textbf{Espace} & \textbf{Inclusion} & \textbf{Condition / Commentaire} \\
+% \midrule
+% \textbf{Mesure finie} & $\mathcal{L}^2 \subset \mathcal{L}^1$ & Toujours vrai (ex: intervalle $[a, b]$). Découle de l'inégalité de Cauchy-Schwarz. \\
+% \textbf{Mesure infinie} & $\mathcal{L}^1 \cap \mathcal{L}^2$ & Intersection non vide, mais aucune inclusion mutuelle (ex: sur $\mathbb{R}$). \\
+% \textbf{Suites} & $\ell^1 \subset \ell^2$ & Toujours vrai. Si $\sum |x_n|$ converge, alors $\sum |x_n|^2$ converge aussi. \\
+% \bottomrule
+% \end{tabular}
+\begin{center}
+\begin{tabular}{l c p{7cm}}
+
+\textbf{Espace} & \textbf{Inclusion} & \textbf{Condition / Commentaire} \\
+\hline
+\textbf{Mesure finie} & $\mathcal{L}^2 \subset \mathcal{L}^1$ & Toujours vrai (ex: intervalle $[a, b]$). Découle de l'inégalité de Cauchy-Schwarz. \\
+
+\textbf{Mesure infinie} & $\mathcal{L}^1 \cap \mathcal{L}^2$ & Intersection non vide, mais aucune inclusion mutuelle (ex: sur $\mathbb{R}$). \\
+
+\textbf{Suites} & $\ell^1 \subset \ell^2$ & Toujours vrai. Si $\sum |x_n|$ converge, alors $\sum |x_n|^2$ converge aussi. \\
+
+\end{tabular}
+\end{center}
+
+% \begin{table}[h]
+% \centering
+% \renewcommand{\arraystretch}{1.5}
+% \begin{tabular}{|l|c|p{7cm}|}
+% \hline
+% \textbf{Espace} & \textbf{Inclusion} & \textbf{Condition / Commentaire} \\
+% \hline
+% \textbf{Mesure finie} & $\mathcal{L}^2 \subset \mathcal{L}^1$ & Toujours vrai (ex: intervalle $[a, b]$). Découle de l'inégalité de Cauchy-Schwarz. \\
+% \hline
+% \textbf{Mesure infinie} & $\mathcal{L}^1 \cap \mathcal{L}^2$ & Intersection non vide, mais aucune inclusion mutuelle (ex: sur $\mathbb{R}$). \\
+% \hline
+% \textbf{Suites} & $\ell^1 \subset \ell^2$ & Toujours vrai. Si $\sum |x_n|$ converge, alors $\sum |x_n|^2$ converge aussi. \\
+% \hline
+% \end{tabular}
+% \caption{Inclusions entre les espaces de Lebesgue $\mathcal{L}^1$ et $\mathcal{L}^2$.}
+% \end{table}
+}.
+
+\begin{Lemm}[\bf Les valeur propre de $\operator{\mathcal N}$ sont dans $\mathbb R_+$]
+Supposons que $\lambda$ est une valeur propre de $\operator{\mathcal N}$ associé à la fonction propre $\psi$,
+\begin{eqnarray}
+    \operator{\mathcal N}\psi = \lambda \psi, \quad \lambda \geq 0,
+\end{eqnarray}
+\end{Lemm}
+\begin{proof}
+$\operator{\mathcal N}$ est hermitien et \cite{cohen1973mecanique1}, et $\Vert \operator{a} \psi \Vert_2^2 = \int \overline{\psi} \operator{a}^\dag  \operator{a} \psi = \int \overline{\psi} \operator{\mathcal N} \psi = \lambda \Vert \psi \Vert_2^2.$
+% \begin{eqnarray}
+%     \lambda \Vert \psi \Vert_2^2 = \int \overline{\psi} \operator{\mathcal N} \psi =  \int \overline{\psi} \operator{a}^\dag  \operator{a} \psi = \Vert \operator{a} \psi \Vert_2^2.
+% \end{eqnarray}
+\end{proof}
+
+Pour ne pas fais pleine d'intégrale dans les démonstrations, je note les fonctions $\psi$ avec le \guillemotleft{}ket\guillemotright{}, $\ket{\psi}$ et donc se restreint à l'espace $\mathcal L^2(\mathbb R)$ définie plus bas.
+
+\begin{Lemm}[\bf Propriétés de $\operator{a} \ket{\varphi_\lambda}$]
+Soit $\ket{\varphi_\lambda}$ un vecteur propre (non nul) de $\operator{\mathcal N}$, de valeur propre $\lambda$.
+    \begin{enumerate}[label = \roman*)]
+        \item Si $\lambda = 0$, alors $\operator{a} \ket{\varphi_{\lambda = 0}}$ est nulle.
+        \item  Si $\lambda > 0$, le ket $\operator{a} \ket{\varphi_{\lambda}}$ est un vecteur propre non nul de $\operator{\mathcal N}$, de valeur propre $\lambda -1$.
+    \end{enumerate}
+\end{Lemm}
+\begin{proof}
+    \begin{enumerate}[label = \roman*)]
+        \item $\Vert \operator{a} \varphi_n \Vert_2^2 = \bra{\varphi_n} \operator{a}^\dag \operator{a}\ket{\varphi_n} = \bra{\varphi_n}\operator{\mathcal N}\ket{\varphi_n} = \lambda \braket{\varphi_n \vert \varphi_n} = \lambda \Vert \varphi_n \Vert_2^2= 0$.
+        \item $\Vert \operator{a} \varphi_n \Vert_2^2 = \lambda \Vert \varphi_n \Vert_2^2 > 0$ et $\operator{\mathcal N} \operator{a}\ket{\varphi_\lambda} = \operator{a} (\operator{\mathcal N} - \operator{1}) \ket{\varphi_\lambda} = (\lambda -1 )\operator{a} \ket{\varphi_\lambda}$ car $[\operator{\mathcal N} , \operator{a}] = - \operator{a}$.
+    \end{enumerate}
+\end{proof}
+
+\begin{Lemm}[\bf Propriétés de $\operator{a}^\dag \ket{\varphi_\lambda}$]
+Soit $\ket{\varphi_\lambda}$ un vecteur propre (non nul) de $\operator{\mathcal N}$, de valeur propre $\lambda$.
+    \begin{enumerate}[label = \roman*)]
+        \item $\operator{a}^\dag  \ket{\varphi_{\lambda = 0}}$ est toujours non nul.
+        \item $\operator{a}^\dag  \ket{\varphi_{\lambda}}$ est un vecteur propre  de $\operator{\mathcal N}$, de valeur propre $\lambda +1$.
+    \end{enumerate}
+\end{Lemm}
+\begin{proof}
+    {~~~}
+    \begin{enumerate}[label = \roman*)]
+        \item On sait que $\lambda \geq 0 $ et $[\operator{a},\operator{a}^\dag] = \operator{1}$ donc $\Vert \operator{a}^\dag \varphi_n \Vert_2^2 = \bra{\varphi_n} \operator{a} \operator{a}^\dag \ket{\varphi_n} =  \bra{\varphi_n} (\operator{\mathcal N } + \operator{1}) \ket{\varphi_n} = (\lambda +1 ) \Vert \operator{a}^\dag \varphi_n \Vert_2^2 $ 
+        \item $\operator{\mathcal N} \operator{a}^\dag\ket{\varphi_\lambda} = \operator{a}^\dag (\operator{\mathcal N} + \operator{1}) \ket{\varphi_\lambda} = (\lambda  + 1 )\operator{a}^\dag \ket{\varphi_\lambda}$ car $[\operator{\mathcal N} , \operator{a}^\dag] = \operator{a^\dag}$.
+    \end{enumerate}
+\end{proof}
+\begin{Lemm}[\bf Les valeurs propres $n$ de $\operator{\mathcal N}$ sont entiers]
+\end{Lemm}
+\begin{proof}
+    Soit $\lambda$ non entier tel que $n < \lambda < n+1 $ avec $n \in \mathbb N$
+    \begin{eqnarray}
+        \operator{\mathcal N} \operator{a}^p \ket{\varphi_\lambda} = \operator{a}^p ( \operator{\mathcal N} - p \operator{1}) \ket{\varphi_\lambda} = ( \lambda  - p) \operator{a}^p \ket{\varphi_\lambda},
+    \end{eqnarray}
+    avec $p$ un entier. Si $p = n $ alors $( \lambda  - ) >0 $ et par récurrence sur $n$ on montre que $\operator{a}^n \ket{\varphi_\lambda}$ est non nul. De plus en appliquant $\operator{a}$ sur $\operator{a}^n \ket{\varphi_\lambda}$ on montre que $\operator{a}^{n+1} \ket{\varphi_\lambda}$ et non nul. Or $\operator{a}^{n+1} \ket{\varphi_\lambda}$ est vecteur propre de $\operator{\mathcal N}$ de valeur propre $(\lambda - n -1) < 0$, absurde !
+\end{proof}
+
+\subparagraph{Lien entre l'opérateur nombre et la Transformée de Fourier}
+
+% On définit la Transformée de Fourier (TF) par l'action de l'opérateur $\mathcal{F}$ tel que :
+% \begin{equation}
+%     \tilde{f}(k) = (\mathcal{F}f)(k) \doteq \alpha \int_{\mathbb{R}} f(x)\, e^{\mp i \gamma k x}\, dx
+% \end{equation}
+% où $(\alpha, \gamma) \in \mathbb{C} \times \mathbb{R}$. 
+En mécanique quantique, les fonctions propres de l'oscillateur harmonique unidimensionnel sont données en fonction :
+\begin{equation}
+    \xi^{-1/2}\varphi_n(y/\xi),
+\end{equation}
+avec
+\begin{equation}
+    y \mapsto \varphi_n(y) = \frac{1}{\sqrt{2^n n!}} \left( \frac{1}{\pi} \right)^{1/4} H_n\left( y \right) e^{-\frac{1}{2}y^2}
+\end{equation}
+où pour l'oscillateur harmonique pour la représentation position $\xi = \eta =  \sqrt{1/(m \omega \gamma)} \underset{\gamma = \hbar^{-1}}{=} \sqrt{\frac{\hbar}{m\omega}}$  et pour la présentation impulsion $\xi = 1/(\gamma \eta) =  \sqrt{ (m \omega/\gamma} \underset{\gamma = \hbar^{-1}}{=} \sqrt{\hbar m\omega }$ et $H_n(y)$ sont les \textbf{polynômes d'Hermite}, définis par la formule de Rodrigues :
+\begin{equation}
+    H_n(y) = (-1)^n e^{y^2} \frac{d^n}{dy^n} e^{-y^2}
+\end{equation}
+
+Ces fonctions $\ket{\varphi_n}$ sont les états propres de l'opérateur nombre $\operator{\mathcal N} = \operator{a}^\dagger \operator{a}$ associés aux valeurs propres $n$. La relation de commutation entre la transformée de Fourier et $\operator{\mathcal N}$ se déduit des transformations des opérateurs d'échelle :
+\begin{equation}
+    \operator{\mathcal{F}} \operator{\mathcal N} \operator{\mathcal{F}}^{-1} = (\operator{\mathcal{F}} \operator{a}^\dagger \operator{\mathcal{F}}^{-1})(\operator{\mathcal{F}} \operator{a} \operator{\mathcal{F}}^{-1}) = (i \operator{a}^\dagger)(-i \operator{a}) = \operator{a}^\dagger \operator{a} = \operator{\mathcal N}
+\end{equation}
+Ainsi, $[\operator{\mathcal{F}}, \operator{\mathcal N}] = 0$. En mécanique quantique, deux opérateurs qui commutent partagent une base commune de vecteurs propres. Par conséquent, tout état propre $\ket{\varphi_n}$ de $\operator{\mathcal N}$ est nécessairement un état propre de $\operator{\mathcal{F}}$.
+
+\smallskip 
+%\paragraph{Calcul de la valeur propre}
+Soit $\ket{\varphi_n}$ tel que $\operator{\mathcal N}\ket{\varphi_n} = n\ket{\varphi_n}$. L'état fondamental $\ket{\varphi_0}$ est défini par $\operator{a}\ket{\varphi_0} = 0$. En appliquant la transformée de Fourier :
+\begin{equation}
+    \operator{\mathcal{F}} \operator{a} \operator{\mathcal{F}}^{-1} (\operator{\mathcal{F}}\ket{\varphi_0}) = 0 \implies (-i\operator{a}) (\operator{\mathcal{F}}\ket{\varphi_0}) = 0
+\end{equation}
+Ceci implique que $\operator{\mathcal{F}}\ket{\varphi_0}$ est proportionnel à l'unique état annulé par $\operator{a}$, donc $\operator{\mathcal{F}}\ket{\varphi_0} = \lambda_0 \ket{\varphi_0}$. Pour la normalisation standard de la transformée de Fourier physique, $\lambda_0 = \alpha \sqrt{2 \pi}$. Pour un état excité quelconque, on utilise l'opérateur de création :
+\begin{equation}
+    \ket{\varphi_n} = \frac{(\operator{a}^\dagger)^n}{\sqrt{n!}} \ket{\varphi_0},
+\end{equation}
+\footnote{Par récurrence, on montre que l'action répétée de l'opérateur de création $\hat{a}^\dag = \frac{1}{\sqrt{2}}(y - \frac{d}{dy})$ sur l'état fondamental permet d'exprimer les états excités via les polynômes d'Hermite : $\ket{\varphi_n} = \frac{(\hat{a}^\dag)^n}{\sqrt{n!}}\ket{\varphi_0} = \frac{\pi^{-1/4}}{\sqrt{2^n n!}} H_n(y) e^{-y^2/2}$.}
+
+L'action de la transformée de Fourier donne alors :
+\begin{equation}
+    \operator{\mathcal{F}} \ket{\varphi_n} = \frac{(\operator{\mathcal{F}} \operator{a}^\dagger \operator{\mathcal{F}}^{-1})^n}{\sqrt{n!}} \operator{\mathcal{F}} \ket{\varphi_0} = \frac{(i \operator{a}^\dagger)^n}{\sqrt{n!}} \lambda_0 \ket{\varphi_0} = i^n \lambda_0 \ket{\varphi_n}
+\end{equation}
+\footnote{En utilisant l'intégrale gaussienne générale $\int_{\mathbb{R}} e^{-ax^2 + bx} dx = \sqrt{\frac{\pi}{a}} e^{\frac{b^2}{4a}}$ pour $\Re(a)>0$, on vérifie aisément que pour $a=1$ et $b=0$, la norme $\Vert\varphi_0\Vert_2^2 = \pi^{-1/2} \int_{\mathbb{R}} e^{-x^2} dx = \pi^{-1/2} \sqrt{\pi} = 1$.}
+\textbf{Résultat :} Les fonctions de Hermite-Gauss sont des points fixes de la Transformée de Fourier à un facteur de phase près : $\operator{\mathcal{F}} \ket{\varphi_n} = \lambda_0 i^n \ket{\varphi_n}$.
+
+% ----------------------------------------------
+% \begin{eqnarray}
+%     U  &=& \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & i \\ 1 & -1 \end{pmatrix} \\
+% \end{eqnarray}
+% qui est diagonale avec valeurs propres $e^{\mp i \theta}$.
+
+% \subparagraph{Lien avec la matrice qui diagonalise $\sigma_2$}
+% Les vecteurs propres de $\sigma_2$ sont :
+% \begin{eqnarray}
+% v_+ &=& \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ i \end{pmatrix}, \quad
+% v_- = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -i \end{pmatrix}.
+% \end{eqnarray}
+% La matrice de passage est alors :
+% \begin{eqnarray}
+% U_{\sigma_2} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ i & -i \end{pmatrix}, \quad 
+% U_{\sigma_2}^\dagger \sigma_2 U_{\sigma_2} = \sigma_3.
+% \end{eqnarray}
+% Ainsi, $U = e^{i (\pi/4) \sigma_x}$ est équivalente à $U_{\sigma_2}$ à une phase globale près et diagonalise $\sigma_2$, réalisant la diagonalisation de $F$ dans la base de ses vecteurs propres.
+
+
+
+% ----------------------
+
+% \paragraph{Diagonalisation de transformations de Fourier}
+
+% Considérons la transformation de Fourier, que l'on peut réécrire sous la forme exponentielle :
+% \begin{eqnarray}
+% F = e^{\theta J}, \quad J = -i \sigma_2,
+% \end{eqnarray}
+% avec $\theta \in \mathbb{R}$. Cette forme est utile pour exploiter la structure SU(2) et les rotations générées par les matrices de Pauli.
+
+% \subparagraph{Objectif} 
+% Nous souhaitons diagonaliser $F$ via une transformation unitaire $U$ :
+% \begin{eqnarray}
+% U F U^\dagger = \text{diagonale}.
+% \end{eqnarray}
+% Comme discuté précédemment, il suffit de trouver $U$ tel que :
+% \begin{eqnarray}
+% U \sigma_2 U^\dagger = \sigma_3.
+% \end{eqnarray}
+
+% \subparagraph{Rotation autour de \bf{n}}
+% On choisit $U$ comme rotation SU(2) autour de l'axe $\hat{x}$ :
+% \begin{eqnarray}
+% U = e^{i \frac{\pi}{4} \sigma_x}.
+% \end{eqnarray}
+% En effet, la rotation de $\hat{y}$ autour de $\hat{x}$ par un angle $2\phi = \pi/2$ envoie $\hat{y} \mapsto \hat{z}$, ce qui garantit la diagonalisation.
+
+% \subparagraph{Lien avec la matrice de passage}
+% Cette opération correspond également à la matrice de passage standard qui diagonalise $\sigma_2$ :
+% \begin{eqnarray}
+% U_{\sigma_2} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ i & -i \end{pmatrix}, \quad 
+% U_{\sigma_2}^\dagger \sigma_2 U_{\sigma_2} = \sigma_3.
+% \end{eqnarray}
+
+% Ainsi, conjuguer par $U = e^{i (\pi/4) \sigma_x}$ ou par $U_{\sigma_2}$ réalise la diagonalisation de la transformation de Fourier dans la base des vecteurs propres de $\sigma_2$, reliant l'exponentielle d'une matrice hermitienne à la structure des rotations SU(2).
+
+% \section*{Conditions pour que $U F U^\dagger$ soit diagonale}
+
+% On considère maintenant la situation plus générale :
+% \begin{eqnarray}
+% U &=& e^{i \bm{n} \cdot \bm{\sigma}}, \\
+% F &=& e^{\theta J}, \quad J = -i \sigma_2, \quad \bm{n} \text{ unitaire}, \quad \theta \in \mathbb{R}.
+% \end{eqnarray}
+
+% \subsection*{1. Réécriture de $F$}
+
+% \begin{eqnarray}
+% F &=& e^{\theta J} = e^{\theta (-i \sigma_2)} = e^{- i \theta \sigma_2} \\
+%   &=& \cos \theta \, I - i \sin \theta \, \sigma_2.
+% \end{eqnarray}
+
+% \subsection*{2. Conjugaison par $U$}
+
+% \begin{eqnarray}
+% U F U^\dagger &=& e^{i \bm{n} \cdot \bm{\sigma}} (\cos \theta I - i \sin \theta \, \sigma_2) e^{- i \bm{n} \cdot \bm{\sigma}} \\
+% &=& \cos \theta I - i \sin \theta \, (U \sigma_2 U^\dagger).
+% \end{eqnarray}
+
+% Ainsi, $U F U^\dagger$ est diagonale si et seulement si $U \sigma_2 U^\dagger$ est diagonale.
+
+% \subsection*{3. Conjugaison des matrices de Pauli}
+
+% Pour un vecteur unitaire $\bm{n}$ :
+% \begin{eqnarray}
+% U (\bm{a} \cdot \bm{\sigma}) U^\dagger = (R_{\bm{n}}(2\phi) \, \bm{a}) \cdot \bm{\sigma},
+% \end{eqnarray}
+% où $U = e^{i \phi \, \bm{n} \cdot \bm{\sigma}}$ et $R_{\bm{n}}(2\phi)$ est la rotation 3D autour de l'axe $\bm{n}$ d'angle $2\phi$.  
+
+% Dans notre cas particulier :
+% \begin{eqnarray}
+% U \sigma_2 U^\dagger = (R_{\bm{n}}(2\phi) \, \hat{y}) \cdot \bm{\sigma}.
+% \end{eqnarray}
+
+% \subsection*{4. Condition pour être diagonale}
+
+% Une matrice $x \sigma_x + y \sigma_y + z \sigma_z$ est diagonale si et seulement si $x=y=0$, c'est-à-dire seulement $\pm \sigma_3$.  
+
+% Ainsi, il faut que :
+% \begin{eqnarray}
+% R_{\bm{n}}(2\phi) \, \hat{y} = \pm \hat{z}.
+% \end{eqnarray}
+
+% \subsection*{5. Solution simple}
+
+% Choisir :
+% \begin{eqnarray}
+% \bm{n} &=& \pm \hat{x} = (1,0,0), \\
+% \phi &=& \frac{\pi}{4} \quad \text{(donc $2\phi = \pi/2$)}.
+% \end{eqnarray}
+
+% Alors :
+% \begin{eqnarray}
+% U \sigma_2 U^\dagger &=& \sigma_3, \\
+% U F U^\dagger &=& \cos \theta I - i \sin \theta \sigma_3,
+% \end{eqnarray}
+% qui est diagonale avec valeurs propres $e^{\mp i \theta}$.
+
+% \subsection*{6. Lien avec la matrice qui diagonalise $\sigma_2$}
+
+% Les vecteurs propres de $\sigma_2$ sont :
+% \begin{eqnarray}
+% v_+ &=& \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ i \end{pmatrix}, \quad
+% v_- = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -i \end{pmatrix}.
+% \end{eqnarray}
+
+% La matrice de passage est :
+% \begin{eqnarray}
+% U_{\sigma_2} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ i & -i \end{pmatrix},
+% \end{eqnarray}
+% et vérifie :
+% \begin{eqnarray}
+% U_{\sigma_2}^\dagger \sigma_2 U_{\sigma_2} = \sigma_3.
+% \end{eqnarray}
+
+% Ainsi, $U = e^{i (\pi/4) \sigma_x}$ est équivalente à $U_{\sigma_2}$ à une phase globale près et diagonalise $\sigma_2$, réalisant la diagonalisation de $F$ dans la base de ses vecteurs propres.
+
+% --------------------------------------
+
+% \paragraph{Diagonalisation de transformations de Fourier}
+
+% Considérons maintenant la transformation de Fourier, que l'on peut réécrire sous la forme exponentielle
+% \begin{eqnarray}
+% F = e^{\theta J}, \quad J = -i \sigma_2,
+% \end{eqnarray}
+% avec \(\theta \in \mathbb{R}\). Cette forme est utile pour exploiter la structure SU(2) et les rotations générées par les matrices de Pauli.  
+
+% \subparagraph{1. Objectif} 
+% Nous souhaitons diagonaliser \(F\) via une transformation unitaire \(U\) :
+% \begin{eqnarray}
+% U F U^\dagger = \text{diagonale}.
+% \end{eqnarray}
+% Comme discuté précédemment, il suffit de trouver \(U\) tel que
+% \begin{eqnarray}
+% U \sigma_2 U^\dagger = \sigma_3.
+% \end{eqnarray}
+
+% \subparagraph{2. Rotation autour de \bf{n}}
+% Pour cela, on peut choisir \(U\) comme rotation SU(2) autour de l'axe \(x\) :
+% \begin{eqnarray}
+% U = e^{i \frac{\pi}{4} \sigma_x}.
+% \end{eqnarray}
+% En effet, la rotation de \(\hat{y}\) autour de \(\hat{x}\) par un angle \(2 \phi = \pi/2\) envoie \(\hat{y} \mapsto \hat{z}\), ce qui garantit la diagonalisation.
+
+% \subparagraph{3. Lien avec la matrice de passage}
+% Cette opération correspond également à la matrice de passage standard qui diagonalise \(\sigma_2\) :
+% \begin{eqnarray}
+% U_{\sigma_2} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ i & -i \end{pmatrix}, \quad 
+% U_{\sigma_2}^\dagger \sigma_2 U_{\sigma_2} = \sigma_3.
+% \end{eqnarray}
+
+% Ainsi, la conjugaison par \(U = e^{i (\pi/4) \sigma_x}\) ou par \(U_{\sigma_2}\) réalise la diagonalisation de la transformation de Fourier dans la base des vecteurs propres de \(\sigma_2\), reliant l'exponentielle d'une matrice hermitienne à la structure des rotations SU(2).
+
+
+% -----------------
+
+
+
+% \section*{Conditions pour que $U F U^\dagger$ soit diagonale}
+
+% On considère
+% \begin{eqnarray}
+% U &=& e^{i \bm{n} \cdot \bm{\sigma}}, \\
+% F &=& e^{\theta J}, \quad J = -i \sigma_2, \quad \bm{n} \text{ unitaire}, \quad \theta \in \mathbb{R}.
+% \end{eqnarray}
+
+% \subsection*{1. Réécriture de $F$}
+
+% \begin{eqnarray}
+% F &=& e^{\theta J} = e^{\theta (-i \sigma_2)} = e^{- i \theta \sigma_2} \\
+%   &=& \cos \theta \, I - i \sin \theta \, \sigma_2.
+% \end{eqnarray}
+
+% \subsection*{2. Conjugaison par $U$}
+
+% \begin{eqnarray}
+% U F U^\dagger &=& e^{i \bm{n} \cdot \bm{\sigma}} (\cos \theta I - i \sin \theta \, \sigma_2) e^{- i \bm{n} \cdot \bm{\sigma}} \\
+% &=& \cos \theta I - i \sin \theta \, (U \sigma_2 U^\dagger).
+% \end{eqnarray}
+
+% Ainsi, $U F U^\dagger$ est diagonale si et seulement si $U \sigma_2 U^\dagger$ est diagonale.
+
+% \subsection*{3. Conjugaison des matrices de Pauli}
+
+% Pour un vecteur unitaire $\bm{n}$ :
+
+% \begin{eqnarray}
+% U (\bm{a} \cdot \bm{\sigma}) U^\dagger = (R_{\bm{n}}(2\phi) \, \bm{a}) \cdot \bm{\sigma},
+% \end{eqnarray}
+
+% où $U = e^{i \phi \, \bm{n} \cdot \bm{\sigma}}$ et $R_{\bm{n}}(2\phi)$ est la rotation 3D autour de l'axe $\bm{n}$ d'angle $2\phi$.
+
+% Donc ici :
+
+% \begin{eqnarray}
+% U \sigma_2 U^\dagger = (R_{\bm{n}}(2\phi) \, \hat{y}) \cdot \bm{\sigma}.
+% \end{eqnarray}
+
+% \subsection*{4. Condition pour être diagonale}
+
+% Une matrice $x \sigma_x + y \sigma_y + z \sigma_z$ est diagonale si et seulement si $x=y=0$, c'est-à-dire seulement $\pm \sigma_3$.  
+% Ainsi il faut que :
+
+% \begin{eqnarray}
+% R_{\bm{n}}(2\phi) \, \hat{y} = \pm \hat{z}.
+% \end{eqnarray}
+
+% \subsection*{5. Solution simple}
+
+% Choisir :
+% \begin{eqnarray}
+% \bm{n} &=& \pm \hat{x} = (1,0,0), \\
+% \phi &=& \frac{\pi}{4} \quad \text{(donc $2\phi = \pi/2$)}.
+% \end{eqnarray}
+
+% Alors :
+
+% \begin{eqnarray}
+% U \sigma_2 U^\dagger &=& \sigma_3, \\
+% U F U^\dagger &=& \cos \theta I - i \sin \theta \sigma_3,
+% \end{eqnarray}
+
+% qui est diagonale avec valeurs propres $e^{\mp i \theta}$.
+
+% \subsection*{6. Lien avec la matrice qui diagonalise $\sigma_2$}
+
+% Les vecteurs propres de $\sigma_2$ sont :
+% \begin{eqnarray}
+% v_+ &=& \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ i \end{pmatrix}, \quad
+% v_- = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 \\ -i \end{pmatrix}.
+% \end{eqnarray}
+
+% La matrice de passage est alors :
+
+% \begin{eqnarray}
+% U_{\sigma_2} = \frac{1}{\sqrt{2}} \begin{pmatrix} 1 & 1 \\ i & -i \end{pmatrix},
+% \end{eqnarray}
+
+% et vérifie :
+
+% \begin{eqnarray}
+% U_{\sigma_2}^\dagger \sigma_2 U_{\sigma_2} = \sigma_3.
+% \end{eqnarray}
+
+% Ainsi, $U = e^{i (\pi/4) \sigma_x}$ est équivalente à $U_{\sigma_2}$ à une phase globale près et diagonalise $\sigma_2$.
+
+
+% On impose les conventions $\gamma \equiv \hbar^{-1}$, $\pm \equiv +$ (et $\mp \equiv -$).
+% \smallskip
+
+% En fixant la variable \guillemotleft{}$x$\guillemotright{}, correspondant en physique à la représentation de la position, on identifie l’opérateur position à l’opérateur associé à la fonction identité $\operator{\mathcal M}_{\mathrm{id}_{\mathbb R}}$. On le réécrit sous la forme
+% \begin{eqnarray}
+% \operator{\mathcal M}_{\mathrm{id}_{\mathbb R}} \;\longrightarrow\; \operator{\mathcal{X}},
+% \qquad
+% (\operator{\mathcal{X}} f)(x) = x f(x),
+% \end{eqnarray}
+% et l’on identifie l’opérateur différentiel
+% \begin{eqnarray}
+% \operator{\mathcal{D}} \;\longrightarrow\; \operator{\mathcal{P}}
+% \;\equiv\;
+% \frac{\hbar}{i}\,\partial_x .
+% \end{eqnarray}
+
+% \smallskip
+
+% En fixant la variable \guillemotleft{}$p$\guillemotright{}, correspondant en physique à la représentation de l’impulsion, on procède de manière duale : l’opérateur associé à la fonction identité $\mathrm{id}_{\mathbb{R}}$ est identifié à l’opérateur impulsion
+% \begin{eqnarray}
+% \operator{\mathcal M}_{\mathrm{id}_{\mathbb R}} \;\longrightarrow\; \operator{\mathcal{P}},
+% \qquad
+% (\operator{\mathcal{P}}\,\tilde f)(p) = p\,\tilde f(p),
+% \end{eqnarray}
+% en utilisant la tansformation inverse :
+% \begin{eqnarray}
+%     \operator{\mathcal{F}}^{-1} \, \, \operator{\mathrm{id}}_{\mathbb R} \, \operator{\mathcal{F}} = \operator{\mathcal{D}} \quad \mbox{et} \quad  \operator{\mathcal{F}}^{-1}\, \operator{\mathcal{D}} \, \operator{\mathcal{F}} =  -\operator{\mathrm{id}}_{\mathbb R},
+% \end{eqnarray}
+%  l’opérateur différentiel est identifié à l’opérateur position
+% \begin{eqnarray}
+% \operator{\mathcal{D}} \;\longrightarrow\; \operator{\mathcal{X}}
+% \;\equiv\;
+% i\hbar\,\operator{\partial}_p .
+% \end{eqnarray}
+
+\bigskip
+
+
+
+
+
+
+
+
+
+% \subsubsection{Variables conjuguées adimentionnées}
+
+% On réécrit les variables avec $\eta$ tel que :
+% \begin{eqnarray}
+%     x = \eta x_\ast,  & \quad  & k = \farc{1}{\gamma \eta} k_\ast,
+% \end{eqnarray}
+% de telle sorte que $x_\ast$ et $k_\ast$ soit sans dimension. avec ces variables, la transformée de Fourier et la transformée de Fourier inverse s'écrivent :
+% \begin{eqnarray}
+%     \mathcal F_\ast [f](x_\ast) = \alpha_\ast \int_{\mathbb R } d x_\ast f(x_\ast) e^{\mp i x_\ast k_\ast} , & \quad & \mathcal F_\ast^{-1} [f](k_\ast) = \beta_\ast \int_{\mathbb R } d k_\ast f(k_\ast) e^{\pm i x_\ast k_\ast} ,  
+% \end{eqnarray}
+% avec 
+% \begin{eqnarray}
+%     \alpha_\ast = \eta \alpha , \quad \beta_\ast = \frac{1}{\gamma \eta} \beta , \quad \mbox{et} \, 2\pi \alpha_\ast \beta_\ast = 1 .
+% \end{eqnarray} 
+% Donc on a plus de $\gamma$. Ici on a nomer les variables \guillemotleft{}$x$\guillemotright{} et \guillemotleft{}$k$\guillemotright{} pour plus de pédagohie et pour retrouver des opérateur bien connues de la mécanique quantique, mais en ria lité pour la défininien de la transformer de Fourier, les variable sont muelle sonc on écrirat sans \guillemotleft{}\empty{A}_\ast\guillemotright{} et on ne faus plus atentien a echanger $x$ ou $k$ , ce sont des variable muettes. A partir d'ici la transformer de Fourier s'écrit : 
+% \begin{eqnarray}
+%     \mathcal F [f](x) = \alpha \int_{\mathbb R } d x f(x) e^{\mp i x k} , & \quad & \mathcal F^{-1} [f](k) = \beta \int_{\mathbb R } d x f(x) e^{\pm i x k} ,  
+% \end{eqnarray}
+% avec 
+% \begin{eqnarray}
+%     \alpha_\ast = \eta \alpha , \quad \beta_\ast = \frac{1}{\gamma \eta} \beta , \quad \mbox{et} \, 2\pi \alpha_\ast \beta_\ast = 1,
+% \end{eqnarray}
+% et $x$ , $k$ sans dimension physique.
+
+%-------------------------------
+
+
+
+\bigskip
+
+Jusqu'ici, nous avons travaillé sur l'espace $\mathcal L^1$. Nous allons maintenant nous intéresser à l'espace des fonctions de carré intégrable, $\mathcal L^2$, afin d'introduire naturellement la structure hilbertienne.
+
+\subsection{Passage à l'espace $\mathcal L^2$ et unitarité}
+
+\subsubsection{Espace de Schwartz $\mathcal S$ et stabilité}
+
+On commence par s'intéresser à l'ensemble des fonctions à {\bf décroissance rapide}, que l'on note $\mathcal S$ \cite{AppelMathPhysiciens, AymanMoussatempérees}.
+
+\begin{Defi}[\bf Espace \bm{$\mathcal S$}] 
+On appelle {\bf espace de Schwartz}, et l'on note $\mathcal S(\mathbb R , \mathbb K)$ ou $\mathcal S(\mathbb R)$ ou par abus $\mathcal S$, l'ensemble des fonctions de classe $\mathcal C^\infty$ qui sont à {\bf décroissance rapide}, ainsi que toutes leurs dérivées. En particulier sur $\mathbb R$
+\begin{eqnarray}
+    \mathcal S(\mathbb R) \; \equiv \; 
+    \left\{ f \in \mathcal C^\infty (\mathbb R) \;\middle\vert\; 
+    \forall (a,b)\in \mathbb N^2, \; 
+    \Vert x \mapsto x^a \partial_x^b f(x) \Vert_\infty < +\infty \right\}.
+\end{eqnarray}
+\end{Defi}
+
+Un des grands intérêts de l'espace de Schwartz est qu'il est stable par transformation de Fourier. De plus, cette transformation y est continue :
+
+\begin{Theo}[\bf Continuité de \bm{$\mathcal F$} sur \bm{$\mathcal S$}] La transformée de Fourier est un opérateur linéaire et continu de $\mathcal S$ dans $\mathcal S$.
+\end{Theo} 
+
+Terminons le tour des propriétés importantes de la transformée de Fourier sur l'espace $\mathcal S$ en regardant ce qu'il advient de la formule d'inversion. On sait que si $f\in \mathcal S$, alors elle admet une transformée de Fourier $\tilde f \in \mathcal S$ et, puisque $\tilde f$ est intégrable et continue, on aura bien la relation $\mathcal F^{-1} [ \mathcal F [f]] = f$. Ainsi, la transformée de Fourier inverse est bien définie. On a même un peu plus que cela :
+
+\begin{Theo}[\bf La transformation de Fourier inverse dans \bm{$\mathcal S$}] La transformation de Fourier est une application linéaire bijective et bi-continue, c'est-à-dire continue, ainsi que son inverse, de $\mathcal S$ sur $\mathcal S$. Son inverse est bien $\mathcal F^{-1}[\bullet]$.
+\end{Theo} 
+
+\subsubsection{Extension distributionnelle : distributions tempérées} 
+
+On fait un petit rappel sur la théorie des distributions. On commence par définir les fonction-test.
+\begin{Defi}[\bf Fonction-test] 
+    On appelle {\bf espace-test}, que l'on note $\mathcal T(\mathbb R , \mathbb K)$ ou $\mathcal T(\mathbb R)$ ou $\mathcal T$. L'espace vectoriel des fonctions de $\mathbb R$ de classe $\mathcal C^\infty$, à support borné. On appelle {\bf fonction-test} toute fonction $\varphi \in \mathcal T$.
+\end{Defi}
+
+On définit la distribution de la manière suivante
+
+\begin{Defi}[\bf Distribution] 
+    On appelle {\bf distribution} toute fonctionnelle linéaire et continue sur $\mathcal T$. L'espace vectoriel des distributions (qui est donc le {\bf dual topologique de $\mathcal T$}) est appelé {\bf espace des distributions} et noté $\mathcal T^\ast$. 
+\end{Defi}
+
+Si $\phi \in \mathcal T^\ast$ est une distribution et si $\varphi \in \mathcal T$ est une fonction-test, la valeur de $\phi$ en $\varphi$ est noté $\langle \phi , \varphi \rangle$.
+
+\smallskip
+
+Les distributions peuvent être vues comme une généralisation des fonctions au sens où, si $f$ est une fonction, on peut définir une forme linéaire par 
+\begin{eqnarray}
+    \varphi \longmapsto \int_{\mathbb R} \varphi f.
+\end{eqnarray}
+Plus précisément, les distributions généralisent les {\em fonctions localement sommables} pour lesquelles l'intégrale précédente est bien définie.
+
+\smallskip
+
+Toute fonction localement sommable définit alors une distribution grâce au théorème suivant :
+
+\begin{Theo}[\bf Distrubutions régulières] À toute fonction. $f$ localement sommable, on peut associer une distribution, également noté $f$, définie par :
+\begin{equation}
+    \langle f , \varphi \rangle 
+    \;\doteq\;
+    \int_{\mathbb R} f(x)\,\varphi(x)\,dx
+    \tag*{$\forall\,\varphi \in \mathcal T.$}
+\end{equation}
+Une telle distribution est appelée {\bf distribution régulière} associée à la fonction localement sommable $f$.
+\end{Theo} 
+
+\smallskip
+
+En utilisant la théorie de la distribution, on peut étendre la transformée de Fourier à l'espace des distributions tempérées $\mathcal{S}^\ast(\mathbb{R})$ qui est le dual de l'espace de Schwartz $\mathcal{S}(\mathbb{R})$. La transformée de Fourier est une application linéaire bijective de $\mathcal{S}^\ast(\mathbb{R})$ dans lui-même.
+
+\begin{Defi} 
+    La {\bf transformée de Fourier d'une distribution \bm{$\phi$}}  est définie par son action sur les fonctions $\varphi$ à support borné et de calsse $\mathcal C^\infty$ :
+    \begin{equation}
+        \langle \mathcal F[\phi] , \varphi \rangle \; \doteq \; \langle \phi , \mathcal F[\varphi] \rangle.
+    \end{equation}
+\end{Defi}
+
+Par exemple on définit en particulier la distribution de Dirac $\delta\in \mathcal{S}^\ast(\mathbb{R})$ par : 
+\begin{eqnarray}
+    \forall f \in \mathcal{S}(\mathbb{R}), \quad \langle \delta , f \rangle = f(0).
+\end{eqnarray}
+Donc on a 
+\begin{eqnarray}
+    \forall k \in \mathbb{R}\colon \quad \int \delta ( x) \, e^{\mp i \gamma k x } dx  = e^{\mp i \gamma 0 x } , 
+\end{eqnarray} 
+ainsi 
+\begin{eqnarray}
+    \mathcal{F}^{-1}[\delta](x) = x \mapsto \beta,
+\end{eqnarray} 
+ainsi 
+\begin{eqnarray}
+    \mathcal{F}[x \mapsto \beta](k) = k \mapsto \delta(k),
+\end{eqnarray} 
+soit 
+\begin{eqnarray} 
+    \alpha \beta \int e^{\mp i\gamma  k x } dx = \delta(k) ,  
+\end{eqnarray} 
+en conséquence avec $ \gamma = 2 \pi \alpha \beta $ on a 
+\begin{eqnarray}
+    \frac{\gamma}{2\pi} \int e^{\mp i \gamma k x } dx = \delta(k),
+\end{eqnarray} 
+Ainsi avec un choix de convention, on retrouve la formule usuelle de la transformée de Fourier de la distribution de Dirac : 
+\begin{eqnarray}
+    \int_{\mathbb{R}} e^{\mp i y x } dx = 2 \pi \delta(y).
+\end{eqnarray} 
+
+\begin{Theo}[\bf Transformée de Fourier de \bm{$\delta$}] 
+    \begin{eqnarray}
+        \mathcal F[\delta]  =  x \mapsto \alpha, & &  \delta = \mathcal F[x \mapsto \beta ], \\
+        \mathcal F^{-1}[\delta]  =  x \mapsto \beta, & & \delta = \mathcal F^{-1}[x \mapsto \alpha ].
+    \end{eqnarray}
+\end{Theo}
+\begin{proof}
+    \begin{eqnarray}
+        \langle \tilde{\mathrm 1} , \varphi \rangle  & \doteq &  \langle \mathrm 1 , \tilde \varphi \rangle  = \int_{\mathbb R }\tilde \varphi (x) \, dx = \beta^{-1} \varphi(0) = \beta^{-1} \langle \delta , \varphi \rangle ,\\
+        \langle \tilde \delta , \varphi \rangle & \doteq &  \langle \delta , \tilde \varphi \rangle = \tilde \varphi(0) = \alpha \int_{\mathbb R } \phi(x) \, dx = \alpha  \langle \mathrm 1 , \varphi \rangle.
+    \end{eqnarray}
+    On a donc la première ligne du théorème. Comme $\delta \in \mathcal S$ alors la $\mathcal F^{-1}$ est définie et $f = \mathcal F^{-1}[\mathcal F[f]] = \mathcal F[\mathcal F^{-1}[f]]$. On peut ainsi conclure.
+\end{proof}
+
+\subsubsection{Produit scalaire, norme et unitarité sur $\mathcal L^2$}
+
+Avec ce que l'on a vu avec $\mathcal L^1$ et $\mathcal L^\infty$, il est naturel de définir $\mathcal L^2$ de la manière suivante :
+
+\begin{Defi}[\bf Espace \bm{$\mathcal L^2$}] On note $\mathcal L^2(\mathbb{R} , \mathbb K)$ ou $\mathcal L^2(\mathbb{R})$ ou $\mathcal L^2$, l'espace vectoriel des fonctions à carré sommables, définies \guillemotleft{} à une égalité presque partout près \guillemotright{}, muni de la norme 2, $\Vert \bullet \Vert_2$:
+    \begin{eqnarray}
+        \Vert f \Vert_2 \doteq \sqrt{\int_{\mathbb{R}} \vert f(x) \vert^2 \, dx} .
+    \end{eqnarray}
+\end{Defi}
+
+On peut écrire cette norme 2 de la manière suivante :
+\begin{eqnarray}
+    \Vert \bullet \Vert_2 \colon \mathcal L^2 (\mathbb R) \ni f \colon \Vert f \Vert_2 = \sqrt{\langle f , f \rangle_{\mathcal L^2 }} ,
+\end{eqnarray}
+où le produit scalaire, noté $\langle \bullet, \bullet \rangle_{\mathcal L^2 }$ est tel que :
+\begin{eqnarray}
+    \langle \bullet, \bullet \rangle_{\mathcal L^2 } \colon \mathcal (L^2 (\mathbb R))^2 \ni (f,g) \colon  \mapsto \langle f, g \rangle_{\mathcal L^2 } = \int_{\mathbb R} \overline f (x) \, g(x) \, dx  ,
+\end{eqnarray}
+ou $\overline f$ est le complexe conjugué de $f$.
+
+
+
+\subsubsection{Dual de $\mathcal L^2$ et Théorème de Plancherel et Isométrie unitaire}
+
+\paragraph{Dual hilbertien et dual topologique de $\mathcal L^2$.}
+
+L'espace dual de $\mathcal{L}^2(\mathbb{R}, \mathbb{K})$ est l'ensemble des formes linéaires continues de $\mathcal{L}^2(\mathbb{R}, \mathbb{K})$ dans $\mathbb{K}$, noté $(\mathcal{L}^2(\mathbb{R}, \mathbb{K}))^\ast$. Par le théorème de Riesz, on a l'isomorphisme suivant : 
+\begin{eqnarray}
+    (\mathcal{L}^2(\mathbb{R}))^\ast \cong \mathcal{L}^2(\mathbb{R}) .\label{eq:riesz}
+\end{eqnarray}
+avec l'application dans  $(\mathcal{L}^2(\mathbb{R}, \mathbb{K}))^\ast $ : 
+\begin{eqnarray}
+     \forall f \in \mathcal{L}^2(\mathbb{R},\mathbb K)\colon  \quad  \mathcal{L}^2(\mathbb{R},\mathbb K) \ni  g 	\overset{\phi_f}{\mapsto} \langle f , g \rangle_{\mathcal L^2 }. 
+\end{eqnarray} 
+
+\begin{Prop}
+    Le dual de $\mathcal L^2(\mathbb R)$, ${\mathcal L^2}^\ast(\mathbb R)$  est isométriquement isomorphe à $\mathcal L^2(\mathbb R)$.\footnote{Le dual de $\mathcal L^p(\mathbb R)$,  est isométriquement isomorphe à $\mathcal L^q(\mathbb R)$ avec $p^{-1} + q^{-1}$ (cf le théorème 5.2.3 du cours \cite{BabadjianChap5})}
+\end{Prop}
+
+
+
+Pour définir la transformée de Fourier sur l'espace $\mathcal L^2$ des fonctions à carré sommable, on va utiliser les résultats précédents sur la transformée de Fourier dans $\mathcal S$, ainsi qu'un lemme de densité :
+
+\begin{Lemm}[\bf Densité de \bm{$\mathcal S$} dans \bm{$\mathcal L^2$}] L'espace $\mathcal S(\mathbb R)$ est un sous-espace vectoriel dense de l'espace $\mathcal L^2(\mathbb R)$.
+\end{Lemm}
+
+On utilise ce lemme, ainsi que le fait que l’espace $\mathcal L^2$ est complet, pour montrer que la transformée de Fourier définie sur $\mathcal S$ se prolonge de manière unique en un opérateur linéaire continu sur $\mathcal L^2$ (La démonstration assez technique est dans \cite{AppelMathPhysiciens}). La structure hilbertienne apparaît alors naturellement.
+
+\medskip
+
+\paragraph{Théorème de Plancherel et Transformée de Fourier comme isométrie unitaire.}
+
+
+
+On se retrouve ainsi avec un opérateur \guillemotleft{} transformation e Fourier \guillemotright{} défini pour toute fonction $f \in  \mathcal L^2(\mathbb R )$ et qui vérifie le théorème suivant :
+
+\subparagraph{Théorème de Plancherel.}
+
+\begin{Theo}[\bf Parseval-Plancherel] 
+    La transformation de Fourier $\mathcal F [\bullet]$ est une isométrie sur $\mathcal L^2$ : si $f$ et $g$ sont deux fonctions de carré sommable, alors $\tilde f$ et $\tilde g$ le sont également, et on a 
+    \begin{eqnarray}
+        \vert \alpha \vert \langle f , g \rangle_{\mathcal L^2} \; = \; \pm \vert \beta \vert    \langle \tilde f , \tilde g \rangle_{\mathcal L^2} & et &\vert \alpha \vert  \Vert f \Vert_2^2 \; = \; \pm  \vert \beta \vert \Vert \tilde f \Vert_2^2,
+    \end{eqnarray}
+    avec comme condition :
+    \begin{eqnarray}
+        \mathrm{arg}(\alpha) + \mathrm{arg}(\beta)  \in \pi \mathbb Z .
+    \end{eqnarray}
+\end{Theo}
+\begin{proof}
+Soit le couple $(f, g) \in \mathcal{L}_2(\mathbb{R}, \mathbb{K})^2$ , le produit scalaire 
+\begin{eqnarray}
+    \langle \mathcal{F}[f] , \mathcal{F}[g]\rangle_{\mathcal L^2 } =  \int \overline{\mathcal{F}[f]}(k) \mathcal{F}[g](k) dk ,
+\end{eqnarray}
+avec la définition de la transformer de Fourier, on a : 
+\begin{eqnarray}
+    \langle \mathcal{F}[f] , \mathcal{F}[g] \rangle_{\mathcal L^2 } =  \int dk \, \overline \alpha \int dx \,  \overline f(x) e^{\pm i \gamma k x }   \int dx' \, g(x) e^{\pm i \gamma   k x' }  = \vert \alpha \vert ^2 \int dx \, \overline f(x) \!\int dx' g(x') \underbrace{\int dk e^{\pm i \gamma  ( x - x') k }}_{\frac{2\pi}{\gamma } \delta ( x - x')}.
+\end{eqnarray}
+Donc, on a l'égalité
+\begin{eqnarray}
+    \langle \mathcal{F}[f] , \mathcal{F}[g]\rangle_{\mathcal L^2 } =  \frac{\overline \alpha}\beta \langle  f , g\rangle_{\mathcal L^2 }.
+\end{eqnarray} 
+On peut remarquer que si on part de $\langle f , g \rangle$ on arrive à l'égalité 
+\begin{eqnarray}
+    \langle f , g \rangle_{\mathcal L^2 }  = \frac{\overline \beta}{\alpha} \langle \mathcal{F}[f] , \mathcal{F}[g] \rangle_{\mathcal L^2 },
+\end{eqnarray}
+ soit
+\begin{eqnarray}
+ \langle f , g \rangle_{\mathcal L^2 }  = \frac{\overline \beta}{\alpha} \frac{\overline \alpha}\beta \langle f , g \rangle_{\mathcal L^2 } .
+\end{eqnarray}
+Ainsi pour que cette dernière formule reste cohérente, il faut et il suffit que 
+\begin{eqnarray}
+    \mathrm{arg}(\alpha) + \mathrm{arg}(\beta)  \in \pi \mathbb Z .
+\end{eqnarray}
+CQFD
+\end{proof}
+
+\subparagraph{Transformée de Fourier comme isométrie unitaire.}
+
+\begin{Theo}[\bf Inversion dans \bm{$\mathcal L^2$}] Pour tout $f \in \mathcal L^2$, on a 
+    \begin{eqnarray}
+        \mathcal F^{-1} [ \mathcal F [f]] \; = \; \mathcal F [ \mathcal F^{-1} [f]] \; = \;  f \quad \mbox{presque partout} 
+    \end{eqnarray}
+    La transformée de Fourier inverse sur $\mathcal L^2$ est donc bien $\mathcal F^{-1}[ \bullet]$.
+\end{Theo}
+
+\begin{Prop}
+    Si $(\alpha , \beta )\in \mathbb C^\ast $ et $\beta = \overline \alpha $ (\ie $\vert \alpha  \vert = \vert \beta \vert $ et $\mathrm{arg}(\alpha) + \mathrm{arg}(\beta)  \in 2 \pi \mathbb Z $) alors l'opération transformée de Fourier est unitaire. Soit 
+    \begin{eqnarray}
+        \overline{ \mathcal F} \; = \;  \mathcal F^{-1} \quad \mbox{et} \quad \overline{ \mathcal F}[\mathcal F[\bullet]] =  \mathcal F[\overline{\mathcal F}[\bullet]] = \mathrm{id}_{\mathcal L^2}.
+    \end{eqnarray}
+\end{Prop}
+
+
+
+
+
+
+
+
+
+
+% \section{Transformée de Fourier : définitions et propriétés\label{chap:fourier_def_prop}}
+
+% \paragraph{Conventions posées}Vous introduisez une transformée de Fourier générale
+% $$
+% \mathcal F[f](k) = \alpha \int_{\mathbb R} f(x)\, e^{\mp i \gamma k x}\, dx, \qquad \mathcal F^{-1}[f](x) = \beta \int_{\mathbb R} f(x)\, e^{\pm i \gamma k x}\, dx,
+% $$
+% avec la contrainte
+% $$
+% \gamma = 2\pi \alpha \beta.
+% $$
+% Ces conventions englobent les cas usuels (physiciens, analystes, normalisation symétrique).
+
+% \paragraph{Hypothèses nécessaires}
+% On suppose
+% $$
+% f \in \mathcal S(\mathbb R) \quad \text{(ou au moins \(f\) et ses dérivées intégrables et à décroissance rapide),}
+% $$
+% afin de justifier les intégrations par parties et l’annulation des termes de bord.
+
+% Ce qui permet de justifier le calcul suivant :
+% \paragraph{Calcul pour une dérivée}
+% $$ \mathcal F[\partial_x f](k) = \pm i \gamma k \mathcal F[f](k) $$
+
+% \section{Métrique et Dual}
+
+% Soit $\mathbb{K}$ un corps (par exemple $\mathbb{R}$ ou $\mathbb{C}$) et $\mathcal{L}_2(\mathbb{R}, \mathbb{K})$, l'espace des fonctions de carré sommable sur $\mathbb{R}$. 
+
+% \subsection{Métrique} $\mathcal{L}_2(\mathbb{R}, \mathbb{K})$ est un espace vectoriel normé muni du produit scalaire, noté $\langle \bullet , \bullet \rangle$ et tel que :
+% \begin{eqnarray}
+%      (\mathcal{L}_2(\mathbb{R}, \mathbb{K}))^2 \ni ( f , g) \mapsto \langle f , g \rangle = \int_{\mathbb{R}} f^\ast(x) g(x) dx .\label{eq:produit_scalaire}
+% \end{eqnarray}
+%     %$$ (\mathcal{L}_2(\mathbb{R}, \mathbb{K}))^2 \ni ( f , g) \mapsto \langle f , g \rangle = \int_{\mathbb{R}} f^\ast(x) g(x) dx  $$ 
+% avec $f^\ast$ le conjugué complexe de $f$. La norme 2, notée $\Vert \bullet  \Vert_2$ se définie naturellement par : 
+% \begin{eqnarray}
+%     \mathcal{L}_2(\mathbb{R}, \mathbb{K}) \ni f  \mapsto \Vert f \Vert_2 = \sqrt{\langle f , f \rangle} = \sqrt{\int_{\mathbb{R}} |f(x)|^2 dx }.\label{eq:norme2}
+% \end{eqnarray}
+% %$$ \Vert f \Vert_2 = \sqrt{\langle f , f \rangle} = \sqrt{\int_{\mathbb{R}} |f(x)|^2 dx }  $$.
+% \subsection{Dual} L'espace dual de $\mathcal{L}_2(\mathbb{R}, \mathbb{K})$ est l'ensemble des formes linéaires continues de $\mathcal{L}_2(\mathbb{R}, \mathbb{K})$ dans $\mathbb{K}$, noté $\mathcal{L}_2^\ast(\mathbb{R}, \mathbb{K})$. Par le théorème de Riesz, on a l'isomorphisme suivant : 
+% \begin{eqnarray}
+%     \mathcal{L}_2^\ast(\mathbb{R}, \mathbb{K}) \cong \mathcal{L}_2(\mathbb{R}, \mathbb{K}) .\label{eq:riesz}
+% \end{eqnarray}
+% %$$ \mathcal{L}_2^\ast(\mathbb{R}, \mathbb{K}) \cong \mathcal{L}_2(\mathbb{R}, \mathbb{K}) $$ 
+% avec l'application dans  $\mathcal{L}_2^\ast(\mathbb{R}$ : 
+% \begin{eqnarray}
+%      \forall f \in \mathcal{L}_2(\mathbb{R},\mathbb K)\colon  \quad  \mathcal{L}_2(\mathbb{R},\mathbb K) \ni  g 	\overset{\phi_f}{\mapsto} \langle f , g \rangle. 
+% \end{eqnarray}   
+% %$$ \forall f \in \mathcal{L}_2(\mathbb{R},\mathbb K), \quad  : g 	\overset{\phi_f}{\mapsto} 	= \langle f , g \rangle. $$
+
+% \section{Transformée de Fourier}
+
+% \subsection{Définition}
+% On définit la transformée de Fourier comme une application linéaire de $\mathcal L_2(\mathbb{R}, \mathbb{K})$ dans $\mathcal L_2^\ast(\mathbb{R}, \mathbb{K})$ : 
+% \begin{eqnarray}
+%      \forall f \in \mathcal{L}_2(\mathbb{R},\mathbb{K})\colon \quad \mathcal{F}[ x \mapsto f(x)](k) = \alpha \int_{\mathbb{R}} f(x)\, e^{\mp i \gamma k x}\, dx, \label{eq:fourier_def}
+% \end{eqnarray} 
+% et inversement
+% \begin{eqnarray}
+%      \forall g \in \mathcal{L}_2^\ast(\mathbb{R},\mathbb{K})\colon \quad \mathcal{F}^{-1}[ k \mapsto g(k)](x) = \beta \int_{\mathbb{R}} g(x)\, e^{\pm i \gamma k x}\, dx. 
+% \end{eqnarray}
+% avec la contrainte $ \gamma = 2 \pi \alpha \beta $ et $(\alpha , \beta , \gamma ) \in \mathbb{K}\times\mathbb{K} \times \mathbb{R}$.
+
+% \subsection{Représentation $x$ et $k$}
+% On appelle représentation $x$ l'espace $\mathcal{L}_2(\mathbb{R}, \mathbb{K})$ et représentation $k$ l'espace $\mathcal{L}_2^\ast(\mathbb{R}, \mathbb{K})$. La transformée de Fourier permet de passer d'une représentation à l'autre.
+
+% \paragraph{Distribution} En utilisant la théorie de la distribution on peut étendre la transformée de Fourier à l'espace des distributions tempérées $\mathcal{S}^\ast(\mathbb{R})$ qui est le dual de l'espace de Schwartz $\mathcal{S}(\mathbb{R})$. La transformée de Fourier est une application linéaire bijective de $\mathcal{S}^\ast(\mathbb{R})$ dans lui-même.
+% On definie en particulier la distribution de Dirac $\delta\in \mathcal{S}^\ast(\mathbb{R})$ par : $$ \forall f \in \mathcal{S}(\mathbb{R}), \quad \langle \delta , f \rangle = f(0). $$ Donc on a $$ \forall k \in \mathbb{R}\colon \quad \int \delta ( x) \, e^{\mp i \gamma k x } dx  = e^{\mp i \gamma 0 x } ,  $$ Donc $$ \mathcal{F}^{-1}[\delta](x) = x \mapsto \beta,   $$ donc $$ \mathcal{F}[x \mapsto \beta](k) = k \mapsto \delta(k),   $$ soit $$ \alpha \beta \int e^{\mp i \gamma k x } dx = \delta(k) ,  $$ donc avec $ \gamma = 2 \pi \alpha \beta $ on a $$ \frac{\gamma}{2\pi} \int e^{\mp i \gamma k x } dx = \delta(k), $$ Donc avec une choix de convention on retrouve la formule usuelle de la transformée de Fourier de la distribution de Dirac : $$ \int_{\mathbb{R}} e^{\mp i y x } dx = 2 \pi \delta(y). $$
+
+% \paragraph{Theorème de Parseval-Plancherel}
+% La transformée de Fourier est une isométrie de $\mathcal{L}_2(\mathbb{R}, \mathbb{K})$ dans $\mathcal{L}_2^\ast(\mathbb{R}, \mathbb{K})$ munie de la norme duale. Donc pour tous $f,g \in \mathcal{L}_2(\mathbb{R}, \mathbb{K})$ on a $$ \vert \alpha \vert \langle f , g \rangle = \vert \beta \vert  \langle \mathcal{F}[f] , \mathcal{F}[g] \rangle^\ast ,  $$ soit $$ \int_{\mathbb{R}} f^\ast(x) g(x) dx = \int_{\mathbb{R}} \mathcal{F}[f]^\ast(k) \mathcal{F}[g](k) dk .  $$
+% \begin{proof}
+% Soit le couple $(f, g) \in \mathcal{L}_2(\mathbb{R}, \mathbb{K})^2$ , le produit scalaire $$\langle \mathcal{F}[f] , \mathcal{F}[g]\rangle =  \int (\mathcal{F}[f])^\ast(k) \mathcal{F}[g](k) dk , $$ avec la definitient de la transformer de Fourier  on a : $$ \langle \mathcal{F}[f] , \mathcal{F}[g] \rangle =  \int dk \, \alpha^\ast \int dx \, f^\ast(x) e^{\pm i \gamma k x }  \, \int dx' \, g(x) e^{\pm i \gamma k x' }  = \vert \alpha \vert ^2 \int dx f^\ast(x) \int dx' g(x') \underbrace{\int dk e^{\pm i \gamma ( x - x') k }}_{\frac{2\pi}{\gamma} \delta ( x - x')}.$$ Donc on a l'égalité  $$\langle \mathcal{F}[f] , \mathcal{F}[g]\rangle =  \frac{\alpha^\ast}\beta \langle  f , g\rangle $$. 
+
+% On peut ramarquer que si on part de $\langle f , g \rangle$ on arrive a l'égalitr $$ \langle f , g \rangle  = \frac{\beta^\ast}{\alpha} \langle \mathcal{F}[f] , \mathcal{F}[g] \rangle, $$ soit $$ \langle f , g \rangle  = \frac{\beta^\ast}{\alpha} \frac{\alpha^\ast}\beta \langle f , g \rangle . $$ Donc pour que la transformée de Fourier soit une isométrie il faut et il suffit que $$ \mathrm{arg}(\alpha) + \mathrm{arg}(\beta)  = 0 ~ [2\pi].$$ CQFD
+% \end{proof}
+
+{\bf À normalisation près, la transformée de Fourier est l’unique opérateur unitaire sur 
+\bf {$\mathcal L^2(\mathbb R)$} qui échange (à un facteur près) la dérivation et la multiplication par la variable.
+\smallskip 
+Cela justifie a posteriori pourquoi elle est incontournable en mécanique quantique.}
+
+
+\subsection{Espace de Hilbert ${\mathscr H}$ séparable et exemples canoniques} 
+
+On commence par quelque définitions d'espaces utiles :
+
+\subsubsection{Exemples fondamentaux $\ell^2$, $\mathcal L^2([0,a])$ et $\mathcal L^2(\mathbb R)$ isomorphes}
+
+\begin{Defi}[\bf Espace de Hilbert \bm{$\mathscr H$}] Un {\bf espace de Hilbert} est une est un  préhilbertien ${\mathscr H}$ qui est mini de sa norme hermitienne est complet.\end{Defi}
+
+\begin{Defi}[\bf Système total, base hilbertienne]
+    Soit $(e_n)_{n \in \mathrm  I}$ une famille de vecteurs d'un espace de Hilbert $\mathscr H$ indexée par in ensemble $\mathrm I$, dénombrable ou non. La famille $(e_i)_{i \in \mathrm  I}$  est appelée {\bf système total}  si l'espace qu'elle engendre est dense dans $\mathscr H$, c'est-à-dire 
+    \begin{eqnarray}
+        \overline{\mbox{Vect} \{  e_n ; n \in \mathrm I \}}  \; = \; \mathscr H,
+    \end{eqnarray}
+    où ici pour un espace $A$, $\overline{A}$ est son adhérant.
+    \smallskip
+    $\diamondsuit$ On dit que la famille $(e_i)_{i \in \mathrm  I}$ est une {\bf base hilbertienne} si c'est une famille orthonormée dans $\mathscr H$. $\diamondsuit$ Un espace de Hilbert $\mathscr H$ possédant une base hilbertienne dénombrable est dit {\bf séparable}. C'est le cas de la plupart des espaces de Hilbert qui intéressent le physicien.
+
+\end{Defi}
+
+
+\bigskip
+
+Voici quelque exemples espace de Hilbert :
+\begin{Defi}[\bf  Espace \bm{$\ell^2$}] 
+    On appelle  {\bf espace $\ell^2(\mathbb N)$ } noté $\ell^2$, l'ensemble des suites $(a_n)_{n \in \mathbb N }$ à valeur dans $\mathbb C$, telles que la suite $\sum \vert a_n \vert^2 $ converge.
+\end{Defi}
+
+\begin{Theo} 
+    L'espace $\ell^2$ est un espace de Hilbert lorsqu'il est muni du produit hermitien 
+    \begin{eqnarray}
+        \langle a , b \rangle_{\ell^2} & \doteq & \sum_{n \in \mathbb N} \overline{a_n} \,  b_n .
+    \end{eqnarray}
+\end{Theo}
+
+\begin{Rema}Puisque $\mathbb N$ est $\mathbb Z$ sont équipotents, $\ell^2$ est également l'espace des familles $(a_n)_{n \in \mathbb Z }$ de carré sommable.\end{Rema}
+
+
+\begin{Defi}[Espace \bm{$\mathcal L^2([0,a])$}]
+    Soit $a \in \mathbb R^\ast_+$. On appelle {\b espace $\mathcal L^2([0 , a])$} l'espace des fonctions de $[0 , a]$ dans $\mathbb C$ de carré sommable (définie à une égalité presque partout près), muni du produit scalaire hermitien et de la norme 
+    \begin{eqnarray}
+        \langle f , g \rangle_{\mathcal L^2([0,a])} \; \doteq \; \int_0^a \overline{f(x)} g ( x) \, dx , \quad \mbox{et} \quad  \Vert f \Vert_2 \; \doteq \; \left (  \int_0^a \vert f (x) \vert ^2 \, dx \right )^{1/2}.
+    \end{eqnarray}
+\end{Defi}
+
+\begin{Defi}[\bf  Espace \bm{$\mathcal L^2(\mathbb R )$}] 
+    On appelle {\bf espace $\mathcal L^2(\mathbb R )$} l'espace des fonctions de $\mathbb R$ dans $\mathbb C$ de carré sommable (définies à une égalité presque près), munie de la norme 
+    \begin{eqnarray}
+        \Vert f \Vert_2 \; \doteq \; \left (  \int_{-\infty}^{+\infty} \vert f (x) \vert ^2 \, dx \right )^{1/2}.
+    \end{eqnarray}
+\end{Defi}
+
+Un théorème fondamental de Riesz-Fischer nous apprend que $\mathcal L^2(\mathbb R)$ est un espace de Hilbert séparable. Les espaces des Hilbert $\ell^2$, $\mathcal L^2([0 , a])$ et $\mathcal L^2(\mathbb R)$ sont isomorphes. 
+
+\smallskip
+
+
+\begin{Rema}[\bf Formalisme en mécanique quantique]
+    Bien que les bases hilbertiennes possèdent de très nombreux avantages, il sera aussi intéressant de munir l'espace $\mathcal L^2$ d'une \guillemotleft{}base\guillemotright{} non hilbertienne, formée de distributions, comme la famille (non dénombrable) $(\delta_x)_{x\in \mathbb R}$, que le physicien en quantiques notent $(\ket{x})_{x\in \mathbb R}$ , ou bien la famille $( x \mapsto e^{\mp 2 i  \pi p x } )_{p\in \mathbb R}$ notée $(\ket{p})_{p\in \mathbb R}$ (bien remarquer que ni $\ket{x}$ ni $\ket{p}$ ne sont éléments de $\mathcal L^2$). Au lien de représenter une fonction $f\in \mathcal L^2$ par une somme discrète, elle est représentée par une somme \guillemotleft{}continue\guillemotright{}, c'est-à-dire une intégrale. Ce point de vue manque de rigueur tant qu'on ne définit pas proprement les bases \guillemotleft au sens des distributions \guillemotright. En revanche, la représentation par la transformée de Fourier n'est rien d'autre (avec un language différent) que l'écriture d'une fonction \guillemotleft dans la base $( x \mapsto e^{\mp 2 i  \pi p x } )_{p\in \mathbb R}$ \guillemotright.
+\end{Rema}
+
+\medskip 
+
+Avant de définir la \guillemotleft Transformée de Fourier sur $\mathcal L^2([0,a])$\guillemotright, nous avons besoins des propriétés du peigne de Dirac.
+
+\subsubsection{Discrétisation, périodisation et peigne de Dirac}
+
+La distribution \guillemotleft peigne de Dirac\guillemotright  est 
+
+\begin{eqnarray}
+    \operatorname{III}_T(x) & = & \sum_{n \in \mathbb Z} \delta ( x - Tn ).
+\end{eqnarray}
+On peut alors montrer \textendash et c'est un résultat fondamental \textendash que :
+
+
+\begin{Theo}
+    Le peigne de Dirac est une distribution tempérée. Il admet donc une transformée de Fourier au sens des distributions ; sa transformation de Fourier est un peigne de Dirac :
+    \begin{eqnarray}
+        \operatorname{III}_1 \overset{\mathcal F}{\longmapsto} \operatorname{III}_1
+    \end{eqnarray}
+
+    Si on utilise la définition de la transformer de Fourier de l'équation  \eqref{eq:fourier_def} avec $\alpha = \beta = 1 $ et $\gamma = 2\pi$.
+
+    \smallskip 
+
+    On peut écrire cette formule différemment. En effet, puisque $\operatorname{III}_1$ est la somme de distribution de Dirac, en utilisant le fait que pour la définiton detransformée de Fourier \eqref{eq:fourier_def}
+
+    \begin{eqnarray}
+        \mathcal F [ x \mapsto f(x + a)](x)  & = &   \left ( x \mapsto  e^{\pm i \gamma x a}  \mathcal F [f](x) \right  ) ,\\
+    \end{eqnarray}
+    on peut écrire que 
+    \begin{eqnarray}
+        \mathcal F [\operatorname{III}_1]  =  \mathcal F \left [\sum_{n \in \mathbb Z} \delta_n \right ](x) = \sum_{n \in \mathbb Z } e^{2i\pi n x }.
+    \end{eqnarray}
+    On obtient donc l'identité de Poisson :
+    \begin{eqnarray}
+        \sum_{n \in \mathbb Z } e^{2i\pi n x }& = & \sum_{n \in \mathbb Z} \delta ( x - n).
+    \end{eqnarray}
+
+\end{Theo}
+
+Si on reste sur la définition \eqref{eq:fourier_def} et en utilisant le fait que
+
+\begin{Theo}[\bf Changement de variable dans \bm{$\delta$}]
+    Soit $f$ une fonction ne possédant que des zéros isolés; notons $Z(f)  = \{ y \in \mathbb R \vert  f(y)= 0 \} $ l'ensemble de ces zéros. On suppose que la dérivée $f'$ de $f$ ne s'annule en aucun des point de $Z(f)$. Alors 
+    \begin{eqnarray}
+        \delta ( f(x)) = \sum_{y \in Z(f)} \frac{1}{\vert f'(y) \vert } \delta ( x - y ),
+    \end{eqnarray}
+\end{Theo}
+
+ainsi on peut réécrire la transformée de Fourier de $\operatorname{III}_T$ et l'identité de Poisson comme :
+\begin{eqnarray}
+    \widetilde{\operatorname{III}}_T(x) & = & \frac{2\pi \alpha}{\gamma T} \sum_{m\in\mathbb Z} \delta\!\left(x - \frac{2\pi m}{\gamma T}\right) =  \frac{1}{\beta T}\sum_{n\in\mathbb Z}\delta\!\left(x-\frac{n}{\beta T}\right) = \frac{1}{ \beta T }\operatorname{III}_{1/T}(x), \\ 
+    \sum_{n\in\mathbb Z} e^{i\gamma x nT}  & = &  \frac{2\pi}{\gamma T} \sum_{m\in\mathbb Z} \delta\!\left(k - \frac{2\pi m}{\gamma T}\right)
+\end{eqnarray}
+
+Et si on note $\star$ le produit de convolution et $\cdot$ la multiplication de fonction :  
+    \begin{Theo}[\bf \bm{$\mathcal F \colon(\mathcal{S}(\mathbb R), +, \cdot ) \longrightarrow (\mathcal{S}(\mathbb R), +, \star )$}] L'apllication transformée de Fourier est linéaire et pour $(f,g) \in \mathcal{S}(\mathbb R)^2 $ : 
+    \begin{eqnarray}
+        \alpha \mathcal F[ f \ast g ]  =  \mathcal F[ f ]  \cdot \mathcal F[ g ]   & &  \mathcal F[ f \cdot  g ] = \beta  \mathcal F[ f ]  \star \mathcal F[ g ], \\
+         \beta  \mathcal F^{-1}[ f \ast g ]  =  \mathcal F^{-1}[ f ]  \cdot \mathcal F^{-1} [ g ] & & \mathcal F^{-1}[ f \cdot  g ] = \alpha   \mathcal F^{-1}[ f ]  \star \mathcal F^{-1}[ g ].
+    \end{eqnarray}
+    Donc $\mathcal F$ et $\mathcal F^{-1}$ sont des morphismes d'algèbre.
+    Soit les diagrammes :
+    \begin{eqnarray}
+        \begin{CD}
+            (\mathcal{S}(\mathbb R), \star)
+            @>\mathcal F>>
+            (\mathcal{S}(\mathbb R), \cdot) \\
+            @V{\cdot\, g}VV
+            @VV{\cdot\, \mathcal F(g)}V \\
+            (\mathcal{S}(\mathbb R), \star)
+            @>\mathcal F>>
+            (\mathcal{S}(\mathbb R), \cdot)
+        \end{CD}
+        &&
+        \begin{CD}
+            (\mathcal{S}(\mathbb R), \cdot)
+            @>\mathcal F>>
+            (\mathcal{S}(\mathbb R), \star) \\
+            @V{\star\, g}VV
+            @VV{\star\, \mathcal F(g)}V \\
+            (\mathcal{S}(\mathbb R), \cdot)
+            @>\mathcal F>>
+            (\mathcal{S}(\mathbb R), \star)
+        \end{CD}.
+    \end{eqnarray}
+\end{Theo}
+\begin{proof}
+    
+\end{proof}
+
+Et plus généralement,
+\begin{Theo}[\bf Formule sommatoire de Poisson]
+    Soit $f$ une fonction continue admettant une transformée de Fourier. Lorsque ces sommes ont un sens, on a 
+    \begin{eqnarray}
+        \sum_{n\in\mathbb Z} f(x-nT) & =&  \frac{1}{T} \sum_{n \in \mathbb Z } f \left ( \frac{n}{T} \right )  e^{i \gamma nx/T }.
+    \end{eqnarray}
+\end{Theo}
+\begin{proof}
+    On a 
+    \begin{eqnarray}
+        \langle \delta_a f , \varphi \rangle = \delta_a f(a) \varphi(a) = \langle \delta_a f(a) , \varphi \rangle. ,
+    \end{eqnarray}
+    ainsi 
+    \begin{eqnarray}
+        \delta_a f = \delta_a f(a)
+    \end{eqnarray}
+    et 
+    \begin{eqnarray}
+        \mathcal F [ x \mapsto f(x\, a)]  & = &   \left ( x \mapsto  \frac{1}{a}  \mathcal F [ f ](x/a) \right ).
+    \end{eqnarray}
+    On a 
+    \begin{eqnarray}
+         f \star \left ( x \mapsto \frac{1}T \operatorname{III}_{1}(x/T) \right )  =  \left ( x \mapsto  \sum_{n \in \mathbb Z } f ( x - nT ) \right ).
+    \end{eqnarray}
+    Et la transformée de Fourier de  $f \star\left ( x \mapsto \frac{1}T \operatorname{III}_{1}(x/T) \right ) $ s'écrit :
+    \begin{eqnarray}
+        \alpha \mathcal F \left [ f \star \left ( x \mapsto \frac{1}T \operatorname{III}_{1}(x/T)  \right ) \right ]  = \tilde f \cdot  \left ( x \mapsto \widetilde{\operatorname{III}}_{1} ( T x ) \right )  =  \left (  x \mapsto \frac{1} \beta \sum_{n \in \mathbb Z } f \left ( \frac{n}{T} \right )  \delta ( T x - n ) \right )     
+    \end{eqnarray}
+    et  la transformée de Fourier inverse est 
+    \begin{eqnarray}
+        f \star \left ( x \mapsto \frac{1}T \operatorname{III}_{1}(x/T) \right ) = \left (  x \mapsto \frac{1}T \sum_{n \in \mathbb Z } f \left ( \frac{n}{T} \right )  e^{i \gamma nx/T }  \right ),
+    \end{eqnarray}
+    et o peut conclure.
+\end{proof}
+
+\subsubsection{Séries de Fourier comme transformée de Fourier discrète sur $\mathcal L^2([0,a])$}
+
+Soit $g \in \mathcal S(\mathbb R )$ et $a \in \mathbb R^\ast_+ $ pour définir la fonction $f$ sur le tore $\mathbb T_a = \frac{\mathbb R }{a \mathbb Z }$ tel que :
+\begin{eqnarray}
+    f \colon \mathbb T_a = \frac{\mathbb R }{a \in \mathbb Z } \ni x \mapsto \sum_{n \in \mathbb Z} g ( x + n a ).
+\end{eqnarray}
+Sa transformée de Fourier s'écrit :
+\begin{eqnarray}
+    \mathcal F [f](x) = \left ( \sum_{a\in  \mathbb Z } e^{i \gamma x n a } \right )  \mathcal F [g](x) = \frac{2\pi}{\gamma a } \left ( \sum_{a \in \mathbb Z } \delta\left ( x - k_n \right )  \right )  \mathcal F [ g](x)= \frac{2\pi}{\gamma a } \sum_{a \in \mathbb Z } \mathcal F [g](k_n ) \delta\left ( x - k_n \right )  
+\end{eqnarray}
+avec $k_n  = \frac{2\pi n }{\gamma a }$. Donc si on  applique la transformée  de Fourier inverse,  il vient que (en échangent intégrale et somme) : 
+\begin{eqnarray}
+    f(x) = \beta \int \mathcal F [f](k) e^{\pm i \gamma k x } dk = \frac{1}{\alpha} \sum_{a \in \mathbb Z } \mathcal F [g](k_n) e^{\pm i \gamma k_n x },
+\end{eqnarray}
+or
+\begin{eqnarray} 
+    \mathcal F [g](x) = \alpha \int_0^a f(x) e^{\mp i \gamma k x } dx. 
+\end{eqnarray}
+Donc, on reconnait les séries de Fourier ;
+\begin{eqnarray}
+    f(x) = \sum_{a \in \mathbb Z } c_n(f) e^{\pm 2 i \pi  n x/a }, \quad && \quad c_n(f) = \frac{1}{a} \int_0^a f(x) e^{\mp i \gamma k_n x }.
+\end{eqnarray} 
+\begin{Theo}[\bf Théorème de Riesz-Fisher : de \bf{$\mathcal L^2$}  à \bf{$\ell ^2$} et retour ]
+    La représentation en série de Fourier permet d'exhiber un isomorphisme entre l'espace $\mathcal L^2([0  , a])$ et l'espace $\ell^2$ :
+    \begin{itemize}[label = $\bullet$]
+        \item À chaque fonction de carré sommable, on peut associer une suite $(c_n)_{n \in \mathbb Z} \in \ell^2$, la suite de ses coefficients de Fourier.
+        \item Réciproquement, si l'on se donne une suite $(c_n)_{n \in \mathbb Z} \in \ell^2$, alors la série trigonométrique $\sum c_n e^{i n x}$ converge (au sens de la moyenne quadratique) vers une fonction de carré intégrable dont  $(c_n)_{n}$ sont les coefficients de Fourier.
+    \end{itemize}
+    \footnote{
+    Cet énoncé constitue le {\bf théorème de Riesz-Fischer}, 1907 (qui stipule également que l'espace $\mathcal L^2$, et plus généralement les espaces $\mathcal L^p$, sont complets).\\
+    Frédéric (Frygies) Riesz (1889-1956) qualifiait la représentation en série de Fourier de \guillemotleft{} billet permanent aller-retour entre deux espaces à une infinité de dimension \guillemotright{} \parencite[p.~93]{Kahane2001Necessite}.
+    }
+\end{Theo}
+
+{\bf
+Les changements de représentation associés aux séries de Fourier, à la périodisation et à la transformée de Fourier s’interprètent comme des isomorphismes unitaires entre espaces de Hilbert.
+
+\smallskip 
+
+Les isomorphismes unitaires reliant les espaces de Hilbert \bm{$\ell^2(\mathbb N)$}, \bm{$\mathcal L^2([0,a])$}  et \bm{$\mathcal L^2(\mathbb R)$} peuvent être représentés de manière synthétique par le diagramme commutatif suivant :
+
+\[
+\begin{CD}
+\ell^2(\mathbb Z) @>\text{Séries de Fourier}>> L^2([0,a]) \\
+@VV\text{Peigne de Dirac}V @VV\text{Périodisation}V \\
+L^2(\mathbb R) @>\text{Transformée de Fourier}>> L^2(\mathbb R)
+\end{CD}
+\]
+\footnote{
+\[
+\begin{CD}
+\ell^2(\mathbb Z) @>\mathcal{F}_{\mathrm{disc}}>> L^2([0,a]) \\
+@VV\mathcal{I}_{\mathrm{disc}\to\mathrm{cont}}V @VV\mathcal{P}_a V \\
+L^2(\mathbb R) @>\mathcal{F}>> L^2(\mathbb R)
+\end{CD}
+\]
+}
+
+
+ La transformée de Fourier ne change pas l’état quantique, mais uniquement sa représentation dans un espace de Hilbert isomorphe.
+
+\medskip 
+
+Lien explicite avec Stone–von Neumann : L’unicité (à équivalence unitaire près) des représentations irréductibles des relations de commutation canoniques éclaire le caractère universel de la transformée de Fourier
+}
+
+
+\subsection{Distributions, Bras et Kets}
+
+Dans cette sous-section, $\mathscr H$ est un espace de Hilbert séparable (c'est-à-dire admettant une base hilbertienne dénombrable).
+
+\subsubsection{Kets $\ket{\psi}\in\mathscr H$}
+
+\begin{Defi}[\bf Kets] Les vecteurs de l'espace $\mathscr H$ seront génériquement notés, en suivant Dirac, sous la forme $\ket{\psi}$. On les appellera {\bf kets} de l'espace $\mathscr H$.\end{Defi}
+
+Une fonction à valeurs dans $\mathscr H$ sera notée $t \mapsto \ket{\psi(t)}$.
+
+\smallskip
+
+Un cas important d'espace de Hilbert est $\mathcal L^2(\mathbb R)$. Une fonction $\psi \in \mathcal L^2(\mathbb R)$ sera notée $\ket{\psi}$. Si, de plus, cette fonction dépend du temps, on notera $\ket{\psi(t)}$ la fonction $x \mapsto \psi(x,t)$.
+
+\begin{Rema}[\bf Espaces utilisés en mécanique quantique]
+    Il est fréquent, dans le cadre de la mécanique quantique, de travailler avec {\em deux}, ou même {\em trois} espaces de Hilbert simultanément :
+    \begin{itemize}[label = $\bullet$]
+        \item un espace de Hilbert \guillemotleft{}abstrait\guillemotright{} $\mathscr H$, dans lequel les vecteurs sont notés $\ket{\psi}$;
+        \item l'espace $\mathcal L^2$, dans lequel les vecteurs sont notés $\psi$ (c'est-à-dire la fonction $x\mapsto \psi(x)$); cet espace est noté pour plus de précision $\bm{\mathcal L^2(\mathbb{R}, \mathrm{d}x)}
+$;
+        \item l'espace $\mathcal L^2$, dans lequel les vecteurs seront notés $\Psi \colon p \mapsto \Psi(p)$; cet espace sera alors noté $\bm{\mathcal L^2(\mathbb{R}, \mathrm{d}p)}
+$.
+    \end{itemize}
+
+    Les fonctions de carré sommable $\psi$ correspondent au formalisme de la mécanique ondulatoire de Schrödinger, en {\bf représentation position} pour l'espace $\mathcal L^2(\mathbb R ; \mathrm{d} x)$, et en {\bf représentation impulsion} pour $\mathcal L^2(\mathbb R ; \mathrm{d} p)$. La fonction $p \mapsto \Psi(p)$ est la transformation de Fourier de la fonction $x \mapsto \psi(x)$. On sait que la transformation de Fourier établit une isométrie entre $\mathcal L^2(\mathbb R , \mathrm d x )$ et $\mathcal L^2(\mathbb R , \mathrm d p )$, autrement dit un isomorphisme d'espace de Hilbert.\\
+
+    Lorsque l'on travaille à la fois avec l'espace abstrait $\mathscr H$ et l'espace $\mathcal L^2(\mathbb R)$, on peut expliciter cette différence, par exemple en notant \guillemotleft{}$\varphi$\guillemotright{} la fonction de $\mathcal L^2 (\mathbb R)$ et $\ket{\varphi} $ le vecteur abstrait correspondant. Cependant, ici, nous ne marquerons pas la différence entre les deux. Dans le cas d'une particule confinée dans un intervalle $[0 , a]$ (à cause d'un puits de potentiel infini, ou d'un espace $a$-périodique), l'espace utilisé est $\mathcal L^2([0,a])$ pour la représentation position, et $\ell^2$ pour la représentation impulsion; le passage de l'un a l'autre se fait alors au moyen des séries de Fourier.\\
+
+    Enfin, tout ce qui est traité ici dans $\mathcal L^2(\mathbb R )$ se généralise aisément à $\mathcal L^2(\mathbb R^3)$ ou $\mathcal L^2(\mathbb R^n)$.\\
+\end{Rema}
+
+On notera $\braket{\bullet , \bullet}_{\mathscr H}$ le produit scalaire de $\mathscr H$. Le carré de la norme d'un vecteur $\ket{\psi}$ est 
+
+\begin{eqnarray}
+    \left \Vert \ket { \psi } \right \Vert_{\mathscr H}^2 & \doteq & \braket{\ket{\psi} , \ket{\psi} }_{\mathscr H}.
+\end{eqnarray}
+
+\subsubsection{Bras $\bra{\psi} \in \mathscr H^\ast$}
+
+\begin{Defi}[\bf Espace dual (topologique)]
+    On note $\bm{\mathscr H^\ast}$ et on appelle {\bf dual topologique de $\bm{\mathscr H^\ast}$} l'espace des formes linéaires continues sur $\mathcal H$. On écrira souvent \guillemotleft{}dual\guillemotright{} pour \guillemotleft{}dual topologique\guillemotright{}.
+\end{Defi}
+
+\begin{Defi}[\bf Bras]
+    Les éléments de $\mathscr H^\ast$ sont appelés {\bf bras} et notés généralement $\bra{\varphi}$. Le résultat de l'application d'un bra $\bra{\varphi}$ sur un ket $\ket{\psi}$ est noté $\braket{\varphi\vert\psi}$ qui est donc un {\bf braket}\footnote{En anglais, {\em braket} désigne un crochet \guillemotleft{}crochet\guillemotright{} $\braket{\bullet}$. Dirac ne s'est pas limité à un calembour en inventant les mots \guillemotleft{}bra\guillemotright{} et \guillemotleft{}ket\guillemotright{} : la notation est rapidement devenue indispensable à la quasi-totalité des physiciens. Dirac a également inventé les termes de {\em fermion} et {\em boson}, celui de $c$-nombre, \guillemotleft{}fonction \guillemotright{} $\delta$, et la notation pratique $\hbar \equiv h /2\pi$.}.
+\end{Defi}
+
+D'une manière générale, si l'on choisit un ket $\ket{\varphi} \in \mathscr H$, on peut lui associer, {\em via} le produit scalaire, la forme linéaire 
+\begin{eqnarray}
+    \omega_\varphi \colon \ket{\psi} \mapsto \braket{ \ket{\varphi} , \ket{\psi}}_{\mathscr H}.
+\end{eqnarray}
+En utilisant le théorème suivant :
+\begin{Theo}
+    Soient $E$ et $F$ deux espaces vectoriels normés. Soit $f \in \mathcal L(E , F)$. Alors $f$ est continue si, et seulement si, il existe un réel $k>0$ tel que $\Vert f(x) \Vert_F \leq  \Vert x \Vert_E $ pour tous $x \in E$.\\
+
+    Si $f \in \mathcal L(E,F)$ est continue, on pose 
+    \begin{eqnarray}
+        \vert\!\vert\!\vert f \vert\!\vert\!\vert  = \sup_{\Vert x \Vert_E = 1}\Vert f(x) \Vert_F = \sup_{x \in E \backslash \{0\}} \frac{\Vert f(x) \Vert_F }{\Vert x \Vert_E},
+    \end{eqnarray}
+    que l'on appelle {\bf norme linéaire de $\bm{f}$}. Ainsi, pour tous $x \in E$, on a :
+    \begin{eqnarray}
+        \Vert f(x) \Vert_F & \leq  & \vert\!\vert\!\vert f \vert\!\vert\!\vert \cdot \Vert x \Vert_E.
+    \end{eqnarray}
+    L'application $f \mapsto \vert\!\vert\!\vert$ est une norme sur l'espace $\mathscr L_c(E,F)$ des applications linéaires continues, également appelée {\bf norme subordonnée à \bm{$\Vert \bullet \Vert_E$} et \bm{$\Vert \bullet \Vert_F$}}.
+\end{Theo}
+
+L'inégalité de Cauchy-Schwartz montre que la forme $\omega_\varphi$ est continue. Elle correspond donc à un bra, que l'on notera $\bra{\varphi}$ :
+\begin{eqnarray}
+    \braket{\varphi \vert \psi } & \doteq &  \braket{ \ket{\varphi} ,  \ket{\psi} }_{\mathscr H}.
+\end{eqnarray}
+En d'autres termes : {\bf À tout ket \bm{$\ket{\varphi} \in \mathscr H$} on peut associer un bra \bm{$\bra{\varphi} \in \mathscr H^\ast$}.}
+
+\smallskip
+
+La réciproque est vraie, en vertu du théorème de Riesz :
+
+\begin{Theo}[\bf Représentation de Riez]
+    L'application $\ket{\varphi} \mapsto \bra{\varphi}$ est un isomorphisme (semi-linéaire) de $\mathscr H$ sur $\mathscr H^\ast$. En particulier, pour toute forme linéaire continue $\bra{\varphi}$, il existe un unique vecteur $\ket{\varphi}$ tel que 
+    \begin{eqnarray}
+    \forall \ket{\psi} \in \mathscr H \colon \qquad \braket{\varphi \vert \psi }  =   \braket{ \ket{\varphi} ,  \ket{\psi} }_{\mathscr H}.
+    \end{eqnarray}  
+\end{Theo}
+
+On a donc une correspondance bijective entre bras et kets : {\bf À tout bra \bm{$\bra{\varphi} \in \mathscr H^\ast$} on peut associer un bra \bm{$\ket{\varphi} \in \mathscr H$}.}
+
+\subsubsection{États propres généralisés de la position : Bras $\bra{x_0} \notin \mathscr H^\ast$ }
+
+On notera également sous la forme générique $\bra{\psi}$ des {\bf bras généralisés}, c'est-à-dire des formes linéaires qui ne sont pas forcément dans $\mathscr H^\ast$. Une telle forme peut par exemple n'être pas continue (c'est le cas de $\delta$), ou bien encore n'être pas définie sur $\mathscr H$ tout entier (on demandera alors qu'elle soit tout de même définie sur un sous-espace {\em dense} de $\mathscr H$).\\
+
+Un des exemples les plus importants est le suivant :\\
+
+\begin{Defi}[\bf Le bra \bm{$\ket{x_0}$}]
+    Si $x_0 \in \mathbb R$, on note $\bra{x_0}$ la forme linéaire, {\em non continue}, définie sur l'ensemble des fonctions continues de $\mathcal L^2(\mathbb R)$ par 
+    \begin{eqnarray}
+        \braket{x_0 \vert \psi } & = & \psi(x_0).
+    \end{eqnarray}
+    Le bra $\bra{x_0}$ est donc un autre nom de la distribution $\delta(x-x_0)$.
+\end{Defi}
+
+On peut tenter une approche plus large de la notion de bras généralisés. Pour cela, on considère une distribution tempérée $\mathrm T$. Puisque $\mathscr S$ est un sous-espace (dense) de $\mathcal L^2(\mathbb R)$, le dual $\mathscr S^\ast$ de $\mathscr S$ contient le dual de $\mathcal L^2 (\mathbb R)$, qui est $\mathcal L^2(\mathbb R)$ en vertu du théorème de Riesz \footnote{En fait, le dual de $\mathcal L^2(\mathbb R)$ est isomorphe à $\mathcal L^2(\mathbb R)$, mais {\em via} cet isomorphisme, on peut identifier toute forme linéaire continue sur $\mathcal L^2(\mathbb R)$ à une fonction de $\mathcal L^2(\mathbb R)$.}. On  a donc la situation suivante :
+\begin{eqnarray}
+    \mathscr S \subset \mathcal L^2 (\mathbb R) \subset \mathscr S^\ast .
+\end{eqnarray}
+C'est ce que l'on appelle un {\bf triplet de Gelfand}. On peut être tenté de définir le bra $\bra{\mathrm T}$ par $\braket{\mathrm T \vert \varphi } = \braket{\mathrm T , \varphi }$; mais cette dernière expression est {\em linéaire} en $\mathrm T$, au sens où $\braket{\alpha \mathrm T , \varphi } = \alpha \braket{\mathrm T , \varphi }$, alors que le crochet hermitien est, quant à lui, {\em semi-linéaire} à gauche. Pour remédier à cet inconvénient mineur, on va donc poser la définition suivante :
+
+\begin{Defi}[\bf Bra généralisé] Soit $\mathrm T$ une distribution tempérée. On définit le {\bf bra généralisé} \bm{$\bra{\mathrm T}$} par son action sur tout $\ket{\varphi} \in \mathscr S$ :
+    \begin{eqnarray}
+        \braket{\mathrm T \vert \varphi} & \doteq & \overline{\braket{\mathrm T , \overline{ \varphi}}}.
+    \end{eqnarray}
+\end{Defi}
+\begin{Rema} On vérifie sans peine, si $\mathrm T_\varphi$ est une distribution régulière associée à la fonction $\varphi \in \mathscr S$, alors
+    \begin{eqnarray}
+        \forall \psi \in \mathscr H \colon \qquad && \braket{\mathrm T _\varphi \vert \psi } = \int_{-\infty}^{+\infty} \overline{\varphi(x)} \psi(x) \, dx 
+    \end{eqnarray} 
+    ce qui est égal au produit scalaire hermitien $\braket{\mathrm \varphi \vert \varphi}_{\mathscr H}$ ou $\braket{\mathrm \varphi \vert \varphi}_{\mathcal L^2(\mathbb R)}$ dans $\mathcal L^2(\mathbb R)$.
+\end{Rema}
+
+\subsubsection{États propres généralisés de l’impulsion : Kets $\bra{p} \notin \mathscr H$ }
+
+Dans le cas où $\mathscr H$ est $\mathcal L^2(\mathbb R)$, il est possible d'associer, à {\em certains} bras généralisés, un ket généralisé correspondant. Si $\bra{\psi}$ est une forme linéaire définie par une distribution régulière : 
+\begin{eqnarray}
+    \braket{\psi \vert \varphi} & = & \int_{-\infty}^{+\infty} \overline{\psi} \varphi , 
+\end{eqnarray} 
+où $\psi$ est une fonction localement sommable, on lui associe le {\bf ket généralisé \bm{$\ket{\psi}$}}, c'est-à-dire la fonction $\psi$. Celle-ci n'appartient pas nécessairement à $\mathcal L^2$ et n'est donc pas forcément un élément de $\mathscr H$. Tout ce que l'on demande, c'est que l'intégrale soit définie.
+
+\begin{Defi}[ket \bm{$\ket{p}$} et bra bm{$\bra{p}$}] Si $p$ est réel, la fonction
+    \begin{eqnarray}
+        \omega_p \colon x \mapsto \alpha e^{\mp i \gamma p x } 
+    \end{eqnarray} 
+    n'est pas de carré intégrable. Elle définit cependant une forme linéaire, non continue, sur $\mathcal L^1 \cap \mathcal L^2$ :
+    \begin{eqnarray}
+        \Omega_p \colon \left . 
+        \begin{array}{rcl}
+            \mathcal L^2(\mathbb R) & \longrightarrow & \mathbb C \\
+            \varphi & \longmapsto & \displaystyle \int_{-\infty}^{+ \infty} \overline{\omega_p(x)} \varphi(x) \, dx = \tilde \varphi (p) 
+        \end{array}
+        \right .
+    \end{eqnarray}
+    où $\tilde \varphi$ désigne la transformée de Fourier de $\varphi$, si $\alpha = (2\pi \hbar )^{-1/2}$ et $\gamma = \hbar^{-1}$, on est dans les conventions de la mécanique quantique. On note $\bra{p} \equiv \bra{\Omega_p}$ ce bra généralisé. Le ket correspondant à la fonction $\omega_p$ est noté $\ket{p} \equiv \ket{\omega_p} \notin \mathscr H$.\\
+\end{Defi}
+
+Par ailleurs, la notation de distribution peut être vue comme la généralisation de celle de fonction. Ainsi, le bra généralisé $\bra{p}$ agit non seulement sur $\mathcal L^2(\mathbb R)$, en associant à une fonction de carré intégrable la transformée de Fourier prise en $p$, mais peut être étendu aux distributions tempérées. Si $\ket{\mathrm T}$ est un ket formellement associé à une distribution tempérée $\mathrm T \in \mathscr S^\ast$, alors $\braket{p \vert \mathrm T} = \widetilde{\mathrm T}(\omega_p)$.
+
+\begin{Theo}
+    Si $\alpha = \beta$, avec $(\alpha = \beta)$ de la définition de la transformée de Fourier de l'équation \eqref{eq:fourier_def}, alors la famille des kets $\ket{p}$ est orthonormée, au sens où, pour tous réels $p$ et $p'$, on a $\braket{p\vert p'} = \delta ( p -p')$.
+\end{Theo}
+\begin{proof}
+    On applique la distribution $\braket{p\vert p'} = \widetilde{\omega_p}(\omega_{p'})$, et on se souvient que la transformée de Fourier, au sens des distributions, de $\omega_{p'}$, est $\frac{\alpha}\beta \delta_{p'}$.
+\end{proof}
+
+La frontière entre \guillemotleft{}bras\guillemotright{} et \guillemotleft{}kets\guillemotright{} n'est pas si claire : une distribution est une forme linéaire, donc techniquement un bra généralisé. Cependant, en tant que généralisation de fonction, on peut \textendash formellement \textendash la noter ket. Ainsi, on définit le ket $\ket{x_0}$ associé à la  \guillemotleft{} fonction généralisée \guillemotright{} $\delta ( x - x_0)$. Notamment, pour toute fonction $\varphi \in \mathscr S$ , on a 
+\begin{eqnarray}
+    \braket{\varphi \vert x_0} = \overline{\braket{x_0 \vert \varphi}} = \overline{\varphi(x_0)}.
+\end{eqnarray}
+Enfin, les kets $\ket{x}$ vérifient la relation d'orthonormalité :
+\begin{eqnarray}
+    \braket{x \vert x_0} = \delta ( x - x_0) = \overline{\varphi(x_0)} = \delta_x ( x_0),
+\end{eqnarray}
+valable au sens des distributions tempérées \textendash c'est-à-dire qui n'a de sens qu'appliquée à une fonction de l'espace de Schwartz.
+
+
+%\textendash
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

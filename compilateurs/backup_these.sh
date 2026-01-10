@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # === Configuration ===
-SRC="/Users/themezeguillaume/Desktop/interface_web_launcher/sites/Scroll_Web/quantum-mechanics-thesis-main/These_Memoire"
+SRC="/Users/themezeguillaume/Desktop/interface_web_launcher/sites/Scroll_Web/quantum-mechanics-thesis-main/These-Memoire"
 DEST="/Volumes/NO NAME/interface_web_launcher/sites/Scroll_Web/quantum-mechanics-thesis-main/These_Memoire"
 LOGFILE="/Volumes/NO NAME/backup_these.log"
 

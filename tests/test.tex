@@ -1,0 +1,20 @@
+\documentclass{article}
+\usepackage[skins]{tcolorbox}
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{tcolorbox}[
+  bicolor,
+  colback=blue!5,
+  colbacklower=white,
+  underlay lower={
+    \node at (interior.center) {LOWER};
+  }
+]
+UPPER
+\tcblower
+LOWER CONTENT
+\end{tcolorbox}
+
+\end{document}
