@@ -145,17 +145,18 @@ Dans ce chapitre, le caractère local des charges est implicite; nous omettrons 
 % %associée à $w$, où \( w(\theta) \) est {\bf poids spectral} (ou {\bf potentiel spectral}), et   \( \operator{\mathcal{Q}}^{(\mathcal{S})}[w] \) est une {\bf charge généralisée} associé à ce poids.
 % \end{mdframed}
 
-\begin{mdframed}[
-	linewidth=0.5pt,
-	backgroundcolor=gray!5,
-	roundcorner=50pt,
-	innerleftmargin=5pt,
-    innerrightmargin=5pt,
-    innertopmargin=-10pt,
-    innerbottommargin=2pt,
-    leftmargin=2pt,
-    rightmargin=2pt
-	]
+% \begin{mdframed}[
+% 	linewidth=0.5pt,
+% 	backgroundcolor=gray!5,
+% 	roundcorner=50pt,
+% 	innerleftmargin=5pt,
+%     innerrightmargin=5pt,
+%     innertopmargin=-10pt,
+%     innerbottommargin=2pt,
+%     leftmargin=2pt,
+%     rightmargin=2pt
+% 	]
+\Rappel{
 \paragraph{Rappel : Formulation fonctionnelle des moments et cumulants des charges.}
 Considérons un sous-système unidimensionnel de taille finie $L$.
 Dans le chapitre~(\ref{chap:relaxation}), aux équations~\eqref{chap.2.charge.f.1} et \eqref{chap.2.rho.1}, nous avons introduit l’opérateur de charge généralisée $\operator{\mathcal{Q}}[f]$, défini à partir d'une fonction test $f \colon \mathbb{R} \to \mathbb{R}$ et de l'opérateur densité de rapidité  $\operator{\rho}(\theta)$ , selon la relation intégrale :
@@ -170,7 +171,8 @@ Dans un sous-système intégrable, on a vu dans l'équation ~\eqref{chap.2.densi
 \end{eqnarray}
 où l'opérateur {\bf charge généralisée} \(\operator{\mathcal{Q}}[w]\) est défini à partir du {\bf poids spectral} \( w(\theta) \) par l’équation \eqref{chap4:eq.charge.q.1}.
 %associée à $w$, où \( w(\theta) \) est {\bf poids spectral} (ou {\bf potentiel spectral}), et   \( \operator{\mathcal{Q}}[w] \) est une {\bf charge généralisée} associé à ce poids.
-\end{mdframed}
+}
+% \end{mdframed}
 
 \medskip
 
@@ -178,24 +180,26 @@ où l'opérateur {\bf charge généralisée} \(\operator{\mathcal{Q}}[w]\) est d
 \medskip
 
 
-\begin{mdframed}[
-	linewidth=0.5pt,
-	backgroundcolor=gray!5,
-	roundcorner=50pt,
-	innerleftmargin=5pt,
-    innerrightmargin=5pt,
-    innertopmargin=-10pt,
-    innerbottommargin=2pt,
-    leftmargin=2pt,
-    rightmargin=2pt
-	]
+% \begin{mdframed}[
+% 	linewidth=0.5pt,
+% 	backgroundcolor=gray!5,
+% 	roundcorner=50pt,
+% 	innerleftmargin=5pt,
+%     innerrightmargin=5pt,
+%     innertopmargin=-10pt,
+%     innerbottommargin=2pt,
+%     leftmargin=2pt,
+%     rightmargin=2pt
+% 	]
+\Rappel{
 \paragraph{Rappel : Dérivée fonctionnelle directionnelle.}
 Nous avons introduit dans les équations \eqref{chap2:eq.diff.q.1} et \eqref{chap2:eq.diff.q.2},  la {\bf dérivée fonctionnelle dans la direction d’une fonction test} $f$ appliquée à une fonctionnelle $F[g]$, comme :
 \begin{eqnarray}
 	\dfonc{f} F[g] & \doteq &  \underset{\epsilon \to 0 }{ \lim  } \frac{ F[g + \epsilon f ]  - F [ g] }{\epsilon} \label{chap4:eq.diff.q.1} ,\\
 	 & = &  \int dx \, \frac{\delta F[g]}{\delta g(x)} f(x) \label{chap4:eq.diff.q.2}
 \end{eqnarray}
-\end{mdframed}
+}
+% \end{mdframed}
 
 %À partir de la définition précédente \eqref{chap4:eq.diff.q.1} , il est clair que $\dfonc{f} F[g]$, en ce qui concerne sa dépendance en $f$, est une fonctionnelle linéaire :
 À partir de la définition précédente \eqref{chap4:eq.diff.q.1}, il est clair que
@@ -367,17 +371,18 @@ La relation~\eqref{chap4:eq.suscep.corre.1}, qui relie la susceptibilité à la 
 \subsection{Poids spectral et formulation du GGE}
 
 
-\begin{mdframed}[
-	linewidth=0.5pt,
-	backgroundcolor=gray!5,
-	roundcorner=50pt,
-	innerleftmargin=5pt,
-    innerrightmargin=5pt,
-    innertopmargin=-10pt,
-    innerbottommargin=2pt,
-    leftmargin=2pt,
-    rightmargin=2pt
-	]
+% \begin{mdframed}[
+% 	linewidth=0.5pt,
+% 	backgroundcolor=gray!5,
+% 	roundcorner=50pt,
+% 	innerleftmargin=5pt,
+%     innerrightmargin=5pt,
+%     innertopmargin=-10pt,
+%     innerbottommargin=2pt,
+%     leftmargin=2pt,
+%     rightmargin=2pt
+% 	]
+\Rappel{
 \paragraph{Rappel : Lien entre poids spectral et multiplicateurs de Lagrange.}
 Dans la formulation fonctionnelle, un \gls{GGE} est entièrement déterminé par une fonction arbitraire $w(\theta)$, appelée {\em poids spectral}\footnote{Le poids spectral $w(\theta)$ est, dans la formulation fonctionnelle du \gls{GGE}, une fonction arbitraire de la variable spectrale~$\theta$. Il n’a pas, en général, à être symétrique : une condition de parité $w(\theta)=w(-\theta)$ n’apparaît que si l’état considéré respecte une invariance sous inversion des rapides (par exemple en absence de courant). En l’absence d’une telle symétrie, les composantes impaires de $w(\theta)$ décrivent précisément les contributions associées aux charges de courant.}
 . Cette description est donc plus générale que l’approche usuelle, où l’on considère uniquement une combinaison discrète de charges locales (ou quasi-locales). Dans ce cas particulier, le poids spectral prend la forme :
@@ -385,8 +390,8 @@ Dans la formulation fonctionnelle, un \gls{GGE} est entièrement déterminé par
 	w(\theta) = \sum_i \beta_i f_i(\theta),
 \end{eqnarray}
 ce qui ramène le \gls{GGE} à la forme standard définie par les {\em multiplicateurs de Lagrange} $\beta_i$. Les fonctions régulières $f_i$ sont des densités spectrales associées aux charges $\operator{Q}_i$,de sorte que les charges soient bien $\operator{Q}_i = \operator{\mathcal{Q}}[f_i] $.
-
-\end{mdframed}
+}
+% \end{mdframed}
 
 
 
@@ -490,17 +495,18 @@ Pour introduire les notations employées dans cette sous-section, rappelons bri�
 
 \medskip
 
-\begin{mdframed}[
-	linewidth=0.5pt,
-	backgroundcolor=gray!5,
-	roundcorner=50pt,
-	innerleftmargin=5pt,
-    innerrightmargin=5pt,
-    innertopmargin=-10pt,
-    innerbottommargin=2pt,
-    leftmargin=2pt,
-    rightmargin=2pt
-	]
+% \begin{mdframed}[
+% 	linewidth=0.5pt,
+% 	backgroundcolor=gray!5,
+% 	roundcorner=50pt,
+% 	innerleftmargin=5pt,
+%     innerrightmargin=5pt,
+%     innertopmargin=-10pt,
+%     innerbottommargin=2pt,
+%     leftmargin=2pt,
+%     rightmargin=2pt
+% 	]
+\Rappel{
 \paragraph{Rappel : Cadre de Bethe pour le modèle de Lieb–Liniger.}
 
 \subparagraph{Équations de Bethe.}
@@ -521,8 +527,8 @@ La configuration \( \{\theta_a\} \) définit une densité de rapidité, notée \
 \begin{eqnarray}\label{chap.4:eq.rho.111111}
 	\rho(\theta) = \frac{1}{L} \sum_{a=1}^N \delta(\theta - \theta_a).
 \end{eqnarray}
-
-\end{mdframed}
+}
+% \end{mdframed}
 
 \paragraph{Méthode numérique de \emph{Monte Carlo}.}
 
@@ -1006,17 +1012,18 @@ Physiquement, \(\alpha < 1\) reflète le fait que pour un nombre limité de conf
 
 \subsection{Susceptibilité spectrale et structure variationnelle de l’entropie}
 
-\begin{mdframed}[
-	linewidth=0.5pt,
-	backgroundcolor=gray!5,
-	roundcorner=50pt,
-	innerleftmargin=5pt,
-    innerrightmargin=5pt,
-    innertopmargin=-10pt,
-    innerbottommargin=2pt,
-    leftmargin=2pt,
-    rightmargin=2pt
-	]
+% \begin{mdframed}[
+% 	linewidth=0.5pt,
+% 	backgroundcolor=gray!5,
+% 	roundcorner=50pt,
+% 	innerleftmargin=5pt,
+%     innerrightmargin=5pt,
+%     innertopmargin=-10pt,
+%     innerbottommargin=2pt,
+%     leftmargin=2pt,
+%     rightmargin=2pt
+% 	]
+\Rappel{
 \paragraph{Rappel : Approche thermodynamique (Yang–Yang et énergie généralisée).}
 
 Dans l’approximation thermodynamique, le sous-système est décrit en termes de grandeurs macroscopiques, notamment par la distribution de rapidité $\rho(\theta)$.
@@ -1037,25 +1044,23 @@ où \(\rho_s(\theta)\) désigne la {\em densité d’états} liée à \(\rho\) p
 \medskip
 
 La quantité $\langle\operator{\mathcal{O}}\rangle_{[\rho]}$ désigne la valeur propre de l’observable associée aux états caractérisés par la distribution de rapidité $\rho$.
-
-
-
-
-\end{mdframed}
+}
+% \end{mdframed}
 
 \medskip
 
-\begin{mdframed}[
-	linewidth=0.5pt,
-	backgroundcolor=gray!5,
-	roundcorner=50pt,
-	innerleftmargin=5pt,
-    innerrightmargin=5pt,
-    innertopmargin=-10pt,
-    innerbottommargin=2pt,
-    leftmargin=2pt,
-    rightmargin=2pt
-]
+% \begin{mdframed}[
+% 	linewidth=0.5pt,
+% 	backgroundcolor=gray!5,
+% 	roundcorner=50pt,
+% 	innerleftmargin=5pt,
+%     innerrightmargin=5pt,
+%     innertopmargin=-10pt,
+%     innerbottommargin=2pt,
+%     leftmargin=2pt,
+%     rightmargin=2pt
+% ]
+\Rappel{
 \paragraph{Rappel : Condition variationnelle du GGE.}
 
 
@@ -1073,8 +1078,8 @@ Comme nous l’avons vu (au chapitre~(\ref{chap:relaxation})), la condition d’
 \begin{eqnarray}
 	\left. \frac{\delta \mathcal{S}_{\mathrm{YY}}[\rho]}{\delta \rho(\theta)} \right)_{\rho = \rho_{\mathrm{eq}}} = w(\theta). \label{chap:Fluc:eq:stationnarite-3}
 \end{eqnarray}
-
-\end{mdframed}
+}
+% \end{mdframed}
 
 %\begin{mdframed}[
 %	linewidth=0.5pt,
@@ -1908,11 +1913,14 @@ permettent également de paramétrer le couple $(T,\mu)$ (voir section~\ref{chap
 % \end{equation*}
 % qui est représenté par un \textbf{point rouge} dans le diagramme de phase du modèle de \gls{LL}, présenté en figure~\ref{chap:4:fig:diagr}.
 
-\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Remarque]
+%\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Remarque]
+\Information{
 On rappelle que le paramètre de Lieb \(\gamma\) caractérise la force d'interaction relative entre les particules, tandis que la température réduite \(t\) quantifie l'importance des effets thermiques par rapport aux interactions. En variant ces deux paramètres, on explore différents régimes physiques du système.
-\end{tcolorbox}
+}
+%\end{tcolorbox}
 
-\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Remarque]
+%\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Remarque]
+\Information{
 Dans cette continuité, nous allons définir des unités naturelles adaptées au système étudié. Ces unités facilitent l'interprétation physique des résultats numériques en les reliant directement aux grandeurs expérimentales.
 
 \subparagraph{Conversion vers les unités réelles.}
@@ -1936,7 +1944,8 @@ Mes résultats numériques sont exprimés en unités naturelles adimensionnées.
 % T_\text{réel} = T_\text{nat} \, T_\text{nat},
 % \]
 % permettant de comparer directement nos résultats numériques avec les expériences.
-\end{tcolorbox}	
+}
+%\end{tcolorbox}	
 
 
 \subparagraph{Paramètres fixes.}
@@ -1960,10 +1969,12 @@ Nous considérons le point
 qui est représenté par un \textbf{point rouge} dans le diagramme de phase du modèle de \gls{LL}, présenté en figure~\ref{chap:4:fig:diagr}.
 
 
-\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Remarque]
+%\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Remarque]
+\Information{
 Les paramètres choisis ne sont pas arbitraires : ils sont proches des régimes expérimentaux que nous considérons. 
 La taille du sous-système \(L\) est en unité réelle de $22\,\mu m$, la densité linéaire \(n\) est de l'ordre de $23\,\mu m^{-1}$ et la température \(T\) est d'environ $81\,nK$.
-\end{tcolorbox}
+}
+%\end{tcolorbox}
 
 % \medskip
 
@@ -2218,7 +2229,7 @@ Les résultats obtenus à partir de l’analyse quadratique de l’action (fluct
 \end{figure}
 
 
-
+\Resume{
 \section*{Conclusion}
 
 Dans ce chapitre, nous avons étudié les fluctuations de la distribution de rapidité dans les états \gls{GGE}, en mettant en lumière le lien fondamental entre corrélations et réponse linéaire.
@@ -2238,7 +2249,7 @@ Enfin, nous avons relié ces objets locaux à des susceptibilités globales via 
 \medskip
 
 Nous avons vérifié numériquement la validité de notre formule des fluctuations (eq~\eqref{chap:fluctu:eq:fluctuations.10}), ce qui confirme son exactitude et sa pertinence dans le cadre du formalisme développé.
-
+}
 
 %\paragraph{🔸 Remarque sur les corrélations globales.}
 %Dans les deux cas, les fluctuations totales \( \langle \delta N^2 \rangle \), \( \langle \delta E^2 \rangle \), ou croisées \( \langle \delta E\, \delta N \rangle \), sont données par les projections :

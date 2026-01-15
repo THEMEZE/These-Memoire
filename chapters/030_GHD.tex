@@ -73,17 +73,18 @@ Nous faisons l’hypothèse que, dans chaque cellule de taille \(\ell\), le syst
 
 Nous allons maintenant réintroduire les charges conservées définies dans le chapitre précédent, mais cette fois de manière locale, en fonction de l’opérateur densité de rapidités localement résolue $\operator{\rho}(x,\theta;t)$.
 
-\begin{mdframed}[
-	linewidth=0.5pt, 
-	backgroundcolor=linkcolor!5, 
-	roundcorner=50pt,	
-	innerleftmargin=5pt,
-    innerrightmargin=5pt,
-    innertopmargin=-10pt,
-    innerbottommargin=2pt,
-    leftmargin=2pt,
-    rightmargin=2pt
-	]
+% \begin{mdframed}[
+% 	linewidth=0.5pt, 
+% 	backgroundcolor=linkcolor!5, 
+% 	roundcorner=50pt,	
+% 	innerleftmargin=5pt,
+%     innerrightmargin=5pt,
+%     innertopmargin=-10pt,
+%     innerbottommargin=2pt,
+%     leftmargin=2pt,
+%     rightmargin=2pt
+% 	]
+\Rappel{
 \paragraph{Opérateurs charges globales}  
 %Les charges locales conservées ont été définies dans les équations~\eqref{chap.2.charge.f.1}.  
 %Dans le même formalisme, on définit les \emph{charges globales conservées} comme des fonctionnelles linéaires agissant sur une fonction réelle et régulière $f(x,\theta)$ définie sur $\mathbb{R}^2$, selon
@@ -117,8 +118,9 @@ De manière analogue, la \emph{matrice densité globale} $\operator{\varrho}[w]$
 	\qquad  
 	Z[w] = \mathrm{Tr} \left[ e^{-\operator{\mathcal{Q}}[w]} \right],
 \end{equation}
-où la charge globale $\operator{\mathcal{Q}}[w]$ est définie par~\eqref{chap:GHD:eq.charge.global.0}, et $w$ désigne le poids spectral.  
-\end{mdframed}
+où la charge globale $\operator{\mathcal{Q}}[w]$ est définie par~\eqref{chap:GHD:eq.charge.global.0}, et $w$ désigne le poids spectral. 
+} 
+% \end{mdframed}
 
 %Cette formulation met en évidence le lien entre la description statistique du système et la conservation des charges globales, en généralisant le principe de Gibbs aux systèmes intégrables par l’introduction de l’ensemble d’observables $\operator{\mathcal{Q}}[f]$ sur l’espace spectral.
 
@@ -126,17 +128,18 @@ où la charge globale $\operator{\mathcal{Q}}[w]$ est définie par~\eqref{chap:G
 
 Nous allons maintenant considérer la limite thermodynamique, où les moyennes des opérateurs sont notées sans chapeau.
 
-\begin{mdframed}[
-	linewidth=0.5pt, 
-	backgroundcolor=gray!5, 
-	roundcorner=50pt,	
-	innerleftmargin=5pt,
-    innerrightmargin=5pt,
-    innertopmargin=-10pt,
-    innerbottommargin=2pt,
-    leftmargin=2pt,
-    rightmargin=2pt
-	]
+% \begin{mdframed}[
+% 	linewidth=0.5pt, 
+% 	backgroundcolor=gray!5, 
+% 	roundcorner=50pt,	
+% 	innerleftmargin=5pt,
+%     innerrightmargin=5pt,
+%     innertopmargin=-10pt,
+%     innerbottommargin=2pt,
+%     leftmargin=2pt,
+%     rightmargin=2pt
+% 	]
+\Rappel{
 \paragraph{Limite thermodynamique.}  
 Dans notre étude de la dynamique, nous n’avons pas besoin de l’information détaillée sur le poids spectral $w$.  
 Nous noterons donc, dans ce chapitre, et dans la limite thermodynamique, les moyennes des opérateurs en supprimant leur chapeau, \emph{i.e.}
@@ -149,7 +152,8 @@ de sorte que, dans cette limite, la moyenne de la charge globale s’écrit
 	= \int_{\mathbb{R}^2} dx\, d\theta\, f(x, \theta)\, \rho(x, \theta ; t ),
 \end{equation}
 où $f$ est une fonction régulière sur $\mathbb{R}^2$.
-\end{mdframed}
+}
+% \end{mdframed}
 
 Avec ce formalisme, en appliquant $(x,\theta) \mapsto \delta(\cdot - x)f_i(\theta)$ dans \eqref{chap:GHD:eq.charge.global.1}, nous pouvons définir la moyenne des densités locales $q_i(x,t)$  comme
 \begin{equation}\label{chap:GHD:eq.chochet.bonnemain.4.11}
@@ -1097,6 +1101,7 @@ Les équations \eqref{eq:theta+}--\eqref{eq:theta-} se réécrivent sous la form
 %Ainsi, la \gls*{GHD} fournit un cadre rigoureux pour décrire la dynamique hors équilibre des systèmes intégrables à grande échelle, reliant la description microscopique des rapidités à des équations hydrodynamiques efficaces.
 
 
+\Resume{
 \section*{Résumé sur la dynamique hydrodynamique généralisée (GHD)}
 
 La dynamique d’un système quantique isolé intégrable possède des propriétés de relaxation particulières. 
@@ -1137,7 +1142,7 @@ En particulier, dans l’état fondamental et pour un paramètre de Lieb $\gamma
 \medskip 
 
 Ainsi, la théorie  \gls{GHD} fournit un cadre cohérent et rigoureux pour décrire la dynamique hors équilibre des systèmes intégrables, reliant la description microscopique en termes de rapidités aux équations effectives de l’hydrodynamique macroscopique.
-
+}
 
 
 

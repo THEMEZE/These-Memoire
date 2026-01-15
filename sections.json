@@ -1,116 +1,122 @@
 {
+    "Titre_saclay": {
+        "page": 1,
+        "pages": "1-1",
+        "nb_pages": 1
+    },
+    "Résumé_saclay": {
+        "page": 2,
+        "pages": "2-2",
+        "nb_pages": 1
+    },
+    "Blanc": {
+        "page": 3,
+        "pages": "3-3",
+        "nb_pages": 1
+    },
     "Titre": {
         "page": 1,
         "pages": "1-1",
         "nb_pages": 1
     },
-    "Blanc": {
-        "page": 2,
-        "pages": "{2,4}",
-        "nb_pages": 2,
-        "page_list": [
-            2,
-            4
-        ]
-    },
     "Acronymes": {
-        "page": 3,
-        "pages": "3-4",
+        "page": 2,
+        "pages": "2-3",
         "nb_pages": 2
     },
     "Introduction": {
-        "page": 5,
-        "pages": "5-8",
+        "page": 4,
+        "pages": "4-7",
         "nb_pages": 4
     },
     "Sommaire": {
-        "page": 9,
-        "pages": "9-18",
+        "page": 8,
+        "pages": "8-17",
         "nb_pages": 10
     },
     "1. Modèle de Lieb-Liniger et approche Bethe Ansatz": {
-        "page": 19,
-        "pages": "19-40",
+        "page": 18,
+        "pages": "18-39",
         "nb_pages": 22
     },
     "2. Relaxation et Équilibre dans les Systèmes Quantiques Intégrables : Une Approche par la Thermodynamique de Bethe": {
-        "page": 41,
-        "pages": "41-58",
+        "page": 40,
+        "pages": "40-57",
         "nb_pages": 18
     },
     "3. Dynamique hors-équilibre et hydrodynamique généralisée": {
-        "page": 59,
-        "pages": "59-76",
+        "page": 58,
+        "pages": "58-75",
         "nb_pages": 18
     },
     "4. Fluctuations de la distribution de rapidités dans les états stationnaires du modèle de Lieb–Liniger homogène": {
-        "page": 77,
-        "pages": "77-100",
+        "page": 76,
+        "pages": "76-99",
         "nb_pages": 24
     },
     "5. Dispositif expérimental": {
-        "page": 101,
-        "pages": "101-124",
+        "page": 100,
+        "pages": "100-123",
         "nb_pages": 24
     },
     "6. Étude du protocole de bi-partition : Mesure de distribution de rapidités locales rho(x,θ) pour des systèmes hors équilibre": {
-        "page": 125,
-        "pages": "125-142",
+        "page": 124,
+        "pages": "124-141",
         "nb_pages": 18
     },
     "7. Mise en place d'un confinement longitudinal dipolaire": {
-        "page": 143,
-        "pages": "143-166",
+        "page": 142,
+        "pages": "142-165",
         "nb_pages": 24
     },
     "Conclusion": {
-        "page": 167,
-        "pages": "167-168",
+        "page": 166,
+        "pages": "166-167",
         "nb_pages": 2
     },
-    "Annex A - Action de P et H sur l'état de Bethe": {
-        "page": 169,
-        "pages": "169-172",
+    "Annex A - De la transformation de Fourier aux etats de Bethe ": {
+        "page": 168,
+        "pages": "168-210",
+        "nb_pages": 43
+    },
+    "Annex B - Action de P et H sur l'état de Bethe": {
+        "page": 211,
+        "pages": "211-214",
         "nb_pages": 4
     },
-    "Annex B - Réduction GHD vers transport d’Euler": {
-        "page": 173,
-        "pages": "173-176",
+    "Annex C - Réduction GHD vers transport d’Euler": {
+        "page": 215,
+        "pages": "215-218",
         "nb_pages": 4
     },
-    "Annex C - Dérivation alternative des fluctuations de rho": {
-        "page": 177,
-        "pages": "177-180",
+    "Annex D - Dérivation alternative des fluctuations de rho": {
+        "page": 219,
+        "pages": "219-222",
         "nb_pages": 4
     },
-    "Annex D - Propriétés des facteurs d'homothétie": {
-        "page": 181,
-        "pages": "181-182",
+    "Annex E - Propriétés des facteurs d'homothétie": {
+        "page": 223,
+        "pages": "223-224",
         "nb_pages": 2
     },
-    "Annex E - Polarisabilité dynamique et potentiel dipolaire optique": {
-        "page": 183,
-        "pages": "183-186",
+    "Annex F - Polarisabilité dynamique et potentiel dipolaire optique": {
+        "page": 225,
+        "pages": "225-228",
         "nb_pages": 4
     },
-    "Annex F - Moment tensoriel J=1/2": {
-        "page": 187,
-        "pages": "187-188",
+    "Annex G - Moment tensoriel J=1/2": {
+        "page": 229,
+        "pages": "229-230",
         "nb_pages": 2
     },
     "Bibliographie": {
-        "page": 189,
-        "pages": "189-196",
+        "page": 231,
+        "pages": "231-238",
         "nb_pages": 8
     },
-    "Résumé": {
-        "page": 197,
-        "pages": "197-197",
-        "nb_pages": 1
-    },
     "Blanc_final": {
-        "page": 198,
-        "pages": "198-198",
+        "page": 239,
+        "pages": "239-239",
         "nb_pages": 1
     }
 }

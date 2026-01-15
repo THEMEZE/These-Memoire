@@ -66,7 +66,7 @@ Enfin, nous introduisons la notion de \emph{distribution de rapidité}, concept 
 
 \paragraph{Introduction.}
 
-La mécanique quantique se développe historiquement en deux grandes étapes : la \emph{première quantification}, aussi appelée quantification canonique et la \emph{seconde quantification}. Comprendre ces deux cadres est essentiel pour aborder les systèmes quantiques complexes, en particulier ceux où le nombre de particules peut varier.
+La mécanique quantique se développe historiquement en deux grandes étapes : la \emph{première quantification}, aussi appelée quantification canonique et la \emph{seconde quantification}. Comprendre ces deux cadres est essentiel pour aborder les systèmes quantiques complexes, en particulier ceux où le nombre de particules peut varier (cf annex \ref{annex:Fourier}).
 
 %La mécanique quantique s’est historiquement développée en deux étapes : la \emph{première quantification}, aussi appelée quantification canonique, puis la \emph{seconde quantification}. Comprendre ces deux cadres est essentiel pour aborder les systèmes à nombre de particules variable.
 
@@ -221,24 +221,26 @@ En appliquant le bra $\bra{x}$ de part et d’autre, on obtient :
 où $\ket{x}$ est normé (\ie $\braket{x'\vert x} = \delta ( x' - x ) $ avec $\delta ( y - x )$ une distribution de Dirac) et $\varphi_k(x) = \langle x \vert k \rangle$ est la représentation positionnelle de l’état $\ket{k}$.
 
 
-\begin{mdframed}[
-	linewidth=0.5pt, 
-	backgroundcolor=linkcolor!5, 
-	roundcorner=50pt,	
-	innerleftmargin=5pt,
-    innerrightmargin=5pt,
-    innertopmargin=1pt,
-    innerbottommargin=2pt,
-    leftmargin=2pt,
-    rightmargin=2pt
-	]
+% \begin{mdframed}[
+% 	linewidth=0.5pt, 
+% 	backgroundcolor=linkcolor!5, 
+% 	roundcorner=50pt,	
+% 	innerleftmargin=5pt,
+%     innerrightmargin=5pt,
+%     innertopmargin=1pt,
+%     innerbottommargin=2pt,
+%     leftmargin=2pt,
+%     rightmargin=2pt
+% 	]
+\ARetenir{
 La base $\{\ket{x}\}$ étant continue, et les états $\{\ket{k}\}$ quantifiés (par exemple dans une boîte de taille finie avec conditions aux limites périodiques), les relations de changement de base s’écrivent :
 \begin{eqnarray}\label{chap.1:eq.rapel.etat.prim.1}
 	\ket{k} = \int_0^L dx \, \varphi_k(x) \ket{x}, \qquad   
 	\ket{x} = \sum_{L k \in 2 \pi \mathbb{Z}}  \varphi_k^\ast(x) \ket{k},
 \end{eqnarray}
 avec $\varphi_k^\ast(x) = \langle k \vert x \rangle$. L’état $\ket{x}$ est relié aux états $\ket{k}$ par une transformation de Fourier discrète. Ces formules montrent que les états $\ket{k}$ sont les composantes de Fourier de l’état $\ket{x}$.
-\end{mdframed}
+}
+% \end{mdframed}
 
 
 \subparagraph{De la particule unique aux systèmes à $N$ particules.}
@@ -308,17 +310,18 @@ Ces relations expriment le caractère bosonique des excitations du champ.
 \end{eqnarray}
 où le facteur \( 1/\sqrt{N!} \) traduit le caractère d’indiscernabilité des bosons et garantit la symétrisation correcte de l’état.
 
-\begin{mdframed}[
-	linewidth=0.5pt, 
-	backgroundcolor=linkcolor!5, 
-	roundcorner=50pt,	
-	innerleftmargin=5pt,
-    innerrightmargin=5pt,
-    innertopmargin=-10pt,
-    innerbottommargin=2pt,
-    leftmargin=2pt,
-    rightmargin=2pt
-	]
+% \begin{mdframed}[
+% 	linewidth=0.5pt, 
+% 	backgroundcolor=linkcolor!5, 
+% 	roundcorner=50pt,	
+% 	innerleftmargin=5pt,
+%     innerrightmargin=5pt,
+%     innertopmargin=-10pt,
+%     innerbottommargin=2pt,
+%     leftmargin=2pt,
+%     rightmargin=2pt
+% 	]
+\ARetenir{
 \subparagraph{Changement de base.}
 On peut relier les opérateurs de création/annihilation dans la base des ondes planes aux opérateurs de champ via :
 \begin{eqnarray}\label{chap.1:eq.rapel.etat.second.1}
@@ -326,7 +329,8 @@ On peut relier les opérateurs de création/annihilation dans la base des ondes 
 	\operator{\Psi}^\dagger(x) = \sum_k \varphi_k^\ast(x)\operator{b}_k^\dagger.\label{eq.chap.1.TF.1}
 \end{eqnarray}
 Le champ quantique $\operator{\Psi}(x)$ est relié aux opérateurs de moment $\operator{b}_k$ par une transformation de Fourier. Ces formules montrent que les opérateurs $\operator{b}_{k}$ sont les composantes de Fourier du champ $\operator{\Psi}(x)$.
-\end{mdframed}
+}
+% \end{mdframed}
 %où $\varphi_k(x)$ est la fonction d’onde d’un état d’énergie bien définie \( \ket{k} \) dans la représentation positionnelle.
 Ainsi, un état à \(N\) bosons dans la base \( \ket{k}^{\otimes N} \) peut s’écrire :
 \begin{eqnarray}
@@ -372,18 +376,22 @@ On en déduit que l’opérateur à un corps \( \operator{F} \) peut se réécri
 
 L'opérateur $\operator{a}^\dagger_\lambda \operator{a}_\nu^{}$ fait la transition d'une particule de l'état $\nu$ à l'état $\lambda$. Si $\lambda = \nu$ cet opérateur est l'opérateur nombre de particules dans le mode $\lambda$.
 
-\begin{mdframed}[
-	linewidth=0.5pt, 
-	backgroundcolor=linkcolor!5, 
-	roundcorner=50pt,	
-	innerleftmargin=5pt,
-    innerrightmargin=5pt,
-    innertopmargin=-10pt,
-    innerbottommargin=2pt,
-    leftmargin=2pt,
-    rightmargin=2pt
-	]
-\subparagraph{Exemple : Énergie cinétique totale des particules libres.}
+% \begin{mdframed}[
+% 	linewidth=0.5pt, 
+% 	backgroundcolor=linkcolor!5, 
+% 	roundcorner=50pt,	
+% 	innerleftmargin=5pt,
+%     innerrightmargin=5pt,
+%     innertopmargin=-10pt,
+%     innerbottommargin=2pt,
+%     leftmargin=2pt,
+%     rightmargin=2pt
+% 	]
+\Example{
+	Énergie cinétique totale des particules libres.
+}
+{
+%\subparagraph{Exemple : Énergie cinétique totale des particules libres.}
 
 Si l’on sait diagonaliser l’opérateur à une particule \( \operator{f} \), c’est-à-dire si l’on peut écrire :
 \(
@@ -416,8 +424,8 @@ c’est-à-dire :
 
 %On insiste sur le fait que cette diagonalisation n’est valable que pour un gaz de particules \textbf{libres sans interaction}. 
 %Dès que des interactions sont présentes, les états propres du système ne sont plus simplement donnés par les produits d’ondes planes $\ket{\{k_a\}}$, et l’opérateur énergie cinétique $\operator{K}$ n’est plus diagonal dans cette base.
-
-\end{mdframed}
+}
+%\end{mdframed}
 
 \subparagraph{Dans la base continue des positions \( \{ \ket{x} \} \).}
 %Les opérateurs à plusieurs corps peuvent être exprimés de manière remarquable à l’aide des opérateurs de champ, d’une façon physiquement transparente qui rappelle les formules bien connues du cas à une particule.
@@ -426,19 +434,23 @@ En injectant les relation des changement de base d'état
 \begin{eqnarray}\label{chap.1:eq.rapel.opp.1.second.2}
 \operator{F} = \iint_0^L dx \, dy \, \operator{\Psi}^\dagger(x) \, \bra{ x} \operator{f} \ket{y} \, \operator{\Psi}(y).
 \end{eqnarray}%où \( \hat{f} \) est l’opérateur à un corps exprimé dans la base position, et \( \hat{\psi}^\dagger(\vec{r}) \), \( \hat{\psi}(\vec{r}) \) sont les opérateurs de création et d’annihilation d’une particule au point \( \vec{r} \).
-\begin{mdframed}[
-	linewidth=0.5pt, 
-	backgroundcolor=linkcolor!5, 
-	roundcorner=50pt,	
-	innerleftmargin=5pt,
-    innerrightmargin=5pt,
-    innertopmargin=-10pt,
-    innerbottommargin=2pt,
-    leftmargin=2pt,
-    rightmargin=2pt
-]
+% \begin{mdframed}[
+% 	linewidth=0.5pt, 
+% 	backgroundcolor=linkcolor!5, 
+% 	roundcorner=50pt,	
+% 	innerleftmargin=5pt,
+%     innerrightmargin=5pt,
+%     innertopmargin=-10pt,
+%     innerbottommargin=2pt,
+%     leftmargin=2pt,
+%     rightmargin=2pt
+% ]
 
-\subparagraph{Exemple : Énergie cinétique totale des particules libres.}
+\Example{
+	Énergie cinétique totale des particules libres.
+}{
+
+%\subparagraph{Exemple : Énergie cinétique totale des particules libres.}
 
 Reprenons l’exemple de l’énergie cinétique totale avec  
 \(
@@ -459,12 +471,13 @@ Lorsque cet Hamiltonien agit sur l’état de Fock à $N$ particules libres $\ke
 \operator{K}\ket{ \{k_a\}} =  \int_0^L d^N z \, \operator{\mathcal{K}}_N \, \varphi_{\{k_a\}}(\{z_a\} ) \operator{\Psi}^\dag(z_1) \cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}\, , \quad \mbox{avec} \quad \operator{\mathcal{K}}_N = -\sum_{i=1}^N \frac{\hbar^2\operator{\partial}_{z_i}^2}{2m}, 
 \end{eqnarray}
 où \( -i \hbar \operator{\partial}_{z_i} \)  désigne l’opérateur impulsion associé à la coordonnée \( z_i \) de la $i$-ème particule.
-
+}
 \medskip
 
 
 
-\end{mdframed}
+
+%\end{mdframed}
 
 \subparagraph{Quantité de mouvement totale et nombre total de particules.}
 Dans l'exemple de l'énergie cinétique, l'opérateur  $\operator{f}$ est proportionnel à l'opérateur impulsion au carré $\operator{p}^2$. On peut appliquer un raisonnement similaire à d'autres observables : pour le {\bf nombre total de particules}, on prend  $\operator{f} = \operator{p}^0$, c’est-à-dire l’identité et pour la {\bf quantité de mouvement totale}, on choisit $\operator{f} = \operator{p}$ (puissance 1). On note $\operator{Q}$ l'opérateur nombre total de particule et $\operator{P}$ l'opérateur quantité mouvement totale . 
@@ -498,17 +511,18 @@ Lorsqu'on applique ces opérateurs à l’état \(\ket{\{k_a\}}\), on obtient (c
 	\operator{P}\ket{ \{k_a\}} =  \int_0^L d^N z \, \operator{\mathcal{P}}_N \, \varphi_{\{k_a\}}(\{z_a\} ) \operator{\Psi}^\dag(z_1) \cdots \operator{\Psi}^\dag(z_N) \ket{\emptyset}\, , \quad &\mbox{avec}& \quad \operator{\mathcal{P}}_N = -i\hbar \sum_{i=1}^N \operator{\partial}_{z_i}\label{eq.chap.1.P.1}.
 \end{eqnarray}
 
-\begin{mdframed}[
-	linewidth=0.5pt, 
-	backgroundcolor=linkcolor!5, 
-	roundcorner=50pt,	
-	innerleftmargin=5pt,
-    innerrightmargin=5pt,
-    innertopmargin=-10pt,
-    innerbottommargin=2pt,
-    leftmargin=2pt,
-    rightmargin=2pt
-	]
+% \begin{mdframed}[
+% 	linewidth=0.5pt, 
+% 	backgroundcolor=linkcolor!5, 
+% 	roundcorner=50pt,	
+% 	innerleftmargin=5pt,
+%     innerrightmargin=5pt,
+%     innertopmargin=-10pt,
+%     innerbottommargin=2pt,
+%     leftmargin=2pt,
+%     rightmargin=2pt
+% 	]
+\Information{
 \subparagraph{On s'avance sur le chapitre (\ref{chap:relaxation}).} , en voulant généraliser avec $\operator{f} = \operator{p}^q$ où $q$ est un entier. Soit dans la base \(\{\ket{k_a}\}\) : \(\operator{F} = \hbar^q \sum_k k^q \operator{b}_k^\dagger \operator{b}_k^{} \) et en l'appliquant à \(\ket{\{k_a\}}\) :
 On peut généraliser cette construction en considérant des opérateurs à une particule de la forme $\operator{f} = \operator{p}^q$, où $q$ est entier. Dans la base impulsion \(\{\ket{k}\}\), l’opérateur à $N$ corps associé s’écrit : \(\operator{F} = \hbar^q \sum_k k^q \operator{b}_k^\dagger \operator{b}_k^{} \) et son action sur un état de Fock libre est immédiatement 
 \begin{eqnarray}\label{chap.1:eq.rapel.opp.1.second.3}
@@ -558,8 +572,8 @@ Dès que des interactions entre particules sont introduites, ces états libres n
 \medskip
 
 Dans ce cadre, les opérateurs $\operator{F}$ ne suffisent plus : il est nécessaire d’introduire des contributions à plusieurs corps pour tenir compte des interactions, ce qui conduit naturellement à la hiérarchie des charges locales d’intégrabilité.
-
-\end{mdframed}
+		}
+% \end{mdframed}
 
 
 
@@ -598,18 +612,21 @@ En injectant les relations des changements de base d'état
     \label{chap.1:eq.rapel.opp.2.second.1}
 \end{equation}
 
-\begin{mdframed}[
-	linewidth=0.5pt, 
-	backgroundcolor=linkcolor!5, 
-	roundcorner=50pt,	
-	innerleftmargin=5pt,
-    innerrightmargin=5pt,
-    innertopmargin=-10pt,
-    innerbottommargin=2pt,
-    leftmargin=2pt,
-    rightmargin=2pt
-	]
-\subparagraph{Exemple : Interactions ponctuelles.} 
+% \begin{mdframed}[
+% 	linewidth=0.5pt, 
+% 	backgroundcolor=linkcolor!5, 
+% 	roundcorner=50pt,	
+% 	innerleftmargin=5pt,
+%     innerrightmargin=5pt,
+%     innertopmargin=-10pt,
+%     innerbottommargin=2pt,
+%     leftmargin=2pt,
+%     rightmargin=2pt
+% 	]
+\Example{
+	Interactions ponctuelles.
+}{
+%\subparagraph{Exemple : Interactions ponctuelles.} 
 Dans le cas d’une interaction ne dépendant que de la distance relative entre deux particules, $\bra{ 1 : x_1^{}, 2 : x_2^{} } \operator{v} \ket{ 1 : x_1', 2 : x_2' } = v(x_1 -x_2)\delta(x_1 - x_1')\delta(x_2 - x_2') $,  l'expression \eqref{chap.1:eq.rapel.opp.2.second.1} se simplifie :
 \begin{eqnarray}
      \operator{V} =  
@@ -634,7 +651,8 @@ et quand on l'applique à l'état $\ket{\{k_a\}}$, les règles de commutations (
 % = g\sum_{1\leq i < j \leq N } \operator{\delta}(x_i - x_j)	
 %\)
 où \( g \) est la constante de couplage.
-\end{mdframed}
+}
+%\end{mdframed}
 
 
 
@@ -749,26 +767,26 @@ Dans le cas particulier du modèle de \gls{LL}, les opérateurs nombre total de 
 \end{eqnarray}
 Ils constituent donc des \textbf{intégrales du mouvement}. Cette propriété reflète directement la conservation du nombre de particules (symétrie $U(1)$) et l’invariance par translation du système (symétrie spatiale).  
 
-\begin{mdframed}[
-	linewidth=0.5pt, 
-	backgroundcolor=linkcolor!5, 
-	roundcorner=50pt,	
-	innerleftmargin=5pt,
-    innerrightmargin=5pt,
-    innertopmargin=5pt,
-    innerbottommargin=2pt,
-    leftmargin=2pt,
-    rightmargin=2pt
-	]	
+% \begin{mdframed}[
+% 	linewidth=0.5pt, 
+% 	backgroundcolor=linkcolor!5, 
+% 	roundcorner=50pt,	
+% 	innerleftmargin=5pt,
+%     innerrightmargin=5pt,
+%     innertopmargin=5pt,
+%     innerbottommargin=2pt,
+%     leftmargin=2pt,
+%     rightmargin=2pt
+% 	]	
 	%Nous verrons au chapitre~\ref{chap:relaxation} que, dans les systèmes intégrables comme le modèle de \gls{LL}, cette situation s’étend à une {\bf \em infinité d’intégrales du mouvement}. 
 	%Cette richesse supplémentaire de conservation a des conséquences profondes sur la dynamique hors d’équilibre, en particulier sur la relaxation vers des états stationnaires.
 	%Cette richesse supplémentaire de conservation conduit naturellement à l’introduction de l’ensemble de Gibbs généralisé, appelé en anglais \gls{GGE}.
-
+\Information{
 	Nous verrons au chapitre~\ref{chap:relaxation} que, dans les systèmes intégrables tels que le modèle de \gls{LL}, cette situation se généralise à l’existence d’une {\bf\em infinité d’intégrales du mouvement}.
 	Cette richesse supplémentaire de quantités conservées a des conséquences profondes sur la dynamique hors d’équilibre, notamment sur les mécanismes de relaxation vers des états stationnaires.
 	Elle mène naturellement à l’introduction de l’ensemble de Gibbs généralisé, ou \acrshort{GGE} (\acrlong{GGE}).
-
-\end{mdframed}
+}
+% \end{mdframed}
 
 
 \paragraph{États propres et valeurs propres.}
@@ -779,8 +797,9 @@ Les états propres $\ket{\{\theta_a\}}$, construits dans le cadre de la seconde 
 \operator{H} \ket{\{\theta_a\}} = \left( \frac{1}{2} \sum_{a=1}^N \theta_a^2 \right) \ket{\{\theta_a\}}.
 \end{eqnarray}
 
-\paragraph*{Conclusion.}
 
+\Resume{
+	\paragraph*{Conclusion.}
 La première quantification constitue la base indispensable pour comprendre le comportement quantique d’un nombre fixe de particules. La seconde quantification en est une extension naturelle, nécessaire pour décrire des systèmes plus complexes où le nombre de particules peut varier. Elle repose sur la quantification des champs et l’introduction d’opérateurs de création et d’annihilation, ouvrant ainsi la voie à la physique quantique des champs et à de nombreuses applications modernes, telles que la physique des gaz quantiques ultrafroids, l’électrodynamique quantique (\gls{QED}), la physique des solides via le formalisme des quasi-particules (phonons, polarons, excitons), la théorie de la supraconductivité (décrite par le modèle de \gls{BCS}), ou encore les techniques de calcul utilisées dans les collisions de particules en physique des hautes énergies.
 
 \medskip
@@ -797,7 +816,7 @@ Dans le cas d’un système à une particule, les états de la forme \eqref{chap
 
 \medskip
 
-Nous allons étudier le cas de $N=2$ corps, afin de simplifier l’analyse tout en capturant les premiers effets non triviaux des interactions. Cela permettra de comprendre plus facilement les implications physiques des interactions ponctuelles, en particulier leur influence sur la structure des états propres, les conditions de continuité des fonctions d’onde, ainsi que les relations de dispersion modifiées. Ce cas servira de base pour introduire les concepts clés de la résolution exacte par la méthode de \acrfull{BA}, avant de les généraliser au cas à $N$-corps.
+Nous allons étudier le cas de $N=2$ corps, afin de simplifier l’analyse tout en capturant les premiers effets non triviaux des interactions. Cela permettra de comprendre plus facilement les implications physiques des interactions ponctuelles, en particulier leur influence sur la structure des états propres, les conditions de continuité des fonctions d’onde, ainsi que les relations de dispersion modifiées. Ce cas servira de base pour introduire les concepts clés de la résolution exacte par la méthode de \acrfull{BA}, avant de les généraliser au cas à $N$-corps.}
 
  
 
@@ -1281,7 +1300,7 @@ Dans l’image de Bethe, les états propres sont des configurations stables de $
 
 \subsection{Fonction d’onde dans le secteur ordonné et représentation de Gaudin}
 
-Sans en faire ici la démonstration, donnons une forme généralisée de la fonction propre à $N$ particules (Eq~ \eqref{chap.1:eq.rapel.fonction.propre.N}), qui prolonge naturellement l’expression obtenue pour le cas à deux corps (Eq~ \eqref{eq:I-1-10}).
+Sans en faire ici la démonstration, donnons une forme généralisée de la fonction propre à $N$ particules (Eq~ \eqref{chap.1:eq.rapel.fonction.propre.N}), qui prolonge naturellement l’expression obtenue pour le cas à deux corps (Eq~ \eqref{eq:I-1-10} et Annex \ref{annex:Fourier}).
 Dans le domaine $z_1 < z_2 < \cdots < z_N$, la fonction d’onde pour un état de Bethe à $N$ particules s’écrit  \cite{Korepin_1997,Gaudin_2014,LL_1963_1,Franchini_2016,Wouters2015}) :
 \begin{eqnarray}
 	\varphi_{\{\theta_a\}} ( z_1 < \cdots < z_N ) & = &  \frac{1}{\sqrt{N!}}\langle \emptyset \vert \operator{\Psi} ( z_1 ) \cdots \operator{\Psi} (z_N ) \vert \{ \theta_a \} \rangle \notag\\
@@ -1681,7 +1700,7 @@ ce qui n’est autre que la relation~\eqref{eq:TBA-rhos}.
 
 
 \section*{Conclusion du chapitre}
-
+\Resume{
 Dans ce chapitre, nous avons introduit le modèle de \acrfull{LL}, qui décrit un gaz de bosons unidimensionnel soumis à une interaction de contact. Dans ce cadre, les grandeurs conservées naturelles ne sont pas seulement le nombre total de particules $\operator{Q}$ et la quantité de mouvement totale $\operator{P}$, mais également l’énergie associée à l’Hamiltonien \gls{LL}, $\operator{H}$, (plutôt qu’à la simple énergie cinétique $\operator{K}$). Ces charges conservées correspondent respectivement aux moments d’ordre $0$, $1$ et $2$ en rapidité. Comme nous le verrons au chapitre suivant, des charges d’ordre supérieur interviennent dans la description des états en équilibre, notamment via l'Ensemble de Gibbs Généralisé (\gls{GGE}).
 
 \medskip
@@ -1691,5 +1710,5 @@ L’imposition de conditions aux bords périodiques conduit naturellement aux é
 \medskip
 
 Le chapitre suivant sera consacré à l’introduction du \gls{GGE} et à l’écriture explicite du formalisme de Bethe Ansatz thermodynamique  (\acrfull{TBA}), qui fournit un cadre puissant pour décrire les propriétés thermodynamiques et hors équilibre des systèmes intégrables.
-
+}
 

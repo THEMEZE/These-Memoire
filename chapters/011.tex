@@ -1,5 +1,4 @@
-\chapter{}
-
+\chapter{De la transformation de Fourier aux états de Bethe : Représentations et intégrabilité}\label{annex:Fourier}
 \minitoc
 
 \section{Transformée de Fourier, variables conjuguées et changements de représentation\label{sec:fourier_def_prop}}
@@ -46,7 +45,7 @@ Au-delà de son rôle analytique, la transformée de Fourier admet une interpré
 
 \smallskip
 
-Enfin, l’introduction du formalisme des kets et des bras permet d’étendre cette analyse au cadre des distributions tempérées. Les états propres généralisés de la position ou de l’impulsion, bien qu’ils n’appartiennent pas à l’espace de Hilbert  $\mathcal{L}^2(\mathbb{R})$ , prennent un sens rigoureux dans le dual d’un espace de test convenablement choisi. Cette extension est indispensable pour une formulation cohérente de la mécanique quantique et pour l’interprétation physique des changements de représentation induits par la transformée de Fourier.
+Enfin, l’introduction du formalisme des kets et des bras permet d’étendre cette analyse au cadre des distributions tempérées \cite{AppelMathPhysiciens, leborgne2024distributions}. Les états propres généralisés de la position ou de l’impulsion, bien qu’ils n’appartiennent pas à l’espace de Hilbert  $\mathcal{L}^2(\mathbb{R})$ , prennent un sens rigoureux dans le dual d’un espace de test convenablement choisi. Cette extension est indispensable pour une formulation cohérente de la mécanique quantique et pour l’interprétation physique des changements de représentation induits par la transformée de Fourier.
 
 \smallskip
 
@@ -317,11 +316,19 @@ et dans l'équation \eqref{annex:1:TF.x.rep}, $\operator{\mathcal M}_{\mathrm{id
 (\operator{\mathcal{X}} f)(x) = x f(x),\\
 \operator{\mathcal{D}} & \longrightarrow &  \operator{\mathcal{D}}_x \; \equiv\; \mp \frac{i}{\gamma}\,\operator{\partial}_x.
 \end{eqnarray}
-En injectant dans \eqref{annex:1:TF.k.rep} et  \eqref{annex:1:TF.x.rep} et en appliquant $\operator{\mathcal{F}}$ à gauche et $\operator{\mathcal{F}}^{-1}$ à droite de l'équation \eqref{annex:1:TF.x.rep}, on obtient :
+En injectant dans \eqref{annex:1:TF.k.rep} et  \eqref{annex:1:TF.x.rep}  en se rappelant que ici on a la convention que la transformée de Fourier permet de passer de la représentation \guillemotleft{}$x$\guillemotright{} à la représention \guillemotleft{}$k$\guillemotright{} :
 \begin{eqnarray}
     \left \{ 
         \begin{array}{rclcrlc}  
-            \operator{\mathcal F} \, \,  \operator{\mathcal K} \, \operator{\mathcal{F}}^{-1} &  =  &-\operator{\mathcal{D}}_k, &&\operator{\mathcal{F}}\, \operator{\mathcal{D}}_x \, \operator{\mathcal{F}}^{-1} &= &  \operator{\mathcal K}, \\  \operator{\mathcal{F}} \, \,  \operator{\mathcal{D}}_x  \, \operator{\mathcal{F}}^{-1}  & =  & \operator{\mathcal X} &\mbox{et} &  \quad   \operator{\mathcal{F}}\, ( - \operator{\mathcal X} )\, \operator{\mathcal{F}}^{-1} & =&  \operator{\mathcal{D}}_x.
+            \operator{\mathcal F} \, \,  \operator{\mathcal X} \, \operator{\mathcal{F}}^{-1} &  =  &-\operator{\mathcal{D}}_k, &&\operator{\mathcal{F}}\, \operator{\mathcal{D}}_k \, \operator{\mathcal{F}}^{-1} &= &  \operator{\mathcal X}, \\  \operator{\mathcal{F}}^{-1} \, \,  \operator{\mathcal{K}}  \, \operator{\mathcal{F}}  & =  & \operator{\mathcal D}_x  &\mbox{et} &  \quad   \operator{\mathcal{F}}^{-1}\, \operator{\mathcal D}_x\, \operator{\mathcal{F}}^{-1} & =&  \operator{\mathcal{K}}.
+        \end{array} 
+        \right . ,
+\end{eqnarray} 
+ et en appliquant $\operator{\mathcal{F}}$ à gauche et $\operator{\mathcal{F}}^{-1}$ à droite  des dernières équations (équation  \eqref{annex:1:TF.x.rep}), on obtient :
+\begin{eqnarray}
+    \left \{ 
+        \begin{array}{rclcrlc}  
+            \operator{\mathcal F} \, \,  \operator{\mathcal X} \, \operator{\mathcal{F}}^{-1} &  =  &-\operator{\mathcal{D}}_k, &&\operator{\mathcal{F}}\, \operator{\mathcal{D}}_k \, \operator{\mathcal{F}}^{-1} &= &  \operator{\mathcal X}, \\  \operator{\mathcal{F}} \, \,  \operator{\mathcal{D}}_x  \, \operator{\mathcal{F}}^{-1}  & =  & \operator{\mathcal K} &\mbox{et} &  \quad   \operator{\mathcal{F}}\, ( - \operator{\mathcal K} )\, \operator{\mathcal{F}}^{-1} & =&  \operator{\mathcal{D}}_x.
         \end{array} 
         \right . 
 \end{eqnarray} 
@@ -424,6 +431,14 @@ avec
     \qquad
     2\pi\, \alpha_\ast \beta_\ast = 1.
 \end{eqnarray}
+Et
+\begin{eqnarray}
+    \mbox{si} \quad f(x) = f_\ast(x_\ast) \quad \mbox{alors} \quad \mathcal F[f] = \mathcal F_\ast[f_\ast]
+    \quad
+    \mbox{et}
+    \quad
+    \mbox{si} \quad f(k) = f_\ast(k_\ast) \quad \mbox{alors} \quad \mathcal F^{-1}[f] = \mathcal F_\ast^{-1}[f_\ast].
+\end{eqnarray}    
 
 Ainsi, le paramètre $\gamma$ disparaît explicitement des expressions.
 Dans ce manuscrit, nous avons nommé les variables \guillemotleft$x$\guillemotright{} et 
@@ -446,6 +461,18 @@ avec la condition de normalisation
 \end{eqnarray}
 où $x$ et $k$ sont désormais des variables sans dimension physique.}
 
+\smallskip 
+
+Et en remarquant que $\gamma \operator{\mathcal D} = \mp i \operator{\partial}$, il vient que :
+\begin{eqnarray}
+    \left \{ 
+        \begin{array}{rclcrlc}  
+            \operator{\mathcal F} \, \,  \operator{\mathcal X}_\ast \, \operator{\mathcal{F}}^{-1} &  =  &\pm i \operator{\partial}_{k_\ast}, &&\operator{\mathcal{F}}\, \gamma \operator{\mathcal{D}}_{k_\ast} \, \operator{\mathcal{F}}^{-1} &= &  \operator{\mathcal X}_\ast, \\  \operator{\mathcal{F}}^{-1} \, \,  \operator{\mathcal{K}}_\ast  \, \operator{\mathcal{F}}  & =  & \mp i \operator{\partial}_{x_\ast}  &\mbox{et} &  \quad   \operator{\mathcal{F}}^{-1}\, \gamma \operator{\mathcal D}_{x_\ast}\, \operator{\mathcal{F}}^{-1} & =&  \operator{\mathcal{K}}_\ast .
+        \end{array} 
+        \right . .
+\end{eqnarray}
+
+
 
 
 
@@ -465,17 +492,17 @@ où $x$ et $k$ sont désormais des variables sans dimension physique.}
 
 \subsubsection{Espace des phases et structures symplectiques}
 
-L'espace des phases d'un système à un degré de liberté est décrit par les coordonnées canoniques $(x, p)$ de l'espace $\mathbb{R}^2$. Cet espace est naturellement muni d'une \textbf{structure symplectique} définie par la forme bilinéaire antisymétrique $\omega = dx \wedge dp$. Dans ce formalisme, les transformations canoniques sont les difféomorphismes qui préservent cette forme $\omega$, préservant ainsi le volume dans l'espace des phases et les relations de commutation fondamentales $[\hat{x}, \hat{p}] = i\hbar$.
+L'espace des phases d'un système à un degré de liberté est décrit par les coordonnées canoniques $(x, p)$ de l'espace $\mathbb{R}^2$. Cet espace est naturellement muni d'une \textbf{structure symplectique} définie par la forme bilinéaire antisymétrique $\omega = dx \wedge dp$. Dans ce formalisme, les transformations canoniques sont les difféomorphismes qui préservent cette forme $\omega$, préservant ainsi le volume dans l'espace des phases et les relations de commutation fondamentales $[\operator{x}, \operator{p}] = i\hbar$.
 
 Dans ce contexte, la \textbf{Transformée de Fourier} $\mathcal{F}$ n'est pas seulement un outil analytique, mais s'interprète géométriquement comme une \textbf{rotation d'angle $\pi/2$} dans cet espace des phases. En effet, l'action de $\mathcal{F}$ réalise la permutation des variables conjuguées :
 \begin{equation}
     x \xrightarrow{\mathcal{F}} p \quad \text{et} \quad p \xrightarrow{\mathcal{F}} -x
 \end{equation}
-Cette rotation appartient au groupe métaplectique $Mp(2, \mathbb{R})$, qui est le revêtement à deux feuillets du groupe symplectique $Sp(2, \mathbb{R})$. L'opérateur de Fourier peut être vu comme l'opérateur d'évolution unitaire $U(t) = e^{-i \frac{\pi}{2} \hat{H}}$ associé à l'Hamiltonien de l'oscillateur harmonique $\hat{H} = \frac{1}{2}(\hat{x}^2 + \hat{p}^2)$ pour un temps de propagation $t = \pi/2$.
+Cette rotation appartient au groupe métaplectique $Mp(2, \mathbb{R})$, qui est le revêtement à deux feuillets du groupe symplectique $Sp(2, \mathbb{R})$. L'opérateur de Fourier peut être vu comme l'opérateur d'évolution unitaire $U(t) = e^{-i \frac{\pi}{2} \operator{H}}$ associé à l'Hamiltonien de l'oscillateur harmonique $\operator{H} = \frac{1}{2}(\operator{x}^2 + \operator{p}^2)$ pour un temps de propagation $t = \pi/2$.
 
 
 
-Cette vision géométrique unifie la transformation des opérateurs d'échelle $\hat{a}$ et $\hat{a}^\dagger$ (qui subissent une rotation de phase complexe $e^{\mp i\pi/2}$) et la préservation de la structure des états de Hermite-Gauss, qui apparaissent comme les modes propres invariants par rotation de cet espace des phases.
+Cette vision géométrique unifie la transformation des opérateurs d'échelle $\operator{a}$ et $\operator{a}^\dagger$ (qui subissent une rotation de phase complexe $e^{\mp i\pi/2}$) et la préservation de la structure des états de Hermite-Gauss, qui apparaissent comme les modes propres invariants par rotation de cet espace des phases.
 
 \subsubsection{Transformée de Fourier comme rotation canonique}
 
@@ -718,7 +745,7 @@ F = e^{\theta J} = e^{\theta (-i \sigma_2)} = e^{- i \theta \sigma_2}
 \end{eqnarray}
 
 \subparagraph{Conjugaison par $U$.}
-Pour un vecteur $\bm{n} = |\bm{n}| \hat{\bm{n}}$ (avec $\hat{\bm{n}}$ unitaire  )  et $U = e{i n_0}e^{i \bm{n} \cdot \bm{\sigma}}$, on a :
+Pour un vecteur $\bm{n} = |\bm{n}| \hat{\bm{n}}$ (avec $\hat{\bm{n}}$ unitaire  )  et $U = e^{i n_0}e^{i \bm{n} \cdot \bm{\sigma}}$, on a :
 \begin{eqnarray}
 U F U^\dagger &=& e^{i \bm{n} \cdot \bm{\sigma}} (\cos \theta I - i \sin \theta \, \sigma_2) e^{- i \bm{n} \cdot \bm{\sigma}} \\
 &=& \cos \theta I - i \sin \theta \, (U \sigma_2 U^\dagger).
@@ -773,7 +800,7 @@ Une solution connue est :
 \begin{eqnarray}
     n_0 & = & \mp\frac{\pi}{4},\\
 \bm{n} &=& \pm \frac{1}{\sqrt{3}} (\pm 1,\mp 1, \pm 1 ), \\
-\vert n \vert  &=& \frac{\pi}{3}.
+\vert \bm{n} \vert  &=& \frac{\pi}{3}.
 \end{eqnarray}
 Alors la matrice de passage correspondent est :
 \begin{equation}
@@ -802,7 +829,7 @@ La matrice de passage $P$ qui diagonalise $\sigma_y$ (telle que $P^\dagger \sigm
 \end{equation}
 
 \paragraph*{Comparaison avec $U$}
-On remarque que votre matrice $U$ est la **transposée** de la matrice de passage $P$ (ou sa version conjuguée par rapport à certains éléments) :
+On remarque que notre matrice $U$ est la **transposée** de la matrice de passage $P$ (ou sa version conjuguée par rapport à certains éléments) :
 \begin{equation}
     U = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & i \\ 1 & -i \end{pmatrix} \quad \text{alors que} \quad P = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ i & -i \end{pmatrix}
 \end{equation}
@@ -821,7 +848,7 @@ et en effet $U\sigma_zU^\dag = -\sigma_z$ ainsi :
 \paragraph{Valeurs et fonctions propres.}
 
 %\subparagraph{Variables conjuguées adimentionnés :.}
-\subparagraph{Passage aux opérateurs création et annihilation/}
+\subparagraph{Passage aux opérateurs création et annihilation}
 
 Puisque $U$ est sans dimension, on prend des variables conjuguées adimentionnés :
 \begin{eqnarray}
@@ -962,7 +989,7 @@ Soit $\ket{\varphi_\lambda}$ un vecteur propre (non nul) de $\operator{\mathcal 
     \begin{eqnarray}
         \operator{\mathcal N} \operator{a}^p \ket{\varphi_\lambda} = \operator{a}^p ( \operator{\mathcal N} - p \operator{1}) \ket{\varphi_\lambda} = ( \lambda  - p) \operator{a}^p \ket{\varphi_\lambda},
     \end{eqnarray}
-    avec $p$ un entier. Si $p = n $ alors $( \lambda  - ) >0 $ et par récurrence sur $n$ on montre que $\operator{a}^n \ket{\varphi_\lambda}$ est non nul. De plus en appliquant $\operator{a}$ sur $\operator{a}^n \ket{\varphi_\lambda}$ on montre que $\operator{a}^{n+1} \ket{\varphi_\lambda}$ et non nul. Or $\operator{a}^{n+1} \ket{\varphi_\lambda}$ est vecteur propre de $\operator{\mathcal N}$ de valeur propre $(\lambda - n -1) < 0$, absurde !
+    avec $p$ un entier. Si $p = n $ alors $( \lambda  - n ) >0 $ et par récurrence sur $n$ on montre que $\operator{a}^n \ket{\varphi_\lambda}$ est non nul. De plus en appliquant $\operator{a}$ sur $\operator{a}^n \ket{\varphi_\lambda}$ on montre que $\operator{a}^{n+1} \ket{\varphi_\lambda}$ et non nul. Or $\operator{a}^{n+1} \ket{\varphi_\lambda}$ est vecteur propre de $\operator{\mathcal N}$ de valeur propre $(\lambda - n -1) < 0$, absurde !
 \end{proof}
 
 \subparagraph{Lien entre l'opérateur nombre et la Transformée de Fourier}
@@ -1744,7 +1771,7 @@ La distribution \guillemotleft peigne de Dirac\guillemotright  est
 \begin{eqnarray}
     \operatorname{III}_T(x) & = & \sum_{n \in \mathbb Z} \delta ( x - Tn ).
 \end{eqnarray}
-On peut alors montrer \textendash et c'est un résultat fondamental \textendash que :
+On peut alors montrer \textendash\textendash{} et c'est un résultat fondamental \textendash\textendash{} que :
 
 
 \begin{Theo}
@@ -1810,12 +1837,12 @@ Et si on note $\star$ le produit de convolution et $\cdot$ la multiplication de 
         &&
         \begin{CD}
             (\mathcal{S}(\mathbb R), \cdot)
-            @>\mathcal F>>
+            @>\mathcal F^{-1}>>
             (\mathcal{S}(\mathbb R), \star) \\
             @V{\star\, g}VV
             @VV{\star\, \mathcal F(g)}V \\
             (\mathcal{S}(\mathbb R), \cdot)
-            @>\mathcal F>>
+            @>\mathcal F^{-1}>>
             (\mathcal{S}(\mathbb R), \star)
         \end{CD}.
     \end{eqnarray}
@@ -1879,7 +1906,7 @@ or
 \end{eqnarray}
 Donc, on reconnait les séries de Fourier ;
 \begin{eqnarray}
-    f(x) = \sum_{a \in \mathbb Z } c_n(f) e^{\pm 2 i \pi  n x/a }, \quad && \quad c_n(f) = \frac{1}{a} \int_0^a f(x) e^{\mp i \gamma k_n x }.
+    f(x) = \sum_{n \in \mathbb Z } c_n(f) e^{\pm 2 i \pi  n x/a }, \quad && \quad c_n(f) = \frac{1}{a} \int_0^a f(x) e^{\mp i \gamma k_n x } \, dx.
 \end{eqnarray} 
 \begin{Theo}[\bf Théorème de Riesz-Fisher : de \bf{$\mathcal L^2$}  à \bf{$\ell ^2$} et retour ]
     La représentation en série de Fourier permet d'exhiber un isomorphisme entre l'espace $\mathcal L^2([0  , a])$ et l'espace $\ell^2$ :
@@ -2011,7 +2038,7 @@ La réciproque est vraie, en vertu du théorème de Riesz :
 
 On a donc une correspondance bijective entre bras et kets : {\bf À tout bra \bm{$\bra{\varphi} \in \mathscr H^\ast$} on peut associer un bra \bm{$\ket{\varphi} \in \mathscr H$}.}
 
-\subsubsection{États propres généralisés de la position : Bras $\bra{x_0} \notin \mathscr H^\ast$ }
+\subsubsection{États propres généralisés de la position : Bras $\bra{x_0} \notin \mathscr H^\ast$.}
 
 On notera également sous la forme générique $\bra{\psi}$ des {\bf bras généralisés}, c'est-à-dire des formes linéaires qui ne sont pas forcément dans $\mathscr H^\ast$. Une telle forme peut par exemple n'être pas continue (c'est le cas de $\delta$), ou bien encore n'être pas définie sur $\mathscr H$ tout entier (on demandera alors qu'elle soit tout de même définie sur un sous-espace {\em dense} de $\mathscr H$).\\
 
@@ -2051,9 +2078,9 @@ Dans le cas où $\mathscr H$ est $\mathcal L^2(\mathbb R)$, il est possible d'as
 \end{eqnarray} 
 où $\psi$ est une fonction localement sommable, on lui associe le {\bf ket généralisé \bm{$\ket{\psi}$}}, c'est-à-dire la fonction $\psi$. Celle-ci n'appartient pas nécessairement à $\mathcal L^2$ et n'est donc pas forcément un élément de $\mathscr H$. Tout ce que l'on demande, c'est que l'intégrale soit définie.
 
-\begin{Defi}[ket \bm{$\ket{p}$} et bra bm{$\bra{p}$}] Si $p$ est réel, la fonction
+\begin{Defi}[ket \bm{$\ket{p}$} et bra \bm{$\bra{p}$}] Si $p$ est réel, la fonction
     \begin{eqnarray}
-        \omega_p \colon x \mapsto \alpha e^{\mp i \gamma p x } 
+        \omega_p \colon x \mapsto \alpha e^{\pm i \gamma p x } 
     \end{eqnarray} 
     n'est pas de carré intégrable. Elle définit cependant une forme linéaire, non continue, sur $\mathcal L^1 \cap \mathcal L^2$ :
     \begin{eqnarray}
@@ -2070,24 +2097,1559 @@ où $\psi$ est une fonction localement sommable, on lui associe le {\bf ket gén
 Par ailleurs, la notation de distribution peut être vue comme la généralisation de celle de fonction. Ainsi, le bra généralisé $\bra{p}$ agit non seulement sur $\mathcal L^2(\mathbb R)$, en associant à une fonction de carré intégrable la transformée de Fourier prise en $p$, mais peut être étendu aux distributions tempérées. Si $\ket{\mathrm T}$ est un ket formellement associé à une distribution tempérée $\mathrm T \in \mathscr S^\ast$, alors $\braket{p \vert \mathrm T} = \widetilde{\mathrm T}(\omega_p)$.
 
 \begin{Theo}
-    Si $\alpha = \beta$, avec $(\alpha = \beta)$ de la définition de la transformée de Fourier de l'équation \eqref{eq:fourier_def}, alors la famille des kets $\ket{p}$ est orthonormée, au sens où, pour tous réels $p$ et $p'$, on a $\braket{p\vert p'} = \delta ( p -p')$.
+    Si $\alpha = \beta$ (, avec $(\alpha , \beta)$ de la définition de la transformée de Fourier de l'équation \eqref{eq:fourier_def}) , alors la famille des kets $\ket{p}$ est orthonormée, au sens où, pour tous réels $p$ et $p'$, on a $\braket{p\vert p'} = \delta ( p -p')$.
 \end{Theo}
 \begin{proof}
     On applique la distribution $\braket{p\vert p'} = \widetilde{\omega_p}(\omega_{p'})$, et on se souvient que la transformée de Fourier, au sens des distributions, de $\omega_{p'}$, est $\frac{\alpha}\beta \delta_{p'}$.
 \end{proof}
 
-La frontière entre \guillemotleft{}bras\guillemotright{} et \guillemotleft{}kets\guillemotright{} n'est pas si claire : une distribution est une forme linéaire, donc techniquement un bra généralisé. Cependant, en tant que généralisation de fonction, on peut \textendash formellement \textendash la noter ket. Ainsi, on définit le ket $\ket{x_0}$ associé à la  \guillemotleft{} fonction généralisée \guillemotright{} $\delta ( x - x_0)$. Notamment, pour toute fonction $\varphi \in \mathscr S$ , on a 
+La frontière entre \guillemotleft{}bras\guillemotright{} et \guillemotleft{}kets\guillemotright{} n'est pas si claire : une distribution est une forme linéaire, donc techniquement un bra généralisé. Cependant, en tant que généralisation de fonction, on peut \textendash\textendash{} formellement \textendash\textendash{} la noter ket. Ainsi, on définit le ket $\ket{x_0}$ associé à la  \guillemotleft{} fonction généralisée \guillemotright{} $\delta ( x - x_0)$. Notamment, pour toute fonction $\varphi \in \mathscr S$ , on a 
 \begin{eqnarray}
     \braket{\varphi \vert x_0} = \overline{\braket{x_0 \vert \varphi}} = \overline{\varphi(x_0)}.
 \end{eqnarray}
 Enfin, les kets $\ket{x}$ vérifient la relation d'orthonormalité :
 \begin{eqnarray}
-    \braket{x \vert x_0} = \delta ( x - x_0) = \overline{\varphi(x_0)} = \delta_x ( x_0),
+    \braket{x \vert x_0} = \delta ( x - x_0)  = \delta_x ( x_0),
 \end{eqnarray}
-valable au sens des distributions tempérées \textendash c'est-à-dire qui n'a de sens qu'appliquée à une fonction de l'espace de Schwartz.
+valable au sens des distributions tempérées \textendash\textendash{} c'est-à-dire qui n'a de sens qu'appliquée à une fonction de l'espace de Schwartz.
 
+\subsubsection{\guillemotleft{}$ \displaystyle\mathrm{Id} = \sum_n \ket{\varphi_n } \bra{ \varphi_n}$\guillemotright{}}
 
+Soi $(\varphi_n)_{n\in \mathbb N}$ une base hilbertienne orthonormée de $\mathscr H$. On sait que cette famille est caractérisée par le fait que 
+\begin{eqnarray}
+    \forall x \in \mathscr H \colon \quad x = \sum_{n =0}^\infty \braket{\varphi_n , x }_{\mathscr H} \varphi_n.
+\end{eqnarray}
+Cette équation s'écrit, dans les notations de Dirac :
+\begin{eqnarray}
+    \forall \ket{\psi} \in \mathscr H \colon \quad \ket{\psi} = \sum_{n =0}^\infty \braket{\varphi_n \vert \psi }_{\mathscr H} \ket{\varphi_n}
+\end{eqnarray}
+ou encore, en notant le scalaire $\braket{\varphi_n \vert  \psi }$ {\em après} le vecteur $\ket{\varphi_n}$ :
+\begin{eqnarray}
+    \forall \ket{\psi} \in \mathscr H \colon \quad \ket{\psi} = \sum_{n =0}^\infty \ket{\varphi_n}\braket{\varphi_n \vert \psi }_{\mathscr H}.
+\end{eqnarray}
+De manière formelle, l'opérateur $\sum_{n = 0}^{\infty} \ket{\varphi_n}\bra{\varphi_n}$ est donc l'identité de $\mathscr H$. Les physiciens appellent cette dernière propriété une {\bf relation de fermeture}.
+
+\smallskip
+
+De manière mnémotechnique, on retiendra donc:
+
+\begin{Theo}[\bf Relation de fermeture] la famille $(\varphi_n)_{n \in \mathbb N}$ est une hilbertienne de $\mathscr H$ si et seulement si 
+    \begin{eqnarray}
+        \mathrm{Id} = \sum_{n = 0}^{\infty} \ket{\varphi_n}\bra{\varphi_n}.
+    \end{eqnarray}
+\end{Theo}
+Cette écriture permet aisément de retrouver une autre caractéristique des bases himbertiennes : l'égalité de Parseval. En effet, pour tout $\ket{\psi} \in \mathscr H$, on a
+\begin{eqnarray}
+    \Vert \psi \Vert^2 = \braket{\psi \vert \psi} = \bra{\psi} \left ( \sum_{n = 0}^{\infty} \ket{\varphi_n}\bra{\varphi_n} \right ) \ket{ \psi } = \sum_{n = 0}^\infty \braket{ \psi \vert \varphi_n } \braket{ \varphi_n  \vert \psi } = \sum_{n = 0}^{\infty} \vert\!\braket{ \varphi_n \vert \psi } \vert ^2.
+\end{eqnarray}
+
+\subsubsection{Bases généralisées}
+
+On généralise également la notion de base de l'espace $\mathcal L^2 (\mathbb R)$, en l'étendant aux distributions, vus comme généralisation de fonctions. On considère une famille $( \mathrm T_\lambda)_{\lambda \in \lambda}$ de distributions tempérées, indexée par un indice discret ou continu\footnote{le choix de l'indice continu n'est pas indifférent. Les bases généralisées sont utiles pour \guillemotleft{}diagonaliser\guillemotright{} des opérateurs auto-adjoints qui admettent, en plus de valeurs propres, un {\em spectre continue}.} variant sur $\lambda$. La première idée, pour généraliser la notion de base hilbertienne est de demander que 
+\begin{eqnarray}
+    \mathrm{Id} = \int_\Lambda \ket{\mathrm T_\lambda}\bra{\mathrm T_\lambda} d \lambda , \quad  \mbox{c'est-à-dire} \quad \ket{\varphi} \int_\Lambda \ket{ \mathrm T_\lambda } \braket{\mathrm T _\lambda \vert \varphi} \, d \lambda, 
+\end{eqnarray}
+où la notation  $\int d\lambda $ peut représenter une intégrale, une somme, ou un mélange des deux. Encore faut-il définir proprement l'intégrale de droite : on n'intègre pas des quantités numériques, mais des vecteurs en dimension infinie.
+
+\smallskip
+
+Il est plus simple de considérer une autre caractérisation des bases hilbertiennes : la formule de Parseval, qui ne se fera intervenir que des scalaires.
+
+\begin{Defi}[\bf Base généralisée] On dit que la famille $(\mathrm T_\lambda)_{\lambda \in \Lambda}$ est une {\bf base généralisée}, où un {\bf système orthonormé total}, si et seulement si :
+    \begin{eqnarray}
+        \forall \ket{\varphi} \in \mathscr S \colon \quad \Vert \varphi \Vert_2^2 = \braket{\varphi \vert \varphi } = \int_\Lambda \vert \braket{\mathrm T_\lambda \vert \varphi }\vert^2 \, d \lambda.
+    \end{eqnarray}
+    La famille $(\mathrm T_\lambda)_{\lambda \in \Lambda}$ est appelée {\bf système total} (ou {\bf complet}) si, pour tout $\varphi \in \mathrm S$ :
+    \begin{eqnarray}
+        \left (  \forall \lambda \in \Lambda \colon \braket{ \mathrm T_\lambda , \varphi }   = 0  \right ) \Longleftrightarrow \left ( \varphi = 0 \right ).
+    \end{eqnarray}
+    Comme dans le cas des bases hilbertiennes, une base généralisée est un système total. Cependant, la normalisation,d'une telle famille (dont les éléments ne. sont a {\em priori} pas dans $\mathcal L^2$) est délicate.
+
+    \smallskip
+
+    On notera qu'une base généralisée n'est en général {\em pas} une base hilbertienne de $\mathcal L^2$, puisque toutes les bases hilbertiennes sont dénombrables.
+
+\end{Defi}
+
+\begin{Theo}[\bf La base \bm{$\{ \bra{x} ; x \in \mathbb R\}$ } ] On note $\bra{x} \equiv \bra{ \delta_x}$ le bra généralisé associé à la distribution $\delta_x$. Alors la famille $\{ \bra{x} ; x \in \mathbb R \} $ de distributions forme une base généralisée de $\mathcal L^2 (\mathbb R )$.
+\end{Theo}
+\begin{proof}
+    $ \forall \varphi \in \mathscr S \colon \Vert \varphi \Vert_2^2 = \int_{-\infty}^{+\infty} \vert \varphi(x) \vert^2 dx = \int_{-\infty}^{+\infty} \vert \braket{x \vert \varphi }\vert^2 dx.$
+\end{proof}
+
+\begin{Theo}[\bf La base \bm{$\{ \bra{p} ; p \in \mathbb R\}$ } ] On note $\bra{p} \equiv \bra{ \Omega_p}$ le bra généralisé défini par la distribution régulière $\Omega_p$ associée à la fonction 
+    \begin{eqnarray}
+        \omega_p \colon x \mapsto \alpha e^{\pm i \gamma p x }.
+    \end{eqnarray} 
+    Alors la famille $\{ \bra{p} ; p \in \mathbb R\} $ forme une base généralisée de $\mathcal L^2(\mathbb R)$.
+\end{Theo}
+\begin{proof}
+    Soit $\varphi \in \mathscr S$. Alors $\braket{p\vert \varphi} = \tilde \varphi (p)$ ; l'égalité de Parseval-Plancherel, qui traduit le fait que la transformée de Fourier est une isométrie de $\mathcal L^2(\mathbb R)$ (pour $ \alpha = \overline{\beta}$ ), s'écrit 
+    \begin{eqnarray}
+        \Vert \varphi \Vert_2^2 = \Vert \tilde \varphi \Vert_2^2 = \int_{-\infty}^{+\infty} \vert \tilde \varphi (p) \vert^2 dp = \int_{-\infty}^{+\infty} \vert \braket{p \vert \varphi } \vert^2 dp .
+    \end{eqnarray} 
+\end{proof}
+Enfin, on peut montrer que la relation de fermeture est encore valable pour les bases généralisées $\{ \bra{x} ; x \in \mathbb R\}$ et $\{ \bra{p} ; p \in \mathbb R\}$. En effet, si $(\varphi,\psi) \in (\mathcal L^2(\mathbb R))^2$, alors la relation $\braket{\varphi \vert \psi } = \int \braket{\varphi \vert p}\braket{ p \vert \psi } dp $ est vrais (c'est encore l'égalité de Parseval-Pancherel). De même, on a 
+\begin{eqnarray}
+    \braket{\varphi \vert \psi } = \int_{-\infty}^{+\infty} \overline{\varphi(x)} \psi (x) dx = \int_{-\infty}^{+\infty} \overline{\braket{x\vert \varphi}} \braket{x\vert \psi} dx = \int_{-\infty}^{+\infty} \braket{\varphi \vert x } \braket{x\vert \psi} dx .
+\end{eqnarray}
+De manière pratique, on écrira donc :
+\begin{Theo}[\bf Relation de fermeture généralisé] 
+    \begin{eqnarray}
+        \mathrm{Id} = \int_{-\infty} ^{+\infty} \ket{x}\bra{x} dx \qquad \mbox{\em et} \qquad  \mathrm{Id} =\int_{-\infty} ^{+\infty} \ket{p}\bra{p} dp 
+    \end{eqnarray} 
+\end{Theo}
+\begin{Rema}
+    On peut ainsi écrire formellement des égalités du type 
+    \begin{eqnarray}
+        \ket{\varphi} = \int_{-\infty}^{+\infty} \ket{x} \braket{x \vert \varphi} dx \qquad \mbox{\em c'est-à-dire} \qquad \varphi(\cdot) = \int_{-\infty}^{+\infty} \delta_x(\cdot) \varphi(x) dx.
+    \end{eqnarray} 
+    Cette égalité a un sens si l'on prend la valeur en un point $y$; on obtient en effet la formule  vraie : 
+    \begin{eqnarray}
+        \varphi(y) = \int_{-\infty}^{+\infty}  \varphi(x) \delta_x(y) dx.
+    \end{eqnarray}
+    La grande force des notations de Dirac est de permettre d'écrire, de manière intuitive, une grande quantité de formules justes. Par exemple, écrire
+    \begin{eqnarray}
+        \ket{\varphi} = \int_{-\infty}^{+\infty}  \ket{p} \braket{p\vert \varphi} dp
+    \end{eqnarray}   
+    revient en dire que, pour tout $x\in \mathbb R$,
+    \begin{eqnarray}
+        \varphi(x) = \braket{x \vert \varphi} = \int_{-\infty}^{+\infty} \braket{x\vert p}\braket{p \vert \varphi} dp = \beta \int_{-\infty}^{+\infty} \tilde \varphi (p) e^{\pm i \gamma px} dp ,
+    \end{eqnarray} 
+    ce qui n'est rien d'autre que la formule de la transformation de Fourier inverse (pour $\beta = \overline{\alpha}$).
+\end{Rema}
 %\textendash
+
+\section{États propres de Bethe pour le modèle de Lieb-Liniger}
+
+\subsection{Pour une particule libre : première quantification}
+
+\subsubsection{Équation spectrale en espace de Fourier}
+
+
+\paragraph{Résolution de l'équation de Schrödinger dépendant du temps.}
+
+\subparagraph{Ker de l'équation de Schrödinger dépendant du temps.}
+
+En résolvant l'équation de  Schrödinger, on arrive à la recherche du $\mathrm{Ker}$ de 
+
+\begin{eqnarray}
+    \frac{i}\gamma \operator{\partial}_t - \frac{1}{2m} \left ( \mp \frac{i}\gamma \operator{\partial}_x \right )^2.
+\end{eqnarray}
+
+En utilisant la transformée de Fourier 
+
+\begin{eqnarray}
+    \mathcal F[\partial \psi ] = ( k \mapsto - \gamma^2 k^2 \tilde \psi (k)),
+\end{eqnarray}
+
+donc, dans  la représentation \guillemotleft{}k\guillemotright{} ,  on cherche $ tilde \psi$ tel que 
+
+\begin{eqnarray}
+    \partial_t \tilde \psi + i\gamma\frac{k^2}{2m}  \tilde \psi = 0 ,
+\end{eqnarray}
+
+ce qui donne 
+
+\begin{eqnarray}
+    \tilde \psi (k ; t ) = \tilde \psi (k ; 0 ) e^{-i i\gamma\frac{k^2}{2m} t} .
+\end{eqnarray}
+
+Et si on revient à la représentation \guillemotleft{}x\guillemotright{}, avec la transformée de Fourier inverse 
+
+\begin{eqnarray}
+    \psi (x ; t ) & = & \beta \int \tilde \psi (k ; 0 ) e^{\pm i \gamma kx } e^{-i i\gamma\frac{k^2}{2m} t} \, dk  .
+\end{eqnarray}
+
+Or $\tilde \psi (k ; 0  )$ s'écrit  avec la transformée de Fourier :
+\begin{eqnarray}
+    \psi (x ; 0 ) & =  &\alpha \int \tilde \psi (x ; 0 ) e^{\mp i \gamma kx } \, dx  .
+\end{eqnarray}
+
+Ainsi on a 
+
+\begin{eqnarray}
+    \psi (x ; t )  & =  &\beta \int \left ( \alpha \int \tilde \psi (x ; 0 ) e^{\mp i \gamma kx } \, dx  \right ) e^{\pm i \gamma kx } e^{-i i\gamma\frac{k^2}{2m} t} \, dk ,\\
+    & = & \int \underbrace{\left ( \alpha \beta \int e^{\pm i k ( x - x')} e^{-i \gamma\frac{k^2}{2m} t} \, dk  \right )}_{K(x-x';t)}  \psi (x ; 0 ) \, dx',\\
+    & = & \int K(x-x';t)  \psi (x ; 0 ) \, dx',
+\end{eqnarray}
+avec le propagateur 
+\begin{eqnarray}
+    K(x;t) =  \alpha \beta \int e^{\pm i k x} e^{-i \gamma\frac{k^2}{2m} t} \, dk
+\end{eqnarray}
+or en utilisant la convention $\gamma = 2\pi \alpha \beta $ et l'integrale de Gauss $\int e^{-a x^2 + b x } dx = \sqrt{\frac{\pi}{a}}e^{(b^2/(4a))}$ avec $(a,b)\in \mathbb C^2$ et $\Re(a)>0$, il vient que le propagateur s'écrit :
+\begin{eqnarray}
+    K(x;t) = \sqrt{\frac{m\gamma}{i t 2 \pi }} e^{i \gamma \frac{m}{2t} x^2 },quad ( t \neq 0 )
+\end{eqnarray}
+
+\subparagraph{Évolution unitaire et propagateur}
+
+Soit $\mathcal H$ un espace de Hilbert complexe et
+\begin{eqnarray}
+    H(t) : D(H)\subset\mathcal H \longrightarrow \mathcal H
+\end{eqnarray}
+une famille d’opérateurs auto-adjoints, définis sur un domaine dense $D(H)$
+indépendant du temps. On cherche un \emph{propagateur unitaire}
+\begin{eqnarray}
+    U(t,s):\mathcal H\to\mathcal H
+\end{eqnarray}
+tel que
+\begin{eqnarray}
+    \label{eq:fundamental-problem}
+    \left\{
+    \begin{aligned}
+    \partial_t U(t,s) &= -i\gamma H(t)\,U(t,s), \\
+    U(s,s) &= \mathbf 1 .
+    \end{aligned}
+    \right . 
+\end{eqnarray}
+
+Le propagateur $U(t,s)$ décrit l’évolution quantique entre les instants $s$ et $t$.\\
+
+
+
+{\bf Série de Dyson (construction formelle)}
+
+On définit formellement le propagateur par l’exponentielle chronologique
+\begin{equation}
+    \label{eq:dyson-formal}
+    U(t,s)
+    =
+    \mathcal T
+    \exp\!\left(
+    -i\gamma \int_s^t H(\tau)\,d\tau
+    \right),
+\end{equation}
+où $\mathcal T$ désigne l’opérateur d’ordonnancement temporel.
+
+Son développement explicite est donné par la série de Dyson
+\begin{equation}
+    \label{eq:dyson-series}
+    \begin{aligned}
+        U(t,s)
+        &=
+        \mathbf 1
+                +
+        \sum_{n=1}^{\infty}
+        (-i\gamma)^n
+        \int_s^t d\tau_1
+        \int_s^{\tau_1} d\tau_2
+        \cdots
+        \int_s^{\tau_{n-1}} d\tau_n 
+        H(\tau_1)\cdots H(\tau_n).
+    \end{aligned}
+\end{equation}
+
+Sous des hypothèses standards de régularité (au sens de Kato), cette série
+converge fortement et définit un opérateur borné sur $\mathcal H$.\\
+
+{\bf Solution du problème de Cauchy}\\
+
+Pour toute condition initiale $\psi_0\in\mathcal H$, la solution de l’équation
+d’évolution
+\begin{equation}
+    \label{eq:schrodinger-abstract}
+    \partial_t \psi(t) = -i\gamma H(t)\psi(t),
+    \qquad
+    \psi(t_0)=\psi_0,
+\end{equation}
+est donnée par
+\begin{equation}
+    \label{eq:cauchy-solution}
+    \psi(t)=U(t,t_0)\psi_0.
+\end{equation}
+
+{\bf Unitarité du propagateur}\\
+
+\begin{Prop}
+Si $H(t)$ est auto-adjoint pour tout $t$, alors le propagateur $U(t,s)$ est unitaire :
+\begin{equation}
+    U(t,s)^\dagger  U(t,s) = \mathbf 1.
+\end{equation}
+\end{Prop}
+\begin{proof}(esquisse)
+    On dérive
+    \begin{eqnarray}
+        \partial_t\!\left(U(t,s)^\dagger U(t,s)\right)=i\gamma U(t,s)^\dagger H(t)U(t,s)-i\gamma U(t,s)^\dagger  H(t)U(t,s)=0.
+    \end{eqnarray}
+Comme $U(s,s)=\mathbf 1$, on en déduit l’unitarité pour tout $t$.\\
+\end{proof}
+
+{\bf Cas particulier : Hamiltoniens commutatifs}\\
+
+Si
+\begin{eqnarray}
+    [H(t),H(t')]=0
+\qquad \forall\,t,t',
+\end{eqnarray}
+l’ordonnancement temporel est inutile et le propagateur se réduit à
+\begin{equation}
+    \label{eq:commuting-hamiltonians}
+    U(t,s)=
+    \exp\!\left(
+    -i\gamma \int_s^t H(\tau)\,d\tau
+    \right).
+\end{equation}\\
+
+{\bf Résumé structurel}\\
+
+L’équation d’évolution
+\begin{equation}
+    \partial_t\psi = -i\gamma H(t)\psi
+\end{equation}
+admet pour solution
+\begin{equation}
+    \psi(t)=U(t,t_0)\psi_0,
+\end{equation}
+où $U(t,s)$ est un opérateur unitaire, de générateur infinitésimal
+$-i\gamma H(t)$, construit via le théorème de Stone dans le cas indépendant
+du temps, ou par la théorie de Dyson–Kato dans le cas dépendant du temps.
+
+
+
+
+
+\paragraph{Définition des espaces et des bases.}
+
+Pour traiter rigoureusement le cas de la particule libre, on distingue l'espace des états physiques (souvent restreint à $L^2(\mathbb{R})$) et l'espace élargi des "états généralisés" (les distributions tempérées $\mathcal{S}^*$).
+
+\subparagraph{Les kets de position et d'impulsion.}
+On définit la base des kets de position $\{ \ket{x} \}_{x \in \mathbb{R}}$ telle que :
+\begin{itemize}[label = $\bullet$]
+    \item Orthogonalité : $\braket{x | x'} = \delta(x - x')$
+    \item Résolution de l'identité : $\int_{\mathbb{R}} dx \ket{x}\bra{x} = \mathbb{I}$
+\end{itemize}
+Selon notre définition de la transformée de Fourier, on introduit les kets d'impulsion $\{ \ket{k} \}_{k \in \mathbb{R}}$ par leur projection sur la base position :
+\begin{eqnarray}
+    \braket{x | k} = \alpha e^{\pm i \gamma k x},
+\end{eqnarray}
+
+\begin{NB}
+    Le choix du signe dans l'exponentielle dépend du signe $\mp$ choisi dans notre définition de $\tilde{f}(k)$
+\end{NB}
+
+\subparagraph{Relation de base et transformée de Fourier.}
+L'état $\ket{\psi}$ s'exprime dans les deux bases via :
+\begin{eqnarray}
+    \psi(x) = \braket{x | \psi} \quad \text{et} \quad \tilde{\psi}(k) = \braket{k | \psi}
+\end{eqnarray}
+En utilisant la résolution de l'identité, on retrouve notre définition :
+\begin{eqnarray}
+   \tilde{\psi}(k) = \int \braket{k | x} \braket{x | \psi} dx = \alpha \int e^{\mp i \gamma k x} \psi(x) dx.
+\end{eqnarray}
+
+
+\paragraph{Fonctions propres stationnaires de l'équation de Schrödinger indépendant du temps.}
+
+Quand on cherche les solutions stationnaires de l'équation de  Schrödinger, on cherche les fonctions propres de 
+\begin{eqnarray}
+    \operator{\mathcal H} \equiv \frac{1}{2m} \left ( \mp \frac{i}\gamma \operator{\partial}_x \right )^2,
+\end{eqnarray}
+à un facteur près, ce qui revient à chercher les valeurs et les fonctions propres  de  
+\begin{eqnarray}
+    \operator{\partial}^2.
+\end{eqnarray}
+
+\subparagraph{Dans la représentation \guillemotleft{}k\guillemotright{} ? .}
+
+Or $\operator{\partial}^2$ est auto-adjoints dans $\mathcal L^2(\mathbb R)$~ $\left (\braket{\varphi , \operator{\partial}^2\phi }_{\mathcal L^2} = \braket{\operator{\partial}^2 \varphi , \phi }_{\mathcal L^2}\right )$ \footnote{Les opérateurs $\operator{\mathcal X} \colon f \mapsto ( x \mapsto xf(x))$ et $i \operator{\partial} \colon f \mapsto i f'$ sont auto-adjoints dans $\mathcal L^2(\mathbb R)$ car $$\braket{ \varphi , \operator{\mathcal X} \phi }_{\mathcal L^2} = \int \varphi(x) x \phi (x) dx = \braket{\operator{\mathcal X}  \varphi ,  \phi }_{\mathcal L^2}  \quad \mbox{et} \quad \braket{ \varphi , i \operator{\partial} \phi }_{\mathcal L^2} = \int \overline \varphi ( i \partial \phi ) = -  \int (\overline{  i \partial \phi }) \phi =  \braket{ i \operator{\partial} \varphi ,  \phi }_{\mathcal L^2}$$  }
+
+Donc, on cherche $\lambda \in \mathbb R$, associer à une fonction propre $\varphi$ tel qu'en faisant la transformée de Fourier 
+\begin{eqnarray}
+    \mathcal L^2(\mathbb R) \ni \operator{\partial}^2 \varphi = \lambda \varphi \overset{\operator{\mathcal F}}{\longrightarrow} \left ( k \mapsto - k^2 \tilde \varphi (k) \right )  = \lambda \tilde \varphi,
+\end{eqnarray}
+soit résoudre 
+\begin{eqnarray}
+    k \longmapsto ( k^2 + \lambda ) \tilde \varphi = 0 \qquad \mbox{(équation de dans $\mathcal L^2$ ou $\mathcal S^\ast$)}.
+\end{eqnarray}
+Sur $\mathcal L^2 (\mathbb R)$ il y a deux possibilités :
+\begin{enumerate}[label = \roman*)]
+    \item $\tilde \varphi = 0$
+    \item $ (k \mapsto k^2 + \lambda ) = 0 $.
+\end{enumerate}
+Sur $\mathcal L^2 (\mathbb R)$ , $\tilde \varphi$ ne peut être non nulle que sur l'ensemble $\{ k \in \mathbb R  ~\vert k^2 = -\lambda \}$.
+
+\subparagraph{Aucune solution non triviale dans $\mathcal L^2(\mathbb R)$.}
+Sur $\mathbb R$
+\begin{enumerate}[label = \roman*)]
+    \item l'ensemble $\{ - k_0 , + k_0 \} $ est de mesure de Lebesgue nulle
+    \item une fonction de $\mathcal L^2(\mathbb R)$ qui est nulle presque partout est égale à zéro.
+\end{enumerate}
+Dons si la fonction propre $\varphi\in \mathcal L^2(\mathbb R)$ alors le support de $\tilde \varphi \subset \{ - \sqrt{-\lambda} , + \sqrt{-\lambda }\} $ donc $\tilde \varphi = 0 $. Donc $\operator{\partial}^2$ n'a aucune fonction propre sur $\mathcal L^2(\mathbb R)$.\\
+
+\smallskip
+
+C'est la raison fonctionnelle profonde.
+
+\subparagraph{Comment obtenir malgré tout des \guillemotleft{} solutions propres \guillemotright{}? .}
+
+Si l'on élargit l'espace de travail à $\mathcal S^\ast$ (distribution tempérée) alors, il existe des objets non nuls supportés sur un point : $\delta_{k_0}$ :
+\begin{eqnarray}
+    (\lambda + k^2)\delta_{k_0} = (\lambda + k_0^2)\delta_{k_0}.
+\end{eqnarray}
+Si $k_0 = \pm \sqrt{-\lambda}$ alors $(\lambda + k^2)\delta_{k_0} =0$
+
+\subparagraph{Pourquoi seulement des combinaisons de Dirac ? .}
+Toute distribution $\mathrm T$ telle que 
+\begin{eqnarray}
+    (\lambda + x^2)T = 0,
+\end{eqnarray}
+doit être supportés dans l'ensemble des zéros du polynôme 
+\begin{eqnarray}
+    \lambda + x^2.
+\end{eqnarray}
+Or les zéros sont isolés $(\pm k_0)$. Toutes distributions tempérées à support ponctuelle est une combinaison finie de
+\begin{eqnarray}
+    \delta^{(n)}(x \pm  k_0).
+\end{eqnarray}
+Mais ici 
+\begin{eqnarray}
+    (\lambda + x^2)\delta'( x \pm k_0 ) \neq 0,
+\end{eqnarray}  
+donc seules les Dirac non dérivées survivent. Ainsi
+\begin{eqnarray}
+    \tilde \varphi \in \mathrm{Vect} \{ \delta_{+k_0} , \delta_{-k_0} \} .
+\end{eqnarray} 
+
+\subparagraph{Et dans la représentation \guillemotleft{}x\guillemotright{} ? .}
+
+En utilisant les transformées de Fourier
+\begin{eqnarray}
+    \mathcal F^{-1}[\delta] = ( x \mapsto \beta ), \quad  \mathcal F^{-1}[k \mapsto f(k + a )] = (x \mapsto e^{\pm i \gamma a x } \mathcal F^{-1} [f] ( x )),
+\end{eqnarray} 
+il vient que les fonctions propres stationnaires, dans la représentation \guillemotleft{}x\guillemotright{}, sont tels que  :
+\begin{eqnarray}
+    \varphi \in \mathrm{Vect} \{ \varphi_{+k_0} , \varphi_{-k_0} \} , \quad \mbox{avec} \quad \varphi_{k} \colon x \mapsto \beta e^{\pm i \gamma k x } .
+\end{eqnarray} 
+Or la définition de la distribution de Dirac et l'unitarité de la transformée de Fourier implique que 
+\begin{eqnarray}
+    \int e^{\pm i \gamma ( k - k') x } dx = \frac{2\pi}\gamma , \qquad \gamma = 2 \pi \vert \beta \vert ^2 , \, \beta = \overline{\alpha},
+\end{eqnarray}
+donc on a le produit scalaire : 
+\begin{eqnarray}
+    \ket{\varphi_k ,  \varphi_{k'}}_{\mathcal S^\ast } = \delta( k - k' ).
+\end{eqnarray}
+Donc $\{ \varphi_{+k_0} , \varphi_{-k_0} \}$  forme une base orthonormée. De plus a une phase près ($\beta = \overline{\alpha}$) , on a
+\begin{eqnarray}
+    \varphi_k(x) = \braket{x \vert k }, 
+\end{eqnarray}
+Soit 
+\begin{eqnarray}
+    \varphi \in \mathrm{Vect} \{ \ket{+k_0} , \ket{-k_0} \}.
+\end{eqnarray}
+
+De plus $\varphi_{k}$ est fonction propre de $\operator{\partial}^2$ associé à $-k^2$.\\
+
+\smallskip
+
+Donc, on retiendra que {\bf  \bm{$\varphi_{k}$} est fonction propre de \bm{$\operator{\mathcal H} \equiv \frac{1}{2m} \left ( \mp \frac{i}\gamma \operator{\partial}_x \right )^2$} associé à \bm{$\varepsilon(k) \equiv \frac{k^2}{\gamma^2 2m}$}.\\
+
+Si \bm{$\ket{k}$} tel que \bm{$\operator{\mathcal H} \ket{k} = \varepsilon(k) \ket{k}$}. En projetant sur \bm{$\bra{k'}$} :
+\begin{eqnarray}
+    \bm{\bra{k'} \operator{\mathcal H} \ket{k} = \varepsilon(k) \braket{k'\vert k}, \quad \mbox{où} \quad  \tilde{\phi_k}(k') =  \braket{k'\vert k}}.
+\end{eqnarray}
+}
+
+%dans $\mathcal{S}^*$, la solution pour un $\varepsilon(k) > 0$ ($\operator{\partial}^2 ) fixé est une combinaison linéaire de deux distributions de Dirac centrées sur $k_0$ et $-k_0$ avec $k_0 = \sqrt{2mE}$.
+
+
+\subparagraph{Transformation $U$ et dégénérescence.}
+
+Puisque l'énergie ne dépend que de $k^2$, l'espace propre est de dimension 2, engendré par $\{ \ket{k}, \ket{-k} \}$. On peut définir une nouvelle base par une transformation unitaire $U$ :
+\begin{eqnarray}
+    \begin{pmatrix} \ket{k, +} \\ \ket{k, -} \end{pmatrix} = U \begin{pmatrix} \ket{+k} \\ \ket{-k} \end{pmatrix},
+\end{eqnarray}
+avec $U$ unitaire. Donc $U$ est de la forme 
+\begin{eqnarray}
+    U = \begin{pmatrix} a & b  \\ \mp \overline{b} & \pm \overline{a} \end{pmatrix}
+\end{eqnarray}
+avec $\vert a \vert^2 + \vert b \vert^2 = 1 $ pour que $U$ soit bien unitaire. Si $\pm \rightarrow +$ on a $U \in SU(2)$.
+Généralement, on choisit $U$ pour obtenir des états de parité définie (fonctions sinus et cosinus) :
+\begin{itemize}[label = $\bullet$]
+    \item $\ket{k, +} = \frac{1}{\sqrt{2}} (\ket{k} + \ket{-k})$ (symétrique / Cosinus)
+    \item $\ket{k, -} = \frac{1}{i\sqrt{2}} (\ket{k} - \ket{-k})$ (antisymétrique / Sinus) 
+\end{itemize}
+
+{\bf Attention au point \bm{$k=0$} :}À $k=0$, les vecteurs $\ket{k}$ et $\ket{-k}$ ne sont plus linéairement indépendants (ils fusionnent). La dimension de l'espace propre chute à 1, ce qui correspond physiquement à l'état fondamental de translation nulle. Dans le modèle de Lieb-Liniger, l'exclusion de Pauli "généralisée" (via la répulsion) fera que les $k$ doivent être distincts.
+
+\subparagraph{Extension au cas périodique ($L$-périodique) : quantification. }
+Quand on passe sur un cercle de circonférence $L$, l'espace de travail devient $\mathcal L^2([0, L])$.\\
+
+{\bf Discrétisation du spectre}\\ 
+
+La condition de périodicité $\psi(x+L) = \psi(x)$ impose $\braket{x+L | k} = \braket{x | k}$, d'où :
+\begin{eqnarray}
+    e^{\pm i \gamma k (x+L)} = e^{\pm i \gamma k x} \implies \gamma k L = 2\pi n, \quad n \in \mathbb{Z}.
+\end{eqnarray}
+Les kets autorisés sont désormais discrets : $\{ \ket{k_n} \}$ avec $k_n = \frac{2\pi n}{\gamma L}$.\\
+
+{\bf De la Transformée à la Série de Fourier}\\
+
+La résolution de l'identité devient une somme :
+\begin{eqnarray}
+    \mathbb{I} = \sum_{n \in \mathbb{Z}} \ket{k_n}\bra{k_n}.
+\end{eqnarray}
+La fonction d'onde se décompose en série de Fourier :
+\begin{eqnarray}
+   \ket{\psi} = \sum_n \tilde{c}_n \ket{k_n} \implies \psi(x) = \sum_n \tilde{c}_n \alpha e^{\pm i \gamma k_n x}.
+\end{eqnarray}\\
+
+{\bf Espace de travail}\\ 
+Ici, les kets $\ket{k_n}$ appartiennent à $L^2([0, L])$. On n'a plus besoin de sortir de l'espace de Hilbert pour définir les états propres, car le spectre de l'opérateur $\operator{\partial}^2$ sur un domaine compact est purement ponctuel (discret).
+
+\subparagraph{Remarque sur la normalisation des états périodiques.}
+
+Dans le cas périodique de période $L$, deux conventions équivalentes peuvent être
+utilisées pour définir le produit scalaire et la normalisation des états propres.
+
+\medskip
+\noindent
+\textbf{Choix A (normalisation du produit scalaire).}
+On définit
+\begin{eqnarray}
+   \langle f\mid g\rangle_A
+   =
+    \frac{1}{L}\int_0^L \overline{f(x)}\,g(x)\,dx,
+\end{eqnarray}
+et les états propres
+\begin{eqnarray}
+   \braket{x \vert k_n}_A=e^{\pm i\gamma k_n x},
+\qquad
+k_n=\frac{2\pi n}{\gamma L}.
+\end{eqnarray}
+On vérifie alors immédiatement que
+\begin{eqnarray}
+   \braket{k_n\mid k_m}_A=\delta_{nm}.
+\end{eqnarray}
+
+\medskip
+\noindent
+\textbf{Choix B (normalisation des états).}
+On définit le produit scalaire standard
+\begin{eqnarray}
+   \langle f\mid g\rangle_B
+=
+\int_0^L \overline{f(x)}\,g(x)\,dx,
+\end{eqnarray}
+et les états propres normalisés
+\begin{eqnarray}
+   \braket{ x \vert k_n}_B=\frac{1}{\sqrt{L}}\,e^{\pm i\gamma k_n x},
+\qquad
+k_n=\frac{2\pi n}{\gamma L}.
+\end{eqnarray}
+Dans ce cas également,
+\begin{eqnarray}
+   \braket{k_n\mid k_m}_B=\delta_{nm}.
+\end{eqnarray}
+
+
+\medskip
+Les deux conventions sont reliées par une simple renormalisation
+\begin{eqnarray}
+   \ket{k_n}_B=\frac{1}{\sqrt{L}}\ket{k_n}_A,
+\end{eqnarray}
+et conduisent à des résultats physiques strictement identiques.
+Dans la suite de ce manuscrit, nous adoptons le \textbf{choix B}, qui correspond
+à la convention usuelle de la mécanique quantique, où le produit scalaire est
+défini sans facteur de normalisation explicite.\\
+
+\subparagraph{États propres et produit scalaire des états périodiques.}
+Ici pour rester cohérent avec les séries de Fourier (coefficients de Fourier) 
+\begin{eqnarray}
+    c_n(f) = \frac{1}{L} \int_0^L f(x) e^{\mp i \gamma k_n x } \, dx., \qquad && \qquad f(x) = \sum_{n \in \mathbb Z } c_n(f) e^{\pm i \gamma k_n x  },
+\end{eqnarray} 
+nous  choisissons le choix A. 
+\begin{eqnarray}
+   \braket{ \phi \mid \varphi}
+   =
+    \frac{1}{L}\int_0^L \overline{\phi (x)}\,\varphi(x)\,dx,
+\end{eqnarray}
+et les états propres
+\begin{eqnarray}
+   \varphi_{k_n} (x) \equiv  \braket{x \vert k_n} \equiv e^{\pm i\gamma k_n x}.
+\end{eqnarray}
+Soit, on réécrit 
+\begin{eqnarray}
+    \tilde \varphi_{k_n} (k_n )\equiv \braket{ k_n \vert \varphi  } = c_n(\varphi) = \frac{1}{L} \int_0^L \braket{ k_n  \vert x  }\! \braket{x \vert \varphi}   \, dx, \quad   \varphi_{k_n} (x) = \braket{x \vert \varphi}  = \sum_{n \in \mathbb Z } \braket{x  \vert  k_n  }\! \braket{k_n \vert \varphi }  ,
+\end{eqnarray} 
+en encore 
+\begin{eqnarray}
+    \ket{\varphi  } = c_n(\varphi) = \frac{1}{L} \int_0^L  \ket{ x  } \!\braket{x \vert \varphi}  \, dx, \quad   \ket{\varphi}  = \sum_{n \in \mathbb Z } \ket{ k_n  }\! \braket{k_n \vert \varphi }  .
+\end{eqnarray} 
+
+Et on retiendra 
+
+\begin{eqnarray}
+    \ket{ k_n  } = \frac{1}{L} \int_0^L \ket{ x  } \! \braket{x \vert k_n}   \, dx, \quad   \ket{x}  = \sum_{ L k_n  \in 2 \pi  Z } \ket{ k_n  } \! \braket{k_n \vert \varphi } .
+\end{eqnarray}
+
+\begin{Rema}[\bf Incoming/Outming wave] Fans les cas où $L$ infinie ou  finie ($\varphi_k(x) \propto  e^{\pm i \gamma k n }$), la structure $\{\varphi_{+k},\varphi_{-k}\}$ correspond à la base hélicoïdale (helicity basis) utilisés pour l'équation de Schrödinger 1D libre, où encore à l base des modes entrant/ sortant (\guillemotleft{}incoming/outming wave\guillemotright{}).
+\end{Rema}
+
+\subsection{Pour $N$ (inconue) de particule(s) : seconde quantification}
+
+Ici, on fait un récapitulatif de la sous-sous-section : \guillemotleft{}Seconde quantification\guillemotright{} du chapitre \ref{chap:LL-BA}.
+
+\subsubsection{Cadre fonctionnel et bases généralisées.}
+Les états propres de l’opérateur impulsion et de l’opérateur position n’appartiennent pas à l’espace de Hilbert physique $\mathcal L^2([0,L])$, mais doivent être compris comme des \emph{vecteurs généralisés} au sens de la théorie des distributions. Plus précisément, on se place dans le cadre d’un triplet de Gelfand
+\begin{eqnarray}
+    \mathcal{S}([0,L]) \subset \mathcal L^2([0,L]) \subset \mathcal{S}'([0,L]), 
+\end{eqnarray}
+où $\mathcal{S}$ désigne un espace de fonctions tests adaptées aux conditions aux bords, et $\mathcal{S}'$ son dual topologique.
+
+Dans ce cadre, les familles $\{\ket{x}\}_{x\in[0,L]}$ et $\{\ket{k_n}\}_{n\in\mathbb{Z}}$, avec
+\begin{eqnarray}
+    k_n = \frac{2\pi n}{L},
+\end{eqnarray}
+forment des \emph{bases orthonormées généralisées}
+au sens des distributions, vérifiant
+\begin{eqnarray}
+    \braket{x \vert x'} = \delta(x-x'),
+\qquad
+\braket{k_n \vert k_m} = \delta_{n,m}.
+\end{eqnarray}
+
+Les résolutions de l’identité correspondantes sont alors
+\begin{eqnarray}
+    \mathbb{I} = \frac{1}L \int_0^L dx\, \ket{x}\!\bra{x} = \sum_{n\in\mathbb{Z}} \ket{k_n}\!\bra{k_n},
+\end{eqnarray}
+où les égalités sont comprises au sens faible sur $\mathcal{S}([0,L])$.
+
+En particulier, les relations de changement de représentation s’écrivent
+\begin{eqnarray}
+    \ket{k_n}
+=
+\frac{1}{L}
+\int_0^L dx\,
+\ket{x}\!\braket{x\vert k_n},
+\qquad
+\ket{x}
+=
+\sum_{n\in\mathbb{Z}}
+\ket{k_n}\!\braket{k_n\vert x},
+\end{eqnarray}
+les coefficients $\braket{x\vert k_n}$ étant donnés par les ondes planes
+\(
+\braket{x\vert k_n} = e^{\pm i \gamma k_n x}.
+\)
+
+
+\subsubsection{Limites de la première quantification.}
+Dans la première quantification, un système de $N$ particules identiques est décrit par une fonction d’onde $\varphi(x_1,\dots,x_N)$, symétrique (bosons) ou antisymétrique (fermions) sous l’échange de deux coordonnées.
+Cette approche devient rapidement peu maniable lorsque $N$ est grand, ou lorsque le nombre de particules n’est plus conservé, comme dans les systèmes ouverts ou en théorie des champs.
+
+\subsubsection{Principe de la seconde quantification.}
+La seconde quantification fournit un cadre conceptuel et technique permettant de traiter de manière unifiée des systèmes à nombre variable de particules. L’objet fondamental n’est plus la fonction d’onde, mais un \emph{vecteur d’état} appartenant à l’espace de Fock, construit comme une somme directe des espaces à $N$ particules. Les degrés de liberté sont décrits par des opérateurs de création et d’annihilation, associés aux modes quantiques du système.
+
+\subsubsection{Espace de Fock et opérateurs de création-annihilation.}
+L’espace de Fock bosonique est engendré à partir du vide $\ket{\emptyset}$, défini par
+\begin{eqnarray}
+    \forall k,\qquad \operator{a}_k \ket{\emptyset} = 0,
+\qquad \langle \emptyset \vert \emptyset \rangle = 1.
+\end{eqnarray}
+L’opérateur $\operator{a}_k^\dagger$ crée une particule dans le mode $k$, et les relations de commutation canoniques sont
+\begin{eqnarray}
+    [\operator{a}_k,\operator{a}_{k'}]=0, \qquad [\operator{a}_k,\operator{a}_{k'}^\dagger]=\delta_{k,k'}.
+\end{eqnarray}
+
+\paragraph{États à nombre fixé de particules.}
+Un état à $N$ bosons dans les modes $\{k_1,\dots,k_N\}$ s’écrit
+\begin{eqnarray}
+    \ket{\{k_1,\dots,k_N\}}
+=
+\frac{1}{\sqrt{N!}}\,
+\operator{a}_{k_1}^\dagger \cdots \operator{a}_{k_N}^\dagger
+\ket{\emptyset},
+\end{eqnarray}
+le facteur $1/\sqrt{N!}$ assurant la symétrisation correcte de l’état.
+
+\subsubsection{Champs quantiques et représentation positionnelle.}
+Dans la représentation de position, on introduit le champ bosonique canonique
+$\operator{\Psi}(x)$ et son adjoint $\operator{\Psi}^\dagger(x)$,
+qui annihilent et créent respectivement une particule au point $x$.
+Ils satisfont les relations de commutation à temps égal
+\begin{eqnarray}
+    [\operator{\Psi}(x),\operator{\Psi}(y)] = 0,
+\qquad
+[\operator{\Psi}(x),\operator{\Psi}^\dagger(y)] = \delta(x-y).
+\end{eqnarray}
+L’état localisé en $x$ est donné par
+\begin{eqnarray}
+    \ket{x} = \operator{\Psi}^\dagger(x)\ket{\emptyset}.
+\end{eqnarray}
+
+\paragraph{Lien avec la description à $N$ corps.}
+Les opérateurs de champ permettent de reconstruire les états à $N$ particules sous la forme
+\begin{eqnarray}
+    \ket{\{x_1,\dots,x_N\}}
+=
+\frac{1}{\sqrt{N!}}\,
+\operator{\Psi}^\dagger(x_1)\cdots \operator{\Psi}^\dagger(x_N)
+\ket{\emptyset},
+\end{eqnarray}
+et de relier naturellement la seconde quantification à la fonction d’onde symétrisée de la première quantification.
+
+\subsubsection{Lien spectral entre modes de moment et champs quantiques.}
+
+Dans le formalisme de la seconde quantification, les opérateurs de création et d’annihilation associés aux modes de moment constituent une base spectrale discrète, tandis que les opérateurs de champ fournissent une description locale en espace réel. Les deux descriptions sont reliées par une transformation de Fourier, comprise au sens distributionnel dans le cadre d’un espace de Hilbert riggé.
+
+Plus précisément, les opérateurs de création satisfont
+\begin{eqnarray}\label{chap.1:eq.rapel.etat.second.1}
+	\operator{a}_k^\dagger
+	=
+	\frac{1}L\int_0^L dx \, \varphi_k(x)\, \operator{\Psi}^\dagger(x),
+	\qquad
+	\operator{\Psi}^\dagger(x)
+	=
+	\sum_{Lk\in 2 \pi \mathbb Z}  \overline{\varphi_k(x)}\, \operator{a}_k^\dagger,
+\end{eqnarray}
+où $\{\varphi_k\}$ désigne une famille complète d’ondes planes, solutions propres de l’opérateur impulsion sous conditions périodiques.\\
+
+Ces relations expriment le fait que les opérateurs $\operator{a}_k$ sont les composantes de Fourier du champ quantique $\operator{\Psi}(x)$, et traduisent l’équivalence entre la description en modes de moment et la description locale en espace réel.\\
+
+Un état à $N$ bosons défini dans la base des modes de moment admet une représentation équivalente en termes d’opérateurs de champ :
+\begin{eqnarray}
+	\ket{\{k_a\}}
+	=
+	\frac{1}{\sqrt{N!}}
+	\int dx_1 \cdots dx_N\,
+	\varphi_{\{k_a\}}(\{x_a\})\,
+	\operator{\Psi}^\dagger(x_1)\cdots
+	\operator{\Psi}^\dagger(x_N)\ket{\emptyset}.
+\end{eqnarray}
+La fonction d’onde $\varphi_{\{k_a\}}$ est entièrement symétrisée, reflétant l’indiscernabilité des bosons, et peut être exprimée soit comme somme sur le groupe symétrique $\operator{S}_N$, soit, de manière équivalente, comme une amplitude de champ à $N$ points :
+\begin{eqnarray}
+	\varphi_{\{k_a\}}(\{x_a\})
+	=
+	\frac{1}{\sqrt{N!}}
+	\bra{\emptyset}
+	\operator{\Psi}(x_1)\cdots \operator{\Psi}(x_N)
+	\ket{\{k_a\}}.
+\end{eqnarray}
+
+
+\subsubsection{Intérêt pour le modèle de Lieb--Liniger.}
+Ce formalisme est particulièrement adapté à l’étude des gaz de Bose unidimensionnels, et constitue le cadre naturel pour formuler le modèle de \gls{LL}, dans lequel les interactions locales, la symétrie bosonique et la construction des états propres de \gls{BA} s’expriment de manière compacte et transparente.
+
+\subsection{Résumé synthétique — opérateurs à un et deux corps}
+
+Les opérateurs à plusieurs corps s’expriment naturellement dans le formalisme de la seconde quantification, où leur écriture devient indépendante du nombre de particules.
+
+\subsubsection{Opérateur à un corps.}
+
+Un opérateur à une particule $\operator{f}$ se prolonge en un opérateur symétrique à $N$ particules par sommation sur chaque degré de liberté individuel. Dans l’espace de Fock, il s’écrit :
+\begin{equation}
+	\operator{F}
+	=
+	\sum_{\lambda,\nu}
+	\bra{\lambda}\operator{f}\ket{\nu}\,
+	\operator{a}^\dagger_\lambda \operator{a}_\nu .
+\end{equation}
+L’opérateur $\operator{a}^\dagger_\lambda \operator{a}_\nu$ décrit la transition d’une particule du mode $\nu$ vers le mode $\lambda$ ; pour $\lambda=\nu$, il correspond à l’opérateur nombre dans le mode $\lambda$.
+
+Dans la représentation positionnelle, l’opérateur à un corps prend la forme bilinéaire :
+\begin{equation}
+	\operator{F}
+	=
+    \frac{1}{L^2}
+	\iint_0^L dx\,dy\;
+	\operator{\Psi}^\dagger(x)\,
+	\bra{x}\operator{f}\ket{y}\,
+	\operator{\Psi}(y).
+\end{equation}
+
+\subsubsection{Opérateur à deux corps.}
+
+Les interactions entre paires de particules sont décrites par un opérateur symétrique à deux corps $\operator{v}$. Sa seconde quantification conduit à :
+\begin{equation}
+	\operator{V}
+	=
+	\frac{1}{2}
+	\sum_{\alpha,\beta,\gamma,\delta}
+	\bra{1\!:\!\alpha,2\!:\!\beta}\operator{v}\ket{1\!:\!\gamma,2\!:\!\delta}\,
+	\operator{a}^\dagger_\alpha
+	\operator{a}^\dagger_\beta
+	\operator{a}_\delta
+	\operator{a}_\gamma .
+\end{equation}
+Cette écriture est particulièrement adaptée au traitement des interactions dans l’espace de Fock.
+
+Dans la base continue des positions, on obtient :
+\begin{equation}
+	\operator{V}
+	=
+	\frac{1}{2}\frac{1}{L^4}
+	\iiiint_0^L dx_1\,dx_2\,dx_1'\,dx_2'\;
+	\bra{x_1,x_2}\operator{v}\ket{x_1',x_2'}\,
+	\operator{\Psi}^\dagger(x_1)
+	\operator{\Psi}^\dagger(x_2)
+	\operator{\Psi}(x_2')
+	\operator{\Psi}(x_1').
+\end{equation}
+
+\subsubsection{Hamiltonien de Lieb--Liniger.}
+
+Dans le modèle de (\gls{LL}), les bosons unidimensionnels interagissent via une interaction de contact ponctuelle :
+\begin{equation}
+	\bra{x_1,x_2}\operator{v}\ket{x_1',x_2'}
+	=
+	g\,\delta(x_1-x_2)\,\delta(x_1-x_1')\,\delta(x_2-x_2').
+\end{equation}
+L’Hamiltonien s’écrit alors :
+\begin{equation}
+	\operator{H}
+	=
+	\frac{1}{L^2}\int_0^L dx\;
+	\operator{\Psi}^\dagger(x)
+	\left(
+		\frac{1}{2m} \left ( \mp \frac{i}\gamma \operator{\partial}_x \right ) ^2
+	\right)
+	\operator{\Psi}(x)
+	+
+	\frac{g}{2}\frac{1}{L^4}
+	\int_0^L dx\;
+	\operator{\Psi}^\dagger(x)
+	\operator{\Psi}^\dagger(x)
+	\operator{\Psi}(x)
+	\operator{\Psi}(x).
+\end{equation}
+
+Le premier terme décrit l’énergie cinétique des bosons, tandis que le second correspond à une interaction locale agissant uniquement lorsque deux particules se trouvent au même point de l’espace. Ce caractère de contact rend le modèle exactement soluble par (\gls{BA}) et en fait un paradigme fondamental des gaz quantiques unidimensionnels.
+
+
+\subsection{États de Bethe et structure unitaire des collisions}
+
+Dans le modèle de Lieb--Liniger, chaque collision entre deux quasi-moments $(k_i,k_j)$ est décrite par une transformation unitaire universelle, indépendante du reste du système. Cette propriété est à l’origine de l’intégrabilité du modèle.\\
+
+À chaque collision, l'état subit un produit de matrice de $SU(2)$.  Donc l'état (état de \gls{BA}) est un produit de matrice $S$ (format $SU(2)$).
+
+\subsubsection{Réécritur de l'Hamiltonien de Lieb--Liniger en seconde quantification.}
+
+L’Hamiltonien du modèle (unités $2m=\hbar=1$)  :
+\begin{equation}
+\operator{\mathcal H}
+=
+\int_0^L dx\,
+\left[
+\operator{\partial} _x\operator{\Psi}^\dagger(x)\operator{\partial}_x\operator{\Psi}(x)
++
+c\,\operator{\Psi}^\dagger(x)\operator{\Psi}^\dagger(x)\operator{\Psi}(x)\operator{\Psi}(x)
+\right],
+\end{equation}
+Un état à $N$ particules en représentation coordonnée s’écrit :
+\begin{equation}
+\ket{\{k_a\}} 
+=
+\frac{1}{\sqrt{N!}}
+\int dx_1\cdots dx_N\,
+\varphi_{\{k_a\}} (\{x_a\})\,
+\operator{\Psi}^\dagger(x_1)\cdots\operator{\Psi}^\dagger(x_N)\ket{\empty}.
+\end{equation}
+
+
+%------------------------------------------
+
+\subsubsection{Formalisme Matriciel et Représentation de $S_N$}
+
+Dans cette section, nous montrons comment le modèle de Lieb--Liniger se reformule comme une dynamique de transport dans un espace de dimension $N!$, où l'interaction est encodée par des matrices d'échange unitaires satisfaisant l'équation de Yang--Baxter.
+
+\paragraph{Vérification pour $N=2$ : Matrice de mélange}
+
+Pour deux particules, l'espace des fonctions propres pour une énergie $E$ fixée est porté par les deux modes $\{ e^{i(k_i x_i + k_j x_j)} , e^{i(k_j x_i + k_i x_j)} \}$. On définit le vecteur de base :
+\begin{equation}
+\mathbf{\Phi}_{ij}(x_i,x_j) = \begin{pmatrix} e^{i(k_i x_i + k_j x_j)} \\[4pt] e^{i(k_j x_i + k_i x_j)} \end{pmatrix}.
+\end{equation}
+Dans le régime $x_i < x_j$, la fonction d'onde est donnée par $\varphi = {~}^t\mathbf{A}^{\!(0)} \mathbf{\Phi}_{ij} =  A_{ij} \Phi_{i} + A_{ji} \Phi_{j}$ avec le vecteur des amplitudes ${~}^t\mathbf{A}^{\!(0)} = ( A_{ij} , A_{ji})$ . La condition de raccordement analytique (saut de la dérivée) impose la relation entre amplitudes :
+\begin{equation}
+A_{ji} = - S(k_i - k_j) A_{ij}, \quad \text{avec} \quad S(k) = \frac{1 + ik/c}{1 - ik/c}.
+\end{equation}
+L'échange des coordonnées correspond à l'application de la matrice unitaire $U_{ij} = \text{diag}(1, S(k_i-k_j))$. Cette matrice joue le rôle d'une rotation de phase dans l'espace de dimension 2, mélangeant les modes de quasi-moments.
+
+\paragraph{Généralisation à $N$ particules et vecteur de phase}
+
+Pour $N$ particules, on introduit un vecteur $\mathbf{\Phi} \in \mathbb{C}^{N!}$ indexé par les permutations $P \in S_N$ :
+\begin{equation}
+\Phi_{P}(\mathbf{x}) = e^{i \sum_{j=1}^N k_{P_j} x_j}.
+\end{equation}
+Chaque franchissement d'une frontière $x_i = x_{i+1}$ correspond à l'application d'une matrice unitaire d'échange $\operator{S}_{i,i+1} \in \text{End}(\mathbb{C}^{N!})$ :
+\begin{equation}
+(\operator{S}_{i,i+1})_{P,P'} = \operator{\delta}_{P',\,P\circ(i,i+1)}\, S(k_{P_i},k_{P_{i+1}}).
+\end{equation}
+La relation entre amplitudes se réécrit :
+\begin{equation}
+A_{P\circ \tau_{ij}} = - S(k_{P_i} - k_{P_j}) A_{P},
+\end{equation}
+où $\tau_{ij}$ est la transposition échangeant les indices $i$ et $j$.\\
+
+Ces matrices satisfont les relations de Yang--Baxter :
+\begin{equation}
+\operator{S}_{i,i+1}\operator{S}_{i+1,i+2}\operator{S}_{i,i+1} = \operator{S}_{i+1,i+2}\operator{S}_{i,i+1}\operator{S}_{i+1,i+2},
+\end{equation}
+garantissant la cohérence globale du recollement des collisions.
+
+\paragraph{Écriture compacte de l'onde de Bethe}
+
+L'onde de Bethe totale est obtenue par la projection sur le vecteur symétriseur $\mathbf{1}^T = (1, \dots, 1)$ :
+\begin{equation}
+%\boxed{
+\varphi(x_1,\ldots,x_N) = \mathbf{1}^T \left[ \prod_{x_i<x_{i+1}} \operator{S}_{i,i+1} \right] \mathbf{\Phi}_0(x_1,\ldots,x_N)
+%}
+\end{equation}
+Cette écriture montre que le Bethe Ansatz n'est pas un simple "bricolage" par morceaux, mais une construction orbitale rigoureuse où la matrice $\operator{U} = \prod_{x_i<x_{i+1}} \operator{S}$ agit comme un opérateur de transport unitaire sur l'algèbre du groupe symétrique.
+
+%---------------------------------------------
+
+\subsubsection{Structure algébrique du Bethe Ansatz : Représentation régulière et opérateurs de Dunkl}
+\label{annexe:dunkl_bethe}
+
+Dans cette annexe, nous détaillons la construction de l'onde de Bethe du modèle de Lieb-Liniger en tant qu'élément de l'algèbre de groupe $\mathbb{C}[S_N]$. Cette approche permet de transformer les conditions de raccordement analytiques en identités algébriques.
+
+\paragraph{L'espace de Hilbert permutationnel.}
+
+On définit l'espace de Hilbert associé aux permutations de $N$ particules, noté $\mathcal{H}_{\text{perm}} \equiv \mathbb{C}[S_N]$. Cet espace est muni de la base orthonormée $\{ \ket{P} : P \in S_N \}$. On définit la représentation régulière gauche $\operator{L}$ par :
+\begin{equation}
+    \forall Q, P \in S_N, \quad \operator{L}(Q) \ket{P} = \ket{QP}.
+\end{equation}
+L'espace de configuration $\mathbb{R}^N$ est partitionné en $N!$ chambres de Weyl disjointes définies par :
+\begin{equation}
+    \mathcal{Q}_P = \{ (x_1, \dots, x_N) \in \mathbb{R}^N : x_{P_1} < x_{P_2} < \dots < x_{P_N} \}.
+\end{equation}
+
+\paragraph{Opérateurs de Dunkl et Intégrabilité.}
+
+Pour inclure l'interaction de contact du modèle de Lieb-Liniger, on introduit les opérateurs de Dunkl $\mathcal{D}_i$. Pour une constante de couplage $c$, ils s'écrivent :
+\begin{equation}
+    \operator{\mathcal{D}}_i = \operator{\partial}_i - \frac{c}{2} \sum_{j \neq i} \text{sgn}(x_i - x_j) \operator{L}(\tau_{ij}),
+\end{equation}
+où $\tau_{ij}$ est la transposition échangeant les indices $i$ et $j$. Ces opérateurs satisfont la propriété cruciale de commutativité $[\operator{\mathcal{D}}_i, \operator{\mathcal{D}}_j] = 0$.
+
+\subparagraph{Lien avec le Hamiltonien.} Le Hamiltonien de Lieb-Liniger émerge naturellement comme le Laplacien associé à ces dérivées covariantes. En considérant la restriction à l'espace des fonctions bosoniques (totalement symétriques), on montre que :
+\begin{equation}
+    -\sum_{i=1}^N \operator{\mathcal{D}}_i^2 \varphi_{\text{sym}} = \left( -\sum_{i=1}^N \operator{\partial}_i^2 + 2c \sum_{i<j} \delta(x_i - x_j) \right) \varphi_{\text{sym}}.
+\end{equation}
+La distribution de Dirac $\delta(x)$ apparaît mathématiquement comme la dérivée de la fonction signe $\text{sgn}(x)$ présente dans la définition de l'opérateur de Dunkl.
+
+\paragraph{Construction de l'onde de Bethe.}
+
+On cherche une fonction propre commune des $\operator{\mathcal{D}}_i$ sous la forme d'un vecteur de $\operator{\mathcal{H}}_{\text{perm}}$. Soit $\ket{\Phi_0(\mathbf{x})} = e^{i \sum k_j x_j} \ket{\text{id}}$ l'état de référence dans la chambre fondamentale. L'onde de Bethe complète s'écrit de manière compacte :
+\begin{equation}
+    \varphi(\mathbf{x}) = \langle \mathbf{1} | \operator{U}(\mathbf{x}) \ket{\Phi_0(\mathbf{x})},
+\end{equation}
+où $\bra{\mathbf{1}} = \sum_{P \in S_N} \bra{P}$ assure la symétrisation bosonique et $\operator{U}(\mathbf{x})$ 
+\begin{equation}
+    \operator{U} = \prod_{x_i<x_{i+1}} \operator{S},
+\end{equation}
+est l'opérateur de transport défini par le produit ordonné des matrices de diffusion :
+\begin{equation}
+    \operator{S}_{ij} = -S(k_i - k_j) \operator{L}(\tau_{ij}) + \left( 1 + S(k_i - k_j) \right) \operator{\mathbf{1}}.
+\end{equation}
+L'équivalence avec le Bethe Ansatz coordonné usuel est garantie par le fait que $\operator{S}_{ij}$ réalise la condition de saut de la dérivée aux frontières des chambres de Weyl.
+
+\paragraph{Vérification pour $N=2$.}
+
+\subparagraph{Le Laplacien de Dunkl}
+
+Pour expliciter le mécanisme, considérons le cas de deux particules. Le Laplacien de Dunkl s'écrit :
+\begin{equation}
+    \mathcal{H}_{\text{D}} = -(\mathcal{D}_1^2 + \mathcal{D}_2^2).
+\end{equation}
+En utilisant la propriété $\partial_x \text{sgn}(x) = 2\delta(x)$, le carré de l'opérateur $\mathcal{D}_1$ agissant sur une fonction $\varphi$ est :
+\begin{equation}
+    \mathcal{D}_1^2 \varphi = \partial_1^2 \varphi - c\delta(x_1-x_2)\operator{L}(\tau_{12})\varphi + \frac{c^2}{4}\varphi.
+\end{equation}
+Pour un état bosonique $\varphi(x_1, x_2) = \varphi(x_2, x_1)$, l'action de $\operator{L}(\tau_{12})$ est l'identité. En sommant les contributions de $i=1,2$, les termes de contact se cumulent pour donner le potentiel $2c\delta(x_1-x_2)$, confirmant l'équivalence avec le modèle de Lieb-Liniger au premier ordre en $c$.
+
+\subparagraph{Vérification pour $N=2$ : Retour à la forme coordonnée}
+
+Considérons le secteur $x_1 < x_2$. L'onde de Bethe coordonnée est la projection de l'état symétrisé construit sur l'algèbre de groupe. En imposant la condition de saut de Lieb--Liniger à la frontière $x_1 = x_2$, le calcul des coefficients d'onde plane aboutit à :
+\begin{equation}
+    \varphi(x_1, x_2) = e^{i(k_1x_1 + k_2x_2)} - S(k_1 - k_2) e^{i(k_2x_1 + k_1x_2)}.
+\end{equation}
+On vérifie immédiatement les deux limites physiques :
+\begin{itemize}[label = $\bullet$]
+    \item \textbf{Bosons libres ($c \to 0$)} : $S \to -1$, on retrouve l'onde plane symétrisée $\varphi = e^{i(k_1x_1+k_2x_2)} + e^{i(k_2x_1+k_1x_2)}$.
+    \item \textbf{Limite de Tonks--Girardeau ($c \to \infty$)} : $S \to 1$, on retrouve le déterminant de Slater (pseudoféminisation) $\varphi = e^{i(k_1x_1+k_2x_2)} - e^{i(k_2x_1+k_1x_2)}$.
+\end{itemize}
+
+\paragraph{La limite de Tonks-Girardeau ($c \to \infty$).}
+
+Le formalisme de l'algèbre de groupe est particulièrement puissant pour décrire la limite de couplage infini, dite limite de Tonks-Girardeau. Dans ce régime, la phase de diffusion tend vers une valeur universelle :
+\begin{equation}
+    \lim_{c \to \infty} S(k_i - k_j) = 1.
+\end{equation}
+L'opérateur de transport $\operator{U}(\mathbf{x})$ se réduit alors à une signature de la permutation $P$ associée à la chambre de Weyl $\mathcal{Q}_P$ :
+\begin{equation}
+    \operator{U}(\mathbf{x}) \ket{\text{id}} = \epsilon(P) \ket{P} \quad \text{pour } \mathbf{x} \in \mathcal{Q}_P.
+\end{equation}
+L'onde de Bethe prend alors la forme remarquable :
+\begin{equation}
+    \varphi_{TG}(\mathbf{x}) = \left| \det_{1 \leq a,j \leq N} \left( e^{i k_a x_j} \right) \right|.
+\end{equation}
+Cette structure montre que les bosons à forte répulsion miment le principe d'exclusion de Pauli : la probabilité de trouver deux particules au même point s'annule ($|\varphi|^2 \to 0$ quand $x_i \to x_j$), un phénomène de fermionisation parfaitement capturé par la structure de l'algèbre de groupe où $\operator{S}_{ij}$ agit comme un générateur de parité.
+
+
+\subsubsection{De l'Analyse Coordonnée à l'Analyse de Bethe Algébrique}
+
+Bien que le Bethe Ansatz coordonné permette de construire explicitement les fonctions d'onde, le calcul des observables et des normes nécessite une structure plus puissante : l'Analyse de Bethe Algébrique (ABA), qui repose sur la théorie de la matrice $R$ et l'algèbre de Yang--Baxter.
+
+\paragraph{Structure algébrique et matrice de monodromie}
+
+\subparagraph{Équation de Yang--Baxter et Intégrabilité}
+
+La validité de la forme factorisée de l'opérateur de transport $\operator{U}(\mathbf{x})$ repose sur l'équation de Yang--Baxter. Pour trois particules, elle s'énonce comme l'égalité des processus de diffusion $123 \to 321$ via deux séquences de collisions binaires distinctes :
+\begin{equation}
+    \operator{S}_{12}(k_{12}) \operator{S}_{13}(k_{13}) \operator{S}_{23}(k_{23}) = \operator{S}_{23}(k_{23}) \operator{S}_{13}(k_{13}) \operator{S}_{12}(k_{12}),
+\end{equation}
+où $k_{ij} = k_i - k_j$. Cette relation assure que les opérateurs de Dunkl commutent et que l'onde de Bethe est un vecteur propre bien défini de l'Hamiltonien, indépendamment de l'ordre dans lequel les particules interagissent.
+
+\subparagraph{la chaîne $XXX$}
+
+Dans le cadre de l'ABA, on traite le modèle de Lieb--Liniger comme la limite continue d'un modèle de réseau (typiquement la chaîne $XXX$). On introduit une matrice de monodromie $T(\lambda)$ agissant sur un espace auxiliaire $\mathbb{C}^2$, encodant les relations de commutation globales :
+\begin{equation}
+    T(\lambda) = \begin{pmatrix} A(\lambda) & B(\lambda) \\ C(\lambda) & D(\lambda) \end{pmatrix},
+\end{equation}
+où les opérateurs $A, B, C, D$ agissent sur l'espace de Fock du système. Ces opérateurs satisfont la relation fondamentale $RLL$ (ou relation de Yang--Baxter) :
+\begin{equation}
+    R(\lambda-\mu) \, (T(\lambda) \otimes T(\mu)) = (T(\mu) \otimes T(\lambda)) \, R(\lambda-\mu).
+\end{equation}
+L'opérateur $B(\lambda)$ joue un rôle central : il agit comme un opérateur de création de quasi-particules (ou "magnons" dans le langage des spins) de rapidité $\lambda$.
+
+Les états propres de Bethe (non normalisés) sont générés par l'action successive de $B(\lambda)$ sur le vide de référence $\ket{0}$ (l'état sans particule) :
+\begin{equation}
+    %\boxed{ 
+        \ket{\{k_a\}} = B(k_1)B(k_2)\cdots B(k_N) \ket{0}. 
+        %}.
+\end{equation}
+La correspondance avec la fonction d'onde coordonnée $\varphi$ est donnée par la projection sur la base de position :
+\begin{equation}
+    \varphi_{\{k\}}(x_1,\ldots,x_N) = \frac{1}{\sqrt{N!}} \bra{0} \operator{\Psi}(x_1)\cdots\operator{\Psi}(x_N) \ket{\{k_a\}}.
+\end{equation}
+
+\paragraph{Équations de Bethe et Matrice de Gaudin}
+
+Pour un système de taille $L$ avec conditions périodiques, les rapidités $\{k_j\}$ ne sont plus libres mais contraintes par les équations de Bethe. Sous leur forme logarithmique, elles s'écrivent :
+\begin{equation}
+    L k_j + \sum_{\ell \neq j} \theta(k_j - k_\ell) = 2\pi I_j, \quad I_j \in \mathbb{Z} + \frac{N-1}{2},
+\end{equation}
+où le déphasage à deux corps est $\theta(k) = 2 \arctan(k/c)$. La "densité" d'états dans l'espace des rapidités est capturée par la matrice de Gaudin $G$, définie comme la Jacobienne du système :
+\begin{equation}
+    G_{ab} = \frac{\partial}{\partial k_b} \left[ L k_a + \sum_{\ell \neq a} \theta(k_a - k_\ell) \right].
+\end{equation}
+Explicitement, en introduisant le noyau de collision $\Delta(k) = \frac{2c}{c^2+k^2}$, la matrice s'écrit :
+\begin{equation}
+    G_{ab} = \delta_{ab} \left[ L + \sum_{\ell \neq a} \Delta(k_a - k_\ell) \right] - (1-\delta_{ab}) \Delta(k_a - k_b).
+\end{equation}
+
+\paragraph{Normes et Formule de Gaudin--Korepin}
+
+Le calcul de la norme au sens de $L^2(\mathbb{R}^N)$ est un résultat profond dû à Gaudin et Korepin. Elle exprime que le volume occupé par l'état dans l'espace de Hilbert est proportionnel au déterminant de sa structure de phase :
+\begin{equation}
+    %\boxed{ 
+        \langle \{k\} | \{k\} \rangle = N! \prod_{a<b} \frac{(k_a - k_b)^2 + c^2}{(k_a - k_b)^2} \det G .
+        %}.
+\end{equation}
+Le préfacteur provient de la normalisation spécifique des opérateurs $B(k)$ par rapport aux ondes planes. Cette formule est la pierre angulaire pour le calcul des fonctions de corrélation, car elle permet de normaliser les facteurs de forme $\bra{\{k\}} \operator{O} \ket{\{k'\}}$.
+
+
+
+\subparagraph{Remarque sur la limite de Tonks--Girardeau ($c \to \infty$):} Dans cette limite, le noyau $K(k) \to 0$ et la matrice de Gaudin devient purement diagonale ($G_{ab} \to L \delta_{ab}$). La norme se réduit alors à celle d'un système de fermions libres, confirmant la validité du formalisme à travers tous les régimes de couplage.\\
+
+\bigskip
+
+La structure du Bethe Ansatz coordonné peut être interprétée comme une dynamique dans l’algèbre de groupe $\mathbb{C}[S_N]$, où les opérateurs de diffusion à deux corps réalisent une représentation déformée du groupe symétrique, conformément aux relations de Yang--Baxter~\cite{LL_1963_1,Takahashi1999,Franchini_2016,Yang1967, Polychronakos1999,Cherednik1987}.\\
+
+À notre connaissance, l’écriture explicite du Bethe Ansatz sous la forme d’un produit d’opérateurs agissant dans $\mathbb{C}[S_N]$ n’est généralement pas présentée ainsi dans la littérature standard. Elle constitue néanmoins une reformulation naturelle et compacte des relations d’échange entre amplitudes issues du Bethe Ansatz coordonné.
+
+
+\subsection{Méthode de Scattering Inverse et hiérarchie d'invariants}
+Le modèle de Lieb-Liniger peut être appréhendé comme la version quantifiée de l'équation de Schrödinger non-linéaire (NLSE) unidimensionnelle. Dans la limite classique, cette équation est intégrable via la {\bf Méthode de Scattering Inverse (IST)} \cite{bezzaz2023rapiditydistributiondefocusingnonlinear,ZakharovShabat1972}, qui agit comme une généralisation non-linéaire de la transformée de Fourier.
+
+\subsubsection{L'IST comme Transformée de Fourier non-linéaire}
+
+Pour une équation linéaire (comme l'équation de Schrödinger libre), la transformée de Fourier décompose une condition initiale $\Psi(x, 0)$ en modes normaux $e^{ikx}$ qui évoluent indépendamment. Dans le cas du modèle NLSE avec interaction, l'IST suit un schéma analogue mais plus profond :
+\begin{itemize}[label = $\bullet$]
+    \item \textbf{Problème Direct :} On associe au champ $\Psi(x)$ des données de scattering (coefficients de réflexion et valeurs propres discrètes) via l'analyse spectrale d'un opérateur de Lax.
+    \item \textbf{Évolution :} Dans l'espace des données de scattering, l'évolution temporelle est triviale et linéaire, chaque mode évoluant avec sa propre phase.
+    \item \textbf{Problème Inverse :} Le champ $\Psi(x, t)$ est reconstruit à partir des données évoluées via les équations intégrales de Gelfand-Levitan-Marchenko (GLM).
+\end{itemize}
+Cette décomposition en "modes de scattering" est l'analogue classique direct de la décomposition de l'état quantique en rapidités de Bethe $\{k_j\}$.
+
+\subsubsection{Invariants et charges conservées}
+
+L'intégrabilité du modèle se manifeste par l'existence d'une infinité de charges conservées en involution $\{Q_n\}_{n=1}^{\infty}$, telles que $[H, Q_n] = 0$. Ces charges relient la description locale (en espace réel) à la description globale (en espace des moments).\paragraph{Représentation en termes de densité de rapidités.} Pour un état macroscopique caractérisé par une densité de rapidités $\rho(p)$, les valeurs moyennes des charges conservées par unité de longueur s'écrivent :\begin{equation}q_n = \frac{\langle Q_n \rangle}{L} = \int_{-\infty}^{+\infty} p^n \rho(p) dp.\end{equation}Ici, $q_1, q_2, q_3$ correspondent respectivement à la densité de particules, d'impulsion et d'énergie.\paragraph{Représentation fonctionnelle classique.} Pour le champ classique $\Psi(x)$, ces mêmes charges s'expriment comme des fonctionnelles locales faisant intervenir des dérivées d'ordre croissant :
+
+\begin{align}Q_1 &= \int |\Psi|^2 dx \\ Q_2 &= \frac{1}{2i} \int (\Psi^* \partial_x \Psi - \Psi \partial_x \Psi^*) dx\\ Q_3 &= \int \left( |\partial_x \Psi|^2 + c |\Psi|^4 \right) dx \quad (\text{Hamiltonien NLSE})\end{align}
+
+Cette hiérarchie d'invariants est le socle sur lequel repose la GHD : chaque charge $Q_n$ suit une équation de continuité locale, permettant de décrire l'évolution de $\rho(p, x, t)$ à l'échelle hydrodynamique \cite{Korepin_1997, Faddeev1987}.
+ 
+\subsubsection{Du Bethe Ansatz à la limite classique}
+
+Le lien entre les deux descriptions est assuré par le fait que les équations de Bethe, dans la limite de forte occupation (limite classique), se réduisent aux conditions de quantification des variables d'action-angle du système NLSE. Les rapidités $p$ de la distribution $\rho(p)$ s'identifient alors au spectre continu de l'opérateur de Lax classique, unifiant ainsi la vision corpusculaire (Bethe) et la vision ondulatoire (Fourier non-linéaire).
+
+
+\subsection{Lien entre le régime de faible interaction $c\to 0$ et la théorie des matrices aléatoires}
+
+Le modèle de Lieb--Liniger décrit un gaz de bosons indistinguables en une dimension, soumis à une interaction de contact, et gouverné par le Hamiltonien
+\begin{equation}
+H = -\sum_{j=1}^N \frac{\partial^2}{\partial x_j^2}
++ 2c \sum_{1\le i<j\le N} \delta(x_i-x_j),
+\end{equation}
+où $c\ge 0$ est la constante de couplage.  
+Dans la limite de faible interaction $c\to 0^+$, le système décrit un gaz de bosons quasi-condensé, mais conserve une structure non triviale au niveau des fluctuations des quasi-moments, révélant un lien profond avec la théorie des matrices aléatoires (Random Matrix Theory, RMT).
+
+\paragraph{Équations de Bethe et répulsion effective des quasi-moments.}
+Sous conditions périodiques, les quasi-moments $\{k_j\}$ satisfont les équations de Bethe
+\begin{equation}
+k_j L + \sum_{\ell\neq j} \theta(k_j-k_\ell) = 2\pi I_j,
+\qquad
+\theta(k)=2\arctan\!\left(\frac{k}{c}\right),
+\end{equation}
+où les $I_j$ sont des entiers (ou demi-entiers) strictement distincts.  
+Dans la limite $c\to 0$, la phase de diffusion admet le développement asymptotique
+\begin{equation}
+\theta(k) = \pi\,\mathrm{sgn}(k) - \frac{2c}{k} + \mathcal O(c^3),
+\end{equation}
+ce qui induit une interaction effective de type répulsion entre les quasi-moments, malgré le caractère faiblement interactif du gaz réel.
+
+\paragraph{Formulation en log-gaz et énergie effective.}
+En introduisant la densité spectrale normalisée
+\begin{equation}
+\rho(k) = \frac{1}{N}\sum_{j=1}^N \delta(k-k_j),
+\end{equation}
+on montre que, à l’ordre dominant en $c$, l’énergie du système peut être reformulée sous la forme fonctionnelle
+\begin{equation}
+\mathcal E[\rho]
+=
+\int k^2 \rho(k)\,\mathrm dk
+-
+\int\!\!\int \rho(k)\rho(k')\log|k-k'|\,\mathrm dk\,\mathrm dk'
++
+\mathcal O(c),
+\end{equation}
+qui coïncide formellement avec l’énergie d’un gaz de Coulomb bidimensionnel (log-gaz).  
+Cette structure est précisément celle qui gouverne les ensembles invariants unitaires de matrices aléatoires.
+
+\paragraph{Correspondance avec l’ensemble unitaire gaussien (GUE).}
+Dans ce cadre, la distribution jointe des quasi-moments prend la forme universelle
+\begin{equation}
+P(\{k_j\}) \propto
+\prod_{i<j} |k_i-k_j|^\beta
+\exp\!\left(-\sum_{j} V(k_j)\right),
+\qquad
+\beta=2,
+\end{equation}
+où $V(k)\sim k^2$ joue le rôle d’un potentiel de confinement effectif.  
+La valeur $\beta=2$ identifie sans ambiguïté la statistique des quasi-moments à celle de l’ensemble unitaire gaussien (GUE), caractérisée par une répulsion logarithmique des niveaux et des corrélations de type Wigner--Dyson.
+
+\paragraph{Matrice de Gaudin et fluctuations universelles.}
+Cette correspondance est renforcée par l’analyse de la matrice de Gaudin, qui gouverne la norme des états de Bethe et les fluctuations des rapidités.  
+Dans le régime $c\to 0$, cette matrice s’identifie à la matrice de covariance des fluctuations des valeurs propres du GUE, établissant un lien direct entre intégrabilité quantique et matrices aléatoires~\cite{Gaudin1983,Forrester2010}.
+
+\paragraph{Fluctuations extrêmes et loi de Tracy--Widom.}
+Dans la limite thermodynamique, les fluctuations des quasi-moments situés au bord du support spectral, et en particulier de la plus grande rapidité $k_{\max}$, sont gouvernées par la loi universelle de Tracy--Widom.  
+Cette propriété, bien connue dans la théorie des matrices aléatoires, apparaît ici comme une signature universelle du régime faiblement interactif du modèle de Lieb--Liniger, reliant les statistiques extrêmes d’un système intégrable quantique à celles des valeurs propres de matrices hermitiennes de grande taille~\cite{DeanMajumdar2006,Schehr2013}.
+
+\paragraph{Discussion.}
+Ainsi, bien que le régime $c\to 0$ corresponde physiquement à un gaz de bosons presque idéal, la structure corrélée des racines de Bethe révèle une universalité de type matrices aléatoires.  
+Cette correspondance illustre de manière remarquable comment l’intégrabilité quantique encode, même à interaction infinitésimale, des corrélations collectives gouvernées par les lois universelles de la RMT.
+
+
+
+% ------------------------
+% \subsubsection{Modèle de Lieb--Liniger en seconde quantification}
+
+% L’Hamiltonien du modèle (unités $2m=\hbar=1$)  :
+% \begin{equation}
+% \operator{\mathcal H}
+% =
+% \int_0^L dx\,
+% \left[
+% \operator{\partial} _x\operator{\Psi}^\dagger(x)\operator{\partial}_x\operator{\Psi}(x)
+% +
+% c\,\operator{\Psi}^\dagger(x)\operator{\Psi}^\dagger(x)\operator{\Psi}(x)\operator{\Psi}(x)
+% \right],
+% \end{equation}
+% Un état à $N$ particules en représentation coordonnée s’écrit :
+% \begin{equation}
+% \ket{\{k_a\}} 
+% =
+% \frac{1}{\sqrt{N!}}
+% \int dx_1\cdots dx_N\,
+% \varphi_{\{k_a\}} (\{x_a\})\,
+% \operator{\Psi}^\dagger(x_1)\cdots\operator{\Psi}^\dagger(x_N)\ket{\empty},
+% \end{equation}
+% où la fonction d’onde de Bethe est
+% \begin{equation}
+% \varphi_{\{k_a\}} (\{x_a\})
+% =
+% \sum_{P\in S_N}
+% A(P)\,
+% \exp\!\left(
+% i\sum_{j=1}^N k_{P_j}x_j
+% \right),
+% \end{equation}
+% avec
+% \begin{equation}
+% A(P)
+% =
+% \prod_{i<j}
+% \frac{k_{P_i}-k_{P_j}-ic}{k_{P_i}-k_{P_j}+ic}.
+% \end{equation}
+
+% Les quasi-moments satisfont les équations de Bethe :
+% \begin{equation}
+% e^{ik_jL}
+% =
+% \prod_{\ell\neq j}
+% \frac{k_j-k_\ell+ic}{k_j-k_\ell-ic},
+% \qquad j=1,\ldots,N.
+% \end{equation}
+% L’énergie et l’impulsion sont données par :
+% \begin{equation}
+% E=\sum_{j=1}^Nk_j^2,
+% \qquad
+% P=\sum_{j=1}^Nk_j.
+% \end{equation}
+% ------------------------------------------------------
+% \subsubsection{Bethe ansatz algébrique et structure $SU(2)$}
+
+% Dans le Bethe ansatz algébrique, on introduit la matrice de monodromie :
+% \begin{equation}
+% T(\lambda)
+% =
+% \begin{pmatrix}
+% A(\lambda) & B(\lambda) \\
+% C(\lambda) & D(\lambda)
+% \end{pmatrix},
+% \end{equation}
+% qui satisfait les relations d’échange
+% \begin{equation}
+% R(\lambda-\mu)\,
+% T(\lambda)\otimes T(\mu)
+% =
+% T(\mu)\otimes T(\lambda)\,
+% R(\lambda-\mu).
+% \end{equation}
+% L’opérateur $B(\lambda)$ agit comme créateur de quasi-particules de rapidité $\lambda$.
+
+% Les états de Bethe s’écrivent alors :
+% \begin{equation}
+% \boxed{
+% |\{k\}\rangle
+% =
+% B(k_1)\cdots B(k_N)|0\rangle,
+% }
+% \end{equation}
+% et la fonction d’onde coordonnée est obtenue par :
+% \begin{equation}
+% \Psi_{\{k\}}(x_1,\ldots,x_N)
+% =
+% \frac{1}{\sqrt{N!}}
+% \langle 0|
+% \psi(x_1)\cdots\psi(x_N)
+% |\{k\}\rangle.
+% \end{equation}
+
+% \subsubsection{Normes et formules de Gaudin--Korepin}
+
+% Les équations de Bethe s’écrivent sous la forme logarithmique :
+% \begin{equation}
+% Lk_j+\sum_{\ell\neq j}\theta(k_j-k_\ell)=2\pi I_j,
+% \qquad
+% \theta(k)=2\arctan\!\left(\frac{k}{c}\right).
+% \end{equation}
+% La matrice de Gaudin est définie par :
+% \begin{equation}
+% G_{ab}
+% =
+% \frac{\partial}{\partial k_b}
+% \left[
+% Lk_a+\sum_{\ell\neq a}\theta(k_a-k_\ell)
+% \right],
+% \end{equation}
+% soit explicitement
+% \begin{equation}
+% G_{ab}
+% =
+% \delta_{ab}
+% \left[
+% L+\sum_{\ell\neq a}K(k_a-k_\ell)
+% \right]
+% -
+% (1-\delta_{ab})K(k_a-k_b),
+% \end{equation}
+% avec
+% \begin{equation}
+% K(k)=\frac{2c}{c^2+k^2}.
+% \end{equation}
+
+% La norme de l’état de Bethe est donnée par la formule de Gaudin--Korepin :
+% \begin{equation}
+% \boxed{
+% \langle\{k\}|\{k\}\rangle
+% =
+% N!\,
+% \prod_{a<b}
+% \frac{(k_a-k_b)^2+c^2}{(k_a-k_b)^2}
+% \,
+% \det G.
+% }
+% \end{equation}
+
+% \subsubsection{Lien conceptuel avec le formalisme $SU(2)$}
+
+% Le formalisme à une particule
+% \begin{equation}
+% (\varphi_k^{(+)},\varphi_k^{(-)})
+% =
+% U(k)
+% \begin{pmatrix}
+% e^{-ikx} \\ e^{ikx}
+% \end{pmatrix},
+% \qquad
+% U(k)\in SU(2),
+% \end{equation}
+% apparaît comme la brique élémentaire du cas $N$-corps.  
+% Dans le modèle de Lieb--Liniger, les matrices de diffusion $S(k_i,k_j)$ jouent le rôle de rotations unitaires élémentaires, empilées de manière cohérente par les relations de Yang--Baxter pour construire les états propres à $N$ particules.
+
+% \subsubsection{Illustration explicite : cas bosonique répulsif du modèle de Lieb--Liniger}
+
+% \subparagraph{Hypothèses et cadre.}
+% Dans toute cette section, on se place dans le cas des \textbf{bosons}, avec un \textbf{couplage répulsif} $c>0$, et l’on considère le \textbf{modèle de Lieb--Liniger unidimensionnel}. Les unités sont choisies telles que $2m=\hbar=1$.
+
+% \subsubsection{Cas $N=2$ : formulation coordonnée}
+
+% On cherche une solution de l’équation de Schrödinger stationnaire
+% \begin{equation}
+% H\Psi = E\Psi,
+% \qquad
+% H = -\partial_{x_1}^2 - \partial_{x_2}^2 + 2c\,\delta(x_1-x_2).
+% \end{equation}
+
+% \paragraph{Région $x_1<x_2$.}
+% Dans cette région, le potentiel delta est nul (sauf au bord), et la fonction d’onde est une superposition d’ondes planes :
+% \begin{equation}
+% \Psi(x_1,x_2)
+% =
+% A_{12} e^{i(k_1x_1 + k_2x_2)}
+% +
+% A_{21} e^{i(k_2x_1 + k_1x_2)},
+% \qquad (x_1<x_2).
+% \end{equation}
+
+% Le Bethe ansatz impose la relation
+% \begin{equation}
+% A_{21} = S(k_2,k_1)\,A_{12},
+% \end{equation}
+% où le facteur de diffusion à deux corps est
+% \begin{equation}
+% S(k_2,k_1)
+% =
+% \frac{k_2-k_1-ic}{k_2-k_1+ic}.
+% \end{equation}
+
+% On obtient donc
+% \begin{equation}
+% \boxed{
+% \Psi(x_1,x_2)
+% =
+% A_{12}
+% \left[
+% e^{i(k_1x_1 + k_2x_2)}
+% +
+% S(k_2,k_1)\,e^{i(k_2x_1 + k_1x_2)}
+% \right],
+% \qquad (x_1<x_2).
+% }
+% \end{equation}
+
+% Par symétrie bosonique, l’expression dans la région $x_2<x_1$ s’obtient par échange des coordonnées. La forme coordonnée standard s’écrit plus compactement comme
+% \begin{equation}
+% \Psi(x_1,x_2)
+% =
+% \sum_{P\in S_2}
+% A(P)\,
+% e^{i(k_{P_1}x_1 + k_{P_2}x_2)},
+% \end{equation}
+% avec
+% \begin{equation}
+% A(\mathrm{id}) = A_{12},
+% \qquad
+% A(21) = S(k_2,k_1)\,A_{12}.
+% \end{equation}
+
+% \subsubsection{Cas $N=2$ : formulation algébrique (Bethe ansatz algébrique)}
+
+% Dans l’ansatz de Bethe algébrique, on introduit la matrice de monodromie
+% \begin{equation}
+% T(\lambda)
+% =
+% \begin{pmatrix}
+% A(\lambda) & B(\lambda) \\
+% C(\lambda) & D(\lambda)
+% \end{pmatrix},
+% \end{equation}
+% dont les relations d’échange impliquent en particulier
+% \begin{equation}
+% B(k_1)B(k_2)
+% =
+% S(k_1,k_2)\,B(k_2)B(k_1),
+% \end{equation}
+% avec le même facteur $S$ que dans la formulation coordonnée.
+
+% On définit l’état de Bethe à deux particules par
+% \begin{equation}
+% \boxed{
+% |k_1,k_2\rangle
+% =
+% B(k_1)B(k_2)|0\rangle.
+% }
+% \end{equation}
+
+% La fonction d’onde coordonnée est obtenue via
+% \begin{equation}
+% \Psi(x_1,x_2)
+% =
+% \frac{1}{\sqrt{2!}}
+% \langle 0|
+% \psi(x_1)\psi(x_2)
+% |k_1,k_2\rangle.
+% \end{equation}
+
+% En utilisant les relations de commutation entre $\psi(x)$ et les opérateurs $B(k)$, on obtient
+% \begin{equation}
+% \Psi(x_1,x_2)
+% \propto
+% e^{i(k_1x_1 + k_2x_2)}
+% +
+% S(k_2,k_1)\,e^{i(k_2x_1 + k_1x_2)},
+% \end{equation}
+% ce qui reproduit exactement la forme coordonnée précédente, à un facteur global de normalisation près.
+
+% \subsubsection{Esquisse du cas $N=3$}
+
+% \paragraph{Forme coordonnée.}
+% Dans la région $x_1<x_2<x_3$, la fonction d’onde s’écrit
+% \begin{equation}
+% \Psi(x_1,x_2,x_3)
+% =
+% \sum_{P\in S_3}
+% A(P)\,
+% e^{i(k_{P_1}x_1 + k_{P_2}x_2 + k_{P_3}x_3)}.
+% \end{equation}
+% Les coefficients $A(P)$ sont obtenus comme des produits de facteurs de diffusion $S(k_i,k_j)$ associés aux échanges successifs des quasi-moments, de manière cohérente grâce aux relations de Yang--Baxter.
+
+% \paragraph{Forme algébrique.}
+% On considère l’état
+% \begin{equation}
+% |k_1,k_2,k_3\rangle
+% =
+% B(k_1)B(k_2)B(k_3)|0\rangle.
+% \end{equation}
+% Les relations de commutation entre les opérateurs $B$ garantissent que la fonction d’onde coordonnée associée est une somme sur toutes les permutations des $\{k_j\}$, avec des coefficients exactement égaux aux $A(P)$ de la formulation coordonnée.
+
+% \subsubsection{Lien avec le formalisme $SU(2)$}
+
+% Dans le cas à une particule, ton formalisme repose sur la transformation
+% \begin{equation}
+% \begin{pmatrix}
+% \varphi_k^{(+)} \\
+% \varphi_k^{(-)}
+% \end{pmatrix}
+% =
+% U(k)
+% \begin{pmatrix}
+% e^{-ikx} \\
+% e^{ikx}
+% \end{pmatrix},
+% \qquad
+% U(k)\in SU(2).
+% \end{equation}
+
+% Dans le modèle de Lieb--Liniger, l’espace des ondes planes indexées par les permutations $P\in S_N$ joue un rôle analogue : les collisions à deux corps sont codées par des matrices unitaires $S(k_i,k_j)$, qui se combinent de manière cohérente pour produire les états propres à $N$ particules. Le Bethe ansatz algébrique fournit une réalisation opératorielle de cette structure unitaire via la R-matrice et les opérateurs $B(k)$.
+
+% \subsubsection{Cas $N=2$ : espace à deux composantes et matrice de diffusion ${U_{12}}$}
+
+% Pour deux bosons de quasi-moments $(k_1,k_2)$ dans le modèle de Lieb--Liniger ($c>0$), la solution du problème spectral en \emph{Bethe coordonné} s’écrit, dans chaque région de configuration, comme une superposition d’ondes planes.
+
+% Dans la région $x_1<x_2$, la fonction d’onde prend la forme
+% \begin{equation}
+% \Psi(x_1,x_2)
+% =
+% A_{12}\,e^{i(k_1 x_1 + k_2 x_2)}
+% +
+% A_{21}\,e^{i(k_2 x_1 + k_1 x_2)} .
+% \end{equation}
+% Les conditions de raccordement à la frontière $x_1=x_2$, imposées par l’interaction de contact, conduisent à la relation
+% \begin{equation}
+% A_{21}
+% =
+% S(k_2,k_1)\,A_{12},
+% \qquad
+% S(k_2,k_1)
+% =
+% \frac{k_2-k_1-ic}{k_2-k_1+ic},
+% \qquad
+% |S(k_2,k_1)|=1 .
+% \end{equation}
+
+% \paragraph{Vecteur de base à deux composantes.}
+% Il est naturel de regrouper les deux ondes planes associées aux permutations de $(k_1,k_2)$ en un vecteur colonne
+% \begin{equation}
+% \Phi_{12}(x_1,x_2)
+% =
+% \begin{pmatrix}
+% e^{i(k_1 x_1 + k_2 x_2)} \\[4pt]
+% e^{i(k_2 x_1 + k_1 x_2)}
+% \end{pmatrix}.
+% \end{equation}
+% La fonction d’onde s’écrit alors sous la forme compacte
+% \begin{equation}
+% \Psi(x_1,x_2)
+% =
+% \begin{pmatrix}
+% A_{12} & A_{21}
+% \end{pmatrix}
+% \Phi_{12}(x_1,x_2).
+% \end{equation}
+
+% \paragraph{Matrice de diffusion.}
+% La relation entre les amplitudes $A_{12}$ et $A_{21}$ peut être interprétée comme l’action d’une matrice unitaire agissant dans cet espace à deux composantes. On introduit ainsi
+% \begin{equation}
+% \boxed{
+% U_{12}
+% =
+% \begin{pmatrix}
+% 1 & 0 \\[3pt]
+% 0 & S(k_1,k_2)
+% \end{pmatrix},
+% }
+% \end{equation}
+% qui encode la diffusion à deux corps associée à l’échange des quasi-moments. Cette matrice agit de manière équivalente sur le vecteur d’amplitudes ou, par dualité, sur le vecteur de base.
+
+% \paragraph{Interprétation géométrique.}
+% L’espace vectoriel engendré par
+% \[
+% \big\{ e^{i(k_1 x_1 + k_2 x_2)},\; e^{i(k_2 x_1 + k_1 x_2)} \big\}
+% \]
+% est de dimension deux, exactement comme, dans le problème à une particule, l’espace engendré par $\{e^{-ikx},e^{ikx}\}$.  
+% La matrice $U_{12}$ joue alors le rôle d’un opérateur unitaire de diffusion dans cet espace, analogue à une rotation dans un espace interne de dimension finie.  
+
+% Cette construction constitue le prototype de la généralisation au cas $N$ particules, où l’espace pertinent est de dimension $N!$ et où les matrices de diffusion $\hat S_{i,i+1}$ réalisent une représentation unitaire du groupe des permutations, compatible avec l’équation de Yang--Baxter.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

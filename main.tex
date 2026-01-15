@@ -61,7 +61,7 @@ Soutenue le 04 Novembre 2025 \par}
 
 
 \begin{refsection}
-    %\input{chapters/000_1D?}
+   % \input{chapters/000_1D?}
 %\end{refsection}
 
 %\begin{refsection}
@@ -87,7 +87,7 @@ Soutenue le 04 Novembre 2025 \par}
 
 \setcounter{secnumdepth}{4}  % numérotation jusqu'aux subsubsections
 \setcounter{tocdepth}{4}     % affichage du sommaire principal jusqu'aux subsubsections
-\addtocontents{toc}{\protect\setcounter{tocdepth}{7}} % pour afficher jusqu'aux subsubsections dans le sommaire
+\addtocontents{toc}{\protect\setcounter{tocdepth}{3}} % pour afficher jusqu'aux subsubsections dans le sommaire
 \pdfbookmark[1]{Table des matières}{tablematieres} % pour ajouter la table des matières dans l'``index'' du fichier compilé
 \begingroup
 %\renewcommand{\contentsname}{Sommaire}
@@ -191,17 +191,30 @@ Soutenue le 04 Novembre 2025 \par}
 \printbibliography[heading=subbibliography,title={Bibliographie}]
 \end{refsection}
 
-\input{chapters/080_conclusion}
 
+
+%\frontmatter
+
+\begin{refsection}
+\input{chapters/080_conclusion}
+\end{refsection}
+
+%\mainmatter
 
 
 \appendix
+
+%\usepackage{minitoc}
+\setcounter{minitocdepth}{2} % profondeur affichée pour les mini-sommaires
+\renewcommand{\mtctitle}{Sommaire} % titre des minitocs
+\dominitoc % active les mini-sommaires
 
 % Redéfinition de la numérotation des chapitres en chiffres romains
 \renewcommand{\thechapter}{\Alph{chapter}.}
 \renewcommand{\thesection}{\alph{section}.}
 \renewcommand{\thesubsection}{\thesection\roman{subsection}.}
 \renewcommand{\thesubsubsection}{\thesubsection\arabic{subsubsection}.}
+\pdfbookmark[1]{Table des matières}{tablematieres}
 
 \begin{refsection}
 %\input{chapters/010_LL_BA}
@@ -213,7 +226,6 @@ Soutenue le 04 Novembre 2025 \par}
 %\printbibliography[heading=subbibliography, section=\therefsection]
 %\printbibliography[heading=subbibliography,title={Bibliographie du chapitre}]
 \printbibliography[heading=subbibliography,title={Bibliographie}]
-
 \end{refsection}
 
 %\input{chapters/99_annexes}

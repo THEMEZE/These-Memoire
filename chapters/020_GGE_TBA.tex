@@ -64,24 +64,27 @@ On désigne par $\boldsymbol{\{ \theta_a \}}\equiv \{ \theta_1 , \cdots , \theta
 L’état propre correspondant est noté $\ket{\{ \theta_a \}}\;=\;\ket{\{\theta_1,\dots,\theta_N \}}$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{mdframed}[
-	linewidth=0.5pt, 
-	backgroundcolor=linkcolor!5, 
-	roundcorner=50pt,	
-	innerleftmargin=5pt,
-    innerrightmargin=5pt,
-    innertopmargin=-10pt,
-    innerbottommargin=2pt,
-    leftmargin=2pt,
-    rightmargin=2pt
-	]
+% \begin{mdframed}[
+% 	linewidth=0.5pt, 
+% 	backgroundcolor=linkcolor!5, 
+% 	roundcorner=50pt,	
+% 	innerleftmargin=5pt,
+%     innerrightmargin=5pt,
+%     innertopmargin=-10pt,
+%     innerbottommargin=2pt,
+%     leftmargin=2pt,
+%     rightmargin=2pt
+% 	]
+\Rappel{
 \paragraph{Rappel : Observables diagonales dans la base des états propres.}
 Dans le chapitre précédent (\ref{chap:LL-BA}), on a vu que l'état $\ket{\{ \theta_a \}}$ associé à cette configuration est un état propre des observables nombres d'atome, quantité de mouvement  et  énergie totale \eqref{chap1:eq.Q.P.K.theta.1}. Ces observables sont diagonales dans la base des états propres :
 \begin{eqnarray}
 	\operator{Q}  =  \sum_{ \{\theta_a\} } \left ( \sum_{a = 1}^{N}  1 \right )  \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \}\vert, \, 
 	\operator{P}  =  \sum_{\{ \theta_a\}}\left( \sum_{a = 1}^{N}  \theta_a \right )   \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \}\vert,\,\operator{H}  =  \sum_{\{ \theta_a\}}\left ( \sum_{a = 1}^{N} \frac{\theta_a^2}{2} \right )   \vert \{ \theta_a\}\rangle	\langle \{ \theta_a \}\vert.\label{chap.2.gge.1}		
 \end{eqnarray}
-avec $ \sum_{\{ \theta_a\}}$ une somme sur tous les états de Bethe.\\
+avec $ \sum_{\{ \theta_a\}}$ une somme sur tous les états de Bethe.
+}
+% \\
 %\begin{eqnarray}
 %	\operator{Q} \ket{\{ \theta_a\}}  =  \sum_{ \{\theta_a\} } \left ( \sum_{a = 1}^{N}  1 \right ) \ket{\{ \theta_a\}}, \, 
 %	\operator{P} \ket{\{ \theta_a\}}  =  \sum_{\{ \theta_a\}}\left( \sum_{a = 1}^{N}  \theta_a \right ) \ket{\{ \theta_a\}},\,\operator{H} \ket{\{ \theta_a\}}  =  \sum_{\{ \theta_a\}}\left ( \sum_{a = 1}^{N} \frac{\theta_a^2}{2} \right )   \ket{\{ \theta_a\}}.		
@@ -92,7 +95,7 @@ avec $ \sum_{\{ \theta_a\}}$ une somme sur tous les états de Bethe.\\
 %	 \operator{F} \ket{\{\theta_a\}} =   \sum_{ \{\theta_a\} }\left( \sum_{a = 1}^N \theta_a^q \right) \ket{\{\theta_a\}},
 %\end{eqnarray}
 %avec des valeurs propres données par des puissances de $\theta$. Cela motive l’étude d’états d’équilibre statistique au-delà de l’équilibre thermique, c’est-à-dire au-delà de l’ensemble de Gibbs.
-\end{mdframed}  
+% \end{mdframed}  
 
 
 %\subparagraph{Pourquoi pas de terme d’interaction pour $Q$ et $P$ ?}
@@ -178,17 +181,18 @@ En résumé, le \gls{GGE} généralise les ensembles canoniques standard : au li
 
 \medskip
 
-\begin{mdframed}[
-	linewidth=0.5pt, 
-	backgroundcolor=linkcolor!5, 
-	roundcorner=50pt,	
-	innerleftmargin=5pt,
-    innerrightmargin=5pt,
-    innertopmargin=-10pt,
-    innerbottommargin=2pt,
-    leftmargin=2pt,
-    rightmargin=2pt
-	]
+% \begin{mdframed}[
+% 	linewidth=0.5pt, 
+% 	backgroundcolor=linkcolor!5, 
+% 	roundcorner=50pt,	
+% 	innerleftmargin=5pt,
+%     innerrightmargin=5pt,
+%     innertopmargin=-10pt,
+%     innerbottommargin=2pt,
+%     leftmargin=2pt,
+%     rightmargin=2pt
+% 	]
+\Rappel{
 \paragraph{Rappel sur le modèle de \gls{LL} et distribution de rapidités.}
 Comme rappelé au chapitre précédent, {\bf le modèle de  \gls{LL}} (gaz bosonique 1D à interactions de contact) est un exemple paradigmatique d’un système intégrable \cite{Nardis_2016}. Ses états propres sont caractérisés par un ensemble de $N$  rapidités $\{ \theta_a \}$, qui jouent le rôle de quasi-moments ({\bf \gls{BA}}). Dans ce contexte, l’état macroscopique du gaz après relaxation unitaire est entièrement déterminé par la {\bf distribution des rapidités}. Formellement, on définit $\rho(\theta)$ la distribution intensive des rapidités telle que $\rho(\theta) d \theta$ donne le nombre de particules par unité de longueur ayant une rapidité dans la cellule $[\theta , \theta + d \theta ] $.
 
@@ -223,8 +227,8 @@ Ainsi, un aspect remarquable est que la distribution de rapidités est {\em acce
  
 %Autrement dit, la distribution de rapidités possède une interprétation directe en termes de vitesses mesurables en laboratoire. Comme le souligne Léa Dubois dans sa thèse, «\,la distribution de rapidités est la distribution asymptotique des vitesses des atomes après une expansion dans le guide 1D\,», et elle peut être extraite à l’aide de l’hydrodynamique généralisée~\cite{Nardis_2017,bezzaz2023rapiditydistributiondefocusingnonlinear}. %Autrement dit, la GGE prédit un profil de vitesses observables en laboratoire. Léa Dubois souligne dans sa thèse que " la distribution de rapidités est la distribution asymptotique des vitesses des atomes après une expansion dans le guide 1D ", et qu’elle peut être extraite par l’hydrodynamique généralisée \cite{Nardis_2017}. \\
 %Cette {\bf  distribution de rapidités } est d’autant plus pertinente qu’elle est {\em accessible expérimentalement}. En effet, lorsque le gaz bosonique 1D est libéré et que l'on laisse s'étaler longitudinalement, la distribution asymptotique des vitesses des atomes coïncide avec la distribution initiale des rapidités \cite{Nardis_2017,bezzaz2023rapiditydistributiondefocusingnonlinear}. %Autrement dit, la GGE prédit un profil de vitesses observables en laboratoire. Léa Dubois souligne dans sa thèse que " la distribution de rapidités est la distribution asymptotique des vitesses des atomes après une expansion dans le guide 1D ", et qu’elle peut être extraite par l’hydrodynamique généralisée \cite{Nardis_2017}. \\
-
-\end{mdframed}
+}
+% \end{mdframed}
 
 \medskip
 
@@ -1011,17 +1015,18 @@ Cette approximation correspond à une méthode de \textit{selle statique}, où l
 %
 
 
-\begin{mdframed}[
-	linewidth=0.5pt, 
-	backgroundcolor=linkcolor!5, 
-	roundcorner=50pt,	
-	innerleftmargin=5pt,
-    innerrightmargin=5pt,
-    innertopmargin=-10pt,
-    innerbottommargin=2pt,
-    leftmargin=2pt,
-    rightmargin=2pt
-	]
+% \begin{mdframed}[
+% 	linewidth=0.5pt, 
+% 	backgroundcolor=linkcolor!5, 
+% 	roundcorner=50pt,	
+% 	innerleftmargin=5pt,
+%     innerrightmargin=5pt,
+%     innertopmargin=-10pt,
+%     innerbottommargin=2pt,
+%     leftmargin=2pt,
+%     rightmargin=2pt
+% 	]
+\Information{
 \paragraph{Dérivée fonctionnelle comme dérivée directionnelle.}
 
 Dans le cadre des systèmes continus, les observables physiques dépendent souvent d'un champ $\phi(x)$, et sont représentées par des \emph{fonctionnelles}, notées $F[\phi]$. Afin d'étudier la sensibilité de ces fonctionnelles à une variation infinitésimale du champ, on introduit la notion de \textbf{dérivée fonctionnelle}, définie par analogie avec la dérivée directionnelle en espace vectoriel de dimension finie.
@@ -1064,8 +1069,8 @@ On peut interpréter la dérivée fonctionnelle $\delta F[\phi]/\delta \phi(x)$ 
 %\end{equation}
 
 Cette construction générale sera utilisée dans la suite pour formuler des conditions d’extremum (par exemple dans des principes variationnels), ou pour dériver les équations de mouvement associées à une action.
-
-\end{mdframed}
+}
+% \end{mdframed}
 
 
 \paragraph{Développement fonctionnel au premier ordre.}
@@ -1349,8 +1354,8 @@ Pour synthétiser les différents comportements, les régimes principaux peuvent
     \label{fig:diagramme}
 \end{figure}
 
-\section*{Conclusion du chapitre}
-
+\Resume{
+	\section*{Conclusion du chapitre}
 Dans les systèmes intégrables, l’état stationnaire hors équilibre est correctement décrit par un \gls{GGE} basé sur une infinité de charges conservées. Ces charges sont liées aux puissances des rapidités des quasi-particules (cf eqs~ \eqref{chap.2.charge.ordre.i.1}  et  \eqref{chap.2.charge.ordre.i.1.111111}).  
 
 \medskip
@@ -1364,7 +1369,7 @@ Dans la limite thermodynamique, $w(\theta)$ sert de donnée d’entrée pour les
 \medskip 
 
 Enfin, le formalisme du \gls{GGE} offre un cadre puissant non seulement pour les moyennes des observables, mais également pour l’étude des corrélations et des fluctuations, comme nous le verrons au Chapitre~\ref{chap:Fluctu}.
-
+}
 
 
 

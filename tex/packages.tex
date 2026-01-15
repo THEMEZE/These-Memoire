@@ -271,7 +271,7 @@ decorations.pathreplacing}
     #2
 }
 
-\NewTotalTColorBox[auto counter]{\Example}{ +m +m }{ 
+\NewTotalTColorBox[auto counter]{\Exampless}{ +m +m }{ 
     notitle,
     %title={A listing box with shadow and some specials},
     colback=white,
@@ -334,6 +334,106 @@ decorations.pathreplacing}
     \textcolor{blue!50!black}{\sffamily\textbf{...}}%
     #2
 }
+
+
+% --- Bois (palette principale)
+\definecolor{woodNoyer}{HTML}{3A2A1F}
+\definecolor{woodChene}{HTML}{4A3628}
+\definecolor{woodAcajou}{HTML}{5B2C2C}
+
+% --- Verts profonds
+\definecolor{greenForet}{HTML}{0B3D2E}
+\definecolor{greenSapin}{HTML}{0F4C3A}
+
+% --- Neutres
+\definecolor{grayPierre}{HTML}{4A4A4A}
+\definecolor{grayBrume}{HTML}{7A7A7A}
+
+\NewTotalTColorBox[auto counter]{\Example}{ +m +m }{
+    notitle,
+    colback=white,
+    colbacklower=white,
+    frame hidden,
+    boxrule=0pt,
+    bicolor,
+    sharp corners,
+    borderline west={4pt}{0pt}{greenForet},
+    fontupper=\sffamily,
+}{
+    \textcolor{greenForet}{
+        \sffamily\textbf{Exemple~: #1}\\
+    }
+    #2
+}
+
+\NewTotalTColorBox[auto counter]{\Information}{+m}{
+    notitle,
+    colback=white,
+    colbacklower=white,
+    frame hidden,
+    boxrule=0pt,
+    bicolor,
+    sharp corners,
+    borderline west={4pt}{0pt}{grayPierre},
+    fontupper=\sffamily,
+}{
+    % \textcolor{grayPierre}{
+    %     \sffamily\textbf{Information~: #1}
+    % }
+    #1
+}
+
+\NewTotalTColorBox[auto counter]{\ARetenir}{+m}{
+    notitle,
+    colback=white,
+    colbacklower=white,
+    frame hidden,
+    boxrule=0pt,
+    bicolor,
+    sharp corners,
+    borderline west={4pt}{0pt}{woodChene},
+    fontupper=\sffamily,
+}{
+    % \textcolor{woodChene}{
+    %     \sffamily\textbf{À retenir~: #1}
+    % }
+    #1
+}
+
+\NewTotalTColorBox[auto counter]{\Rappel}{+m}{
+    notitle,
+    colback=white,
+    colbacklower=white,
+    frame hidden,
+    boxrule=0pt,
+    bicolor,
+    sharp corners,
+    borderline west={4pt}{0pt}{woodNoyer},
+    fontupper=\sffamily,
+}{
+    % \textcolor{woodNoyer}{
+    %     \sffamily\textbf{Rappel~: #1}
+    % }
+    #1
+}
+
+\NewTotalTColorBox[auto counter]{\Resume}{+m}{
+    notitle,
+    colback=white,
+    colbacklower=white,
+    frame hidden,
+    boxrule=0pt,
+    bicolor,
+    sharp corners,
+    borderline west={4pt}{0pt}{woodAcajou},
+    fontupper=\sffamily,
+}{
+    % \textcolor{woodAcajou}{
+    %     \sffamily\textbf{Conclusion~: #1}
+    % }
+    #1
+}
+
 
 
 
