@@ -5,7 +5,7 @@
 \section*{Introduction}
 
 
-\paragraph{Objectif de ce chapitre :}
+\paragraph*{Objectif de ce chapitre :}
 Ce chapitre est consacré à l’étude de la dynamique hors équilibre d’un gaz quantique unidimensionnel intégrable, soumis à une discontinuité initiale de densité induite par un protocole de type {\bf quench bipartite}. L’objectif principal est d’évaluer dans quelle mesure la Théorie \gls{GHD} permet de décrire cette dynamique, tant sur le plan théorique qu’expérimental. Nous nous appuyons sur une préparation initiale contrôlée, un protocole de coupure abrupte, et une analyse des profils de densité et des facteurs d’occupation pour tester les prédictions de la théorie \gls{GHD}.
 
 %\paragraph{Modèles intégrables et thermalisation généralisée :}
@@ -14,7 +14,7 @@ Ce chapitre est consacré à l’étude de la dynamique hors équilibre d’un g
 %\paragraph{Une analogie classique : le pendule de Newton :}
 %Une illustration classique du comportement non diffusif des systèmes intégrables est fournie par le pendule de Newton : les chocs élastiques entre sphères de masses égales conduisent à une propagation balistique de l’énergie, sans diffusion. Cette analogie, bien que classique, capture l’essence du transport cohérent que l’on retrouve dans les systèmes intégrables quantiques.
 
-\paragraph{Le problème de \emph{Riemann} en hydrodynamique :}
+\paragraph*{Le problème de \emph{Riemann} en hydrodynamique :}
 Un test fondamental de la dynamique hors équilibre est fourni par le problème dit de \emph{Riemann} \cite{Riemann1860,Bressan2013}, qui consiste à étudier l’évolution d’un système à partir d'une discontinuité initiale dans l'espace. Dans sa formulation générale, on considère une équation de conservation de la forme
 \begin{eqnarray}\label{chap6:eq.Rieman.1}
 \partial_t u + \partial_x f(u) = 0.
@@ -33,7 +33,7 @@ Ce type de configuration, appelé problème de \emph{Riemann} à données discon
 % Nous considérons le cas d'un système quantique integrable. un macro état est alors définie par une infinité de paramètre chacun correspon à la quantité local conservé d'une quantité global comme expliqué dans le chapitre \ref{chap:relaxation}.
 % L'équation de continuité lié au quantité conservé qui sont de type \eqref{chap6:eq.Rieman.1} sont de nombre infinie. Le problème de Riemann \eqref{chap6:eq.Rieman.cond.1} au dessus se généralise au cas ou on a un nombre infinie de parametre $u$.
 
-\paragraph{Le problème de \emph{Riemann quantique} : un cadre paradigmatique.}
+\paragraph*{Le problème de \emph{Riemann quantique} : un cadre paradigmatique.}
 Considérons le cas d’un système quantique intégrable.  
 Un macro-état est caractérisé par un ensemble infini de paramètres, chacun associé à une charge conservée locale reliée à une charge globale, comme discuté au chapitre~\ref{chap:relaxation}.  
 Les équations de continuité correspondantes, de la forme \eqref{chap6:eq.Rieman.1}, forment alors un système infini de relations couplées.  
@@ -44,13 +44,13 @@ Dans ce cadre, le problème de \emph{Riemann} \eqref{chap6:eq.Rieman.cond.1} se 
 %\paragraph{Apparition de la Théorie Hydrodynamique Généralisée (GHD) :}
 %L’avènement de la GHD a marqué une avancée majeure dans la compréhension de la dynamique des systèmes intégrables. Introduite dans le contexte des théories des champs (modèle de Sinh-Gordon, modèle de Lieb-Liniger) et des chaînes quantiques (chaîne XXZ de Heisenberg) [références à insérer], elle permet de décrire analytiquement la propagation d’informations dans ces systèmes en intégrant les contraintes des charges conservées. Plusieurs solutions analytiques du problème de Riemann ont depuis été obtenues, notamment dans la chaîne XXZ et pour des gaz de sphères dures en 1D, confirmant la validité et la puissance prédictive de la GHD.
 
-\paragraph{Notre système : un gaz de bosons 1D faiblement interactifs :}
+\paragraph*{Notre système : un gaz de bosons 1D faiblement interactifs :}
 Nous considérons un gaz quantique unidimensionnel de bosons faiblement interactifs, confiné dans une géométrie strictement 1D, et bien décrit par le modèle intégrable de \gls{LL} avec interactions répulsives. %Ce système présente un comportement quantique collectif tout en restant dans un régime faiblement corrélé, ce qui en fait un candidat idéal pour tester les prédictions de la GHD.
 
-\paragraph{Préparation expérimentale et protocole de coupure :}
+\paragraph*{Préparation expérimentale et protocole de coupure :}
 La configuration initiale consiste à préparer un gaz homogène à densité constante $n_0$, et à température contrôlée (voir Fig.~\ref{fig:BiPart.insitut}). Un protocole de coupe abrupte est ensuite appliqué : la partie gauche du système ($x<0$) est vidée de ses atomes, tandis que la partie droite ($x>0$) reste occupée. Ce \emph{quench bipartite} génère une discontinuité initiale de densité, analogue au problème de \emph{Riemann}, mais dans un système quantique doté d’un nombre infini de lois de conservation. Ce protocole a déjà fait l’objet d’une première étude expérimentale dans la thèse de L. Dubois \cite{L.Dubois2024}, qui en a révélé le potentiel pour sonder la dynamique hors équilibre.
 
-\paragraph{Observation d’une propagation balistique.}
+\paragraph*{Observation d’une propagation balistique.}
 Nous analysons la dynamique unitaire du gaz à l’aide du formalisme de \gls{GHD}.  
 À l’échelle d’\emph{Euler}, le cadre de la \gls{GHD} ne décrit pas l’état initial de type \emph{Riemann}\eqref{chap6:eq.Rieman.cond.1}, mais devient valide après une courte évolution temporelle.  
 Nous montrons que la discontinuité initiale engendre une propagation balistique, en accord avec la solution du problème de \emph{Riemann généralisé}.  
@@ -58,17 +58,19 @@ Le profil de densité, mesuré à différents instants $t$, présente une dépen
 De légers écarts subsistent néanmoins, que nous attribuons à des effets entropiques ainsi qu’à des imperfections expérimentales.
 
 
-\paragraph{Reconstruction de la distribution de rapidité :}
+\paragraph*{Reconstruction de la distribution de rapidité :}
 Un aspect central de notre approche repose sur la reconstruction de la distribution initiale de rapidité à partir des profils de densité mesurés dans la région de transition. Cette démarche s’apparente à une forme de {\bf thermométrie généralisée}, et permet à priori d’inférer des informations fines sur les états locaux du système.
 
-\paragraph{Accès expérimental au facteur d’occupation $\nu(x,\theta)$ :}
+\paragraph*{Accès expérimental au facteur d’occupation $\nu(x,\theta)$ :}
 Nous développons également une méthode expérimentale originale permettant de mesurer localement le facteur d’occupation $\nu(x,\theta)$ dans la région de déformation. La \gls{GHD} prédit que cette quantité révèle une forte asymétrie : large et lisse du côté initialement occupé, abrupte et tronquée du côté initialement vide. Cette asymétrie reflète le fait que, localement, le système est dans un état non thermique, alors que dans un état thermique, le facteur d'occupation $\nu(\theta)$ serait symétrique par rapport à $\theta = 0$.
 %la nature hors équilibre du système, et s’accorde qualitativement avec les prédictions de la GHD, bien que la résolution spatiale expérimentale limite l’accès aux détails les plus fins.
 Cette asymétrie reflète le fait que, localement, le système est dans un état non thermique. En effet, dans un état thermique, le facteur d'occupation $\nu(\theta)$ est symétrique, tandis qu'ici, il présente une coupure nette du côté initialement vide.
 %la nature hors équilibre du système, et s’accorde qualitativement avec les prédictions de la GHD, bien que la résolution spatiale expérimentale limite l’accès aux détails les plus fins.
 
-\paragraph{Conclusion :}
+\Resume{
+\paragraph*{Conclusion :}
 Ce chapitre explore ainsi, à la fois théoriquement et expérimentalement, la dynamique d’un gaz intégrable soumis à une discontinuité initiale de densité. %Il met en lumière la pertinence de la GHD pour décrire de telles dynamiques, et démontre la faisabilité d’outils d’analyse avancés comme la reconstruction de la distribution de rapidité ou la mesure locale du facteur d’occupation.
+}
 
 
 \section{Dynamique balistique d’un gaz 1D après une coupure bipartite}
@@ -924,7 +926,7 @@ Dans les panneaux (e), (f) et (g), les facteurs d’occupation \(\nu\) sont repr
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=1.1\textwidth , page = 7 ]{figures/06_Bipart/Shema_3.pdf}
+	\includegraphics[width=0.6\textwidth , page = 7 ]{figures/06_Bipart/Shema_3.pdf}
 	\caption{
     (a) À l'instant $t = 18~\mathrm{ms}$, après l'évolution balistique post-quench, le facteur d'occupation est donné par $\rho^\ast(x_b(t)/t, \theta) = \nu_0(\theta)$ pour $\theta < \theta_b$, il est nul pour $\theta > \theta_b$, résolvant l'équation~(\ref{eq:nuetoile}), pour $t>0$. $\rho(x(t), \theta)(=\rho^\ast(x(t)/t, \theta))$ est invariant de la déformation pour $t>0$.  Le bord est représenté en tirets par l'ensemble des points $(x_b(t)/t,\, \theta( t))$. Étant donné que la coupure initiale est en $x = 0$ et que l’évolution du bord est balistique, cette courbe résout $v^{\mbox{\tiny eff}}_{[\rho^\ast(x(t)/t, \cdot) ]}(\theta) = x(t)/t = v)$ (\ref{eq:nu.cont}). 
     (b) la densité spatiale  $n^\ast(x/t)$ en régime hydrodynamique (scaling).
