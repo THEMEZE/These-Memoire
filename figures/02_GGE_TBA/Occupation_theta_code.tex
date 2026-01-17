@@ -1,6 +1,7 @@
 % Définition des couleurs avec les codes HTML
 \definecolor{colorOne}{HTML}{443E46}
-\definecolor{colorTwo}{HTML}{F6DEB8}
+%\definecolor{colorTwo}{HTML}{F6DEB8}
+\definecolor{colorTwo}{HTML}{FFFFFF}
 \definecolor{colorThree}{HTML}{908CA4}
 \definecolor{colorFour}{HTML}{57659E}
 \definecolor{colorFive}{HTML}{C57284}
@@ -171,7 +172,7 @@
 	
 	
 	\begin{scope}[shift={(-10.5,7)},rotate=0,opacity=1,color=black]
-	
+	\fontsize{12pt}{16pt}\selectfont
 	\begin{scope}[shift={(-0,0)},rotate=0,opacity=1,color=black]
 	
 		\draw[shift={(0,0)} ,line width=1ex,rounded corners = 1ex,color=\colorOne , opacity =1 ,fill=\colorOne!00 , pattern={north east lines} , pattern color=\colorOne!00 ]
@@ -185,7 +186,7 @@
             \filldraw[line width=0.5ex, color=\colorSix, outer color=\colorSix, inner color=\colorSix] 
             (0, 0) circle (4pt);
             
-            \node[anchor=west, font=\bfseries] at (0.2, 0) {\color{\colorSix}\large : quasi-particule};
+            \node[anchor=west, font=\bfseries] at (0.2, 0) {\color{\colorSix} : quasi-particule};
 		\end{scope}
 		
 		\begin{scope}[shift={(0.5,-0.5)}]
@@ -194,7 +195,7 @@
             \filldraw[line width=0.5ex, color=\colorSix, outer color=\colorTwo, inner color=\colorTwo] 
             (0, 0) circle (4pt);
             
-            \node[anchor=west, font=\bfseries] at (0.2, 0) {\color{\colorSix}\large : hole};
+            \node[anchor=west, font=\bfseries] at (0.2, 0) {\color{\colorSix} : hole};
 		\end{scope}
 
 	\end{scope}
@@ -205,9 +206,9 @@
 			(0 , -1 ) rectangle (7.5,1)
 		;
 		
-		\node[anchor=west] at (0.5, 0.5) {\color{\colorFour}\large $\rho$ };\node[anchor=west, font=\bfseries] at (1, 0.5) {\color{\colorFour}\large : quasi-particule distribution};
+		\node[anchor=west] at (0.4, 0.5) {\color{\colorFour} $\rho$ };\node[anchor=west, font=\bfseries] at (0.9, 0.5) {\color{\colorFour}: quasi-particule distribution};
 		
-		\node[anchor=west] at (0.5, -0.5) {\color{\colorFour}\large $\rho_h$ };\node[anchor=west, font=\bfseries] at (1, -0.5) {\color{\colorFour}\large  : hole distribution};
+		\node[anchor=west] at (0.4, -0.5) {\color{\colorFour} $\rho_h$ };\node[anchor=west, font=\bfseries] at (0.9, -0.5) {\color{\colorFour}  : hole distribution};
 		
 	\end{scope}
 	
@@ -217,7 +218,7 @@
 			(0 , -0.5 ) rectangle (7.0,0.5)
 		;
 		
-		\node[anchor=west] at (0.2, 0) {\color{\colorFour}\large ${\color{\colorFive}\rho_s} = \rho + \rho_h $ } node[anchor=west , font=\bfseries] at (3.1 , 0 )  {\color{\colorFour}\large {\color{\colorFive} : density of states}};
+		\node[anchor=west] at (0.2, 0) {\color{\colorFour} ${\color{\colorFive}\rho_s} = \rho + \rho_h $ } node[anchor=west , font=\bfseries] at (2.8 , 0 )  {\color{\colorFour} {\color{\colorFive} : density of states}};
 		
 	\end{scope}
 	

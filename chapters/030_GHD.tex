@@ -4,11 +4,11 @@
 
 \section*{Introduction}
 
-\paragraph{De l’état stationnaire à la dynamique}  
+\paragraph*{De l’état stationnaire à la dynamique}  
 Après avoir étudié les propriétés stationnaires du gaz de bosons unidimensionnel, nous abordons maintenant sa dynamique hors équilibre. Un outil théorique qui permet de décrire cette évolution macroscopique à grande échelle\footnote{La notion de « grande échelle » sera précisée dans la section suivante, où nous détaillerons la description hydrodynamique du système.}
 est {\bf l’Hydrodynamique Généralisée}, en anglais \gls{GHD}. Cette approche, développée au cours des dernières années (voir par exemple~\cite{Doyon_GHD_2020,Bouchoule_2022,ESSLER2023127572,kerr2023theory}), fournit un cadre unifié pour la dynamique des systèmes intégrables.
 
-\paragraph{Principe général de l’approche hydrodynamique}  
+\paragraph*{Principe général de l’approche hydrodynamique}  
 %Jusqu'ici , nous avons considéré des systèmes homogènes en équilibre ou relaxés vers un état stationnaire. Nous avons étudier la thermodynamique de Bethe Ansatz (\gls{TBA}) qui permet de caractériser ces états stationnaires par une distribution de rapidité homogène $\rho(\theta)$. Maintenant pour passer la l'hydrodynamique, nous allons étudier des systèmes inhomogènes et hors équilibre. Nous considérerons que le systeme est suffisamment grand pour que des variations spatiales et temporelles puissent apparaître. Et suffisamment lent pour que le système puisse se relaxer localement vers des états quasi-stationnaires. 
 
 Si on considère des systèmes homogènes en équilibre ou relaxés vers un état stationnaire, et nous avons étudié la thermodynamique du Bethe Ansatz (\gls{TBA}), qui permet de caractériser ces états par une distribution de rapidité homogène $\rho(\theta)$.  
@@ -85,7 +85,7 @@ Nous allons maintenant réintroduire les charges conservées définies dans le c
 %     rightmargin=2pt
 % 	]
 \Rappel{
-\paragraph{Opérateurs charges globales}  
+\paragraph*{Opérateurs charges globales}  
 %Les charges locales conservées ont été définies dans les équations~\eqref{chap.2.charge.f.1}.  
 %Dans le même formalisme, on définit les \emph{charges globales conservées} comme des fonctionnelles linéaires agissant sur une fonction réelle et régulière $f(x,\theta)$ définie sur $\mathbb{R}^2$, selon
 %\begin{equation}\label{chap:GHD:eq.charge.global.0}
@@ -102,8 +102,10 @@ Les charges locales conservées ont été définies dans les équations~\eqref{c
 \end{equation}
 %où $\operator{\rho}(x,\theta)$ est l'opérateur distribution de rapidité.  
 Cette quantité correspond à la charge totale associée à une observable prenant la valeur $f(x,\theta)$ pour chaque quasi-particule.\footnote{
+\Information{
 \noindent\textbf{Remarque~:} pour que $\operator{\mathcal{Q}}[f]$ soit strictement conservée dans le temps, la fonction $f$ doit être indépendante de $x$, c’est-à-dire $f(x,\theta) = f(\theta)$. %Dans ce cas, l’opérateur associé agit sur un état à une particule comme $\hat{\mathcal{Q}}[f]\,|\theta\rangle = f(\theta)\,|\theta\rangle$. Pour un gaz de solitons (KdV, NLS, Boussinesq…), $\hat{\mathcal{Q}}[f]$ représente l’une des quantités conservées (masse, impulsion, énergie...) du modèle microscopique, et $f(\theta)$ correspond à la contribution d’une solution individuelle de paramètre $\theta$ à cette quantité.
 Si $f$ dépend de $x$, $\operator{\mathcal{Q}}[f]$ n’est pas nécessairement conservée au cours de l’évolution du système. En revanche, si $f$ dépend uniquement de $\theta$ , alors $\operator{\mathcal{Q}}[f]$ correspond à une véritable charge conservée. Dans le cadre de ce chapitre, la dépendance en $x$ est introduite pour faciliter certaines dérivations et l’étude des profils locaux, mais la conservation stricte n’est garantie que pour les fonctions $f(\theta)$ indépendantes de $x$.
+}
 }
 
 
@@ -140,7 +142,7 @@ Nous allons maintenant considérer la limite thermodynamique, où les moyennes d
 %     rightmargin=2pt
 % 	]
 \Rappel{
-\paragraph{Limite thermodynamique.}  
+\paragraph*{Limite thermodynamique.}  
 Dans notre étude de la dynamique, nous n’avons pas besoin de l’information détaillée sur le poids spectral $w$.  
 Nous noterons donc, dans ce chapitre, et dans la limite thermodynamique, les moyennes des opérateurs en supprimant leur chapeau, \emph{i.e.}
 \begin{equation}
@@ -172,7 +174,7 @@ Avec ce formalisme, en appliquant $(x,\theta) \mapsto \delta(\cdot - x)f_i(\thet
 %\end{eqnarray*}
 % où $\ell_c$ est une longueur microscopique caractéristique (par exemple la distance inter-particules ou la longueur de corrélation). On suppose alors que, dans chaque cellule, le système est localement relaxé et décrit par un état quasi-stationnaire. C’est ce que l’on appelle l’{\bf Approximation de Densité Locale} (en anglais \gls{LDA}).
 
-\paragraph{Équations de type Euler.}  
+\paragraph*{Équations de type Euler.}  
 Maintenant on veut décrire les échanges des densités locales $q_i(x,t)$ entre les cellules fluides.
 
 \smallskip
@@ -201,11 +203,11 @@ Ainsi, l'approximation $j_i=j_i(\{q_a\})$ est valable à l'ordre {\bf Euler}, ta
 où $F_i$ des termes de force provenant d’éventuels champs externes. 
 Ces équations d’Euler apparaissent dans de nombreux contextes physiques : fluides galiléens, hydrodynamique relativiste, etc.
 
-\paragraph{Cas intégrable et hydrodynamique généralisée}  
+\paragraph*{Cas intégrable et hydrodynamique généralisée}  
 Dans un système intégrable en dimension un, il existe une infinité de quantités conservées, et donc une infinité d’équations de type~\eqref{chap:GHD:eq.conserv.1}. \gls{GHD} fournit une reformulation de cet ensemble d’équations sous une forme compacte et universelle. Elle s’applique aussi bien aux systèmes quantiques (modèle de \acrlong{LL}, chaînes de spins) qu’aux systèmes classiques (bâtons durs, gaz de solitons).
 
 
-\paragraph{Paramétrisation spectrale.}  
+\paragraph*{Paramétrisation spectrale.}  
 Dans le modèle de \gls{LL}, nous avons vu que localement un système relaxé est décrit par une distribution de rapidité homogène $\rho(\theta)$ (voir chapitres précédents).  
 
 Avec la \gls{LDA}, on considère désormais des situations dans lesquelles le système présente des variations sur des longueurs d’espace beaucoup plus grandes que les échelles microscopiques $l_c$. Dans ce cadre hydrodynamique, la distribution de rapidité dépend donc explicitement de la position et du temps :  
@@ -216,7 +218,7 @@ La fonction $\rho(x,\theta,t)$ représente alors la densité locale de rapidité
 
 
 
-\paragraph{Équation de GHD avec force externe}  
+\paragraph*{Équation de GHD avec force externe.}  
 En présence d’un champ de force externe, l'équation \gls{GHD} prend la forme~\cite{10.21468/SciPostPhys.2.2.014}
 \begin{equation}\label{chap:GHD:eq.GHD.1}
 	\partial_t \rho + \partial_x \!\left(v^{\mathrm{eff}} \rho\right) 
@@ -227,6 +229,37 @@ où la {\bf vitesse effective} $v^{\mathrm{eff}}$ et l'{\bf accélération effec
 	En présence d'un potentiel externe $V(x)$, le terme $\partial_\theta(a^{\mathrm{eff}}\rho)$ traduit le couplage entre les différentes tranches de rapidité induites par les variations spatiales du potentiel. Plus précisément, $\partial_x$ représente la variation spatiale de la densité dans l'espace physique, tandis que $\partial_\theta$ capture la redistribution des quasi-particules entre différentes rapidités. Pour une quasi-particule à la position $x$ avec une rapidité $\theta$, le terme de dérive $v^{\mathrm{eff}}$ décrit le déplacement spatial effectif résultant des interactions, et le terme d'accélération $a^{\mathrm{eff}} = -V'(x)$ représente la force externe agissant sur la particule.
 	Les équations \gls{GHD} sans force externe correspondent à la conservation des charges associées à des fonctions $f(\theta)$ dépendant uniquement de la rapidité. En présence d'un potentiel externe $V(x)$, le terme $\partial_\theta(a^{\text{eff}}\rho)$ traduit le couplage entre les différentes tranches de rapidité induites par les variations spatiales du potentiel.
 }
+
+\subparagraph*{En l’absence de force externe,} l’opérateur nombre de rapidités
+\begin{equation}
+    \Pi(\theta)\,\delta\theta
+    = \int \mathrm{d}x \, \rho(x,\theta;t)\,\delta\theta
+\end{equation}
+est conservé dans chaque tranche de rapidité
+\([\theta,\theta+\delta\theta]\), et ce pour tout \(\theta\)
+(cf. Fig.~\ref{fig:Piconserved}).
+
+Dans la limite \(\delta\theta \to 0\), l’ensemble de ces lois de conservation se traduit par l’équation de continuité
+\begin{equation}
+    \partial_t \rho(x,\theta;t)
+    + \partial_x\!\left(v^{\mathrm{eff}}(\theta)\,\rho(x,\theta;t)\right)
+    = 0,
+\end{equation}
+qui correspond à l’équation de la théorie \gls{GHD} \eqref{chap:GHD:eq.GHD.1}, mais sans terme de dérivée en \(\theta\).
+
+\begin{figure}[htbp]
+    \centering
+	\includegraphics[width=0.6\textwidth , page = 1 ]{figures/03_GHD/Figures.pdf}
+    \caption{
+    Conservation du nombre de quasi-particules dans une tranche de rapidité
+    \([\theta,\theta+\delta\theta]\) en l’absence de force externe.
+    }
+    \label{fig:Piconserved}
+\end{figure}
+
+\subparagraph*{En présence d’une force externe,} les rapidités évoluent dans le temps et les quasi-particules peuvent traverser les tranches de rapidité \([\theta,\theta+\delta\theta]\).
+La conservation locale est alors modifiée, et l’on obtient l’équation complète de la \gls{GHD} \eqref{chap:GHD:eq.GHD.1} .
+
 %D’autres types de forces ont été étudiés~\cite{Bastianello2019a,Bastianello2019b}, mais ne seront pas considérés ici. 
 
 \medskip
@@ -332,7 +365,9 @@ Cette analyse microscopique s’étend naturellement aux modèles à \(N\) corps
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{figures/03_GHD/trajectoires_hard_rods.png}
+    %\includegraphics[width=0.8\textwidth]{figures/03_GHD/trajectoires_hard_rods.png}
+    %\includegraphics[width=0.8\textwidth,page=2]{figures/03_GHD/Figure.pdf}
+	\includegraphics[width=0.6\textwidth , page = 2 ]{figures/03_GHD/Figures.pdf}
     \caption{%Trajectoires des particules d'un gaz de hard rods en 1D. Les lignes noires représentent les particules individuelles, la ligne rouge correspond à la trajectoire effective (vitesse GHD) de la particule suivie, et la ligne orange indique la trajectoire de la particule si elle conservait sa vitesse initiale (bare velocity).
     Trajectoires des particules d'un gaz de barres dures en 1D. Les lignes noires représentent les particules individuelles, la ligne rouge la trajectoire effective (vitesse \gls{GHD}) de la particule suivie, et la ligne orange la trajectoire si la particule conservait sa vitesse initiale (bare velocity). Le graphique a été généré en Python.
     }
@@ -1014,7 +1049,7 @@ Il s’agit exactement des équations de continuité et d’Euler~\eqref{eq:cont
 
 \begin{figure}[h!]
     \centering
-     \includegraphics[width=0.6\textwidth , page = 2 ]{figures/03_GHD/Figures.pdf}
+     \includegraphics[width=0.6\textwidth , page = 3 ]{figures/03_GHD/Figures.pdf}
     \caption{Schéma de l’évolution du facteur d’occupation $\nu(x,\theta,t)$ dans la limite $\gamma \to 0$.  Initialement rectangulaire et homogène, la distribution forme une mer de Fermi délimitée par $\theta_\pm(x,t)$ : rouge $\nu=1$, blue $\nu=0$.}
     \label{fig:GP}
 \end{figure}
@@ -1026,10 +1061,12 @@ Les équations~\eqref{eq:GHDcontinuite}--\eqref{eq:GHDeuler} correspondent exact
 La correspondance est donc valable pour une configuration initiale correspondant à une seule mer de Fermi.  
 En revanche, si le système initial contient plusieurs mers de Fermi (par exemple deux pics de densité séparés), cette équivalence avec les équations \gls{GP} n’est plus vérifiée.  
 
+\Information{
 \begin{Rema}\label{rem:plusieurs_mers}
 	\textbf{(Limite de la correspondance GHD--GP avec plusieurs mers de Fermi)}  
 	Si la distribution initiale $\nu(x,\theta,0)$ comporte plusieurs mers de Fermi distinctes, chaque mer évolue indépendamment selon les équations \gls{GHD}. Cependant, cette situation ne peut pas être capturée par les équations hydrodynamiques dérivées de \gls{GP}, qui supposent une seule mer de Fermi. En effet, dans le cadre de \gls{GP}, la dynamique est décrite par un seul champ d'onde, ce qui ne permet pas de représenter plusieurs structures distinctes dans l'espace des rapidités. Par conséquent, la correspondance entre \gls{GHD} et les équations de \gls{GP} est limitée aux configurations initiales avec une unique mer de Fermi.
-\end{Rema}\footnote{%\color{blue}
+\end{Rema}
+}\footnote{%\color{blue}
 %\paragraph{Correspondance avec les équations Gross–Pitaevskii.}  
 
 Les équations~\eqref{eq:GHDcontinuite}--\eqref{eq:GHDeuler} reproduisent exactement les équations hydrodynamiques~\eqref{eq:continuite3}--\eqref{eq:euler3} dérivées de \gls{GP} dans la limite $\gamma \to 0$, à condition que trois hypothèses structurelles soient satisfaites simultanément.
@@ -1071,6 +1108,7 @@ Les équations \eqref{eq:theta+}--\eqref{eq:theta-} se réécrivent sous la form
 
 \medskip
 
+\Information{
 \begin{Rema}\label{rem:plusieurs_mers}
 	\textbf{(Domaine de validité : configurations multi-mers de Fermi)}  
 	
@@ -1080,6 +1118,7 @@ Les équations \eqref{eq:theta+}--\eqref{eq:theta-} se réécrivent sous la form
 	
 	Par conséquent, bien que la \gls{GHD} soit rigoureusement applicable à ces configurations complexes, la correspondance directe avec les équations de Gross–Pitaevskii se brise dès qu'il existe plusieurs mers de Fermi : il faudrait alors utiliser une générali\-sation multi-composantes des équations hydrodynamiques (p.ex. un mélange de deux condensats), sortant du cadre standard de la théorie \gls{GP}.
 \end{Rema}
+}
 }
 
 

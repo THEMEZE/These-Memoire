@@ -1152,11 +1152,40 @@ Ainsi, la position semi-classique des deux particules après la collision s’é
 
 La figure~\ref{fig:collision_shift} illustre schématiquement la collision de deux particules et le décalage spatial $\Delta(\theta_1 - \theta_2)$ qui en résulte dans l’évolution semi-classique de leurs positions.
 
-\begin{figure}[h!]
-    \centering
-	\includegraphics[width=0.5\textwidth , page = 1 ]{figures/01_LL_BA/Figures.pdf}
-    \caption{Schéma de collision entre deux quasi-particules et du décalage spatial $\Delta(\theta_1-\theta_2)$.}
-    \label{fig:collision_shift}
+% \begin{figure}[h!]
+%     \centering
+% 	\includegraphics[width=0.5\textwidth , page = 1 ]{figures/01_LL_BA/Figures.pdf}
+%     \caption{Schéma de collision entre deux quasi-particules et du décalage spatial $\Delta(\theta_1-\theta_2)$.}
+%     \label{fig:collision_shift}
+% \end{figure}
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+	
+		\begin{scope}[shift={(0,0)}]
+			
+			\node (a) at (0,0) {
+                \centering
+				\includegraphics[width=0.5\textwidth , page = 1 ]{figures/01_LL_BA/Figures.pdf}
+            };
+        	\node[above=-0.2cm of a , shift={(-2 , 0)}] {\fontsize{12pt}{14pt}\selectfont \bfseries a)};
+
+          	\node[draw = none , rectangle , right = 0.5cm of a] (b)  {  
+            	\centering
+				\includegraphics[width=0.5\textwidth , page = 2 ]{figures/01_LL_BA/Figures.pdf}
+          	};
+            \node[above=-0.2cm of b, shift={(-2 , 0)}] {\fontsize{12pt}{14pt}\selectfont \bfseries b)};
+
+    
+        \end{scope}
+
+        %\drawgrid{-0.5}{10}{-1}{3}
+
+        
+	\end{tikzpicture}
+	\caption{Schéma de la collision entre deux quasi-particules illustrant le décalage spatial $\Delta(\theta_1-\theta_2)$.(a) description classique (sphère dure) ; (b) description quantique.}
+	\label{fig:collision_shift}
 \end{figure}
 
 
@@ -1270,12 +1299,12 @@ où $I_{1},I_{2}\in\mathbb{Z} + \tfrac{1}{2}$ sont des nombres demi-entiers.
 
 En comparaison avec le cas d’une seule particule (où la condition aux bords périodiques impose simplement $\theta L = 2\pi n$ ~\eqref{chap.1.rapel.libre.5}), on voit que les équations de \gls{BA} à deux particules \eqref{eq:PC2}--\eqref{eq:Bethe2} incorporent la fonction $\Phi$, qui encode explicitement l’\textbf{interaction entre particules}.
 
-\begin{figure}[H]
-	\centering
-  %\includegraphics[width=0.5\textwidth]{}
-  %\caption{Gauche : La fonction d'onde (\ref{eq:I-1-10}) sur la ligne infinie correspond à un processus de diffusion à deux corps. Semiclassiquement, la phase de diffusion dans ce processus à deux corps se reflète dans le décalage de diffusion (\ref{eq:I-1-16}) : après la collision, la position de la particule a été déplacée d'une distance $\Delta ( \theta_1 - \theta_2 )$ . Droite : La fonction d'onde de Bethe (\ref{eq:I-2-17}) sur la ligne infinie correspond à un processus de diffusion à $N$-corps qui se factorise en des processus à deux corps (le décalage de diffusion $\Delta$ est également présent ici, mais il n'est pas représenté dans la caricature). Dans ce processus à $N$-corps, les rapidités $\theta_j$ sont les moments asymptotiques des bosons.}
-  \label{}	
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+%   %\includegraphics[width=0.5\textwidth]{}
+%   %\caption{Gauche : La fonction d'onde (\ref{eq:I-1-10}) sur la ligne infinie correspond à un processus de diffusion à deux corps. Semiclassiquement, la phase de diffusion dans ce processus à deux corps se reflète dans le décalage de diffusion (\ref{eq:I-1-16}) : après la collision, la position de la particule a été déplacée d'une distance $\Delta ( \theta_1 - \theta_2 )$ . Droite : La fonction d'onde de Bethe (\ref{eq:I-2-17}) sur la ligne infinie correspond à un processus de diffusion à $N$-corps qui se factorise en des processus à deux corps (le décalage de diffusion $\Delta$ est également présent ici, mais il n'est pas représenté dans la caricature). Dans ce processus à $N$-corps, les rapidités $\theta_j$ sont les moments asymptotiques des bosons.}
+%   \label{}	
+% \end{figure}
 
 \subsubsection{Interprétation physique pour deux particules et rôle de la rapidité}
 
@@ -1351,7 +1380,7 @@ ce qui correspond au choix symétrique des nombres quantiques pour l’état fon
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.9\textwidth , page = 2 ]{figures/01_LL_BA/Figures.pdf}
+    \includegraphics[width=0.9\textwidth , page = 11 ]{figures/01_LL_BA/Figures.pdf}
     \caption{
     Représentation schématique de la mer de Fermi pour un système de $N$ particules :  
     (a) distribution occupée à l’état fondamental, analogue à une mer de Fermi idéale ;  
@@ -1450,9 +1479,17 @@ ce qui relie \( \rho_s \) au déplacement collisionel \( \Delta \) défini dans 
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=1.1\textwidth , page = 3 ]{figures/01_LL_BA/Figures.pdf}
+    \includegraphics[width=1.0\textwidth , page = 10 ]{figures/01_LL_BA/Figures.pdf}
     \caption{
-	Illustration de la relation entre la densité d’états $\rho_s(\theta)$ et les nombres quantiques fermioniques $I_a$. Les rapidités dans l’intervalle $[\theta, \theta + \delta\theta]$ s’associent à un ensemble de nombres quantiques fermioniques situés dans $[I, I + \delta I]$. La densité d’états $\rho_s$ se déduit alors de la relation $\delta I \simeq L \rho_s(\theta) \delta \theta $
+	Illustration de la relation entre la densité d’états à l’état fondamental,
+\(\rho(\theta)=\rho_s(\theta)\), et les nombres quantiques fermioniques \(I_a\).
+Les rapidités contenues dans l’intervalle \([\theta,\theta+\delta\theta]\)
+correspondent à un ensemble de nombres quantiques fermioniques situés dans
+\([I,I+\delta I]\).
+À l’état fondamental, la densité d’états se déduit de la relation
+\(
+\delta I \simeq L\,\rho(\theta)\,\delta\theta .
+\)
     }
     \label{fig:rho_s.I}
 \end{figure}
@@ -1699,8 +1736,10 @@ ce qui n’est autre que la relation~\eqref{eq:TBA-rhos}.
 
 
 
-\section*{Conclusion du chapitre}
+
 \Resume{
+	\section*{Conclusion}
+	
 Dans ce chapitre, nous avons introduit le modèle de \acrfull{LL}, qui décrit un gaz de bosons unidimensionnel soumis à une interaction de contact. Dans ce cadre, les grandeurs conservées naturelles ne sont pas seulement le nombre total de particules $\operator{Q}$ et la quantité de mouvement totale $\operator{P}$, mais également l’énergie associée à l’Hamiltonien \gls{LL}, $\operator{H}$, (plutôt qu’à la simple énergie cinétique $\operator{K}$). Ces charges conservées correspondent respectivement aux moments d’ordre $0$, $1$ et $2$ en rapidité. Comme nous le verrons au chapitre suivant, des charges d’ordre supérieur interviennent dans la description des états en équilibre, notamment via l'Ensemble de Gibbs Généralisé (\gls{GGE}).
 
 \medskip

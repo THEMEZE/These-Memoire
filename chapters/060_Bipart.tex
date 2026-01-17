@@ -729,7 +729,7 @@ Dans ce régime homogène, le facteur d'occupation est indépendante de la posit
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.6\textwidth , page = 4 ]{figures/06_Bipart/Shema.pdf}	
+	\includegraphics[width=0.6\textwidth , page = 1 ]{figures/06_Bipart/Shema_3.pdf}	
 	\caption{a) Facteur d’occupation initial $\nu(x, \theta) = \nu_0(\theta)$ correspondant à un état d’équilibre thermique à la température $T = 560~\mathrm{nK}$, pour une densité linéique homogène $n_0 = 56~\mu\mathrm{m}^{-1}$. Ces paramètres correspondent à un potentiel chimique $\mu = 65~\mathrm{nK}$.
 b) Densité spatiale linéique $n(x) = \int \rho_{[\nu]}(x, \theta)\, d\theta$, constante et égale à $n_0 = 56~\mu\mathrm{m}^{-1}$.
 c) Facteur d’occupation $\nu_0(\theta)$ correspondant à la distribution thermique illustrée en a).}
@@ -854,7 +854,9 @@ Pour reconstruire le profil de densité du gaz, nous procédons de la manière s
 
 \medskip
 
-Au point \(x(\theta^*,t)\), la densité d’atomes \(n\) est obtenue en utilisant les équations \eqref{eq:contour_support} et \eqref{eq:TBA-nu}. Nous obtenons ainsi un ensemble de données \((x_i,n_i)\) pour \(i=1,\dots,N\). La densité linéique en tout point \(x\) est ensuite estimée par interpolation linéaire à partir de ces points (Fig. \ref{fig:BiPart.coupure1}). Cette méthode permet de comparer directement les prédictions numériques aux données expérimentales.
+Au point \(x(\theta^*,t)\), la densité d’atomes \(n\) est obtenue en utilisant les équations \eqref{eq:contour_support} et \eqref{eq:TBA-nu}. Nous obtenons ainsi un ensemble de données \((x_i,n_i)\) pour \(i=1,\dots,N\). La densité linéique en tout point \(x\) est ensuite estimée par interpolation linéaire à partir de ces points (Fig. \ref{fig:BiPart.coupure1})
+.
+Cette méthode permet de comparer directement les prédictions numériques aux données expérimentales.
 
 %\bigskip
 %
@@ -900,19 +902,37 @@ Enfin, en fixant \(n_0 = 56~\mu\mathrm{m}^{-1}\), nous ajustons la température 
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=1.1\textwidth , page = 5 ]{figures/06_Bipart/Shema.pdf}
+	\includegraphics[width=1.1\textwidth , page = 2 ]{figures/06_Bipart/Shema_3.pdf}
 	\caption{
 (a) À l'instant $t = 0^+$, immédiatement après le « quench bipartite » en $x = 0$, le facteur d'occupation est donné par $\nu(x, \theta ; t = 0^+) = \nu_0(\theta)$ pour $x > 0$ et est nul pour $x < 0$. Le bord initial représenté en tirets par l'ensemble des points $(x_b(t = 0^+) = 0,\ \theta)$.
 (b) Densité spatiale linéique $n(x)$ : en pointillés, $n(x; t = 0^-) = \int \rho(x, \theta; t = 0^-) \, \mathrm{d}\theta = n_0 = 56~\mu\mathrm{m}^{-1}$ juste avant le quench ; en ligne pleine, $n(x; t = 0^+) = n_0$ pour $x > 0$ et $0$ pour $x < 0$.
 (c) À gauche de la coupure ($x < 0$) : en pointillés, $\nu(x, \theta ; t = 0^-) = \nu_0(\theta)$ ; en ligne pleine, $\nu(x, \theta ; t = 0^+) = 0$.
-(d) À droite de la coupure ($x > 0$), le facteur d'occupation reste inchangé : $\nu(x, \theta ; t = 0^+) = \nu_0(\theta)$.
+%(d) À droite de la coupure ($x > 0$), le facteur d'occupation reste inchangé : $\nu(x, \theta ; t = 0^+) = \nu_0(\theta)$.
 (e) À l'instant $t = 18~\mathrm{ms}$, après l'évolution balistique post-quench, le facteur d'occupation est donné par $\nu^\ast(x_b(t)/t, \theta) = \nu_0(\theta)$ pour $\theta < \theta_b$, il est nul pour $\theta > \theta_b$, résolvant l'équation~(\ref{eq:nuetoile}), pour $t>0$. $\nu(x(t), \theta)(=\nu^\ast(x(t)/t, \theta))$ est invariant de la déformation pour $t>0$.  Le bord est représenté en tirets par l'ensemble des points $(x_b(t)/t,\, \theta( t))$. Étant donné que la coupure initiale est en $x = 0$ et que l’évolution du bord est balistique, cette courbe résout $v^{\mbox{\tiny eff}}_{[\nu^\ast(x(t)/t, \cdot) ]}(\theta) = x(t)/t = v)$ (\ref{eq:nu.cont}).
 (f) Densité spatiale  $n^\ast(x/t)$ en régime hydrodynamique (scaling).
-(g) Pour les atomes à droite de la coupure : en pointillés, $\nu^\ast(x(t)/t, \theta) = \nu_0(\theta)$ ; en ligne pleine, $\nu^\ast(x_b(t)/t, \theta) = \nu_0(\theta)$ pour $\theta < \theta_b$ et nul pour $\theta > \theta_b$. Le raisonnement est similaire pour les atomes à gauche de la coupure.
+(g) Pour les atomes à droite de la coupure : en pointillés, $\nu^\ast(x(t)/t, \theta) = \nu_0(\theta)$ ; en ligne pleine, $\nu^\ast(x_b(t)/t, \theta) = \nu_0(\theta)$ pour $\theta < \theta_b$ et nul pour $\theta > \theta_b$. Le raisonnement est similaire pour les atomes à gauche de la coupure.\\
+Dans les panneaux (e), (f) et (g), les facteurs d’occupation \(\nu\) sont représentés ; une description équivalente peut être donnée en termes de distributions de rapidités \(\rho\) (cf. Fig.~\ref{fig:BiPart.coupure1_2}).
+%\footnotemark
 }
 	\label{fig:BiPart.coupure1}
 	
 \end{figure}
+% \footnotetext{
+% Dans les graphiques (e), (f) et (g) de la figure~\ref{fig:BiPart.coupure1}, on représente les facteurs d’occupation \(\nu\), mais une représentation équivalente en termes de distributions de rapidités \(\rho\) est également possible (cf. Fig.~\ref{fig:BiPart.coupure1_2}).
+% }
+
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=1.1\textwidth , page = 7 ]{figures/06_Bipart/Shema_3.pdf}
+	\caption{
+    (a) À l'instant $t = 18~\mathrm{ms}$, après l'évolution balistique post-quench, le facteur d'occupation est donné par $\rho^\ast(x_b(t)/t, \theta) = \nu_0(\theta)$ pour $\theta < \theta_b$, il est nul pour $\theta > \theta_b$, résolvant l'équation~(\ref{eq:nuetoile}), pour $t>0$. $\rho(x(t), \theta)(=\rho^\ast(x(t)/t, \theta))$ est invariant de la déformation pour $t>0$.  Le bord est représenté en tirets par l'ensemble des points $(x_b(t)/t,\, \theta( t))$. Étant donné que la coupure initiale est en $x = 0$ et que l’évolution du bord est balistique, cette courbe résout $v^{\mbox{\tiny eff}}_{[\rho^\ast(x(t)/t, \cdot) ]}(\theta) = x(t)/t = v)$ (\ref{eq:nu.cont}). 
+    (b) la densité spatiale  $n^\ast(x/t)$ en régime hydrodynamique (scaling).
+    (c) Pour les atomes à droite de la coupure : en pointillés, $\rho^\ast(x(t)/t, \theta) = \rho_0(\theta)$ ; en ligne pleine, $\rho^\ast(x_b(t)/t, \theta) = \nu_0(\theta)$ pour $\theta < \theta_b$ et nul pour $\theta > \theta_b$. Le raisonnement est similaire pour les atomes à gauche de la coupure.
+}
+\label{fig:BiPart.coupure1_2}	
+\end{figure}
+
 
 \subsection{Simulation de l’expansion.}
 
@@ -1062,7 +1082,7 @@ Dans un premier temps, la tranche est extraite du bord du système, tel qu’il 
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=1.1\textwidth , page = 6 ]{figures/06_Bipart/Shema.pdf}
+	\includegraphics[width=1.1\textwidth , page = 3 ]{figures/06_Bipart/Shema_3.pdf}
 	\caption{
 (a) À l'instant $\tau = 0^+$, immédiatement après la sélection de la tranche centrée en $x = x_0$ et de largeur $\ell$, la distribution de rapidité localement résolue est donnée par $\rho(x,\theta ; \tau = 0^+) = \nu(x, \theta ; t = 18~\mathrm{ms}) \, \rho_s(x,\theta ; t = 18~\mathrm{ms})$ pour $\vert x - x_0 \vert < \ell/2$, et est nulle pour $\vert x - x_0 \vert > \ell/2$. Le bord gauche immédiatement après la sélection est représenté en pointillés par l’ensemble des points $(x_g(\tau = 0^+),\ \theta_g)$, et le bord droit en tiret-point par l’ensemble des points $(x_d( \tau = 0^+),\ \theta_d)$. Le bord complet est donc la concaténation de ces deux ensembles. 
 (b) Densité linéique spatiale $\tilde{n}(x)$ : en pointillés, $n(x; t = 18~\mathrm{ms})$ juste avant la sélection ; en ligne pleine, $\tilde{n}(x; \tau = 0^+)$, égal à $n(x; t = 18~\mathrm{ms})$ pour $\vert x - x_0 \vert < \ell/2$ et nul ailleurs. 
@@ -1148,7 +1168,7 @@ Les simulations reproduisent qualitativement les principaux traits observés exp
 Ces résultats confirment la pertinence de la théorie \gls{GHD} pour décrire la dynamique collective d’un gaz unidimensionnel hors équilibre, tout en ouvrant la voie à des extensions du modèle pour capturer des effets plus fins, au-delà de l’approximation hydrodynamique idéale.
 
 \Resume{
-\section*{Conclusion du chapitre}
+\section*{Conclusion}
 
 Ce chapitre a présenté une exploration conjointe expérimentale et théorique de la dynamique hors équilibre d’un gaz unidimensionnel de bosons, initiée par une coupure bipartite. Ce protocole génère un état initial présentant une discontinuité macroscopique de densité, dont l’évolution constitue une réalisation physique du problème de \emph{Riemann quantique}.
 

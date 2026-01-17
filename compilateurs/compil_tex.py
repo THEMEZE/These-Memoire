@@ -286,6 +286,7 @@ tex_files = [
     #"./figures/06_Bipart/Figures.tex",
     #"./figures/06_Bipart/Shema.tex",
     #"./figures/06_Bipart/Shemas_2.tex",
+    "./figures/06_Bipart/Shema_3.tex",
     #"./figures/07_Dipolaire/Figures.tex",
     #"./figures/official_template_phd_universite-paris_saclay_2/Modele_These_UParisSaclay_2022.tex",
     # Ajoute ici les .tex à compiler seuls
